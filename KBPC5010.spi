@@ -1,0 +1,9 @@
+* KBPC5010 Bridge Rectifier Subcircuit
+* Terminals: 1(+) 2(-) 3(AC1) 4(AC2)
+.SUBCKT KBPC5010 1 2 3 4
+D1 3 1 DKBPC
+D2 4 1 DKBPC
+D3 2 3 DKBPC
+D4 2 4 DKBPC
+.MODEL DKBPC D(Is=1n Rs=0.005 N=1.1 Cjo=500p M=0.333 Vj=0.75 + Ikf=100 Bv=1000 Ibv=10u Tt=5u)
+.ENDS
