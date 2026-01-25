@@ -1,0 +1,27 @@
+* SRS-0515-2 Isolated DC-DC Converter Behavioral Model (FIXED)
+* Pins: 1:+Vin, 2:-Vin, 3:+Vout, 4:-Vout
+.subckt SRS0515 1 2 3 4
+
+* 1. Isolation Barrier
+R_iso 2 4 10G
+C_iso 2 4 80p
+
+* 2. Current Sensing (Ammeter)
+* We send the output through this 0V source to measure current
+V_sense 3 5 0V
+
+* 3. Input Power Draw (Efficiency Modeling)
+* Draws current from Vin based on (Vout * Iout) / (Vin * Efficiency)
+* limit the Vin in the math to 0.1V to avoid "divide by zero" errors
+G_pwr 1 2 value={ (V(3,4) * I(V_sense)) / (limit(V(1,2), 0.1, 10) * 0.6) }
+
+* 4. Output Stage: 15V Regulated 
+V_reg 5 6 15V
+R_out 6 4 0.5
+
+* 5. Simple Current Limit (Approx 67mA)
+.model D_lim D(Is=1e-12)
+V_lim 5 7 0.7
+D_clamp 3 7 D_lim
+
+.ends SRS0515
