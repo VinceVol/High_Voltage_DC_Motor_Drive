@@ -7,7 +7,7 @@ H_TORQ1 Vtorq 0 VSENSE1 0.29
 FPOS1 0 Vangpos VSENSE2 1
 CPOS1 Vangpos 0 1
 RPOS1 Vangpos 0 1Meg
-V4 v_pwm 0 PULSE(0 3.3 0 10ns 10ns 50us 50us)
+V4 v_pwm 0 PULSE(0 3.3 0 10ns 10ns 10us 50us)
 V5 vdi 0 PULSE(0 3.3 0 20us 20us 2500ms 5000ms)
 LA2 1 N016 1.5mH Rser=0
 RA2 N016 N017 6

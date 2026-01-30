@@ -1,0 +1,152 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "d532d631-0a20-4e0b-8cc2-afc299235fe5")
+	(paper "A4")
+	(lib_symbols)
+	(sheet
+		(at 199.39 76.2)
+		(size 15.24 10.16)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "0ee8c600-4f6e-4877-94f0-4a0da87ba88d")
+		(property "Sheetname" "Fet Circuit1"
+			(at 199.39 75.4884 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "FET Circuit.kicad_sch"
+			(at 199.39 86.9446 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "Fet_D" input
+			(at 200.66 76.2 90)
+			(uuid "c094d6d3-9d77-4a39-866a-d4f7634f2c62")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "Fet_S" input
+			(at 203.2 86.36 270)
+			(uuid "6dfe5bc8-86de-4729-9d76-719755dd9732")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "v_pwm" input
+			(at 214.63 83.82 0)
+			(uuid "968d1596-f259-4ef6-b2de-7c7efd31e780")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
+					(page "7")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 152.4 76.2)
+		(size 15.24 10.16)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "6d3d8f4c-8a5d-4b0c-94fd-c45e8627b14b")
+		(property "Sheetname" "Fet Circuit"
+			(at 152.4 75.4884 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "FET Circuit.kicad_sch"
+			(at 152.4 86.9446 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "Fet_D" input
+			(at 166.37 76.2 90)
+			(uuid "96ae683d-9321-4c4c-9196-1a9995f0dd96")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "Fet_S" input
+			(at 163.83 86.36 270)
+			(uuid "cb325b37-d99e-49cc-a3bc-7608e68e9823")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "v_pwm" input
+			(at 152.4 83.82 180)
+			(uuid "e6adc36c-f482-4898-97bd-baeafdd51c3e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
+					(page "6")
+				)
+			)
+		)
+	)
+)
