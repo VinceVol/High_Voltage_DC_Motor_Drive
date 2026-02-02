@@ -826,6 +826,107 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "power:GND1"
+			(power)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#PWR"
+				(at 0 -6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "GND1"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"GND1\" , ground"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "GND1_0_1"
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 -1.27) (xy 1.27 -1.27) (xy 0 -2.54) (xy -1.27 -1.27) (xy 0 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "GND1_1_1"
+				(pin power_in line
+					(at 0 0 270)
+					(length 0)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 	)
 	(rectangle
 		(start 107.95 67.31)
@@ -1031,6 +1132,28 @@
 		)
 		(uuid "fede164e-0327-4646-9d30-415fddd8bac8")
 	)
+	(global_label "170V Rect"
+		(shape output)
+		(at 157.48 82.55 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "24ba87e1-4bd1-4fee-803e-e8bb5e4f7d3d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 170.3228 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "5v 5w"
 		(shape output)
 		(at 152.4 102.87 0)
@@ -1052,17 +1175,6 @@
 				(hide yes)
 			)
 		)
-	)
-	(hierarchical_label "170V Rect"
-		(shape output)
-		(at 157.48 82.55 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "c997b666-2ff6-4e17-9455-30aceb68eebb")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -1131,14 +1243,14 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
+		(lib_id "power:GND1")
 		(at 137.16 82.55 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "6076236c-4333-4466-a76e-47eb440cc0b9")
+		(uuid "afa53166-1468-4432-a3a7-d477b9236e61")
 		(property "Reference" "#PWR02"
 			(at 130.81 82.55 0)
 			(effects
@@ -1148,8 +1260,8 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND"
-			(at 137.668 79.756 90)
+		(property "Value" "GND1"
+			(at 138.43 80.01 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1175,7 +1287,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+		(property "Description" "Power symbol creates a global label with name \"GND1\" , ground"
 			(at 137.16 82.55 0)
 			(effects
 				(font
@@ -1185,7 +1297,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "aea1db3d-0f71-4603-9323-18bbb1463b58")
+			(uuid "1c7f6984-dcf0-4d43-838d-1aaa805d46b3")
 		)
 		(instances
 			(project ""

@@ -1889,7 +1889,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "40f47b8b-9b51-4d3d-a17d-ecb48b6b7d13")
-		(property "Reference" "PS"
+		(property "Reference" "PS?"
 			(at 110.49 73.66 0)
 			(effects
 				(font
@@ -1935,21 +1935,33 @@
 			)
 		)
 		(pin "3"
-			(uuid "69d67af3-58de-4f89-b172-33a3e4359c15")
+			(uuid "324ef8cf-0c11-471d-9173-062758dc49f3")
 		)
 		(pin "4"
-			(uuid "a3971ffd-6780-4a9a-9b33-c35725273f9c")
+			(uuid "13415e70-6ad5-44a8-9058-e8c67947d20d")
 		)
 		(pin "1"
-			(uuid "b2ce94f8-e5d1-40a5-9c8a-23c301ba3f4f")
+			(uuid "3f069798-5744-4a18-8a57-bd323d7e32df")
 		)
 		(pin "2"
-			(uuid "79aa0212-309b-47d1-b39d-110532e0568d")
+			(uuid "cfbc2bc0-309a-4297-84a4-a2408f152c22")
 		)
 		(instances
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de/0ee8c600-4f6e-4877-94f0-4a0da87ba88d"
 					(reference "PS3")
+					(unit 1)
+				)
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de/3fdd0583-4397-41b2-a5bd-03892cb022fe"
+					(reference "PS2")
+					(unit 1)
+				)
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de/6d3d8f4c-8a5d-4b0c-94fd-c45e8627b14b"
+					(reference "PS?")
+					(unit 1)
+				)
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de/ab7f6423-0c29-4aee-927d-1e85ab5c65be"
+					(reference "PS4")
 					(unit 1)
 				)
 			)
@@ -1965,7 +1977,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4d4348e5-133a-432c-9999-b40cad672595")
-		(property "Reference" "#PWR"
+		(property "Reference" "#PWR?"
 			(at 91.44 60.96 0)
 			(effects
 				(font
@@ -2011,12 +2023,24 @@
 			)
 		)
 		(pin "1"
-			(uuid "150d9f6a-f064-431b-b578-c73a746be9bc")
+			(uuid "8baa98b7-20d7-4c79-bfeb-a0781351f53a")
 		)
 		(instances
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de/0ee8c600-4f6e-4877-94f0-4a0da87ba88d"
 					(reference "#PWR05")
+					(unit 1)
+				)
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de/3fdd0583-4397-41b2-a5bd-03892cb022fe"
+					(reference "#PWR04")
+					(unit 1)
+				)
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de/6d3d8f4c-8a5d-4b0c-94fd-c45e8627b14b"
+					(reference "#PWR?")
+					(unit 1)
+				)
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de/ab7f6423-0c29-4aee-927d-1e85ab5c65be"
+					(reference "#PWR08")
 					(unit 1)
 				)
 			)
@@ -2032,7 +2056,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ac4d4e2f-963d-4f0a-b1c7-63f4d00a8d05")
-		(property "Reference" "#PWR"
+		(property "Reference" "#PWR?"
 			(at 91.44 85.09 0)
 			(effects
 				(font
@@ -2078,12 +2102,24 @@
 			)
 		)
 		(pin "1"
-			(uuid "1b4cabdc-3c5d-4d8e-a02e-b9c15d58c67a")
+			(uuid "2ad7a953-f38b-4e25-b7c5-b1106f0316fb")
 		)
 		(instances
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de/0ee8c600-4f6e-4877-94f0-4a0da87ba88d"
 					(reference "#PWR06")
+					(unit 1)
+				)
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de/3fdd0583-4397-41b2-a5bd-03892cb022fe"
+					(reference "#PWR07")
+					(unit 1)
+				)
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de/6d3d8f4c-8a5d-4b0c-94fd-c45e8627b14b"
+					(reference "#PWR?")
+					(unit 1)
+				)
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de/ab7f6423-0c29-4aee-927d-1e85ab5c65be"
+					(reference "#PWR09")
 					(unit 1)
 				)
 			)
@@ -2099,7 +2135,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "adc21bc6-99c9-44a6-8137-94d69c525dd0")
-		(property "Reference" "C"
+		(property "Reference" "C?"
 			(at 130.81 69.8499 0)
 			(effects
 				(font
@@ -2145,15 +2181,27 @@
 			)
 		)
 		(pin "1"
-			(uuid "5b912c99-0ff6-4ab6-be4f-eecf1086d75d")
+			(uuid "63b0181a-e468-4b94-9292-cd65c4e896af")
 		)
 		(pin "2"
-			(uuid "8e595492-8a9d-4de3-955c-5da031b92d66")
+			(uuid "d141c1c3-f2e6-4160-82c9-0b3d6d5dcf36")
 		)
 		(instances
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de/0ee8c600-4f6e-4877-94f0-4a0da87ba88d"
 					(reference "C2")
+					(unit 1)
+				)
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de/3fdd0583-4397-41b2-a5bd-03892cb022fe"
+					(reference "C1")
+					(unit 1)
+				)
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de/6d3d8f4c-8a5d-4b0c-94fd-c45e8627b14b"
+					(reference "C?")
+					(unit 1)
+				)
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de/ab7f6423-0c29-4aee-927d-1e85ab5c65be"
+					(reference "C3")
 					(unit 1)
 				)
 			)
@@ -2169,7 +2217,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c153afe5-4530-4cee-b5dd-1cc39585d077")
-		(property "Reference" "Q"
+		(property "Reference" "Q?"
 			(at 146.05 91.4399 0)
 			(effects
 				(font
@@ -2242,18 +2290,30 @@
 			)
 		)
 		(pin "2"
-			(uuid "ac723e3c-2d98-4fc2-a8bd-82404d06fd44")
+			(uuid "1d0addae-bc76-4514-9dbf-6cfc1ce3bd97")
 		)
 		(pin "3"
-			(uuid "6e42fa73-ffe3-4616-abb9-85b5bdb78a09")
+			(uuid "3b811b45-9df2-4c52-91d0-993134590b99")
 		)
 		(pin "1"
-			(uuid "b7a38387-22ae-4c99-bd97-135232d18315")
+			(uuid "5ef91d06-f8a2-4a81-86a8-2b5c05f7a66a")
 		)
 		(instances
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de/0ee8c600-4f6e-4877-94f0-4a0da87ba88d"
 					(reference "Q2")
+					(unit 1)
+				)
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de/3fdd0583-4397-41b2-a5bd-03892cb022fe"
+					(reference "Q1")
+					(unit 1)
+				)
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de/6d3d8f4c-8a5d-4b0c-94fd-c45e8627b14b"
+					(reference "Q?")
+					(unit 1)
+				)
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de/ab7f6423-0c29-4aee-927d-1e85ab5c65be"
+					(reference "Q3")
 					(unit 1)
 				)
 			)
@@ -2269,7 +2329,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f6c34829-f500-42e3-a065-fcd4fa5b3123")
-		(property "Reference" "R"
+		(property "Reference" "R?"
 			(at 129.54 86.36 90)
 			(effects
 				(font
@@ -2313,15 +2373,27 @@
 			)
 		)
 		(pin "1"
-			(uuid "841febe5-7235-4a6b-bda3-879a99680033")
+			(uuid "df3d681e-2282-4d36-ac22-12427cb50d4e")
 		)
 		(pin "2"
-			(uuid "5c955c0d-052e-4a32-8469-bc3579fb142c")
+			(uuid "a8bc0fd1-aaed-4f02-be6b-0b65dec0a4ae")
 		)
 		(instances
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de/0ee8c600-4f6e-4877-94f0-4a0da87ba88d"
 					(reference "R2")
+					(unit 1)
+				)
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de/3fdd0583-4397-41b2-a5bd-03892cb022fe"
+					(reference "R1")
+					(unit 1)
+				)
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de/6d3d8f4c-8a5d-4b0c-94fd-c45e8627b14b"
+					(reference "R?")
+					(unit 1)
+				)
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de/ab7f6423-0c29-4aee-927d-1e85ab5c65be"
+					(reference "R3")
 					(unit 1)
 				)
 			)
@@ -2337,7 +2409,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "fc1fcbf6-d7b7-4cd0-9684-05c1307ef1d1")
-		(property "Reference" "U"
+		(property "Reference" "U?"
 			(at 110.49 78.74 0)
 			(effects
 				(font
@@ -2383,33 +2455,45 @@
 			)
 		)
 		(pin "8"
-			(uuid "f3debb27-bc91-4233-9d27-74a59df16da9")
+			(uuid "dab07b4d-647b-47c0-b28a-be4e8e9da17e")
 		)
 		(pin "7"
-			(uuid "53b3d76e-f3a4-48a8-a4a8-b63612e458b8")
+			(uuid "40bb818e-85ad-4c00-ba55-84799bfa9489")
 		)
 		(pin "4"
-			(uuid "0d00a017-251a-44a5-b434-639819504ca3")
+			(uuid "062b5980-9083-4216-a1e3-5b61a7279f49")
 		)
 		(pin "1"
-			(uuid "805744ec-306d-47bc-854f-22161a881a69")
+			(uuid "e808d197-c606-4af1-9aa2-47d81bd981cd")
 		)
 		(pin "6"
-			(uuid "2d9a1d8c-50b7-4695-9866-79a4e4b62d59")
+			(uuid "72e0d69a-173b-4432-88bf-9021ea25f63a")
 		)
 		(pin "2"
-			(uuid "0ca0fb4e-b161-4901-a3a7-c94b17e6e424")
+			(uuid "adf73d5d-f0c9-4057-a9ee-9dc325c74eee")
 		)
 		(pin "3"
-			(uuid "aa0bfe45-fa1c-4844-ada8-8b367c815808")
+			(uuid "5d5be115-a77f-4f23-ade3-d6f9dc2ff0d3")
 		)
 		(pin "5"
-			(uuid "cda4280b-0240-418e-80c6-b42a26a0bb40")
+			(uuid "f53084c3-1b29-4994-a0dd-dcfb9c5c5685")
 		)
 		(instances
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de/0ee8c600-4f6e-4877-94f0-4a0da87ba88d"
 					(reference "U2")
+					(unit 1)
+				)
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de/3fdd0583-4397-41b2-a5bd-03892cb022fe"
+					(reference "U1")
+					(unit 1)
+				)
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de/6d3d8f4c-8a5d-4b0c-94fd-c45e8627b14b"
+					(reference "U?")
+					(unit 1)
+				)
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de/ab7f6423-0c29-4aee-927d-1e85ab5c65be"
+					(reference "U3")
 					(unit 1)
 				)
 			)
