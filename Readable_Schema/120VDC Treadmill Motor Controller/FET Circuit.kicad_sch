@@ -2235,7 +2235,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_TO_SOT_THT:TO-220-3_Vertical"
 			(at 144.78 90.17 0)
 			(effects
 				(font
