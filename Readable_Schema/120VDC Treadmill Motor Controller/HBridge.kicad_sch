@@ -168,6 +168,212 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Converter_DCDC:MEE1S0303SC"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "PS"
+				(at -7.62 6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "MEE1S0303SC"
+				(at 1.27 6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "Converter_DCDC:Converter_DCDC_Murata_MEE1SxxxxSC_THT"
+				(at -26.67 -6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://power.murata.com/pub/data/power/ncl/kdc_mee1.pdf"
+				(at 26.67 -7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Description" "1W, 1000 VDC isolated DC/DC converter, 3V3 input, 3V3 output, SIP"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "murata DC/DC isolated converter"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Converter*DCDC*Murata*MEE1SxxxxSC*THT*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "MEE1S0303SC_0_0"
+				(pin power_in line
+					(at -10.16 2.54 0)
+					(length 2.54)
+					(name "+Vin"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -10.16 -2.54 0)
+					(length 2.54)
+					(name "-Vin"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at 10.16 2.54 180)
+					(length 2.54)
+					(name "+Vout"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at 10.16 -2.54 180)
+					(length 2.54)
+					(name "-Vout"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "MEE1S0303SC_0_1"
+				(rectangle
+					(start -7.62 5.08)
+					(end 7.62 -5.08)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 5.08) (xy 0 3.81)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -2.54) (xy 0 -3.81)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:R"
 			(pin_numbers
 				(hide yes)
@@ -1179,6 +1385,28 @@
 			(embedded_fonts no)
 		)
 	)
+	(rectangle
+		(start 34.29 24.13)
+		(end 80.01 48.26)
+		(stroke
+			(width 0)
+			(type dot)
+		)
+		(fill
+			(type none)
+		)
+		(uuid d8bbd186-e3db-471c-99c6-a80390032221)
+	)
+	(text "Low side fets share a power supply"
+		(exclude_from_sim no)
+		(at 52.832 26.162 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "2aec37f8-0a3d-44d6-979b-c8e7062b576f")
+	)
 	(junction
 		(at 100.33 132.08)
 		(diameter 0)
@@ -1223,16 +1451,6 @@
 	)
 	(wire
 		(pts
-			(xy 163.83 142.24) (xy 163.83 134.62)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "083bcade-0cae-47ab-80c8-708fc4575428")
-	)
-	(wire
-		(pts
 			(xy 120.65 96.52) (xy 140.97 96.52)
 		)
 		(stroke
@@ -1273,7 +1491,7 @@
 	)
 	(wire
 		(pts
-			(xy 100.33 132.08) (xy 106.68 132.08)
+			(xy 100.33 132.08) (xy 109.22 132.08)
 		)
 		(stroke
 			(width 0)
@@ -1313,6 +1531,16 @@
 	)
 	(wire
 		(pts
+			(xy 43.18 33.02) (xy 45.72 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2fb33e49-ceed-42f8-917c-73ad4e0afcf8")
+	)
+	(wire
+		(pts
 			(xy 118.11 96.52) (xy 120.65 96.52)
 		)
 		(stroke
@@ -1323,16 +1551,6 @@
 	)
 	(wire
 		(pts
-			(xy 175.26 132.08) (xy 176.53 132.08)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "36f20535-4db0-4f8d-8667-62de9a170edf")
-	)
-	(wire
-		(pts
 			(xy 140.97 58.42) (xy 161.29 58.42)
 		)
 		(stroke
@@ -1340,6 +1558,26 @@
 			(type default)
 		)
 		(uuid "4715ed20-f156-4072-9aac-8a719c6363c9")
+	)
+	(wire
+		(pts
+			(xy 118.11 134.62) (xy 118.11 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4ce05eae-1378-4c83-a32b-c9653269e905")
+	)
+	(wire
+		(pts
+			(xy 43.18 38.1) (xy 45.72 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4e91da0a-2d46-42f5-806c-7a8eb63d324d")
 	)
 	(wire
 		(pts
@@ -1363,7 +1601,7 @@
 	)
 	(wire
 		(pts
-			(xy 161.29 96.52) (xy 161.29 124.46)
+			(xy 161.29 96.52) (xy 161.29 123.19)
 		)
 		(stroke
 			(width 0)
@@ -1383,6 +1621,16 @@
 	)
 	(wire
 		(pts
+			(xy 172.72 132.08) (xy 176.53 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6b0cce69-891a-43d0-984f-9c760a96b1fc")
+	)
+	(wire
+		(pts
 			(xy 163.83 73.66) (xy 163.83 96.52)
 		)
 		(stroke
@@ -1390,6 +1638,16 @@
 			(type default)
 		)
 		(uuid "6ef44a8f-ad5c-4565-895a-1a24f17c3d14")
+	)
+	(wire
+		(pts
+			(xy 113.03 115.57) (xy 113.03 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "74e09b97-6866-4a3b-9483-5fdd02e30169")
 	)
 	(wire
 		(pts
@@ -1523,6 +1781,16 @@
 	)
 	(wire
 		(pts
+			(xy 168.91 115.57) (xy 168.91 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9f0502c8-8532-46fd-a5eb-344bbe34867d")
+	)
+	(wire
+		(pts
 			(xy 140.97 50.8) (xy 143.51 50.8)
 		)
 		(stroke
@@ -1540,6 +1808,16 @@
 			(type default)
 		)
 		(uuid "a4493170-5519-44dd-b1e3-975b7b340f08")
+	)
+	(wire
+		(pts
+			(xy 68.58 33.02) (xy 66.04 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a71ec4a3-b574-4cb9-b0c2-b2b1f0286031")
 	)
 	(wire
 		(pts
@@ -1563,7 +1841,7 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 96.52) (xy 120.65 124.46)
+			(xy 120.65 96.52) (xy 120.65 123.19)
 		)
 		(stroke
 			(width 0)
@@ -1573,13 +1851,13 @@
 	)
 	(wire
 		(pts
-			(xy 118.11 134.62) (xy 118.11 142.24)
+			(xy 163.83 134.62) (xy 163.83 142.24)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "c3cc3c8f-6950-44b4-a620-d2670011c354")
+		(uuid "c3d2f86b-0752-43d3-a467-ae62a3cd6d69")
 	)
 	(wire
 		(pts
@@ -1590,6 +1868,16 @@
 			(type default)
 		)
 		(uuid "c9d16d62-a23c-425b-82dc-915887a108fc")
+	)
+	(wire
+		(pts
+			(xy 66.04 38.1) (xy 68.58 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ca118d45-c8b5-49b0-b00f-b4682d619d7a")
 	)
 	(wire
 		(pts
@@ -1681,6 +1969,28 @@
 		)
 		(uuid "ef1710f5-5964-41db-801a-53988e6543b1")
 	)
+	(global_label "5v 5w"
+		(shape input)
+		(at 43.18 38.1 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "14d8ae58-2d9d-48b9-91df-57eef97b11df")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 34.5101 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "3v3 MCU"
 		(shape input)
 		(at 87.63 128.27 180)
@@ -1769,6 +2079,17 @@
 		)
 		(uuid "6e6def95-18ad-4c12-a9cb-8f3e4d2002d9")
 	)
+	(hierarchical_label "ls_15v"
+		(shape input)
+		(at 168.91 115.57 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "9653c13e-ff98-4c71-a7a2-d67c9cae9438")
+	)
 	(hierarchical_label "dir"
 		(shape input)
 		(at 82.55 138.43 180)
@@ -1779,6 +2100,17 @@
 			(justify right)
 		)
 		(uuid "ad1076e5-9b7c-4947-8a46-e98e9a2edcc2")
+	)
+	(hierarchical_label "ls_15v"
+		(shape input)
+		(at 113.03 115.57 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "adffb559-d4e2-4efe-b363-ae5163f446fa")
 	)
 	(hierarchical_label "r_brake_+"
 		(shape output)
@@ -1823,6 +2155,17 @@
 			(justify left)
 		)
 		(uuid "cf819bd7-0eae-4bb2-875b-a68b0d706279")
+	)
+	(hierarchical_label "ls_15v"
+		(shape output)
+		(at 68.58 38.1 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "db4231a7-3cdd-40d2-b13b-26c1e3e9dfe9")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -1889,6 +2232,73 @@
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
 					(reference "R12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 43.18 33.02 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "20a37fba-02f7-4024-a029-caddc201517f")
+		(property "Reference" "#PWR014"
+			(at 36.83 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 39.37 33.0199 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 43.18 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 43.18 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 43.18 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "433b7f43-1b68-456b-9117-2be8d0ea5357")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
+					(reference "#PWR014")
 					(unit 1)
 				)
 			)
@@ -2250,28 +2660,104 @@
 			)
 		)
 		(pin "2"
-			(uuid "a1a203d9-8ebf-42bb-a430-c97a1654d882")
+			(uuid "a1a203d9-8ebf-42bb-a430-c97a1654d883")
 		)
 		(pin "4"
-			(uuid "938f10e5-b39e-4f22-ad47-b83f35beddbe")
+			(uuid "938f10e5-b39e-4f22-ad47-b83f35beddbf")
 		)
 		(pin "5"
-			(uuid "779cad9e-e0c4-4d4c-8dd8-c617d4ab85b6")
+			(uuid "779cad9e-e0c4-4d4c-8dd8-c617d4ab85b7")
 		)
 		(pin "3"
-			(uuid "c3e665b1-104a-4daf-aade-bfbcde0f417b")
+			(uuid "c3e665b1-104a-4daf-aade-bfbcde0f417c")
 		)
 		(pin "6"
-			(uuid "a0716473-ed9b-47ac-b1dc-c57141761bf5")
+			(uuid "a0716473-ed9b-47ac-b1dc-c57141761bf6")
 		)
 		(pin "1"
-			(uuid "007d48fb-f31c-43cb-b028-2ca099f763e3")
+			(uuid "007d48fb-f31c-43cb-b028-2ca099f763e4")
 		)
 		(instances
 			(project ""
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
 					(reference "Q8")
 					(unit 2)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Converter_DCDC:MEE1S0303SC")
+		(at 55.88 35.56 0)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5b36ec31-1b13-491a-a98b-195c12c1a901")
+		(property "Reference" "PS4"
+			(at 55.88 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SRS-0515-2"
+			(at 55.88 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Footprints_TMC:SRS-0515 DIP-16_W7.62mm"
+			(at 29.21 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://diwellshop.cafe24.com/web/DATASHEET/01_subtitle/4_POWER/2_DC-DC/SRS-0515-2/SR.pdf"
+			(at 82.55 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "isolated 1W 5V to 15V DC to DC Converter"
+			(at 55.88 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "57e90dff-a893-485f-83e8-b70bedb2672b")
+		)
+		(pin "4"
+			(uuid "e00c8bc0-be69-4497-ba71-01ff55e011ee")
+		)
+		(pin "1"
+			(uuid "e703e97c-5896-4407-8f6e-fa245a1671dd")
+		)
+		(pin "2"
+			(uuid "b1b82830-b7bc-4444-bb1b-d4a3c45be099")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
+					(reference "PS4")
+					(unit 1)
 				)
 			)
 		)
@@ -2749,6 +3235,73 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 68.58 33.02 90)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d78053d1-3619-4a2f-8c73-310f75268d96")
+		(property "Reference" "#PWR016"
+			(at 74.93 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 72.39 33.0199 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 68.58 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 68.58 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 68.58 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "64a492da-d619-4330-957e-68011224e9e3")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
+					(reference "#PWR016")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 180.34 132.08 90)
 		(unit 1)
@@ -2870,22 +3423,22 @@
 			)
 		)
 		(pin "3"
-			(uuid "52d82676-0412-4def-8366-2fd58f434211")
+			(uuid "52d82676-0412-4def-8366-2fd58f434212")
 		)
 		(pin "2"
-			(uuid "0c5d8746-f57f-434b-af2e-2d3a7538f328")
+			(uuid "0c5d8746-f57f-434b-af2e-2d3a7538f329")
 		)
 		(pin "6"
-			(uuid "fcd1f8bf-9ac2-4097-b118-e08763fcfa99")
+			(uuid "fcd1f8bf-9ac2-4097-b118-e08763fcfa9a")
 		)
 		(pin "1"
-			(uuid "5246ee56-ebc5-4fe5-81e7-294d08c66e9f")
+			(uuid "5246ee56-ebc5-4fe5-81e7-294d08c66ea0")
 		)
 		(pin "5"
-			(uuid "4c307a71-4ae9-42d4-8d98-23a12fbc6308")
+			(uuid "4c307a71-4ae9-42d4-8d98-23a12fbc6309")
 		)
 		(pin "4"
-			(uuid "e2c08bd0-22ad-4084-a49a-3d48b8818799")
+			(uuid "e2c08bd0-22ad-4084-a49a-3d48b881879a")
 		)
 		(instances
 			(project ""
@@ -2941,7 +3494,7 @@
 				(justify right)
 			)
 		)
-		(pin "Fet_S" input
+		(pin "Fet_S" output
 			(at 163.83 73.66 270)
 			(uuid "6dfe5bc8-86de-4729-9d76-719755dd9732")
 			(effects
@@ -2965,78 +3518,6 @@
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
 					(page "7")
-				)
-			)
-		)
-	)
-	(sheet
-		(at 106.68 124.46)
-		(size 15.24 10.16)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 0 0 0 0.0000)
-		)
-		(uuid "3fdd0583-4397-41b2-a5bd-03892cb022fe")
-		(property "Sheetname" "Fet Circuit2"
-			(at 106.68 123.7484 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "FET Circuit.kicad_sch"
-			(at 106.68 135.2046 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(pin "Fet_D" input
-			(at 120.65 124.46 90)
-			(uuid "b7645a92-07ba-4f5d-bc90-75b1c1781689")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(pin "Fet_S" input
-			(at 118.11 134.62 270)
-			(uuid "738f5619-9926-4495-a400-75486dd74f55")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "v_pwm" input
-			(at 106.68 132.08 180)
-			(uuid "15b9346e-6f6a-48fe-8ff7-0fb8d9a29e54")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(instances
-			(project "120VDC Treadmill Motor Controller"
-				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
-					(page "8")
 				)
 			)
 		)
@@ -3085,7 +3566,7 @@
 				(justify right)
 			)
 		)
-		(pin "Fet_S" input
+		(pin "Fet_S" output
 			(at 118.11 73.66 270)
 			(uuid "cb325b37-d99e-49cc-a3bc-7608e68e9823")
 			(effects
@@ -3114,8 +3595,8 @@
 		)
 	)
 	(sheet
-		(at 160.02 124.46)
-		(size 15.24 10.16)
+		(at 160.02 123.19)
+		(size 12.7 11.43)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -3128,9 +3609,9 @@
 		(fill
 			(color 0 0 0 0.0000)
 		)
-		(uuid "ab7f6423-0c29-4aee-927d-1e85ab5c65be")
-		(property "Sheetname" "Fet Circuit3"
-			(at 160.02 123.7484 0)
+		(uuid "c56e55f9-2f01-4a9a-a881-dd8c5892be8d")
+		(property "Sheetname" "LS FET"
+			(at 160.02 122.4784 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3138,7 +3619,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Sheetfile" "FET Circuit.kicad_sch"
+		(property "Sheetfile" "LS FET.kicad_sch"
 			(at 160.02 135.2046 0)
 			(effects
 				(font
@@ -3148,8 +3629,8 @@
 			)
 		)
 		(pin "Fet_D" input
-			(at 161.29 124.46 90)
-			(uuid "f24e7346-fbfd-4c4b-8f7e-54880672e05e")
+			(at 161.29 123.19 90)
+			(uuid "0863d7ff-7fb4-4026-9890-e39a6000fc3d")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3157,9 +3638,9 @@
 				(justify right)
 			)
 		)
-		(pin "Fet_S" input
+		(pin "Fet_S" output
 			(at 163.83 134.62 270)
-			(uuid "b40983dc-be62-4818-ad17-f0e62388a6f8")
+			(uuid "8ed67382-004e-4ad6-ae71-cf874a2512eb")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3168,8 +3649,18 @@
 			)
 		)
 		(pin "v_pwm" input
-			(at 175.26 132.08 0)
-			(uuid "b90a2e41-a143-49ee-babd-0a5af6ddbf58")
+			(at 172.72 132.08 0)
+			(uuid "e88dca23-6794-4193-a59d-e1816ad1108b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "ps_in" input
+			(at 168.91 123.19 90)
+			(uuid "cf3c1e9a-fe6d-46be-a37b-5eac3946fa69")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3180,7 +3671,89 @@
 		(instances
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
-					(page "9")
+					(page "10")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 109.22 123.19)
+		(size 12.7 11.43)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "c8d3f65d-c1e4-4ff7-87e3-3541d9f7f8fc")
+		(property "Sheetname" "LS FET1"
+			(at 109.22 122.4784 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "LS FET.kicad_sch"
+			(at 109.22 135.2046 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "Fet_D" input
+			(at 120.65 123.19 90)
+			(uuid "1c140c06-30eb-4d51-ac15-f7a16fc82a46")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "Fet_S" output
+			(at 118.11 134.62 270)
+			(uuid "528091c4-c55d-4005-9e79-e95715008cb2")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "v_pwm" input
+			(at 109.22 132.08 180)
+			(uuid "8023ea45-2845-4e75-941e-93523b2dcba4")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "ps_in" input
+			(at 113.03 123.19 90)
+			(uuid "18bf3808-787c-4a2e-95e9-04ba950b1bce")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
+					(page "8")
 				)
 			)
 		)
