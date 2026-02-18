@@ -168,212 +168,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Converter_DCDC:MEE1S0303SC"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "PS"
-				(at -7.62 6.35 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "MEE1S0303SC"
-				(at 1.27 6.35 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" "Converter_DCDC:Converter_DCDC_Murata_MEE1SxxxxSC_THT"
-				(at -26.67 -6.35 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "https://power.murata.com/pub/data/power/ncl/kdc_mee1.pdf"
-				(at 26.67 -7.62 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Description" "1W, 1000 VDC isolated DC/DC converter, 3V3 input, 3V3 output, SIP"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "murata DC/DC isolated converter"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "Converter*DCDC*Murata*MEE1SxxxxSC*THT*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "MEE1S0303SC_0_0"
-				(pin power_in line
-					(at -10.16 2.54 0)
-					(length 2.54)
-					(name "+Vin"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -10.16 -2.54 0)
-					(length 2.54)
-					(name "-Vin"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_out line
-					(at 10.16 2.54 180)
-					(length 2.54)
-					(name "+Vout"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_out line
-					(at 10.16 -2.54 180)
-					(length 2.54)
-					(name "-Vout"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(symbol "MEE1S0303SC_0_1"
-				(rectangle
-					(start -7.62 5.08)
-					(end 7.62 -5.08)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 5.08) (xy 0 3.81)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 2.54) (xy 0 1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 0) (xy 0 -1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 -2.54) (xy 0 -3.81)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Device:R"
 			(pin_numbers
 				(hide yes)
@@ -1182,6 +976,296 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Treadmill_Comp:SRS-0515-2"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "PS"
+				(at -7.62 6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "SRS-0515-2"
+				(at 1.27 6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "Footprints_TMC:SRS-0515 DIP-16_W7.62mm"
+				(at -26.67 -6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.meanwellusa.com/upload/pdf/SRS/SRS-spec.pdf"
+				(at 26.67 -7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Description" "15V isolated output"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "murata DC/DC isolated converter"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Converter*DCDC*Murata*MEE1SxxxxSC*THT*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "SRS-0515-2_0_1"
+				(rectangle
+					(start -7.62 5.08)
+					(end 7.62 -7.62)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 5.08) (xy 0 3.81)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -2.54) (xy 0 -3.81)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -5.08) (xy 0 -6.35)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "SRS-0515-2_1_0"
+				(pin power_in line
+					(at -10.16 2.54 0)
+					(length 2.54)
+					(name "+Vin"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -10.16 0 0)
+					(length 2.54)
+					(name "+Vin"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "16"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -10.16 -3.81 0)
+					(length 2.54)
+					(name "-Vin"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -10.16 -6.35 0)
+					(length 2.54)
+					(name "-Vin"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at 10.16 2.54 180)
+					(length 2.54)
+					(name "+Vout"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at 10.16 0 180)
+					(length 2.54)
+					(name "+Vout"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at 10.16 -3.81 180)
+					(length 2.54)
+					(name "-Vout"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at 10.16 -6.35 180)
+					(length 2.54)
+					(name "-Vout"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "power:GND"
 			(power)
 			(pin_numbers
@@ -1387,7 +1471,7 @@
 	)
 	(rectangle
 		(start 34.29 24.13)
-		(end 80.01 48.26)
+		(end 77.47 49.53)
 		(stroke
 			(width 0)
 			(type dot)
@@ -1448,6 +1532,32 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "eeb6c139-ca3f-4537-a7ac-58f24bf67a65")
+	)
+	(no_connect
+		(at 66.04 35.56)
+		(uuid "15b42df3-c1cb-4649-86e5-52e15f0af5b0")
+	)
+	(no_connect
+		(at 66.04 39.37)
+		(uuid "171bc837-ad41-4073-a247-ed65d51c122e")
+	)
+	(no_connect
+		(at 45.72 39.37)
+		(uuid "2656ed73-4e69-4e3f-80a6-9f2ee6d20bf7")
+	)
+	(no_connect
+		(at 45.72 35.56)
+		(uuid "72b8c48d-debd-40d1-b093-8a91d36185ee")
+	)
+	(wire
+		(pts
+			(xy 43.18 41.91) (xy 45.72 41.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0d053051-f6a5-4e3d-89a4-5101736a423a")
 	)
 	(wire
 		(pts
@@ -1521,6 +1631,16 @@
 	)
 	(wire
 		(pts
+			(xy 66.04 41.91) (xy 68.58 41.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "25b3ce0f-04e1-4bb5-8d67-6b083987f774")
+	)
+	(wire
+		(pts
 			(xy 184.15 82.55) (xy 184.15 83.82)
 		)
 		(stroke
@@ -1538,16 +1658,6 @@
 			(type default)
 		)
 		(uuid "2d9b92cd-587f-4e7b-959b-22ee28a76f87")
-	)
-	(wire
-		(pts
-			(xy 43.18 33.02) (xy 45.72 33.02)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2fb33e49-ceed-42f8-917c-73ad4e0afcf8")
 	)
 	(wire
 		(pts
@@ -1591,16 +1701,6 @@
 	)
 	(wire
 		(pts
-			(xy 43.18 38.1) (xy 45.72 38.1)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4e91da0a-2d46-42f5-806c-7a8eb63d324d")
-	)
-	(wire
-		(pts
 			(xy 91.44 81.28) (xy 91.44 82.55)
 		)
 		(stroke
@@ -1638,6 +1738,16 @@
 			(type default)
 		)
 		(uuid "5854b258-037b-43ac-ba19-7ee21bae278f")
+	)
+	(wire
+		(pts
+			(xy 66.04 33.02) (xy 68.58 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "68a9c9a9-d4a2-4c70-bb84-d159d42f2f93")
 	)
 	(wire
 		(pts
@@ -1811,16 +1921,6 @@
 	)
 	(wire
 		(pts
-			(xy 68.58 33.02) (xy 66.04 33.02)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a71ec4a3-b574-4cb9-b0c2-b2b1f0286031")
-	)
-	(wire
-		(pts
 			(xy 118.11 142.24) (xy 140.97 142.24)
 		)
 		(stroke
@@ -1838,6 +1938,16 @@
 			(type default)
 		)
 		(uuid "b2b8586b-dee9-454b-924a-c9309d1c5d4e")
+	)
+	(wire
+		(pts
+			(xy 43.18 33.02) (xy 45.72 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ba2a14f1-5949-4ee2-86de-bdd6a8d7be9a")
 	)
 	(wire
 		(pts
@@ -1868,16 +1978,6 @@
 			(type default)
 		)
 		(uuid "c9d16d62-a23c-425b-82dc-915887a108fc")
-	)
-	(wire
-		(pts
-			(xy 66.04 38.1) (xy 68.58 38.1)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ca118d45-c8b5-49b0-b00f-b4682d619d7a")
 	)
 	(wire
 		(pts
@@ -1971,7 +2071,7 @@
 	)
 	(global_label "5v 5w"
 		(shape input)
-		(at 43.18 38.1 180)
+		(at 43.18 33.02 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1981,7 +2081,7 @@
 		)
 		(uuid "14d8ae58-2d9d-48b9-91df-57eef97b11df")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 34.5101 38.1 0)
+			(at 34.5101 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2158,7 +2258,7 @@
 	)
 	(hierarchical_label "ls_15v"
 		(shape output)
-		(at 68.58 38.1 0)
+		(at 68.58 33.02 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2239,7 +2339,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 43.18 33.02 270)
+		(at 43.18 41.91 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2248,7 +2348,7 @@
 		(fields_autoplaced yes)
 		(uuid "20a37fba-02f7-4024-a029-caddc201517f")
 		(property "Reference" "#PWR014"
-			(at 36.83 33.02 0)
+			(at 36.83 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2257,7 +2357,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 39.37 33.0199 90)
+			(at 39.37 41.9099 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2266,7 +2366,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 43.18 33.02 0)
+			(at 43.18 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2275,7 +2375,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 43.18 33.02 0)
+			(at 43.18 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2284,7 +2384,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 43.18 33.02 0)
+			(at 43.18 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2523,6 +2623,93 @@
 		)
 	)
 	(symbol
+		(lib_id "Treadmill_Comp:SRS-0515-2")
+		(at 55.88 35.56 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "41623277-f28c-46aa-adeb-f7458a0291f6")
+		(property "Reference" "PS1"
+			(at 55.88 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SRS-0515-2"
+			(at 55.88 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Footprints_TMC:SRS-0515 DIP-16_W7.62mm"
+			(at 29.21 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.meanwellusa.com/upload/pdf/SRS/SRS-spec.pdf"
+			(at 82.55 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "15V isolated output"
+			(at 55.88 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "9"
+			(uuid "42aff45b-7228-4b9c-9d0a-5c93f2179ee9")
+		)
+		(pin "1"
+			(uuid "4dd29e51-e761-424a-97d3-4b88644c8eb6")
+		)
+		(pin "16"
+			(uuid "abe35354-a9aa-4443-a763-2d1ff5c88aec")
+		)
+		(pin "8"
+			(uuid "5ca18d5d-5865-462c-9ede-50d3ce447711")
+		)
+		(pin "7"
+			(uuid "b53e4f00-4559-4c2d-b266-eddbfa96cdb3")
+		)
+		(pin "10"
+			(uuid "cc2deaea-f4e9-4cc8-a119-b4eca5777555")
+		)
+		(pin "6"
+			(uuid "92d11698-3a43-467f-bae4-e2f6a71ca4e7")
+		)
+		(pin "11"
+			(uuid "419b94a1-69cd-461f-be76-6781c4482047")
+		)
+		(instances
+			(project ""
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
+					(reference "PS1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Transistor_BJT:MUN5330DW1")
 		(at 90.17 87.63 0)
 		(unit 1)
@@ -2682,82 +2869,6 @@
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
 					(reference "Q8")
 					(unit 2)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Converter_DCDC:MEE1S0303SC")
-		(at 55.88 35.56 0)
-		(mirror x)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "5b36ec31-1b13-491a-a98b-195c12c1a901")
-		(property "Reference" "PS4"
-			(at 55.88 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "SRS-0515-2"
-			(at 55.88 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Footprints_TMC:SRS-0515 DIP-16_W7.62mm"
-			(at 29.21 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://diwellshop.cafe24.com/web/DATASHEET/01_subtitle/4_POWER/2_DC-DC/SRS-0515-2/SR.pdf"
-			(at 82.55 27.94 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" "isolated 1W 5V to 15V DC to DC Converter"
-			(at 55.88 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "3"
-			(uuid "57e90dff-a893-485f-83e8-b70bedb2672b")
-		)
-		(pin "4"
-			(uuid "e00c8bc0-be69-4497-ba71-01ff55e011ee")
-		)
-		(pin "1"
-			(uuid "e703e97c-5896-4407-8f6e-fa245a1671dd")
-		)
-		(pin "2"
-			(uuid "b1b82830-b7bc-4444-bb1b-d4a3c45be099")
-		)
-		(instances
-			(project "120VDC Treadmill Motor Controller"
-				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
-					(reference "PS4")
-					(unit 1)
 				)
 			)
 		)
@@ -3236,7 +3347,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 68.58 33.02 90)
+		(at 68.58 41.91 90)
 		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
@@ -3245,7 +3356,7 @@
 		(dnp no)
 		(uuid "d78053d1-3619-4a2f-8c73-310f75268d96")
 		(property "Reference" "#PWR016"
-			(at 74.93 33.02 0)
+			(at 74.93 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3254,7 +3365,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 72.39 33.0199 90)
+			(at 72.39 41.9099 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3263,7 +3374,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 68.58 33.02 0)
+			(at 68.58 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3272,7 +3383,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 68.58 33.02 0)
+			(at 68.58 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3281,7 +3392,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 68.58 33.02 0)
+			(at 68.58 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
