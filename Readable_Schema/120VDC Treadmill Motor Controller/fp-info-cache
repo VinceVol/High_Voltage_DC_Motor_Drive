@@ -1,4 +1,4 @@
-27103413313252801
+27114041606316033
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -61992,6 +61992,20 @@ emi filter
 5
 5
 Footprints_TMC
+SC-88A-5_1P35X2P2_ONS
+
+NC7SZ04P5X 
+0
+5
+5
+Footprints_TMC
+SOIC-16_ONS-L
+
+NLV14044BDR2G 
+0
+16
+16
+Footprints_TMC
 SRS-0515 DIP-16_W7.62mm
 16-lead though-hole mounted DIP package, row spacing 7.62mm (300 mils)
 THT DIP DIL PDIP 2.54mm 7.62mm 300mil
@@ -106560,6 +106574,34 @@ igbt diode module
 0
 25
 25
+Treadmill_Feet
+DCK5
+
+SN74LVC1G08DCKR 
+0
+5
+5
+Treadmill_Feet
+RAC05E-KT_RCP
+
+RAC05E-05SKT 
+0
+4
+4
+Treadmill_Feet
+SC-88A-5_1P35X2P2_ONS
+
+NC7SZ04P5X 
+0
+5
+5
+Treadmill_Feet
+SOIC-16_ONS
+
+NLV14044BDR2G 
+0
+16
+16
 Treadmill_Feet
 SOIC10_DVG_TEX
 

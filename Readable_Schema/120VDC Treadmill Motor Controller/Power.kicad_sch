@@ -168,309 +168,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Converter_ACDC:RAC05-24SK"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "PS"
-				(at 0 6.35 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "RAC05-24SK"
-				(at 0 -6.35 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" "Converter_ACDC:Converter_ACDC_RECOM_RAC05-xxSK_THT"
-				(at 0 -8.89 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "https://www.recom-power.com/pdf/Powerline-AC-DC/RAC05-K.pdf"
-				(at -2.54 7.62 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "5W Single Output EMC Class B 24V 210mA"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "ac dc power supply"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "Converter*ACDC*RECOM*RAC05*SK*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "RAC05-24SK_1_1"
-				(rectangle
-					(start -7.62 5.08)
-					(end 7.62 -5.08)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(polyline
-					(pts
-						(xy -5.334 -0.635) (xy -2.794 -0.635)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start -4.064 0.635)
-					(mid -4.699 0.2495)
-					(end -5.334 0.635)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start -4.064 0.635)
-					(mid -3.429 1.0072)
-					(end -2.794 0.635)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 5.08) (xy 0 3.81)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 2.54) (xy 0 1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 0) (xy 0 -1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 -2.54) (xy 0 -3.81)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.794 0.635) (xy 3.302 0.635)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.794 -0.635) (xy 5.334 -0.635)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 3.81 0.635) (xy 4.318 0.635)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 4.826 0.635) (xy 5.334 0.635)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin power_in line
-					(at -10.16 2.54 0)
-					(length 2.54)
-					(name "AC(L)"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -10.16 -2.54 0)
-					(length 2.54)
-					(name "AC(N)"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin no_connect line
-					(at 7.62 0 180)
-					(length 2.54)
-					(hide yes)
-					(name "NC"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_out line
-					(at 10.16 2.54 180)
-					(length 2.54)
-					(name "+Vout"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_out line
-					(at 10.16 -2.54 180)
-					(length 2.54)
-					(name "-Vout"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Diode_Bridge:KBPC5010W"
 			(pin_names
 				(offset 0)
@@ -725,6 +422,208 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Treadmill_Comp:RAC05E-05SKT"
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at 25.4 10.16 0)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
+			)
+			(property "Value" "RAC05E-05SKT"
+				(at 25.4 7.62 0)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
+			)
+			(property "Footprint" "RAC05E-KT_RCP"
+				(at 8.89 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "RAC05E-05SKT"
+				(at 8.89 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "RAC05E-05SKT"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "RAC05E-KT_RCP"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "RAC05E-05SKT_0_1"
+				(polyline
+					(pts
+						(xy 16.51 5.08) (xy 16.51 -7.62)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 16.51 -7.62) (xy 34.29 -7.62)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 34.29 5.08) (xy 16.51 5.08)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 34.29 -7.62) (xy 34.29 5.08)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin power_in line
+					(at 8.89 0 0)
+					(length 7.62)
+					(name "VAC_IN(N)"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 8.89 -2.54 0)
+					(length 7.62)
+					(name "VAC_IN(L)"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 41.91 0 180)
+					(length 7.62)
+					(name "-VOUT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 41.91 -2.54 180)
+					(length 7.62)
+					(name "+VOUT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "power:GND"
 			(power)
 			(pin_numbers
@@ -964,7 +863,7 @@
 	)
 	(wire
 		(pts
-			(xy 152.4 110.49) (xy 152.4 107.95)
+			(xy 165.1 109.22) (xy 165.1 106.68)
 		)
 		(stroke
 			(width 0)
@@ -974,7 +873,7 @@
 	)
 	(wire
 		(pts
-			(xy 148.59 107.95) (xy 152.4 107.95)
+			(xy 161.29 106.68) (xy 165.1 106.68)
 		)
 		(stroke
 			(width 0)
@@ -994,7 +893,7 @@
 	)
 	(wire
 		(pts
-			(xy 124.46 82.55) (xy 124.46 107.95)
+			(xy 124.46 82.55) (xy 124.46 106.68)
 		)
 		(stroke
 			(width 0)
@@ -1004,7 +903,7 @@
 	)
 	(wire
 		(pts
-			(xy 128.27 107.95) (xy 124.46 107.95)
+			(xy 128.27 106.68) (xy 124.46 106.68)
 		)
 		(stroke
 			(width 0)
@@ -1024,7 +923,7 @@
 	)
 	(wire
 		(pts
-			(xy 128.27 102.87) (xy 127 102.87)
+			(xy 128.27 104.14) (xy 127 104.14)
 		)
 		(stroke
 			(width 0)
@@ -1084,7 +983,7 @@
 	)
 	(wire
 		(pts
-			(xy 148.59 102.87) (xy 152.4 102.87)
+			(xy 161.29 104.14) (xy 165.1 104.14)
 		)
 		(stroke
 			(width 0)
@@ -1114,7 +1013,7 @@
 	)
 	(wire
 		(pts
-			(xy 127 80.01) (xy 127 102.87)
+			(xy 127 80.01) (xy 127 104.14)
 		)
 		(stroke
 			(width 0)
@@ -1156,7 +1055,7 @@
 	)
 	(global_label "5v 5w"
 		(shape output)
-		(at 152.4 102.87 0)
+		(at 165.1 104.14 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1166,7 +1065,7 @@
 		)
 		(uuid "521988d0-e7c2-4671-8390-f71e9b5e7af3")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 161.0699 102.87 0)
+			(at 173.7699 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1178,7 +1077,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 152.4 110.49 0)
+		(at 165.1 109.22 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1187,7 +1086,7 @@
 		(fields_autoplaced yes)
 		(uuid "20a67f2c-6a3e-470d-8e65-021df165d876")
 		(property "Reference" "#PWR01"
-			(at 152.4 116.84 0)
+			(at 165.1 115.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1196,7 +1095,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 152.4 115.57 0)
+			(at 165.1 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1204,7 +1103,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 152.4 110.49 0)
+			(at 165.1 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1213,7 +1112,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 152.4 110.49 0)
+			(at 165.1 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1222,7 +1121,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 152.4 110.49 0)
+			(at 165.1 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1237,6 +1136,82 @@
 			(project ""
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0"
 					(reference "#PWR01")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Treadmill_Comp:RAC05E-05SKT")
+		(at 119.38 106.68 0)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4e0592f7-62bf-45f4-b05c-166fc5cc94b7")
+		(property "Reference" "U8"
+			(at 144.78 116.84 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "RAC05E-05SKT"
+			(at 144.78 114.3 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "Treadmill_Feet:RAC05E-KT_RCP"
+			(at 128.27 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://recom-power.com/pdf/Powerline_AC-DC/RAC05E-KT.pdf"
+			(at 128.27 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 119.38 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "9"
+			(uuid "0c1f84a1-6bf5-4d81-aa20-889fd5180451")
+		)
+		(pin "5"
+			(uuid "63d23799-8fa6-4541-80f5-aaa48533059b")
+		)
+		(pin "7"
+			(uuid "18fd43c2-3f09-4cdb-aeb9-364e79375791")
+		)
+		(pin "1"
+			(uuid "bb79e291-5750-4e6b-b162-3ac070fea6bb")
+		)
+		(instances
+			(project ""
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0"
+					(reference "U8")
 					(unit 1)
 				)
 			)
@@ -1371,84 +1346,6 @@
 			(project ""
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0"
 					(reference "J1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Converter_ACDC:RAC05-24SK")
-		(at 138.43 105.41 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "e811a0df-5bcf-45cf-a82f-2670ed02b0a8")
-		(property "Reference" "PS1"
-			(at 138.43 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "CHANGE TO 5W"
-			(at 138.43 97.79 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.1588)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 138.43 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.meanwell.com/upload/pdf/IRM-01/IRM-01-spec.pdf"
-			(at 135.89 97.79 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "1W 5v Ac Dc Power Supply"
-			(at 138.43 105.41 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "9a1b1243-9e0d-4380-8d69-23409062a110")
-		)
-		(pin "2"
-			(uuid "8b4ceb0f-d07d-48f8-a46b-f6ef7ace3c7c")
-		)
-		(pin "4"
-			(uuid "95f65082-697f-446c-ae0b-ef26a9344571")
-		)
-		(pin "3"
-			(uuid "7d0af4dd-97aa-41bd-bbe3-1eb85f12735b")
-		)
-		(pin "5"
-			(uuid "7b8f83c6-683a-4f87-9f89-0aebf08a4165")
-		)
-		(instances
-			(project ""
-				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0"
-					(reference "PS1")
 					(unit 1)
 				)
 			)

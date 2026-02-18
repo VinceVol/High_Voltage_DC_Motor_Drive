@@ -1451,6 +1451,16 @@
 	)
 	(wire
 		(pts
+			(xy 194.31 77.47) (xy 199.39 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1b64b513-8ace-4c76-9128-7a74a1982bd3")
+	)
+	(wire
+		(pts
 			(xy 120.65 96.52) (xy 140.97 96.52)
 		)
 		(stroke
@@ -1521,7 +1531,7 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 87.63) (xy 81.28 87.63)
+			(xy 78.74 87.63) (xy 81.28 87.63)
 		)
 		(stroke
 			(width 0)
@@ -1558,6 +1568,16 @@
 			(type default)
 		)
 		(uuid "4715ed20-f156-4072-9aac-8a719c6363c9")
+	)
+	(wire
+		(pts
+			(xy 193.04 71.12) (xy 199.39 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "47fc70f0-95b2-49b4-a781-3947ffc35ebd")
 	)
 	(wire
 		(pts
@@ -1691,16 +1711,6 @@
 	)
 	(wire
 		(pts
-			(xy 194.31 77.47) (xy 205.74 77.47)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "82a2a14c-1861-4048-b515-0f149aa7b2ce")
-	)
-	(wire
-		(pts
 			(xy 163.83 96.52) (xy 161.29 96.52)
 		)
 		(stroke
@@ -1718,16 +1728,6 @@
 			(type default)
 		)
 		(uuid "8c6c3f35-2769-4da7-8b4d-ff29b5945528")
-	)
-	(wire
-		(pts
-			(xy 193.04 71.12) (xy 205.74 71.12)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8dac3fa0-224f-4df5-aaaf-97d8d3a06ce4")
 	)
 	(wire
 		(pts
@@ -1911,7 +1911,7 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 71.12) (xy 86.36 71.12)
+			(xy 78.74 71.12) (xy 86.36 71.12)
 		)
 		(stroke
 			(width 0)
@@ -2037,7 +2037,7 @@
 	)
 	(hierarchical_label "dir"
 		(shape input)
-		(at 73.66 87.63 180)
+		(at 78.74 87.63 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2059,7 +2059,7 @@
 	)
 	(hierarchical_label "pwm"
 		(shape input)
-		(at 73.66 71.12 180)
+		(at 78.74 71.12 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2070,7 +2070,7 @@
 	)
 	(hierarchical_label "dir"
 		(shape input)
-		(at 205.74 77.47 0)
+		(at 199.39 77.47 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2147,7 +2147,7 @@
 	)
 	(hierarchical_label "pwm"
 		(shape input)
-		(at 205.74 71.12 0)
+		(at 199.39 71.12 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2405,7 +2405,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "Motor"
+		(property "Value" "OSTT7020150"
 			(at 144.78 102.2349 90)
 			(effects
 				(font
@@ -2414,7 +2414,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TerminalBlock_MetzConnect:TerminalBlock_MetzConnect_Type701_RT11L02HGLU_1x02_P6.35mm_Horizontal"
 			(at 140.97 101.6 0)
 			(effects
 				(font
@@ -2423,7 +2423,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/388/OSTT7xx0150.pdf"
 			(at 140.97 101.6 0)
 			(effects
 				(font
@@ -2432,7 +2432,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Motor Connection"
+		(property "Description" "OSTT7020150"
 			(at 140.97 101.6 0)
 			(effects
 				(font

@@ -1287,6 +1287,16 @@
 	)
 	(wire
 		(pts
+			(xy 163.83 107.95) (xy 168.91 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "77c51a2d-97cd-4c6e-9bcf-3de61e36ec6a")
+	)
+	(wire
+		(pts
 			(xy 135.89 46.99) (xy 135.89 50.8)
 		)
 		(stroke
@@ -1294,6 +1304,16 @@
 			(type default)
 		)
 		(uuid "8f89026a-1b0b-4fdb-b99b-c9759341907a")
+	)
+	(wire
+		(pts
+			(xy 163.83 102.87) (xy 168.91 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a92d2fc3-c021-42a3-8078-4bee0ec9b48b")
 	)
 	(wire
 		(pts
@@ -1314,6 +1334,16 @@
 			(type default)
 		)
 		(uuid "ccb55449-393c-470f-be29-731088627258")
+	)
+	(wire
+		(pts
+			(xy 163.83 113.03) (xy 168.91 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e687c89f-68b6-46fd-bd6c-87397dc66160")
 	)
 	(global_label "5v 5w"
 		(shape input)
@@ -1358,6 +1388,28 @@
 				(hide yes)
 			)
 		)
+	)
+	(hierarchical_label "pwm_mcu"
+		(shape output)
+		(at 168.91 102.87 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "3492345c-aa9d-4c3b-b088-355470b2584f")
+	)
+	(hierarchical_label "current_sense"
+		(shape input)
+		(at 168.91 113.03 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "4d7cbe28-3ed9-456f-95ca-35bf4367e2c5")
 	)
 	(symbol
 		(lib_id "MCU_Module:RaspberryPi_Pico")
@@ -1604,6 +1656,73 @@
 			(project ""
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/dc45a2ff-df18-49a4-81ff-80d10381c9e9"
 					(reference "#PWR03")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 168.91 107.95 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "57406b77-57cb-4a26-b753-6e6dfa3bcdec")
+		(property "Reference" "#PWR020"
+			(at 175.26 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 172.72 107.9499 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 168.91 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 168.91 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 168.91 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "fc47b962-7c47-448d-bca1-4fa542a8a5b2")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/dc45a2ff-df18-49a4-81ff-80d10381c9e9"
+					(reference "#PWR020")
 					(unit 1)
 				)
 			)

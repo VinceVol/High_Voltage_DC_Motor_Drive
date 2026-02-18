@@ -1703,7 +1703,7 @@
 		(instances
 			(project ""
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de/c56e55f9-2f01-4a9a-a881-dd8c5892be8d"
-					(reference "#PWR07")
+					(reference "#PWR0103")
 					(unit 1)
 				)
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de/c8d3f65d-c1e4-4ff7-87e3-3541d9f7f8fc"
@@ -1888,7 +1888,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "7d741239-5756-44c3-b0b1-a024f8a9008e")
+		(uuid "706bcc8f-ea0e-49a4-a902-1024bebe2b6f")
 		(property "Reference" "Q1"
 			(at 168.91 110.4899 0)
 			(effects
@@ -1898,7 +1898,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "IRFB4227PBF"
+		(property "Value" "IPP200N25N3GXKSA1"
 			(at 168.91 113.0299 0)
 			(effects
 				(font
@@ -1916,7 +1916,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.infineon.com/assets/row/public/documents/24/49/infineon-irfb4227-datasheet-en.pdf"
+		(property "Datasheet" "https://www.infineon.com/assets/row/public/documents/24/49/infineon-ipp-b-i-200n25n3-g-datasheet-en.pdf?folderId=db3a3043163797a6011637d4bae7003b&fileId=db3a3043243b5f17012496b87e9f1971"
 			(at 162.56 124.46 0)
 			(effects
 				(font
@@ -1962,13 +1962,13 @@
 			)
 		)
 		(pin "2"
-			(uuid "4c72fccf-d6b4-4404-8497-df67e29c2b8b")
+			(uuid "511b9aee-e0e4-4e2c-ac7f-71f694bd1b4f")
 		)
 		(pin "3"
-			(uuid "fbe580c8-b65f-4a54-a0b6-754dab875d59")
+			(uuid "aa9e7286-d932-4747-a55d-0b9221d2848a")
 		)
 		(pin "1"
-			(uuid "1d1e9272-80a8-43e9-b5cd-47262417ab41")
+			(uuid "88c6c705-7451-4f8b-992a-4edda338818f")
 		)
 		(instances
 			(project "120VDC Treadmill Motor Controller"
