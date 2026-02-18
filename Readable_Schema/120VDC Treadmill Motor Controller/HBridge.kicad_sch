@@ -2414,7 +2414,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "TerminalBlock_MetzConnect:TerminalBlock_MetzConnect_Type701_RT11L02HGLU_1x02_P6.35mm_Horizontal"
+		(property "Footprint" "Treadmill_Feet:CONN2_OSTT7020150_OST"
 			(at 140.97 101.6 0)
 			(effects
 				(font
