@@ -1,4 +1,4 @@
-27242046527379145
+27245589597545460
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -107156,6 +107156,13 @@ OSTT7020150
 2
 2
 Treadmill_Feet
+CUI_TB005_-762-03BE
+
+
+0
+3
+3
+Treadmill_Feet
 DCK5
 
 SN74LVC1G08DCKR 
@@ -107204,6 +107211,13 @@ TMCS1126A1AQDVGRQ1
 0
 10
 10
+Treadmill_Feet
+SOT-25   SMV_TOS
+
+TC75S56F_LF 
+0
+5
+5
 Treadmill_Feet
 T9GV1L14-5_TEC
 

@@ -358,6 +358,48 @@
 		)
 	)
 	(sheet
+		(at 130.81 128.27)
+		(size 19.05 13.97)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "7a7487b9-35f1-42d2-9ba5-cfe8e231a0f8")
+		(property "Sheetname" "Brake_Resistor"
+			(at 130.81 127.5584 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Brake_Resistor.kicad_sch"
+			(at 130.81 142.8246 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd"
+					(page "10")
+				)
+			)
+		)
+	)
+	(sheet
 		(at 121.92 58.42)
 		(size 33.02 25.4)
 		(exclude_from_sim no)
