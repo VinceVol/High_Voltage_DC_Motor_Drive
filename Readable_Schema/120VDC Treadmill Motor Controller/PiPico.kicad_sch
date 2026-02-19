@@ -5,7 +5,7 @@
 	(uuid "89d57df0-0fc1-4c0f-91ff-d7b2ad62daf8")
 	(paper "A4")
 	(lib_symbols
-		(symbol "Connector_Generic:Conn_01x07"
+		(symbol "Connector_Generic:Conn_01x08"
 			(pin_names
 				(offset 1.016)
 				(hide yes)
@@ -21,8 +21,8 @@
 					)
 				)
 			)
-			(property "Value" "Conn_01x07"
-				(at 0 -10.16 0)
+			(property "Value" "Conn_01x08"
+				(at 0 -12.7 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -47,7 +47,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "Generic connector, single row, 01x07, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(property "Description" "Generic connector, single row, 01x08, script generated (kicad-library-utils/schlib/autogen/connector/)"
 				(at 0 0 0)
 				(effects
 					(font
@@ -74,10 +74,10 @@
 					(hide yes)
 				)
 			)
-			(symbol "Conn_01x07_1_1"
+			(symbol "Conn_01x08_1_1"
 				(rectangle
 					(start -1.27 8.89)
-					(end 1.27 -8.89)
+					(end 1.27 -11.43)
 					(stroke
 						(width 0.254)
 						(type default)
@@ -155,6 +155,17 @@
 				(rectangle
 					(start -1.27 -7.493)
 					(end 0 -7.747)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -10.033)
+					(end 0 -10.287)
 					(stroke
 						(width 0.1524)
 						(type default)
@@ -282,6 +293,24 @@
 						)
 					)
 					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -10.16 0)
+					(length 3.81)
+					(name "Pin_8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1608,18 +1637,15 @@
 		)
 		(uuid "051c0b60-fada-4138-b654-903d0050ede7")
 	)
-	(text "INTERFACE LINUX CNC?\n"
+	(text "scl_1"
 		(exclude_from_sim no)
-		(at 176.022 115.824 0)
+		(at 207.264 91.948 0)
 		(effects
 			(font
 				(size 1.27 1.27)
-				(thickness 0.254)
-				(bold yes)
-				(color 255 0 0 1)
 			)
 		)
-		(uuid "0e3749c7-9742-4192-bc2d-48e5a3ef5e67")
+		(uuid "19ca2abe-635a-4a2f-83d6-6640742d8703")
 	)
 	(text "rx_1"
 		(exclude_from_sim no)
@@ -1641,6 +1667,16 @@
 		)
 		(uuid "6032e6f6-b0f7-4247-9d19-0cf5c4a0170a")
 	)
+	(text "CNC_s_out"
+		(exclude_from_sim no)
+		(at 205.486 99.568 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "6999e706-19cf-431b-8874-e90444e51d82")
+	)
 	(text "Trigger Low"
 		(exclude_from_sim no)
 		(at 103.632 104.394 0)
@@ -1651,22 +1687,19 @@
 		)
 		(uuid "92624743-26be-422f-ab04-a27f8ed2f0ae")
 	)
-	(text "INTERFACE LINUX CNC?\n"
+	(text "pot_adj"
 		(exclude_from_sim no)
-		(at 102.87 124.714 0)
+		(at 205.486 108.204 0)
 		(effects
 			(font
 				(size 1.27 1.27)
-				(thickness 0.254)
-				(bold yes)
-				(color 255 0 0 1)
 			)
 		)
-		(uuid "ad1bd0da-d287-48b4-9db0-0fd2c8bc0023")
+		(uuid "b59cc042-7f79-44a3-8a75-ca46cabd7d36")
 	)
-	(text "POTENTIOMETER ADJUST?"
+	(text "Feed override??\n"
 		(exclude_from_sim no)
-		(at 176.784 118.364 0)
+		(at 101.346 110.998 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1675,7 +1708,17 @@
 				(color 255 0 0 1)
 			)
 		)
-		(uuid "d77d4660-c154-460d-b4c1-2348270e1baf")
+		(uuid "db4e5e14-880f-48b2-a87c-a09cd7b2314b")
+	)
+	(text "sda_1"
+		(exclude_from_sim no)
+		(at 207.01 89.408 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "fc91f4be-77b9-4026-81fa-c0249af86aa1")
 	)
 	(junction
 		(at 95.25 92.71)
@@ -1734,10 +1777,6 @@
 		(uuid "80e1acdf-7971-42f5-b40d-3f9ffebe8297")
 	)
 	(no_connect
-		(at 163.83 97.79)
-		(uuid "8b28505d-97b1-496f-a192-69e39884611d")
-	)
-	(no_connect
 		(at 118.11 105.41)
 		(uuid "9ae4a927-ff42-48e7-8033-f36d70d639ec")
 	)
@@ -1750,20 +1789,16 @@
 		(uuid "b2ffe676-53fd-4cd7-9f85-8e1cb36e7ebc")
 	)
 	(no_connect
-		(at 163.83 92.71)
-		(uuid "b9fad5e1-0078-4a6d-843f-17ad0682958f")
-	)
-	(no_connect
-		(at 163.83 95.25)
-		(uuid "bc662451-96df-469e-970d-d4feeaa6700e")
-	)
-	(no_connect
 		(at 118.11 115.57)
 		(uuid "d59570a2-a8f9-45bc-a4f8-bfc086da5d9f")
 	)
 	(no_connect
 		(at 163.83 87.63)
 		(uuid "e1f26030-d033-467a-94a0-369a06c8f8cc")
+	)
+	(no_connect
+		(at 163.83 97.79)
+		(uuid "efe46b6c-7c61-411c-948d-1da93b656344")
 	)
 	(no_connect
 		(at 118.11 85.09)
@@ -1801,6 +1836,16 @@
 	)
 	(wire
 		(pts
+			(xy 208.28 95.25) (xy 210.82 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0f0f20a6-84b5-4e07-a32a-a03696f80714")
+	)
+	(wire
+		(pts
 			(xy 163.83 100.33) (xy 168.91 100.33)
 		)
 		(stroke
@@ -1818,6 +1863,26 @@
 			(type default)
 		)
 		(uuid "18ce8f0b-2cb4-4ca2-8f98-2ddeddd449a9")
+	)
+	(wire
+		(pts
+			(xy 172.72 92.71) (xy 210.82 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1b006b4a-511d-4d30-8e36-9b9632de3dc7")
+	)
+	(wire
+		(pts
+			(xy 200.66 87.63) (xy 210.82 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "27418b9c-1925-4323-9df4-ee4b423532f6")
 	)
 	(wire
 		(pts
@@ -1841,23 +1906,63 @@
 	)
 	(wire
 		(pts
-			(xy 93.98 109.22) (xy 93.98 107.95)
+			(xy 170.18 92.71) (xy 170.18 90.17)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "3c5cd00a-ce9c-4df6-b0ac-ee6b368cb31b")
+		(uuid "2fb4787a-ce3d-4506-84a4-4af62a0b7add")
 	)
 	(wire
 		(pts
-			(xy 118.11 102.87) (xy 114.3 102.87)
+			(xy 163.83 115.57) (xy 185.42 115.57)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "591e0d9c-429e-4b11-9c9b-674dd74b45a2")
+		(uuid "369cf783-9ae0-438d-b277-5e12d92c771e")
+	)
+	(wire
+		(pts
+			(xy 95.25 107.95) (xy 93.98 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "403d00fe-126f-4371-ba5d-2753c0c45f57")
+	)
+	(wire
+		(pts
+			(xy 200.66 105.41) (xy 210.82 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "422ed4db-0d31-46b6-80a9-638d40ea0bd0")
+	)
+	(wire
+		(pts
+			(xy 185.42 100.33) (xy 210.82 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "56990604-1e6f-4c39-bbad-462b71b108a0")
+	)
+	(wire
+		(pts
+			(xy 172.72 95.25) (xy 172.72 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5a905e06-9fb6-46df-a88e-57f2fb06a83f")
 	)
 	(wire
 		(pts
@@ -1871,13 +1976,23 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 102.87) (xy 114.3 125.73)
+			(xy 163.83 118.11) (xy 187.96 118.11)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "775b5298-70e9-4868-808e-3358e33547ef")
+		(uuid "73adbc19-5673-4840-9156-03929f9f1b80")
+	)
+	(wire
+		(pts
+			(xy 208.28 102.87) (xy 210.82 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "73c9cd12-938e-48ae-878a-643146494f51")
 	)
 	(wire
 		(pts
@@ -1891,6 +2006,16 @@
 	)
 	(wire
 		(pts
+			(xy 187.96 109.22) (xy 210.82 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "898c5df9-7575-4d3c-8507-951834c603fa")
+	)
+	(wire
+		(pts
 			(xy 135.89 46.99) (xy 135.89 50.8)
 		)
 		(stroke
@@ -1901,6 +2026,26 @@
 	)
 	(wire
 		(pts
+			(xy 163.83 95.25) (xy 172.72 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9580a91c-336b-4ad4-bc02-9e7f754fb784")
+	)
+	(wire
+		(pts
+			(xy 200.66 97.79) (xy 210.82 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a76992ad-993d-4315-9010-154dada73c28")
+	)
+	(wire
+		(pts
 			(xy 163.83 102.87) (xy 168.91 102.87)
 		)
 		(stroke
@@ -1908,6 +2053,16 @@
 			(type default)
 		)
 		(uuid "a92d2fc3-c021-42a3-8078-4bee0ec9b48b")
+	)
+	(wire
+		(pts
+			(xy 187.96 118.11) (xy 187.96 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b73777c5-f5e4-4ff0-83fd-d7d75295e775")
 	)
 	(wire
 		(pts
@@ -1928,6 +2083,16 @@
 			(type default)
 		)
 		(uuid "ca120912-edd0-4634-a838-10cd35712402")
+	)
+	(wire
+		(pts
+			(xy 185.42 115.57) (xy 185.42 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cad435cc-e2f7-4683-bc3c-88e0a41be399")
 	)
 	(wire
 		(pts
@@ -1971,13 +2136,13 @@
 	)
 	(wire
 		(pts
-			(xy 99.06 125.73) (xy 114.3 125.73)
+			(xy 208.28 111.76) (xy 210.82 111.76)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "dfdb7cbf-2a35-4758-aac0-6fb88816555f")
+		(uuid "d72f0e27-24aa-4358-97ed-0a3b8ce58d98")
 	)
 	(wire
 		(pts
@@ -2018,6 +2183,26 @@
 			(type default)
 		)
 		(uuid "f1ce7856-3326-4aeb-93de-b115080affcf")
+	)
+	(wire
+		(pts
+			(xy 170.18 90.17) (xy 210.82 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f866b73d-e62f-4028-81e0-06523edcd89c")
+	)
+	(wire
+		(pts
+			(xy 163.83 92.71) (xy 170.18 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fd5f9de8-41e0-4f7a-8bed-184eb235e096")
 	)
 	(global_label "5v 5w"
 		(shape input)
@@ -2063,6 +2248,50 @@
 			)
 		)
 	)
+	(global_label "3v3 MCU"
+		(shape input)
+		(at 200.66 97.79 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "69ff8f7f-993b-4860-a48e-700bb7c5a839")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 189.2687 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "3v3 MCU"
+		(shape input)
+		(at 200.66 87.63 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "82a65830-0c47-4bfa-8672-5cdc465bf312")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 189.2687 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "5v 5w"
 		(shape input)
 		(at 95.25 90.17 90)
@@ -2081,6 +2310,28 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "3v3 MCU"
+		(shape input)
+		(at 200.66 105.41 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "b0462492-758a-44ff-90df-92e8fb5dc315")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 189.2687 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -2370,6 +2621,73 @@
 	)
 	(symbol
 		(lib_id "power:GND")
+		(at 208.28 111.76 270)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4c894af8-3916-4654-b86d-7a9bb014df23")
+		(property "Reference" "#PWR029"
+			(at 201.93 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 204.47 111.7599 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 208.28 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 208.28 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 208.28 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8d63652a-e75a-480f-913e-7c9c4e49ff25")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/dc45a2ff-df18-49a4-81ff-80d10381c9e9"
+					(reference "#PWR029")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
 		(at 168.91 107.95 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -2437,7 +2755,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 93.98 109.22 0)
+		(at 95.25 107.95 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2446,7 +2764,7 @@
 		(fields_autoplaced yes)
 		(uuid "5d831557-3ba7-4684-8502-ba78fc2d420b")
 		(property "Reference" "#PWR024"
-			(at 93.98 115.57 0)
+			(at 101.6 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2455,15 +2773,16 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 93.98 114.3 0)
+			(at 99.06 107.9499 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
 		(property "Footprint" ""
-			(at 93.98 109.22 0)
+			(at 95.25 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2472,7 +2791,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 93.98 109.22 0)
+			(at 95.25 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2481,7 +2800,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 93.98 109.22 0)
+			(at 95.25 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2572,90 +2891,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector_Generic:Conn_01x07")
-		(at 87.63 100.33 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "81a576f8-9dfa-478e-a98f-2e231212e987")
-		(property "Reference" "J3"
-			(at 87.63 86.36 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "277-1799-ND"
-			(at 87.63 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Treadmill_Feet:PHOENIX_1990054"
-			(at 87.63 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/2515/COMBICON%20Spring-Cage%20PCB%20Term.%20Blocks.pdf"
-			(at 87.63 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Generic connector, single row, 01x07, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 87.63 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "5"
-			(uuid "a8a015b6-7e10-4759-936a-6ecae96af2e0")
-		)
-		(pin "2"
-			(uuid "c172a335-0cb8-46d2-97d5-005ae7510977")
-		)
-		(pin "4"
-			(uuid "efaceb37-eac1-4868-bfe8-393191cea00d")
-		)
-		(pin "1"
-			(uuid "da7ebe09-a4a8-4647-931d-cdf4e78208fd")
-		)
-		(pin "3"
-			(uuid "115db11f-c3e6-4458-af59-d1a4f22aacde")
-		)
-		(pin "6"
-			(uuid "105a2037-ab95-4721-857c-0815bbcb5ce7")
-		)
-		(pin "7"
-			(uuid "0db16730-f1ea-433f-9257-6f29a4d3a57b")
-		)
-		(instances
-			(project ""
-				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/dc45a2ff-df18-49a4-81ff-80d10381c9e9"
-					(reference "J3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 168.91 123.19 90)
 		(unit 1)
@@ -2717,6 +2952,397 @@
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/dc45a2ff-df18-49a4-81ff-80d10381c9e9"
 					(reference "#PWR026")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x08")
+		(at 215.9 95.25 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "9120cc22-defd-4c2c-b008-1bc302f80995")
+		(property "Reference" "J5"
+			(at 226.06 87.376 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "TB0011-350-08BE"
+			(at 227.076 89.916 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Connector_Wago:Wago_734-138_1x08_P3.50mm_Vertical"
+			(at 215.9 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.sameskydevices.com/product/resource/tb0011-350.pdf"
+			(at 215.9 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x08, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 215.9 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "082bbd73-8bd9-44ce-af4c-2bc1f54d1315")
+		)
+		(pin "3"
+			(uuid "0df1c867-bb99-4c56-85a3-2674cdb2d0f4")
+		)
+		(pin "7"
+			(uuid "22fbf532-622e-4cca-a159-eca472587d09")
+		)
+		(pin "8"
+			(uuid "750403ae-d8cd-4889-964e-f97362a03126")
+		)
+		(pin "6"
+			(uuid "0681b6e3-dac2-4a5e-a7ae-c8c167cd6ed6")
+		)
+		(pin "5"
+			(uuid "320fc159-a99e-4b73-ac89-d83f078e40d2")
+		)
+		(pin "2"
+			(uuid "653ebd68-f546-4a25-9cf6-fc8522b41afc")
+		)
+		(pin "1"
+			(uuid "6dcfe369-8761-494f-810f-3271652ab5ab")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/dc45a2ff-df18-49a4-81ff-80d10381c9e9"
+					(reference "J5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 208.28 102.87 270)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a9919c1e-1abc-4d9c-9493-e6e17875067f")
+		(property "Reference" "#PWR027"
+			(at 201.93 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 204.47 102.8699 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 208.28 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 208.28 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 208.28 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "fc9ca98a-4e74-4827-8982-e8cc0ecdb554")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/dc45a2ff-df18-49a4-81ff-80d10381c9e9"
+					(reference "#PWR027")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 208.28 95.25 270)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "aa6f882b-8a42-47cb-9ad3-ca7e6c884f3d")
+		(property "Reference" "#PWR05"
+			(at 201.93 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 204.47 95.2499 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 208.28 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 208.28 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 208.28 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a14d0d3c-40a7-4b13-b702-9aacea9de4b0")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/dc45a2ff-df18-49a4-81ff-80d10381c9e9"
+					(reference "#PWR05")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x08")
+		(at 215.9 116.84 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c6591391-6269-43d4-8ed2-7d1c3da4b6ee")
+		(property "Reference" "J4"
+			(at 227.33 115.316 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "TB0011-350-08BE"
+			(at 227.33 117.856 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Connector_Wago:Wago_734-138_1x08_P3.50mm_Vertical"
+			(at 215.9 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.sameskydevices.com/product/resource/tb0011-350.pdf"
+			(at 215.9 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x08, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 215.9 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "e4080c7a-1963-40d1-a041-af91758c8663")
+		)
+		(pin "3"
+			(uuid "daed9606-0c46-4be2-91f7-9b098287f2a6")
+		)
+		(pin "7"
+			(uuid "5cb5e593-e6b9-44f0-b73a-c33fcccba2d9")
+		)
+		(pin "8"
+			(uuid "0907b94a-b74c-49b6-bb5b-b7960a5129d5")
+		)
+		(pin "6"
+			(uuid "a38c1307-9e8e-4caf-8d91-8a51e0ad71ca")
+		)
+		(pin "5"
+			(uuid "dd4734f5-8f8c-4015-9044-d1a825f38161")
+		)
+		(pin "2"
+			(uuid "5010021b-62cd-42d0-80ad-9bfa0404ce51")
+		)
+		(pin "1"
+			(uuid "4f9cbf74-a5c5-4af6-935d-014c1217d692")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/dc45a2ff-df18-49a4-81ff-80d10381c9e9"
+					(reference "J4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x08")
+		(at 87.63 100.33 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e27028e2-1b97-43b0-a637-1bab74d51350")
+		(property "Reference" "J3"
+			(at 87.63 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "TB0011-350-08BE"
+			(at 87.63 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Connector_Wago:Wago_734-138_1x08_P3.50mm_Vertical"
+			(at 87.63 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.sameskydevices.com/product/resource/tb0011-350.pdf"
+			(at 87.63 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x08, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 87.63 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "ac8d0f64-9e53-47fa-91a4-495ba6279931")
+		)
+		(pin "3"
+			(uuid "e581c9c9-fc6a-404e-bd2b-f89b06e57343")
+		)
+		(pin "7"
+			(uuid "207840c7-09fb-4fab-a4c9-6331516afe7d")
+		)
+		(pin "8"
+			(uuid "63d0f9ae-c1d0-4a7c-88b7-4ac9739a33e1")
+		)
+		(pin "6"
+			(uuid "442b63fb-2243-45be-a8d6-77fa54d17ffd")
+		)
+		(pin "5"
+			(uuid "87d7ad16-0804-42f7-8fea-fbb89e7a6a71")
+		)
+		(pin "2"
+			(uuid "925f3491-542c-45a5-b8e6-feb891649661")
+		)
+		(pin "1"
+			(uuid "9955d220-2777-455c-ad00-9f9e7fa1c56a")
+		)
+		(instances
+			(project ""
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/dc45a2ff-df18-49a4-81ff-80d10381c9e9"
+					(reference "J3")
 					(unit 1)
 				)
 			)
