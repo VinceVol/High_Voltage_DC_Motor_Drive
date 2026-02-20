@@ -2727,7 +2727,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder"
 			(at 58.42 124.968 90)
 			(effects
 				(font
@@ -2736,7 +2736,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C301.pdf"
 			(at 58.42 123.19 0)
 			(effects
 				(font
@@ -2745,7 +2745,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Resistor"
+		(property "Description" "ERJ-3GEYJ125V"
 			(at 58.42 123.19 0)
 			(effects
 				(font
@@ -2996,7 +2996,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder"
 			(at 68.58 124.968 90)
 			(effects
 				(font
@@ -3005,7 +3005,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf"
 			(at 68.58 123.19 0)
 			(effects
 				(font
@@ -3014,7 +3014,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Resistor"
+		(property "Description" "ERJ-3EKF9091V"
 			(at 68.58 123.19 0)
 			(effects
 				(font
@@ -3056,7 +3056,7 @@
 				)
 			)
 		)
-		(property "Value" "8K"
+		(property "Value" "8.2K"
 			(at 68.58 97.79 90)
 			(effects
 				(font
@@ -3064,7 +3064,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder"
 			(at 68.58 103.378 90)
 			(effects
 				(font
@@ -3199,7 +3199,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder"
 			(at 58.42 103.378 90)
 			(effects
 				(font
@@ -3217,7 +3217,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Resistor"
+		(property "Description" "ERJ-3GEYJ103V"
 			(at 58.42 101.6 0)
 			(effects
 				(font
