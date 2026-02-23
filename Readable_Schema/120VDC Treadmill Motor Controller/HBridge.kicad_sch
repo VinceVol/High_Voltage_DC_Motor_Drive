@@ -3281,7 +3281,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND"
+		(property "Value" "GND1"
 			(at 72.39 41.9099 90)
 			(effects
 				(font

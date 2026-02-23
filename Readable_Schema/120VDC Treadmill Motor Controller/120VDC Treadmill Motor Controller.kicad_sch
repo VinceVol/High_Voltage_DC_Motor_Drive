@@ -43,6 +43,16 @@
 	)
 	(wire
 		(pts
+			(xy 144.78 128.27) (xy 144.78 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "157a9571-21f0-4caa-8dd8-bd45dcbd0e91")
+	)
+	(wire
+		(pts
 			(xy 123.19 104.14) (xy 133.35 104.14)
 		)
 		(stroke
@@ -60,6 +70,16 @@
 			(type default)
 		)
 		(uuid "2bdf8ae0-e787-41b7-93c9-86aeb6fc2c37")
+	)
+	(wire
+		(pts
+			(xy 148.59 121.92) (xy 156.21 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "39869711-b9d0-467f-8ed8-94b59f6f24a7")
 	)
 	(wire
 		(pts
@@ -103,6 +123,16 @@
 	)
 	(wire
 		(pts
+			(xy 144.78 118.11) (xy 156.21 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c3712563-15ea-41b3-a2da-9682162ff91a")
+	)
+	(wire
+		(pts
 			(xy 129.54 83.82) (xy 129.54 100.33)
 		)
 		(stroke
@@ -110,6 +140,16 @@
 			(type default)
 		)
 		(uuid "c3784f71-b5ee-4293-aa04-6ca01f9fb06d")
+	)
+	(wire
+		(pts
+			(xy 148.59 128.27) (xy 148.59 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cca09229-a487-49bd-88b2-e3fa6401c369")
 	)
 	(wire
 		(pts
@@ -320,7 +360,7 @@
 			)
 		)
 		(pin "ls_15v" output
-			(at 156.21 115.57 180)
+			(at 156.21 118.11 180)
 			(uuid "08f4f50f-49b5-4766-94ed-c5ecf190630d")
 			(effects
 				(font
@@ -340,7 +380,7 @@
 			)
 		)
 		(pin "r_brake_+" output
-			(at 156.21 119.38 180)
+			(at 156.21 121.92 180)
 			(uuid "f42d8ba0-f76f-44f4-a63a-30eba10db466")
 			(effects
 				(font
@@ -389,6 +429,26 @@
 					(size 1.27 1.27)
 				)
 				(justify left top)
+			)
+		)
+		(pin "r_brake_in" input
+			(at 148.59 128.27 90)
+			(uuid "6bd179a1-bb0c-4618-b3af-6d9ee4b1cb67")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "ps_in_+" input
+			(at 144.78 128.27 90)
+			(uuid "6f68702d-a0de-4475-aaa3-cc1275ad7b86")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 			)
 		)
 		(instances

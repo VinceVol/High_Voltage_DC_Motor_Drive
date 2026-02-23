@@ -1,4 +1,4 @@
-27245589597545460
+27249133310769603
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -107184,6 +107184,13 @@ RAC05E-05SKT
 4
 4
 Treadmill_Feet
+SAMESKY_TB0011-350-03BE
+
+
+0
+3
+3
+Treadmill_Feet
 SAMESKY_TB0011-350-08BE
 
 
@@ -107225,6 +107232,13 @@ T9GV1L14-5
 0
 5
 5
+Treadmill_Feet
+TB005-762-02BE_CUD
+
+TB005-762-02BE 
+0
+2
+2
 Valve
 Valve_ECC-83-1
 Valve ECC-83-1 round pins
