@@ -1566,6 +1566,142 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Treadmill_Comp:RCWCTE"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "TP"
+				(at -2.5444 2.5415 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Value" "RCWCTE"
+				(at -2.55 -5.0866 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Footprint" "Treadmill_Feet:RCWCTE"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.koaspeer.com/pdfs/RC.pdf"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "https://www.digikey.com/en/products/detail/koa-speer-electronics-inc/RCWCTE/11476558"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "PARTREV" "1/06/14"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "SNAPEDA_PN" "RCWCTE"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "MANUFACTURER" "KOA Speer"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "MAXIMUM_PACKAGE_HEIGHT" "2 mm"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "STANDARD" "Manufacturer Recommendations"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(symbol "RCWCTE_0_0"
+				(circle
+					(center 0 0)
+					(radius 0.635)
+					(stroke
+						(width 1.27)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 5.08)
+					(name "~"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Treadmill_Comp:TC75S56F_LF"
 			(pin_names
 				(offset 0.254)
@@ -2132,6 +2268,12 @@
 		(uuid "3706e5a3-2a8f-481b-8c52-2480ee08a584")
 	)
 	(junction
+		(at 119.38 111.76)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4e29b9ac-f0c6-4f3f-ad9e-474b981b3dfa")
+	)
+	(junction
 		(at 149.86 72.39)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2309,6 +2451,16 @@
 	)
 	(wire
 		(pts
+			(xy 119.38 111.76) (xy 123.19 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3bf1fce8-c68c-4298-b231-ea52ea0534f6")
+	)
+	(wire
+		(pts
 			(xy 63.5 101.6) (xy 64.77 101.6)
 		)
 		(stroke
@@ -2409,7 +2561,7 @@
 	)
 	(wire
 		(pts
-			(xy 109.22 111.76) (xy 123.19 111.76)
+			(xy 109.22 111.76) (xy 119.38 111.76)
 		)
 		(stroke
 			(width 0)
@@ -2745,6 +2897,124 @@
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/7a7487b9-35f1-42d2-9ba5-cfe8e231a0f8"
 					(reference "#PWR026")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Treadmill_Comp:RCWCTE")
+		(at 119.38 106.68 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "410ed82c-fce4-4eb6-b796-662626753992")
+		(property "Reference" "TP11"
+			(at 117.602 104.14 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "RCWCTE"
+			(at 121.92 107.9499 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Treadmill_Feet:RCWCTE"
+			(at 119.38 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.koaspeer.com/pdfs/RC.pdf"
+			(at 119.38 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "https://www.digikey.com/en/products/detail/koa-speer-electronics-inc/RCWCTE/11476558"
+			(at 119.38 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PARTREV" "1/06/14"
+			(at 119.38 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "SNAPEDA_PN" "RCWCTE"
+			(at 119.38 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER" "KOA Speer"
+			(at 119.38 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" "2 mm"
+			(at 119.38 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" "Manufacturer Recommendations"
+			(at 119.38 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6995fb1c-77d7-4e47-88a7-57aae27b62ab")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/7a7487b9-35f1-42d2-9ba5-cfe8e231a0f8"
+					(reference "TP11")
 					(unit 1)
 				)
 			)

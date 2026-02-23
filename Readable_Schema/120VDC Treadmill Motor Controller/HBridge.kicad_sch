@@ -976,6 +976,142 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Treadmill_Comp:RCWCTE"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "TP"
+				(at -2.5444 2.5415 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Value" "RCWCTE"
+				(at -2.55 -5.0866 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Footprint" "Treadmill_Feet:RCWCTE"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.koaspeer.com/pdfs/RC.pdf"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "https://www.digikey.com/en/products/detail/koa-speer-electronics-inc/RCWCTE/11476558"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "PARTREV" "1/06/14"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "SNAPEDA_PN" "RCWCTE"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "MANUFACTURER" "KOA Speer"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "MAXIMUM_PACKAGE_HEIGHT" "2 mm"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "STANDARD" "Manufacturer Recommendations"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(symbol "RCWCTE_0_0"
+				(circle
+					(center 0 0)
+					(radius 0.635)
+					(stroke
+						(width 1.27)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 5.08)
+					(name "~"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Treadmill_Comp:SRS-0515-2"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -1492,16 +1628,28 @@
 		(uuid "2aec37f8-0a3d-44d6-979b-c8e7062b576f")
 	)
 	(junction
-		(at 97.79 132.08)
+		(at 90.17 132.08)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "00471ce2-28b3-4c87-83fe-8cae833fc75b")
 	)
 	(junction
-		(at 185.42 71.12)
+		(at 151.13 96.52)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0fbc314a-2830-495f-b636-cef3adfd309d")
+	)
+	(junction
+		(at 194.31 71.12)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "58b0eb4b-a852-4f8b-9388-16149369e244")
+	)
+	(junction
+		(at 101.6 71.12)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6e388566-5291-444f-8945-3d10e65f4c58")
 	)
 	(junction
 		(at 140.97 41.91)
@@ -1516,10 +1664,28 @@
 		(uuid "831c0b1a-b1ee-4e36-92da-2a25fb9b27c8")
 	)
 	(junction
+		(at 104.14 132.08)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9ec0fb3c-04c9-4f18-a270-8d53b7c5a40d")
+	)
+	(junction
 		(at 140.97 142.24)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "9fa67263-8ab2-4cc2-b69e-dab4f51fe1a7")
+	)
+	(junction
+		(at 177.8 132.08)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "aec82f69-a6e4-49f9-b8e8-5f74b1530c1e")
+	)
+	(junction
+		(at 180.34 71.12)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "be4b64e7-a063-4524-911f-e082d99960c0")
 	)
 	(junction
 		(at 161.29 96.52)
@@ -1532,6 +1698,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e907b4f4-a1ff-4f05-8742-9886574e6376")
+	)
+	(junction
+		(at 132.08 96.52)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f5041383-d353-41b7-8d6d-b6d3b6adbe35")
 	)
 	(no_connect
 		(at 66.04 35.56)
@@ -1561,7 +1733,7 @@
 	)
 	(wire
 		(pts
-			(xy 195.58 77.47) (xy 196.85 77.47)
+			(xy 204.47 77.47) (xy 205.74 77.47)
 		)
 		(stroke
 			(width 0)
@@ -1571,7 +1743,7 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 96.52) (xy 140.97 96.52)
+			(xy 120.65 96.52) (xy 132.08 96.52)
 		)
 		(stroke
 			(width 0)
@@ -1631,7 +1803,17 @@
 	)
 	(wire
 		(pts
-			(xy 184.15 71.12) (xy 185.42 71.12)
+			(xy 101.6 71.12) (xy 106.68 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "27618dae-2f6c-4dc3-8b98-3bc455dbd623")
+	)
+	(wire
+		(pts
+			(xy 193.04 71.12) (xy 194.31 71.12)
 		)
 		(stroke
 			(width 0)
@@ -1641,7 +1823,7 @@
 	)
 	(wire
 		(pts
-			(xy 78.74 87.63) (xy 81.28 87.63)
+			(xy 69.85 87.63) (xy 72.39 87.63)
 		)
 		(stroke
 			(width 0)
@@ -1651,7 +1833,7 @@
 	)
 	(wire
 		(pts
-			(xy 97.79 143.51) (xy 97.79 144.78)
+			(xy 90.17 143.51) (xy 90.17 144.78)
 		)
 		(stroke
 			(width 0)
@@ -1681,7 +1863,17 @@
 	)
 	(wire
 		(pts
-			(xy 194.31 71.12) (xy 196.85 71.12)
+			(xy 104.14 132.08) (xy 109.22 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4716c46c-f20c-408b-9601-bbb03e8052a3")
+	)
+	(wire
+		(pts
+			(xy 203.2 71.12) (xy 205.74 71.12)
 		)
 		(stroke
 			(width 0)
@@ -1701,7 +1893,7 @@
 	)
 	(wire
 		(pts
-			(xy 91.44 81.28) (xy 91.44 82.55)
+			(xy 82.55 81.28) (xy 82.55 82.55)
 		)
 		(stroke
 			(width 0)
@@ -1721,7 +1913,7 @@
 	)
 	(wire
 		(pts
-			(xy 105.41 71.12) (xy 106.68 71.12)
+			(xy 96.52 71.12) (xy 101.6 71.12)
 		)
 		(stroke
 			(width 0)
@@ -1731,7 +1923,7 @@
 	)
 	(wire
 		(pts
-			(xy 97.79 132.08) (xy 99.06 132.08)
+			(xy 90.17 132.08) (xy 91.44 132.08)
 		)
 		(stroke
 			(width 0)
@@ -1751,7 +1943,7 @@
 	)
 	(wire
 		(pts
-			(xy 172.72 132.08) (xy 176.53 132.08)
+			(xy 172.72 132.08) (xy 177.8 132.08)
 		)
 		(stroke
 			(width 0)
@@ -1768,6 +1960,16 @@
 			(type default)
 		)
 		(uuid "6ef44a8f-ad5c-4565-895a-1a24f17c3d14")
+	)
+	(wire
+		(pts
+			(xy 180.34 71.12) (xy 185.42 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "73ea28d8-49ab-4d51-9d7d-5b317a67cbec")
 	)
 	(wire
 		(pts
@@ -1791,7 +1993,7 @@
 	)
 	(wire
 		(pts
-			(xy 86.36 138.43) (xy 87.63 138.43)
+			(xy 78.74 138.43) (xy 80.01 138.43)
 		)
 		(stroke
 			(width 0)
@@ -1801,7 +2003,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 71.12) (xy 97.79 71.12)
+			(xy 87.63 71.12) (xy 88.9 71.12)
 		)
 		(stroke
 			(width 0)
@@ -1811,7 +2013,7 @@
 	)
 	(wire
 		(pts
-			(xy 106.68 132.08) (xy 109.22 132.08)
+			(xy 99.06 132.08) (xy 104.14 132.08)
 		)
 		(stroke
 			(width 0)
@@ -1831,7 +2033,7 @@
 	)
 	(wire
 		(pts
-			(xy 184.15 132.08) (xy 185.42 132.08)
+			(xy 190.5 132.08) (xy 191.77 132.08)
 		)
 		(stroke
 			(width 0)
@@ -1851,7 +2053,7 @@
 	)
 	(wire
 		(pts
-			(xy 185.42 82.55) (xy 185.42 83.82)
+			(xy 194.31 82.55) (xy 194.31 83.82)
 		)
 		(stroke
 			(width 0)
@@ -1871,7 +2073,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 132.08) (xy 97.79 132.08)
+			(xy 88.9 132.08) (xy 90.17 132.08)
 		)
 		(stroke
 			(width 0)
@@ -1881,7 +2083,7 @@
 	)
 	(wire
 		(pts
-			(xy 175.26 71.12) (xy 176.53 71.12)
+			(xy 175.26 71.12) (xy 180.34 71.12)
 		)
 		(stroke
 			(width 0)
@@ -1931,7 +2133,17 @@
 	)
 	(wire
 		(pts
-			(xy 97.79 132.08) (xy 97.79 133.35)
+			(xy 132.08 96.52) (xy 140.97 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b1d79011-78fb-4a3e-bd09-30d795c0d0bf")
+	)
+	(wire
+		(pts
+			(xy 90.17 132.08) (xy 90.17 133.35)
 		)
 		(stroke
 			(width 0)
@@ -2001,7 +2213,7 @@
 	)
 	(wire
 		(pts
-			(xy 78.74 71.12) (xy 86.36 71.12)
+			(xy 69.85 71.12) (xy 77.47 71.12)
 		)
 		(stroke
 			(width 0)
@@ -2011,7 +2223,7 @@
 	)
 	(wire
 		(pts
-			(xy 185.42 71.12) (xy 185.42 72.39)
+			(xy 194.31 71.12) (xy 194.31 72.39)
 		)
 		(stroke
 			(width 0)
@@ -2021,7 +2233,7 @@
 	)
 	(wire
 		(pts
-			(xy 91.44 92.71) (xy 91.44 93.98)
+			(xy 82.55 92.71) (xy 82.55 93.98)
 		)
 		(stroke
 			(width 0)
@@ -2031,7 +2243,7 @@
 	)
 	(wire
 		(pts
-			(xy 185.42 71.12) (xy 186.69 71.12)
+			(xy 194.31 71.12) (xy 195.58 71.12)
 		)
 		(stroke
 			(width 0)
@@ -2041,7 +2253,7 @@
 	)
 	(wire
 		(pts
-			(xy 86.36 132.08) (xy 88.9 132.08)
+			(xy 78.74 132.08) (xy 81.28 132.08)
 		)
 		(stroke
 			(width 0)
@@ -2051,13 +2263,33 @@
 	)
 	(wire
 		(pts
-			(xy 143.51 96.52) (xy 161.29 96.52)
+			(xy 143.51 96.52) (xy 151.13 96.52)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "ef1710f5-5964-41db-801a-53988e6543b1")
+	)
+	(wire
+		(pts
+			(xy 177.8 132.08) (xy 182.88 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f1caa08a-f0f8-4df8-b50b-0b564c6cb7f1")
+	)
+	(wire
+		(pts
+			(xy 151.13 96.52) (xy 161.29 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f3d55c51-8896-459c-876b-4c9f39f54455")
 	)
 	(global_label "5v 5w"
 		(shape input)
@@ -2083,7 +2315,7 @@
 	)
 	(global_label "3v3 MCU"
 		(shape input)
-		(at 86.36 132.08 180)
+		(at 78.74 132.08 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2093,7 +2325,7 @@
 		)
 		(uuid "7364ece4-1c59-4fd6-9ab6-918c36a590d6")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 74.9687 132.08 0)
+			(at 67.3487 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2127,7 +2359,7 @@
 	)
 	(hierarchical_label "dir"
 		(shape input)
-		(at 78.74 87.63 180)
+		(at 69.85 87.63 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2149,7 +2381,7 @@
 	)
 	(hierarchical_label "pwm"
 		(shape input)
-		(at 78.74 71.12 180)
+		(at 69.85 71.12 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2160,7 +2392,7 @@
 	)
 	(hierarchical_label "dir"
 		(shape input)
-		(at 196.85 77.47 0)
+		(at 205.74 77.47 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2182,7 +2414,7 @@
 	)
 	(hierarchical_label "dir"
 		(shape input)
-		(at 86.36 138.43 180)
+		(at 78.74 138.43 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2226,7 +2458,7 @@
 	)
 	(hierarchical_label "dir"
 		(shape input)
-		(at 185.42 132.08 0)
+		(at 191.77 132.08 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2237,7 +2469,7 @@
 	)
 	(hierarchical_label "pwm"
 		(shape input)
-		(at 196.85 71.12 0)
+		(at 205.74 71.12 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2256,6 +2488,243 @@
 			(justify left)
 		)
 		(uuid "db4231a7-3cdd-40d2-b13b-26c1e3e9dfe9")
+	)
+	(symbol
+		(lib_id "Treadmill_Comp:RCWCTE")
+		(at 104.14 127 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "0ebf448c-4eda-4ba4-9f88-146adcec1e8e")
+		(property "Reference" "TP6"
+			(at 102.362 124.46 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "RCWCTE"
+			(at 106.68 128.2699 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Treadmill_Feet:RCWCTE"
+			(at 104.14 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.koaspeer.com/pdfs/RC.pdf"
+			(at 104.14 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "https://www.digikey.com/en/products/detail/koa-speer-electronics-inc/RCWCTE/11476558"
+			(at 104.14 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PARTREV" "1/06/14"
+			(at 104.14 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "SNAPEDA_PN" "RCWCTE"
+			(at 104.14 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER" "KOA Speer"
+			(at 104.14 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" "2 mm"
+			(at 104.14 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" "Manufacturer Recommendations"
+			(at 104.14 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7640ae14-9cc8-4b2d-9154-da2f2943b231")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
+					(reference "TP6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Treadmill_Comp:RCWCTE")
+		(at 151.13 91.44 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1edbb202-c8f2-48ec-a15d-d4dd00497d92")
+		(property "Reference" "TP2"
+			(at 153.67 90.1699 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "RCWCTE"
+			(at 153.67 92.7099 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Treadmill_Feet:RCWCTE"
+			(at 151.13 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.koaspeer.com/pdfs/RC.pdf"
+			(at 151.13 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "https://www.digikey.com/en/products/detail/koa-speer-electronics-inc/RCWCTE/11476558"
+			(at 151.13 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PARTREV" "1/06/14"
+			(at 151.13 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "SNAPEDA_PN" "RCWCTE"
+			(at 151.13 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER" "KOA Speer"
+			(at 151.13 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" "2 mm"
+			(at 151.13 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" "Manufacturer Recommendations"
+			(at 151.13 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d56d5c34-c076-4e48-b3f9-dd789439c517")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
+					(reference "TP2")
+					(unit 1)
+				)
+			)
+		)
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -2326,7 +2795,7 @@
 	)
 	(symbol
 		(lib_id "Transistor_BJT:MUN5211DW1")
-		(at 186.69 77.47 0)
+		(at 195.58 77.47 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -2335,7 +2804,7 @@
 		(dnp no)
 		(uuid "267cb01b-528a-416f-8cd9-ce4f2fbb721b")
 		(property "Reference" "Q8"
-			(at 182.88 76.3777 0)
+			(at 191.77 76.3777 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2344,7 +2813,7 @@
 			)
 		)
 		(property "Value" "SMUN5230DW1T1G"
-			(at 182.88 78.9177 0)
+			(at 191.77 78.9177 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2353,7 +2822,7 @@
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_SMD:SOT-363_SC-70-6"
-			(at 186.563 88.646 0)
+			(at 195.453 88.646 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2362,7 +2831,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.onsemi.com/pdf/datasheet/dtc113ed-d.pdf"
-			(at 186.69 77.47 0)
+			(at 195.58 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2371,7 +2840,7 @@
 			)
 		)
 		(property "Description" "R1 = 1k R2 = 1K"
-			(at 186.69 77.47 0)
+			(at 195.58 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2401,6 +2870,124 @@
 			(project ""
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
 					(reference "Q8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Treadmill_Comp:RCWCTE")
+		(at 101.6 66.04 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "320f7700-5081-4528-a365-c90642f3558d")
+		(property "Reference" "TP3"
+			(at 99.822 63.246 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "RCWCTE"
+			(at 104.14 67.3099 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Treadmill_Feet:RCWCTE"
+			(at 101.6 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.koaspeer.com/pdfs/RC.pdf"
+			(at 101.6 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "https://www.digikey.com/en/products/detail/koa-speer-electronics-inc/RCWCTE/11476558"
+			(at 101.6 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PARTREV" "1/06/14"
+			(at 101.6 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "SNAPEDA_PN" "RCWCTE"
+			(at 101.6 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER" "KOA Speer"
+			(at 101.6 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" "2 mm"
+			(at 101.6 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" "Manufacturer Recommendations"
+			(at 101.6 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b117a59a-ec25-49de-9b8d-d021682a78b3")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
+					(reference "TP3")
 					(unit 1)
 				)
 			)
@@ -2478,7 +3065,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 185.42 83.82 0)
+		(at 194.31 83.82 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2487,7 +3074,7 @@
 		(fields_autoplaced yes)
 		(uuid "3f9f5d89-bac2-47fa-b586-024e0725ed30")
 		(property "Reference" "#PWR012"
-			(at 185.42 90.17 0)
+			(at 194.31 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2496,7 +3083,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 185.42 88.9 0)
+			(at 194.31 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2504,7 +3091,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 185.42 83.82 0)
+			(at 194.31 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2513,7 +3100,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 185.42 83.82 0)
+			(at 194.31 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2522,7 +3109,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 185.42 83.82 0)
+			(at 194.31 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2631,7 +3218,7 @@
 	)
 	(symbol
 		(lib_id "Transistor_BJT:MUN5330DW1")
-		(at 90.17 87.63 0)
+		(at 81.28 87.63 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2640,7 +3227,7 @@
 		(fields_autoplaced yes)
 		(uuid "440464bd-bc90-405b-b24d-b1078ca294ed")
 		(property "Reference" "Q6"
-			(at 93.98 86.5377 0)
+			(at 85.09 86.5377 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2649,7 +3236,7 @@
 			)
 		)
 		(property "Value" "MUN5330DW1T1G"
-			(at 93.98 89.0777 0)
+			(at 85.09 89.0777 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2658,7 +3245,7 @@
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_SMD:SOT-363_SC-70-6"
-			(at 90.17 87.63 0)
+			(at 81.28 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2667,7 +3254,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.onsemi.com/download/data-sheet/pdf/dtc113ep-d.pdf"
-			(at 90.17 87.63 0)
+			(at 81.28 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2676,7 +3263,7 @@
 			)
 		)
 		(property "Description" "Complementary Bias Resistor Transistors, Ic 100mA, Vce 50V, Vin(fwd) 10V, R1 = 1kohms, R2 = 1kohms, SOT-363"
-			(at 90.17 87.63 0)
+			(at 81.28 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2713,7 +3300,7 @@
 	)
 	(symbol
 		(lib_id "Transistor_BJT:MUN5211DW1")
-		(at 96.52 138.43 0)
+		(at 88.9 138.43 0)
 		(unit 2)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2721,7 +3308,7 @@
 		(dnp no)
 		(uuid "4ca866ad-c782-4cff-bdcc-7627e24d8e09")
 		(property "Reference" "Q8"
-			(at 99.822 137.414 0)
+			(at 92.202 137.414 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2730,7 +3317,7 @@
 			)
 		)
 		(property "Value" "SMUN5230DW1T1G"
-			(at 99.822 139.954 0)
+			(at 92.202 139.954 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2739,7 +3326,7 @@
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_SMD:SOT-363_SC-70-6"
-			(at 96.647 149.606 0)
+			(at 89.027 149.606 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2748,7 +3335,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.onsemi.com/pdf/datasheet/dtc113ed-d.pdf"
-			(at 96.52 138.43 0)
+			(at 88.9 138.43 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2757,7 +3344,7 @@
 			)
 		)
 		(property "Description" "R1 = 1k R2 = 1K"
-			(at 96.52 138.43 0)
+			(at 88.9 138.43 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2794,7 +3381,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 190.5 71.12 90)
+		(at 199.39 71.12 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2803,7 +3390,7 @@
 		(fields_autoplaced yes)
 		(uuid "535ebe3f-b812-405e-8f25-f965f71eaee5")
 		(property "Reference" "R8"
-			(at 190.5 64.77 90)
+			(at 199.39 64.77 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2811,7 +3398,7 @@
 			)
 		)
 		(property "Value" "100"
-			(at 190.5 67.31 90)
+			(at 199.39 67.31 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2819,7 +3406,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder"
-			(at 190.5 72.898 90)
+			(at 199.39 72.898 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2828,7 +3415,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 190.5 71.12 0)
+			(at 199.39 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2837,7 +3424,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 190.5 71.12 0)
+			(at 199.39 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2928,7 +3515,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 101.6 71.12 90)
+		(at 92.71 71.12 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2937,7 +3524,7 @@
 		(fields_autoplaced yes)
 		(uuid "75d06105-bb15-4901-89e5-4303afd120c1")
 		(property "Reference" "R5"
-			(at 101.6 64.77 90)
+			(at 92.71 64.77 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2945,7 +3532,7 @@
 			)
 		)
 		(property "Value" "100"
-			(at 101.6 67.31 90)
+			(at 92.71 67.31 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2953,7 +3540,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder"
-			(at 101.6 72.898 90)
+			(at 92.71 72.898 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2962,7 +3549,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 101.6 71.12 0)
+			(at 92.71 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2971,7 +3558,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 101.6 71.12 0)
+			(at 92.71 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2995,8 +3582,245 @@
 		)
 	)
 	(symbol
+		(lib_id "Treadmill_Comp:RCWCTE")
+		(at 132.08 91.44 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "94b32b99-2f33-4154-b423-eaaff82dede7")
+		(property "Reference" "TP1"
+			(at 134.62 90.1699 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "RCWCTE"
+			(at 134.62 92.7099 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Treadmill_Feet:RCWCTE"
+			(at 132.08 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.koaspeer.com/pdfs/RC.pdf"
+			(at 132.08 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "https://www.digikey.com/en/products/detail/koa-speer-electronics-inc/RCWCTE/11476558"
+			(at 132.08 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PARTREV" "1/06/14"
+			(at 132.08 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "SNAPEDA_PN" "RCWCTE"
+			(at 132.08 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER" "KOA Speer"
+			(at 132.08 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" "2 mm"
+			(at 132.08 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" "Manufacturer Recommendations"
+			(at 132.08 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f871b3be-c91e-43ee-a90a-d7ea872b6ba4")
+		)
+		(instances
+			(project ""
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
+					(reference "TP1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Treadmill_Comp:RCWCTE")
+		(at 180.34 66.04 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ac3ce96b-2a3b-4d8e-92bb-67312cc9400b")
+		(property "Reference" "TP4"
+			(at 178.816 63.5 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "RCWCTE"
+			(at 182.88 67.3099 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Treadmill_Feet:RCWCTE"
+			(at 180.34 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.koaspeer.com/pdfs/RC.pdf"
+			(at 180.34 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "https://www.digikey.com/en/products/detail/koa-speer-electronics-inc/RCWCTE/11476558"
+			(at 180.34 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PARTREV" "1/06/14"
+			(at 180.34 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "SNAPEDA_PN" "RCWCTE"
+			(at 180.34 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER" "KOA Speer"
+			(at 180.34 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" "2 mm"
+			(at 180.34 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" "Manufacturer Recommendations"
+			(at 180.34 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "836a5cb3-0598-45d9-ad84-0a5dbf847ea7")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
+					(reference "TP4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
-		(at 91.44 93.98 0)
+		(at 82.55 93.98 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3005,7 +3829,7 @@
 		(fields_autoplaced yes)
 		(uuid "b35c4889-c27a-4232-b754-983fdaf624a9")
 		(property "Reference" "#PWR011"
-			(at 91.44 100.33 0)
+			(at 82.55 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3014,7 +3838,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 91.44 99.06 0)
+			(at 82.55 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3022,7 +3846,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 91.44 93.98 0)
+			(at 82.55 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3031,7 +3855,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 91.44 93.98 0)
+			(at 82.55 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3040,7 +3864,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 91.44 93.98 0)
+			(at 82.55 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3062,7 +3886,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 97.79 144.78 0)
+		(at 90.17 144.78 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3071,7 +3895,7 @@
 		(fields_autoplaced yes)
 		(uuid "d046855f-a27e-4b9c-8013-a55fde606d0e")
 		(property "Reference" "#PWR013"
-			(at 97.79 151.13 0)
+			(at 90.17 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3080,7 +3904,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 97.79 149.86 0)
+			(at 90.17 149.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3088,7 +3912,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 97.79 144.78 0)
+			(at 90.17 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3097,7 +3921,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 97.79 144.78 0)
+			(at 90.17 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3106,7 +3930,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 97.79 144.78 0)
+			(at 90.17 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3128,7 +3952,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 92.71 132.08 90)
+		(at 85.09 132.08 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3137,7 +3961,7 @@
 		(fields_autoplaced yes)
 		(uuid "d0879330-fcc2-4bff-975a-b8cbdf613f97")
 		(property "Reference" "R10"
-			(at 92.71 125.73 90)
+			(at 85.09 125.73 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3145,7 +3969,7 @@
 			)
 		)
 		(property "Value" "100"
-			(at 92.71 128.27 90)
+			(at 85.09 128.27 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3153,7 +3977,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder"
-			(at 92.71 133.858 90)
+			(at 85.09 133.858 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3162,7 +3986,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 92.71 132.08 0)
+			(at 85.09 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3171,7 +3995,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 92.71 132.08 0)
+			(at 85.09 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3262,8 +4086,126 @@
 		)
 	)
 	(symbol
+		(lib_id "Treadmill_Comp:RCWCTE")
+		(at 177.8 127 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "dc894f32-78c4-46d4-878a-d0db408c8f91")
+		(property "Reference" "TP5"
+			(at 176.022 124.46 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "RCWCTE"
+			(at 180.34 128.2699 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Treadmill_Feet:RCWCTE"
+			(at 177.8 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.koaspeer.com/pdfs/RC.pdf"
+			(at 177.8 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "https://www.digikey.com/en/products/detail/koa-speer-electronics-inc/RCWCTE/11476558"
+			(at 177.8 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PARTREV" "1/06/14"
+			(at 177.8 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "SNAPEDA_PN" "RCWCTE"
+			(at 177.8 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER" "KOA Speer"
+			(at 177.8 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" "2 mm"
+			(at 177.8 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" "Manufacturer Recommendations"
+			(at 177.8 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3f8089db-4064-4b0f-887c-ecbf0a9e0c97")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
+					(reference "TP5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Transistor_BJT:MUN5330DW1")
-		(at 91.44 72.39 270)
+		(at 82.55 72.39 270)
 		(mirror x)
 		(unit 2)
 		(exclude_from_sim no)
@@ -3272,7 +4214,7 @@
 		(dnp no)
 		(uuid "ec917f8b-2505-475b-ac80-f96e1d4aeb9c")
 		(property "Reference" "Q6"
-			(at 91.2622 64.77 90)
+			(at 82.3722 64.77 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3280,7 +4222,7 @@
 			)
 		)
 		(property "Value" "MUN5330DW1T1G"
-			(at 91.2622 67.31 90)
+			(at 82.3722 67.31 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3288,7 +4230,7 @@
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_SMD:SOT-363_SC-70-6"
-			(at 91.44 72.39 0)
+			(at 82.55 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3297,7 +4239,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.onsemi.com/download/data-sheet/pdf/dtc113ep-d.pdf"
-			(at 91.44 72.39 0)
+			(at 82.55 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3306,7 +4248,7 @@
 			)
 		)
 		(property "Description" "Complementary Bias Resistor Transistors, Ic 100mA, Vce 50V, Vin(fwd) 10V, R1 = 1kohms, R2 = 1kohms, SOT-363"
-			(at 91.44 72.39 0)
+			(at 82.55 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3343,7 +4285,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 180.34 71.12 90)
+		(at 189.23 71.12 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3352,7 +4294,7 @@
 		(fields_autoplaced yes)
 		(uuid "f334e4ce-200a-4f19-8000-88b83d928525")
 		(property "Reference" "R7"
-			(at 180.34 64.77 90)
+			(at 189.23 64.77 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3360,7 +4302,7 @@
 			)
 		)
 		(property "Value" "100"
-			(at 180.34 67.31 90)
+			(at 189.23 67.31 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3368,7 +4310,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder"
-			(at 180.34 72.898 90)
+			(at 189.23 72.898 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3377,7 +4319,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 180.34 71.12 0)
+			(at 189.23 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3386,7 +4328,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 180.34 71.12 0)
+			(at 189.23 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3411,7 +4353,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 180.34 132.08 90)
+		(at 186.69 132.08 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3420,7 +4362,7 @@
 		(fields_autoplaced yes)
 		(uuid "fbcf3835-a0f9-48c0-865f-10aa2908963e")
 		(property "Reference" "R16"
-			(at 180.34 125.73 90)
+			(at 186.69 125.73 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3428,7 +4370,7 @@
 			)
 		)
 		(property "Value" "100"
-			(at 180.34 128.27 90)
+			(at 186.69 128.27 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3436,7 +4378,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder"
-			(at 180.34 133.858 90)
+			(at 186.69 133.858 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3445,7 +4387,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 180.34 132.08 0)
+			(at 186.69 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3454,7 +4396,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 180.34 132.08 0)
+			(at 186.69 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3479,7 +4421,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 102.87 132.08 90)
+		(at 95.25 132.08 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3488,7 +4430,7 @@
 		(fields_autoplaced yes)
 		(uuid "fe4d9ee1-4678-4a94-960c-259b10c70e4a")
 		(property "Reference" "R4"
-			(at 102.87 125.73 90)
+			(at 95.25 125.73 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3496,7 +4438,7 @@
 			)
 		)
 		(property "Value" "100"
-			(at 102.87 128.27 90)
+			(at 95.25 128.27 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3504,7 +4446,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder"
-			(at 102.87 133.858 90)
+			(at 95.25 133.858 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3513,7 +4455,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 102.87 132.08 0)
+			(at 95.25 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3522,7 +4464,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 102.87 132.08 0)
+			(at 95.25 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)

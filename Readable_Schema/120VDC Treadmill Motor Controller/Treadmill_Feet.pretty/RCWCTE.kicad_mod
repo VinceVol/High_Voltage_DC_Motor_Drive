@@ -1,0 +1,152 @@
+(footprint "RCWCTE"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at -0.318 -1.5564 0)
+		(layer "F.SilkS")
+		(uuid "939105ba-f520-422f-9fdf-02c4128c8c12")
+		(effects
+			(font
+				(size 0.64 0.64)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "RCWCTE"
+		(at 1.3076 1.5564 0)
+		(layer "F.Fab")
+		(uuid "90bc3117-72c8-4877-aac7-e43bcebaaba3")
+		(effects
+			(font
+				(size 0.64 0.64)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "1d444b37-6acd-4a44-b829-e6153df0b10d")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "d6a4aa27-72a7-4471-bb4c-19bbdeb9d0d0")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(fp_line
+		(start -2.35 -1.05)
+		(end -2.35 1.05)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "c18fd32a-b5ca-4e43-953f-64b51e7bb238")
+	)
+	(fp_line
+		(start -2.35 1.05)
+		(end 2.35 1.05)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "0dcff6f3-3158-4078-8cae-5911c61fb9dc")
+	)
+	(fp_line
+		(start 2.35 -1.05)
+		(end -2.35 -1.05)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "2a4e1860-14b2-4df5-b9d3-69cacc5ec51b")
+	)
+	(fp_line
+		(start 2.35 1.05)
+		(end 2.35 -1.05)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "7e509e26-f3e0-4be7-a5bf-e112bdbc712e")
+	)
+	(fp_line
+		(start -1.6 -0.8)
+		(end 1.6 -0.8)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "7c8cdb39-e193-4a88-a130-830e00e536c9")
+	)
+	(fp_line
+		(start -1.6 0.8)
+		(end -1.6 -0.8)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "f173e1fe-b4e2-4cb8-b387-55e06eef14ef")
+	)
+	(fp_line
+		(start 1.6 -0.8)
+		(end 1.6 0.8)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "120c1d65-43e6-4487-8a5a-3378a14b4e40")
+	)
+	(fp_line
+		(start 1.6 0.8)
+		(end -1.6 0.8)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "41f403ef-3880-4137-bc63-223707cf5ed3")
+	)
+	(pad "1" smd rect
+		(at 0 0)
+		(size 4.2 1.5)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(solder_mask_margin 0.102)
+		(uuid "eadf3be8-c6ee-4dd2-acba-6c7a06406151")
+	)
+	(embedded_fonts no)
+	(model "C:/Users/Vincent.Volpone/OneDrive - Gentex Corporation/Desktop/HOME/Electronics/High_Voltage_DC_Motor_Drive/Readable_Schema/Local_Components/RCWCTE/RCWCTE.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -90 -0 -0)
+		)
+	)
+)
