@@ -2258,74 +2258,6 @@
 		(uuid "db4231a7-3cdd-40d2-b13b-26c1e3e9dfe9")
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 180.34 71.12 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "1845f2a5-515b-4065-8eb3-dc2e71b14772")
-		(property "Reference" "R5"
-			(at 180.34 64.77 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "100"
-			(at 180.34 67.31 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
-			(at 180.34 72.898 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RC_GROUP_51_ROHS_L"
-			(at 180.34 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "RC1206FR-07100RL"
-			(at 180.34 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "cb2e46ca-6f24-4ef7-8571-e105482afe8b")
-		)
-		(pin "2"
-			(uuid "6c51af76-5d89-4ca5-933c-5d4409eeceb5")
-		)
-		(instances
-			(project "120VDC Treadmill Motor Controller"
-				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
-					(reference "R5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 43.18 41.91 270)
 		(unit 1)
@@ -2869,8 +2801,8 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "5fc44933-c182-4685-8d58-e7abd31e519e")
-		(property "Reference" "R7"
+		(uuid "535ebe3f-b812-405e-8f25-f965f71eaee5")
+		(property "Reference" "R8"
 			(at 190.5 64.77 90)
 			(effects
 				(font
@@ -2886,7 +2818,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder"
 			(at 190.5 72.898 90)
 			(effects
 				(font
@@ -2895,7 +2827,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RC_GROUP_51_ROHS_L"
+		(property "Datasheet" ""
 			(at 190.5 71.12 0)
 			(effects
 				(font
@@ -2904,7 +2836,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "RC1206FR-07100RL"
+		(property "Description" ""
 			(at 190.5 71.12 0)
 			(effects
 				(font
@@ -2914,15 +2846,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "7e6573fc-5552-434f-8492-b0ce5a59115e")
+			(uuid "aa53390e-8c07-4141-a5c9-546401c133e9")
 		)
 		(pin "2"
-			(uuid "5d0660a3-11c3-40ba-8422-7ca6220d74f4")
+			(uuid "3916a158-2106-4da1-835e-7adb5621570e")
 		)
 		(instances
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
-					(reference "R7")
+					(reference "R8")
 					(unit 1)
 				)
 			)
@@ -3003,8 +2935,8 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "90b9bd37-c435-4baf-8b14-e32da3aeb3e7")
-		(property "Reference" "R4"
+		(uuid "75d06105-bb15-4901-89e5-4303afd120c1")
+		(property "Reference" "R5"
 			(at 101.6 64.77 90)
 			(effects
 				(font
@@ -3020,7 +2952,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder"
 			(at 101.6 72.898 90)
 			(effects
 				(font
@@ -3029,7 +2961,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RC_GROUP_51_ROHS_L"
+		(property "Datasheet" ""
 			(at 101.6 71.12 0)
 			(effects
 				(font
@@ -3038,7 +2970,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "RC1206FR-07100RL"
+		(property "Description" ""
 			(at 101.6 71.12 0)
 			(effects
 				(font
@@ -3048,15 +2980,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "db365529-39ba-4651-9dc2-1a8b1becd243")
+			(uuid "b6191f25-3363-4703-a2ff-8aa73f855c32")
 		)
 		(pin "2"
-			(uuid "ea5ed36f-9e74-40b0-9032-91e12c39a0a3")
+			(uuid "835f902d-a7d4-41c1-b58c-17a8479dc9b5")
 		)
 		(instances
-			(project ""
+			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
-					(reference "R4")
+					(reference "R5")
 					(unit 1)
 				)
 			)
@@ -3220,7 +3152,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder"
 			(at 92.71 133.858 90)
 			(effects
 				(font
@@ -3229,7 +3161,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RC_GROUP_51_ROHS_L"
+		(property "Datasheet" ""
 			(at 92.71 132.08 0)
 			(effects
 				(font
@@ -3238,7 +3170,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "RC1206FR-07100RL"
+		(property "Description" ""
 			(at 92.71 132.08 0)
 			(effects
 				(font
@@ -3330,142 +3262,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 102.87 132.08 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "d7a46fd2-fca3-47cc-b2fd-2eb0a145b961")
-		(property "Reference" "R16"
-			(at 102.87 125.73 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "100"
-			(at 102.87 128.27 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
-			(at 102.87 133.858 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RC_GROUP_51_ROHS_L"
-			(at 102.87 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "RC1206FR-07100RL"
-			(at 102.87 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "19a77d60-f349-47aa-8981-54100ad91ce2")
-		)
-		(pin "2"
-			(uuid "a2bc8c5b-9530-40bf-af57-71ca1c907585")
-		)
-		(instances
-			(project "120VDC Treadmill Motor Controller"
-				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
-					(reference "R16")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 180.34 132.08 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "e1303a03-9433-457c-85d5-da7b49ac1659")
-		(property "Reference" "R8"
-			(at 180.34 125.73 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "100"
-			(at 180.34 128.27 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
-			(at 180.34 133.858 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/PYU-RC_GROUP_51_ROHS_L"
-			(at 180.34 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "RC1206FR-07100RL"
-			(at 180.34 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "e95cac9d-348e-4b3d-a4f2-27816ea5789f")
-		)
-		(pin "2"
-			(uuid "7b7a3c0c-9ea0-4cdf-87ce-bd221f82b0dc")
-		)
-		(instances
-			(project "120VDC Treadmill Motor Controller"
-				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
-					(reference "R8")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Transistor_BJT:MUN5330DW1")
 		(at 91.44 72.39 270)
 		(mirror x)
@@ -3541,6 +3337,210 @@
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
 					(reference "Q6")
 					(unit 2)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 180.34 71.12 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f334e4ce-200a-4f19-8000-88b83d928525")
+		(property "Reference" "R7"
+			(at 180.34 64.77 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100"
+			(at 180.34 67.31 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder"
+			(at 180.34 72.898 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 180.34 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 180.34 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e58d6d24-19cd-42a8-a73c-50a17931e00b")
+		)
+		(pin "2"
+			(uuid "2722a367-eba9-4043-b47f-d2c421889bb8")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
+					(reference "R7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 180.34 132.08 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fbcf3835-a0f9-48c0-865f-10aa2908963e")
+		(property "Reference" "R16"
+			(at 180.34 125.73 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100"
+			(at 180.34 128.27 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder"
+			(at 180.34 133.858 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 180.34 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 180.34 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f02e86f8-41ee-49f8-9432-0fcd4d3907b2")
+		)
+		(pin "2"
+			(uuid "0e3b3419-ebc4-4d52-b175-7aed181a76c2")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
+					(reference "R16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 102.87 132.08 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fe4d9ee1-4678-4a94-960c-259b10c70e4a")
+		(property "Reference" "R4"
+			(at 102.87 125.73 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100"
+			(at 102.87 128.27 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder"
+			(at 102.87 133.858 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 102.87 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 102.87 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "49d19a86-4236-4840-892b-b23d7a92492e")
+		)
+		(pin "2"
+			(uuid "fdb0b1d8-188e-44dd-a6b0-0ed34cbf5080")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
+					(reference "R4")
+					(unit 1)
 				)
 			)
 		)
