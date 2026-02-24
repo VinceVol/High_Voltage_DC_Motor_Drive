@@ -168,6 +168,313 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Device:C"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "C"
+				(at 0.635 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "C"
+				(at 0.635 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0.9652 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Unpolarized capacitor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "cap capacitor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "C_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "C_0_1"
+				(polyline
+					(pts
+						(xy -2.032 0.762) (xy 2.032 0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.032 -0.762) (xy 2.032 -0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "C_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 2.794)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 2.794)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Device:D"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "D"
+				(at 0 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "D"
+				(at 0 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Diode"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Sim.Device" "D"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Sim.Pins" "1=K 2=A"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "diode"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "D_0_1"
+				(polyline
+					(pts
+						(xy -1.27 1.27) (xy -1.27 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 1.27) (xy 1.27 -1.27) (xy -1.27 0) (xy 1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy -1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "D_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:R"
 			(pin_numbers
 				(hide yes)
@@ -292,9 +599,12 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Transistor_BJT:MUN5211DW1"
-			(pin_names
+		(symbol "Simulation_SPICE:NMOS"
+			(pin_numbers
 				(hide yes)
+			)
+			(pin_names
+				(offset 0)
 			)
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -308,7 +618,7 @@
 					(justify left)
 				)
 			)
-			(property "Value" "MUN5211DW1"
+			(property "Value" "NMOS"
 				(at 5.08 -1.27 0)
 				(effects
 					(font
@@ -317,8 +627,8 @@
 					(justify left)
 				)
 			)
-			(property "Footprint" "Package_TO_SOT_SMD:SOT-363_SC-70-6"
-				(at 0.127 -11.176 0)
+			(property "Footprint" ""
+				(at 5.08 2.54 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -326,7 +636,16 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "http://www.onsemi.com/pub/Collateral/DTC114ED-D.PDF"
+			(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs"
+				(at 0 -12.7 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "N-MOSFET transistor, drain/source/gate"
 				(at 0 0 0)
 				(effects
 					(font
@@ -335,7 +654,34 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "Dual NPN Bias Resistor Transistors, Ic 100mA, Vce 50V, Vin(fwd) 40V, R1 = 10kohms, R2 = 10kohms, SOT-363"
+			(property "Sim.Device" "NMOS"
+				(at 0 -17.145 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Sim.Type" "VDMOS"
+				(at 0 -19.05 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Sim.Pins" "1=D 2=G 3=S"
+				(at 0 -15.24 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "transistor NMOS N-MOS N-MOSFET simulation"
 				(at 0 0 0)
 				(effects
 					(font
@@ -344,158 +690,11 @@
 					(hide yes)
 				)
 			)
-			(property "ki_keywords" "BRT Digital Transistor"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "SOT*363*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "MUN5211DW1_0_1"
-				(rectangle
-					(start -6.35 0.508)
-					(end -4.826 -0.508)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -4.318 -2.286)
-					(end -3.302 -0.762)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center -3.81 0)
-					(radius 0.254)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
+			(symbol "NMOS_0_1"
 				(polyline
 					(pts
-						(xy -3.81 -0.762) (xy -3.81 0)
+						(xy 0.254 1.905) (xy 0.254 -1.905)
 					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -3.81 -2.286) (xy -3.81 -3.048) (xy 1.27 -3.048)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -0.762 0) (xy -4.826 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -0.635 1.905) (xy -0.635 -1.905)
-					)
-					(stroke
-						(width 0.508)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -0.635 0.635) (xy 1.27 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -0.635 -0.635) (xy 1.27 -2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 -1.778) (xy 0.508 -1.27) (xy 1.016 -2.286) (xy 0 -1.778)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(circle
-					(center 1.27 -3.048)
-					(radius 0.254)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-			)
-			(symbol "MUN5211DW1_1_1"
-				(circle
-					(center 0 0)
-					(radius 2.8194)
 					(stroke
 						(width 0.254)
 						(type default)
@@ -504,10 +703,165 @@
 						(type none)
 					)
 				)
+				(polyline
+					(pts
+						(xy 0.254 0) (xy -2.54 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 2.286) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 0.508) (xy 0.762 -0.508)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 -1.27) (xy 0.762 -2.286)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 -1.778) (xy 3.302 -1.778) (xy 3.302 1.778) (xy 0.762 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.016 0) (xy 2.032 0.381) (xy 2.032 -0.381) (xy 1.016 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(circle
+					(center 1.651 0)
+					(radius 2.794)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 2.54) (xy 2.54 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.54 1.778)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(circle
+					(center 2.54 -1.778)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 -2.54) (xy 2.54 0) (xy 0.762 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.794 0.508) (xy 2.921 0.381) (xy 3.683 0.381) (xy 3.81 0.254)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.302 0.381) (xy 2.921 -0.254) (xy 3.683 -0.254) (xy 3.302 0.381)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "NMOS_1_1"
 				(pin input line
-					(at -8.89 0 0)
+					(at -5.08 0 0)
 					(length 2.54)
-					(name "B1"
+					(name "G"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -523,27 +877,9 @@
 					)
 				)
 				(pin passive line
-					(at 1.27 5.08 270)
+					(at 2.54 5.08 270)
 					(length 2.54)
-					(name "C1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 1.27 -5.08 90)
-					(length 2.54)
-					(name "E1"
+					(name "D"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -558,41 +894,10 @@
 						)
 					)
 				)
-			)
-			(symbol "MUN5211DW1_2_1"
-				(circle
-					(center 0 0)
-					(radius 2.8194)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin input line
-					(at -8.89 0 0)
-					(length 2.54)
-					(name "B2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
 				(pin passive line
-					(at 1.27 5.08 270)
+					(at 2.54 -5.08 90)
 					(length 2.54)
-					(name "C2"
+					(name "S"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -600,372 +905,6 @@
 						)
 					)
 					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 1.27 -5.08 90)
-					(length 2.54)
-					(name "E2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "Transistor_BJT:MUN5330DW1"
-			(pin_names
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "Q"
-				(at 5.08 1.27 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "MUN5330DW1"
-				(at 5.08 -1.27 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" "Package_TO_SOT_SMD:SOT-363_SC-70-6"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "https://www.onsemi.com/download/data-sheet/pdf/dtc113ep-d.pdf"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Complementary Bias Resistor Transistors, Ic 100mA, Vce 50V, Vin(fwd) 10V, R1 = 1kohms, R2 = 1kohms, SOT-363"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "BRT Digital Transistor NPN PNP"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "SOT*363*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "MUN5330DW1_0_1"
-				(rectangle
-					(start -6.35 0.508)
-					(end -4.826 -0.508)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -4.318 -2.286)
-					(end -3.302 -0.762)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center -3.81 0)
-					(radius 0.254)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy -3.81 -0.762) (xy -3.81 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -3.81 -2.286) (xy -3.81 -3.048) (xy 1.27 -3.048)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -0.762 0) (xy -4.826 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -0.635 1.905) (xy -0.635 -1.905)
-					)
-					(stroke
-						(width 0.508)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -0.635 0.635) (xy 1.27 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -0.635 -0.635) (xy 1.27 -2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 1.27 -3.048)
-					(radius 0.254)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-			)
-			(symbol "MUN5330DW1_1_1"
-				(circle
-					(center 0 0)
-					(radius 2.8194)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 -1.778) (xy 0.508 -1.27) (xy 1.016 -2.286) (xy 0 -1.778)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(pin input line
-					(at -8.89 0 0)
-					(length 2.54)
-					(name "B1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 1.27 5.08 270)
-					(length 2.54)
-					(name "C1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 1.27 -5.08 90)
-					(length 2.54)
-					(name "E1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(symbol "MUN5330DW1_2_1"
-				(circle
-					(center 0 0)
-					(radius 2.8194)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.016 -1.778) (xy 0.508 -2.286) (xy 0 -1.27) (xy 1.016 -1.778)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(pin input line
-					(at -8.89 0 0)
-					(length 2.54)
-					(name "B2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 1.27 5.08 270)
-					(length 2.54)
-					(name "C2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 1.27 -5.08 90)
-					(length 2.54)
-					(name "E2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1402,6 +1341,430 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Treadmill_Comp:UCC21530DWKR"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at 26.67 7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Value" "UCC21530DWKR"
+				(at 26.67 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Footprint" "Treadmill_Feet:SOIC127P1030X265-16N"
+				(at 26.67 -94.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "http://www.ti.com/lit/gpn/UCC21530"
+				(at 26.67 -194.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Description" "4-A, 6-A, 5.7-kVrms isolated dual-channel gate driver with enable"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Height" "2.65"
+				(at 26.67 -394.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer_Name" "Texas Instruments"
+				(at 26.67 -494.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer_Part_Number" "UCC21530DWKR"
+				(at 26.67 -594.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Mouser Part Number" "595-UCC21530DWKR"
+				(at 26.67 -694.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/UCC21530DWKR?qs=9r4v7xj2LnlIyeJ7OolfPA%3D%3D"
+				(at 26.67 -794.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Arrow Part Number" "UCC21530DWKR"
+				(at 26.67 -894.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Arrow Price/Stock" "https://www.arrow.com/en/products/ucc21530dwkr/texas-instruments?utm_currency=USD&region=nac"
+				(at 26.67 -994.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(symbol "UCC21530DWKR_1_1"
+				(rectangle
+					(start 5.08 2.54)
+					(end 25.4 -20.32)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin passive line
+					(at 0 0 0)
+					(length 5.08)
+					(name "INA"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -2.54 0)
+					(length 5.08)
+					(name "INB"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -5.08 0)
+					(length 5.08)
+					(name "VCCI_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -7.62 0)
+					(length 5.08)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -10.16 0)
+					(length 5.08)
+					(name "EN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -12.7 0)
+					(length 5.08)
+					(name "DT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at 0 -15.24 0)
+					(length 5.08)
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -17.78 0)
+					(length 5.08)
+					(name "VCCI_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 30.48 0 180)
+					(length 5.08)
+					(name "VDDA"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "16"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 30.48 -2.54 180)
+					(length 5.08)
+					(name "OUTA"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "15"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 30.48 -5.08 180)
+					(length 5.08)
+					(name "VSSA"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "14"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 30.48 -7.62 180)
+					(length 5.08)
+					(name "NP_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "13"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 30.48 -10.16 180)
+					(length 5.08)
+					(name "NP_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 30.48 -12.7 180)
+					(length 5.08)
+					(name "VDDB"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 30.48 -15.24 180)
+					(length 5.08)
+					(name "OUTB"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 30.48 -17.78 180)
+					(length 5.08)
+					(name "VSSB"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "power:GND"
 			(power)
 			(pin_numbers
@@ -1628,79 +1991,109 @@
 		(uuid "2aec37f8-0a3d-44d6-979b-c8e7062b576f")
 	)
 	(junction
-		(at 90.17 132.08)
+		(at 46.99 96.52)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "00471ce2-28b3-4c87-83fe-8cae833fc75b")
+		(uuid "0ec47517-eee8-4516-b6e5-3737ac744347")
 	)
 	(junction
-		(at 151.13 96.52)
+		(at 170.18 95.25)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "0fbc314a-2830-495f-b636-cef3adfd309d")
 	)
 	(junction
-		(at 194.31 71.12)
+		(at 62.23 99.06)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "58b0eb4b-a852-4f8b-9388-16149369e244")
+		(uuid "23623818-7c3b-4865-a9a2-35745b99f46c")
 	)
 	(junction
-		(at 101.6 71.12)
+		(at 53.34 96.52)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "6e388566-5291-444f-8945-3d10e65f4c58")
+		(uuid "5c0ddb52-1e50-4b43-b89b-5077afa1b1e8")
 	)
 	(junction
-		(at 140.97 41.91)
+		(at 137.16 78.74)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6d0e00b2-3781-42b3-a1b3-67ca77e685d9")
+	)
+	(junction
+		(at 62.23 114.3)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6e29ecb2-82bc-4e17-b81d-17f289a80acc")
+	)
+	(junction
+		(at 39.37 81.28)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "79aec41f-58d6-460b-b195-e702ec36d135")
+	)
+	(junction
+		(at 160.02 40.64)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "7f846a51-39fa-4cd9-a6b2-f747bd9287bb")
 	)
 	(junction
-		(at 140.97 58.42)
+		(at 160.02 57.15)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "831c0b1a-b1ee-4e36-92da-2a25fb9b27c8")
 	)
 	(junction
-		(at 104.14 132.08)
+		(at 39.37 96.52)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "9ec0fb3c-04c9-4f18-a270-8d53b7c5a40d")
+		(uuid "88795388-d807-4c4a-90a9-8599700a9c9d")
 	)
 	(junction
-		(at 140.97 142.24)
+		(at 160.02 140.97)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "9fa67263-8ab2-4cc2-b69e-dab4f51fe1a7")
 	)
 	(junction
-		(at 177.8 132.08)
+		(at 129.54 67.31)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "aec82f69-a6e4-49f9-b8e8-5f74b1530c1e")
+		(uuid "acb6bd32-fd3c-46d3-922c-e52f03209269")
 	)
 	(junction
-		(at 180.34 71.12)
+		(at 53.34 83.82)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "be4b64e7-a063-4524-911f-e082d99960c0")
+		(uuid "b1acc474-aa5d-469c-ac4c-64840401c94e")
 	)
 	(junction
-		(at 161.29 96.52)
+		(at 46.99 86.36)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b547d0f8-75d8-4de2-a3dd-64968cb25f8a")
+	)
+	(junction
+		(at 129.54 78.74)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c0695088-f5c6-4fae-9944-0750b5691f54")
+	)
+	(junction
+		(at 180.34 95.25)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c09b79b7-a13a-41e3-8f35-6a4b50b47038")
 	)
 	(junction
-		(at 120.65 96.52)
+		(at 139.7 95.25)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e907b4f4-a1ff-4f05-8742-9886574e6376")
 	)
 	(junction
-		(at 132.08 96.52)
+		(at 151.13 95.25)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f5041383-d353-41b7-8d6d-b6d3b6adbe35")
@@ -1723,6 +2116,26 @@
 	)
 	(wire
 		(pts
+			(xy 53.34 76.2) (xy 53.34 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0896de28-8531-4353-90a2-2cee38c09654")
+	)
+	(wire
+		(pts
+			(xy 68.58 96.52) (xy 53.34 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0c579893-afcc-43a2-8418-2fff352d8bab")
+	)
+	(wire
+		(pts
 			(xy 43.18 41.91) (xy 45.72 41.91)
 		)
 		(stroke
@@ -1733,17 +2146,27 @@
 	)
 	(wire
 		(pts
-			(xy 204.47 77.47) (xy 205.74 77.47)
+			(xy 129.54 62.23) (xy 129.54 67.31)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "1b64b513-8ace-4c76-9128-7a74a1982bd3")
+		(uuid "0f90c65a-39df-40a0-9318-66f075f095a9")
 	)
 	(wire
 		(pts
-			(xy 120.65 96.52) (xy 132.08 96.52)
+			(xy 110.49 67.31) (xy 120.65 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "16817d79-1477-4265-a464-8db339e4c8a8")
+	)
+	(wire
+		(pts
+			(xy 139.7 95.25) (xy 151.13 95.25)
 		)
 		(stroke
 			(width 0)
@@ -1753,7 +2176,7 @@
 	)
 	(wire
 		(pts
-			(xy 161.29 58.42) (xy 161.29 63.5)
+			(xy 180.34 57.15) (xy 180.34 62.23)
 		)
 		(stroke
 			(width 0)
@@ -1763,7 +2186,7 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 31.75) (xy 140.97 41.91)
+			(xy 160.02 30.48) (xy 160.02 40.64)
 		)
 		(stroke
 			(width 0)
@@ -1773,7 +2196,7 @@
 	)
 	(wire
 		(pts
-			(xy 143.51 41.91) (xy 140.97 41.91)
+			(xy 162.56 40.64) (xy 160.02 40.64)
 		)
 		(stroke
 			(width 0)
@@ -1783,7 +2206,7 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 41.91) (xy 140.97 50.8)
+			(xy 160.02 40.64) (xy 160.02 49.53)
 		)
 		(stroke
 			(width 0)
@@ -1803,47 +2226,37 @@
 	)
 	(wire
 		(pts
-			(xy 101.6 71.12) (xy 106.68 71.12)
+			(xy 46.99 86.36) (xy 46.99 87.63)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "27618dae-2f6c-4dc3-8b98-3bc455dbd623")
+		(uuid "2754b00a-1c57-47af-825e-bd331709129b")
 	)
 	(wire
 		(pts
-			(xy 193.04 71.12) (xy 194.31 71.12)
+			(xy 22.86 86.36) (xy 26.67 86.36)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "29aad7fb-aa5d-4265-b003-0a3587d206dc")
+		(uuid "2759893d-38d3-491d-9a6d-f1d65f9ae305")
 	)
 	(wire
 		(pts
-			(xy 69.85 87.63) (xy 72.39 87.63)
+			(xy 137.16 78.74) (xy 137.16 95.25)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "2d9b92cd-587f-4e7b-959b-22ee28a76f87")
+		(uuid "3217d858-1308-46be-abca-ac761864104d")
 	)
 	(wire
 		(pts
-			(xy 90.17 143.51) (xy 90.17 144.78)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3339fa72-b7fe-4d9e-998e-eac10983a1af")
-	)
-	(wire
-		(pts
-			(xy 118.11 96.52) (xy 120.65 96.52)
+			(xy 137.16 95.25) (xy 139.7 95.25)
 		)
 		(stroke
 			(width 0)
@@ -1853,7 +2266,37 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 58.42) (xy 161.29 58.42)
+			(xy 128.27 67.31) (xy 129.54 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3671adc0-ab25-48a5-96ae-87f4edacf48b")
+	)
+	(wire
+		(pts
+			(xy 119.38 62.23) (xy 120.65 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3c5b1d6b-673e-483f-80d0-59e07a8a22b4")
+	)
+	(wire
+		(pts
+			(xy 68.58 93.98) (xy 57.15 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3e573606-1b4a-4ef5-8863-42de6a4b878b")
+	)
+	(wire
+		(pts
+			(xy 160.02 57.15) (xy 180.34 57.15)
 		)
 		(stroke
 			(width 0)
@@ -1863,27 +2306,57 @@
 	)
 	(wire
 		(pts
-			(xy 104.14 132.08) (xy 109.22 132.08)
+			(xy 22.86 81.28) (xy 26.67 81.28)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "4716c46c-f20c-408b-9601-bbb03e8052a3")
+		(uuid "472ab688-4224-42e4-b3d8-93e516037811")
 	)
 	(wire
 		(pts
-			(xy 203.2 71.12) (xy 205.74 71.12)
+			(xy 62.23 88.9) (xy 62.23 81.28)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "47fc70f0-95b2-49b4-a781-3947ffc35ebd")
+		(uuid "49cf32d4-e822-435a-9b4d-5571703df6e2")
 	)
 	(wire
 		(pts
-			(xy 118.11 134.62) (xy 118.11 142.24)
+			(xy 68.58 88.9) (xy 62.23 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4b46aa14-f94b-4445-bd51-82276ef526dd")
+	)
+	(wire
+		(pts
+			(xy 34.29 86.36) (xy 46.99 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4b66b278-b32d-4457-a924-2d1d8f79c3e7")
+	)
+	(wire
+		(pts
+			(xy 53.34 95.25) (xy 53.34 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4c43cc2f-7584-475f-b9ff-a999725e531a")
+	)
+	(wire
+		(pts
+			(xy 137.16 133.35) (xy 137.16 140.97)
 		)
 		(stroke
 			(width 0)
@@ -1893,17 +2366,17 @@
 	)
 	(wire
 		(pts
-			(xy 82.55 81.28) (xy 82.55 82.55)
+			(xy 110.49 62.23) (xy 111.76 62.23)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "4ecb8996-efe9-496c-a5c6-8d8517bc924a")
+		(uuid "51047797-0bb8-49fe-acaf-36d3c761ae80")
 	)
 	(wire
 		(pts
-			(xy 161.29 96.52) (xy 161.29 123.19)
+			(xy 180.34 95.25) (xy 180.34 121.92)
 		)
 		(stroke
 			(width 0)
@@ -1913,23 +2386,43 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 71.12) (xy 101.6 71.12)
+			(xy 39.37 96.52) (xy 39.37 95.25)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "5854b258-037b-43ac-ba19-7ee21bae278f")
+		(uuid "5b1f7f7d-77fa-40ea-9037-5cd4f8b69275")
 	)
 	(wire
 		(pts
-			(xy 90.17 132.08) (xy 91.44 132.08)
+			(xy 129.54 77.47) (xy 129.54 78.74)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "60b57dd3-7b7a-4190-8ab5-dfead5adc374")
+		(uuid "679e5b87-2856-4ae1-8f27-a1b75463e59c")
+	)
+	(wire
+		(pts
+			(xy 128.27 62.23) (xy 129.54 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "683160f1-2c4d-4453-9041-abe867b38177")
+	)
+	(wire
+		(pts
+			(xy 57.15 93.98) (xy 57.15 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "688a895e-f4a9-4266-84b6-0a5a16393ac8")
 	)
 	(wire
 		(pts
@@ -1943,17 +2436,27 @@
 	)
 	(wire
 		(pts
-			(xy 172.72 132.08) (xy 177.8 132.08)
+			(xy 62.23 106.68) (xy 68.58 106.68)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "6b0cce69-891a-43d0-984f-9c760a96b1fc")
+		(uuid "69a5cb0d-27c5-4825-b102-78e588db219a")
 	)
 	(wire
 		(pts
-			(xy 163.83 73.66) (xy 163.83 96.52)
+			(xy 57.15 123.19) (xy 57.15 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6e3bb317-b8f8-466d-bab3-7fd8fa1b5a8f")
+	)
+	(wire
+		(pts
+			(xy 182.88 72.39) (xy 182.88 95.25)
 		)
 		(stroke
 			(width 0)
@@ -1963,27 +2466,17 @@
 	)
 	(wire
 		(pts
-			(xy 180.34 71.12) (xy 185.42 71.12)
+			(xy 68.58 101.6) (xy 64.77 101.6)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "73ea28d8-49ab-4d51-9d7d-5b317a67cbec")
+		(uuid "7084f7e1-7aa3-4c65-b917-5781ada29b12")
 	)
 	(wire
 		(pts
-			(xy 113.03 115.57) (xy 113.03 123.19)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "74e09b97-6866-4a3b-9483-5fdd02e30169")
-	)
-	(wire
-		(pts
-			(xy 140.97 54.61) (xy 140.97 58.42)
+			(xy 160.02 53.34) (xy 160.02 57.15)
 		)
 		(stroke
 			(width 0)
@@ -1993,37 +2486,37 @@
 	)
 	(wire
 		(pts
-			(xy 78.74 138.43) (xy 80.01 138.43)
+			(xy 129.54 67.31) (xy 129.54 69.85)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "7b1868a4-19fa-4dac-8a91-ab9e2c328477")
+		(uuid "77281a3d-be40-441e-8cf6-9b8aa0ad0628")
 	)
 	(wire
 		(pts
-			(xy 87.63 71.12) (xy 88.9 71.12)
+			(xy 53.34 83.82) (xy 53.34 87.63)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "7d717d5b-66c5-4be9-b4ac-fde3aa06509c")
+		(uuid "7a01986d-e4e3-48f5-93b4-ba3ca46de613")
 	)
 	(wire
 		(pts
-			(xy 99.06 132.08) (xy 104.14 132.08)
+			(xy 68.58 91.44) (xy 59.69 91.44)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "84643700-6d3c-429e-9eb0-041d0ee5da4a")
+		(uuid "8b24fc80-fb19-4632-8e2b-0e65070358a7")
 	)
 	(wire
 		(pts
-			(xy 163.83 96.52) (xy 161.29 96.52)
+			(xy 182.88 95.25) (xy 180.34 95.25)
 		)
 		(stroke
 			(width 0)
@@ -2033,17 +2526,7 @@
 	)
 	(wire
 		(pts
-			(xy 190.5 132.08) (xy 191.77 132.08)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8c6c3f35-2769-4da7-8b4d-ff29b5945528")
-	)
-	(wire
-		(pts
-			(xy 120.65 58.42) (xy 140.97 58.42)
+			(xy 137.16 57.15) (xy 160.02 57.15)
 		)
 		(stroke
 			(width 0)
@@ -2053,17 +2536,37 @@
 	)
 	(wire
 		(pts
-			(xy 194.31 82.55) (xy 194.31 83.82)
+			(xy 57.15 99.06) (xy 62.23 99.06)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "978e2dde-88ee-40b1-b544-743855a8c784")
+		(uuid "924ee806-9ed2-4538-bf49-f8e8b77fa1ce")
 	)
 	(wire
 		(pts
-			(xy 143.51 54.61) (xy 140.97 54.61)
+			(xy 57.15 106.68) (xy 57.15 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "94407da0-b7f2-4956-a435-5afb228d0207")
+	)
+	(wire
+		(pts
+			(xy 64.77 101.6) (xy 64.77 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9615b1b6-5d88-484d-b36b-7a5644143838")
+	)
+	(wire
+		(pts
+			(xy 162.56 53.34) (xy 160.02 53.34)
 		)
 		(stroke
 			(width 0)
@@ -2073,37 +2576,37 @@
 	)
 	(wire
 		(pts
-			(xy 88.9 132.08) (xy 90.17 132.08)
+			(xy 62.23 99.06) (xy 68.58 99.06)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "9df34c9e-d767-4947-9c05-26b508206a76")
+		(uuid "9d287553-5159-49d8-aaab-e62bc00b9a9d")
 	)
 	(wire
 		(pts
-			(xy 175.26 71.12) (xy 180.34 71.12)
+			(xy 59.69 86.36) (xy 46.99 86.36)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "9e6c23e3-6b1c-4962-b3b5-1f557e61cd59")
+		(uuid "9f5e570a-976e-4de8-b048-e4b23203aebf")
 	)
 	(wire
 		(pts
-			(xy 168.91 115.57) (xy 168.91 123.19)
+			(xy 39.37 81.28) (xy 62.23 81.28)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "9f0502c8-8532-46fd-a5eb-344bbe34867d")
+		(uuid "a00a48d9-fa0c-4864-8645-a9b14d150bce")
 	)
 	(wire
 		(pts
-			(xy 140.97 50.8) (xy 143.51 50.8)
+			(xy 160.02 49.53) (xy 162.56 49.53)
 		)
 		(stroke
 			(width 0)
@@ -2113,7 +2616,27 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 142.24) (xy 140.97 148.59)
+			(xy 46.99 95.25) (xy 46.99 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a2ddd617-c182-4697-a09f-eb9c2991d609")
+	)
+	(wire
+		(pts
+			(xy 39.37 96.52) (xy 46.99 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a3f20925-d281-4a32-a880-36f93e1f02e2")
+	)
+	(wire
+		(pts
+			(xy 160.02 140.97) (xy 160.02 147.32)
 		)
 		(stroke
 			(width 0)
@@ -2123,7 +2646,17 @@
 	)
 	(wire
 		(pts
-			(xy 118.11 142.24) (xy 140.97 142.24)
+			(xy 62.23 123.19) (xy 62.23 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a7e42740-ef38-4e53-8a3d-a608beb65532")
+	)
+	(wire
+		(pts
+			(xy 137.16 140.97) (xy 160.02 140.97)
 		)
 		(stroke
 			(width 0)
@@ -2133,7 +2666,27 @@
 	)
 	(wire
 		(pts
-			(xy 132.08 96.52) (xy 140.97 96.52)
+			(xy 59.69 91.44) (xy 59.69 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "af443469-ccc6-4da7-9387-67b0d36c7031")
+	)
+	(wire
+		(pts
+			(xy 57.15 83.82) (xy 53.34 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b08f8437-cfd1-41e0-9860-3cbe1e4fc9b2")
+	)
+	(wire
+		(pts
+			(xy 151.13 95.25) (xy 160.02 95.25)
 		)
 		(stroke
 			(width 0)
@@ -2143,13 +2696,13 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 132.08) (xy 90.17 133.35)
+			(xy 34.29 81.28) (xy 39.37 81.28)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "b2b8586b-dee9-454b-924a-c9309d1c5d4e")
+		(uuid "b5b65cf5-71c4-4f0a-921c-0f898788b5d1")
 	)
 	(wire
 		(pts
@@ -2163,7 +2716,7 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 96.52) (xy 120.65 123.19)
+			(xy 139.7 95.25) (xy 139.7 121.92)
 		)
 		(stroke
 			(width 0)
@@ -2173,7 +2726,7 @@
 	)
 	(wire
 		(pts
-			(xy 163.83 134.62) (xy 163.83 142.24)
+			(xy 182.88 133.35) (xy 182.88 140.97)
 		)
 		(stroke
 			(width 0)
@@ -2183,7 +2736,27 @@
 	)
 	(wire
 		(pts
-			(xy 118.11 73.66) (xy 118.11 96.52)
+			(xy 39.37 81.28) (xy 39.37 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c698411f-cfbd-4092-b820-2066719b3aa1")
+	)
+	(wire
+		(pts
+			(xy 53.34 96.52) (xy 46.99 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c787ef1c-e9d9-40ad-aa73-5b96608ea1f4")
+	)
+	(wire
+		(pts
+			(xy 137.16 72.39) (xy 137.16 78.74)
 		)
 		(stroke
 			(width 0)
@@ -2193,7 +2766,7 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 142.24) (xy 163.83 142.24)
+			(xy 160.02 140.97) (xy 182.88 140.97)
 		)
 		(stroke
 			(width 0)
@@ -2203,7 +2776,17 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 63.5) (xy 120.65 58.42)
+			(xy 129.54 78.74) (xy 123.19 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d0a7cbd9-e974-422c-bef0-e99554fc9fd8")
+	)
+	(wire
+		(pts
+			(xy 137.16 62.23) (xy 137.16 57.15)
 		)
 		(stroke
 			(width 0)
@@ -2213,57 +2796,67 @@
 	)
 	(wire
 		(pts
-			(xy 69.85 71.12) (xy 77.47 71.12)
+			(xy 110.49 67.31) (xy 110.49 62.23)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "de84e7ec-e3d5-47bc-922f-5923fa3c99af")
+		(uuid "d2b23263-ffcd-40f0-a80f-65c970eafb41")
 	)
 	(wire
 		(pts
-			(xy 194.31 71.12) (xy 194.31 72.39)
+			(xy 57.15 115.57) (xy 57.15 114.3)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "decb274c-3a15-401c-a312-624a3a1e4e12")
+		(uuid "d5782750-5291-4e22-a3bf-2ae2fd7cc95f")
 	)
 	(wire
 		(pts
-			(xy 82.55 92.71) (xy 82.55 93.98)
+			(xy 62.23 114.3) (xy 62.23 115.57)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "e3217fc4-d5f0-4d07-adfc-57dbba561589")
+		(uuid "dadcdb59-4898-4897-b8d3-aab4ffe3ae10")
 	)
 	(wire
 		(pts
-			(xy 194.31 71.12) (xy 195.58 71.12)
+			(xy 57.15 114.3) (xy 62.23 114.3)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "ee6a5e83-2877-4092-9620-236b4eddc550")
+		(uuid "e0e092b3-1a81-4ab5-ad80-c32192ffd4f4")
 	)
 	(wire
 		(pts
-			(xy 78.74 132.08) (xy 81.28 132.08)
+			(xy 39.37 97.79) (xy 39.37 96.52)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "ee74685f-6242-4f86-8d61-6f0cc33d803b")
+		(uuid "e3165f20-9c7a-4544-b4db-da1cd1fddbda")
 	)
 	(wire
 		(pts
-			(xy 143.51 96.52) (xy 151.13 96.52)
+			(xy 62.23 114.3) (xy 64.77 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eae9ea66-3882-4764-a545-259cecf0b009")
+	)
+	(wire
+		(pts
+			(xy 162.56 95.25) (xy 170.18 95.25)
 		)
 		(stroke
 			(width 0)
@@ -2273,23 +2866,23 @@
 	)
 	(wire
 		(pts
-			(xy 177.8 132.08) (xy 182.88 132.08)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f1caa08a-f0f8-4df8-b50b-0b564c6cb7f1")
-	)
-	(wire
-		(pts
-			(xy 151.13 96.52) (xy 161.29 96.52)
+			(xy 170.18 95.25) (xy 180.34 95.25)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "f3d55c51-8896-459c-876b-4c9f39f54455")
+	)
+	(wire
+		(pts
+			(xy 129.54 78.74) (xy 137.16 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f777cf4e-c808-4bc7-8f67-7af3d1ec47e9")
 	)
 	(global_label "5v 5w"
 		(shape input)
@@ -2313,31 +2906,9 @@
 			)
 		)
 	)
-	(global_label "3v3 MCU"
+	(global_label "5v 5w"
 		(shape input)
-		(at 78.74 132.08 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "7364ece4-1c59-4fd6-9ab6-918c36a590d6")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 67.3487 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "170V Rect"
-		(shape output)
-		(at 140.97 31.75 90)
+		(at 53.34 76.2 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2345,9 +2916,9 @@
 			)
 			(justify left)
 		)
-		(uuid "f64b8922-0df6-4c9d-8815-bf2d81ad9861")
+		(uuid "3f7898a6-5e48-4163-b849-3556330dcb84")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 140.97 18.9072 90)
+			(at 53.34 67.5301 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2357,9 +2928,31 @@
 			)
 		)
 	)
-	(hierarchical_label "dir"
+	(global_label "170V Rect"
+		(shape output)
+		(at 160.02 30.48 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "f64b8922-0df6-4c9d-8815-bf2d81ad9861")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 160.02 17.6372 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(hierarchical_label "dir_a"
 		(shape input)
-		(at 69.85 87.63 180)
+		(at 29.21 62.23 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2370,7 +2963,7 @@
 	)
 	(hierarchical_label "i_sense_+"
 		(shape output)
-		(at 143.51 50.8 0)
+		(at 162.56 49.53 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2379,9 +2972,9 @@
 		)
 		(uuid "459d3fbc-bf3d-4cee-aa29-22e7ae5010c8")
 	)
-	(hierarchical_label "pwm"
+	(hierarchical_label "pwm_a"
 		(shape input)
-		(at 69.85 71.12 180)
+		(at 22.86 81.28 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2390,53 +2983,20 @@
 		)
 		(uuid "52bc3847-6f99-4eb6-8269-e26bd422c1a3")
 	)
-	(hierarchical_label "dir"
+	(hierarchical_label "pwm_b"
 		(shape input)
-		(at 205.74 77.47 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "6e6def95-18ad-4c12-a9cb-8f3e4d2002d9")
-	)
-	(hierarchical_label "ls_15v"
-		(shape input)
-		(at 168.91 115.57 90)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "9653c13e-ff98-4c71-a7a2-d67c9cae9438")
-	)
-	(hierarchical_label "dir"
-		(shape input)
-		(at 78.74 138.43 180)
+		(at 29.21 58.42 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "ad1076e5-9b7c-4947-8a46-e98e9a2edcc2")
-	)
-	(hierarchical_label "ls_15v"
-		(shape input)
-		(at 113.03 115.57 90)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "adffb559-d4e2-4efe-b363-ae5163f446fa")
+		(uuid "5e4aabf4-0b77-4e96-b864-a93cd12e4d89")
 	)
 	(hierarchical_label "r_brake_+"
 		(shape output)
-		(at 143.51 41.91 0)
+		(at 162.56 40.64 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2447,7 +3007,7 @@
 	)
 	(hierarchical_label "i_sense_-"
 		(shape input)
-		(at 143.51 54.61 0)
+		(at 162.56 53.34 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2456,27 +3016,16 @@
 		)
 		(uuid "c685ebdd-74ae-4bd7-a9e6-72ee92de4e93")
 	)
-	(hierarchical_label "dir"
+	(hierarchical_label "dir_b"
 		(shape input)
-		(at 191.77 132.08 0)
+		(at 22.86 86.36 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left)
+			(justify right)
 		)
-		(uuid "c6a1c777-a61b-45f0-a273-5989879985fe")
-	)
-	(hierarchical_label "pwm"
-		(shape input)
-		(at 205.74 71.12 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "cf819bd7-0eae-4bb2-875b-a68b0d706279")
+		(uuid "d7720dc1-21b5-4233-9530-fb2156858c20")
 	)
 	(hierarchical_label "ls_15v"
 		(shape output)
@@ -2490,45 +3039,17 @@
 		(uuid "db4231a7-3cdd-40d2-b13b-26c1e3e9dfe9")
 	)
 	(symbol
-		(lib_id "Treadmill_Comp:RCWCTE")
-		(at 104.14 127 90)
+		(lib_id "power:GND")
+		(at 57.15 107.95 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "0ebf448c-4eda-4ba4-9f88-146adcec1e8e")
-		(property "Reference" "TP6"
-			(at 102.362 124.46 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "RCWCTE"
-			(at 106.68 128.2699 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Treadmill_Feet:RCWCTE"
-			(at 104.14 127 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.koaspeer.com/pdfs/RC.pdf"
-			(at 104.14 127 0)
+		(fields_autoplaced yes)
+		(uuid "1964aabc-8e25-471b-912a-22f6fff09878")
+		(property "Reference" "#PWR011"
+			(at 57.15 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2536,8 +3057,16 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "https://www.digikey.com/en/products/detail/koa-speer-electronics-inc/RCWCTE/11476558"
-			(at 104.14 127 0)
+		(property "Value" "GND"
+			(at 57.15 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 57.15 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2545,63 +3074,31 @@
 				(hide yes)
 			)
 		)
-		(property "PARTREV" "1/06/14"
-			(at 104.14 127 0)
+		(property "Datasheet" ""
+			(at 57.15 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify bottom)
 				(hide yes)
 			)
 		)
-		(property "SNAPEDA_PN" "RCWCTE"
-			(at 104.14 127 0)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 57.15 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER" "KOA Speer"
-			(at 104.14 127 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "MAXIMUM_PACKAGE_HEIGHT" "2 mm"
-			(at 104.14 127 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "STANDARD" "Manufacturer Recommendations"
-			(at 104.14 127 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
 				(hide yes)
 			)
 		)
 		(pin "1"
-			(uuid "7640ae14-9cc8-4b2d-9154-da2f2943b231")
+			(uuid "98a425d4-9e60-4994-86fc-7714c11ea2ff")
 		)
 		(instances
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
-					(reference "TP6")
+					(reference "#PWR011")
 					(unit 1)
 				)
 			)
@@ -2609,7 +3106,7 @@
 	)
 	(symbol
 		(lib_id "Treadmill_Comp:RCWCTE")
-		(at 151.13 91.44 90)
+		(at 170.18 90.17 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2618,7 +3115,7 @@
 		(fields_autoplaced yes)
 		(uuid "1edbb202-c8f2-48ec-a15d-d4dd00497d92")
 		(property "Reference" "TP2"
-			(at 153.67 90.1699 90)
+			(at 172.72 88.8999 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2627,7 +3124,7 @@
 			)
 		)
 		(property "Value" "RCWCTE"
-			(at 153.67 92.7099 90)
+			(at 172.72 91.4399 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2637,7 +3134,7 @@
 			)
 		)
 		(property "Footprint" "Treadmill_Feet:RCWCTE"
-			(at 151.13 91.44 0)
+			(at 170.18 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2647,7 +3144,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.koaspeer.com/pdfs/RC.pdf"
-			(at 151.13 91.44 0)
+			(at 170.18 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2656,7 +3153,7 @@
 			)
 		)
 		(property "Description" "https://www.digikey.com/en/products/detail/koa-speer-electronics-inc/RCWCTE/11476558"
-			(at 151.13 91.44 0)
+			(at 170.18 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2665,7 +3162,7 @@
 			)
 		)
 		(property "PARTREV" "1/06/14"
-			(at 151.13 91.44 0)
+			(at 170.18 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2675,7 +3172,7 @@
 			)
 		)
 		(property "SNAPEDA_PN" "RCWCTE"
-			(at 151.13 91.44 0)
+			(at 170.18 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2685,7 +3182,7 @@
 			)
 		)
 		(property "MANUFACTURER" "KOA Speer"
-			(at 151.13 91.44 0)
+			(at 170.18 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2695,7 +3192,7 @@
 			)
 		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" "2 mm"
-			(at 151.13 91.44 0)
+			(at 170.18 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2705,7 +3202,7 @@
 			)
 		)
 		(property "STANDARD" "Manufacturer Recommendations"
-			(at 151.13 91.44 0)
+			(at 170.18 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2794,44 +3291,33 @@
 		)
 	)
 	(symbol
-		(lib_id "Transistor_BJT:MUN5211DW1")
-		(at 195.58 77.47 0)
-		(mirror y)
+		(lib_id "Device:D")
+		(at 124.46 62.23 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "267cb01b-528a-416f-8cd9-ce4f2fbb721b")
-		(property "Reference" "Q8"
-			(at 191.77 76.3777 0)
+		(fields_autoplaced yes)
+		(uuid "210382a0-c7f3-4229-b3a4-993bca6db348")
+		(property "Reference" "D3"
+			(at 124.46 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
-		(property "Value" "SMUN5230DW1T1G"
-			(at 191.77 78.9177 0)
+		(property "Value" "D"
+			(at 124.46 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-363_SC-70-6"
-			(at 195.453 88.646 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.onsemi.com/pdf/datasheet/dtc113ed-d.pdf"
-			(at 195.58 77.47 0)
+		(property "Footprint" ""
+			(at 124.46 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2839,8 +3325,102 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "R1 = 1k R2 = 1K"
-			(at 195.58 77.47 0)
+		(property "Datasheet" "~"
+			(at 124.46 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Diode"
+			(at 124.46 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 124.46 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 124.46 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "242b304a-8ad7-4910-89da-3ccd11f83c60")
+		)
+		(pin "2"
+			(uuid "76c79b80-1657-44f7-8ee9-6dfd69a14cea")
+		)
+		(instances
+			(project ""
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
+					(reference "D3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 62.23 102.87 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "2e344014-b38e-498e-9102-972b32906c4e")
+		(property "Reference" "R5"
+			(at 62.23 104.14 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "R"
+			(at 62.23 101.092 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder"
+			(at 60.452 102.87 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 62.23 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 62.23 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2849,145 +3429,15 @@
 			)
 		)
 		(pin "2"
-			(uuid "a1a203d9-8ebf-42bb-a430-c97a1654d882")
-		)
-		(pin "4"
-			(uuid "938f10e5-b39e-4f22-ad47-b83f35beddbe")
-		)
-		(pin "5"
-			(uuid "779cad9e-e0c4-4d4c-8dd8-c617d4ab85b6")
-		)
-		(pin "3"
-			(uuid "c3e665b1-104a-4daf-aade-bfbcde0f417b")
-		)
-		(pin "6"
-			(uuid "a0716473-ed9b-47ac-b1dc-c57141761bf5")
+			(uuid "33f69765-69d1-4d87-ba31-6216b10c22b9")
 		)
 		(pin "1"
-			(uuid "007d48fb-f31c-43cb-b028-2ca099f763e3")
-		)
-		(instances
-			(project ""
-				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
-					(reference "Q8")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Treadmill_Comp:RCWCTE")
-		(at 101.6 66.04 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "320f7700-5081-4528-a365-c90642f3558d")
-		(property "Reference" "TP3"
-			(at 99.822 63.246 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "RCWCTE"
-			(at 104.14 67.3099 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Treadmill_Feet:RCWCTE"
-			(at 101.6 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.koaspeer.com/pdfs/RC.pdf"
-			(at 101.6 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "https://www.digikey.com/en/products/detail/koa-speer-electronics-inc/RCWCTE/11476558"
-			(at 101.6 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "PARTREV" "1/06/14"
-			(at 101.6 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "SNAPEDA_PN" "RCWCTE"
-			(at 101.6 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER" "KOA Speer"
-			(at 101.6 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "MAXIMUM_PACKAGE_HEIGHT" "2 mm"
-			(at 101.6 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "STANDARD" "Manufacturer Recommendations"
-			(at 101.6 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "b117a59a-ec25-49de-9b8d-d021682a78b3")
+			(uuid "0b68ad22-9901-44f8-a865-52f5af2483d7")
 		)
 		(instances
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
-					(reference "TP3")
+					(reference "R5")
 					(unit 1)
 				)
 			)
@@ -2995,7 +3445,7 @@
 	)
 	(symbol
 		(lib_id "Connector:Conn_01x02_Pin")
-		(at 140.97 101.6 90)
+		(at 160.02 100.33 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3004,7 +3454,7 @@
 		(fields_autoplaced yes)
 		(uuid "397bcc84-7d60-495b-8890-dc1852acfe5c")
 		(property "Reference" "J2"
-			(at 144.78 99.6949 90)
+			(at 163.83 98.4249 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3013,7 +3463,7 @@
 			)
 		)
 		(property "Value" "OSTT7020150"
-			(at 144.78 102.2349 90)
+			(at 163.83 100.9649 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3022,7 +3472,7 @@
 			)
 		)
 		(property "Footprint" "Treadmill_Feet:CONN2_OSTT7020150_OST"
-			(at 140.97 101.6 0)
+			(at 160.02 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3031,7 +3481,7 @@
 			)
 		)
 		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/388/OSTT7xx0150.pdf"
-			(at 140.97 101.6 0)
+			(at 160.02 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3040,7 +3490,7 @@
 			)
 		)
 		(property "Description" "OSTT7020150"
-			(at 140.97 101.6 0)
+			(at 160.02 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3058,72 +3508,6 @@
 			(project ""
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
 					(reference "J2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 194.31 83.82 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "3f9f5d89-bac2-47fa-b586-024e0725ed30")
-		(property "Reference" "#PWR012"
-			(at 194.31 90.17 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 194.31 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 194.31 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 194.31 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 194.31 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "29d2f396-117e-432e-b730-0fe61890d839")
-		)
-		(instances
-			(project ""
-				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
-					(reference "#PWR012")
 					(unit 1)
 				)
 			)
@@ -3217,188 +3601,24 @@
 		)
 	)
 	(symbol
-		(lib_id "Transistor_BJT:MUN5330DW1")
-		(at 81.28 87.63 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "440464bd-bc90-405b-b24d-b1078ca294ed")
-		(property "Reference" "Q6"
-			(at 85.09 86.5377 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "MUN5330DW1T1G"
-			(at 85.09 89.0777 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-363_SC-70-6"
-			(at 81.28 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.onsemi.com/download/data-sheet/pdf/dtc113ep-d.pdf"
-			(at 81.28 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Complementary Bias Resistor Transistors, Ic 100mA, Vce 50V, Vin(fwd) 10V, R1 = 1kohms, R2 = 1kohms, SOT-363"
-			(at 81.28 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "3"
-			(uuid "52d82676-0412-4def-8366-2fd58f434211")
-		)
-		(pin "2"
-			(uuid "0c5d8746-f57f-434b-af2e-2d3a7538f328")
-		)
-		(pin "6"
-			(uuid "fcd1f8bf-9ac2-4097-b118-e08763fcfa99")
-		)
-		(pin "1"
-			(uuid "5246ee56-ebc5-4fe5-81e7-294d08c66e9f")
-		)
-		(pin "5"
-			(uuid "4c307a71-4ae9-42d4-8d98-23a12fbc6308")
-		)
-		(pin "4"
-			(uuid "e2c08bd0-22ad-4084-a49a-3d48b8818799")
-		)
-		(instances
-			(project ""
-				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
-					(reference "Q6")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Transistor_BJT:MUN5211DW1")
-		(at 88.9 138.43 0)
-		(unit 2)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "4ca866ad-c782-4cff-bdcc-7627e24d8e09")
-		(property "Reference" "Q8"
-			(at 92.202 137.414 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "SMUN5230DW1T1G"
-			(at 92.202 139.954 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-363_SC-70-6"
-			(at 89.027 149.606 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.onsemi.com/pdf/datasheet/dtc113ed-d.pdf"
-			(at 88.9 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "R1 = 1k R2 = 1K"
-			(at 88.9 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "a1a203d9-8ebf-42bb-a430-c97a1654d883")
-		)
-		(pin "4"
-			(uuid "938f10e5-b39e-4f22-ad47-b83f35beddbf")
-		)
-		(pin "5"
-			(uuid "779cad9e-e0c4-4d4c-8dd8-c617d4ab85b7")
-		)
-		(pin "3"
-			(uuid "c3e665b1-104a-4daf-aade-bfbcde0f417c")
-		)
-		(pin "6"
-			(uuid "a0716473-ed9b-47ac-b1dc-c57141761bf6")
-		)
-		(pin "1"
-			(uuid "007d48fb-f31c-43cb-b028-2ca099f763e4")
-		)
-		(instances
-			(project ""
-				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
-					(reference "Q8")
-					(unit 2)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R")
-		(at 199.39 71.12 90)
+		(at 129.54 73.66 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "535ebe3f-b812-405e-8f25-f965f71eaee5")
-		(property "Reference" "R8"
-			(at 199.39 64.77 90)
+		(uuid "435ca54b-c0b4-4594-a560-4b3595436fc5")
+		(property "Reference" "R10"
+			(at 127.508 74.93 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "100"
-			(at 199.39 67.31 90)
+		(property "Value" "10"
+			(at 127.508 71.882 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3406,7 +3626,351 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder"
-			(at 199.39 72.898 90)
+			(at 131.318 73.66 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDP0000/AOA0000C337.pdf"
+			(at 129.54 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "ERJ-UP3J100V"
+			(at 129.54 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "52dec000-03a8-4c5d-ae98-c7ad23e3790e")
+		)
+		(pin "2"
+			(uuid "53c6aef1-9296-43b4-aaa5-82e758862862")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
+					(reference "R10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 39.37 91.44 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "47986f83-4763-4162-9912-bf0a14e57671")
+		(property "Reference" "C3"
+			(at 38.862 89.408 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "C_in"
+			(at 41.656 93.472 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 38.4048 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 39.37 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 39.37 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "1198455e-244e-42ff-a047-d7f44782a7de")
+		)
+		(pin "1"
+			(uuid "f0f91e3e-a555-4d9a-a37b-009353bf5a90")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
+					(reference "C3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 30.48 86.36 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "50ebbb39-e17a-42a9-b680-7b97da85afd8")
+		(property "Reference" "R4"
+			(at 31.75 84.074 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "R"
+			(at 28.448 84.074 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder"
+			(at 30.48 88.138 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 30.48 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 30.48 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "fadd6e69-01c0-4c20-b6cf-bfc2f691ad07")
+		)
+		(pin "1"
+			(uuid "1c7f5101-5fd9-44b2-8cfb-9d4cccbee214")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
+					(reference "R4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 53.34 91.44 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "588cc4ac-47fa-4674-b04e-bb3039e3908e")
+		(property "Reference" "C5"
+			(at 50.292 89.408 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "C_vcc"
+			(at 50.038 93.472 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 54.3052 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 53.34 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 53.34 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "26c91603-2d6b-422a-9eef-d088d4447039")
+		)
+		(pin "1"
+			(uuid "ad74c586-6074-4d50-8146-e034b6f4ef9b")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
+					(reference "C5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 46.99 91.44 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6012e0ff-c263-4726-9cfe-d2e16146c318")
+		(property "Reference" "C2"
+			(at 43.942 89.408 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "C_in"
+			(at 44.958 93.472 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 47.9552 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 46.99 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 46.99 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "f5cd6fb1-1b17-49e0-92d3-7b450917716a")
+		)
+		(pin "1"
+			(uuid "f0aa2244-3515-4c17-ad2f-1cb32e3570c5")
+		)
+		(instances
+			(project ""
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
+					(reference "C2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 57.15 124.46 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "637cc73b-6d66-4300-b009-4b92e64ad555")
+		(property "Reference" "#PWR012"
+			(at 57.15 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 57.15 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 57.15 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3415,7 +3979,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 199.39 71.12 0)
+			(at 57.15 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3423,8 +3987,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 199.39 71.12 0)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 57.15 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3433,15 +3997,193 @@
 			)
 		)
 		(pin "1"
-			(uuid "aa53390e-8c07-4141-a5c9-546401c133e9")
-		)
-		(pin "2"
-			(uuid "3916a158-2106-4da1-835e-7adb5621570e")
+			(uuid "796a4125-a767-430f-9112-28166fb47f65")
 		)
 		(instances
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
-					(reference "R8")
+					(reference "#PWR012")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Treadmill_Comp:UCC21530DWKR")
+		(at 68.58 88.9 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "69ba16be-7843-4991-a2d9-bad7c5777b86")
+		(property "Reference" "U2"
+			(at 73.66 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "UCC21530DWKR"
+			(at 83.82 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Treadmill_Feet:SOIC127P1030X265-16N"
+			(at 95.25 183.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.ti.com/lit/gpn/UCC21530"
+			(at 95.25 283.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "4-A, 6-A, 5.7-kVrms isolated dual-channel gate driver with enable"
+			(at 68.58 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "2.65"
+			(at 95.25 483.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "Texas Instruments"
+			(at 95.25 583.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "UCC21530DWKR"
+			(at 95.25 683.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "595-UCC21530DWKR"
+			(at 95.25 783.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/UCC21530DWKR?qs=9r4v7xj2LnlIyeJ7OolfPA%3D%3D"
+			(at 95.25 883.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Arrow Part Number" "UCC21530DWKR"
+			(at 95.25 983.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/ucc21530dwkr/texas-instruments?utm_currency=USD&region=nac"
+			(at 95.25 1083.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "12"
+			(uuid "3f7c5871-84a2-4693-be41-82bd9ff0afcf")
+		)
+		(pin "9"
+			(uuid "b3508924-33d5-4504-a287-8de45dd0ba47")
+		)
+		(pin "13"
+			(uuid "0256074c-6680-4cb6-a7b9-cebe2d1ec410")
+		)
+		(pin "15"
+			(uuid "a56c4805-86e9-4784-beca-f374e37683b3")
+		)
+		(pin "14"
+			(uuid "f97250e0-fd7d-480e-a43e-a9cf0d1f2945")
+		)
+		(pin "11"
+			(uuid "c101b1b0-d572-4a30-8329-f3645c598a6e")
+		)
+		(pin "1"
+			(uuid "4dc7b280-d860-41f6-9674-820c67c51c83")
+		)
+		(pin "3"
+			(uuid "8eeecae8-62a1-43f0-ac17-02c4468173d7")
+		)
+		(pin "8"
+			(uuid "5840a5fd-fd64-4ce7-b19e-e224cce2767f")
+		)
+		(pin "4"
+			(uuid "3e9fd8b2-1529-4519-9a19-753e8e99c69f")
+		)
+		(pin "5"
+			(uuid "c590e005-2edc-4a07-af7f-336c1f47d4b2")
+		)
+		(pin "2"
+			(uuid "a3a63ad1-b6a3-41a3-8410-5e92a39ba4cc")
+		)
+		(pin "6"
+			(uuid "a7adcef6-c81f-4c03-9ca3-71a7a3e7ddab")
+		)
+		(pin "7"
+			(uuid "4ea65110-c161-4a29-b592-b9498aea4ebc")
+		)
+		(pin "16"
+			(uuid "5f22f3dd-3023-4342-b3ab-418e16949cf2")
+		)
+		(pin "10"
+			(uuid "b4c76f96-b765-4279-9b4e-29e355a4647c")
+		)
+		(instances
+			(project ""
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
+					(reference "U2")
 					(unit 1)
 				)
 			)
@@ -3449,7 +4191,7 @@
 	)
 	(symbol
 		(lib_id "power:GND1")
-		(at 140.97 148.59 0)
+		(at 160.02 147.32 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3458,7 +4200,7 @@
 		(fields_autoplaced yes)
 		(uuid "6c0d0503-cb02-4407-b9c9-dcea86712368")
 		(property "Reference" "#PWR010"
-			(at 140.97 154.94 0)
+			(at 160.02 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3467,7 +4209,7 @@
 			)
 		)
 		(property "Value" "GND1"
-			(at 140.97 153.67 0)
+			(at 160.02 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3475,7 +4217,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 140.97 148.59 0)
+			(at 160.02 147.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3484,7 +4226,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 140.97 148.59 0)
+			(at 160.02 147.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3493,7 +4235,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND1\" , ground"
-			(at 140.97 148.59 0)
+			(at 160.02 147.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3514,33 +4256,104 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 92.71 71.12 90)
+		(lib_id "Device:C")
+		(at 57.15 119.38 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "776f950e-0a84-402c-82cd-c3f173ba14f3")
+		(property "Reference" "C9"
+			(at 56.642 117.348 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "C_dt"
+			(at 59.436 121.412 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 56.1848 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 57.15 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 57.15 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "34471cd0-ba34-4776-a262-c8284c442349")
+		)
+		(pin "1"
+			(uuid "cf97a481-e981-49d7-bf44-a35de5db751c")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
+					(reference "C9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 39.37 97.79 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "75d06105-bb15-4901-89e5-4303afd120c1")
-		(property "Reference" "R5"
-			(at 92.71 64.77 90)
+		(uuid "851ebc93-663e-4625-8f49-f44682641af1")
+		(property "Reference" "#PWR07"
+			(at 39.37 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 39.37 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "100"
-			(at 92.71 67.31 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder"
-			(at 92.71 72.898 90)
+		(property "Footprint" ""
+			(at 39.37 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3549,7 +4362,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 92.71 71.12 0)
+			(at 39.37 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3557,8 +4370,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 92.71 71.12 0)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 39.37 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3567,15 +4380,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "b6191f25-3363-4703-a2ff-8aa73f855c32")
-		)
-		(pin "2"
-			(uuid "835f902d-a7d4-41c1-b58c-17a8479dc9b5")
+			(uuid "54c76f22-3f87-426a-bf0f-d24546d93def")
 		)
 		(instances
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
-					(reference "R5")
+					(reference "#PWR07")
 					(unit 1)
 				)
 			)
@@ -3583,7 +4393,7 @@
 	)
 	(symbol
 		(lib_id "Treadmill_Comp:RCWCTE")
-		(at 132.08 91.44 90)
+		(at 151.13 90.17 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3592,7 +4402,7 @@
 		(fields_autoplaced yes)
 		(uuid "94b32b99-2f33-4154-b423-eaaff82dede7")
 		(property "Reference" "TP1"
-			(at 134.62 90.1699 90)
+			(at 153.67 88.8999 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3601,7 +4411,7 @@
 			)
 		)
 		(property "Value" "RCWCTE"
-			(at 134.62 92.7099 90)
+			(at 153.67 91.4399 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3611,7 +4421,7 @@
 			)
 		)
 		(property "Footprint" "Treadmill_Feet:RCWCTE"
-			(at 132.08 91.44 0)
+			(at 151.13 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3621,7 +4431,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.koaspeer.com/pdfs/RC.pdf"
-			(at 132.08 91.44 0)
+			(at 151.13 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3630,7 +4440,7 @@
 			)
 		)
 		(property "Description" "https://www.digikey.com/en/products/detail/koa-speer-electronics-inc/RCWCTE/11476558"
-			(at 132.08 91.44 0)
+			(at 151.13 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3639,7 +4449,7 @@
 			)
 		)
 		(property "PARTREV" "1/06/14"
-			(at 132.08 91.44 0)
+			(at 151.13 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3649,7 +4459,7 @@
 			)
 		)
 		(property "SNAPEDA_PN" "RCWCTE"
-			(at 132.08 91.44 0)
+			(at 151.13 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3659,7 +4469,7 @@
 			)
 		)
 		(property "MANUFACTURER" "KOA Speer"
-			(at 132.08 91.44 0)
+			(at 151.13 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3669,7 +4479,7 @@
 			)
 		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" "2 mm"
-			(at 132.08 91.44 0)
+			(at 151.13 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3679,7 +4489,7 @@
 			)
 		)
 		(property "STANDARD" "Manufacturer Recommendations"
-			(at 132.08 91.44 0)
+			(at 151.13 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3701,45 +4511,35 @@
 		)
 	)
 	(symbol
-		(lib_id "Treadmill_Comp:RCWCTE")
-		(at 180.34 66.04 90)
+		(lib_id "Device:C")
+		(at 57.15 102.87 0)
+		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "ac3ce96b-2a3b-4d8e-92bb-67312cc9400b")
-		(property "Reference" "TP4"
-			(at 178.816 63.5 90)
+		(uuid "986f091a-641c-478d-95dd-cc159803cb21")
+		(property "Reference" "C8"
+			(at 56.642 100.838 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
-		(property "Value" "RCWCTE"
-			(at 182.88 67.3099 90)
+		(property "Value" "C_en"
+			(at 59.436 104.902 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
-				(hide yes)
+				(justify left)
 			)
 		)
-		(property "Footprint" "Treadmill_Feet:RCWCTE"
-			(at 180.34 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.koaspeer.com/pdfs/RC.pdf"
-			(at 180.34 66.04 0)
+		(property "Footprint" ""
+			(at 56.1848 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3747,8 +4547,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "https://www.digikey.com/en/products/detail/koa-speer-electronics-inc/RCWCTE/11476558"
-			(at 180.34 66.04 0)
+		(property "Datasheet" "~"
+			(at 57.15 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3756,195 +4556,25 @@
 				(hide yes)
 			)
 		)
-		(property "PARTREV" "1/06/14"
-			(at 180.34 66.04 0)
+		(property "Description" "Unpolarized capacitor"
+			(at 57.15 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify bottom)
 				(hide yes)
 			)
 		)
-		(property "SNAPEDA_PN" "RCWCTE"
-			(at 180.34 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER" "KOA Speer"
-			(at 180.34 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "MAXIMUM_PACKAGE_HEIGHT" "2 mm"
-			(at 180.34 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "STANDARD" "Manufacturer Recommendations"
-			(at 180.34 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
+		(pin "2"
+			(uuid "adcf39cb-da0b-4f97-8f4a-9d44c5ce0d70")
 		)
 		(pin "1"
-			(uuid "836a5cb3-0598-45d9-ad84-0a5dbf847ea7")
+			(uuid "e7aa4bd9-6b30-4361-866a-4c498148ae40")
 		)
 		(instances
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
-					(reference "TP4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 82.55 93.98 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "b35c4889-c27a-4232-b754-983fdaf624a9")
-		(property "Reference" "#PWR011"
-			(at 82.55 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 82.55 99.06 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 82.55 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 82.55 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 82.55 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "90471a30-9547-4924-9fc8-b5d3ae0a1160")
-		)
-		(instances
-			(project ""
-				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
-					(reference "#PWR011")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 90.17 144.78 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "d046855f-a27e-4b9c-8013-a55fde606d0e")
-		(property "Reference" "#PWR013"
-			(at 90.17 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 90.17 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 90.17 144.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 90.17 144.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 90.17 144.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "db010df0-0423-476d-9a60-16ed0c6dffa0")
-		)
-		(instances
-			(project "120VDC Treadmill Motor Controller"
-				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
-					(reference "#PWR013")
+					(reference "C8")
 					(unit 1)
 				)
 			)
@@ -3952,24 +4582,23 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 85.09 132.08 90)
+		(at 30.48 81.28 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "d0879330-fcc2-4bff-975a-b8cbdf613f97")
-		(property "Reference" "R10"
-			(at 85.09 125.73 90)
+		(uuid "ab3c285c-b383-4516-85aa-fe32dc449665")
+		(property "Reference" "R2"
+			(at 31.75 78.994 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "100"
-			(at 85.09 128.27 90)
+		(property "Value" "R"
+			(at 28.702 78.994 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3977,7 +4606,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder"
-			(at 85.09 133.858 90)
+			(at 30.48 83.058 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3985,8 +4614,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
-			(at 85.09 132.08 0)
+		(property "Datasheet" "~"
+			(at 30.48 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3994,8 +4623,75 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 85.09 132.08 0)
+		(property "Description" "Resistor"
+			(at 30.48 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "2d63b323-0225-4cc0-ae5c-2074f8911f61")
+		)
+		(pin "1"
+			(uuid "ec6cdd4b-7b99-4919-bad6-fe28631aee48")
+		)
+		(instances
+			(project ""
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
+					(reference "R2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 124.46 67.31 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c8caf76b-a828-4dce-b135-29ed20853e0e")
+		(property "Reference" "R7"
+			(at 123.19 65.278 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10"
+			(at 126.238 65.278 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder"
+			(at 124.46 69.088 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDP0000/AOA0000C337.pdf"
+			(at 124.46 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "ERJ-UP3J100V"
+			(at 124.46 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4004,15 +4700,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "b6a4207f-100b-497c-afef-b807449d6c6e")
+			(uuid "d98c541c-cafb-47ed-b08a-c15d39b0d546")
 		)
 		(pin "2"
-			(uuid "77c5686d-c39f-45e3-a48f-67404ed91875")
+			(uuid "b5226d1f-6ba6-4f42-aabb-e7f31e8fbfb3")
 		)
 		(instances
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
-					(reference "R10")
+					(reference "R7")
 					(unit 1)
 				)
 			)
@@ -4086,45 +4782,17 @@
 		)
 	)
 	(symbol
-		(lib_id "Treadmill_Comp:RCWCTE")
-		(at 177.8 127 90)
+		(lib_id "power:GND")
+		(at 62.23 124.46 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "dc894f32-78c4-46d4-878a-d0db408c8f91")
-		(property "Reference" "TP5"
-			(at 176.022 124.46 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "RCWCTE"
-			(at 180.34 128.2699 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Treadmill_Feet:RCWCTE"
-			(at 177.8 127 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.koaspeer.com/pdfs/RC.pdf"
-			(at 177.8 127 0)
+		(fields_autoplaced yes)
+		(uuid "dc6dd797-1601-4af3-9446-b6f1fa0d8a46")
+		(property "Reference" "#PWR013"
+			(at 62.23 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4132,8 +4800,16 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "https://www.digikey.com/en/products/detail/koa-speer-electronics-inc/RCWCTE/11476558"
-			(at 177.8 127 0)
+		(property "Value" "GND"
+			(at 62.23 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 62.23 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4141,96 +4817,63 @@
 				(hide yes)
 			)
 		)
-		(property "PARTREV" "1/06/14"
-			(at 177.8 127 0)
+		(property "Datasheet" ""
+			(at 62.23 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify bottom)
 				(hide yes)
 			)
 		)
-		(property "SNAPEDA_PN" "RCWCTE"
-			(at 177.8 127 0)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 62.23 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER" "KOA Speer"
-			(at 177.8 127 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "MAXIMUM_PACKAGE_HEIGHT" "2 mm"
-			(at 177.8 127 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "STANDARD" "Manufacturer Recommendations"
-			(at 177.8 127 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
 				(hide yes)
 			)
 		)
 		(pin "1"
-			(uuid "3f8089db-4064-4b0f-887c-ecbf0a9e0c97")
+			(uuid "7a322169-d854-460c-8e8b-c20e156dc30b")
 		)
 		(instances
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
-					(reference "TP5")
+					(reference "#PWR013")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "Transistor_BJT:MUN5330DW1")
-		(at 82.55 72.39 270)
-		(mirror x)
-		(unit 2)
+		(lib_id "Device:R")
+		(at 62.23 119.38 0)
+		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "ec917f8b-2505-475b-ac80-f96e1d4aeb9c")
-		(property "Reference" "Q6"
-			(at 82.3722 64.77 90)
+		(uuid "dcfc17a2-211f-4724-9ab6-988160eee158")
+		(property "Reference" "R6"
+			(at 62.23 120.65 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "MUN5330DW1T1G"
-			(at 82.3722 67.31 90)
+		(property "Value" "R"
+			(at 62.23 117.602 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-363_SC-70-6"
-			(at 82.55 72.39 0)
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder"
+			(at 60.452 119.38 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4238,8 +4881,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.onsemi.com/download/data-sheet/pdf/dtc113ep-d.pdf"
-			(at 82.55 72.39 0)
+		(property "Datasheet" "~"
+			(at 62.23 119.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4247,248 +4890,199 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Complementary Bias Resistor Transistors, Ic 100mA, Vce 50V, Vin(fwd) 10V, R1 = 1kohms, R2 = 1kohms, SOT-363"
-			(at 82.55 72.39 0)
+		(property "Description" "Resistor"
+			(at 62.23 119.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
 			)
+		)
+		(pin "2"
+			(uuid "3a1cb0b6-d10e-43eb-94d9-06ecb86deecb")
+		)
+		(pin "1"
+			(uuid "2acf8e58-b60a-4319-a86a-c95de735ad04")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
+					(reference "R6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 115.57 62.23 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "eb412b3e-5fc1-4b6f-a95b-9a1265d662a5")
+		(property "Reference" "R8"
+			(at 114.3 60.198 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10"
+			(at 117.348 60.198 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder"
+			(at 115.57 64.008 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDP0000/AOA0000C337.pdf"
+			(at 115.57 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "ERJ-UP3J100V"
+			(at 115.57 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ed81a521-a9ac-4dd7-8635-ef82ee658e6b")
+		)
+		(pin "2"
+			(uuid "938d1cdd-55dd-4aaa-858e-1032771da71f")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
+					(reference "R8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Simulation_SPICE:NMOS")
+		(at 134.62 67.31 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f1755387-851c-4db8-9eda-228f8144f1d0")
+		(property "Reference" "Q2"
+			(at 140.97 66.0399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "IPP200N25N3GXKSA1"
+			(at 140.97 68.5799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_THT:TO-220-3_Vertical"
+			(at 139.7 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.infineon.com/assets/row/public/documents/24/49/infineon-ipp-b-i-200n25n3-g-datasheet-en.pdf?folderId=db3a3043163797a6011637d4bae7003b&fileId=db3a3043243b5f17012496b87e9f1971"
+			(at 134.62 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "N-MOSFET transistor, drain/source/gate"
+			(at 134.62 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "NMOS"
+			(at 134.62 84.455 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" "VDMOS"
+			(at 134.62 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=D 2=G 3=S"
+			(at 134.62 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "37b6aab0-d0ed-45f9-b156-065c56b3a69d")
 		)
 		(pin "3"
-			(uuid "52d82676-0412-4def-8366-2fd58f434212")
-		)
-		(pin "2"
-			(uuid "0c5d8746-f57f-434b-af2e-2d3a7538f329")
-		)
-		(pin "6"
-			(uuid "fcd1f8bf-9ac2-4097-b118-e08763fcfa9a")
+			(uuid "b83c3eef-983e-4788-8ba2-7d72ed2aa4ff")
 		)
 		(pin "1"
-			(uuid "5246ee56-ebc5-4fe5-81e7-294d08c66ea0")
-		)
-		(pin "5"
-			(uuid "4c307a71-4ae9-42d4-8d98-23a12fbc6309")
-		)
-		(pin "4"
-			(uuid "e2c08bd0-22ad-4084-a49a-3d48b881879a")
-		)
-		(instances
-			(project ""
-				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
-					(reference "Q6")
-					(unit 2)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 189.23 71.12 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "f334e4ce-200a-4f19-8000-88b83d928525")
-		(property "Reference" "R7"
-			(at 189.23 64.77 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "100"
-			(at 189.23 67.31 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder"
-			(at 189.23 72.898 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 189.23 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 189.23 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "e58d6d24-19cd-42a8-a73c-50a17931e00b")
-		)
-		(pin "2"
-			(uuid "2722a367-eba9-4043-b47f-d2c421889bb8")
+			(uuid "eed56e99-2b24-40f4-a116-dbd7263bb2b7")
 		)
 		(instances
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
-					(reference "R7")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 186.69 132.08 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "fbcf3835-a0f9-48c0-865f-10aa2908963e")
-		(property "Reference" "R16"
-			(at 186.69 125.73 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "100"
-			(at 186.69 128.27 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder"
-			(at 186.69 133.858 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 186.69 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 186.69 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "f02e86f8-41ee-49f8-9432-0fcd4d3907b2")
-		)
-		(pin "2"
-			(uuid "0e3b3419-ebc4-4d52-b175-7aed181a76c2")
-		)
-		(instances
-			(project "120VDC Treadmill Motor Controller"
-				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
-					(reference "R16")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 95.25 132.08 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "fe4d9ee1-4678-4a94-960c-259b10c70e4a")
-		(property "Reference" "R4"
-			(at 95.25 125.73 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "100"
-			(at 95.25 128.27 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder"
-			(at 95.25 133.858 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 95.25 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 95.25 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "49d19a86-4236-4840-892b-b23d7a92492e")
-		)
-		(pin "2"
-			(uuid "fdb0b1d8-188e-44dd-a6b0-0ed34cbf5080")
-		)
-		(instances
-			(project "120VDC Treadmill Motor Controller"
-				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
-					(reference "R4")
+					(reference "Q2")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(sheet
-		(at 160.02 63.5)
+		(at 227.33 31.75)
 		(size 15.24 10.16)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4502,9 +5096,9 @@
 		(fill
 			(color 0 0 0 0.0000)
 		)
-		(uuid "0ee8c600-4f6e-4877-94f0-4a0da87ba88d")
+		(uuid "fa17400a-1ec4-43b4-b1cb-0b7faf3eb3c2")
 		(property "Sheetname" "Fet Circuit1"
-			(at 160.02 62.7884 0)
+			(at 227.33 31.0384 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4513,7 +5107,7 @@
 			)
 		)
 		(property "Sheetfile" "FET Circuit.kicad_sch"
-			(at 160.02 74.2446 0)
+			(at 227.33 42.4946 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4523,8 +5117,8 @@
 			)
 		)
 		(pin "Fet_D" input
-			(at 161.29 63.5 90)
-			(uuid "c094d6d3-9d77-4a39-866a-d4f7634f2c62")
+			(at 228.6 31.75 90)
+			(uuid "865a9830-3655-4567-bd67-537aa6e17828")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4533,8 +5127,8 @@
 			)
 		)
 		(pin "Fet_S" output
-			(at 163.83 73.66 270)
-			(uuid "6dfe5bc8-86de-4729-9d76-719755dd9732")
+			(at 231.14 41.91 270)
+			(uuid "e1a190af-9028-4857-a62f-823b6f0f4cc6")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4543,255 +5137,19 @@
 			)
 		)
 		(pin "v_pwm" input
-			(at 175.26 71.12 0)
-			(uuid "968d1596-f259-4ef6-b2de-7c7efd31e780")
+			(at 242.57 39.37 0)
+			(uuid "d77a69bd-97e7-4269-81ad-6460381115df")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
-			)
-		)
-		(instances
-			(project "120VDC Treadmill Motor Controller"
-				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
-					(page "7")
-				)
-			)
-		)
-	)
-	(sheet
-		(at 106.68 63.5)
-		(size 15.24 10.16)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 0 0 0 0.0000)
-		)
-		(uuid "6d3d8f4c-8a5d-4b0c-94fd-c45e8627b14b")
-		(property "Sheetname" "Fet Circuit"
-			(at 106.68 62.7884 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "FET Circuit.kicad_sch"
-			(at 106.68 74.2446 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(pin "Fet_D" input
-			(at 120.65 63.5 90)
-			(uuid "96ae683d-9321-4c4c-9196-1a9995f0dd96")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(pin "Fet_S" output
-			(at 118.11 73.66 270)
-			(uuid "cb325b37-d99e-49cc-a3bc-7608e68e9823")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "v_pwm" input
-			(at 106.68 71.12 180)
-			(uuid "e6adc36c-f482-4898-97bd-baeafdd51c3e")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
 			)
 		)
 		(instances
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
 					(page "6")
-				)
-			)
-		)
-	)
-	(sheet
-		(at 160.02 123.19)
-		(size 12.7 11.43)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 0 0 0 0.0000)
-		)
-		(uuid "c56e55f9-2f01-4a9a-a881-dd8c5892be8d")
-		(property "Sheetname" "LS FET"
-			(at 160.02 122.4784 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "LS FET.kicad_sch"
-			(at 160.02 135.2046 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(pin "Fet_D" input
-			(at 161.29 123.19 90)
-			(uuid "0863d7ff-7fb4-4026-9890-e39a6000fc3d")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(pin "Fet_S" output
-			(at 163.83 134.62 270)
-			(uuid "8ed67382-004e-4ad6-ae71-cf874a2512eb")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "v_pwm" input
-			(at 172.72 132.08 0)
-			(uuid "e88dca23-6794-4193-a59d-e1816ad1108b")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(pin "ps_in" input
-			(at 168.91 123.19 90)
-			(uuid "cf3c1e9a-fe6d-46be-a37b-5eac3946fa69")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(instances
-			(project "120VDC Treadmill Motor Controller"
-				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
-					(page "10")
-				)
-			)
-		)
-	)
-	(sheet
-		(at 109.22 123.19)
-		(size 12.7 11.43)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 0 0 0 0.0000)
-		)
-		(uuid "c8d3f65d-c1e4-4ff7-87e3-3541d9f7f8fc")
-		(property "Sheetname" "LS FET1"
-			(at 109.22 122.4784 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "LS FET.kicad_sch"
-			(at 109.22 135.2046 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(pin "Fet_D" input
-			(at 120.65 123.19 90)
-			(uuid "1c140c06-30eb-4d51-ac15-f7a16fc82a46")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(pin "Fet_S" output
-			(at 118.11 134.62 270)
-			(uuid "528091c4-c55d-4005-9e79-e95715008cb2")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "v_pwm" input
-			(at 109.22 132.08 180)
-			(uuid "8023ea45-2845-4e75-941e-93523b2dcba4")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "ps_in" input
-			(at 113.03 123.19 90)
-			(uuid "18bf3808-787c-4a2e-95e9-04ba950b1bce")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(instances
-			(project "120VDC Treadmill Motor Controller"
-				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
-					(page "8")
 				)
 			)
 		)

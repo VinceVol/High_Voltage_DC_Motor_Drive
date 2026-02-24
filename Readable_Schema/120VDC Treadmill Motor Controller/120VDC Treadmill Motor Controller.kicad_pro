@@ -631,24 +631,12 @@
       "Feedback"
     ],
     [
-      "6d3d8f4c-8a5d-4b0c-94fd-c45e8627b14b",
-      "Fet Circuit"
-    ],
-    [
-      "0ee8c600-4f6e-4877-94f0-4a0da87ba88d",
+      "fa17400a-1ec4-43b4-b1cb-0b7faf3eb3c2",
       "Fet Circuit1"
-    ],
-    [
-      "c8d3f65d-c1e4-4ff7-87e3-3541d9f7f8fc",
-      "LS FET1"
     ],
     [
       "7a7487b9-35f1-42d2-9ba5-cfe8e231a0f8",
       "Brake_Resistor"
-    ],
-    [
-      "c56e55f9-2f01-4a9a-a881-dd8c5892be8d",
-      "LS FET"
     ]
   ],
   "text_variables": {}
