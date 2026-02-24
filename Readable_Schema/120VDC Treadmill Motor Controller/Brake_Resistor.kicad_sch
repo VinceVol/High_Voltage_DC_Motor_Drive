@@ -2262,6 +2262,12 @@
 		)
 	)
 	(junction
+		(at 157.48 104.14)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0f51ea85-1def-4e2c-a578-2cd53f2f9c57")
+	)
+	(junction
 		(at 63.5 101.6)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2272,6 +2278,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "4e29b9ac-f0c6-4f3f-ad9e-474b981b3dfa")
+	)
+	(junction
+		(at 157.48 111.76)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5f8cd93d-f45d-403c-8cc2-c33336076946")
 	)
 	(junction
 		(at 149.86 72.39)
@@ -2361,7 +2373,7 @@
 	)
 	(wire
 		(pts
-			(xy 147.32 111.76) (xy 165.1 111.76)
+			(xy 147.32 111.76) (xy 157.48 111.76)
 		)
 		(stroke
 			(width 0)
@@ -2739,6 +2751,16 @@
 		)
 		(uuid "f881db41-16f5-4d5c-a1cf-63f4be8d6ae4")
 	)
+	(wire
+		(pts
+			(xy 157.48 111.76) (xy 165.1 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fdfc0bd5-3793-4e59-bca4-ce947c944017")
+	)
 	(label "lg"
 		(at 152.4 72.39 0)
 		(effects
@@ -2897,6 +2919,74 @@
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/7a7487b9-35f1-42d2-9ba5-cfe8e231a0f8"
 					(reference "#PWR026")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 157.48 107.95 0)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "3bbc8a13-9efd-4444-a9af-51d286f13588")
+		(property "Reference" "R28"
+			(at 159.766 108.204 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10K"
+			(at 157.48 107.95 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder"
+			(at 155.702 107.95 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDP0000/AOA0000C337.pdf"
+			(at 157.48 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "ERJ-UP3J100V"
+			(at 157.48 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "fe1cd9fc-f570-479e-9362-601276ee8693")
+		)
+		(pin "2"
+			(uuid "688e22af-e8a5-40d5-b574-042943c61b00")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/7a7487b9-35f1-42d2-9ba5-cfe8e231a0f8"
+					(reference "R28")
 					(unit 1)
 				)
 			)
