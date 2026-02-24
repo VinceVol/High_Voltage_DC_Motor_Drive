@@ -2079,10 +2079,6 @@
 		(uuid "10573d8c-34b1-4cd6-b8ea-3b639fc82022")
 	)
 	(no_connect
-		(at 163.83 90.17)
-		(uuid "41708556-f282-4a54-8539-d36c314079d9")
-	)
-	(no_connect
 		(at 118.11 123.19)
 		(uuid "52d46019-4e39-4741-a4f7-d94bd1df1e4f")
 	)
@@ -2121,10 +2117,6 @@
 	(no_connect
 		(at 140.97 62.23)
 		(uuid "b0b5ef1a-41a5-4222-96f7-2aae4cda2f31")
-	)
-	(no_connect
-		(at 163.83 87.63)
-		(uuid "e1f26030-d033-467a-94a0-369a06c8f8cc")
 	)
 	(no_connect
 		(at 163.83 97.79)
@@ -2196,7 +2188,7 @@
 	)
 	(wire
 		(pts
-			(xy 172.72 92.71) (xy 210.82 92.71)
+			(xy 189.23 92.71) (xy 210.82 92.71)
 		)
 		(stroke
 			(width 0)
@@ -2246,7 +2238,7 @@
 	)
 	(wire
 		(pts
-			(xy 170.18 92.71) (xy 170.18 90.17)
+			(xy 186.69 92.71) (xy 186.69 90.17)
 		)
 		(stroke
 			(width 0)
@@ -2356,13 +2348,23 @@
 	)
 	(wire
 		(pts
-			(xy 172.72 95.25) (xy 172.72 92.71)
+			(xy 189.23 95.25) (xy 189.23 92.71)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "5a905e06-9fb6-46df-a88e-57f2fb06a83f")
+	)
+	(wire
+		(pts
+			(xy 163.83 87.63) (xy 168.91 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5d5126d5-48af-4640-9e81-82519af24900")
 	)
 	(wire
 		(pts
@@ -2373,6 +2375,16 @@
 			(type default)
 		)
 		(uuid "5f1951d0-abba-4e63-87f7-cdb25dfe0871")
+	)
+	(wire
+		(pts
+			(xy 163.83 90.17) (xy 168.91 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "709b8359-d565-4269-b6b7-04d3da96cd5f")
 	)
 	(wire
 		(pts
@@ -2416,7 +2428,7 @@
 	)
 	(wire
 		(pts
-			(xy 163.83 95.25) (xy 172.72 95.25)
+			(xy 163.83 95.25) (xy 189.23 95.25)
 		)
 		(stroke
 			(width 0)
@@ -2716,7 +2728,7 @@
 	)
 	(wire
 		(pts
-			(xy 170.18 90.17) (xy 210.82 90.17)
+			(xy 186.69 90.17) (xy 210.82 90.17)
 		)
 		(stroke
 			(width 0)
@@ -2726,7 +2738,7 @@
 	)
 	(wire
 		(pts
-			(xy 163.83 92.71) (xy 170.18 92.71)
+			(xy 163.83 92.71) (xy 186.69 92.71)
 		)
 		(stroke
 			(width 0)
@@ -2938,7 +2950,7 @@
 			)
 		)
 	)
-	(hierarchical_label "pwm_mcu"
+	(hierarchical_label "pwm_a_mcu"
 		(shape output)
 		(at 168.91 102.87 0)
 		(effects
@@ -2960,7 +2972,18 @@
 		)
 		(uuid "4d7cbe28-3ed9-456f-95ca-35bf4367e2c5")
 	)
-	(hierarchical_label "dir_mcu"
+	(hierarchical_label "dir_b_mcu"
+		(shape output)
+		(at 168.91 87.63 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "88db8e29-8453-4a1f-bb8f-69b25e18ae74")
+	)
+	(hierarchical_label "dir_a_mcu"
 		(shape output)
 		(at 168.91 100.33 0)
 		(effects
@@ -2970,6 +2993,17 @@
 			(justify left)
 		)
 		(uuid "cc5e8291-326a-4ff1-91d7-868d45cd551e")
+	)
+	(hierarchical_label "pwm_b_mcu"
+		(shape output)
+		(at 168.91 90.17 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "ce9f8c28-4009-4906-bd2f-a51959dbf40d")
 	)
 	(symbol
 		(lib_id "Jumper:SolderJumper_2_Open")
@@ -3327,12 +3361,13 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND"
-			(at 140.97 143.51 0)
+		(property "Value" "LV_GND"
+			(at 143.51 139.6999 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -3479,7 +3514,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND"
+		(property "Value" "LV_GND"
 			(at 99.06 107.9499 90)
 			(effects
 				(font
@@ -3616,7 +3651,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND"
+		(property "Value" "LV_GND"
 			(at 204.47 95.2499 90)
 			(effects
 				(font
@@ -3682,7 +3717,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND"
+		(property "Value" "LV_GND"
 			(at 90.678 136.144 90)
 			(effects
 				(font
@@ -3835,12 +3870,13 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND"
-			(at 167.64 138.43 0)
+		(property "Value" "LV_GND"
+			(at 170.18 134.6199 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""

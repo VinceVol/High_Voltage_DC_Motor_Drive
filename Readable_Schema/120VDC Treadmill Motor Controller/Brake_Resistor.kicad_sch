@@ -2876,7 +2876,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND1"
+		(property "Value" "HV_GND"
 			(at 139.7 72.3899 90)
 			(effects
 				(font
@@ -3128,8 +3128,8 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND"
-			(at 77.2414 103.886 0)
+		(property "Value" "LV_GND"
+			(at 78.74 104.394 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3329,8 +3329,8 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND"
-			(at 114.808 105.918 0)
+		(property "Value" "LV_GND"
+			(at 112.014 108.966 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3395,12 +3395,13 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND1"
-			(at 165.1 119.38 0)
+		(property "Value" "HV_GND"
+			(at 167.64 115.5699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -3796,7 +3797,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "cf1b8093-0700-4754-a107-b5ca882c1884")
 		(property "Reference" "#PWR033"
 			(at 114.3 96.52 0)
@@ -3807,13 +3807,12 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND"
-			(at 116.84 96.5199 90)
+		(property "Value" "LV_GND"
+			(at 114.808 94.996 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Footprint" ""
@@ -3931,7 +3930,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "dcd0c6b6-098d-4e5d-8cdf-d441bad28183")
 		(property "Reference" "#PWR036"
 			(at 74.93 133.35 0)
@@ -3942,12 +3940,13 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND1"
-			(at 74.93 132.08 0)
+		(property "Value" "HV_GND"
+			(at 75.184 127.254 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""

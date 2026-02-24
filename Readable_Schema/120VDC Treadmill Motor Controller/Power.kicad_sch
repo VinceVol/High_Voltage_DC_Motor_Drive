@@ -2239,12 +2239,13 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND"
-			(at 90.17 71.12 0)
+		(property "Value" "LV_GND"
+			(at 92.71 67.3099 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -2528,7 +2529,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND"
+		(property "Value" "LV_GND"
 			(at 96.52 154.9399 90)
 			(effects
 				(font
@@ -2666,8 +2667,8 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND1"
-			(at 125.476 103.124 0)
+		(property "Value" "HV_GND"
+			(at 127.254 103.124 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2732,8 +2733,8 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND1"
-			(at 92.71 87.63 90)
+		(property "Value" "HV_GND"
+			(at 93.472 87.63 90)
 			(effects
 				(font
 					(size 1.27 1.27)

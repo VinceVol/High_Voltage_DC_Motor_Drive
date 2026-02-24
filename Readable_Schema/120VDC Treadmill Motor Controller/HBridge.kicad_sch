@@ -2055,6 +2055,12 @@
 		(uuid "3b98a7f0-3c19-4477-84f9-6f9329305ec6")
 	)
 	(junction
+		(at 49.53 132.08)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "40fb090f-334e-433a-bba1-abcde4a8fed8")
+	)
+	(junction
 		(at 171.45 127)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2167,6 +2173,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "9b6acc8d-fe9b-408b-a97a-86e5eace5ed1")
+	)
+	(junction
+		(at 241.3 132.08)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9da3a773-6a29-4d53-8384-e95dcd5005db")
 	)
 	(junction
 		(at 149.86 133.35)
@@ -2914,6 +2926,16 @@
 	)
 	(wire
 		(pts
+			(xy 49.53 132.08) (xy 54.61 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5773f08f-5a02-48af-bfa6-68e59146fa55")
+	)
+	(wire
+		(pts
 			(xy 264.16 88.9) (xy 259.08 88.9)
 		)
 		(stroke
@@ -2981,6 +3003,16 @@
 			(type default)
 		)
 		(uuid "679e5b87-2856-4ae1-8f27-a1b75463e59c")
+	)
+	(wire
+		(pts
+			(xy 241.3 132.08) (xy 246.38 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "68077c7a-4895-47a3-ba44-17a572130288")
 	)
 	(wire
 		(pts
@@ -4362,8 +4394,8 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND"
-			(at 47.244 115.824 0)
+		(property "Value" "LV_GND"
+			(at 45.466 115.316 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4606,7 +4638,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "20a37fba-02f7-4024-a029-caddc201517f")
 		(property "Reference" "#PWR014"
 			(at 15.24 30.48 0)
@@ -4617,13 +4648,12 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND"
-			(at 17.78 30.4799 90)
+		(property "Value" "LV_GND"
+			(at 20.066 33.274 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Footprint" ""
@@ -5627,8 +5657,8 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND"
-			(at 248.666 115.824 0)
+		(property "Value" "LV_GND"
+			(at 250.444 115.824 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5865,7 +5895,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "56933ab4-982e-4a52-98bc-433e3893a70e")
 		(property "Reference" "#PWR04"
 			(at 259.08 111.76 0)
@@ -5876,12 +5905,13 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND"
-			(at 259.08 110.49 0)
+		(property "Value" "LV_GND"
+			(at 259.588 105.664 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
 		(property "Footprint" ""
@@ -6033,7 +6063,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "5bad79d0-0132-47cf-9db0-02ada48eba91")
 		(property "Reference" "#PWR028"
 			(at 241.3 138.43 0)
@@ -6044,12 +6073,13 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND"
-			(at 241.3 137.16 0)
+		(property "Value" "LV_GND"
+			(at 238.252 136.144 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
 		(property "Footprint" ""
@@ -6099,7 +6129,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "637cc73b-6d66-4300-b009-4b92e64ad555")
 		(property "Reference" "#PWR012"
 			(at 49.53 138.43 0)
@@ -6110,12 +6139,13 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND"
-			(at 49.53 137.16 0)
+		(property "Value" "LV_GND"
+			(at 50.546 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -6415,7 +6445,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "6c0d0503-cb02-4407-b9c9-dcea86712368")
 		(property "Reference" "#PWR010"
 			(at 149.86 146.05 0)
@@ -6426,12 +6455,13 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND1"
-			(at 149.86 144.78 0)
+		(property "Value" "HV_GND"
+			(at 146.304 143.256 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -6704,7 +6734,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "851ebc93-663e-4625-8f49-f44682641af1")
 		(property "Reference" "#PWR07"
 			(at 36.83 111.76 0)
@@ -6715,12 +6744,13 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND"
-			(at 36.83 110.49 0)
+		(property "Value" "LV_GND"
+			(at 29.464 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -6905,7 +6935,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "942d01ac-45fa-4812-8444-4699bd42adae")
 		(property "Reference" "#PWR015"
 			(at 68.58 30.48 0)
@@ -6916,13 +6945,12 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND"
-			(at 71.12 30.4799 90)
+		(property "Value" "LV_GND"
+			(at 73.406 33.02 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Footprint" ""
@@ -7620,7 +7648,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "c2f31772-a8b9-44b7-8dfd-a00453cac9c4")
 		(property "Reference" "#PWR025"
 			(at 175.26 30.48 0)
@@ -7631,13 +7658,12 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND"
-			(at 177.8 30.4799 90)
+		(property "Value" "LV_GND"
+			(at 180.34 33.02 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Footprint" ""
@@ -7905,8 +7931,8 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND1"
-			(at 58.42 30.4799 90)
+		(property "Value" "HV_GND"
+			(at 52.324 32.766 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8085,72 +8111,6 @@
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
 					(reference "C9")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 54.61 132.08 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "dc6dd797-1601-4af3-9446-b6f1fa0d8a46")
-		(property "Reference" "#PWR013"
-			(at 54.61 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 54.61 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 54.61 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 54.61 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 54.61 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "7a322169-d854-460c-8e8b-c20e156dc30b")
-		)
-		(instances
-			(project "120VDC Treadmill Motor Controller"
-				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
-					(reference "#PWR013")
 					(unit 1)
 				)
 			)
@@ -8455,73 +8415,6 @@
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
 					(reference "Q2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 246.38 132.08 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "f4aa630a-20b8-4f62-ab00-ea00e3330322")
-		(property "Reference" "#PWR027"
-			(at 246.38 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 246.38 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 246.38 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 246.38 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 246.38 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "c0f43c04-9364-4b02-99b6-9082870e6b5f")
-		)
-		(instances
-			(project "120VDC Treadmill Motor Controller"
-				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
-					(reference "#PWR027")
 					(unit 1)
 				)
 			)

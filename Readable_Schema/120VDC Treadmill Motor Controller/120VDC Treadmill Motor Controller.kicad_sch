@@ -5,22 +5,6 @@
 	(uuid "319bc5c0-2dd5-4df3-a34b-9170833ebccd")
 	(paper "A4")
 	(lib_symbols)
-	(junction
-		(at 149.86 88.9)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "8574cf69-a913-43ab-9aca-9fb80619adda")
-	)
-	(wire
-		(pts
-			(xy 133.35 104.14) (xy 133.35 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "00f78397-36e9-431b-b9d8-e3d5322c23ba")
-	)
 	(wire
 		(pts
 			(xy 123.19 111.76) (xy 156.21 111.76)
@@ -53,6 +37,16 @@
 	)
 	(wire
 		(pts
+			(xy 144.78 104.14) (xy 156.21 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "29f58a88-393a-43f6-9715-bacc48479050")
+	)
+	(wire
+		(pts
 			(xy 123.19 104.14) (xy 133.35 104.14)
 		)
 		(stroke
@@ -60,16 +54,6 @@
 			(type default)
 		)
 		(uuid "2b483ee0-81fc-4c8b-8ab1-0bca98404ee8")
-	)
-	(wire
-		(pts
-			(xy 146.05 83.82) (xy 146.05 104.14)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2bdf8ae0-e787-41b7-93c9-86aeb6fc2c37")
 	)
 	(wire
 		(pts
@@ -83,23 +67,73 @@
 	)
 	(wire
 		(pts
-			(xy 149.86 88.9) (xy 149.86 83.82)
+			(xy 152.4 83.82) (xy 152.4 96.52)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "6979369e-cc55-4c0f-ac73-61e3ddb1b336")
+		(uuid "46e3c79d-6d04-4102-8feb-e9be336e06fd")
 	)
 	(wire
 		(pts
-			(xy 156.21 100.33) (xy 149.86 100.33)
+			(xy 152.4 96.52) (xy 156.21 96.52)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "84f7d38e-61fe-4354-8464-cc33b7ec355f")
+		(uuid "4d1e32c1-290e-45c3-8e5c-fa3d7af52da5")
+	)
+	(wire
+		(pts
+			(xy 147.32 101.6) (xy 156.21 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "607b6a2d-d50a-4883-b314-2bd7da021dd3")
+	)
+	(wire
+		(pts
+			(xy 149.86 83.82) (xy 149.86 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "623ff26d-d281-4bae-a8aa-a7e8fcf778b2")
+	)
+	(wire
+		(pts
+			(xy 144.78 83.82) (xy 144.78 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "66de174e-3e64-4e10-9e02-bf33c1150b07")
+	)
+	(wire
+		(pts
+			(xy 149.86 99.06) (xy 156.21 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7cd51e9f-a6b2-495b-bb84-6178779d3b10")
+	)
+	(wire
+		(pts
+			(xy 147.32 83.82) (xy 147.32 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7e90cea8-6739-4e87-afd2-9bf2624ca699")
 	)
 	(wire
 		(pts
@@ -110,16 +144,6 @@
 			(type default)
 		)
 		(uuid "891ab306-dbdb-4283-9f62-6bfd57c514df")
-	)
-	(wire
-		(pts
-			(xy 149.86 88.9) (xy 149.86 100.33)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b66d8e2b-4c84-4bab-950f-375e2f654782")
 	)
 	(wire
 		(pts
@@ -150,26 +174,6 @@
 			(type default)
 		)
 		(uuid "cca09229-a487-49bd-88b2-e3fa6401c369")
-	)
-	(wire
-		(pts
-			(xy 133.35 88.9) (xy 149.86 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d57d9815-4f99-475e-a809-e2baff0a8a78")
-	)
-	(wire
-		(pts
-			(xy 146.05 104.14) (xy 156.21 104.14)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "dd8bc928-d3d3-4209-9814-106fe02be456")
 	)
 	(sheet
 		(at 39.37 24.13)
@@ -296,8 +300,8 @@
 		)
 	)
 	(sheet
-		(at 156.21 96.52)
-		(size 21.59 27.94)
+		(at 156.21 93.98)
+		(size 21.59 30.48)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -312,7 +316,7 @@
 		)
 		(uuid "49a5a11b-8174-445d-b343-1fe5ec8c60de")
 		(property "Sheetname" "H_Bridge"
-			(at 156.21 95.8084 0)
+			(at 156.21 93.2684 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -327,16 +331,6 @@
 					(size 1.27 1.27)
 				)
 				(justify left top)
-			)
-		)
-		(pin "dir" input
-			(at 156.21 104.14 180)
-			(uuid "6151e9e0-e8e8-4431-9afa-f6349d899adf")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
 			)
 		)
 		(pin "i_sense_+" output
@@ -359,29 +353,59 @@
 				(justify left)
 			)
 		)
-		(pin "ls_15v" output
-			(at 156.21 118.11 180)
-			(uuid "08f4f50f-49b5-4766-94ed-c5ecf190630d")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "pwm" input
-			(at 156.21 100.33 180)
-			(uuid "44dc4243-96db-4a62-8394-0442053b7395")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
 		(pin "r_brake_+" output
 			(at 156.21 121.92 180)
 			(uuid "f42d8ba0-f76f-44f4-a63a-30eba10db466")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "dir_a" input
+			(at 156.21 101.6 180)
+			(uuid "521e62ea-fdba-4da7-b273-7fb37b1e834c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "dir_b" input
+			(at 156.21 104.14 180)
+			(uuid "cf94c3ed-1862-460f-9f8c-7a4fbe099829")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "ls_ps_+" input
+			(at 156.21 118.11 180)
+			(uuid "dc938eaf-114b-45e7-824c-a8cf3409c17d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "pwm_a" input
+			(at 156.21 96.52 180)
+			(uuid "8391388f-ad3a-445a-b09a-6fecb513937f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "pwm_b" input
+			(at 156.21 99.06 180)
+			(uuid "9c0b2b08-d2ed-4734-9401-2f3db7308d96")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -503,9 +527,9 @@
 				(justify left)
 			)
 		)
-		(pin "pwm_mcu" output
-			(at 149.86 83.82 270)
-			(uuid "001a0998-3515-4792-be66-7ba07f7814c5")
+		(pin "dir_a_mcu" output
+			(at 147.32 83.82 270)
+			(uuid "260a339f-9df3-47d9-afb2-3e37ec42f94c")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -513,9 +537,29 @@
 				(justify left)
 			)
 		)
-		(pin "dir_mcu" output
-			(at 146.05 83.82 270)
-			(uuid "4bc8fe48-1b39-4a41-b7c9-1c862ef3f868")
+		(pin "dir_b_mcu" output
+			(at 144.78 83.82 270)
+			(uuid "192ab598-fed7-4a72-8756-c87597cb27df")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "pwm_a_mcu" output
+			(at 152.4 83.82 270)
+			(uuid "8ac3d640-05d5-4e33-a3f2-131b7fd585c9")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "pwm_b_mcu" output
+			(at 149.86 83.82 270)
+			(uuid "02d8c849-578a-4258-b079-3e8d011099fa")
 			(effects
 				(font
 					(size 1.27 1.27)
