@@ -2375,6 +2375,19 @@
 			(embedded_fonts no)
 		)
 	)
+	(text "REDO VOLTAGE DIVIDER VALUES AND OPTOISOLATE"
+		(exclude_from_sim no)
+		(at 89.408 112.014 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
+				(color 255 0 0 1)
+			)
+		)
+		(uuid "e85f22b0-e256-42e8-af38-546e280fefaa")
+	)
 	(junction
 		(at 157.48 104.14)
 		(diameter 0)
@@ -2388,16 +2401,16 @@
 		(uuid "3706e5a3-2a8f-481b-8c52-2480ee08a584")
 	)
 	(junction
+		(at 149.86 86.36)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "579e284c-c981-43a0-9ebb-2c49b87425b8")
+	)
+	(junction
 		(at 157.48 111.76)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "5f8cd93d-f45d-403c-8cc2-c33336076946")
-	)
-	(junction
-		(at 149.86 72.39)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "99c25fde-e368-4b36-81fb-966d89e9caa4")
 	)
 	(junction
 		(at 165.1 111.76)
@@ -2430,10 +2443,22 @@
 		(uuid "cc9489eb-f0ce-4332-b3ab-dce16fc8dfc3")
 	)
 	(junction
+		(at 149.86 87.63)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d4485e3f-6b06-4bca-83e3-2ea21108b528")
+	)
+	(junction
 		(at 146.05 104.14)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e4d6828a-e852-4034-b6b1-8476b85b60dd")
+	)
+	(junction
+		(at 146.05 77.47)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f8961630-975d-4d42-be3f-1108940c98e1")
 	)
 	(wire
 		(pts
@@ -2617,16 +2642,6 @@
 	)
 	(wire
 		(pts
-			(xy 143.51 72.39) (xy 149.86 72.39)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "550f6b4c-7e19-48cd-b09f-eeca20892bd0")
-	)
-	(wire
-		(pts
 			(xy 63.5 114.3) (xy 63.5 123.19)
 		)
 		(stroke
@@ -2634,6 +2649,16 @@
 			(type default)
 		)
 		(uuid "5a5dd25f-da06-45fa-9ea6-638aa5a49724")
+	)
+	(wire
+		(pts
+			(xy 149.86 78.74) (xy 149.86 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "68b78b0b-6997-4c3b-a078-f06d6a89f30b")
 	)
 	(wire
 		(pts
@@ -2667,13 +2692,13 @@
 	)
 	(wire
 		(pts
-			(xy 149.86 72.39) (xy 149.86 78.74)
+			(xy 63.5 114.3) (xy 80.01 114.3)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "82089d38-ec36-4ec8-901a-279952be210a")
+		(uuid "81319d76-5af7-47ab-91d0-c8dfd535ea3a")
 	)
 	(wire
 		(pts
@@ -2694,6 +2719,16 @@
 			(type default)
 		)
 		(uuid "8dd14103-b11f-435e-896a-019e31d45a9d")
+	)
+	(wire
+		(pts
+			(xy 149.86 77.47) (xy 146.05 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "96958b3a-c678-4479-a953-78bed90ff077")
 	)
 	(wire
 		(pts
@@ -2747,6 +2782,16 @@
 	)
 	(wire
 		(pts
+			(xy 149.86 87.63) (xy 156.21 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c16df148-89a5-4ce5-b815-2f9edf3ddb48")
+	)
+	(wire
+		(pts
 			(xy 128.27 77.47) (xy 146.05 77.47)
 		)
 		(stroke
@@ -2787,13 +2832,13 @@
 	)
 	(wire
 		(pts
-			(xy 149.86 72.39) (xy 152.4 72.39)
+			(xy 149.86 86.36) (xy 149.86 87.63)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "d6e8933b-68d4-4a79-8a49-d2402d0ba8e9")
+		(uuid "dd49e6bd-abbe-41ba-bad7-d6376e9a724a")
 	)
 	(wire
 		(pts
@@ -2855,6 +2900,16 @@
 		)
 		(uuid "fdfc0bd5-3793-4e59-bca4-ce947c944017")
 	)
+	(wire
+		(pts
+			(xy 63.5 109.22) (xy 80.01 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fe74a4f8-bbc2-42b6-95da-3acc29fb220c")
+	)
 	(label "5v HV"
 		(at 106.68 77.47 180)
 		(effects
@@ -2866,14 +2921,14 @@
 		(uuid "320bd7e0-aed6-4e67-adde-7d97d2096af3")
 	)
 	(label "lg"
-		(at 152.4 72.39 0)
+		(at 156.21 87.63 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left bottom)
 		)
-		(uuid "4607eb85-7d7f-4a5b-b7c8-afa74f5f0e36")
+		(uuid "343247cf-7eac-429e-b2fc-d6bd85099ca4")
 	)
 	(label "5v HV"
 		(at 90.17 101.6 90)
@@ -2940,7 +2995,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 143.51 72.39 270)
+		(at 149.86 87.63 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2948,7 +3003,7 @@
 		(dnp no)
 		(uuid "35011f19-b3e0-47f5-8e84-f7003bf684da")
 		(property "Reference" "#PWR026"
-			(at 137.16 72.39 0)
+			(at 149.86 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2957,7 +3012,7 @@
 			)
 		)
 		(property "Value" "HV_GND"
-			(at 139.7 72.3899 90)
+			(at 153.924 91.694 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2966,7 +3021,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 143.51 72.39 0)
+			(at 149.86 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2975,7 +3030,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 143.51 72.39 0)
+			(at 149.86 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2984,7 +3039,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 143.51 72.39 0)
+			(at 149.86 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3925,6 +3980,72 @@
 			(project ""
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/7a7487b9-35f1-42d2-9ba5-cfe8e231a0f8"
 					(reference "D4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND1")
+		(at 74.93 104.14 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "bf7f6541-7f48-4730-b797-93a60f73716b")
+		(property "Reference" "#PWR06"
+			(at 74.93 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "HV_GND"
+			(at 75.184 104.394 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 74.93 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 74.93 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND1\" , ground"
+			(at 74.93 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2b408805-60d2-4d5d-8ee9-736e92d8f963")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/7a7487b9-35f1-42d2-9ba5-cfe8e231a0f8"
+					(reference "#PWR06")
 					(unit 1)
 				)
 			)

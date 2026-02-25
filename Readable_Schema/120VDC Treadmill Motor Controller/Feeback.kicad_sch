@@ -268,354 +268,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Transistor_BJT:MUN5330DW1"
-			(pin_names
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "Q"
-				(at 5.08 1.27 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "MUN5330DW1"
-				(at 5.08 -1.27 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" "Package_TO_SOT_SMD:SOT-363_SC-70-6"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "https://www.onsemi.com/download/data-sheet/pdf/dtc113ep-d.pdf"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Complementary Bias Resistor Transistors, Ic 100mA, Vce 50V, Vin(fwd) 10V, R1 = 1kohms, R2 = 1kohms, SOT-363"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "BRT Digital Transistor NPN PNP"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "SOT*363*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "MUN5330DW1_0_1"
-				(rectangle
-					(start -6.35 0.508)
-					(end -4.826 -0.508)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -4.318 -2.286)
-					(end -3.302 -0.762)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center -3.81 0)
-					(radius 0.254)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy -3.81 -0.762) (xy -3.81 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -3.81 -2.286) (xy -3.81 -3.048) (xy 1.27 -3.048)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -0.762 0) (xy -4.826 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -0.635 1.905) (xy -0.635 -1.905)
-					)
-					(stroke
-						(width 0.508)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -0.635 0.635) (xy 1.27 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -0.635 -0.635) (xy 1.27 -2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 1.27 -3.048)
-					(radius 0.254)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-			)
-			(symbol "MUN5330DW1_1_1"
-				(circle
-					(center 0 0)
-					(radius 2.8194)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 -1.778) (xy 0.508 -1.27) (xy 1.016 -2.286) (xy 0 -1.778)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(pin input line
-					(at -8.89 0 0)
-					(length 2.54)
-					(name "B1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 1.27 5.08 270)
-					(length 2.54)
-					(name "C1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 1.27 -5.08 90)
-					(length 2.54)
-					(name "E1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(symbol "MUN5330DW1_2_1"
-				(circle
-					(center 0 0)
-					(radius 2.8194)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.016 -1.778) (xy 0.508 -2.286) (xy 0 -1.27) (xy 1.016 -1.778)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(pin input line
-					(at -8.89 0 0)
-					(length 2.54)
-					(name "B2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 1.27 5.08 270)
-					(length 2.54)
-					(name "C2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 1.27 -5.08 90)
-					(length 2.54)
-					(name "E2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Treadmill_Comp:NLV14044BDR2G"
 			(pin_names
 				(offset 0.254)
@@ -1464,620 +1116,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "dk_Logic-Buffers-Drivers-Receivers-Transceivers:NC7SZ125M5X"
-			(pin_names
-				(offset 0)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "U"
-				(at -5.0292 5.4356 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "NC7SZ125M5X"
-				(at 1.4986 -5.6388 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" "digikey-footprints:SOT-753"
-				(at 5.08 5.08 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "https://www.onsemi.com/pub/Collateral/NC7SZ125-D.PDF"
-				(at 5.08 7.62 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Description" "IC BUF NON-INVERT 5.5V SOT23-5"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Digi-Key_PN" "NC7SZ125M5XCT-ND"
-				(at 5.08 10.16 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "MPN" "NC7SZ125M5X"
-				(at 5.08 12.7 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Category" "Integrated Circuits (ICs)"
-				(at 5.08 15.24 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Family" "Logic - Buffers, Drivers, Receivers, Transceivers"
-				(at 5.08 17.78 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "DK_Datasheet_Link" "https://www.onsemi.com/pub/Collateral/NC7SZ125-D.PDF"
-				(at 5.08 20.32 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "DK_Detail_Page" "/product-detail/en/on-semiconductor/NC7SZ125M5X/NC7SZ125M5XCT-ND/673392"
-				(at 5.08 22.86 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Description_1" "IC BUF NON-INVERT 5.5V SOT23-5"
-				(at 5.08 25.4 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer" "ON Semiconductor"
-				(at 5.08 27.94 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Status" "Active"
-				(at 5.08 30.48 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "NC7SZ125M5XCT-ND 7SZ"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "NC7SZ125M5X_0_1"
-				(polyline
-					(pts
-						(xy -5.08 -2.54) (xy -3.81 -2.54) (xy -3.81 0) (xy -2.54 0)
-					)
-					(stroke
-						(width 0)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -4.7752 4.445)
-					(end 2.54 -4.3434)
-					(stroke
-						(width 0)
-						(type solid)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(polyline
-					(pts
-						(xy -2.54 1.27) (xy -2.54 -1.27) (xy 0 0) (xy -2.54 1.27)
-					)
-					(stroke
-						(width 0)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 1.27) (xy -1.27 2.54) (xy -5.08 2.54)
-					)
-					(stroke
-						(width 0)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center -1.27 1.016)
-					(radius 0.254)
-					(stroke
-						(width 0)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 5.1562) (xy 0 4.4704)
-					)
-					(stroke
-						(width 0)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 0) (xy 2.54 0)
-					)
-					(stroke
-						(width 0)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 -5.1308) (xy 0 -4.3688)
-					)
-					(stroke
-						(width 0)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "NC7SZ125M5X_1_1"
-				(pin input line
-					(at -7.62 2.54 0)
-					(length 2.54)
-					(name "~{OE}"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -7.62 -2.54 0)
-					(length 2.54)
-					(name "A"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 0 7.62 270)
-					(length 2.54)
-					(name "VCC"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 0 -7.62 90)
-					(length 2.54)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin output line
-					(at 5.08 0 180)
-					(length 2.54)
-					(name "Y"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "dk_Logic-Gates-and-Inverters:SN74LVC1G08DBVR"
-			(pin_names
-				(offset 0.0254)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "U"
-				(at -2.54 6.096 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-					(justify right)
-				)
-			)
-			(property "Value" "SN74LVC1G08DBVR"
-				(at 0.508 -6.35 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" "digikey-footprints:SOT-753"
-				(at 5.08 5.08 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "http://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=http%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fsn74lvc1g08"
-				(at 5.08 7.62 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Description" "IC GATE AND 1CH 2-INP SOT23-5"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Digi-Key_PN" "296-11601-1-ND"
-				(at 5.08 10.16 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "MPN" "SN74LVC1G08DBVR"
-				(at 5.08 12.7 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Category" "Integrated Circuits (ICs)"
-				(at 5.08 15.24 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Family" "Logic - Gates and Inverters"
-				(at 5.08 17.78 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "DK_Datasheet_Link" "http://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=http%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fsn74lvc1g08"
-				(at 5.08 20.32 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "DK_Detail_Page" "/product-detail/en/texas-instruments/SN74LVC1G08DBVR/296-11601-1-ND/385740"
-				(at 5.08 22.86 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Description_1" "IC GATE AND 1CH 2-INP SOT23-5"
-				(at 5.08 25.4 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer" "Texas Instruments"
-				(at 5.08 27.94 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Status" "Active"
-				(at 5.08 30.48 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "296-11601-1-ND 74LVC"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "SN74LVC1G08DBVR_1_1"
-				(polyline
-					(pts
-						(xy 0 5.08) (xy -5.08 5.08) (xy -5.08 -5.08) (xy 0 -5.08)
-					)
-					(stroke
-						(width 0)
-						(type solid)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(arc
-					(start 0 5.08)
-					(mid 5.08 0)
-					(end 0 -5.08)
-					(stroke
-						(width 0)
-						(type solid)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(pin input line
-					(at -7.62 2.54 0)
-					(length 2.54)
-					(name "A"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -7.62 -2.54 0)
-					(length 2.54)
-					(name "B"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 0 7.62 270)
-					(length 2.54)
-					(name "VCC"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 0 -7.62 90)
-					(length 2.54)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin output line
-					(at 7.62 0 180)
-					(length 2.54)
-					(name "Y"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "power:GND"
 			(power)
 			(pin_numbers
@@ -2181,21 +1219,34 @@
 		)
 	)
 	(rectangle
-		(start 22.86 121.92)
-		(end 66.04 165.1)
+		(start 34.29 26.67)
+		(end 53.34 46.99)
 		(stroke
 			(width 0)
 			(type dot)
-			(color 255 0 0 1)
+			(color 0 255 255 1)
 		)
 		(fill
 			(type none)
 		)
-		(uuid 2b34bf49-aad1-4dde-907c-ddde3030ff84)
+		(uuid 2639ee31-70dd-4e05-b2b2-cadd0af2355b)
+	)
+	(rectangle
+		(start 25.4 100.33)
+		(end 45.72 114.3)
+		(stroke
+			(width 0)
+			(type dot)
+			(color 0 255 255 1)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 64dd7d2b-9f52-4ccc-9bde-b5df416931e5)
 	)
 	(rectangle
 		(start 22.86 74.93)
-		(end 151.13 118.11)
+		(end 114.3 118.11)
 		(stroke
 			(width 0)
 			(type dot)
@@ -2232,16 +1283,16 @@
 		)
 		(uuid e9b70c11-0e47-4702-ab3b-e0d89652da07)
 	)
-	(text "SR output determines whether to turn off pwm from mcu"
+	(text "if I>Peak:\nDisable"
 		(exclude_from_sim no)
-		(at 50.8 120.65 0)
+		(at 26.67 108.204 0)
 		(effects
 			(font
 				(size 1.27 1.27)
-				(color 255 0 0 1)
 			)
+			(justify left)
 		)
-		(uuid "94897269-4e3b-420e-af85-2942c209918a")
+		(uuid "424efa1c-b860-4c5f-8dd7-7af1c9715bdd")
 	)
 	(text "RC Filter Smooth \n20KHz => 100Hz"
 		(exclude_from_sim no)
@@ -2254,14 +1305,25 @@
 		)
 		(uuid "aa8793e0-d965-49f5-b003-9f33e6ded1bd")
 	)
-	(text "OC pin sets| PWM Resets | Inverted set & R + SR latch allow for a set dominant switch"
+	(text "When current\n< Peak pull high"
 		(exclude_from_sim no)
-		(at 67.056 73.66 0)
+		(at 44.45 44.45 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "b4a6589b-b365-4403-9c46-ca5e0a8e17ba")
+	)
+	(text "OC pin disables Q0 which is pulled to gnd in h bridge circuit\nSet & Reset are MCU controlled"
+		(exclude_from_sim no)
+		(at 24.13 78.232 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 				(color 255 255 0 1)
 			)
+			(justify left)
 		)
 		(uuid "c22cdac4-b09b-44cc-8c6d-42845fbc511a")
 	)
@@ -2277,7 +1339,7 @@
 		(uuid "f10f7463-a8a3-4fef-b45d-67fd25238dbd")
 	)
 	(junction
-		(at 76.2 99.06)
+		(at 38.1 99.06)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "07d22d9a-935c-493f-965d-9d27596b5a83")
@@ -2289,10 +1351,10 @@
 		(uuid "236ebee4-0f96-42ef-836c-da865a853a1d")
 	)
 	(junction
-		(at 35.56 146.05)
+		(at 43.18 104.14)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "4eab2dd5-4c6a-42b4-81d7-6827c2a04755")
+		(uuid "27fba727-25c4-460f-940f-aff3b446cd23")
 	)
 	(junction
 		(at 67.31 58.42)
@@ -2301,22 +1363,22 @@
 		(uuid "c22b6206-a328-45fd-a549-d08161b4822a")
 	)
 	(junction
+		(at 50.8 40.64)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c3d2d54b-3f25-41ad-8b10-6c6e0945ce02")
+	)
+	(junction
 		(at 110.49 38.1)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ca70ac30-e1a2-4a49-9570-f06fce1f21fa")
 	)
 	(junction
-		(at 88.9 96.52)
+		(at 50.8 96.52)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d99579ba-a275-457a-8e8b-a281364726b1")
-	)
-	(junction
-		(at 38.1 46.99)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "eee2cca4-15ff-493d-89c6-91b944c7cdf1")
 	)
 	(junction
 		(at 125.73 53.34)
@@ -2331,11 +1393,11 @@
 		(uuid "fc90016a-eb8f-4c14-948f-2a7cdcb49fda")
 	)
 	(no_connect
-		(at 134.62 104.14)
+		(at 96.52 104.14)
 		(uuid "048931aa-2589-4827-a192-b670fd08083f")
 	)
 	(no_connect
-		(at 93.98 91.44)
+		(at 55.88 91.44)
 		(uuid "04ad3c56-0e67-4fd2-943d-8830386ccdc6")
 	)
 	(no_connect
@@ -2343,7 +1405,7 @@
 		(uuid "2d443f3e-841b-4d51-b89a-921c6b258784")
 	)
 	(no_connect
-		(at 93.98 104.14)
+		(at 55.88 104.14)
 		(uuid "3fa90a9e-c62f-4492-9ac9-7ce87d18abed")
 	)
 	(no_connect
@@ -2351,31 +1413,27 @@
 		(uuid "9cf1357a-94ee-4b3f-b267-5892deed3524")
 	)
 	(no_connect
-		(at 93.98 106.68)
+		(at 55.88 106.68)
 		(uuid "a40fab95-8f0c-411d-94df-eb9b3cd9ebb6")
 	)
 	(no_connect
-		(at 134.62 101.6)
+		(at 96.52 101.6)
 		(uuid "b955e6e7-5bd6-46e6-80da-380c25c0184c")
 	)
 	(no_connect
-		(at 134.62 109.22)
+		(at 96.52 109.22)
 		(uuid "c4a3f86b-1e93-4763-9284-57d33a127231")
 	)
 	(no_connect
-		(at 134.62 93.98)
+		(at 96.52 93.98)
 		(uuid "c7f4b02f-9b5d-405a-ac9d-c820ca63353a")
 	)
 	(no_connect
-		(at 30.48 93.98)
-		(uuid "cf6cfe1a-baf7-4e9e-b858-64fa0bf415d7")
-	)
-	(no_connect
-		(at 134.62 96.52)
+		(at 96.52 96.52)
 		(uuid "e692df81-26f5-4de4-b800-e314dc91c116")
 	)
 	(no_connect
-		(at 134.62 106.68)
+		(at 96.52 106.68)
 		(uuid "e88ee38d-49e7-4189-9ca9-fad0a2a5fbb8")
 	)
 	(wire
@@ -2390,16 +1448,6 @@
 	)
 	(wire
 		(pts
-			(xy 38.1 104.14) (xy 38.1 105.41)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0922cab1-daab-45ce-81a4-cee26cad39e8")
-	)
-	(wire
-		(pts
 			(xy 119.38 53.34) (xy 125.73 53.34)
 		)
 		(stroke
@@ -2410,17 +1458,7 @@
 	)
 	(wire
 		(pts
-			(xy 35.56 34.29) (xy 38.1 34.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0e971c45-8bbc-4363-a848-fb3efcf656fe")
-	)
-	(wire
-		(pts
-			(xy 134.62 91.44) (xy 137.16 91.44)
+			(xy 96.52 91.44) (xy 99.06 91.44)
 		)
 		(stroke
 			(width 0)
@@ -2430,7 +1468,17 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 101.6) (xy 93.98 101.6)
+			(xy 50.8 31.75) (xy 50.8 29.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "18a734ce-7d88-48ea-b951-d0fb696ed61b")
+	)
+	(wire
+		(pts
+			(xy 52.07 101.6) (xy 55.88 101.6)
 		)
 		(stroke
 			(width 0)
@@ -2450,16 +1498,6 @@
 	)
 	(wire
 		(pts
-			(xy 49.53 130.81) (xy 49.53 132.08)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "255ebfaf-fd5b-4ac2-ba0b-f6a199b958e9")
-	)
-	(wire
-		(pts
 			(xy 132.08 53.34) (xy 138.43 53.34)
 		)
 		(stroke
@@ -2467,16 +1505,6 @@
 			(type default)
 		)
 		(uuid "25e4d02b-5a25-48e2-af82-23087c4861e7")
-	)
-	(wire
-		(pts
-			(xy 38.1 45.72) (xy 38.1 46.99)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "26ee2e21-ff14-4d61-bb92-3d7d28b9fd6d")
 	)
 	(wire
 		(pts
@@ -2500,17 +1528,7 @@
 	)
 	(wire
 		(pts
-			(xy 26.67 99.06) (xy 30.48 99.06)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4001ad74-15bf-486d-93cc-8253d755111d")
-	)
-	(wire
-		(pts
-			(xy 134.62 99.06) (xy 140.97 99.06)
+			(xy 96.52 99.06) (xy 102.87 99.06)
 		)
 		(stroke
 			(width 0)
@@ -2520,17 +1538,7 @@
 	)
 	(wire
 		(pts
-			(xy 31.75 146.05) (xy 35.56 146.05)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "42f9844b-8413-4c57-9067-c393fa759852")
-	)
-	(wire
-		(pts
-			(xy 76.2 99.06) (xy 93.98 99.06)
+			(xy 38.1 99.06) (xy 55.88 99.06)
 		)
 		(stroke
 			(width 0)
@@ -2540,47 +1548,27 @@
 	)
 	(wire
 		(pts
-			(xy 35.56 46.99) (xy 38.1 46.99)
+			(xy 50.8 40.64) (xy 67.31 40.64)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "4f601d24-afa0-4da9-ae3a-dcf6baa5a1a1")
+		(uuid "44e94dd3-ad39-47dd-976d-049cc7abad31")
 	)
 	(wire
 		(pts
-			(xy 49.53 139.7) (xy 49.53 140.97)
+			(xy 52.07 101.6) (xy 52.07 104.14)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "5bef74b7-ee96-48ea-adaa-b0c8a1cdf37f")
+		(uuid "61659783-6147-4d3a-bf7f-cd2fa7405f40")
 	)
 	(wire
 		(pts
-			(xy 25.4 46.99) (xy 25.4 49.53)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "67b2c59f-4143-44f0-833d-9daabbd538db")
-	)
-	(wire
-		(pts
-			(xy 38.1 34.29) (xy 38.1 35.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6f5d35d2-72a8-49e2-9c44-ac90f03b1f6e")
-	)
-	(wire
-		(pts
-			(xy 54.61 58.42) (xy 57.15 58.42)
+			(xy 45.72 58.42) (xy 57.15 58.42)
 		)
 		(stroke
 			(width 0)
@@ -2590,23 +1578,33 @@
 	)
 	(wire
 		(pts
-			(xy 35.56 146.05) (xy 39.37 146.05)
+			(xy 99.06 88.9) (xy 99.06 91.44)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "7b39f7ac-9af4-4330-9b22-3e7e7416034a")
+		(uuid "7522891d-67eb-4844-90c5-4f7cfc62d1b1")
 	)
 	(wire
 		(pts
-			(xy 52.07 101.6) (xy 55.88 101.6)
+			(xy 50.8 39.37) (xy 50.8 40.64)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "879769f9-2888-4a74-975c-38f1f48699c0")
+		(uuid "7b423e04-ecce-41cd-8f68-a2781635b601")
+	)
+	(wire
+		(pts
+			(xy 50.8 29.21) (xy 48.26 29.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "80076289-878d-4e0b-b541-02be017975be")
 	)
 	(wire
 		(pts
@@ -2620,6 +1618,16 @@
 	)
 	(wire
 		(pts
+			(xy 33.02 104.14) (xy 43.18 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "902650c8-a331-4376-b4b7-247c607ff56d")
+	)
+	(wire
+		(pts
 			(xy 107.95 38.1) (xy 110.49 38.1)
 		)
 		(stroke
@@ -2630,7 +1638,7 @@
 	)
 	(wire
 		(pts
-			(xy 91.44 109.22) (xy 91.44 111.76)
+			(xy 53.34 109.22) (xy 53.34 111.76)
 		)
 		(stroke
 			(width 0)
@@ -2640,17 +1648,7 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 90.17) (xy 63.5 91.44)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a0f44410-0e58-41f0-b0fb-9108ce308703")
-	)
-	(wire
-		(pts
-			(xy 83.82 96.52) (xy 88.9 96.52)
+			(xy 45.72 96.52) (xy 50.8 96.52)
 		)
 		(stroke
 			(width 0)
@@ -2680,16 +1678,6 @@
 	)
 	(wire
 		(pts
-			(xy 38.1 46.99) (xy 38.1 48.26)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ca732105-a119-4294-81ea-e9e2639ce399")
-	)
-	(wire
-		(pts
 			(xy 110.49 53.34) (xy 111.76 53.34)
 		)
 		(stroke
@@ -2700,23 +1688,13 @@
 	)
 	(wire
 		(pts
-			(xy 49.53 151.13) (xy 49.53 152.4)
+			(xy 43.18 104.14) (xy 52.07 104.14)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "cdd2c4dc-3dc2-461a-9430-edbfb8f82727")
-	)
-	(wire
-		(pts
-			(xy 38.1 86.36) (xy 38.1 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d01425c6-f2fa-43b0-ac93-cabe6df20286")
+		(uuid "ce12eeb0-aa1b-4c02-9745-b48138e18dc1")
 	)
 	(wire
 		(pts
@@ -2750,7 +1728,7 @@
 	)
 	(wire
 		(pts
-			(xy 91.44 109.22) (xy 93.98 109.22)
+			(xy 53.34 109.22) (xy 55.88 109.22)
 		)
 		(stroke
 			(width 0)
@@ -2790,16 +1768,6 @@
 	)
 	(wire
 		(pts
-			(xy 43.18 96.52) (xy 55.88 96.52)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e2de7db8-2056-4619-bbb7-2a0ebbc3efd6")
-	)
-	(wire
-		(pts
 			(xy 110.49 38.1) (xy 111.76 38.1)
 		)
 		(stroke
@@ -2820,16 +1788,6 @@
 	)
 	(wire
 		(pts
-			(xy 25.4 46.99) (xy 27.94 46.99)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ed15d0f8-0751-4dec-b9c1-d82ecb9f38f4")
-	)
-	(wire
-		(pts
 			(xy 110.49 38.1) (xy 110.49 43.18)
 		)
 		(stroke
@@ -2840,7 +1798,7 @@
 	)
 	(wire
 		(pts
-			(xy 88.9 96.52) (xy 93.98 96.52)
+			(xy 50.8 96.52) (xy 55.88 96.52)
 		)
 		(stroke
 			(width 0)
@@ -2850,7 +1808,7 @@
 	)
 	(wire
 		(pts
-			(xy 48.26 40.64) (xy 67.31 40.64)
+			(xy 44.45 40.64) (xy 50.8 40.64)
 		)
 		(stroke
 			(width 0)
@@ -2860,33 +1818,13 @@
 	)
 	(wire
 		(pts
-			(xy 38.1 55.88) (xy 38.1 59.69)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f7c2531b-8df2-4c0b-9bc2-c95afa9086f5")
-	)
-	(wire
-		(pts
-			(xy 71.12 99.06) (xy 76.2 99.06)
+			(xy 33.02 99.06) (xy 38.1 99.06)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "f7fb2109-11e2-45ca-b17e-ae44fd6b8381")
-	)
-	(wire
-		(pts
-			(xy 63.5 106.68) (xy 63.5 107.95)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fcb8e3ab-d93b-4a4d-b378-c4b1ebcefbd7")
 	)
 	(wire
 		(pts
@@ -2898,48 +1836,8 @@
 		)
 		(uuid "feb2dd84-06cb-4116-8e89-c3fce4b378e0")
 	)
-	(label "SR_out"
-		(at 31.75 146.05 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "278fd217-a820-4233-8a0f-11f64f72d2f3")
-	)
-	(label "Set"
-		(at 83.82 96.52 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "6f39c41f-f61b-41e0-887f-995413f78fff")
-	)
-	(label "Set"
-		(at 26.67 99.06 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "8dbd987c-7f69-4019-95f9-b8f775ce3f62")
-	)
-	(label "SR_out"
-		(at 140.97 99.06 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "a286ff88-1922-4bcf-bd2b-9e9787f2e0eb")
-	)
-	(label "Set"
-		(at 38.1 59.69 270)
+	(label "OC_out"
+		(at 44.45 40.64 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2948,55 +1846,23 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "c858318d-fa80-4501-9f94-cdc83667351b")
+		(uuid "0bef0c2b-e691-4da8-8c47-edb376acc811")
 	)
-	(global_label "3v3 MCU"
-		(shape input)
-		(at 137.16 91.44 0)
-		(fields_autoplaced yes)
+	(label "OC_out"
+		(at 33.02 104.14 180)
 		(effects
 			(font
 				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
 			)
-			(justify left)
+			(justify right bottom)
 		)
-		(uuid "195d6763-fa43-48fb-a170-d7afc63f8ab9")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 148.5513 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
+		(uuid "132e89d8-9460-4e1c-b14e-7ed0300a7b94")
 	)
-	(global_label "3v3 MCU"
+	(global_label "5v 5w"
 		(shape input)
-		(at 63.5 90.17 90)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "5db93ac4-b3ea-4f0f-9601-3664669ef4ac")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 63.5 78.7787 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "3v3 MCU"
-		(shape input)
-		(at 90.17 101.6 180)
+		(at 48.26 29.21 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3004,9 +1870,9 @@
 			)
 			(justify right)
 		)
-		(uuid "85e70f3e-6433-4fec-82d2-d1df5d93cd0c")
+		(uuid "4f5c9d75-bbe6-46a3-987b-4664aff85e1c")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 78.7787 101.6 0)
+			(at 39.5901 29.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3016,9 +1882,9 @@
 			)
 		)
 	)
-	(global_label "3v3 MCU"
+	(global_label "5v 5w"
 		(shape input)
-		(at 38.1 86.36 90)
+		(at 99.06 88.9 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3026,9 +1892,9 @@
 			)
 			(justify left)
 		)
-		(uuid "a47f7f21-379f-4b3b-bb1e-cea3068f17d0")
+		(uuid "99512f0a-0f72-45e5-8313-7c386f541549")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 38.1 74.9687 90)
+			(at 99.06 80.2301 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3040,7 +1906,7 @@
 	)
 	(global_label "5v 5w"
 		(shape input)
-		(at 54.61 58.42 180)
+		(at 45.72 58.42 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3050,7 +1916,7 @@
 		)
 		(uuid "db3820c6-9121-40fc-8857-183b9285802f")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 45.9401 58.42 0)
+			(at 37.0501 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3060,38 +1926,38 @@
 			)
 		)
 	)
-	(global_label "3v3 MCU"
+	(hierarchical_label "Set"
 		(shape input)
-		(at 35.56 34.29 180)
-		(fields_autoplaced yes)
+		(at 45.72 96.52 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "e13c98ae-03d2-4f75-a943-4c93207b6f2a")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 24.1687 34.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
+		(uuid "00ea246e-d5b1-4c55-8dee-e29cab526fa9")
 	)
-	(hierarchical_label "pwm"
+	(hierarchical_label "Reset"
 		(shape input)
-		(at 52.07 101.6 180)
+		(at 33.02 99.06 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "6fee822a-e173-438f-99eb-e3aab0fb17db")
+		(uuid "acc77bdb-f764-4124-95dc-e643fd278875")
+	)
+	(hierarchical_label "EN_Drives"
+		(shape output)
+		(at 102.87 99.06 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "bf5e5be8-4415-4a0f-bad4-68c5e4f0f607")
 	)
 	(hierarchical_label "in-"
 		(shape output)
@@ -3126,168 +1992,9 @@
 		)
 		(uuid "f4993412-d77f-4f12-87fa-5aa957cba247")
 	)
-	(hierarchical_label "pwm"
-		(shape input)
-		(at 49.53 130.81 90)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "ff47717b-a334-4b21-919f-967f1269b0cf")
-	)
-	(symbol
-		(lib_id "Transistor_BJT:MUN5330DW1")
-		(at 48.26 146.05 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "07120cd1-d5d6-4350-a933-f5de1f7b422f")
-		(property "Reference" "Q5"
-			(at 52.07 144.9577 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "MUN5330DW1"
-			(at 52.07 147.4977 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-363_SC-70-6"
-			(at 48.26 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.onsemi.com/download/data-sheet/pdf/dtc113ep-d.pdf"
-			(at 48.26 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Complementary Bias Resistor Transistors, Ic 100mA, Vce 50V, Vin(fwd) 10V, R1 = 1kohms, R2 = 1kohms, SOT-363"
-			(at 48.26 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "6"
-			(uuid "0e9f1626-3c9c-4d8f-961f-53e255cf32d4")
-		)
-		(pin "4"
-			(uuid "e44c129a-638e-443a-a99f-82fc0d80d1c4")
-		)
-		(pin "3"
-			(uuid "5f3382f4-2c5a-4b2b-a245-43e8a0b19fa2")
-		)
-		(pin "5"
-			(uuid "be9b968c-decf-4052-8cf1-ef08959b7e18")
-		)
-		(pin "1"
-			(uuid "89a40db2-f831-4f53-a3d8-8564b9674e5d")
-		)
-		(pin "2"
-			(uuid "32c8340c-55e1-4171-83d6-696904159fd0")
-		)
-		(instances
-			(project ""
-				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/23f081f2-fcb5-4e72-b320-a9766db11ad0"
-					(reference "Q5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 49.53 152.4 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "0ddfd14a-28a9-42c9-8566-f006eb97f0b4")
-		(property "Reference" "#PWR023"
-			(at 49.53 158.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "LV_GND"
-			(at 49.53 152.654 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 49.53 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 49.53 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 49.53 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "9ca37a4d-1480-4ec6-a91e-379c583ee0d3")
-		)
-		(instances
-			(project "120VDC Treadmill Motor Controller"
-				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/23f081f2-fcb5-4e72-b320-a9766db11ad0"
-					(reference "#PWR023")
-					(unit 1)
-				)
-			)
-		)
-	)
 	(symbol
 		(lib_id "Treadmill_Comp:RCWCTE")
-		(at 88.9 91.44 90)
+		(at 50.8 91.44 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3295,7 +2002,7 @@
 		(dnp no)
 		(uuid "0e79e4d7-120e-4b22-939a-55adfecc57dc")
 		(property "Reference" "TP10"
-			(at 87.122 88.9 90)
+			(at 49.022 88.9 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3304,7 +2011,7 @@
 			)
 		)
 		(property "Value" "RCWCTE"
-			(at 91.44 92.7099 90)
+			(at 53.34 92.7099 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3314,7 +2021,7 @@
 			)
 		)
 		(property "Footprint" "Treadmill_Feet:RCWCTE"
-			(at 88.9 91.44 0)
+			(at 50.8 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3324,7 +2031,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.koaspeer.com/pdfs/RC.pdf"
-			(at 88.9 91.44 0)
+			(at 50.8 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3333,7 +2040,7 @@
 			)
 		)
 		(property "Description" "https://www.digikey.com/en/products/detail/koa-speer-electronics-inc/RCWCTE/11476558"
-			(at 88.9 91.44 0)
+			(at 50.8 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3342,7 +2049,7 @@
 			)
 		)
 		(property "PARTREV" "1/06/14"
-			(at 88.9 91.44 0)
+			(at 50.8 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3352,7 +2059,7 @@
 			)
 		)
 		(property "SNAPEDA_PN" "RCWCTE"
-			(at 88.9 91.44 0)
+			(at 50.8 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3362,7 +2069,7 @@
 			)
 		)
 		(property "MANUFACTURER" "KOA Speer"
-			(at 88.9 91.44 0)
+			(at 50.8 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3372,7 +2079,7 @@
 			)
 		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" "2 mm"
-			(at 88.9 91.44 0)
+			(at 50.8 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3382,7 +2089,7 @@
 			)
 		)
 		(property "STANDARD" "Manufacturer Recommendations"
-			(at 88.9 91.44 0)
+			(at 50.8 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3404,87 +2111,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Transistor_BJT:MUN5330DW1")
-		(at 39.37 40.64 180)
-		(unit 2)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "15ef6587-62f3-4f01-b7fd-da125469a784")
-		(property "Reference" "Q5"
-			(at 43.434 32.766 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "MUN5330DW1"
-			(at 52.07 35.306 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-363_SC-70-6"
-			(at 39.37 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.onsemi.com/download/data-sheet/pdf/dtc113ep-d.pdf"
-			(at 39.37 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Complementary Bias Resistor Transistors, Ic 100mA, Vce 50V, Vin(fwd) 10V, R1 = 1kohms, R2 = 1kohms, SOT-363"
-			(at 39.37 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "6"
-			(uuid "0e9f1626-3c9c-4d8f-961f-53e255cf32d5")
-		)
-		(pin "4"
-			(uuid "e44c129a-638e-443a-a99f-82fc0d80d1c5")
-		)
-		(pin "3"
-			(uuid "5f3382f4-2c5a-4b2b-a245-43e8a0b19fa3")
-		)
-		(pin "5"
-			(uuid "be9b968c-decf-4052-8cf1-ef08959b7e19")
-		)
-		(pin "1"
-			(uuid "89a40db2-f831-4f53-a3d8-8564b9674e5e")
-		)
-		(pin "2"
-			(uuid "32c8340c-55e1-4171-83d6-696904159fd1")
-		)
-		(instances
-			(project ""
-				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/23f081f2-fcb5-4e72-b320-a9766db11ad0"
-					(reference "Q5")
-					(unit 2)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R")
 		(at 72.39 58.42 90)
 		(unit 1)
@@ -3501,7 +2127,7 @@
 				)
 			)
 		)
-		(property "Value" "10M"
+		(property "Value" "5K"
 			(at 72.644 54.102 90)
 			(effects
 				(font
@@ -3613,175 +2239,6 @@
 			(project ""
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/23f081f2-fcb5-4e72-b320-a9766db11ad0"
 					(reference "R14")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "dk_Logic-Gates-and-Inverters:SN74LVC1G08DBVR")
-		(at 63.5 99.06 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "2f3375e4-0a72-40ae-a458-d510e7b13664")
-		(property "Reference" "U9"
-			(at 68.326 89.408 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-			)
-		)
-		(property "Value" "SN74LVC1G08DCKR"
-			(at 75.438 92.71 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Treadmill_Feet:DCK5"
-			(at 68.58 93.98 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.ti.com/lit/gpn/sn74lvc1g08"
-			(at 68.58 91.44 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" "IC GATE AND 1CH 2-INP SOT23-5"
-			(at 63.5 99.06 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Digi-Key_PN" "296-11601-1-ND"
-			(at 68.58 88.9 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "MPN" "SN74LVC1G08DBVR"
-			(at 68.58 86.36 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Category" "Integrated Circuits (ICs)"
-			(at 68.58 83.82 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Family" "Logic - Gates and Inverters"
-			(at 68.58 81.28 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "DK_Datasheet_Link" "http://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=http%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fsn74lvc1g08"
-			(at 68.58 78.74 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "DK_Detail_Page" "/product-detail/en/texas-instruments/SN74LVC1G08DBVR/296-11601-1-ND/385740"
-			(at 68.58 76.2 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description_1" "IC GATE AND 1CH 2-INP SOT23-5"
-			(at 68.58 73.66 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Texas Instruments"
-			(at 68.58 71.12 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Status" "Active"
-			(at 68.58 68.58 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(pin "4"
-			(uuid "0a595edc-3011-4f7e-ab13-872465f30857")
-		)
-		(pin "1"
-			(uuid "2183a3e6-3e70-4fbb-845a-ad12d766101e")
-		)
-		(pin "2"
-			(uuid "1a840bd6-70fb-4b0d-8971-5537f0226fc5")
-		)
-		(pin "3"
-			(uuid "3a87ad12-5809-4dab-afe9-834cbf8f6d3c")
-		)
-		(pin "5"
-			(uuid "5a44fc2f-1572-40d4-a614-d90712865b5c")
-		)
-		(instances
-			(project ""
-				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/23f081f2-fcb5-4e72-b320-a9766db11ad0"
-					(reference "U9")
 					(unit 1)
 				)
 			)
@@ -3900,73 +2357,6 @@
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/23f081f2-fcb5-4e72-b320-a9766db11ad0"
 					(reference "TP8")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 38.1 52.07 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "38699fe0-c38a-4fbb-9649-fd59b86d7acb")
-		(property "Reference" "R9"
-			(at 41.91 51.816 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "16K"
-			(at 40.386 52.07 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder"
-			(at 36.322 52.07 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 38.1 52.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 40.132 52.07 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "bd909f89-0f0a-4476-8781-8186102454b1")
-		)
-		(pin "2"
-			(uuid "42b8229e-4f0d-4e3f-8381-c4e645583ce2")
-		)
-		(instances
-			(project "120VDC Treadmill Motor Controller"
-				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/23f081f2-fcb5-4e72-b320-a9766db11ad0"
-					(reference "R9")
 					(unit 1)
 				)
 			)
@@ -4121,7 +2511,7 @@
 				)
 			)
 		)
-		(property "Value" "10M"
+		(property "Value" "5K"
 			(at 62.484 54.102 90)
 			(effects
 				(font
@@ -4173,15 +2563,15 @@
 	)
 	(symbol
 		(lib_id "Treadmill_Comp:RCWCTE")
-		(at 35.56 140.97 90)
+		(at 43.18 109.22 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "64a51fe3-fa62-4275-8807-176a8da43560")
-		(property "Reference" "TP7"
-			(at 33.782 138.43 90)
+		(uuid "6450c9c6-e4ac-44df-9aba-fbe35c0f8bd0")
+		(property "Reference" "TP3"
+			(at 44.958 111.76 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4190,7 +2580,7 @@
 			)
 		)
 		(property "Value" "RCWCTE"
-			(at 38.1 142.2399 90)
+			(at 40.64 107.9501 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4200,7 +2590,7 @@
 			)
 		)
 		(property "Footprint" "Treadmill_Feet:RCWCTE"
-			(at 35.56 140.97 0)
+			(at 43.18 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4210,7 +2600,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.koaspeer.com/pdfs/RC.pdf"
-			(at 35.56 140.97 0)
+			(at 43.18 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4219,7 +2609,7 @@
 			)
 		)
 		(property "Description" "https://www.digikey.com/en/products/detail/koa-speer-electronics-inc/RCWCTE/11476558"
-			(at 35.56 140.97 0)
+			(at 43.18 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4228,7 +2618,7 @@
 			)
 		)
 		(property "PARTREV" "1/06/14"
-			(at 35.56 140.97 0)
+			(at 43.18 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4238,7 +2628,7 @@
 			)
 		)
 		(property "SNAPEDA_PN" "RCWCTE"
-			(at 35.56 140.97 0)
+			(at 43.18 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4248,7 +2638,7 @@
 			)
 		)
 		(property "MANUFACTURER" "KOA Speer"
-			(at 35.56 140.97 0)
+			(at 43.18 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4258,7 +2648,7 @@
 			)
 		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" "2 mm"
-			(at 35.56 140.97 0)
+			(at 43.18 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4268,7 +2658,7 @@
 			)
 		)
 		(property "STANDARD" "Manufacturer Recommendations"
-			(at 35.56 140.97 0)
+			(at 43.18 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4278,12 +2668,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "8d8c1aba-8950-4e1a-8c4a-73956a5cf9f0")
+			(uuid "60a4d91d-1822-4d71-bb38-ca1e8bcd1c0f")
 		)
 		(instances
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/23f081f2-fcb5-4e72-b320-a9766db11ad0"
-					(reference "TP7")
+					(reference "TP3")
 					(unit 1)
 				)
 			)
@@ -4291,7 +2681,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 91.44 111.76 0)
+		(at 53.34 111.76 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4299,7 +2689,7 @@
 		(dnp no)
 		(uuid "75091783-eca9-4270-9175-f68cd3010b10")
 		(property "Reference" "#PWR019"
-			(at 91.44 118.11 0)
+			(at 53.34 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4308,7 +2698,7 @@
 			)
 		)
 		(property "Value" "LV_GND"
-			(at 91.948 112.014 0)
+			(at 53.848 112.014 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4317,7 +2707,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 91.44 111.76 0)
+			(at 53.34 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4326,7 +2716,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 91.44 111.76 0)
+			(at 53.34 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4335,7 +2725,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 91.44 111.76 0)
+			(at 53.34 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4350,175 +2740,6 @@
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/23f081f2-fcb5-4e72-b320-a9766db11ad0"
 					(reference "#PWR019")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "dk_Logic-Buffers-Drivers-Receivers-Transceivers:NC7SZ125M5X")
-		(at 38.1 96.52 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "79be8842-8b03-4b72-bcd2-7dcdff161218")
-		(property "Reference" "U6"
-			(at 49.53 90.0998 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-			)
-		)
-		(property "Value" "NC7SZ04P5X"
-			(at 49.53 92.6398 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-			)
-		)
-		(property "Footprint" "Treadmill_Feet:SC-88A-5_1P35X2P2_ONS"
-			(at 43.18 91.44 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/NC7SZ125-D.PDF"
-			(at 43.18 88.9 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" "IC BUF NON-INVERT 5.5V SOT23-5"
-			(at 38.1 96.52 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Digi-Key_PN" "NC7SZ125M5XCT-ND"
-			(at 43.18 86.36 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "MPN" "NC7SZ125M5X"
-			(at 43.18 83.82 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Category" "Integrated Circuits (ICs)"
-			(at 43.18 81.28 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Family" "Logic - Buffers, Drivers, Receivers, Transceivers"
-			(at 43.18 78.74 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "DK_Datasheet_Link" "https://www.onsemi.com/pub/Collateral/NC7SZ125-D.PDF"
-			(at 43.18 76.2 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "DK_Detail_Page" "/product-detail/en/on-semiconductor/NC7SZ125M5X/NC7SZ125M5XCT-ND/673392"
-			(at 43.18 73.66 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description_1" "IC BUF NON-INVERT 5.5V SOT23-5"
-			(at 43.18 71.12 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "ON Semiconductor"
-			(at 43.18 68.58 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Status" "Active"
-			(at 43.18 66.04 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(pin "4"
-			(uuid "4044261c-69d6-4617-9d43-3332df2e0507")
-		)
-		(pin "3"
-			(uuid "15b49326-8cf1-4358-9c88-19f0b7fad192")
-		)
-		(pin "2"
-			(uuid "98381b58-b875-4029-bd9e-474b0ce457b2")
-		)
-		(pin "5"
-			(uuid "f19afff8-74c7-4f82-8723-e31747d31fee")
-		)
-		(pin "1"
-			(uuid "5b86aeba-ce29-4f6c-85f9-43fa6124eaa6")
-		)
-		(instances
-			(project ""
-				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/23f081f2-fcb5-4e72-b320-a9766db11ad0"
-					(reference "U6")
 					(unit 1)
 				)
 			)
@@ -4690,138 +2911,6 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 25.4 49.53 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "8c7418a4-fa45-4636-b05f-d5af0c61c76c")
-		(property "Reference" "#PWR018"
-			(at 25.4 55.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "LV_GND"
-			(at 25.908 49.784 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 25.4 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 25.4 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 25.4 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "3a2fb843-968d-4bd8-8d8f-331e9bf50c6d")
-		)
-		(instances
-			(project "120VDC Treadmill Motor Controller"
-				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/23f081f2-fcb5-4e72-b320-a9766db11ad0"
-					(reference "#PWR018")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 63.5 107.95 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "90b74053-7053-41f2-a254-23e7c8668e47")
-		(property "Reference" "#PWR021"
-			(at 63.5 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "LV_GND"
-			(at 63.754 108.204 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 63.5 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 63.5 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 63.5 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "63a09006-a919-488b-977d-e30206aa9fc2")
-		)
-		(instances
-			(project "120VDC Treadmill Motor Controller"
-				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/23f081f2-fcb5-4e72-b320-a9766db11ad0"
-					(reference "#PWR021")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
 		(at 78.74 62.23 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4887,211 +2976,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 49.53 135.89 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "9c743dcd-98e0-4cab-be59-2f8a61b1d097")
-		(property "Reference" "R17"
-			(at 52.07 134.6199 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "1K"
-			(at 52.07 137.1599 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder"
-			(at 51.308 135.89 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 49.53 135.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 49.53 135.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "71ffc4b0-f433-4b12-9bf5-414ed5210ea7")
-		)
-		(pin "1"
-			(uuid "7f15243d-e90d-434e-888f-56913f185f49")
-		)
-		(instances
-			(project "120VDC Treadmill Motor Controller"
-				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/23f081f2-fcb5-4e72-b320-a9766db11ad0"
-					(reference "R17")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 31.75 46.99 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "cb0d111e-847c-44eb-9552-876df5f5180a")
-		(property "Reference" "R11"
-			(at 31.75 44.704 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "10M"
-			(at 32.004 42.672 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder"
-			(at 31.75 48.768 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 31.75 46.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 31.496 42.672 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "a890b1c0-5c0f-44f4-a315-f82453c6c1eb")
-		)
-		(pin "2"
-			(uuid "5cfd5006-dd7e-4c5b-98ce-ee59979a57db")
-		)
-		(instances
-			(project "120VDC Treadmill Motor Controller"
-				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/23f081f2-fcb5-4e72-b320-a9766db11ad0"
-					(reference "R11")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 38.1 105.41 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "f545e836-ec46-4dcd-b3b9-3b18317168c6")
-		(property "Reference" "#PWR022"
-			(at 38.1 111.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "LV_GND"
-			(at 38.354 105.664 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 38.1 105.41 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 38.1 105.41 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 38.1 105.41 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "92fa036a-0028-4cab-98f3-51da51c9c112")
-		)
-		(instances
-			(project "120VDC Treadmill Motor Controller"
-				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/23f081f2-fcb5-4e72-b320-a9766db11ad0"
-					(reference "#PWR022")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Treadmill_Comp:RCWCTE")
-		(at 76.2 93.98 90)
+		(at 38.1 93.98 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5099,7 +2985,7 @@
 		(dnp no)
 		(uuid "f66939a5-93dd-4b12-816d-dd0ec7f3b857")
 		(property "Reference" "TP9"
-			(at 74.422 91.44 90)
+			(at 36.322 91.44 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5108,7 +2994,7 @@
 			)
 		)
 		(property "Value" "RCWCTE"
-			(at 78.74 95.2499 90)
+			(at 40.64 95.2499 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5118,7 +3004,7 @@
 			)
 		)
 		(property "Footprint" "Treadmill_Feet:RCWCTE"
-			(at 76.2 93.98 0)
+			(at 38.1 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5128,7 +3014,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.koaspeer.com/pdfs/RC.pdf"
-			(at 76.2 93.98 0)
+			(at 38.1 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5137,7 +3023,7 @@
 			)
 		)
 		(property "Description" "https://www.digikey.com/en/products/detail/koa-speer-electronics-inc/RCWCTE/11476558"
-			(at 76.2 93.98 0)
+			(at 38.1 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5146,7 +3032,7 @@
 			)
 		)
 		(property "PARTREV" "1/06/14"
-			(at 76.2 93.98 0)
+			(at 38.1 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5156,7 +3042,7 @@
 			)
 		)
 		(property "SNAPEDA_PN" "RCWCTE"
-			(at 76.2 93.98 0)
+			(at 38.1 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5166,7 +3052,7 @@
 			)
 		)
 		(property "MANUFACTURER" "KOA Speer"
-			(at 76.2 93.98 0)
+			(at 38.1 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5176,7 +3062,7 @@
 			)
 		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" "2 mm"
-			(at 76.2 93.98 0)
+			(at 38.1 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5186,7 +3072,7 @@
 			)
 		)
 		(property "STANDARD" "Manufacturer Recommendations"
-			(at 76.2 93.98 0)
+			(at 38.1 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5209,7 +3095,7 @@
 	)
 	(symbol
 		(lib_id "Treadmill_Comp:NLV14044BDR2G")
-		(at 93.98 91.44 0)
+		(at 55.88 91.44 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5218,7 +3104,7 @@
 		(fields_autoplaced yes)
 		(uuid "f9a23594-3bf8-4842-b3b8-4067a9e15231")
 		(property "Reference" "U5"
-			(at 114.3 81.28 0)
+			(at 76.2 81.28 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -5226,7 +3112,7 @@
 			)
 		)
 		(property "Value" "NLV14044BDR2G"
-			(at 114.3 83.82 0)
+			(at 76.2 83.82 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -5234,7 +3120,7 @@
 			)
 		)
 		(property "Footprint" "Treadmill_Feet:SOIC-16_ONS"
-			(at 93.98 91.44 0)
+			(at 55.88 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5244,7 +3130,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.onsemi.com/pdf/datasheet/mc14043b-d.pdf"
-			(at 93.98 91.44 0)
+			(at 55.88 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5254,7 +3140,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 93.98 91.44 0)
+			(at 55.88 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5314,6 +3200,73 @@
 			(project ""
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/23f081f2-fcb5-4e72-b320-a9766db11ad0"
 					(reference "U5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 50.8 35.56 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "fa9d8c3f-1e00-4d7a-b7e2-8a93f9289af2")
+		(property "Reference" "R9"
+			(at 48.514 35.56 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10K"
+			(at 46.482 35.306 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder"
+			(at 52.578 35.56 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 50.8 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 46.482 35.814 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4abfcab7-891a-46d6-94be-9f41a2416ccc")
+		)
+		(pin "2"
+			(uuid "4f89c655-517c-4cf7-905c-afd7f4916ad1")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/23f081f2-fcb5-4e72-b320-a9766db11ad0"
+					(reference "R9")
 					(unit 1)
 				)
 			)

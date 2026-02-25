@@ -7,7 +7,7 @@
 	(lib_symbols)
 	(wire
 		(pts
-			(xy 123.19 111.76) (xy 156.21 111.76)
+			(xy 123.19 114.3) (xy 156.21 114.3)
 		)
 		(stroke
 			(width 0)
@@ -17,7 +17,7 @@
 	)
 	(wire
 		(pts
-			(xy 123.19 100.33) (xy 129.54 100.33)
+			(xy 123.19 97.79) (xy 129.54 97.79)
 		)
 		(stroke
 			(width 0)
@@ -44,16 +44,6 @@
 			(type default)
 		)
 		(uuid "29f58a88-393a-43f6-9715-bacc48479050")
-	)
-	(wire
-		(pts
-			(xy 123.19 104.14) (xy 133.35 104.14)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2b483ee0-81fc-4c8b-8ab1-0bca98404ee8")
 	)
 	(wire
 		(pts
@@ -137,16 +127,6 @@
 	)
 	(wire
 		(pts
-			(xy 123.19 107.95) (xy 156.21 107.95)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "891ab306-dbdb-4283-9f62-6bfd57c514df")
-	)
-	(wire
-		(pts
 			(xy 144.78 118.11) (xy 156.21 118.11)
 		)
 		(stroke
@@ -157,13 +137,23 @@
 	)
 	(wire
 		(pts
-			(xy 129.54 83.82) (xy 129.54 100.33)
+			(xy 129.54 83.82) (xy 129.54 97.79)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "c3784f71-b5ee-4293-aa04-6ca01f9fb06d")
+	)
+	(wire
+		(pts
+			(xy 123.19 111.76) (xy 156.21 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cb7de296-d39d-488a-8124-93cd66dcff32")
 	)
 	(wire
 		(pts
@@ -174,6 +164,16 @@
 			(type default)
 		)
 		(uuid "cca09229-a487-49bd-88b2-e3fa6401c369")
+	)
+	(wire
+		(pts
+			(xy 123.19 107.95) (xy 156.21 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ed6ea736-2e3a-4134-95a5-16de9593c0c2")
 	)
 	(sheet
 		(at 39.37 24.13)
@@ -252,7 +252,7 @@
 			)
 		)
 		(pin "in+" input
-			(at 123.19 107.95 0)
+			(at 123.19 111.76 0)
 			(uuid "6bae7488-54f7-4669-b02c-88e681ba2de5")
 			(effects
 				(font
@@ -262,7 +262,7 @@
 			)
 		)
 		(pin "in-" output
-			(at 123.19 111.76 0)
+			(at 123.19 114.3 0)
 			(uuid "e55e94eb-c4df-4e52-a8a2-1a83118ae667")
 			(effects
 				(font
@@ -271,9 +271,9 @@
 				(justify right)
 			)
 		)
-		(pin "pwm" input
-			(at 123.19 104.14 0)
-			(uuid "f97f2e06-751a-4fe9-8a8f-0c4d52819f00")
+		(pin "v_out" output
+			(at 123.19 97.79 0)
+			(uuid "772b7e6b-3283-4447-98fc-4cee1f36b699")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -281,9 +281,29 @@
 				(justify right)
 			)
 		)
-		(pin "v_out" output
+		(pin "EN_Drives" output
+			(at 123.19 107.95 0)
+			(uuid "5abe190b-83f1-40ac-8ab6-592032d2121a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "Reset" input
 			(at 123.19 100.33 0)
-			(uuid "772b7e6b-3283-4447-98fc-4cee1f36b699")
+			(uuid "31ac1d73-7feb-44c2-8157-3f4aa6fa6946")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "Set" input
+			(at 123.19 102.87 0)
+			(uuid "50553754-4b2a-49a0-88fc-b67f714fdea3")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -334,7 +354,7 @@
 			)
 		)
 		(pin "i_sense_+" output
-			(at 156.21 107.95 180)
+			(at 156.21 111.76 180)
 			(uuid "369f0efd-4a21-4bb3-aa06-da5819d47f29")
 			(effects
 				(font
@@ -344,7 +364,7 @@
 			)
 		)
 		(pin "i_sense_-" input
-			(at 156.21 111.76 180)
+			(at 156.21 114.3 180)
 			(uuid "6bda7a6b-ba4d-4b39-8b55-fee5501bcf49")
 			(effects
 				(font
@@ -406,6 +426,16 @@
 		(pin "pwm_b" input
 			(at 156.21 99.06 180)
 			(uuid "9c0b2b08-d2ed-4734-9401-2f3db7308d96")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "EN_drives" input
+			(at 156.21 107.95 180)
+			(uuid "9f27ec73-7b42-46f6-b4fc-7e42899cedbb")
 			(effects
 				(font
 					(size 1.27 1.27)
