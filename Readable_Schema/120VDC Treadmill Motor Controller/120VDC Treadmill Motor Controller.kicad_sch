@@ -27,16 +27,6 @@
 	)
 	(wire
 		(pts
-			(xy 144.78 128.27) (xy 144.78 118.11)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "157a9571-21f0-4caa-8dd8-bd45dcbd0e91")
-	)
-	(wire
-		(pts
 			(xy 144.78 104.14) (xy 156.21 104.14)
 		)
 		(stroke
@@ -44,16 +34,6 @@
 			(type default)
 		)
 		(uuid "29f58a88-393a-43f6-9715-bacc48479050")
-	)
-	(wire
-		(pts
-			(xy 148.59 121.92) (xy 156.21 121.92)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "39869711-b9d0-467f-8ed8-94b59f6f24a7")
 	)
 	(wire
 		(pts
@@ -127,16 +107,6 @@
 	)
 	(wire
 		(pts
-			(xy 144.78 118.11) (xy 156.21 118.11)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c3712563-15ea-41b3-a2da-9682162ff91a")
-	)
-	(wire
-		(pts
 			(xy 129.54 83.82) (xy 129.54 97.79)
 		)
 		(stroke
@@ -154,16 +124,6 @@
 			(type default)
 		)
 		(uuid "cb7de296-d39d-488a-8124-93cd66dcff32")
-	)
-	(wire
-		(pts
-			(xy 148.59 128.27) (xy 148.59 121.92)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "cca09229-a487-49bd-88b2-e3fa6401c369")
 	)
 	(wire
 		(pts
@@ -373,16 +333,6 @@
 				(justify left)
 			)
 		)
-		(pin "r_brake_+" output
-			(at 156.21 121.92 180)
-			(uuid "f42d8ba0-f76f-44f4-a63a-30eba10db466")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
 		(pin "dir_a" input
 			(at 156.21 101.6 180)
 			(uuid "521e62ea-fdba-4da7-b273-7fb37b1e834c")
@@ -396,16 +346,6 @@
 		(pin "dir_b" input
 			(at 156.21 104.14 180)
 			(uuid "cf94c3ed-1862-460f-9f8c-7a4fbe099829")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "ls_ps_+" input
-			(at 156.21 118.11 180)
-			(uuid "dc938eaf-114b-45e7-824c-a8cf3409c17d")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -447,68 +387,6 @@
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd"
 					(page "4")
-				)
-			)
-		)
-	)
-	(sheet
-		(at 130.81 128.27)
-		(size 19.05 13.97)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 0 0 0 0.0000)
-		)
-		(uuid "7a7487b9-35f1-42d2-9ba5-cfe8e231a0f8")
-		(property "Sheetname" "Brake_Resistor"
-			(at 130.81 127.5584 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "Brake_Resistor.kicad_sch"
-			(at 130.81 142.8246 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(pin "r_brake_in" input
-			(at 148.59 128.27 90)
-			(uuid "6bd179a1-bb0c-4618-b3af-6d9ee4b1cb67")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(pin "ps_in_+" input
-			(at 144.78 128.27 90)
-			(uuid "6f68702d-a0de-4475-aaa3-cc1275ad7b86")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(instances
-			(project "120VDC Treadmill Motor Controller"
-				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd"
-					(page "10")
 				)
 			)
 		)

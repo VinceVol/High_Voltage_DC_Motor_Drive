@@ -883,296 +883,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Treadmill_Comp:SRS-0515-2"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "PS"
-				(at -7.62 6.35 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "SRS-0515-2"
-				(at 1.27 6.35 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" "Footprints_TMC:SRS-0515 DIP-16_W7.62mm"
-				(at -26.67 -6.35 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "https://www.meanwellusa.com/upload/pdf/SRS/SRS-spec.pdf"
-				(at 26.67 -7.62 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Description" "15V isolated output"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "murata DC/DC isolated converter"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "Converter*DCDC*Murata*MEE1SxxxxSC*THT*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "SRS-0515-2_0_1"
-				(rectangle
-					(start -7.62 5.08)
-					(end 7.62 -7.62)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 5.08) (xy 0 3.81)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 2.54) (xy 0 1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 0) (xy 0 -1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 -2.54) (xy 0 -3.81)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 -5.08) (xy 0 -6.35)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "SRS-0515-2_1_0"
-				(pin power_in line
-					(at -10.16 2.54 0)
-					(length 2.54)
-					(name "+Vin"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -10.16 0 0)
-					(length 2.54)
-					(name "+Vin"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "16"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -10.16 -3.81 0)
-					(length 2.54)
-					(name "-Vin"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "8"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -10.16 -6.35 0)
-					(length 2.54)
-					(name "-Vin"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "9"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_out line
-					(at 10.16 2.54 180)
-					(length 2.54)
-					(name "+Vout"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_out line
-					(at 10.16 0 180)
-					(length 2.54)
-					(name "+Vout"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "10"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_out line
-					(at 10.16 -3.81 180)
-					(length 2.54)
-					(name "-Vout"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_out line
-					(at 10.16 -6.35 180)
-					(length 2.54)
-					(name "-Vout"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "11"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Treadmill_Comp:UCC21530DWKR"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -2059,12 +1769,6 @@
 		(uuid "221dac11-9130-4bb4-ba11-6639d9114094")
 	)
 	(junction
-		(at 121.92 115.57)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "24c8cc8d-e656-499a-affc-f2c233346fee")
-	)
-	(junction
 		(at 208.28 30.48)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2083,16 +1787,16 @@
 		(uuid "3289d67e-faf8-440a-aeab-a9fced693815")
 	)
 	(junction
-		(at 151.13 59.69)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "346b51e8-4409-4fe6-bff4-7646a328044b")
-	)
-	(junction
 		(at 179.07 92.71)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "3b98a7f0-3c19-4477-84f9-6f9329305ec6")
+	)
+	(junction
+		(at 179.07 81.28)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3e7b72f4-8f44-4b7a-b4be-3d49a32d7da8")
 	)
 	(junction
 		(at 49.53 132.08)
@@ -2185,12 +1889,6 @@
 		(uuid "88ba7420-9b43-4f08-ae0f-b94deb933552")
 	)
 	(junction
-		(at 179.07 115.57)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "8ba77864-e43e-4334-ae02-eb296c9ccee6")
-	)
-	(junction
 		(at 171.45 92.71)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2201,12 +1899,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "8f640f16-f7e2-4a74-8c77-70db5dae672f")
-	)
-	(junction
-		(at 179.07 81.28)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "9b6acc8d-fe9b-408b-a97a-86e5eace5ed1")
 	)
 	(junction
 		(at 241.3 132.08)
@@ -2231,6 +1923,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b1acc474-aa5d-469c-ac4c-64840401c94e")
+	)
+	(junction
+		(at 179.07 115.57)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "bf1aa28e-e58f-4d1c-9d2c-aeaa23414763")
 	)
 	(junction
 		(at 121.92 92.71)
@@ -2291,6 +1989,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f5041383-d353-41b7-8d6d-b6d3b6adbe35")
+	)
+	(junction
+		(at 121.92 115.57)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f5a5a03c-d24d-4cc8-9fba-14160b54e714")
 	)
 	(junction
 		(at 129.54 102.87)
@@ -2529,26 +2233,6 @@
 			(type default)
 		)
 		(uuid "1fd86f3d-0eb9-4a1c-a61c-72fec37799ba")
-	)
-	(wire
-		(pts
-			(xy 151.13 49.53) (xy 151.13 59.69)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "231a75c1-0fc6-4bda-b974-ea7835f1a4e3")
-	)
-	(wire
-		(pts
-			(xy 153.67 59.69) (xy 151.13 59.69)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "232e5e4d-5a44-4248-b6ff-2c8a705d02e1")
 	)
 	(wire
 		(pts
@@ -4042,7 +3726,7 @@
 	)
 	(wire
 		(pts
-			(xy 151.13 59.69) (xy 151.13 64.77)
+			(xy 151.13 49.53) (xy 151.13 64.77)
 		)
 		(stroke
 			(width 0)
@@ -4180,6 +3864,26 @@
 		)
 		(uuid "3e2db892-eed3-49ad-947d-b4bca1b6bd81")
 	)
+	(label "ls_ps_+"
+		(at 54.61 21.59 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "41e3a30b-d291-4084-b212-c261448d6feb")
+	)
+	(label "ls_ps_+"
+		(at 200.66 109.22 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "4874db25-0745-48bf-9e3f-e1e1141e24cc")
+	)
 	(label "hs_ps_1_-"
 		(at 105.41 30.48 0)
 		(effects
@@ -4189,6 +3893,16 @@
 			(justify left bottom)
 		)
 		(uuid "56e5ec79-4878-4351-a763-afdea40d0db1")
+	)
+	(label "ls_ps_+"
+		(at 95.25 109.22 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "6c6819a3-cb64-4d35-a3d0-78c5e6796c7e")
 	)
 	(label "hs_ps_1_+"
 		(at 93.98 93.98 90)
@@ -4382,17 +4096,6 @@
 			)
 		)
 	)
-	(hierarchical_label "ls_ps_+"
-		(shape input)
-		(at 95.25 109.22 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "005a562d-76cd-4630-89b4-a39848ab3d40")
-	)
 	(hierarchical_label "i_sense_-"
 		(shape input)
 		(at 152.4 142.24 0)
@@ -4414,17 +4117,6 @@
 			(justify right)
 		)
 		(uuid "0a99f4c3-ad95-4aed-97e2-4b263e97d3a6")
-	)
-	(hierarchical_label "ls_ps_+"
-		(shape input)
-		(at 200.66 109.22 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "3c60e75f-83f5-4d88-82e2-079661e9d436")
 	)
 	(hierarchical_label "dir_a"
 		(shape input)
@@ -4470,17 +4162,6 @@
 		)
 		(uuid "b39d81e1-fb26-43c9-9635-41107918dbdf")
 	)
-	(hierarchical_label "r_brake_+"
-		(shape output)
-		(at 153.67 59.69 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "b83d11f0-de30-486b-a6fc-973cadc74abe")
-	)
 	(hierarchical_label "dir_b"
 		(shape input)
 		(at 20.32 93.98 180)
@@ -4491,17 +4172,6 @@
 			(justify right)
 		)
 		(uuid "d7720dc1-21b5-4233-9530-fb2156858c20")
-	)
-	(hierarchical_label "ls_ps_+"
-		(shape output)
-		(at 54.61 21.59 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "db4231a7-3cdd-40d2-b13b-26c1e3e9dfe9")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -5302,194 +4972,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Simulation_SPICE:NMOS")
-		(at 173.99 115.57 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "3d05ebde-fa9f-4417-84bd-e3f734260c99")
-		(property "Reference" "Q4"
-			(at 167.64 114.2999 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "IPP200N25N3GXKSA1"
-			(at 168.91 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-220-3_Vertical"
-			(at 168.91 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.infineon.com/assets/row/public/documents/24/49/infineon-ipp-b-i-200n25n3-g-datasheet-en.pdf?folderId=db3a3043163797a6011637d4bae7003b&fileId=db3a3043243b5f17012496b87e9f1971"
-			(at 173.99 128.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "N-MOSFET transistor, drain/source/gate"
-			(at 173.99 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" "NMOS"
-			(at 173.99 132.715 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Type" "VDMOS"
-			(at 173.99 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" "1=D 2=G 3=S"
-			(at 173.99 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "c5b9f03a-b52b-4366-a5a6-545fd97da67f")
-		)
-		(pin "3"
-			(uuid "083807ff-dd72-4f74-95a4-4e2437f701b1")
-		)
-		(pin "1"
-			(uuid "95658896-c683-445e-ae6d-66fa7aa40364")
-		)
-		(instances
-			(project "120VDC Treadmill Motor Controller"
-				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
-					(reference "Q4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Treadmill_Comp:SRS-0515-2")
-		(at 34.29 24.13 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "41623277-f28c-46aa-adeb-f7458a0291f6")
-		(property "Reference" "PS1"
-			(at 34.29 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "SRS-0515-2"
-			(at 34.29 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Footprints_TMC:SRS-0515 DIP-16_W7.62mm"
-			(at 7.62 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.meanwellusa.com/upload/pdf/SRS/SRS-spec.pdf"
-			(at 60.96 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" "15V isolated output"
-			(at 34.29 24.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "9"
-			(uuid "42aff45b-7228-4b9c-9d0a-5c93f2179ee9")
-		)
-		(pin "1"
-			(uuid "4dd29e51-e761-424a-97d3-4b88644c8eb6")
-		)
-		(pin "16"
-			(uuid "abe35354-a9aa-4443-a763-2d1ff5c88aec")
-		)
-		(pin "8"
-			(uuid "5ca18d5d-5865-462c-9ede-50d3ce447711")
-		)
-		(pin "7"
-			(uuid "b53e4f00-4559-4c2d-b266-eddbfa96cdb3")
-		)
-		(pin "10"
-			(uuid "cc2deaea-f4e9-4cc8-a119-b4eca5777555")
-		)
-		(pin "6"
-			(uuid "92d11698-3a43-467f-bae4-e2f6a71ca4e7")
-		)
-		(pin "11"
-			(uuid "419b94a1-69cd-461f-be76-6781c4482047")
-		)
-		(instances
-			(project ""
-				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
-					(reference "PS1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R")
 		(at 121.92 87.63 180)
 		(unit 1)
@@ -6014,16 +5496,16 @@
 	)
 	(symbol
 		(lib_id "Simulation_SPICE:NMOS")
-		(at 173.99 81.28 0)
-		(mirror y)
+		(at 127 115.57 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "5a8d9533-568f-4584-8d66-ab414b562250")
+		(fields_autoplaced yes)
+		(uuid "57d5da77-bb16-400c-a29a-61d10cfbb963")
 		(property "Reference" "Q1"
-			(at 167.64 80.0099 0)
+			(at 133.35 114.2999 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6031,18 +5513,17 @@
 				(justify left)
 			)
 		)
-		(property "Value" "IPP200N25N3GXKSA1"
-			(at 167.132 77.47 0)
+		(property "Value" "IPP60R060P7XKSA1"
+			(at 133.35 116.8399 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
-				(hide yes)
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_THT:TO-220-3_Vertical"
-			(at 168.91 78.74 0)
+			(at 132.08 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6050,8 +5531,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.infineon.com/assets/row/public/documents/24/49/infineon-ipp-b-i-200n25n3-g-datasheet-en.pdf?folderId=db3a3043163797a6011637d4bae7003b&fileId=db3a3043243b5f17012496b87e9f1971"
-			(at 173.99 93.98 0)
+		(property "Datasheet" "https://www.infineon.com/dgdl/Infineon-IPP60R060P7-DS-v02_00-EN.pdf?fileId=5546d4625acbae4c015accdf20660227"
+			(at 127 128.27 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6060,7 +5541,7 @@
 			)
 		)
 		(property "Description" "N-MOSFET transistor, drain/source/gate"
-			(at 173.99 81.28 0)
+			(at 127 115.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6069,7 +5550,7 @@
 			)
 		)
 		(property "Sim.Device" "NMOS"
-			(at 173.99 98.425 0)
+			(at 127 132.715 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6078,7 +5559,7 @@
 			)
 		)
 		(property "Sim.Type" "VDMOS"
-			(at 173.99 100.33 0)
+			(at 127 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6087,7 +5568,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=D 2=G 3=S"
-			(at 173.99 96.52 0)
+			(at 127 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6096,13 +5577,13 @@
 			)
 		)
 		(pin "2"
-			(uuid "fa2f253e-e7ef-4b6d-bb31-93783d915849")
+			(uuid "0c8a38df-c5e1-4a22-bdbf-6d093ea9efe7")
 		)
 		(pin "3"
-			(uuid "324ad6bf-f453-4a80-ae35-6136f1c036e4")
+			(uuid "3f23c81f-129f-40fc-8b4b-2635dfed2cd4")
 		)
 		(pin "1"
-			(uuid "7954afd1-3222-4033-82f0-14dec3c69585")
+			(uuid "a28d1e78-c2bc-42dd-9073-8061b0c799ec")
 		)
 		(instances
 			(project "120VDC Treadmill Motor Controller"
@@ -6563,161 +6044,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 184.15 81.28 270)
-		(mirror x)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "70dd4950-085a-49a0-ba2a-e91483364171")
-		(property "Reference" "R24"
-			(at 184.15 79.248 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "10"
-			(at 183.896 81.28 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder"
-			(at 184.15 83.058 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDP0000/AOA0000C337.pdf"
-			(at 184.15 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "ERJ-UP3J100V"
-			(at 184.15 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "9b0d0d2c-c364-4577-b3aa-da55b25e7f12")
-		)
-		(pin "2"
-			(uuid "c82fb961-a2ba-4fb7-94d8-3e342c698d97")
-		)
-		(instances
-			(project "120VDC Treadmill Motor Controller"
-				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
-					(reference "R24")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Treadmill_Comp:SRS-0515-2")
-		(at 87.63 24.13 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "79e1ff7f-fff5-4f17-85bf-5d5805d4bae5")
-		(property "Reference" "PS3"
-			(at 87.63 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "SRS-0515-2"
-			(at 87.63 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Footprints_TMC:SRS-0515 DIP-16_W7.62mm"
-			(at 60.96 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.meanwellusa.com/upload/pdf/SRS/SRS-spec.pdf"
-			(at 114.3 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" "15V isolated output"
-			(at 87.63 24.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "9"
-			(uuid "6ad8c269-7d58-405a-aa95-de1bb5f4aae1")
-		)
-		(pin "1"
-			(uuid "12af39f4-988b-4507-af4e-1677a1d5265d")
-		)
-		(pin "16"
-			(uuid "8d2532b9-5be6-4ac8-ba2a-7424c8397840")
-		)
-		(pin "8"
-			(uuid "1da77a26-ce9b-4922-9886-e8e41ee2fc41")
-		)
-		(pin "7"
-			(uuid "5c3024fc-8b5b-4c0c-8920-b66744930923")
-		)
-		(pin "10"
-			(uuid "84a6df22-4863-4c47-bc5b-1d9c6628871f")
-		)
-		(pin "6"
-			(uuid "18a14cbd-7cd4-4477-b679-8abb8e7ff03e")
-		)
-		(pin "11"
-			(uuid "d4c335e5-7e36-4c5b-ae60-b2befd284b09")
-		)
-		(instances
-			(project "120VDC Treadmill Motor Controller"
-				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
-					(reference "PS3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 36.83 105.41 0)
 		(unit 1)
@@ -6845,74 +6171,6 @@
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
 					(reference "R1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 184.15 115.57 270)
-		(mirror x)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "91f557c2-8d64-44fa-8dd3-d0fe8fcf630a")
-		(property "Reference" "R25"
-			(at 184.15 113.538 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "10"
-			(at 183.896 115.57 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder"
-			(at 184.15 117.348 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDP0000/AOA0000C337.pdf"
-			(at 184.15 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "ERJ-UP3J100V"
-			(at 184.15 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "85814b63-013d-4c19-b5e6-a9eaebc1c367")
-		)
-		(pin "2"
-			(uuid "a1c537c8-d562-4c10-9f9d-eb5e799264fc")
-		)
-		(instances
-			(project "120VDC Treadmill Motor Controller"
-				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
-					(reference "R25")
 					(unit 1)
 				)
 			)
@@ -7103,106 +6361,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Simulation_SPICE:NMOS")
-		(at 127 115.57 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "9f4176ac-31f5-48e2-959b-e742317dbe93")
-		(property "Reference" "Q3"
-			(at 133.35 114.2999 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "IPP200N25N3GXKSA1"
-			(at 133.35 116.8399 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-220-3_Vertical"
-			(at 132.08 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.infineon.com/assets/row/public/documents/24/49/infineon-ipp-b-i-200n25n3-g-datasheet-en.pdf?folderId=db3a3043163797a6011637d4bae7003b&fileId=db3a3043243b5f17012496b87e9f1971"
-			(at 127 128.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "N-MOSFET transistor, drain/source/gate"
-			(at 127 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" "NMOS"
-			(at 127 132.715 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Type" "VDMOS"
-			(at 127 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" "1=D 2=G 3=S"
-			(at 127 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "3001a7c5-c6fa-4c8e-843f-73e5698a2c4c")
-		)
-		(pin "3"
-			(uuid "df1973b7-f69e-452d-885d-503ac9b9c982")
-		)
-		(pin "1"
-			(uuid "2389ef1c-95ef-4854-89fb-cf3b49ed2873")
-		)
-		(instances
-			(project "120VDC Treadmill Motor Controller"
-				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
-					(reference "Q3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C")
 		(at 245.11 99.06 0)
 		(mirror y)
@@ -7267,6 +6425,107 @@
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
 					(reference "C16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Simulation_SPICE:NMOS")
+		(at 173.99 81.28 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a1bba231-59aa-492e-9bc6-b60bfb33fe58")
+		(property "Reference" "Q4"
+			(at 167.64 80.0099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "IPP60R060P7XKSA1"
+			(at 168.402 76.962 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_THT:TO-220-3_Vertical"
+			(at 168.91 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.infineon.com/dgdl/Infineon-IPP60R060P7-DS-v02_00-EN.pdf?fileId=5546d4625acbae4c015accdf20660227"
+			(at 173.99 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "N-MOSFET transistor, drain/source/gate"
+			(at 173.99 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "NMOS"
+			(at 173.99 98.425 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" "VDMOS"
+			(at 173.99 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=D 2=G 3=S"
+			(at 173.99 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "ecfad63e-bc49-443c-bfd9-8917248f5537")
+		)
+		(pin "3"
+			(uuid "00686e4a-6e11-47be-920d-3cc61dfd2a2f")
+		)
+		(pin "1"
+			(uuid "b1883225-2c94-4d53-95ee-5532676d3eff")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
+					(reference "Q4")
 					(unit 1)
 				)
 			)
@@ -7411,73 +6670,6 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 116.84 115.57 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "b3e60cd1-16ce-4752-a2dd-f13e9a783a33")
-		(property "Reference" "R8"
-			(at 116.84 113.538 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "10"
-			(at 117.094 115.57 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder"
-			(at 116.84 117.348 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDP0000/AOA0000C337.pdf"
-			(at 116.84 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "ERJ-UP3J100V"
-			(at 116.84 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "95d1a633-dcf8-42e8-a173-f6d88ecc322e")
-		)
-		(pin "2"
-			(uuid "75fc9ab5-5628-4243-aad4-370d1d788611")
-		)
-		(instances
-			(project "120VDC Treadmill Motor Controller"
-				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
-					(reference "R8")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
 		(at 179.07 87.63 0)
 		(mirror x)
 		(unit 1)
@@ -7545,93 +6737,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Treadmill_Comp:SRS-0515-2")
-		(at 194.31 24.13 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "b95e8565-93c4-40b2-9b97-4a49a287f232")
-		(property "Reference" "PS4"
-			(at 194.31 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "SRS-0515-2"
-			(at 194.31 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Footprints_TMC:SRS-0515 DIP-16_W7.62mm"
-			(at 167.64 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.meanwellusa.com/upload/pdf/SRS/SRS-spec.pdf"
-			(at 220.98 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" "15V isolated output"
-			(at 194.31 24.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "9"
-			(uuid "a7fb69fc-079f-4bdc-9998-8313f8676392")
-		)
-		(pin "1"
-			(uuid "29c05cd6-3bb9-4a8a-bac8-5b538691be4f")
-		)
-		(pin "16"
-			(uuid "8c639586-294b-4839-918f-8f10fec1ec3b")
-		)
-		(pin "8"
-			(uuid "8d04094c-b274-4a1d-a203-fae1f2024089")
-		)
-		(pin "7"
-			(uuid "875a4db9-498c-49d7-b40b-5eddf7f5de25")
-		)
-		(pin "10"
-			(uuid "f03e084e-7156-45c4-8f96-4929d0f02439")
-		)
-		(pin "6"
-			(uuid "38b44618-ecc0-4c3c-9d55-cfcfdbaa76e7")
-		)
-		(pin "11"
-			(uuid "ef0b2b0b-a55e-460f-a970-9e9067bb8e29")
-		)
-		(instances
-			(project "120VDC Treadmill Motor Controller"
-				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
-					(reference "PS4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 181.61 30.48 270)
 		(unit 1)
@@ -7691,73 +6796,6 @@
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
 					(reference "#PWR025")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 116.84 81.28 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "c8caf76b-a828-4dce-b135-29ed20853e0e")
-		(property "Reference" "R7"
-			(at 116.84 79.248 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "10"
-			(at 117.094 81.28 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder"
-			(at 116.84 83.058 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDP0000/AOA0000C337.pdf"
-			(at 116.84 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "ERJ-UP3J100V"
-			(at 116.84 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "d98c541c-cafb-47ed-b08a-c15d39b0d546")
-		)
-		(pin "2"
-			(uuid "b5226d1f-6ba6-4f42-aabb-e7f31e8fbfb3")
-		)
-		(instances
-			(project "120VDC Treadmill Motor Controller"
-				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
-					(reference "R7")
 					(unit 1)
 				)
 			)
@@ -8245,6 +7283,107 @@
 		)
 	)
 	(symbol
+		(lib_id "Simulation_SPICE:NMOS")
+		(at 173.99 115.57 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e907d2f6-a650-4fef-b0e8-29bd2e10edfd")
+		(property "Reference" "Q3"
+			(at 167.64 114.2999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "IPP60R060P7XKSA1"
+			(at 168.656 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_THT:TO-220-3_Vertical"
+			(at 168.91 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.infineon.com/dgdl/Infineon-IPP60R060P7-DS-v02_00-EN.pdf?fileId=5546d4625acbae4c015accdf20660227"
+			(at 173.99 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "N-MOSFET transistor, drain/source/gate"
+			(at 173.99 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "NMOS"
+			(at 173.99 132.715 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" "VDMOS"
+			(at 173.99 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=D 2=G 3=S"
+			(at 173.99 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "20a111b7-45b6-4004-ac3b-c4ba38b08067")
+		)
+		(pin "3"
+			(uuid "b25d9938-d80e-4094-bef1-203e923b6ff3")
+		)
+		(pin "1"
+			(uuid "5a9fa771-114d-4a30-bd25-a7bd4be8a1d7")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
+					(reference "Q3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 121.92 121.92 180)
 		(unit 1)
@@ -8330,7 +7469,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "IPP200N25N3GXKSA1"
+		(property "Value" "IPP60R060P7XKSA1"
 			(at 133.35 82.5499 0)
 			(effects
 				(font
@@ -8348,7 +7487,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.infineon.com/assets/row/public/documents/24/49/infineon-ipp-b-i-200n25n3-g-datasheet-en.pdf?folderId=db3a3043163797a6011637d4bae7003b&fileId=db3a3043243b5f17012496b87e9f1971"
+		(property "Datasheet" "https://www.infineon.com/dgdl/Infineon-IPP60R060P7-DS-v02_00-EN.pdf?fileId=5546d4625acbae4c015accdf20660227"
 			(at 127 93.98 0)
 			(effects
 				(font

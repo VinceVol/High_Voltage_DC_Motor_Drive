@@ -1,0 +1,238 @@
+(footprint "CAP_B40_NCH"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(tags "LGW2E102MELB40 ")
+	(property "Reference" "REF**"
+		(at 5 0 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "8fb02974-c151-4b3c-8984-88f66d6d9b7b")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "CAP_B40_NCH"
+		(at 5 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "18a740a8-2a2c-4e6e-8162-10123afa1e0e")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "8a2d940f-7a8e-449f-97f5-4c4ae055e479")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "4370f0a5-5c63-45d7-904f-dbaeb6442827")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(fp_line
+		(start -11.5227 0)
+		(end -10.2527 0)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "916b43dd-62e8-425f-9f67-25077072836f")
+	)
+	(fp_line
+		(start -10.8877 -0.635)
+		(end -10.8877 0.635)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "905c2004-9b4a-45d9-ad45-832b512011a7")
+	)
+	(fp_circle
+		(center 5 0)
+		(end 20.1257 0)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "865dbfaa-2523-4e3f-9ad1-51058f65591d")
+	)
+	(fp_line
+		(start -10.2527 -6.280523)
+		(end -1.280523 -15.2527)
+		(stroke
+			(width 0.0254)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "8182d12c-4b98-43c2-ad80-e44d301de115")
+	)
+	(fp_line
+		(start -10.2527 6.280523)
+		(end -10.2527 -6.280523)
+		(stroke
+			(width 0.0254)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "4be2b7af-ee0c-450c-968b-6fc7d2bed803")
+	)
+	(fp_line
+		(start -1.280523 -15.2527)
+		(end 11.280523 -15.2527)
+		(stroke
+			(width 0.0254)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "fc414f97-75eb-408e-bbb0-4c757ff64928")
+	)
+	(fp_line
+		(start -1.280523 15.2527)
+		(end -10.2527 6.280523)
+		(stroke
+			(width 0.0254)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "eb4dd2ac-1995-4706-9b30-57ec82610e22")
+	)
+	(fp_line
+		(start 11.280523 -15.2527)
+		(end 20.2527 -6.280523)
+		(stroke
+			(width 0.0254)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "2280335d-3e6a-465d-85d5-45e6af11c264")
+	)
+	(fp_line
+		(start 11.280523 15.2527)
+		(end -1.280523 15.2527)
+		(stroke
+			(width 0.0254)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "0591abf5-a3ba-4f9d-8c65-8fdac2d78ec7")
+	)
+	(fp_line
+		(start 20.2527 -6.280523)
+		(end 20.2527 6.280523)
+		(stroke
+			(width 0.0254)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "6ec756db-6270-45d0-bf55-e09cf6839648")
+	)
+	(fp_line
+		(start 20.2527 6.280523)
+		(end 11.280523 15.2527)
+		(stroke
+			(width 0.0254)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "154c40c5-9e21-4349-87d5-d07bc36ef837")
+	)
+	(fp_line
+		(start -11.5227 0)
+		(end -10.2527 0)
+		(stroke
+			(width 0.0254)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "eb63f183-4bd1-41e3-b5e0-18fab40b0e83")
+	)
+	(fp_line
+		(start -10.8877 -0.635)
+		(end -10.8877 0.635)
+		(stroke
+			(width 0.0254)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "6a70c2f1-08c3-4ed5-b7d9-0c2061a6b7a9")
+	)
+	(fp_circle
+		(center 5 0)
+		(end 19.9987 0)
+		(stroke
+			(width 0.0254)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "1b6672cd-f7e4-449a-9e55-12c3d3208047")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 5 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "9262292c-718a-4e3d-b43f-5c6e6e350a26")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" thru_hole circle
+		(at 0 0)
+		(size 2.6162 2.6162)
+		(drill 2.1082)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "e828b629-9b63-4d29-8c7b-af3edd7ab81d")
+	)
+	(pad "2" thru_hole circle
+		(at 10 0)
+		(size 2.6162 2.6162)
+		(drill 2.1082)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "01470522-d29e-4fd0-bd3d-8a90853d7c24")
+	)
+	(embedded_fonts no)
+	(model "C:/Users/Vincent.Volpone/OneDrive - Gentex Corporation/Desktop/HOME/Electronics/High_Voltage_DC_Motor_Drive/Readable_Schema/Local_Components/LGW2E102MELB40/CAP_B40_NCH.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

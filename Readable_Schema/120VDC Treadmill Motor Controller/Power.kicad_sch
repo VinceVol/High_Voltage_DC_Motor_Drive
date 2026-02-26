@@ -1620,7 +1620,7 @@
 	)
 	(rectangle
 		(start 41.91 78.74)
-		(end 139.7 106.68)
+		(end 187.96 106.68)
 		(stroke
 			(width 0)
 			(type dot)
@@ -1729,6 +1729,24 @@
 		(uuid "089d8ff1-c28c-4f15-bd5f-57463333e90f")
 	)
 	(junction
+		(at 163.83 90.17)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3eef9262-9150-410b-bb3c-aed1ae1679af")
+	)
+	(junction
+		(at 149.86 90.17)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "48d5e8aa-b76a-47cc-b2b4-00e22446add9")
+	)
+	(junction
+		(at 134.62 90.17)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6c0117cf-b49d-43eb-bfcf-07740111f627")
+	)
+	(junction
 		(at 82.55 154.94)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1774,7 +1792,7 @@
 	)
 	(wire
 		(pts
-			(xy 119.38 90.17) (xy 124.46 90.17)
+			(xy 119.38 90.17) (xy 134.62 90.17)
 		)
 		(stroke
 			(width 0)
@@ -1864,6 +1882,26 @@
 	)
 	(wire
 		(pts
+			(xy 149.86 100.33) (xy 149.86 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "656b89ce-467d-4eb8-a7a4-97befff498dd")
+	)
+	(wire
+		(pts
+			(xy 134.62 100.33) (xy 134.62 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "76d07dc4-10ab-462a-b947-0a3cda3de21b")
+	)
+	(wire
+		(pts
 			(xy 72.39 157.48) (xy 77.47 157.48)
 		)
 		(stroke
@@ -1891,6 +1929,26 @@
 			(type default)
 		)
 		(uuid "85cb3d09-54f5-4983-80cc-98260e7f522b")
+	)
+	(wire
+		(pts
+			(xy 163.83 90.17) (xy 163.83 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "948766fa-45c6-4b85-889e-339bbffbbc68")
+	)
+	(wire
+		(pts
+			(xy 134.62 90.17) (xy 134.62 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9e7d89b0-5601-43d3-9ace-4ded245ae597")
 	)
 	(wire
 		(pts
@@ -1934,6 +1992,26 @@
 	)
 	(wire
 		(pts
+			(xy 149.86 90.17) (xy 149.86 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c10ae1b1-0974-4e7f-bcff-a4b9bede95de")
+	)
+	(wire
+		(pts
+			(xy 163.83 90.17) (xy 173.99 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c1a123df-8dd5-44f7-a33e-d16683d083df")
+	)
+	(wire
+		(pts
 			(xy 85.09 82.55) (xy 100.33 82.55)
 		)
 		(stroke
@@ -1961,6 +2039,16 @@
 			(type default)
 		)
 		(uuid "d695459d-b155-4f59-9fd0-7b14427b9849")
+	)
+	(wire
+		(pts
+			(xy 134.62 90.17) (xy 149.86 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dffd14fe-624c-40a3-b204-7ab629c6d129")
 	)
 	(wire
 		(pts
@@ -2001,6 +2089,26 @@
 			(type default)
 		)
 		(uuid "ea597e8d-bc10-456c-a390-0eebf89bbdef")
+	)
+	(wire
+		(pts
+			(xy 163.83 100.33) (xy 163.83 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ed8331ee-b90e-4cec-ad74-bd9b7ee926a1")
+	)
+	(wire
+		(pts
+			(xy 149.86 90.17) (xy 163.83 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "edfb3667-23c2-4215-8608-adf64fedf8e9")
 	)
 	(wire
 		(pts
@@ -2084,7 +2192,7 @@
 	)
 	(global_label "170V Rect"
 		(shape output)
-		(at 124.46 90.17 0)
+		(at 173.99 90.17 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2094,7 +2202,7 @@
 		)
 		(uuid "24ba87e1-4bd1-4fee-803e-e8bb5e4f7d3d")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 137.3028 90.17 0)
+			(at 186.8328 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2435,6 +2543,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND1")
+		(at 149.86 102.87 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4419a2f8-eeb9-476f-b7e7-bcade17da00d")
+		(property "Reference" "#PWR021"
+			(at 149.86 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "HV_GND"
+			(at 157.734 103.124 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 149.86 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 149.86 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND1\" , ground"
+			(at 149.86 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "630e7cef-40fe-4555-99ed-215032e46019")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0"
+					(reference "#PWR021")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Treadmill_Comp:RAC05E-05SKT")
 		(at 44.45 63.5 0)
 		(mirror x)
@@ -2505,6 +2679,212 @@
 			(project ""
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0"
 					(reference "U8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND1")
+		(at 163.83 102.87 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4eceea88-dcfe-4e74-9ffa-fd258954e4c1")
+		(property "Reference" "#PWR022"
+			(at 163.83 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "HV_GND"
+			(at 171.704 103.124 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 163.83 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 163.83 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND1\" , ground"
+			(at 163.83 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9cd72619-9579-42cf-b597-45c30118d55b")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0"
+					(reference "#PWR022")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Polarized")
+		(at 149.86 96.52 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5fddfabd-f41a-4bca-92aa-c78dbd4e197e")
+		(property "Reference" "C14"
+			(at 153.67 94.3609 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "820uF"
+			(at 153.67 96.9009 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Treadmill_Feet:CHEMI-VSN_A45"
+			(at 150.8252 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.chemi-con.co.jp/products/relatedfiles/capacitor/catalog/SMQN-e.PDF"
+			(at 149.86 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "ESMQ351VSN821MA45S"
+			(at 149.86 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5d26d27d-8c1b-4dcb-8bfd-45afbeace5de")
+		)
+		(pin "2"
+			(uuid "3f92a4e7-9e32-4def-8023-c431981f76c9")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0"
+					(reference "C14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Polarized")
+		(at 134.62 96.52 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "84e3bbbc-4a7c-4264-8e56-3f6c0a1a9c20")
+		(property "Reference" "C7"
+			(at 138.43 94.3609 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "820uF"
+			(at 138.43 96.9009 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Treadmill_Feet:CHEMI-VSN_A45"
+			(at 135.5852 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.chemi-con.co.jp/products/relatedfiles/capacitor/catalog/SMQN-e.PDF"
+			(at 134.62 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "ESMQ351VSN821MA45S"
+			(at 134.62 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "19a47ec5-4cba-4589-958e-56638f7e4925")
+		)
+		(pin "2"
+			(uuid "38e1955d-f918-4289-8b27-3bd33cb09eba")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0"
+					(reference "C7")
 					(unit 1)
 				)
 			)
@@ -2800,7 +3180,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "200uF"
+		(property "Value" "820uF"
 			(at 123.19 96.9009 0)
 			(effects
 				(font
@@ -2809,7 +3189,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_THT:CP_Radial_D18.0mm_P7.50mm"
+		(property "Footprint" "Treadmill_Feet:CHEMI-VSN_A45"
 			(at 120.3452 100.33 0)
 			(effects
 				(font
@@ -2818,7 +3198,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.nichicon.co.jp/english/series_items/catalog_pdf/e-uth.pdf"
+		(property "Datasheet" "https://www.chemi-con.co.jp/products/relatedfiles/capacitor/catalog/SMQN-e.PDF"
 			(at 119.38 96.52 0)
 			(effects
 				(font
@@ -2827,7 +3207,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "UTH2G201MND"
+		(property "Description" "ESMQ351VSN821MA45S"
 			(at 119.38 96.52 0)
 			(effects
 				(font
@@ -2846,6 +3226,142 @@
 			(project ""
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0"
 					(reference "C6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND1")
+		(at 134.62 102.87 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "bae53b98-b815-46c6-ae01-f550e887c614")
+		(property "Reference" "#PWR018"
+			(at 134.62 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "HV_GND"
+			(at 142.494 103.124 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 134.62 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 134.62 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND1\" , ground"
+			(at 134.62 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "1c0b87ce-d19b-4a32-a244-5aa0fdae6acc")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0"
+					(reference "#PWR018")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Polarized")
+		(at 163.83 96.52 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f001c1fb-99b8-4d89-99d2-70d57d91ca3f")
+		(property "Reference" "C17"
+			(at 167.64 94.3609 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "820uF"
+			(at 167.64 96.9009 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Treadmill_Feet:CHEMI-VSN_A45"
+			(at 164.7952 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.chemi-con.co.jp/products/relatedfiles/capacitor/catalog/SMQN-e.PDF"
+			(at 163.83 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "ESMQ351VSN821MA45S"
+			(at 163.83 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "06a696d6-e205-4f7f-936d-fb07c5d233a5")
+		)
+		(pin "2"
+			(uuid "f15f6620-aa35-4891-b35f-506804188d6a")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0"
+					(reference "C17")
 					(unit 1)
 				)
 			)
