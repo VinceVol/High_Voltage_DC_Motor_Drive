@@ -268,416 +268,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Treadmill_Comp:NLV14044BDR2G"
-			(pin_names
-				(offset 0.254)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "U"
-				(at 20.32 10.16 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-				)
-			)
-			(property "Value" "NLV14044BDR2G"
-				(at 20.32 7.62 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-				)
-			)
-			(property "Footprint" "Treadmill_Feet:SOIC-16_ONS"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "https://www.onsemi.com/pdf/datasheet/mc14043b-d.pdf"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "NLV14044BDR2G"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "SOIC-16_ONS SOIC-16_ONS-M SOIC-16_ONS-L"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "NLV14044BDR2G_0_1"
-				(polyline
-					(pts
-						(xy 7.62 5.08) (xy 7.62 -22.86)
-					)
-					(stroke
-						(width 0.127)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 7.62 -22.86) (xy 33.02 -22.86)
-					)
-					(stroke
-						(width 0.127)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 33.02 5.08) (xy 7.62 5.08)
-					)
-					(stroke
-						(width 0.127)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 33.02 -22.86) (xy 33.02 5.08)
-					)
-					(stroke
-						(width 0.127)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin output line
-					(at 0 0 0)
-					(length 7.62)
-					(name "Q3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin no_connect line
-					(at 0 -2.54 0)
-					(length 7.62)
-					(name "NC"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 0 -5.08 0)
-					(length 7.62)
-					(name "*S0"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 0 -7.62 0)
-					(length 7.62)
-					(name "*R0"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 0 -10.16 0)
-					(length 7.62)
-					(name "E"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 0 -12.7 0)
-					(length 7.62)
-					(name "*R1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 0 -15.24 0)
-					(length 7.62)
-					(name "*S1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 0 -17.78 0)
-					(length 7.62)
-					(name "VSS"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "8"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 40.64 0 180)
-					(length 7.62)
-					(name "VDD"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "16"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 40.64 -2.54 180)
-					(length 7.62)
-					(name "*S3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "15"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 40.64 -5.08 180)
-					(length 7.62)
-					(name "*R3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "14"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin output line
-					(at 40.64 -7.62 180)
-					(length 7.62)
-					(name "Q0"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "13"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 40.64 -10.16 180)
-					(length 7.62)
-					(name "*R2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "12"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 40.64 -12.7 180)
-					(length 7.62)
-					(name "*S2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "11"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin output line
-					(at 40.64 -15.24 180)
-					(length 7.62)
-					(name "Q2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "10"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin output line
-					(at 40.64 -17.78 180)
-					(length 7.62)
-					(name "Q1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "9"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Treadmill_Comp:RCWCTE"
 			(pin_names
 				(offset 1.016)
@@ -1116,6 +706,668 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "dk_Logic-Gates-and-Inverters:SN74LS08N"
+			(pin_names
+				(offset 0.0254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at -2.54 8.636 0)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+					(justify right)
+				)
+			)
+			(property "Value" "SN74LS08N"
+				(at 0.254 -21.59 0)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "digikey-footprints:DIP-14_W3mm"
+				(at 5.08 5.08 0)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "http://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=http%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fsn74ls08"
+				(at 5.08 7.62 0)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Description" "IC GATE AND 4CH 2-INP 14DIP"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Digi-Key_PN" "296-1633-5-ND"
+				(at 5.08 10.16 0)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "MPN" "SN74LS08N"
+				(at 5.08 12.7 0)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Category" "Integrated Circuits (ICs)"
+				(at 5.08 15.24 0)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Family" "Logic - Gates and Inverters"
+				(at 5.08 17.78 0)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "DK_Datasheet_Link" "http://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=http%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fsn74ls08"
+				(at 5.08 20.32 0)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "DK_Detail_Page" "/product-detail/en/texas-instruments/SN74LS08N/296-1633-5-ND/277279"
+				(at 5.08 22.86 0)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Description_1" "IC GATE AND 4CH 2-INP 14DIP"
+				(at 5.08 25.4 0)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer" "Texas Instruments"
+				(at 5.08 27.94 0)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Status" "Active"
+				(at 5.08 30.48 0)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "296-1633-5-ND 74LS"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "SN74LS08N_0_1"
+				(rectangle
+					(start -5.08 7.62)
+					(end 2.54 -20.32)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy -5.08 0) (xy -3.556 0) (xy -3.556 1.016) (xy -1.905 1.016)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -5.08 -5.08) (xy -3.556 -5.08) (xy -3.556 -4.064) (xy -1.905 -4.064)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -5.08 -10.16) (xy -3.556 -10.16) (xy -3.556 -9.144) (xy -1.905 -9.144)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -5.08 -15.24) (xy -3.556 -15.24) (xy -3.556 -14.224) (xy -1.905 -14.224)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.905 1.524) (xy -3.556 1.524) (xy -3.556 2.54) (xy -5.08 2.54)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.905 -3.556) (xy -3.556 -3.556) (xy -3.556 -2.54) (xy -5.08 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.905 -8.636) (xy -3.556 -8.636) (xy -3.556 -7.62) (xy -5.08 -7.62)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.905 -13.716) (xy -3.556 -13.716) (xy -3.556 -12.7) (xy -5.08 -12.7)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.635 1.905) (xy -1.905 1.905) (xy -1.905 0.635) (xy -0.635 0.635)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -0.635 1.905)
+					(mid 0 1.27)
+					(end -0.635 0.635)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.635 -3.175) (xy -1.905 -3.175) (xy -1.905 -4.445) (xy -0.635 -4.445)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -0.635 -3.175)
+					(mid 0 -3.81)
+					(end -0.635 -4.445)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.635 -8.255) (xy -1.905 -8.255) (xy -1.905 -9.525) (xy -0.635 -9.525)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -0.635 -8.255)
+					(mid 0 -8.89)
+					(end -0.635 -9.525)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.635 -13.335) (xy -1.905 -13.335) (xy -1.905 -14.605) (xy -0.635 -14.605)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -0.635 -13.335)
+					(mid 0 -13.97)
+					(end -0.635 -14.605)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 0) (xy 1.27 0) (xy 1.27 1.27) (xy 0 1.27)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 -5.08) (xy 1.27 -5.08) (xy 1.27 -3.81) (xy 0 -3.81)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 -10.16) (xy 1.27 -10.16) (xy 1.27 -8.89) (xy 0 -8.89)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 -15.24) (xy 1.27 -15.24) (xy 1.27 -13.97) (xy 0 -13.97)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "SN74LS08N_1_1"
+				(pin input line
+					(at -7.62 2.54 0)
+					(length 2.54)
+					(name "1A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -7.62 0 0)
+					(length 2.54)
+					(name "1B"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -7.62 -2.54 0)
+					(length 2.54)
+					(name "2A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -7.62 -5.08 0)
+					(length 2.54)
+					(name "2B"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -7.62 -7.62 0)
+					(length 2.54)
+					(name "3A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -7.62 -10.16 0)
+					(length 2.54)
+					(name "3B"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -7.62 -12.7 0)
+					(length 2.54)
+					(name "4A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -7.62 -15.24 0)
+					(length 2.54)
+					(name "4B"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "13"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 10.16 270)
+					(length 2.54)
+					(name "VCC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "14"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 -22.86 90)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 5.08 0 180)
+					(length 2.54)
+					(name "1Y"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 5.08 -5.08 180)
+					(length 2.54)
+					(name "2Y"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 5.08 -10.16 180)
+					(length 2.54)
+					(name "3Y"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 5.08 -15.24 180)
+					(length 2.54)
+					(name "4Y"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "power:GND"
 			(power)
 			(pin_numbers
@@ -1232,8 +1484,8 @@
 		(uuid 2639ee31-70dd-4e05-b2b2-cadd0af2355b)
 	)
 	(rectangle
-		(start 25.4 100.33)
-		(end 45.72 114.3)
+		(start 25.4 104.14)
+		(end 45.72 118.11)
 		(stroke
 			(width 0)
 			(type dot)
@@ -1246,7 +1498,7 @@
 	)
 	(rectangle
 		(start 22.86 74.93)
-		(end 114.3 118.11)
+		(end 88.9 138.43)
 		(stroke
 			(width 0)
 			(type dot)
@@ -1285,7 +1537,7 @@
 	)
 	(text "if I>Peak:\nDisable"
 		(exclude_from_sim no)
-		(at 26.67 108.204 0)
+		(at 26.67 112.014 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1315,7 +1567,7 @@
 		)
 		(uuid "b4a6589b-b365-4403-9c46-ca5e0a8e17ba")
 	)
-	(text "OC pin disables Q0 which is pulled to gnd in h bridge circuit\nSet & Reset are MCU controlled"
+	(text "OC pin disables Q0 which is pulled to gnd in h bridge circuit\nSet is MCU controlled pwm (avoid hystersis)"
 		(exclude_from_sim no)
 		(at 24.13 78.232 0)
 		(effects
@@ -1339,10 +1591,10 @@
 		(uuid "f10f7463-a8a3-4fef-b45d-67fd25238dbd")
 	)
 	(junction
-		(at 38.1 99.06)
+		(at 60.96 95.25)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "07d22d9a-935c-493f-965d-9d27596b5a83")
+		(uuid "014f838e-b54b-4b27-a10e-6f525666673f")
 	)
 	(junction
 		(at 57.15 58.42)
@@ -1351,7 +1603,7 @@
 		(uuid "236ebee4-0f96-42ef-836c-da865a853a1d")
 	)
 	(junction
-		(at 43.18 104.14)
+		(at 43.18 107.95)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "27fba727-25c4-460f-940f-aff3b446cd23")
@@ -1375,12 +1627,6 @@
 		(uuid "ca70ac30-e1a2-4a49-9570-f06fce1f21fa")
 	)
 	(junction
-		(at 50.8 96.52)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "d99579ba-a275-457a-8e8b-a281364726b1")
-	)
-	(junction
 		(at 125.73 53.34)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1393,48 +1639,48 @@
 		(uuid "fc90016a-eb8f-4c14-948f-2a7cdcb49fda")
 	)
 	(no_connect
-		(at 96.52 104.14)
-		(uuid "048931aa-2589-4827-a192-b670fd08083f")
-	)
-	(no_connect
-		(at 55.88 91.44)
-		(uuid "04ad3c56-0e67-4fd2-943d-8830386ccdc6")
+		(at 66.04 123.19)
+		(uuid "0cdd8817-25aa-48d4-a8fc-b77771c6e1d3")
 	)
 	(no_connect
 		(at 107.95 35.56)
 		(uuid "2d443f3e-841b-4d51-b89a-921c6b258784")
 	)
 	(no_connect
-		(at 55.88 104.14)
-		(uuid "3fa90a9e-c62f-4492-9ac9-7ce87d18abed")
+		(at 53.34 120.65)
+		(uuid "6ef25bce-722e-4e6b-ba63-9d90a637a996")
+	)
+	(no_connect
+		(at 53.34 110.49)
+		(uuid "8c73aefd-fa24-4568-81cf-bad7543cc815")
 	)
 	(no_connect
 		(at 107.95 40.64)
 		(uuid "9cf1357a-94ee-4b3f-b267-5892deed3524")
 	)
 	(no_connect
-		(at 55.88 106.68)
-		(uuid "a40fab95-8f0c-411d-94df-eb9b3cd9ebb6")
+		(at 53.34 113.03)
+		(uuid "a100d61a-567c-4bc0-b58f-49f349a65916")
 	)
 	(no_connect
-		(at 96.52 101.6)
-		(uuid "b955e6e7-5bd6-46e6-80da-380c25c0184c")
+		(at 66.04 113.03)
+		(uuid "ba77410a-f982-419b-b2fc-9f94bb0b6c8f")
 	)
 	(no_connect
-		(at 96.52 109.22)
-		(uuid "c4a3f86b-1e93-4763-9284-57d33a127231")
+		(at 53.34 115.57)
+		(uuid "cf2adf44-8cc4-4348-87fb-41d957e54eed")
 	)
 	(no_connect
-		(at 96.52 93.98)
-		(uuid "c7f4b02f-9b5d-405a-ac9d-c820ca63353a")
+		(at 53.34 118.11)
+		(uuid "d0506698-c3b4-4c63-b552-4ee2cf710cf0")
 	)
 	(no_connect
-		(at 96.52 96.52)
-		(uuid "e692df81-26f5-4de4-b800-e314dc91c116")
+		(at 66.04 118.11)
+		(uuid "d1a3617f-05a9-4736-a231-59b162ca3a07")
 	)
 	(no_connect
-		(at 96.52 106.68)
-		(uuid "e88ee38d-49e7-4189-9ca9-fad0a2a5fbb8")
+		(at 53.34 123.19)
+		(uuid "e999b2bc-9cb7-405c-a1e7-271e83f9bd69")
 	)
 	(wire
 		(pts
@@ -1458,16 +1704,6 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 91.44) (xy 99.06 91.44)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0f94d009-dc2a-4eca-9648-d9d8bd1674e1")
-	)
-	(wire
-		(pts
 			(xy 50.8 31.75) (xy 50.8 29.21)
 		)
 		(stroke
@@ -1478,13 +1714,13 @@
 	)
 	(wire
 		(pts
-			(xy 52.07 101.6) (xy 55.88 101.6)
+			(xy 50.8 95.25) (xy 50.8 96.52)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "1ab0df8c-5f09-4d8c-913a-ceb905a1868f")
+		(uuid "1af85d81-546b-4993-8667-bf61da0e15b7")
 	)
 	(wire
 		(pts
@@ -1528,23 +1764,13 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 99.06) (xy 102.87 99.06)
+			(xy 66.04 107.95) (xy 69.85 107.95)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "42841fb9-cccd-4db1-81f5-451fc7529fdf")
-	)
-	(wire
-		(pts
-			(xy 38.1 99.06) (xy 55.88 99.06)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "43396a30-82db-4304-b866-fddd300245f0")
 	)
 	(wire
 		(pts
@@ -1558,13 +1784,13 @@
 	)
 	(wire
 		(pts
-			(xy 52.07 101.6) (xy 52.07 104.14)
+			(xy 60.96 95.25) (xy 60.96 97.79)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "61659783-6147-4d3a-bf7f-cd2fa7405f40")
+		(uuid "62f3ee25-aa8f-4389-bc8e-d52dfe650a98")
 	)
 	(wire
 		(pts
@@ -1575,16 +1801,6 @@
 			(type default)
 		)
 		(uuid "71200d5e-6b86-4ab1-acab-c30cb16c16bc")
-	)
-	(wire
-		(pts
-			(xy 99.06 88.9) (xy 99.06 91.44)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7522891d-67eb-4844-90c5-4f7cfc62d1b1")
 	)
 	(wire
 		(pts
@@ -1618,7 +1834,7 @@
 	)
 	(wire
 		(pts
-			(xy 33.02 104.14) (xy 43.18 104.14)
+			(xy 33.02 107.95) (xy 43.18 107.95)
 		)
 		(stroke
 			(width 0)
@@ -1638,23 +1854,33 @@
 	)
 	(wire
 		(pts
-			(xy 53.34 109.22) (xy 53.34 111.76)
+			(xy 50.8 104.14) (xy 50.8 105.41)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "919b4c8d-3346-4f63-b358-6f52e959cf54")
+		(uuid "aef137d4-6d20-465c-b331-0a263a2f501a")
 	)
 	(wire
 		(pts
-			(xy 45.72 96.52) (xy 50.8 96.52)
+			(xy 50.8 95.25) (xy 60.96 95.25)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "ba1536f5-29ab-45c0-a521-12abcf90d2ca")
+		(uuid "b5ccd2dd-eedb-4c85-b388-297e9b10cfe7")
+	)
+	(wire
+		(pts
+			(xy 60.96 91.44) (xy 60.96 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bda2f821-8ab5-4031-880c-33103433d91c")
 	)
 	(wire
 		(pts
@@ -1668,6 +1894,16 @@
 	)
 	(wire
 		(pts
+			(xy 60.96 130.81) (xy 60.96 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c1d88eec-354f-42e6-b72f-832d2d7d20dd")
+	)
+	(wire
+		(pts
 			(xy 125.73 53.34) (xy 132.08 53.34)
 		)
 		(stroke
@@ -1675,6 +1911,16 @@
 			(type default)
 		)
 		(uuid "c7f5c825-a48a-4b20-89e1-f34e6a5881b9")
+	)
+	(wire
+		(pts
+			(xy 50.8 105.41) (xy 53.34 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ca45d701-624f-4507-9331-ff0f38281320")
 	)
 	(wire
 		(pts
@@ -1688,7 +1934,7 @@
 	)
 	(wire
 		(pts
-			(xy 43.18 104.14) (xy 52.07 104.14)
+			(xy 43.18 107.95) (xy 53.34 107.95)
 		)
 		(stroke
 			(width 0)
@@ -1725,16 +1971,6 @@
 			(type default)
 		)
 		(uuid "d85c16d3-0fc7-4573-b2fe-77d1e67236c9")
-	)
-	(wire
-		(pts
-			(xy 53.34 109.22) (xy 55.88 109.22)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "dabee308-4fa5-41f2-9eb7-0b99be8b3594")
 	)
 	(wire
 		(pts
@@ -1798,16 +2034,6 @@
 	)
 	(wire
 		(pts
-			(xy 50.8 96.52) (xy 55.88 96.52)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f19c8128-18d3-4ba9-9bd3-9e590c47977f")
-	)
-	(wire
-		(pts
 			(xy 44.45 40.64) (xy 50.8 40.64)
 		)
 		(stroke
@@ -1815,16 +2041,6 @@
 			(type default)
 		)
 		(uuid "f44fc262-f901-434d-9b18-1380cf215e2f")
-	)
-	(wire
-		(pts
-			(xy 33.02 99.06) (xy 38.1 99.06)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f7fb2109-11e2-45ca-b17e-ae44fd6b8381")
 	)
 	(wire
 		(pts
@@ -1849,7 +2065,7 @@
 		(uuid "0bef0c2b-e691-4da8-8c47-edb376acc811")
 	)
 	(label "OC_out"
-		(at 33.02 104.14 180)
+		(at 33.02 107.95 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1859,6 +2075,28 @@
 			(justify right bottom)
 		)
 		(uuid "132e89d8-9460-4e1c-b14e-7ed0300a7b94")
+	)
+	(global_label "5v 5w"
+		(shape input)
+		(at 60.96 91.44 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "04384a82-20fb-42c2-b13c-3e379f4058bc")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 60.96 82.7701 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
 	)
 	(global_label "5v 5w"
 		(shape input)
@@ -1878,28 +2116,6 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "5v 5w"
-		(shape input)
-		(at 99.06 88.9 90)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "99512f0a-0f72-45e5-8313-7c386f541549")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 99.06 80.2301 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
 				(hide yes)
 			)
 		)
@@ -1926,31 +2142,9 @@
 			)
 		)
 	)
-	(hierarchical_label "Set"
-		(shape input)
-		(at 45.72 96.52 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "00ea246e-d5b1-4c55-8dee-e29cab526fa9")
-	)
-	(hierarchical_label "Reset"
-		(shape input)
-		(at 33.02 99.06 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "acc77bdb-f764-4124-95dc-e643fd278875")
-	)
 	(hierarchical_label "EN_Drives"
 		(shape output)
-		(at 102.87 99.06 0)
+		(at 69.85 107.95 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1991,124 +2185,6 @@
 			(justify left)
 		)
 		(uuid "f4993412-d77f-4f12-87fa-5aa957cba247")
-	)
-	(symbol
-		(lib_id "Treadmill_Comp:RCWCTE")
-		(at 50.8 91.44 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "0e79e4d7-120e-4b22-939a-55adfecc57dc")
-		(property "Reference" "TP10"
-			(at 49.022 88.9 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "RCWCTE"
-			(at 53.34 92.7099 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Treadmill_Feet:RCWCTE"
-			(at 50.8 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.koaspeer.com/pdfs/RC.pdf"
-			(at 50.8 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "https://www.digikey.com/en/products/detail/koa-speer-electronics-inc/RCWCTE/11476558"
-			(at 50.8 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "PARTREV" "1/06/14"
-			(at 50.8 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "SNAPEDA_PN" "RCWCTE"
-			(at 50.8 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER" "KOA Speer"
-			(at 50.8 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "MAXIMUM_PACKAGE_HEIGHT" "2 mm"
-			(at 50.8 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "STANDARD" "Manufacturer Recommendations"
-			(at 50.8 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "015891d9-3950-46b0-ba4c-d13294052d45")
-		)
-		(instances
-			(project "120VDC Treadmill Motor Controller"
-				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/23f081f2-fcb5-4e72-b320-a9766db11ad0"
-					(reference "TP10")
-					(unit 1)
-				)
-			)
-		)
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -2495,6 +2571,204 @@
 		)
 	)
 	(symbol
+		(lib_id "dk_Logic-Gates-and-Inverters:SN74LS08N")
+		(at 60.96 107.95 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5973e6cb-7944-46ef-bf85-bc065740d24c")
+		(property "Reference" "U4"
+			(at 63.1033 95.25 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SN74HCS08DYYR"
+			(at 63.1033 97.79 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 66.04 102.87 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/sn74hcs08.pdf?ts=1647897887200&ref_url=https%253A%252F%252Fwww.ti.com%252Fstore%252Fti%252Fen%252Fp%252Fproduct%252F%253Fp%253DSN74HCS08DYYR%2526keyMatch%253DSN74HCS08DYYR%2526tisearch%253Dsearch-everything%2526usecase%25"
+			(at 66.04 100.33 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "IC GATE AND 4CH 2-INP 14DIP"
+			(at 60.96 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Digi-Key_PN" "296-1633-5-ND"
+			(at 66.04 97.79 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "MPN" "SN74LS08N"
+			(at 66.04 95.25 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Category" "Integrated Circuits (ICs)"
+			(at 66.04 92.71 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Family" "Logic - Gates and Inverters"
+			(at 66.04 90.17 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "DK_Datasheet_Link" "http://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=http%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fsn74ls08"
+			(at 66.04 87.63 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "DK_Detail_Page" "/product-detail/en/texas-instruments/SN74LS08N/296-1633-5-ND/277279"
+			(at 66.04 85.09 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description_1" "IC GATE AND 4CH 2-INP 14DIP"
+			(at 66.04 82.55 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Texas Instruments"
+			(at 66.04 80.01 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Status" "Active"
+			(at 66.04 77.47 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "14"
+			(uuid "4377442f-2264-448c-9c92-850456743ebe")
+		)
+		(pin "6"
+			(uuid "77196846-2173-4715-9c4a-f25b4a81803b")
+		)
+		(pin "10"
+			(uuid "e223e6a8-8032-4bca-8843-100f485dbe82")
+		)
+		(pin "5"
+			(uuid "a7ad0dd2-ddf6-46ab-ae5c-c69c960fc6ce")
+		)
+		(pin "4"
+			(uuid "fd9b685f-74ff-424c-8cb7-58725d5024fd")
+		)
+		(pin "2"
+			(uuid "5daa236c-5c3a-43c2-83d7-c8fcf8f7c752")
+		)
+		(pin "1"
+			(uuid "f02b3651-6ecf-44d5-ade6-fa759e2098b9")
+		)
+		(pin "9"
+			(uuid "18dfd114-9f95-4fe0-8e68-88f2a254a74e")
+		)
+		(pin "13"
+			(uuid "fcd7c584-f681-49a6-a3b5-528602a5e94d")
+		)
+		(pin "12"
+			(uuid "c97d29d5-3b27-48f6-b8da-ba1a49cf1e85")
+		)
+		(pin "3"
+			(uuid "ba3a9985-c957-47d3-afcc-d185704160e1")
+		)
+		(pin "11"
+			(uuid "4a7ac918-d765-489f-8a25-feb6e087a52f")
+		)
+		(pin "7"
+			(uuid "ddc72f13-c036-4419-9b30-96621ad13216")
+		)
+		(pin "8"
+			(uuid "0aae0c51-f5cc-4d4c-9cd9-771a3dfce537")
+		)
+		(instances
+			(project ""
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/23f081f2-fcb5-4e72-b320-a9766db11ad0"
+					(reference "U4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 62.23 58.42 90)
 		(unit 1)
@@ -2563,7 +2837,7 @@
 	)
 	(symbol
 		(lib_id "Treadmill_Comp:RCWCTE")
-		(at 43.18 109.22 270)
+		(at 43.18 113.03 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2571,7 +2845,7 @@
 		(dnp no)
 		(uuid "6450c9c6-e4ac-44df-9aba-fbe35c0f8bd0")
 		(property "Reference" "TP3"
-			(at 44.958 111.76 90)
+			(at 44.958 115.57 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2580,7 +2854,7 @@
 			)
 		)
 		(property "Value" "RCWCTE"
-			(at 40.64 107.9501 90)
+			(at 40.64 111.7601 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2590,7 +2864,7 @@
 			)
 		)
 		(property "Footprint" "Treadmill_Feet:RCWCTE"
-			(at 43.18 109.22 0)
+			(at 43.18 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2600,7 +2874,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.koaspeer.com/pdfs/RC.pdf"
-			(at 43.18 109.22 0)
+			(at 43.18 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2609,7 +2883,7 @@
 			)
 		)
 		(property "Description" "https://www.digikey.com/en/products/detail/koa-speer-electronics-inc/RCWCTE/11476558"
-			(at 43.18 109.22 0)
+			(at 43.18 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2618,7 +2892,7 @@
 			)
 		)
 		(property "PARTREV" "1/06/14"
-			(at 43.18 109.22 0)
+			(at 43.18 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2628,7 +2902,7 @@
 			)
 		)
 		(property "SNAPEDA_PN" "RCWCTE"
-			(at 43.18 109.22 0)
+			(at 43.18 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2638,7 +2912,7 @@
 			)
 		)
 		(property "MANUFACTURER" "KOA Speer"
-			(at 43.18 109.22 0)
+			(at 43.18 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2648,7 +2922,7 @@
 			)
 		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" "2 mm"
-			(at 43.18 109.22 0)
+			(at 43.18 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2658,7 +2932,7 @@
 			)
 		)
 		(property "STANDARD" "Manufacturer Recommendations"
-			(at 43.18 109.22 0)
+			(at 43.18 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2681,7 +2955,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 53.34 111.76 0)
+		(at 60.96 133.35 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2689,7 +2963,7 @@
 		(dnp no)
 		(uuid "75091783-eca9-4270-9175-f68cd3010b10")
 		(property "Reference" "#PWR019"
-			(at 53.34 118.11 0)
+			(at 60.96 139.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2698,7 +2972,7 @@
 			)
 		)
 		(property "Value" "LV_GND"
-			(at 53.848 112.014 0)
+			(at 61.468 133.604 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2707,7 +2981,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 53.34 111.76 0)
+			(at 60.96 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2716,7 +2990,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 53.34 111.76 0)
+			(at 60.96 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2725,7 +2999,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 53.34 111.76 0)
+			(at 60.96 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2976,236 +3250,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Treadmill_Comp:RCWCTE")
-		(at 38.1 93.98 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "f66939a5-93dd-4b12-816d-dd0ec7f3b857")
-		(property "Reference" "TP9"
-			(at 36.322 91.44 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "RCWCTE"
-			(at 40.64 95.2499 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Treadmill_Feet:RCWCTE"
-			(at 38.1 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.koaspeer.com/pdfs/RC.pdf"
-			(at 38.1 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "https://www.digikey.com/en/products/detail/koa-speer-electronics-inc/RCWCTE/11476558"
-			(at 38.1 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "PARTREV" "1/06/14"
-			(at 38.1 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "SNAPEDA_PN" "RCWCTE"
-			(at 38.1 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER" "KOA Speer"
-			(at 38.1 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "MAXIMUM_PACKAGE_HEIGHT" "2 mm"
-			(at 38.1 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "STANDARD" "Manufacturer Recommendations"
-			(at 38.1 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "df76612a-3a28-4a21-8e10-ab3aba436330")
-		)
-		(instances
-			(project "120VDC Treadmill Motor Controller"
-				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/23f081f2-fcb5-4e72-b320-a9766db11ad0"
-					(reference "TP9")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Treadmill_Comp:NLV14044BDR2G")
-		(at 55.88 91.44 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "f9a23594-3bf8-4842-b3b8-4067a9e15231")
-		(property "Reference" "U5"
-			(at 76.2 81.28 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-			)
-		)
-		(property "Value" "NLV14044BDR2G"
-			(at 76.2 83.82 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-			)
-		)
-		(property "Footprint" "Treadmill_Feet:SOIC-16_ONS"
-			(at 55.88 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.onsemi.com/pdf/datasheet/mc14043b-d.pdf"
-			(at 55.88 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 55.88 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "4"
-			(uuid "31ca1a89-aa4a-4c9e-bb77-1921aae11117")
-		)
-		(pin "7"
-			(uuid "db11986e-1fe1-4a35-8622-9f95ac4a293e")
-		)
-		(pin "5"
-			(uuid "b8837fcc-6b40-4da9-836b-62f1533841ca")
-		)
-		(pin "13"
-			(uuid "06cc9b58-4915-4c93-8c89-6b0647e05997")
-		)
-		(pin "12"
-			(uuid "e4d9a4f9-343f-488a-abe2-622b4db0b94c")
-		)
-		(pin "8"
-			(uuid "c14b81ab-2c47-4c2a-a3ff-6899eea860c6")
-		)
-		(pin "11"
-			(uuid "a37af0be-80a4-4e66-bf5c-183ac044bc38")
-		)
-		(pin "10"
-			(uuid "5f7d844a-1366-4477-b1c3-becfc2e7534f")
-		)
-		(pin "16"
-			(uuid "455c0131-79a0-4950-b778-59541087ef60")
-		)
-		(pin "9"
-			(uuid "9cca3a07-2e35-4402-841c-2fca115cd2b8")
-		)
-		(pin "15"
-			(uuid "216875f8-151d-461d-b596-305fe1138d2c")
-		)
-		(pin "14"
-			(uuid "23b1c7cb-6d84-4650-85da-c66550e7e7e5")
-		)
-		(pin "1"
-			(uuid "7ae55636-b145-4d44-9069-0ebd62a42b07")
-		)
-		(pin "2"
-			(uuid "2303dfaf-ae3a-406c-801c-e1f15819eba6")
-		)
-		(pin "3"
-			(uuid "0382a3ea-9b16-4d90-8ca2-17dc82a356b3")
-		)
-		(pin "6"
-			(uuid "2d1487be-e867-4355-b2d6-c42fecfc4db8")
-		)
-		(instances
-			(project ""
-				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/23f081f2-fcb5-4e72-b320-a9766db11ad0"
-					(reference "U5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R")
 		(at 50.8 35.56 180)
 		(unit 1)
@@ -3267,6 +3311,73 @@
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/23f081f2-fcb5-4e72-b320-a9766db11ad0"
 					(reference "R9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 50.8 100.33 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "fb5a42d5-a1e2-4c78-a666-373761fdc1a7")
+		(property "Reference" "R23"
+			(at 48.514 100.33 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10K"
+			(at 46.482 100.076 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder"
+			(at 52.578 100.33 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 50.8 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 46.482 100.584 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4dace883-073a-430d-8c92-8ac5597477d6")
+		)
+		(pin "2"
+			(uuid "7bdb1a2e-6c1d-43f4-b708-34d98d9aa0e7")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/23f081f2-fcb5-4e72-b320-a9766db11ad0"
+					(reference "R23")
 					(unit 1)
 				)
 			)

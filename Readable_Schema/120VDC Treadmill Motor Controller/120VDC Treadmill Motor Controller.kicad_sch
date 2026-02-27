@@ -251,26 +251,6 @@
 				(justify right)
 			)
 		)
-		(pin "Reset" input
-			(at 123.19 100.33 0)
-			(uuid "31ac1d73-7feb-44c2-8157-3f4aa6fa6946")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(pin "Set" input
-			(at 123.19 102.87 0)
-			(uuid "50553754-4b2a-49a0-88fc-b67f714fdea3")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
 		(instances
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd"
