@@ -1597,6 +1597,12 @@
 		(uuid "014f838e-b54b-4b27-a10e-6f525666673f")
 	)
 	(junction
+		(at 50.8 123.19)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "17272e56-56c4-466c-9801-bcdaa015aff7")
+	)
+	(junction
 		(at 57.15 58.42)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1607,6 +1613,18 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "27fba727-25c4-460f-940f-aff3b446cd23")
+	)
+	(junction
+		(at 50.8 115.57)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "704cd5a6-4869-4cb2-8c94-7ded5c7b82d3")
+	)
+	(junction
+		(at 50.8 113.03)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "766c0229-8abc-4754-85d1-5dec16d4123a")
 	)
 	(junction
 		(at 67.31 58.42)
@@ -1621,10 +1639,34 @@
 		(uuid "c3d2d54b-3f25-41ad-8b10-6c6e0945ce02")
 	)
 	(junction
+		(at 50.8 118.11)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c9e14fee-a574-47e2-bbd1-5d7a32c0bd98")
+	)
+	(junction
 		(at 110.49 38.1)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ca70ac30-e1a2-4a49-9570-f06fce1f21fa")
+	)
+	(junction
+		(at 50.8 120.65)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d2ff6b1a-72cc-4e77-8e79-ec07ea1479e7")
+	)
+	(junction
+		(at 60.96 132.08)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d5fb6a33-672e-4405-8035-21d7047bab0f")
+	)
+	(junction
+		(at 46.99 123.19)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f0b2a8d8-1607-47d7-a8c3-50b74d8cee80")
 	)
 	(junction
 		(at 125.73 53.34)
@@ -1647,40 +1689,16 @@
 		(uuid "2d443f3e-841b-4d51-b89a-921c6b258784")
 	)
 	(no_connect
-		(at 53.34 120.65)
-		(uuid "6ef25bce-722e-4e6b-ba63-9d90a637a996")
-	)
-	(no_connect
-		(at 53.34 110.49)
-		(uuid "8c73aefd-fa24-4568-81cf-bad7543cc815")
-	)
-	(no_connect
 		(at 107.95 40.64)
 		(uuid "9cf1357a-94ee-4b3f-b267-5892deed3524")
-	)
-	(no_connect
-		(at 53.34 113.03)
-		(uuid "a100d61a-567c-4bc0-b58f-49f349a65916")
 	)
 	(no_connect
 		(at 66.04 113.03)
 		(uuid "ba77410a-f982-419b-b2fc-9f94bb0b6c8f")
 	)
 	(no_connect
-		(at 53.34 115.57)
-		(uuid "cf2adf44-8cc4-4348-87fb-41d957e54eed")
-	)
-	(no_connect
-		(at 53.34 118.11)
-		(uuid "d0506698-c3b4-4c63-b552-4ee2cf710cf0")
-	)
-	(no_connect
 		(at 66.04 118.11)
 		(uuid "d1a3617f-05a9-4736-a231-59b162ca3a07")
-	)
-	(no_connect
-		(at 53.34 123.19)
-		(uuid "e999b2bc-9cb7-405c-a1e7-271e83f9bd69")
 	)
 	(wire
 		(pts
@@ -1714,6 +1732,16 @@
 	)
 	(wire
 		(pts
+			(xy 50.8 115.57) (xy 50.8 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "193c05da-f990-4dc4-99ea-59af0dcc6d18")
+	)
+	(wire
+		(pts
 			(xy 50.8 95.25) (xy 50.8 96.52)
 		)
 		(stroke
@@ -1721,6 +1749,16 @@
 			(type default)
 		)
 		(uuid "1af85d81-546b-4993-8667-bf61da0e15b7")
+	)
+	(wire
+		(pts
+			(xy 60.96 132.08) (xy 60.96 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1e95209f-7a4e-42a4-b705-22987986f4c1")
 	)
 	(wire
 		(pts
@@ -1744,6 +1782,16 @@
 	)
 	(wire
 		(pts
+			(xy 40.64 123.19) (xy 46.99 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2965971a-5425-44d3-973c-604f8aa7bd5d")
+	)
+	(wire
+		(pts
 			(xy 78.74 62.23) (xy 78.74 58.42)
 		)
 		(stroke
@@ -1754,6 +1802,26 @@
 	)
 	(wire
 		(pts
+			(xy 50.8 123.19) (xy 53.34 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3121049a-104e-46dc-81e2-60669ae2035b")
+	)
+	(wire
+		(pts
+			(xy 50.8 118.11) (xy 50.8 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "33b7868f-899f-44c1-86ef-a4b681132321")
+	)
+	(wire
+		(pts
 			(xy 125.73 60.96) (xy 125.73 63.5)
 		)
 		(stroke
@@ -1761,6 +1829,16 @@
 			(type default)
 		)
 		(uuid "350c3a19-795a-4648-86c8-a9b4726f17cb")
+	)
+	(wire
+		(pts
+			(xy 53.34 110.49) (xy 50.8 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "362e6f6c-6608-4ce0-9da3-ac54870bceda")
 	)
 	(wire
 		(pts
@@ -1781,6 +1859,16 @@
 			(type default)
 		)
 		(uuid "44e94dd3-ad39-47dd-976d-049cc7abad31")
+	)
+	(wire
+		(pts
+			(xy 53.34 115.57) (xy 50.8 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5c1cd094-bff8-4c7f-acf2-cedeba7f2de3")
 	)
 	(wire
 		(pts
@@ -1814,6 +1902,16 @@
 	)
 	(wire
 		(pts
+			(xy 50.8 120.65) (xy 50.8 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7f5e179d-b35b-459c-a683-b1252fb3867d")
+	)
+	(wire
+		(pts
 			(xy 50.8 29.21) (xy 48.26 29.21)
 		)
 		(stroke
@@ -1821,6 +1919,16 @@
 			(type default)
 		)
 		(uuid "80076289-878d-4e0b-b541-02be017975be")
+	)
+	(wire
+		(pts
+			(xy 53.34 113.03) (xy 50.8 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "873bc396-a6cf-4f5b-af0b-b62b88a14b54")
 	)
 	(wire
 		(pts
@@ -1851,6 +1959,36 @@
 			(type default)
 		)
 		(uuid "90e78ecb-f628-43c1-a89a-604f395c6cac")
+	)
+	(wire
+		(pts
+			(xy 50.8 110.49) (xy 50.8 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "98809153-de50-4efc-95cd-56b526a87c73")
+	)
+	(wire
+		(pts
+			(xy 46.99 132.08) (xy 60.96 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a82b82e6-2ca2-44dd-950a-01bbc6da982d")
+	)
+	(wire
+		(pts
+			(xy 53.34 120.65) (xy 50.8 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ae11253e-ec2a-4a98-be5f-f041775b2a95")
 	)
 	(wire
 		(pts
@@ -1894,7 +2032,7 @@
 	)
 	(wire
 		(pts
-			(xy 60.96 130.81) (xy 60.96 133.35)
+			(xy 60.96 130.81) (xy 60.96 132.08)
 		)
 		(stroke
 			(width 0)
@@ -1984,6 +2122,16 @@
 	)
 	(wire
 		(pts
+			(xy 46.99 123.19) (xy 50.8 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "def1f497-754d-475b-99ed-39a7da06420f")
+	)
+	(wire
+		(pts
 			(xy 67.31 58.42) (xy 68.58 58.42)
 		)
 		(stroke
@@ -2024,6 +2172,16 @@
 	)
 	(wire
 		(pts
+			(xy 50.8 113.03) (xy 50.8 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e93cf734-211e-49ad-9fcf-8830ea5f94ea")
+	)
+	(wire
+		(pts
 			(xy 110.49 38.1) (xy 110.49 43.18)
 		)
 		(stroke
@@ -2044,6 +2202,16 @@
 	)
 	(wire
 		(pts
+			(xy 53.34 118.11) (xy 50.8 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fc676fc4-8331-4357-bae3-ec649190a811")
+	)
+	(wire
+		(pts
 			(xy 57.15 43.18) (xy 57.15 58.42)
 		)
 		(stroke
@@ -2051,6 +2219,16 @@
 			(type default)
 		)
 		(uuid "feb2dd84-06cb-4116-8e89-c3fce4b378e0")
+	)
+	(wire
+		(pts
+			(xy 46.99 130.81) (xy 46.99 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ff280906-6b61-467a-b9c4-a8ffa893760a")
 	)
 	(label "OC_out"
 		(at 44.45 40.64 180)
@@ -2111,6 +2289,28 @@
 		(uuid "4f5c9d75-bbe6-46a3-987b-4664aff85e1c")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 39.5901 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "5v 5w"
+		(shape input)
+		(at 40.64 123.19 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "a7afe0e6-9803-4b5b-a78e-bcb5ec631117")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 31.9701 123.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3244,6 +3444,76 @@
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/23f081f2-fcb5-4e72-b320-a9766db11ad0"
 					(reference "#PWR017")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 46.99 127 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "bdce7159-bb49-45f0-abce-340bfa38e37a")
+		(property "Reference" "C21"
+			(at 50.8 125.7299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "0.1u"
+			(at 50.8 128.2699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+			(at 47.9552 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/729/CL05B104KA5NNNC_Spec.pdf"
+			(at 46.99 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "CL05B104KA5NNNC"
+			(at 46.99 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3e916e74-349f-4011-ace1-63295fef7452")
+		)
+		(pin "2"
+			(uuid "eb3c4aa4-062d-4ed0-8f56-d814a329b7b8")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/23f081f2-fcb5-4e72-b320-a9766db11ad0"
+					(reference "C21")
 					(unit 1)
 				)
 			)
