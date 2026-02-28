@@ -1,4 +1,4 @@
-27261537799761355
+27289097300604940
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -107149,6 +107149,13 @@ igbt diode module
 25
 25
 Treadmill_Feet
+14-SOT-23-THIN
+Texas DYY0016A TSSOP, 16 Pin (https://www.ti.com/lit/ds/symlink/tmux1574.pdf#page=42), generated with kicad-footprint-generator ipc_gullwing_generator.py
+Texas TSSOP SO SOT-23-THIN
+0
+14
+14
+Treadmill_Feet
 CAP_B40_NCH
 
 LGW2E102MELB40 
@@ -107183,6 +107190,13 @@ SN74LVC1G08DCKR
 0
 5
 5
+Treadmill_Feet
+Infineon_PG-DSO-8-41
+Infineon_PG-DSO-8-43
+DSO DSO-8 SOIC SOIC-8
+0
+8
+8
 Treadmill_Feet
 P200_SOT-23
 SOT, 3 Pin (https://www.jedec.org/system/files/docs/to-236h.pdf variant AB), generated with kicad-footprint-generator ipc_gullwing_generator.py

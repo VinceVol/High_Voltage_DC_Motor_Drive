@@ -2798,7 +2798,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Treadmill_Feet:14-SOT-23-THIN"
 			(at 66.04 102.87 0)
 			(effects
 				(font
