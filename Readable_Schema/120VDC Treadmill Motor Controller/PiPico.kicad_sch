@@ -321,7 +321,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Diode:1N5817"
+		(symbol "Diode:SS12"
 			(pin_numbers
 				(hide yes)
 			)
@@ -340,7 +340,7 @@
 					)
 				)
 			)
-			(property "Value" "1N5817"
+			(property "Value" "SS12"
 				(at 0 -2.54 0)
 				(effects
 					(font
@@ -348,7 +348,7 @@
 					)
 				)
 			)
-			(property "Footprint" "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal"
+			(property "Footprint" "Diode_SMD:D_SMA"
 				(at 0 -4.445 0)
 				(effects
 					(font
@@ -357,7 +357,7 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "http://www.vishay.com/docs/88525/1n5817.pdf"
+			(property "Datasheet" "https://www.vishay.com/docs/88746/ss12.pdf"
 				(at 0 0 0)
 				(effects
 					(font
@@ -366,7 +366,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "20V 1A Schottky Barrier Rectifier Diode, DO-41"
+			(property "Description" "20V 1A Schottky Diode, SMA"
 				(at 0 0 0)
 				(effects
 					(font
@@ -384,7 +384,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_fp_filters" "D*DO?41*"
+			(property "ki_fp_filters" "D*SMA*"
 				(at 0 0 0)
 				(effects
 					(font
@@ -393,7 +393,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "1N5817_0_1"
+			(symbol "SS12_0_1"
 				(polyline
 					(pts
 						(xy -1.905 0.635) (xy -1.905 1.27) (xy -1.27 1.27) (xy -1.27 -1.27) (xy -0.635 -1.27) (xy -0.635 -0.635)
@@ -431,7 +431,7 @@
 					)
 				)
 			)
-			(symbol "1N5817_1_1"
+			(symbol "SS12_1_1"
 				(pin passive line
 					(at -3.81 0 0)
 					(length 2.54)
@@ -2119,10 +2119,6 @@
 		(uuid "b0b5ef1a-41a5-4222-96f7-2aae4cda2f31")
 	)
 	(no_connect
-		(at 163.83 97.79)
-		(uuid "c4ea2b86-e131-492c-be1c-b83404a99822")
-	)
-	(no_connect
 		(at 118.11 85.09)
 		(uuid "fe52008a-aff6-4a00-95b4-8a1eade47ea5")
 	)
@@ -2245,6 +2241,16 @@
 			(type default)
 		)
 		(uuid "2fb4787a-ce3d-4506-84a4-4af62a0b7add")
+	)
+	(wire
+		(pts
+			(xy 163.83 97.79) (xy 168.91 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "318c29ca-6e05-4201-b414-ac57fed383bd")
 	)
 	(wire
 		(pts
@@ -2983,6 +2989,17 @@
 		)
 		(uuid "88db8e29-8453-4a1f-bb8f-69b25e18ae74")
 	)
+	(hierarchical_label "pre_charge_mcu"
+		(shape output)
+		(at 168.91 97.79 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "aee48ffe-805f-4f63-bdb8-214bd4c4cd6d")
+	)
 	(hierarchical_label "dir_a_mcu"
 		(shape output)
 		(at 168.91 100.33 0)
@@ -3004,6 +3021,76 @@
 			(justify left)
 		)
 		(uuid "ce9f8c28-4009-4906-bd2f-a51959dbf40d")
+	)
+	(symbol
+		(lib_id "Diode:SS12")
+		(at 135.89 54.61 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0f3914fc-7773-4de6-af3d-1272ac19b949")
+		(property "Reference" "D5"
+			(at 138.43 53.6574 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "SS12"
+			(at 138.43 56.1974 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Diode_SMD:D_SMA"
+			(at 140.335 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.vishay.com/docs/88746/ss12.pdf"
+			(at 135.89 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "20V 1A Schottky Diode, SMA"
+			(at 135.89 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "bc3e3fae-acf7-4be3-9628-da8bb529f5ba")
+		)
+		(pin "2"
+			(uuid "0fbd43f4-edaa-4ee6-9d5d-0a798d665106")
+		)
+		(instances
+			(project ""
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/dc45a2ff-df18-49a4-81ff-80d10381c9e9"
+					(reference "D5")
+					(unit 1)
+				)
+			)
+		)
 	)
 	(symbol
 		(lib_id "Jumper:SolderJumper_2_Open")
@@ -3557,76 +3644,6 @@
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/dc45a2ff-df18-49a4-81ff-80d10381c9e9"
 					(reference "#PWR024")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Diode:1N5817")
-		(at 135.89 54.61 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "7d3778e3-b583-4131-9124-8e9f5fa988e8")
-		(property "Reference" "D2"
-			(at 138.43 53.6574 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "1N5817"
-			(at 138.43 56.1974 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal"
-			(at 140.335 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.vishay.com/docs/88525/1n5817.pdf"
-			(at 135.89 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "20V 1A Schottky Barrier Rectifier Diode, DO-41"
-			(at 135.89 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "d227b331-9812-48b9-95e5-10809b5914b6")
-		)
-		(pin "2"
-			(uuid "0015f744-45ea-4626-9f73-a8cdcc286d20")
-		)
-		(instances
-			(project ""
-				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/dc45a2ff-df18-49a4-81ff-80d10381c9e9"
-					(reference "D2")
 					(unit 1)
 				)
 			)

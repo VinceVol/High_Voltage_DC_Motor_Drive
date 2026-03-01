@@ -107,6 +107,16 @@
 	)
 	(wire
 		(pts
+			(xy 110.49 62.23) (xy 121.92 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a603dfc2-5863-4e64-ae12-5b2a1c3b0d5f")
+	)
+	(wire
+		(pts
 			(xy 129.54 83.82) (xy 129.54 97.79)
 		)
 		(stroke
@@ -136,7 +146,7 @@
 		(uuid "ed6ea736-2e3a-4134-95a5-16de9593c0c2")
 	)
 	(sheet
-		(at 39.37 24.13)
+		(at 87.63 58.42)
 		(size 22.86 13.97)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -152,7 +162,7 @@
 		)
 		(uuid "1fa0373b-ff98-4bf0-acad-d32450f2dcd0")
 		(property "Sheetname" "Power"
-			(at 39.37 23.4184 0)
+			(at 87.63 57.7084 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -161,12 +171,22 @@
 			)
 		)
 		(property "Sheetfile" "Power.kicad_sch"
-			(at 39.37 38.6846 0)
+			(at 87.63 72.9746 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left top)
+			)
+		)
+		(pin "MCU_PreCharge" input
+			(at 110.49 62.23 0)
+			(uuid "0af5e42b-e238-4d48-8203-8d18cc7b8333")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 			)
 		)
 		(instances
@@ -448,6 +468,16 @@
 		(pin "pwm_b_mcu" output
 			(at 149.86 83.82 270)
 			(uuid "02d8c849-578a-4258-b079-3e8d011099fa")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "pre_charge_mcu" output
+			(at 121.92 62.23 180)
+			(uuid "e03e3b99-b2ff-48ae-ba86-6e11b681b401")
 			(effects
 				(font
 					(size 1.27 1.27)

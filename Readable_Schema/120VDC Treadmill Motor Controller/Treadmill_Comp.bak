@@ -22,7 +22,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Treadmill_Feet:Infineon_PG-DSO-8-41"
 			(at 0 0 0)
 			(effects
 				(font
