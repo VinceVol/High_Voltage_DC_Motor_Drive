@@ -5,6 +5,196 @@
 	(uuid "af2fda28-8680-40e9-a997-00814b61acb7")
 	(paper "A4")
 	(lib_symbols
+		(symbol "Connector:Screw_Terminal_01x02"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 0 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Screw_Terminal_01x02"
+				(at 0 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "screw terminal"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "TerminalBlock*:*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Screw_Terminal_01x02_1_1"
+				(rectangle
+					(start -1.27 1.27)
+					(end 1.27 -3.81)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.5334 0.3302) (xy 0.3302 -0.508)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.5334 -2.2098) (xy 0.3302 -3.048)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.3556 0.508) (xy 0.508 -0.3302)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.3556 -2.032) (xy 0.508 -2.8702)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 0 0)
+					(radius 0.635)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 0 -2.54)
+					(radius 0.635)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -2.54 0)
+					(length 3.81)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Connector_Generic:Conn_01x03"
 			(pin_names
 				(offset 1.016)
@@ -2502,7 +2692,7 @@
 	)
 	(rectangle
 		(start 41.91 78.74)
-		(end 264.16 106.68)
+		(end 267.97 106.68)
 		(stroke
 			(width 0)
 			(type dot)
@@ -2683,6 +2873,12 @@
 		(uuid "6da034cf-93ed-4586-ac9e-d1b8f1ebc3b6")
 	)
 	(junction
+		(at 250.19 90.17)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "af4d1d46-dc3d-4686-8585-4c9f10e2fd63")
+	)
+	(junction
 		(at 82.55 154.94)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2720,7 +2916,7 @@
 	)
 	(wire
 		(pts
-			(xy 176.53 97.79) (xy 184.15 97.79)
+			(xy 173.99 97.79) (xy 184.15 97.79)
 		)
 		(stroke
 			(width 0)
@@ -2970,13 +3166,23 @@
 	)
 	(wire
 		(pts
-			(xy 168.91 97.79) (xy 161.29 97.79)
+			(xy 161.29 97.79) (xy 171.45 97.79)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "59b8e3dd-4edd-4923-a3dc-16b6b711573b")
+	)
+	(wire
+		(pts
+			(xy 250.19 90.17) (xy 252.73 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5eb8d4ee-3e9b-4752-9a3f-841bbd637257")
 	)
 	(wire
 		(pts
@@ -3140,6 +3346,16 @@
 	)
 	(wire
 		(pts
+			(xy 250.19 90.17) (xy 250.19 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9ef28268-608c-4be3-b5da-8d66756a1db9")
+	)
+	(wire
+		(pts
 			(xy 195.58 49.53) (xy 191.77 49.53)
 		)
 		(stroke
@@ -3200,7 +3416,7 @@
 	)
 	(wire
 		(pts
-			(xy 234.95 90.17) (xy 245.11 90.17)
+			(xy 234.95 90.17) (xy 250.19 90.17)
 		)
 		(stroke
 			(width 0)
@@ -3390,6 +3606,16 @@
 	)
 	(wire
 		(pts
+			(xy 250.19 100.33) (xy 250.19 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fc26d5c2-b0c9-4b03-b9f6-cd893560af96")
+	)
+	(wire
+		(pts
 			(xy 158.75 71.12) (xy 158.75 69.85)
 		)
 		(stroke
@@ -3490,7 +3716,7 @@
 	)
 	(global_label "170V Rect"
 		(shape output)
-		(at 245.11 90.17 0)
+		(at 252.73 90.17 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3500,7 +3726,7 @@
 		)
 		(uuid "24ba87e1-4bd1-4fee-803e-e8bb5e4f7d3d")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 257.9528 90.17 0)
+			(at 265.5728 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3671,6 +3897,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND1")
+		(at 250.19 102.87 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "0c435531-c8f9-48df-bb12-4b41e815450d")
+		(property "Reference" "#PWR028"
+			(at 250.19 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "HV_GND"
+			(at 258.064 103.124 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 250.19 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 250.19 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND1\" , ground"
+			(at 250.19 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4d144795-b380-4f6b-b74e-c8f23577cac3")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0"
+					(reference "#PWR028")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 90.17 66.04 0)
 		(unit 1)
@@ -3806,6 +4098,74 @@
 	)
 	(symbol
 		(lib_id "Device:R")
+		(at 172.72 115.57 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board no)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2e8538fc-9c82-496e-b1f0-7fb335c746db")
+		(property "Reference" "R26"
+			(at 172.72 109.22 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "HSA50330RJ"
+			(at 172.72 111.76 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 172.72 117.348 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1773035&DocType=DS&DocLang=English"
+			(at 172.72 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "PreCharge Resistor"
+			(at 172.72 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "abc65bfd-bf81-4021-861b-dfaf47c79783")
+		)
+		(pin "2"
+			(uuid "a62877f3-bc9e-4c75-887d-82e053451c79")
+		)
+		(instances
+			(project ""
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0"
+					(reference "R26")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
 		(at 240.03 57.15 90)
 		(mirror x)
 		(unit 1)
@@ -3867,6 +4227,74 @@
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0"
 					(reference "R25")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 172.72 74.93 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "3471b810-501b-4c34-a3f3-80d58743c751")
+		(property "Reference" "R24"
+			(at 170.434 74.676 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10"
+			(at 172.72 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
+			(at 174.498 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDP0000/AOA0000C337.pdf"
+			(at 172.72 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "ERJ-UP3J100V"
+			(at 172.72 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ab4fd3ac-aa79-458f-a38c-51d72e5b32af")
+		)
+		(pin "2"
+			(uuid "05021311-3563-4971-b4c3-41ea27b6bfa6")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0"
+					(reference "R24")
 					(unit 1)
 				)
 			)
@@ -4568,6 +4996,76 @@
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0"
 					(reference "C7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Screw_Terminal_01x02")
+		(at 171.45 102.87 90)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8aa6aaa6-4927-4528-b7d2-eb7780737fd6")
+		(property "Reference" "J7"
+			(at 168.656 103.378 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "OSTT7020150"
+			(at 168.91 101.346 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Treadmill_Feet:CONN2_OSTT7020150_OST"
+			(at 171.45 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/388/OSTT7xx0150.pdf"
+			(at 171.45 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 171.45 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "07e7056d-65f1-426c-94bb-8d93823985b7")
+		)
+		(pin "2"
+			(uuid "94af21a1-d316-4494-8053-ecd3a3100b6c")
+		)
+		(instances
+			(project ""
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0"
+					(reference "J7")
 					(unit 1)
 				)
 			)
@@ -5375,31 +5873,24 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 172.72 97.79 90)
+		(at 250.19 96.52 0)
+		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "ec3d6a7b-db42-4caf-9c6f-8a81fed69c04")
-		(property "Reference" "R26"
-			(at 172.72 95.25 90)
+		(uuid "e6d5819e-17e2-49fb-8e0c-668168632521")
+		(property "Reference" "R33"
+			(at 247.904 96.266 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "R"
-			(at 172.72 97.79 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 172.72 99.568 90)
+		(property "Value" "HVCB2512FKC100K"
+			(at 250.19 96.52 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5407,8 +5898,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
-			(at 172.72 97.79 0)
+		(property "Footprint" "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder"
+			(at 251.968 96.52 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5416,8 +5907,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Resistor"
-			(at 172.72 97.79 0)
+		(property "Datasheet" "https://www.seielect.com/catalog/SEI-HVC.pdf"
+			(at 250.19 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5425,16 +5916,24 @@
 				(hide yes)
 			)
 		)
-		(pin "2"
-			(uuid "8e75b3ef-622b-4c26-893d-f0831519aea7")
+		(property "Description" "100K"
+			(at 250.19 96.52 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
 		)
 		(pin "1"
-			(uuid "af4e3bf5-5b17-46ae-9477-92e0ab9190c6")
+			(uuid "28f6b617-b03b-4223-8d2e-384f9ac07d9f")
+		)
+		(pin "2"
+			(uuid "c8ba223e-2b51-4a85-a595-b15446d644fc")
 		)
 		(instances
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0"
-					(reference "R26")
+					(reference "R33")
 					(unit 1)
 				)
 			)
@@ -5505,74 +6004,6 @@
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0"
 					(reference "C17")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 172.72 74.93 0)
-		(mirror x)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "f9385b07-053e-4b2b-909f-c0f366a5417a")
-		(property "Reference" "R24"
-			(at 175.006 75.184 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "10"
-			(at 172.72 74.93 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder"
-			(at 170.942 74.93 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDP0000/AOA0000C337.pdf"
-			(at 172.72 74.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "ERJ-UP3J100V"
-			(at 172.72 74.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "25be8640-7eb7-46ba-b371-06be62ead7d8")
-		)
-		(pin "2"
-			(uuid "8319a0f6-b79c-46e2-b148-293dcf8abc00")
-		)
-		(instances
-			(project "120VDC Treadmill Motor Controller"
-				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0"
-					(reference "R24")
 					(unit 1)
 				)
 			)
