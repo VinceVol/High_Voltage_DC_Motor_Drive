@@ -581,7 +581,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Simulation_SPICE:NMOS"
+		(symbol "Treadmill_Comp:IPP60R060P7XKSA1"
 			(pin_numbers
 				(hide yes)
 			)
@@ -591,8 +591,8 @@
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "Q"
-				(at 5.08 1.27 0)
+			(property "Reference" "Q2"
+				(at 6.35 1.2701 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -600,8 +600,8 @@
 					(justify left)
 				)
 			)
-			(property "Value" "NMOS"
-				(at 5.08 -1.27 0)
+			(property "Value" "IPP60R060P7XKSA1"
+				(at 6.096 7.112 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -609,7 +609,7 @@
 					(justify left)
 				)
 			)
-			(property "Footprint" ""
+			(property "Footprint" "Package_TO_SOT_THT:TO-220-3_Vertical"
 				(at 5.08 2.54 0)
 				(effects
 					(font
@@ -618,7 +618,7 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs"
+			(property "Datasheet" "https://www.infineon.com/dgdl/Infineon-IPP60R060P7-DS-v02_00-EN.pdf?fileId=5546d4625acbae4c015accdf20660227"
 				(at 0 -12.7 0)
 				(effects
 					(font
@@ -672,7 +672,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "NMOS_0_1"
+			(symbol "IPP60R060P7XKSA1_0_1"
 				(polyline
 					(pts
 						(xy 0.254 1.905) (xy 0.254 -1.905)
@@ -839,7 +839,7 @@
 					)
 				)
 			)
-			(symbol "NMOS_1_1"
+			(symbol "IPP60R060P7XKSA1_1_1"
 				(pin input line
 					(at -5.08 0 0)
 					(length 2.54)
@@ -850,7 +850,7 @@
 							)
 						)
 					)
-					(number "2"
+					(number "1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -868,7 +868,7 @@
 							)
 						)
 					)
-					(number "1"
+					(number "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2448,6 +2448,12 @@
 		(uuid "125fa728-63d1-4471-b9d0-7ffca6d0154c")
 	)
 	(junction
+		(at 168.91 121.92)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "12cf9277-4f6f-4e1d-9266-8181073e7e98")
+	)
+	(junction
 		(at 36.83 45.72)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2502,6 +2508,12 @@
 		(uuid "3289d67e-faf8-440a-aeab-a9fced693815")
 	)
 	(junction
+		(at 168.91 88.9)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "38b406bf-10e5-4628-b1e6-7821d69f7adc")
+	)
+	(junction
 		(at 114.3 74.93)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2530,6 +2542,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "47e715e3-e603-4f96-a415-6a6141feb446")
+	)
+	(junction
+		(at 127 88.9)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "485bcf5e-fe83-4f64-81f2-e81a8c35940b")
 	)
 	(junction
 		(at 194.31 88.9)
@@ -2658,12 +2676,6 @@
 		(uuid "a6322cbe-5b1a-4220-939c-9828eb08a342")
 	)
 	(junction
-		(at 134.62 116.84)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "ac9fd43a-2ab4-45fd-a6ca-0142b8478df4")
-	)
-	(junction
 		(at 139.7 110.49)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2682,12 +2694,6 @@
 		(uuid "b1acc474-aa5d-469c-ac4c-64840401c94e")
 	)
 	(junction
-		(at 168.91 88.9)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "b5be40d0-77a7-4bc3-a5a6-d03e15f25f29")
-	)
-	(junction
 		(at 154.94 110.49)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2698,12 +2704,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b8b4b2f9-959a-4e85-9a56-429c509a79f1")
-	)
-	(junction
-		(at 127 121.92)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "c11e6813-b2ff-46f2-b740-2429924b58d8")
 	)
 	(junction
 		(at 181.61 100.33)
@@ -2760,16 +2760,16 @@
 		(uuid "ef5c980a-c7e9-4f34-997c-3866fb84ac5b")
 	)
 	(junction
-		(at 127 88.9)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "f2663b2c-0c2a-4a34-b145-f46f37e5d388")
-	)
-	(junction
 		(at 48.26 111.76)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f49a4829-61e4-4a92-816a-542496bd3d73")
+	)
+	(junction
+		(at 127 121.92)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f69a2cc6-23fa-4539-ba54-44d761fa6d53")
 	)
 	(junction
 		(at 102.87 30.48)
@@ -2782,12 +2782,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "fabc31b8-8d78-4bcf-9d0c-db7b82f83a57")
-	)
-	(junction
-		(at 168.91 121.92)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "fc044b04-6976-40cc-b72e-5acfa584f687")
 	)
 	(no_connect
 		(at 77.47 27.94)
@@ -3083,6 +3077,16 @@
 	)
 	(wire
 		(pts
+			(xy 134.62 127) (xy 134.62 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1c1f7492-069e-4902-9ca0-0aeda98b81b3")
+	)
+	(wire
+		(pts
 			(xy 127 132.08) (xy 127 133.35)
 		)
 		(stroke
@@ -3130,6 +3134,16 @@
 			(type default)
 		)
 		(uuid "22742e33-6b11-44f5-9d77-4e48f3601121")
+	)
+	(wire
+		(pts
+			(xy 127 121.92) (xy 127 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "249e3cb9-5f6a-41c6-9d7a-f30ab5e88358")
 	)
 	(wire
 		(pts
@@ -3513,16 +3527,6 @@
 	)
 	(wire
 		(pts
-			(xy 134.62 127) (xy 134.62 133.35)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4ce05eae-1378-4c83-a32b-c9653269e905")
-	)
-	(wire
-		(pts
 			(xy 114.3 100.33) (xy 134.62 100.33)
 		)
 		(stroke
@@ -3723,7 +3727,7 @@
 	)
 	(wire
 		(pts
-			(xy 134.62 116.84) (xy 134.62 118.11)
+			(xy 134.62 110.49) (xy 134.62 116.84)
 		)
 		(stroke
 			(width 0)
@@ -4313,16 +4317,6 @@
 	)
 	(wire
 		(pts
-			(xy 127 121.92) (xy 127 124.46)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a2ab0460-f4a8-4e35-bf50-74f179f493f5")
-	)
-	(wire
-		(pts
 			(xy 236.22 114.3) (xy 229.87 114.3)
 		)
 		(stroke
@@ -4520,16 +4514,6 @@
 			(type default)
 		)
 		(uuid "ba2a14f1-5949-4ee2-86de-bdd6a8d7be9a")
-	)
-	(wire
-		(pts
-			(xy 134.62 110.49) (xy 134.62 116.84)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bbb99b96-6d15-408f-b751-31ac8d26d610")
 	)
 	(wire
 		(pts
@@ -5718,107 +5702,6 @@
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
 					(reference "R11")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Simulation_SPICE:NMOS")
-		(at 163.83 88.9 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "135cdea2-0069-452a-82e5-99b0f58e8754")
-		(property "Reference" "Q3"
-			(at 157.48 87.6299 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "IPP60R060P7XKSA1"
-			(at 157.734 81.788 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-220-3_Vertical"
-			(at 158.75 86.36 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.infineon.com/dgdl/Infineon-IPP60R060P7-DS-v02_00-EN.pdf?fileId=5546d4625acbae4c015accdf20660227"
-			(at 163.83 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "N-MOSFET transistor, drain/source/gate"
-			(at 163.83 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" "NMOS"
-			(at 163.83 106.045 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Type" "VDMOS"
-			(at 163.83 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" "1=D 2=G 3=S"
-			(at 163.83 104.14 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "bd039392-43b2-41b0-94cd-2800c6b3d909")
-		)
-		(pin "3"
-			(uuid "06ace147-0199-4473-9925-dc9202acd866")
-		)
-		(pin "1"
-			(uuid "6cd8af01-dc26-4898-8bcb-45b564947cc4")
-		)
-		(instances
-			(project "120VDC Treadmill Motor Controller"
-				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
-					(reference "Q3")
 					(unit 1)
 				)
 			)
@@ -7102,6 +6985,107 @@
 		)
 	)
 	(symbol
+		(lib_id "Treadmill_Comp:IPP60R060P7XKSA1")
+		(at 163.83 88.9 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "69815a4b-d4b3-45a5-aee5-875fd5157c05")
+		(property "Reference" "Q4"
+			(at 157.48 87.6299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "IPP60R060P7XKSA1"
+			(at 157.48 90.1699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_THT:TO-220-3_Vertical"
+			(at 158.75 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.infineon.com/dgdl/Infineon-IPP60R060P7-DS-v02_00-EN.pdf?fileId=5546d4625acbae4c015accdf20660227"
+			(at 163.83 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "N-MOSFET transistor, drain/source/gate"
+			(at 163.83 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "NMOS"
+			(at 163.83 106.045 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" "VDMOS"
+			(at 163.83 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=D 2=G 3=S"
+			(at 163.83 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "6622933a-44b6-417d-a8e1-e3a078d11280")
+		)
+		(pin "1"
+			(uuid "a696fec8-aaa9-4bc8-babc-daa50d118849")
+		)
+		(pin "3"
+			(uuid "5c80d4c3-da0e-43f2-be7f-a43106df7bf9")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
+					(reference "Q4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Treadmill_Comp:UCC21530DWKR")
 		(at 66.04 104.14 0)
 		(unit 1)
@@ -7277,6 +7261,106 @@
 			(project ""
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
 					(reference "U2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Treadmill_Comp:IPP60R060P7XKSA1")
+		(at 132.08 88.9 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6b261017-6e91-4cf4-830b-8b319a3b830d")
+		(property "Reference" "Q2"
+			(at 138.43 87.6299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "IPP60R060P7XKSA1"
+			(at 138.43 90.1699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_THT:TO-220-3_Vertical"
+			(at 137.16 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.infineon.com/dgdl/Infineon-IPP60R060P7-DS-v02_00-EN.pdf?fileId=5546d4625acbae4c015accdf20660227"
+			(at 132.08 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "N-MOSFET transistor, drain/source/gate"
+			(at 132.08 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "NMOS"
+			(at 132.08 106.045 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" "VDMOS"
+			(at 132.08 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=D 2=G 3=S"
+			(at 132.08 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "00ed0ca0-2a81-436b-85f5-ff92c900a320")
+		)
+		(pin "1"
+			(uuid "7f4f0fd0-816f-4203-91b7-929f3fa72efd")
+		)
+		(pin "3"
+			(uuid "1b2215c7-e451-4349-99aa-f4c8d30a635a")
+		)
+		(instances
+			(project ""
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
+					(reference "Q2")
 					(unit 1)
 				)
 			)
@@ -8780,108 +8864,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Simulation_SPICE:NMOS")
-		(at 163.83 121.92 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "a4d8b52a-2d07-4c7b-9d34-b3b2eb26a8cb")
-		(property "Reference" "Q4"
-			(at 157.48 120.6499 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "IPP60R060P7XKSA1"
-			(at 157.48 123.1899 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-220-3_Vertical"
-			(at 158.75 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.infineon.com/dgdl/Infineon-IPP60R060P7-DS-v02_00-EN.pdf?fileId=5546d4625acbae4c015accdf20660227"
-			(at 163.83 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "N-MOSFET transistor, drain/source/gate"
-			(at 163.83 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" "NMOS"
-			(at 163.83 139.065 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Type" "VDMOS"
-			(at 163.83 140.97 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" "1=D 2=G 3=S"
-			(at 163.83 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "07bea463-d5c0-4ad0-a2a8-6e9aa7a3754d")
-		)
-		(pin "3"
-			(uuid "44b82640-dd99-45d4-9781-4232a8bc2506")
-		)
-		(pin "1"
-			(uuid "86701631-ee69-440e-a4ef-c67dbcf3e3f9")
-		)
-		(instances
-			(project "120VDC Treadmill Motor Controller"
-				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
-					(reference "Q4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 241.3 139.7 0)
 		(mirror y)
@@ -8943,6 +8925,107 @@
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
 					(reference "#PWR06")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Treadmill_Comp:IPP60R060P7XKSA1")
+		(at 132.08 121.92 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a8812cc4-19c6-4eb2-9fcf-7387ffd847f4")
+		(property "Reference" "Q1"
+			(at 138.43 120.6499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "IPP60R060P7XKSA1"
+			(at 138.43 123.1899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_THT:TO-220-3_Vertical"
+			(at 137.16 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.infineon.com/dgdl/Infineon-IPP60R060P7-DS-v02_00-EN.pdf?fileId=5546d4625acbae4c015accdf20660227"
+			(at 132.08 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "N-MOSFET transistor, drain/source/gate"
+			(at 132.08 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "NMOS"
+			(at 132.08 139.065 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" "VDMOS"
+			(at 132.08 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=D 2=G 3=S"
+			(at 132.08 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "02fdac56-8b22-4a3d-82ed-97ecc09b283d")
+		)
+		(pin "1"
+			(uuid "81bfc048-63ea-4be1-9308-54991c03e027")
+		)
+		(pin "3"
+			(uuid "a0168fed-a946-48d6-81cd-d082aff98b38")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
+					(reference "Q1")
 					(unit 1)
 				)
 			)
@@ -9418,107 +9501,6 @@
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
 					(reference "C8")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Simulation_SPICE:NMOS")
-		(at 132.08 121.92 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "d048074b-dc9a-4982-8143-5f488ff41624")
-		(property "Reference" "Q1"
-			(at 138.43 120.6499 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "IPP60R060P7XKSA1"
-			(at 138.43 123.1899 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-220-3_Vertical"
-			(at 137.16 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.infineon.com/dgdl/Infineon-IPP60R060P7-DS-v02_00-EN.pdf?fileId=5546d4625acbae4c015accdf20660227"
-			(at 132.08 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "N-MOSFET transistor, drain/source/gate"
-			(at 132.08 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" "NMOS"
-			(at 132.08 139.065 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Type" "VDMOS"
-			(at 132.08 140.97 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" "1=D 2=G 3=S"
-			(at 132.08 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "c2c88c60-de14-42ad-83c4-19836c9f05e5")
-		)
-		(pin "3"
-			(uuid "7f8764bd-2c31-4b81-a170-38964b9957de")
-		)
-		(pin "1"
-			(uuid "085cd131-609b-4f61-bb75-d05eef0b921d")
-		)
-		(instances
-			(project "120VDC Treadmill Motor Controller"
-				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
-					(reference "Q1")
 					(unit 1)
 				)
 			)
@@ -10164,6 +10146,107 @@
 		)
 	)
 	(symbol
+		(lib_id "Treadmill_Comp:IPP60R060P7XKSA1")
+		(at 163.83 121.92 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e4e5ceb0-c09a-40f6-a582-3156802792a0")
+		(property "Reference" "Q3"
+			(at 157.48 120.6499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "IPP60R060P7XKSA1"
+			(at 157.48 123.1899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_THT:TO-220-3_Vertical"
+			(at 158.75 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.infineon.com/dgdl/Infineon-IPP60R060P7-DS-v02_00-EN.pdf?fileId=5546d4625acbae4c015accdf20660227"
+			(at 163.83 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "N-MOSFET transistor, drain/source/gate"
+			(at 163.83 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "NMOS"
+			(at 163.83 139.065 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" "VDMOS"
+			(at 163.83 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=D 2=G 3=S"
+			(at 163.83 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "dbd1da07-8150-4c00-a901-75c0417a0a14")
+		)
+		(pin "1"
+			(uuid "ec95436a-1571-4b03-8733-4f9d3fed5e96")
+		)
+		(pin "3"
+			(uuid "bd62a837-a52c-4362-a9d0-7f3ef1cd6453")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
+					(reference "Q3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 102.87 26.67 0)
 		(unit 1)
@@ -10498,105 +10581,6 @@
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
 					(reference "R29")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Simulation_SPICE:NMOS")
-		(at 132.08 88.9 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "f1755387-851c-4db8-9eda-228f8144f1d0")
-		(property "Reference" "Q2"
-			(at 138.43 87.6299 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "IPP60R060P7XKSA1"
-			(at 138.176 81.788 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-220-3_Vertical"
-			(at 137.16 86.36 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.infineon.com/dgdl/Infineon-IPP60R060P7-DS-v02_00-EN.pdf?fileId=5546d4625acbae4c015accdf20660227"
-			(at 132.08 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "N-MOSFET transistor, drain/source/gate"
-			(at 132.08 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" "NMOS"
-			(at 132.08 106.045 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Type" "VDMOS"
-			(at 132.08 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" "1=D 2=G 3=S"
-			(at 132.08 104.14 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "37b6aab0-d0ed-45f9-b156-065c56b3a69d")
-		)
-		(pin "3"
-			(uuid "b83c3eef-983e-4788-8ba2-7d72ed2aa4ff")
-		)
-		(pin "1"
-			(uuid "eed56e99-2b24-40f4-a116-dbd7263bb2b7")
-		)
-		(instances
-			(project "120VDC Treadmill Motor Controller"
-				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
-					(reference "Q2")
 					(unit 1)
 				)
 			)
