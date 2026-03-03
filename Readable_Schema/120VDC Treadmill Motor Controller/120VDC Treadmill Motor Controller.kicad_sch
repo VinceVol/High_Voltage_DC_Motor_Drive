@@ -27,6 +27,26 @@
 	)
 	(wire
 		(pts
+			(xy 123.19 100.33) (xy 133.35 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1c0d0767-68c7-4172-969c-d8de680926c4")
+	)
+	(wire
+		(pts
+			(xy 106.68 82.55) (xy 90.17 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1e57b8c3-d542-4fa1-b33f-3213c667f81d")
+	)
+	(wire
+		(pts
 			(xy 144.78 104.14) (xy 156.21 104.14)
 		)
 		(stroke
@@ -34,6 +54,36 @@
 			(type default)
 		)
 		(uuid "29f58a88-393a-43f6-9715-bacc48479050")
+	)
+	(wire
+		(pts
+			(xy 106.68 96.52) (xy 106.68 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2dccff64-0d04-47f4-aef4-9790555ea8c7")
+	)
+	(wire
+		(pts
+			(xy 137.16 83.82) (xy 137.16 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "32ecb1f2-5090-47c0-8b75-6c23030cd7ec")
+	)
+	(wire
+		(pts
+			(xy 133.35 100.33) (xy 133.35 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3861e459-0600-436e-b173-555a34dcc77f")
 	)
 	(wire
 		(pts
@@ -74,6 +124,16 @@
 			(type default)
 		)
 		(uuid "623ff26d-d281-4bae-a8aa-a7e8fcf778b2")
+	)
+	(wire
+		(pts
+			(xy 90.17 82.55) (xy 90.17 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "62596c8a-474f-493c-ba3b-a1b01a3deb01")
 	)
 	(wire
 		(pts
@@ -137,6 +197,16 @@
 	)
 	(wire
 		(pts
+			(xy 137.16 104.14) (xy 123.19 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ddecdd86-12b2-4bab-8126-ea356857ab12")
+	)
+	(wire
+		(pts
 			(xy 123.19 107.95) (xy 156.21 107.95)
 		)
 		(stroke
@@ -189,6 +259,16 @@
 				(justify right)
 			)
 		)
+		(pin "v_sense_out" output
+			(at 90.17 72.39 270)
+			(uuid "98d4d77c-dac4-47b6-88c1-695792c1fb83")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
 		(instances
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd"
@@ -204,7 +284,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
 			(type solid)
@@ -214,7 +293,7 @@
 		)
 		(uuid "23f081f2-fcb5-4e72-b320-a9766db11ad0")
 		(property "Sheetname" "Feedback"
-			(at 104.14 95.8084 0)
+			(at 112.776 95.758 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -264,6 +343,36 @@
 		(pin "EN_Drives" output
 			(at 123.19 107.95 0)
 			(uuid "5abe190b-83f1-40ac-8ab6-592032d2121a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "adc_gnd" output
+			(at 123.19 100.33 0)
+			(uuid "ff8bd689-7848-4662-9b01-c0ab1f13c785")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "cap_vsense" output
+			(at 123.19 104.14 0)
+			(uuid "f9f38508-a356-4334-b616-1c6278d38642")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "HV_CAPS" input
+			(at 106.68 96.52 90)
+			(uuid "67706258-d9fb-4bd2-99ae-baffe552ea3f")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -478,6 +587,26 @@
 		(pin "pre_charge_mcu" output
 			(at 121.92 62.23 180)
 			(uuid "e03e3b99-b2ff-48ae-ba86-6e11b681b401")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "ADC_GND" output
+			(at 133.35 83.82 270)
+			(uuid "6450202c-3765-4ce9-b794-3a40a837593f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "v_sense_HV" output
+			(at 137.16 83.82 270)
+			(uuid "43d2cc9f-139c-4209-9d67-ef9d8ca00fc2")
 			(effects
 				(font
 					(size 1.27 1.27)

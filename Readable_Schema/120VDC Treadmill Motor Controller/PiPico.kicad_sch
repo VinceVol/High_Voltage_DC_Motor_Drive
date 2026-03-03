@@ -1790,19 +1790,6 @@
 		(uuid 0ff6dc55-29f8-4c33-99e2-16017ab2f250)
 	)
 	(rectangle
-		(start 83.82 116.84)
-		(end 105.273 123.19)
-		(stroke
-			(width 0)
-			(type dot)
-			(color 0 0 255 1)
-		)
-		(fill
-			(type none)
-		)
-		(uuid 31527b8f-9c1e-4435-9703-d399c9643063)
-	)
-	(rectangle
 		(start 189.23 85.09)
 		(end 217.17 96.52)
 		(stroke
@@ -1814,19 +1801,6 @@
 			(type none)
 		)
 		(uuid 34cd8bda-f036-4f4b-8dff-242f9485ea72)
-	)
-	(rectangle
-		(start 189.23 103.632)
-		(end 217.17 107.95)
-		(stroke
-			(width 0)
-			(type dot)
-			(color 0 0 255 1)
-		)
-		(fill
-			(type none)
-		)
-		(uuid 9798028a-2d72-4ef2-842f-eccefa9d42fd)
 	)
 	(rectangle
 		(start 83.82 101.6)
@@ -1888,6 +1862,19 @@
 		)
 		(uuid "051c0b60-fada-4138-b654-903d0050ede7")
 	)
+	(text "Extra!"
+		(exclude_from_sim no)
+		(at 93.726 121.92 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
+				(color 255 0 0 1)
+			)
+		)
+		(uuid "2183d3fd-d989-49b2-9ed8-95feb9efd7b0")
+	)
 	(text "SPI1_rx"
 		(exclude_from_sim no)
 		(at 93.472 131.318 0)
@@ -1898,16 +1885,18 @@
 		)
 		(uuid "3ec44305-b0b8-4832-bfd5-86b608dbba34")
 	)
-	(text "Speed Control Via Knob"
+	(text "Extra!"
 		(exclude_from_sim no)
-		(at 229.362 105.918 0)
+		(at 206.756 105.664 0)
 		(effects
 			(font
 				(size 1.27 1.27)
-				(color 0 0 255 1)
+				(thickness 0.254)
+				(bold yes)
+				(color 255 0 0 1)
 			)
 		)
-		(uuid "573da2d6-975e-417c-8425-f65ba4ec66ea")
+		(uuid "40281296-1720-487a-86df-855c109f7e6b")
 	)
 	(text "UART1_rx"
 		(exclude_from_sim no)
@@ -1959,6 +1948,19 @@
 		)
 		(uuid "92624743-26be-422f-ab04-a27f8ed2f0ae")
 	)
+	(text "Extra!"
+		(exclude_from_sim no)
+		(at 93.98 119.634 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
+				(color 255 0 0 1)
+			)
+		)
+		(uuid "97c8db43-aa87-48e3-99ad-150efd266949")
+	)
 	(text "SPI1_cs"
 		(exclude_from_sim no)
 		(at 93.726 133.858 0)
@@ -1980,17 +1982,6 @@
 		)
 		(uuid "a843dc86-0c60-4313-9866-c685ca7ef4bf")
 	)
-	(text "Speed Control Via Knob"
-		(exclude_from_sim no)
-		(at 71.374 119.888 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(color 0 0 255 1)
-			)
-		)
-		(uuid "cb066559-7eec-424a-b9ef-14f268087b68")
-	)
 	(text "SPI1_sck"
 		(exclude_from_sim no)
 		(at 94.234 126.238 0)
@@ -2001,9 +1992,9 @@
 		)
 		(uuid "cefa8eb8-0e02-4424-b353-934b6c11dc15")
 	)
-	(text "Feed override??"
+	(text "Extra!"
 		(exclude_from_sim no)
-		(at 78.486 110.744 0)
+		(at 97.282 110.744 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2095,10 +2086,6 @@
 		(uuid "639479c7-8b98-4f54-a43b-8eb8d21753d3")
 	)
 	(no_connect
-		(at 118.11 107.95)
-		(uuid "7599bd69-ee03-4642-b32e-2ce954047833")
-	)
-	(no_connect
 		(at 118.11 90.17)
 		(uuid "77786bf9-131c-473f-9944-a6d8499876e0")
 	)
@@ -2111,16 +2098,18 @@
 		(uuid "99f6ebbb-8113-4946-abe6-4b7dafb50576")
 	)
 	(no_connect
-		(at 118.11 105.41)
-		(uuid "9ae4a927-ff42-48e7-8033-f36d70d639ec")
-	)
-	(no_connect
 		(at 140.97 62.23)
 		(uuid "b0b5ef1a-41a5-4222-96f7-2aae4cda2f31")
 	)
-	(no_connect
-		(at 118.11 85.09)
-		(uuid "fe52008a-aff6-4a00-95b4-8a1eade47ea5")
+	(wire
+		(pts
+			(xy 118.11 105.41) (xy 115.57 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0508a9b0-ac8f-4282-9845-cc2383022d32")
 	)
 	(wire
 		(pts
@@ -2141,6 +2130,16 @@
 			(type default)
 		)
 		(uuid "0b593c6c-6f43-4dd1-965a-8fd658001667")
+	)
+	(wire
+		(pts
+			(xy 203.2 107.95) (xy 203.2 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0bc37e75-832a-44bc-a494-64e78d542b89")
 	)
 	(wire
 		(pts
@@ -2284,16 +2283,6 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 119.38) (xy 96.52 119.38)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "42154db9-0c80-4583-ab0d-8daf2a322296")
-	)
-	(wire
-		(pts
 			(xy 90.17 137.16) (xy 96.52 137.16)
 		)
 		(stroke
@@ -2304,17 +2293,7 @@
 	)
 	(wire
 		(pts
-			(xy 200.66 105.41) (xy 210.82 105.41)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "422ed4db-0d31-46b6-80a9-638d40ea0bd0")
-	)
-	(wire
-		(pts
-			(xy 111.76 127) (xy 111.76 110.49)
+			(xy 111.76 127) (xy 111.76 111.76)
 		)
 		(stroke
 			(width 0)
@@ -2341,6 +2320,26 @@
 			(type default)
 		)
 		(uuid "5085807b-1240-4127-a416-aa09c2998ba3")
+	)
+	(wire
+		(pts
+			(xy 116.84 110.49) (xy 110.49 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "52cd4048-3360-4445-a8f8-041af05ff010")
+	)
+	(wire
+		(pts
+			(xy 109.22 109.22) (xy 109.22 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "564f44f3-9bf6-43e3-8d04-c0ed24b5263f")
 	)
 	(wire
 		(pts
@@ -2374,6 +2373,16 @@
 	)
 	(wire
 		(pts
+			(xy 90.17 121.92) (xy 110.49 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5d9c1b5e-087a-4498-bb04-06cfc40d24fb")
+	)
+	(wire
+		(pts
 			(xy 95.25 90.17) (xy 95.25 92.71)
 		)
 		(stroke
@@ -2381,6 +2390,16 @@
 			(type default)
 		)
 		(uuid "5f1951d0-abba-4e63-87f7-cdb25dfe0871")
+	)
+	(wire
+		(pts
+			(xy 200.66 107.95) (xy 203.2 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6838e5f8-4867-46d2-8c2d-7694ab9b500d")
 	)
 	(wire
 		(pts
@@ -2421,6 +2440,26 @@
 			(type default)
 		)
 		(uuid "78679828-899e-4268-8cea-f3cf2056c762")
+	)
+	(wire
+		(pts
+			(xy 118.11 111.76) (xy 118.11 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7ad4ad66-e649-40e3-a0e0-7b0ddad404a1")
+	)
+	(wire
+		(pts
+			(xy 115.57 85.09) (xy 118.11 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7cb58397-1df2-4d69-a58d-b72aad98ef68")
 	)
 	(wire
 		(pts
@@ -2474,6 +2513,26 @@
 	)
 	(wire
 		(pts
+			(xy 109.22 119.38) (xy 90.17 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "96e39141-741a-4a46-a601-fcc61b8407eb")
+	)
+	(wire
+		(pts
+			(xy 118.11 107.95) (xy 116.84 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "99969690-fb32-435f-80a4-7770ae23f5c8")
+	)
+	(wire
+		(pts
 			(xy 114.3 107.95) (xy 114.3 102.87)
 		)
 		(stroke
@@ -2514,16 +2573,6 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 121.92) (xy 96.52 121.92)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c27d5b3d-3d22-4c40-8e49-8736137739c5")
-	)
-	(wire
-		(pts
 			(xy 140.97 135.89) (xy 140.97 138.43)
 		)
 		(stroke
@@ -2531,6 +2580,16 @@
 			(type default)
 		)
 		(uuid "c2965ab3-c900-4e52-baf1-176fab41e9fb")
+	)
+	(wire
+		(pts
+			(xy 116.84 107.95) (xy 116.84 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c43b386c-aaa6-40bc-9c08-6e5afccf7142")
 	)
 	(wire
 		(pts
@@ -2551,6 +2610,16 @@
 			(type default)
 		)
 		(uuid "cad435cc-e2f7-4683-bc3c-88e0a41be399")
+	)
+	(wire
+		(pts
+			(xy 115.57 109.22) (xy 109.22 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cb36fb10-b6ae-4186-8549-cf6aea0c46f7")
 	)
 	(wire
 		(pts
@@ -2614,6 +2683,16 @@
 	)
 	(wire
 		(pts
+			(xy 115.57 105.41) (xy 115.57 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d7552341-0b53-4633-b8b0-763c6041ac22")
+	)
+	(wire
+		(pts
 			(xy 113.03 129.54) (xy 113.03 113.03)
 		)
 		(stroke
@@ -2664,7 +2743,17 @@
 	)
 	(wire
 		(pts
-			(xy 111.76 110.49) (xy 118.11 110.49)
+			(xy 110.49 110.49) (xy 110.49 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "df8ba6cd-40eb-4ea0-890d-7e2c22c42528")
+	)
+	(wire
+		(pts
+			(xy 111.76 111.76) (xy 118.11 111.76)
 		)
 		(stroke
 			(width 0)
@@ -2724,6 +2813,16 @@
 	)
 	(wire
 		(pts
+			(xy 203.2 105.41) (xy 210.82 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e71b5d27-0e0b-4e0b-9645-63481a04a717")
+	)
+	(wire
+		(pts
 			(xy 163.83 123.19) (xy 167.64 123.19)
 		)
 		(stroke
@@ -2752,55 +2851,25 @@
 		)
 		(uuid "fd5f9de8-41e0-4f7a-8bed-184eb235e096")
 	)
-	(label "pot_adc"
-		(at 96.52 119.38 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "30107997-4c5d-45c7-b470-fd856879abc7")
-	)
-	(label "ADC_GND"
-		(at 96.52 121.92 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "6af31087-8872-4822-bf53-303cf394ea3d")
-	)
-	(label "ADC_GND"
-		(at 208.28 102.87 180)
+	(label "GP0"
+		(at 115.57 85.09 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right bottom)
 		)
-		(uuid "705eecd6-b837-4058-a03e-ad4ca54d696d")
+		(uuid "57d466c2-7ab7-4716-a253-6f78f080c139")
 	)
-	(label "pot_adc"
-		(at 168.91 118.11 0)
+	(label "GP0"
+		(at 200.66 107.95 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right bottom)
 		)
-		(uuid "a80e3373-5e33-46f8-a0f2-2d75b34cca4c")
-	)
-	(label "ADC_GND"
-		(at 168.91 123.19 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "cb92f3c4-550c-4220-87d9-74ef11697c27")
+		(uuid "d88bedf8-9df9-4bae-acff-048c0927bde4")
 	)
 	(global_label "3v3 MCU"
 		(shape input)
@@ -2934,27 +3003,16 @@
 			)
 		)
 	)
-	(global_label "3v3 MCU"
-		(shape input)
-		(at 200.66 105.41 180)
-		(fields_autoplaced yes)
+	(hierarchical_label "v_sense_HV"
+		(shape output)
+		(at 168.91 118.11 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right)
+			(justify left)
 		)
-		(uuid "b0462492-758a-44ff-90df-92e8fb5dc315")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 189.2687 105.41 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
+		(uuid "290fbf62-b58b-4bb5-83cd-f1bc46c82967")
 	)
 	(hierarchical_label "pwm_a_mcu"
 		(shape output)
@@ -2967,6 +3025,17 @@
 		)
 		(uuid "3492345c-aa9d-4c3b-b088-355470b2584f")
 	)
+	(hierarchical_label "ADC_GND"
+		(shape input)
+		(at 168.91 123.19 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "4caf554f-8d16-4049-8f7b-697b3a4e0118")
+	)
 	(hierarchical_label "current_sense"
 		(shape input)
 		(at 168.91 113.03 0)
@@ -2977,6 +3046,17 @@
 			(justify left)
 		)
 		(uuid "4d7cbe28-3ed9-456f-95ca-35bf4367e2c5")
+	)
+	(hierarchical_label "ADC_GND"
+		(shape output)
+		(at 208.28 102.87 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "4f0f60f3-7f67-48d0-b217-015f4db2657d")
 	)
 	(hierarchical_label "dir_b_mcu"
 		(shape output)
