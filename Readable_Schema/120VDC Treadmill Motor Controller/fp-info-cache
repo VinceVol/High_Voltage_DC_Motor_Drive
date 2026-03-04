@@ -1,4 +1,4 @@
-27151255331062107
+27153027921354525
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -106609,6 +106609,13 @@ CONV_DHP1-5-S3-M
 0
 5
 5
+Treadmill_Feet
+CONV_IRM-30-24
+
+
+0
+4
+4
 Treadmill_Feet
 CUI_TB005_-762-03BE
 
