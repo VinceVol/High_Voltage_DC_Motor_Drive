@@ -3382,7 +3382,7 @@
 		)
 		(uuid "d88bedf8-9df9-4bae-acff-048c0927bde4")
 	)
-	(global_label "5v 5w"
+	(global_label "5v 15w"
 		(shape input)
 		(at 41.91 118.11 180)
 		(fields_autoplaced yes)
@@ -3394,7 +3394,7 @@
 		)
 		(uuid "0791cb42-b7c9-4d2b-a0ca-9c996943829b")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 33.2401 118.11 0)
+			(at 32.0306 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3426,7 +3426,7 @@
 			)
 		)
 	)
-	(global_label "5v 5w"
+	(global_label "5v 15w"
 		(shape input)
 		(at 135.89 46.99 90)
 		(fields_autoplaced yes)
@@ -3438,7 +3438,7 @@
 		)
 		(uuid "1a8af526-a685-4372-887e-a3d17433eaa2")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 135.89 38.3201 90)
+			(at 135.89 37.1106 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3514,7 +3514,7 @@
 			)
 		)
 	)
-	(global_label "5v 5w"
+	(global_label "5v 15w"
 		(shape input)
 		(at 41.91 90.17 90)
 		(fields_autoplaced yes)
@@ -3526,7 +3526,7 @@
 		)
 		(uuid "96413722-645b-4422-a5f0-95a88c8da0ba")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 41.91 81.5001 90)
+			(at 41.91 80.2906 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3536,7 +3536,7 @@
 			)
 		)
 	)
-	(global_label "5v 5w"
+	(global_label "5v 15w"
 		(shape input)
 		(at 204.47 80.01 180)
 		(fields_autoplaced yes)
@@ -3548,7 +3548,7 @@
 		)
 		(uuid "c0938241-1c03-4e62-bca9-51a66b484fc8")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 195.8001 80.01 0)
+			(at 194.5906 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)

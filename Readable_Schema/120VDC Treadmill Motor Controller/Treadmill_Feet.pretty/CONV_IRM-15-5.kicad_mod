@@ -1,0 +1,221 @@
+(footprint "CONV_IRM-15-5"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at -21.844 -15.621 0)
+		(layer "F.SilkS")
+		(uuid "39de9a6a-d71d-4dde-9b67-150134c6ced3")
+		(effects
+			(font
+				(size 1.4 1.4)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "CONV_IRM-15-5"
+		(at -14.732 15.621 0)
+		(layer "F.Fab")
+		(uuid "d34a71ce-35f5-49e8-a6b0-148fd60b03ed")
+		(effects
+			(font
+				(size 1.4 1.4)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "db5df34f-8129-4c20-8f29-cfc2a8436c8a")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "a1ca3f61-e084-4896-850c-fc0f6d38e7c4")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(fp_line
+		(start -26.2 -13.6)
+		(end 26.2 -13.6)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "5121f771-1e5a-4b96-876e-a68cd3f07621")
+	)
+	(fp_line
+		(start -26.2 13.6)
+		(end -26.2 -13.6)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "65621f6c-0ccf-49c3-ad87-87547acb8e45")
+	)
+	(fp_line
+		(start 26.2 -13.6)
+		(end 26.2 13.6)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "f479b4cb-569a-4767-a6e7-ba2156017203")
+	)
+	(fp_line
+		(start 26.2 13.6)
+		(end -26.2 13.6)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "f73c0f42-0375-4983-879d-cfaee2e6b750")
+	)
+	(fp_line
+		(start -26.45 -13.85)
+		(end 26.45 -13.85)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "24a82b2b-abcf-4ca7-8a1d-8f0d95f910bb")
+	)
+	(fp_line
+		(start -26.45 13.85)
+		(end -26.45 -13.85)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "1bf9ae75-bdef-4a4b-a0dc-515b6d1fabe4")
+	)
+	(fp_line
+		(start 26.45 -13.85)
+		(end 26.45 13.85)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "115d1f2c-8bbb-4e71-948e-3bc60f687464")
+	)
+	(fp_line
+		(start 26.45 13.85)
+		(end -26.45 13.85)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "1afaccf4-ff1f-493f-b590-aa9dcae6fdf0")
+	)
+	(fp_line
+		(start -26.2 -13.6)
+		(end 26.2 -13.6)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "a45848d3-ccf0-4368-9bba-a0d03ec1447c")
+	)
+	(fp_line
+		(start -26.2 13.6)
+		(end -26.2 -13.6)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "24f03384-5116-4a40-beb2-4a3b973bc49d")
+	)
+	(fp_line
+		(start 26.2 -13.6)
+		(end 26.2 13.6)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "a7782aa6-03cd-45ad-9a11-89bed6178c9c")
+	)
+	(fp_line
+		(start 26.2 13.6)
+		(end -26.2 13.6)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "2756b2d2-2291-4174-aa9a-13c33065935c")
+	)
+	(pad "+V" thru_hole circle
+		(at 22.2 2.4)
+		(size 1.86 1.86)
+		(drill 1.24)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(solder_mask_margin 0.102)
+		(uuid "96cdef69-8463-49ea-8b9a-2f2e77659613")
+	)
+	(pad "-V" thru_hole circle
+		(at 22.2 10.4)
+		(size 1.86 1.86)
+		(drill 1.24)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(solder_mask_margin 0.102)
+		(uuid "d65eb326-0de4-4a8d-95d4-7a7c06a73e7f")
+	)
+	(pad "AC/L" thru_hole circle
+		(at -22.8 -10.4)
+		(size 1.86 1.86)
+		(drill 1.24)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(solder_mask_margin 0.102)
+		(uuid "012ba856-4928-414f-a292-edc992fb3980")
+	)
+	(pad "AC/N" thru_hole circle
+		(at -22.8 10.4)
+		(size 1.86 1.86)
+		(drill 1.24)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(solder_mask_margin 0.102)
+		(uuid "5c42d67a-ead3-46e1-aaf5-1f89a25084c2")
+	)
+	(embedded_fonts no)
+	(model "/home/vvolpone/Documents/Projects/CNC Mill/Linux_Controller/Readable_Schema/Local_Components/IRM-15-5/IRM-15-5.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -90 -0 -0)
+		)
+	)
+)

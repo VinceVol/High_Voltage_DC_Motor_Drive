@@ -791,12 +791,13 @@
 					(hide yes)
 				)
 			)
-			(property "Description" ""
+			(property "Description" "MSS2P3 Series 30 V 2 A Surface Mount Schottky Barrier Rectifier - MicroSMP"
 				(at 0 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify bottom)
 					(hide yes)
 				)
 			)
@@ -811,16 +812,6 @@
 				)
 			)
 			(property "MF" "Vishay Semiconductor"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "DESCRIPTION" "MSS2P3 Series 30 V 2 A Surface Mount Schottky Barrier Rectifier - MicroSMP"
 				(at 0 0 0)
 				(effects
 					(font
@@ -2337,7 +2328,7 @@
 		)
 	)
 	(rectangle
-		(start 74.93 12.7)
+		(start 73.66 12.7)
 		(end 135.89 38.1)
 		(stroke
 			(width 0)
@@ -2349,7 +2340,7 @@
 		(uuid 25738b32-c753-4180-8c7f-7c9a09a981b3)
 	)
 	(rectangle
-		(start 172.72 12.7)
+		(start 171.45 12.7)
 		(end 232.41 38.1)
 		(stroke
 			(width 0)
@@ -2433,7 +2424,7 @@
 		(uuid cedc528a-c2ae-4b74-b60a-4a4fb5e81964)
 	)
 	(rectangle
-		(start 12.7 12.7)
+		(start 11.43 12.7)
 		(end 68.58 38.1)
 		(stroke
 			(width 0)
@@ -5780,7 +5771,7 @@
 		)
 		(uuid "fc55db34-231a-4ee5-8d08-d66b62f4cee1")
 	)
-	(global_label "5v 5w"
+	(global_label "5v 15w"
 		(shape input)
 		(at 21.59 21.59 180)
 		(fields_autoplaced yes)
@@ -5792,7 +5783,7 @@
 		)
 		(uuid "14d8ae58-2d9d-48b9-91df-57eef97b11df")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 12.9201 21.59 0)
+			(at 11.7106 21.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5802,7 +5793,7 @@
 			)
 		)
 	)
-	(global_label "5v 5w"
+	(global_label "5v 15w"
 		(shape input)
 		(at 181.61 21.59 180)
 		(fields_autoplaced yes)
@@ -5814,7 +5805,7 @@
 		)
 		(uuid "2cd54f5d-ed72-420c-8c77-16d1ef3e9667")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 172.9401 21.59 0)
+			(at 171.7306 21.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5824,7 +5815,7 @@
 			)
 		)
 	)
-	(global_label "5v 5w"
+	(global_label "5v 15w"
 		(shape input)
 		(at 55.88 91.44 90)
 		(fields_autoplaced yes)
@@ -5836,7 +5827,7 @@
 		)
 		(uuid "3f7898a6-5e48-4163-b849-3556330dcb84")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 55.88 82.7701 90)
+			(at 55.88 81.5606 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5846,7 +5837,7 @@
 			)
 		)
 	)
-	(global_label "5v 5w"
+	(global_label "5v 15w"
 		(shape input)
 		(at 240.03 91.44 90)
 		(fields_autoplaced yes)
@@ -5858,7 +5849,7 @@
 		)
 		(uuid "67fd084e-fbf5-42bf-8a75-a1a92a079c21")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 240.03 82.7701 90)
+			(at 240.03 81.5606 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5868,7 +5859,7 @@
 			)
 		)
 	)
-	(global_label "5v 5w"
+	(global_label "5v 15w"
 		(shape input)
 		(at 83.82 21.59 180)
 		(fields_autoplaced yes)
@@ -5880,7 +5871,7 @@
 		)
 		(uuid "7348cf27-0948-45ff-9162-b22441d36172")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 75.1501 21.59 0)
+			(at 73.9406 21.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
