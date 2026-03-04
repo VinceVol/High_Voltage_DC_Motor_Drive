@@ -2742,19 +2742,6 @@
 		(uuid 7487b6f9-0de5-448b-8ffa-5ea340f96930)
 	)
 	(rectangle
-		(start 160.02 132.08)
-		(end 179.07 163.83)
-		(stroke
-			(width 0)
-			(type dot)
-			(color 255 255 0 1)
-		)
-		(fill
-			(type none)
-		)
-		(uuid 9f11d2b0-b7f7-478c-b34c-900a719871fa)
-	)
-	(rectangle
 		(start 76.2 170.18)
 		(end 104.14 189.23)
 		(stroke
@@ -2847,18 +2834,6 @@
 		)
 		(uuid "f119ae4b-389c-4872-a3a8-ed95f898456a")
 	)
-	(text "Cap discharge"
-		(exclude_from_sim no)
-		(at 159.766 131.064 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(color 255 255 0 1)
-			)
-			(justify left)
-		)
-		(uuid "f6a67882-563a-46da-bfdc-0847d3320f13")
-	)
 	(text "120AC"
 		(exclude_from_sim no)
 		(at 16.764 13.97 0)
@@ -2918,12 +2893,6 @@
 		(uuid "64415c43-4795-49e3-9d96-5e7df9c479fd")
 	)
 	(junction
-		(at 171.45 111.76)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "67db59e8-0734-42a0-aa18-9fb217f9e2e8")
-	)
-	(junction
 		(at 217.17 111.76)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2940,6 +2909,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "7e95be99-2efa-4ab3-9aec-92545addf10e")
+	)
+	(junction
+		(at 161.29 111.76)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "881572dd-2e5b-4b1b-ac7a-f5746d04d6e5")
 	)
 	(junction
 		(at 193.04 111.76)
@@ -2985,7 +2960,7 @@
 	)
 	(wire
 		(pts
-			(xy 147.32 111.76) (xy 171.45 111.76)
+			(xy 147.32 111.76) (xy 161.29 111.76)
 		)
 		(stroke
 			(width 0)
@@ -3012,16 +2987,6 @@
 			(type default)
 		)
 		(uuid "096dee2a-e850-446f-af35-3a463c3cf6f4")
-	)
-	(wire
-		(pts
-			(xy 171.45 111.76) (xy 193.04 111.76)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0ac11ee6-96f7-4451-b1ce-3537e9d818b0")
 	)
 	(wire
 		(pts
@@ -3095,13 +3060,13 @@
 	)
 	(wire
 		(pts
-			(xy 171.45 111.76) (xy 171.45 139.7)
+			(xy 161.29 111.76) (xy 193.04 111.76)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "203b6c2c-fa6c-478f-9903-071cc084c711")
+		(uuid "26cd5d6d-90cc-498b-8029-cc7b3cda2de0")
 	)
 	(wire
 		(pts
@@ -3212,6 +3177,16 @@
 			(type default)
 		)
 		(uuid "50a2fab0-e784-4479-9a36-c1b0f0fac2ad")
+	)
+	(wire
+		(pts
+			(xy 161.29 111.76) (xy 161.29 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5394b577-e8d9-4dd6-9b3c-36ee6628a71a")
 	)
 	(wire
 		(pts
@@ -3342,16 +3317,6 @@
 			(type default)
 		)
 		(uuid "85cb3d09-54f5-4983-80cc-98260e7f522b")
-	)
-	(wire
-		(pts
-			(xy 171.45 142.24) (xy 171.45 157.48)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "87001de1-48cf-4772-a544-d450ec328c3f")
 	)
 	(wire
 		(pts
@@ -3991,72 +3956,6 @@
 			(project ""
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0"
 					(reference "J6")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND1")
-		(at 171.45 157.48 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "0c435531-c8f9-48df-bb12-4b41e815450d")
-		(property "Reference" "#PWR028"
-			(at 171.45 163.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "HV_GND"
-			(at 170.942 157.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" ""
-			(at 171.45 157.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 171.45 157.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND1\" , ground"
-			(at 171.45 157.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "4d144795-b380-4f6b-b74e-c8f23577cac3")
-		)
-		(instances
-			(project "120VDC Treadmill Motor Controller"
-				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0"
-					(reference "#PWR028")
 					(unit 1)
 				)
 			)
@@ -6006,144 +5905,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:Screw_Terminal_01x02")
-		(at 166.37 139.7 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "dce63b65-4bc6-4a53-a439-645394a23de6")
-		(property "Reference" "J8"
-			(at 161.798 147.066 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "OSTT7020150"
-			(at 163.83 147.32 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Treadmill_Feet:CONN2_OSTT7020150_OST"
-			(at 166.37 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/388/OSTT7xx0150.pdf"
-			(at 166.37 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 166.37 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "59167f6b-6d64-4cd0-9715-bd2366f13b6e")
-		)
-		(pin "2"
-			(uuid "fdb4b41f-0066-4d99-99d4-d4c177dd21e8")
-		)
-		(instances
-			(project "120VDC Treadmill Motor Controller"
-				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0"
-					(reference "J8")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 176.53 140.97 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board no)
-		(dnp no)
-		(uuid "e6d5819e-17e2-49fb-8e0c-668168632521")
-		(property "Reference" "R33"
-			(at 174.244 140.716 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "HVCB2512FKC100K"
-			(at 176.53 140.97 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" ""
-			(at 178.308 140.97 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.digikey.com/en/products/detail/yageo/SQP20AJB-3K3/9167228"
-			(at 176.53 140.97 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "3.3K"
-			(at 176.53 140.97 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "28f6b617-b03b-4223-8d2e-384f9ac07d9f")
-		)
-		(pin "2"
-			(uuid "c8ba223e-2b51-4a85-a595-b15446d644fc")
-		)
-		(instances
-			(project "120VDC Treadmill Motor Controller"
-				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0"
-					(reference "R33")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C_Polarized")
 		(at 246.38 118.11 0)
 		(unit 1)
@@ -6282,6 +6043,57 @@
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0"
 					(reference "D1")
 					(unit 1)
+				)
+			)
+		)
+	)
+	(sheet
+		(at 157.48 132.08)
+		(size 12.7 22.86)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "91d7d3c1-74bb-4c16-a061-6629b37677fd")
+		(property "Sheetname" "Cap_discharge"
+			(at 156.464 148.844 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Cap_Discharge.kicad_sch"
+			(at 171.958 158.75 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "Cap_Drain" input
+			(at 161.29 132.08 90)
+			(uuid "2743f8ce-1aba-4a0d-86aa-9a7538c5e2a8")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0"
+					(page "6")
 				)
 			)
 		)
