@@ -147,6 +147,16 @@
 	)
 	(wire
 		(pts
+			(xy 113.03 82.55) (xy 109.22 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6f589a5f-2ca4-4242-b52d-ac30172e01af")
+	)
+	(wire
+		(pts
 			(xy 149.86 99.06) (xy 156.21 99.06)
 		)
 		(stroke
@@ -197,6 +207,16 @@
 	)
 	(wire
 		(pts
+			(xy 109.22 82.55) (xy 109.22 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dc61970c-e655-458f-92f3-5f5bfe64f031")
+	)
+	(wire
+		(pts
 			(xy 137.16 104.14) (xy 123.19 104.14)
 		)
 		(stroke
@@ -214,6 +234,26 @@
 			(type default)
 		)
 		(uuid "ed6ea736-2e3a-4134-95a5-16de9593c0c2")
+	)
+	(wire
+		(pts
+			(xy 121.92 66.04) (xy 113.03 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f7daa09e-deae-4b9a-9c5e-351b0ce80f1a")
+	)
+	(wire
+		(pts
+			(xy 113.03 66.04) (xy 113.03 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fb01e99b-b912-415b-a68d-0c840c38906d")
 	)
 	(sheet
 		(at 87.63 58.42)
@@ -373,6 +413,16 @@
 		(pin "HV_CAPS" input
 			(at 106.68 96.52 90)
 			(uuid "67706258-d9fb-4bd2-99ae-baffe552ea3f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "mcu_en" input
+			(at 109.22 96.52 90)
+			(uuid "796decfe-c84d-4d56-aaeb-7ba82063c739")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -607,6 +657,16 @@
 		(pin "v_sense_HV" output
 			(at 137.16 83.82 270)
 			(uuid "43d2cc9f-139c-4209-9d67-ef9d8ca00fc2")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "drive_en" output
+			(at 121.92 66.04 180)
+			(uuid "05b77526-35e6-4935-96a9-d9c0359f2be6")
 			(effects
 				(font
 					(size 1.27 1.27)
