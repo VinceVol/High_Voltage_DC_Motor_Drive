@@ -747,6 +747,322 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Treadmill_Comp:MMSZ5231B-7-F"
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "CR"
+				(at 5.08 4.445 0)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
+			)
+			(property "Value" "MMSZ5231B-7-F"
+				(at 5.08 -3.81 0)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
+			)
+			(property "Footprint" "Treadmill_Feet:SOD123_DIO"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "MMSZ5231B-7-F"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "MMSZ5231B-7-F"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "SOD123_DIO SOD123_DIO-M SOD123_DIO-L"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "MMSZ5231B-7-F_1_1"
+				(polyline
+					(pts
+						(xy 2.54 0) (xy 3.4798 0)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.175 0) (xy 3.81 0)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.81 1.905) (xy 3.81 -1.905)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.81 -1.905) (xy 6.35 0)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 6.35 0) (xy 3.81 1.905)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 6.35 0) (xy 7.62 0)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 6.35 -1.905) (xy 6.35 1.905)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at 0 0 0)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 10.16 0 180)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "MMSZ5231B-7-F_1_2"
+				(polyline
+					(pts
+						(xy -1.905 3.81) (xy 1.905 3.81)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 6.35) (xy -1.905 3.81)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 6.35) (xy 0 7.62)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 3.175) (xy 0 3.81)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0 3.4798)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.905 6.35) (xy -1.905 6.35)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.905 3.81) (xy 0 6.35)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at 0 10.16 270)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 0 0 90)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Treadmill_Comp:MSS1P4-M3_89A"
 			(pin_names
 				(offset 1.016)
@@ -1879,251 +2195,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "dk_Diodes-Zener-Single:MMSZ5231B-7-F"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "Z"
-				(at 0 3.81 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-				)
-			)
-			(property "Value" "MMSZ5231B-7-F"
-				(at 0 -3.81 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-				)
-			)
-			(property "Footprint" "digikey-footprints:SOD-123"
-				(at 5.08 5.08 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "https://www.diodes.com/assets/Datasheets/ds18010.pdf"
-				(at 5.08 7.62 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Description" "DIODE ZENER 5.1V 500MW SOD123"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Digi-Key_PN" "MMSZ5231B-FDICT-ND"
-				(at 5.08 10.16 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "MPN" "MMSZ5231B-7-F"
-				(at 5.08 12.7 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Category" "Discrete Semiconductor Products"
-				(at 5.08 15.24 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Family" "Diodes - Zener - Single"
-				(at 5.08 17.78 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "DK_Datasheet_Link" "https://www.diodes.com/assets/Datasheets/ds18010.pdf"
-				(at 5.08 20.32 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "DK_Detail_Page" "/product-detail/en/diodes-incorporated/MMSZ5231B-7-F/MMSZ5231B-FDICT-ND/755506"
-				(at 5.08 22.86 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Description_1" "DIODE ZENER 5.1V 500MW SOD123"
-				(at 5.08 25.4 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer" "Diodes Incorporated"
-				(at 5.08 27.94 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Status" "Active"
-				(at 5.08 30.48 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "MMSZ5231B-FDICT-ND"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "MMSZ5231B-7-F_0_1"
-				(polyline
-					(pts
-						(xy -1.27 1.27) (xy -1.27 -1.27) (xy 1.27 0) (xy -1.27 1.27)
-					)
-					(stroke
-						(width 0)
-						(type solid)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 1.27) (xy 0.635 1.905)
-					)
-					(stroke
-						(width 0)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 1.27) (xy 1.27 -1.27)
-					)
-					(stroke
-						(width 0)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 -1.27) (xy 1.905 -1.905)
-					)
-					(stroke
-						(width 0)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "MMSZ5231B-7-F_1_1"
-				(pin passive line
-					(at -5.08 0 0)
-					(length 3.81)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "A"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 5.08 0 180)
-					(length 3.81)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "K"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "power:GND"
 			(power)
 			(pin_numbers
@@ -2556,6 +2627,18 @@
 		(uuid "00f31a66-f65d-4cde-a2fb-300a105e117d")
 	)
 	(junction
+		(at 199.39 49.53)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "03645052-ab00-4ad1-a0c0-9d22a1439a91")
+	)
+	(junction
+		(at 153.67 49.53)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "052b6854-1b38-483f-94e9-8119df93b8c3")
+	)
+	(junction
 		(at 240.03 99.06)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2566,6 +2649,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "0b0ae609-d6cd-4709-967b-31fa5ff94cd4")
+	)
+	(junction
+		(at 176.53 49.53)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0bf78e24-d253-4f18-a7c7-1850943b7dfc")
 	)
 	(junction
 		(at 121.92 100.33)
@@ -2598,6 +2687,12 @@
 		(uuid "181502f2-ce9e-4054-b113-ef98318cfe6c")
 	)
 	(junction
+		(at 199.39 59.69)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1c4b7b85-4737-4bfe-8610-db523436f6ec")
+	)
+	(junction
 		(at 120.65 30.48)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2622,6 +2717,12 @@
 		(uuid "218ac7dd-cd58-4244-9608-0bfd35ff13f0")
 	)
 	(junction
+		(at 176.53 59.69)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "219c3dde-5835-44d8-b136-54e5919786f2")
+	)
+	(junction
 		(at 180.34 110.49)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2632,6 +2733,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "2646352d-28fa-4b3d-9b54-633deca0adb1")
+	)
+	(junction
+		(at 191.77 49.53)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "267a444d-885b-4f7b-9ce3-32dd73fafdb6")
 	)
 	(junction
 		(at 101.6 88.9)
@@ -2772,10 +2879,28 @@
 		(uuid "645bcdde-5e80-4df3-88b2-1cf2f88b7d1d")
 	)
 	(junction
+		(at 144.78 110.49)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "659eb654-140a-4c2e-97c1-78aaac644805")
+	)
+	(junction
+		(at 161.29 49.53)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "67559ba5-c47e-4bff-9bcf-7360f7ca2f84")
+	)
+	(junction
 		(at 134.62 100.33)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "6d0e00b2-3781-42b3-a1b3-67ca77e685d9")
+	)
+	(junction
+		(at 161.29 59.69)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6e0b492a-a093-4aa9-ba28-5e1cd53acbe3")
 	)
 	(junction
 		(at 59.69 129.54)
@@ -2814,6 +2939,18 @@
 		(uuid "80595d57-3836-403d-9ad7-2a312fd83003")
 	)
 	(junction
+		(at 168.91 49.53)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "81f87fad-fd31-4933-85ec-8c6216db7caf")
+	)
+	(junction
+		(at 184.15 49.53)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "82e00e81-9852-42c2-b92e-305bb6835f9a")
+	)
+	(junction
 		(at 120.65 21.59)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2826,10 +2963,28 @@
 		(uuid "83b12665-8573-4d4d-9175-a423ffea77bb")
 	)
 	(junction
+		(at 191.77 59.69)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "847ba604-6dcc-49b0-ba93-8263822e0f77")
+	)
+	(junction
 		(at 41.91 111.76)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "88795388-d807-4c4a-90a9-8599700a9c9d")
+	)
+	(junction
+		(at 207.01 59.69)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "899b4e7e-0c63-4225-8889-17747a11bc5a")
+	)
+	(junction
+		(at 184.15 59.69)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8e5dadf3-e72a-493c-9753-5193e89d8b71")
 	)
 	(junction
 		(at 24.13 115.57)
@@ -2853,19 +3008,13 @@
 		(at 121.92 110.49)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "9fe13943-f909-419a-bfae-8fe1783032ca")
+		(uuid "a105f83d-e794-4cf2-879c-138200b92f4d")
 	)
 	(junction
 		(at 168.91 88.9)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "a3158968-d480-4af4-adf7-00cbd3ce3e62")
-	)
-	(junction
-		(at 139.7 110.49)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "ad12c215-5772-41d7-8e6d-a3352f891c05")
 	)
 	(junction
 		(at 55.88 99.06)
@@ -2904,6 +3053,12 @@
 		(uuid "c3415156-03d6-43dc-b791-ab30b0cc48e5")
 	)
 	(junction
+		(at 168.91 59.69)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c349ef56-9944-492d-8d48-5c5753a31d31")
+	)
+	(junction
 		(at 161.29 133.35)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2913,7 +3068,7 @@
 		(at 173.99 110.49)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "cbc42d48-43ca-4b2c-8c35-4b0187acf1ca")
+		(uuid "d1229abb-1c81-4f06-9221-b975fb0ee8ae")
 	)
 	(junction
 		(at 48.26 101.6)
@@ -2980,6 +3135,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f69a2cc6-23fa-4539-ba54-44d761fa6d53")
+	)
+	(junction
+		(at 147.32 49.53)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f840c62b-2601-4c23-8f75-77bd8ed43569")
 	)
 	(junction
 		(at 180.34 116.84)
@@ -3133,6 +3294,16 @@
 	)
 	(wire
 		(pts
+			(xy 147.32 49.53) (xy 153.67 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "04e0a4d0-ca0e-44d7-a7b9-8adc29c11d54")
+	)
+	(wire
+		(pts
 			(xy 209.55 29.21) (xy 209.55 30.48)
 		)
 		(stroke
@@ -3170,6 +3341,16 @@
 			(type default)
 		)
 		(uuid "08baf834-f4d3-40bb-80c1-7b83ef063905")
+	)
+	(wire
+		(pts
+			(xy 168.91 59.69) (xy 176.53 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "08f996cc-fb07-4090-a30b-5f8f65efcdfc")
 	)
 	(wire
 		(pts
@@ -3283,6 +3464,26 @@
 	)
 	(wire
 		(pts
+			(xy 168.91 49.53) (xy 168.91 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "14140ac9-cb53-49f0-902f-bcc6320559ee")
+	)
+	(wire
+		(pts
+			(xy 191.77 59.69) (xy 184.15 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "14f2138d-3444-45cd-81e6-3cb288e09ce2")
+	)
+	(wire
+		(pts
 			(xy 114.3 82.55) (xy 118.11 82.55)
 		)
 		(stroke
@@ -3300,16 +3501,6 @@
 			(type default)
 		)
 		(uuid "1564ce95-30d4-4188-adc1-2ee4503c54ee")
-	)
-	(wire
-		(pts
-			(xy 173.99 110.49) (xy 171.45 110.49)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "167c26a5-f103-4b43-adcc-8f96840a3afd")
 	)
 	(wire
 		(pts
@@ -3360,6 +3551,16 @@
 			(type default)
 		)
 		(uuid "1a02124c-6a13-4b4c-8098-29cc93e7d8f4")
+	)
+	(wire
+		(pts
+			(xy 176.53 49.53) (xy 184.15 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1ad4d8c8-f2ce-42cb-ae71-8f04dd07a51a")
 	)
 	(wire
 		(pts
@@ -3420,6 +3621,16 @@
 			(type default)
 		)
 		(uuid "1fd86f3d-0eb9-4a1c-a61c-72fec37799ba")
+	)
+	(wire
+		(pts
+			(xy 191.77 49.53) (xy 199.39 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "21519413-c068-4449-bb1e-53c157f6022e")
 	)
 	(wire
 		(pts
@@ -3490,6 +3701,16 @@
 			(type default)
 		)
 		(uuid "26f709ec-1256-4fa6-b22d-8ed0752f4d5e")
+	)
+	(wire
+		(pts
+			(xy 168.91 59.69) (xy 168.91 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "274fac94-42e1-47a9-8001-3a435be0c920")
 	)
 	(wire
 		(pts
@@ -3673,6 +3894,16 @@
 	)
 	(wire
 		(pts
+			(xy 191.77 58.42) (xy 191.77 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3c20be3e-0d49-4cd1-b0ad-11515785796a")
+	)
+	(wire
+		(pts
 			(xy 99.06 133.35) (xy 107.95 133.35)
 		)
 		(stroke
@@ -3690,6 +3921,16 @@
 			(type default)
 		)
 		(uuid "3e1aed3a-092d-46ec-bb55-7769685f658e")
+	)
+	(wire
+		(pts
+			(xy 161.29 49.53) (xy 168.91 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3e2424a4-2775-4507-a6bd-1af33eceec0a")
 	)
 	(wire
 		(pts
@@ -3723,6 +3964,16 @@
 	)
 	(wire
 		(pts
+			(xy 207.01 59.69) (xy 207.01 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "410f93c3-b7cc-4bba-b5f7-13abe1d50a1e")
+	)
+	(wire
+		(pts
 			(xy 49.53 29.21) (xy 49.53 30.48)
 		)
 		(stroke
@@ -3740,6 +3991,26 @@
 			(type default)
 		)
 		(uuid "4278afda-af56-41ce-8e9e-e82625223204")
+	)
+	(wire
+		(pts
+			(xy 161.29 49.53) (xy 161.29 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "42aa93d8-3528-4380-93b9-40b27b497989")
+	)
+	(wire
+		(pts
+			(xy 176.53 49.53) (xy 176.53 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "42e70c45-b5e7-4426-b970-5b641631b5e9")
 	)
 	(wire
 		(pts
@@ -3793,6 +4064,16 @@
 	)
 	(wire
 		(pts
+			(xy 191.77 49.53) (xy 191.77 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "478b1e90-eca4-4483-85cd-2e337caf6287")
+	)
+	(wire
+		(pts
 			(xy 107.95 100.33) (xy 115.57 100.33)
 		)
 		(stroke
@@ -3840,16 +4121,6 @@
 			(type default)
 		)
 		(uuid "49cf32d4-e822-435a-9b4d-5571703df6e2")
-	)
-	(wire
-		(pts
-			(xy 139.7 110.49) (xy 146.05 110.49)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "49ee04a8-0f2b-4f00-a187-09d41a508cd4")
 	)
 	(wire
 		(pts
@@ -4023,6 +4294,16 @@
 	)
 	(wire
 		(pts
+			(xy 184.15 59.69) (xy 176.53 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "57402b41-1155-4889-b299-46074179f12b")
+	)
+	(wire
+		(pts
 			(xy 54.61 139.7) (xy 59.69 139.7)
 		)
 		(stroke
@@ -4040,6 +4321,16 @@
 			(type default)
 		)
 		(uuid "57daa117-6e18-42af-87bd-8dc6b9047e38")
+	)
+	(wire
+		(pts
+			(xy 199.39 58.42) (xy 199.39 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "597fadd9-c828-496e-bd4c-c8445f5472cb")
 	)
 	(wire
 		(pts
@@ -4093,6 +4384,16 @@
 	)
 	(wire
 		(pts
+			(xy 184.15 49.53) (xy 191.77 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5f4f8a5b-a855-4856-8e3a-4519e9fbb685")
+	)
+	(wire
+		(pts
 			(xy 20.32 115.57) (xy 24.13 115.57)
 		)
 		(stroke
@@ -4143,6 +4444,16 @@
 	)
 	(wire
 		(pts
+			(xy 168.91 49.53) (xy 176.53 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6405f68b-32d3-44ad-b86b-d2bcaa0ce7a3")
+	)
+	(wire
+		(pts
 			(xy 20.32 96.52) (xy 29.21 96.52)
 		)
 		(stroke
@@ -4150,6 +4461,16 @@
 			(type default)
 		)
 		(uuid "64bc2bb1-1e1a-4596-862d-cb0d1b7a5b08")
+	)
+	(wire
+		(pts
+			(xy 173.99 110.49) (xy 180.34 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "64e87bc2-a484-43f4-9b83-042b75a75928")
 	)
 	(wire
 		(pts
@@ -4393,6 +4714,16 @@
 	)
 	(wire
 		(pts
+			(xy 207.01 49.53) (xy 207.01 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8135660e-ab3a-4edb-92e8-3c3d0e28e193")
+	)
+	(wire
+		(pts
 			(xy 102.87 119.38) (xy 96.52 119.38)
 		)
 		(stroke
@@ -4533,6 +4864,16 @@
 	)
 	(wire
 		(pts
+			(xy 207.01 58.42) (xy 207.01 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8ebec7f0-b051-46b4-b5ce-160fa152adde")
+	)
+	(wire
+		(pts
 			(xy 236.22 129.54) (xy 236.22 130.81)
 		)
 		(stroke
@@ -4543,13 +4884,43 @@
 	)
 	(wire
 		(pts
-			(xy 134.62 110.49) (xy 139.7 110.49)
+			(xy 153.67 59.69) (xy 161.29 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9027bbb2-6bbf-4015-a8f8-fa4532c14bf8")
+	)
+	(wire
+		(pts
+			(xy 153.67 49.53) (xy 153.67 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "90dd2eb0-bce7-44b0-aae9-03c6a3e75176")
+	)
+	(wire
+		(pts
+			(xy 134.62 110.49) (xy 144.78 110.49)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "91852dbc-a24a-400e-bdba-735459c6ba88")
+	)
+	(wire
+		(pts
+			(xy 199.39 59.69) (xy 191.77 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "92bf57dc-b017-4ee1-8148-d15ff540436e")
 	)
 	(wire
 		(pts
@@ -4560,6 +4931,16 @@
 			(type default)
 		)
 		(uuid "92f597ce-8109-47ee-bbb0-5dacb048b487")
+	)
+	(wire
+		(pts
+			(xy 147.32 49.53) (xy 147.32 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "937a412c-125a-4510-84c5-d5399976bb09")
 	)
 	(wire
 		(pts
@@ -4673,6 +5054,16 @@
 	)
 	(wire
 		(pts
+			(xy 144.78 110.49) (xy 146.05 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9e246a66-017c-45a0-906e-43fbef620472")
+	)
+	(wire
+		(pts
 			(xy 193.04 119.38) (xy 199.39 119.38)
 		)
 		(stroke
@@ -4730,6 +5121,16 @@
 			(type default)
 		)
 		(uuid "a2ddd617-c182-4697-a09f-eb9c2991d609")
+	)
+	(wire
+		(pts
+			(xy 199.39 49.53) (xy 207.01 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a3d8f6be-6a9e-434e-af6d-7cc451388023")
 	)
 	(wire
 		(pts
@@ -4813,7 +5214,7 @@
 	)
 	(wire
 		(pts
-			(xy 180.34 110.49) (xy 173.99 110.49)
+			(xy 171.45 110.49) (xy 173.99 110.49)
 		)
 		(stroke
 			(width 0)
@@ -5003,16 +5404,6 @@
 	)
 	(wire
 		(pts
-			(xy 121.92 110.49) (xy 124.46 110.49)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ba80a65e-59c6-4593-9997-60ea5c512add")
-	)
-	(wire
-		(pts
 			(xy 107.95 116.84) (xy 115.57 116.84)
 		)
 		(stroke
@@ -5040,6 +5431,16 @@
 			(type default)
 		)
 		(uuid "bcea3cfb-c284-4ce2-ab32-d069a9f90414")
+	)
+	(wire
+		(pts
+			(xy 153.67 59.69) (xy 153.67 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "be19590c-1575-4e21-aec1-2ba1c7f39030")
 	)
 	(wire
 		(pts
@@ -5083,6 +5484,16 @@
 	)
 	(wire
 		(pts
+			(xy 199.39 49.53) (xy 199.39 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c55eaeca-3065-4012-ba83-ccef90160652")
+	)
+	(wire
+		(pts
 			(xy 41.91 96.52) (xy 41.91 102.87)
 		)
 		(stroke
@@ -5100,6 +5511,16 @@
 			(type default)
 		)
 		(uuid "c7095743-d1f3-45ec-b4e7-57c769347107")
+	)
+	(wire
+		(pts
+			(xy 153.67 49.53) (xy 161.29 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c836ade7-d9df-434c-895d-93c0331a5210")
 	)
 	(wire
 		(pts
@@ -5193,6 +5614,16 @@
 	)
 	(wire
 		(pts
+			(xy 161.29 59.69) (xy 161.29 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d53ed927-9636-4499-843c-30188597efc8")
+	)
+	(wire
+		(pts
 			(xy 54.61 130.81) (xy 54.61 129.54)
 		)
 		(stroke
@@ -5273,6 +5704,16 @@
 	)
 	(wire
 		(pts
+			(xy 184.15 58.42) (xy 184.15 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dc55100d-8412-42e0-bbe8-a7c80b2ebd5b")
+	)
+	(wire
+		(pts
 			(xy 168.91 82.55) (xy 168.91 88.9)
 		)
 		(stroke
@@ -5333,6 +5774,16 @@
 	)
 	(wire
 		(pts
+			(xy 161.29 59.69) (xy 168.91 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e2ad8d5e-0c13-4b99-8dd8-7fb46ed26292")
+	)
+	(wire
+		(pts
 			(xy 127 82.55) (xy 127 88.9)
 		)
 		(stroke
@@ -5373,6 +5824,16 @@
 	)
 	(wire
 		(pts
+			(xy 121.92 110.49) (xy 124.46 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e3c0430d-030d-4d37-bc87-ddcf4780bdda")
+	)
+	(wire
+		(pts
 			(xy 173.99 100.33) (xy 161.29 100.33)
 		)
 		(stroke
@@ -5380,6 +5841,16 @@
 			(type default)
 		)
 		(uuid "e485c644-6523-4327-a282-12ce64b2fd97")
+	)
+	(wire
+		(pts
+			(xy 176.53 59.69) (xy 176.53 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e59e9db7-077a-4aae-88c1-a6470b49fc3f")
 	)
 	(wire
 		(pts
@@ -5493,6 +5964,16 @@
 	)
 	(wire
 		(pts
+			(xy 184.15 49.53) (xy 184.15 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f03cdf84-bf0d-44a9-a104-ec116eb9a56e")
+	)
+	(wire
+		(pts
 			(xy 241.3 139.7) (xy 236.22 139.7)
 		)
 		(stroke
@@ -5503,7 +5984,17 @@
 	)
 	(wire
 		(pts
-			(xy 147.32 57.15) (xy 147.32 72.39)
+			(xy 207.01 59.69) (xy 199.39 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f2727c82-e284-4a30-8ae8-777bece9c8fd")
+	)
+	(wire
+		(pts
+			(xy 147.32 43.18) (xy 147.32 49.53)
 		)
 		(stroke
 			(width 0)
@@ -5883,7 +6374,7 @@
 	)
 	(global_label "170V Rect"
 		(shape output)
-		(at 147.32 57.15 90)
+		(at 147.32 43.18 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5893,7 +6384,7 @@
 		)
 		(uuid "f64b8922-0df6-4c9d-8815-bf2d81ad9861")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 147.32 44.3072 90)
+			(at 147.32 30.3372 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6314,6 +6805,72 @@
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
 					(reference "U1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND1")
+		(at 207.01 60.96 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "0ac09730-cace-4e2a-b133-bd26f8447ebe")
+		(property "Reference" "#PWR028"
+			(at 207.01 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "HV_GND"
+			(at 203.454 64.516 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 207.01 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 207.01 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND1\" , ground"
+			(at 207.01 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5390f25c-45ae-4f67-ba13-4732954f5645")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
+					(reference "#PWR028")
 					(unit 1)
 				)
 			)
@@ -6744,6 +7301,75 @@
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
 					(reference "R16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 199.39 54.61 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "18c8ad9e-238f-4006-9c77-92efdf2b8729")
+		(property "Reference" "C53"
+			(at 197.358 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "C3216X7T2V104M160AA"
+			(at 203.2 55.8799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder"
+			(at 200.3552 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_midvoltage_en.pdf"
+			(at 199.39 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "0.1u"
+			(at 199.644 47.7521 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "7772794d-0b16-4d37-be8e-21cb7acc055d")
+		)
+		(pin "2"
+			(uuid "dbba9a09-f69a-4d13-81ed-6766f4a48298")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
+					(reference "C53")
 					(unit 1)
 				)
 			)
@@ -7579,6 +8205,75 @@
 	)
 	(symbol
 		(lib_id "Device:C")
+		(at 161.29 54.61 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "43fe37a1-95f6-4161-ad17-48fc22cf1d04")
+		(property "Reference" "C32"
+			(at 159.258 45.9739 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "C3216X7T2V104M160AA"
+			(at 165.1 55.8799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder"
+			(at 162.2552 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_midvoltage_en.pdf"
+			(at 161.29 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "0.1u"
+			(at 161.544 48.006 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "5a8d7ecf-5396-4f39-8ce3-23a3f3c6e890")
+		)
+		(pin "2"
+			(uuid "7b987106-a683-4efa-b4a2-051549f21a2d")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
+					(reference "C32")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
 		(at 41.91 106.68 0)
 		(mirror y)
 		(unit 1)
@@ -7855,6 +8550,147 @@
 		)
 	)
 	(symbol
+		(lib_id "Treadmill_Comp:MMSZ5231B-7-F")
+		(at 121.92 110.49 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4edb4880-189b-4afb-ac80-53f61bd02b6c")
+		(property "Reference" "CR1"
+			(at 125.73 104.1399 90)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "MMSZ5231B-7-F"
+			(at 125.73 106.6799 90)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Treadmill_Feet:SOD123_DIO"
+			(at 121.92 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "MMSZ5231B-7-F"
+			(at 121.92 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 121.92 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "17ace90f-1cac-4675-992c-dcc259a202b1")
+		)
+		(pin "2"
+			(uuid "da8d53bc-6896-4452-9ddb-457e6d43cf3b")
+		)
+		(instances
+			(project ""
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
+					(reference "CR1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 191.77 54.61 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5172a48d-0e5d-4373-bbe7-72b5ae6a4dc6")
+		(property "Reference" "C52"
+			(at 189.738 45.9739 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "C3216X7T2V104M160AA"
+			(at 195.58 55.8799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder"
+			(at 192.7352 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_midvoltage_en.pdf"
+			(at 191.77 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "0.1u"
+			(at 192.024 48.006 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "08cd3622-3714-42e2-aab5-977bec6321e1")
+		)
+		(pin "2"
+			(uuid "51e551ee-5de5-4cc6-bcd7-9b48a980e172")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
+					(reference "C52")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 107.95 105.41 0)
 		(mirror y)
@@ -7988,6 +8824,75 @@
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
 					(reference "C36")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 153.67 54.61 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5bff59e1-6979-401b-9841-29bcf1dcc61e")
+		(property "Reference" "C28"
+			(at 151.892 45.9739 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "C3216X7T2V104M160AA"
+			(at 157.48 55.8799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder"
+			(at 154.6352 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_midvoltage_en.pdf"
+			(at 153.67 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "0.1u"
+			(at 154.178 48.006 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "fca5153a-33a9-4e5a-9f6f-e4d7f4cc05f7")
+		)
+		(pin "2"
+			(uuid "e206762a-4e48-4913-8f5c-8ff647ab87a0")
+		)
+		(instances
+			(project ""
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
+					(reference "C28")
 					(unit 1)
 				)
 			)
@@ -8833,6 +9738,78 @@
 		)
 	)
 	(symbol
+		(lib_id "Treadmill_Comp:MMSZ5231B-7-F")
+		(at 173.99 110.49 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "71dcf04f-4c1b-412e-89b0-0f26fab9d963")
+		(property "Reference" "CR2"
+			(at 168.656 103.124 90)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "MMSZ5231B-7-F"
+			(at 163.576 105.41 90)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Treadmill_Feet:SOD123_DIO"
+			(at 173.99 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "MMSZ5231B-7-F"
+			(at 173.99 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 173.99 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3f33b906-b2a0-4a69-9386-b60e01fdc433")
+		)
+		(pin "2"
+			(uuid "33136710-8feb-4117-8bc1-b68122dd683f")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
+					(reference "CR2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 180.34 105.41 0)
 		(mirror y)
@@ -8994,7 +9971,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MSS1P4-M3_89A:DIODE_MSS1P4-M3_89A"
+		(property "Footprint" "Treadmill_Feet:DIODE_MSS1P4-M3_89A"
 			(at 175.26 82.55 0)
 			(effects
 				(font
@@ -9467,6 +10444,75 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C")
+		(at 184.15 54.61 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "85c7205d-abdd-4a12-a9f1-0d1de6c946fe")
+		(property "Reference" "C51"
+			(at 182.372 45.9739 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "C3216X7T2V104M160AA"
+			(at 187.96 55.8799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder"
+			(at 185.1152 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_midvoltage_en.pdf"
+			(at 184.15 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "0.1u"
+			(at 184.658 48.006 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "159158e3-6260-4c51-be48-abeb0c435f00")
+		)
+		(pin "2"
+			(uuid "c4251b4b-4e9e-40b0-9196-eb62be5f3dba")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
+					(reference "C51")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 33.02 101.6 90)
 		(unit 1)
@@ -9629,7 +10675,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MSS1P4-M3_89A:DIODE_MSS1P4-M3_89A"
+		(property "Footprint" "Treadmill_Feet:DIODE_MSS1P4-M3_89A"
 			(at 120.65 82.55 0)
 			(effects
 				(font
@@ -9829,7 +10875,7 @@
 	)
 	(symbol
 		(lib_id "Treadmill_Comp:RCWCTE")
-		(at 139.7 105.41 90)
+		(at 144.78 105.41 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9837,7 +10883,7 @@
 		(dnp no)
 		(uuid "94b32b99-2f33-4154-b423-eaaff82dede7")
 		(property "Reference" "TP1"
-			(at 138.176 102.87 90)
+			(at 143.256 102.87 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9846,7 +10892,7 @@
 			)
 		)
 		(property "Value" "RCWCTE"
-			(at 142.24 106.6799 90)
+			(at 147.32 106.6799 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9856,7 +10902,7 @@
 			)
 		)
 		(property "Footprint" "Treadmill_Feet:RCWCTE"
-			(at 139.7 105.41 0)
+			(at 144.78 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9866,7 +10912,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.koaspeer.com/pdfs/RC.pdf"
-			(at 139.7 105.41 0)
+			(at 144.78 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9875,7 +10921,7 @@
 			)
 		)
 		(property "Description" "https://www.digikey.com/en/products/detail/koa-speer-electronics-inc/RCWCTE/11476558"
-			(at 139.7 105.41 0)
+			(at 144.78 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9884,7 +10930,7 @@
 			)
 		)
 		(property "PARTREV" "1/06/14"
-			(at 139.7 105.41 0)
+			(at 144.78 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9894,7 +10940,7 @@
 			)
 		)
 		(property "SNAPEDA_PN" "RCWCTE"
-			(at 139.7 105.41 0)
+			(at 144.78 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9904,7 +10950,7 @@
 			)
 		)
 		(property "MANUFACTURER" "KOA Speer"
-			(at 139.7 105.41 0)
+			(at 144.78 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9914,7 +10960,7 @@
 			)
 		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" "2 mm"
-			(at 139.7 105.41 0)
+			(at 144.78 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9924,7 +10970,7 @@
 			)
 		)
 		(property "STANDARD" "Manufacturer Recommendations"
-			(at 139.7 105.41 0)
+			(at 144.78 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10420,170 +11466,6 @@
 		)
 	)
 	(symbol
-		(lib_id "dk_Diodes-Zener-Single:MMSZ5231B-7-F")
-		(at 173.99 105.41 270)
-		(mirror x)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "b8a39c69-eaab-4188-93c7-24f51a3ca8c6")
-		(property "Reference" "Z2"
-			(at 171.45 103.8224 90)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "MMSZ5231B-7-F"
-			(at 171.45 106.3624 90)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Treadmill_Feet:SOD123_DIO"
-			(at 179.07 100.33 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/ds18010.pdf"
-			(at 181.61 100.33 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" "DIODE ZENER 5.1V 500MW SOD123"
-			(at 173.99 105.41 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Digi-Key_PN" "MMSZ5231B-FDICT-ND"
-			(at 184.15 100.33 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "MPN" "MMSZ5231B-7-F"
-			(at 186.69 100.33 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Category" "Discrete Semiconductor Products"
-			(at 189.23 100.33 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Family" "Diodes - Zener - Single"
-			(at 191.77 100.33 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "DK_Datasheet_Link" "https://www.diodes.com/assets/Datasheets/ds18010.pdf"
-			(at 194.31 100.33 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "DK_Detail_Page" "/product-detail/en/diodes-incorporated/MMSZ5231B-7-F/MMSZ5231B-FDICT-ND/755506"
-			(at 196.85 100.33 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description_1" "DIODE ZENER 5.1V 500MW SOD123"
-			(at 199.39 100.33 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Diodes Incorporated"
-			(at 201.93 100.33 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Status" "Active"
-			(at 204.47 100.33 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(pin "A"
-			(uuid "3af00538-4587-43a1-9b79-6dae87d6b684")
-		)
-		(pin "K"
-			(uuid "a3221962-1495-40de-bb89-0f901a278fe0")
-		)
-		(instances
-			(project "120VDC Treadmill Motor Controller"
-				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
-					(reference "Z2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C")
 		(at 187.96 95.25 0)
 		(unit 1)
@@ -10850,6 +11732,144 @@
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
 					(reference "C38")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 176.53 54.61 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "cb8b6a95-6a29-44ff-9f16-b9a0a2750560")
+		(property "Reference" "C50"
+			(at 174.244 45.9739 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "C3216X7T2V104M160AA"
+			(at 180.34 55.8799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder"
+			(at 177.4952 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_midvoltage_en.pdf"
+			(at 176.53 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "0.1u"
+			(at 176.53 48.006 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "58119632-dfbe-4a9f-822c-246a8113752b")
+		)
+		(pin "2"
+			(uuid "5e937fa5-2103-4b10-b7eb-22ff19914cfc")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
+					(reference "C50")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 168.91 54.61 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "cbcce43e-ece7-4a0f-b52e-21dc46a89706")
+		(property "Reference" "C49"
+			(at 166.878 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "C3216X7T2V104M160AA"
+			(at 172.72 55.8799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder"
+			(at 169.8752 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_midvoltage_en.pdf"
+			(at 168.91 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "0.1u"
+			(at 169.164 47.7521 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "80534d33-db79-4102-85b0-e204db389c43")
+		)
+		(pin "2"
+			(uuid "ae0d1ea5-7e7f-4882-8905-a25166728028")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
+					(reference "C49")
 					(unit 1)
 				)
 			)
@@ -11472,169 +12492,6 @@
 		)
 	)
 	(symbol
-		(lib_id "dk_Diodes-Zener-Single:MMSZ5231B-7-F")
-		(at 121.92 105.41 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "d79cd26a-82d3-44a6-a4ab-d4a9273c2999")
-		(property "Reference" "Z1"
-			(at 124.46 103.8224 90)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "MMSZ5231B-7-F"
-			(at 124.46 106.3624 90)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Treadmill_Feet:SOD123_DIO"
-			(at 116.84 100.33 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/ds18010.pdf"
-			(at 114.3 100.33 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" "DIODE ZENER 5.1V 500MW SOD123"
-			(at 121.92 105.41 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Digi-Key_PN" "MMSZ5231B-FDICT-ND"
-			(at 111.76 100.33 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "MPN" "MMSZ5231B-7-F"
-			(at 109.22 100.33 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Category" "Discrete Semiconductor Products"
-			(at 106.68 100.33 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Family" "Diodes - Zener - Single"
-			(at 104.14 100.33 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "DK_Datasheet_Link" "https://www.diodes.com/assets/Datasheets/ds18010.pdf"
-			(at 101.6 100.33 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "DK_Detail_Page" "/product-detail/en/diodes-incorporated/MMSZ5231B-7-F/MMSZ5231B-FDICT-ND/755506"
-			(at 99.06 100.33 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description_1" "DIODE ZENER 5.1V 500MW SOD123"
-			(at 96.52 100.33 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "Diodes Incorporated"
-			(at 93.98 100.33 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Status" "Active"
-			(at 91.44 100.33 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(pin "A"
-			(uuid "dfef2884-f9a1-4e6c-aee5-a349c037115d")
-		)
-		(pin "K"
-			(uuid "7f30447d-b185-4e29-8a40-1316bf8fb4d8")
-		)
-		(instances
-			(project ""
-				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
-					(reference "Z1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R")
 		(at 59.69 134.62 0)
 		(unit 1)
@@ -11696,6 +12553,75 @@
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
 					(reference "R6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 207.01 54.61 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ddd386b0-7de5-4318-a30a-6bfcdab44d06")
+		(property "Reference" "C54"
+			(at 204.724 45.9739 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "C3216X7T2V104M160AA"
+			(at 210.82 55.8799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder"
+			(at 207.9752 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_midvoltage_en.pdf"
+			(at 207.01 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "0.1u"
+			(at 207.01 48.006 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "257b6100-2224-4123-854c-e874df4c1771")
+		)
+		(pin "2"
+			(uuid "00552e28-01db-4658-b187-15a43cc6f853")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
+					(reference "C54")
 					(unit 1)
 				)
 			)

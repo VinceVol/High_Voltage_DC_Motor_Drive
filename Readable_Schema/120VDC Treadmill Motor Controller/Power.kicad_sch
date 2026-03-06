@@ -1230,6 +1230,322 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Treadmill_Comp:ERZ-V14D241"
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "R"
+				(at 5.715 3.81 0)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
+			)
+			(property "Value" "ERZ-V14D241"
+				(at 6.35 -3.81 0)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
+			)
+			(property "Footprint" "Treadmill_Feet:RES_ERZ-V14D241_PAN"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "ERZ-V14D241"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "ERZ-V14D241"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "RES_ERZ-V14D241_PAN"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "ERZ-V14D241_1_1"
+				(polyline
+					(pts
+						(xy 2.54 0) (xy 3.175 1.27)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.175 1.27) (xy 4.445 -1.27)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 4.445 -1.27) (xy 5.715 1.27)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.715 1.27) (xy 6.985 -1.27)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 6.985 -1.27) (xy 8.255 1.27)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 8.255 1.27) (xy 9.525 -1.27)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 9.525 -1.27) (xy 10.16 0)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at 0 0 0)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 12.7 0 180)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "ERZ-V14D241_1_2"
+				(polyline
+					(pts
+						(xy -1.27 8.255) (xy 1.27 9.525)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 5.715) (xy 1.27 6.985)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 3.175) (xy 1.27 4.445)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy -1.27 3.175)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 9.525) (xy 0 10.16)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 6.985) (xy -1.27 8.255)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 4.445) (xy -1.27 5.715)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at 0 12.7 270)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 0 0 90)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Treadmill_Comp:IPP60R060P7XKSA1"
 			(pin_numbers
 				(hide yes)
@@ -2680,7 +2996,7 @@
 	)
 	(rectangle
 		(start 13.97 15.24)
-		(end 31.75 31.75)
+		(end 101.6 60.96)
 		(stroke
 			(width 0)
 			(type dot)
@@ -2691,8 +3007,8 @@
 		(uuid 17ebf75b-b44e-474d-8dbc-ebd63b7f8817)
 	)
 	(rectangle
-		(start 13.97 31.75)
-		(end 128.27 93.98)
+		(start 13.97 62.23)
+		(end 67.31 93.98)
 		(stroke
 			(width 0)
 			(type dot)
@@ -2768,7 +3084,7 @@
 	)
 	(text "G"
 		(exclude_from_sim no)
-		(at 28.702 27.178 0)
+		(at 49.276 55.88 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2802,7 +3118,7 @@
 	)
 	(text "DC Power"
 		(exclude_from_sim no)
-		(at 22.352 33.528 0)
+		(at 19.812 64.008 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2881,6 +3197,12 @@
 		(uuid "3eef9262-9150-410b-bb3c-aed1ae1679af")
 	)
 	(junction
+		(at 46.99 20.32)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4453d453-5267-40f7-a527-5b7b4ab4da6f")
+	)
+	(junction
 		(at 232.41 111.76)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2905,10 +3227,22 @@
 		(uuid "6da034cf-93ed-4586-ac9e-d1b8f1ebc3b6")
 	)
 	(junction
+		(at 36.83 55.88)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7c329c5e-8af0-43ee-a21d-5bd4909d2d4e")
+	)
+	(junction
 		(at 143.51 111.76)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "7e95be99-2efa-4ab3-9aec-92545addf10e")
+	)
+	(junction
+		(at 46.99 40.64)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "805d46d6-b0fb-4518-b7eb-07388879c07c")
 	)
 	(junction
 		(at 161.29 111.76)
@@ -2935,14 +3269,16 @@
 		(uuid "c1313a89-611e-4576-a3cb-ac4b207c6354")
 	)
 	(junction
+		(at 36.83 20.32)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ecdf09f1-0f6d-4d25-837e-1dab14a0471f")
+	)
+	(junction
 		(at 147.32 111.76)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "fd7f32d1-42a8-4b84-a5ce-49fe262bce89")
-	)
-	(no_connect
-		(at 25.4 27.94)
-		(uuid "66f693ae-4c88-4196-a078-b9af43fb0a77")
 	)
 	(no_connect
 		(at 77.47 130.81)
@@ -2967,6 +3303,16 @@
 			(type default)
 		)
 		(uuid "05d45334-ae07-4ef2-8b61-ee48f07a2b9e")
+	)
+	(wire
+		(pts
+			(xy 46.99 55.88) (xy 46.99 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "05dacbce-7777-400a-be5e-b71326ae0f29")
 	)
 	(wire
 		(pts
@@ -3060,6 +3406,16 @@
 	)
 	(wire
 		(pts
+			(xy 30.48 55.88) (xy 30.48 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "25ecfe4f-6289-4566-9efc-4d734eff1c5d")
+	)
+	(wire
+		(pts
 			(xy 161.29 111.76) (xy 193.04 111.76)
 		)
 		(stroke
@@ -3090,7 +3446,7 @@
 	)
 	(wire
 		(pts
-			(xy 25.4 25.4) (xy 27.94 25.4)
+			(xy 27.94 40.64) (xy 46.99 40.64)
 		)
 		(stroke
 			(width 0)
@@ -3130,6 +3486,16 @@
 	)
 	(wire
 		(pts
+			(xy 30.48 20.32) (xy 30.48 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3a7895b6-3e0c-4f18-a959-02a00f2f779c")
+	)
+	(wire
+		(pts
 			(xy 158.75 73.66) (xy 161.29 73.66)
 		)
 		(stroke
@@ -3137,6 +3503,26 @@
 			(type default)
 		)
 		(uuid "3b0aeb04-b443-4a04-83a3-44a57cad0516")
+	)
+	(wire
+		(pts
+			(xy 46.99 40.64) (xy 50.8 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3b51d6d9-858c-4d1a-ac30-971c698b8481")
+	)
+	(wire
+		(pts
+			(xy 36.83 20.32) (xy 36.83 34.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3cbc6014-92d9-4474-a882-52736efe2922")
 	)
 	(wire
 		(pts
@@ -3190,6 +3576,16 @@
 	)
 	(wire
 		(pts
+			(xy 50.8 20.32) (xy 46.99 20.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "59b6ddda-6877-44b6-8714-8a316e1dca8d")
+	)
+	(wire
+		(pts
 			(xy 124.46 119.38) (xy 134.62 119.38)
 		)
 		(stroke
@@ -3240,13 +3636,33 @@
 	)
 	(wire
 		(pts
-			(xy 55.88 52.07) (xy 55.88 49.53)
+			(xy 46.99 55.88) (xy 36.83 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6b600ca2-233b-4e8d-aee5-a9ace6df714e")
+	)
+	(wire
+		(pts
+			(xy 53.34 82.55) (xy 53.34 80.01)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "6b742a9c-76a2-4805-a7ce-b291bdd33dc5")
+	)
+	(wire
+		(pts
+			(xy 30.48 38.1) (xy 27.94 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6fc34758-bcc1-4756-9e6f-7474b342b557")
 	)
 	(wire
 		(pts
@@ -3277,6 +3693,16 @@
 			(type default)
 		)
 		(uuid "78977df4-2bdc-4317-8d2d-64cba2de8ce6")
+	)
+	(wire
+		(pts
+			(xy 46.99 20.32) (xy 46.99 22.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7cc08bcf-292f-4c71-9c04-d9c941d2f011")
 	)
 	(wire
 		(pts
@@ -3320,13 +3746,33 @@
 	)
 	(wire
 		(pts
-			(xy 20.32 49.53) (xy 26.67 49.53)
+			(xy 46.99 40.64) (xy 46.99 41.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "85ce9ecf-7ee1-4839-b5cf-74d09d5f0f5b")
+	)
+	(wire
+		(pts
+			(xy 17.78 80.01) (xy 24.13 80.01)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "882f9a70-6752-4745-a668-69f9a7be7785")
+	)
+	(wire
+		(pts
+			(xy 30.48 43.18) (xy 27.94 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8e0ca57e-c4b0-49e9-9ee9-82a293020e40")
 	)
 	(wire
 		(pts
@@ -3350,7 +3796,7 @@
 	)
 	(wire
 		(pts
-			(xy 20.32 44.45) (xy 26.67 44.45)
+			(xy 17.78 74.93) (xy 24.13 74.93)
 		)
 		(stroke
 			(width 0)
@@ -3420,7 +3866,17 @@
 	)
 	(wire
 		(pts
-			(xy 52.07 49.53) (xy 55.88 49.53)
+			(xy 46.99 35.56) (xy 46.99 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ac6aadc7-5f76-48ae-b11a-2705090beb58")
+	)
+	(wire
+		(pts
+			(xy 49.53 80.01) (xy 53.34 80.01)
 		)
 		(stroke
 			(width 0)
@@ -3430,7 +3886,7 @@
 	)
 	(wire
 		(pts
-			(xy 25.4 22.86) (xy 27.94 22.86)
+			(xy 30.48 20.32) (xy 36.83 20.32)
 		)
 		(stroke
 			(width 0)
@@ -3460,6 +3916,16 @@
 	)
 	(wire
 		(pts
+			(xy 36.83 55.88) (xy 30.48 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b986e185-8828-4195-a081-3d22a484db06")
+	)
+	(wire
+		(pts
 			(xy 232.41 111.76) (xy 232.41 114.3)
 		)
 		(stroke
@@ -3470,7 +3936,7 @@
 	)
 	(wire
 		(pts
-			(xy 246.38 111.76) (xy 255.27 111.76)
+			(xy 246.38 111.76) (xy 265.43 111.76)
 		)
 		(stroke
 			(width 0)
@@ -3480,7 +3946,7 @@
 	)
 	(wire
 		(pts
-			(xy 52.07 44.45) (xy 55.88 44.45)
+			(xy 49.53 74.93) (xy 53.34 74.93)
 		)
 		(stroke
 			(width 0)
@@ -3517,6 +3983,16 @@
 			(type default)
 		)
 		(uuid "d0b97c2a-aa9e-464c-b345-e54d2fb2375d")
+	)
+	(wire
+		(pts
+			(xy 36.83 20.32) (xy 46.99 20.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d168be9d-2f29-4ad5-8ecf-a9e95e7b6635")
 	)
 	(wire
 		(pts
@@ -3640,6 +4116,16 @@
 	)
 	(wire
 		(pts
+			(xy 36.83 46.99) (xy 36.83 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f7c3b083-f820-4507-a691-bf940481763d")
+	)
+	(wire
+		(pts
 			(xy 201.93 121.92) (xy 201.93 124.46)
 		)
 		(stroke
@@ -3729,7 +4215,7 @@
 		(uuid "0383bb3e-4ef3-478c-a2b1-492581b9112c")
 	)
 	(label "L"
-		(at 27.94 22.86 0)
+		(at 50.8 20.32 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3739,7 +4225,7 @@
 		(uuid "0a4aa237-4588-495c-944a-7c448c000d37")
 	)
 	(label "N"
-		(at 20.32 44.45 0)
+		(at 17.78 74.93 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3749,7 +4235,7 @@
 		(uuid "227e06a9-f306-476b-84e8-0a5cf9886398")
 	)
 	(label "N"
-		(at 27.94 25.4 0)
+		(at 50.8 40.64 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3759,7 +4245,7 @@
 		(uuid "94f9be61-04d8-4ddf-9e7a-092fc7e79f83")
 	)
 	(label "L"
-		(at 20.32 49.53 0)
+		(at 17.78 80.01 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3770,7 +4256,7 @@
 	)
 	(global_label "170V Rect"
 		(shape output)
-		(at 255.27 111.76 0)
+		(at 265.43 111.76 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3780,7 +4266,7 @@
 		)
 		(uuid "24ba87e1-4bd1-4fee-803e-e8bb5e4f7d3d")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 268.1128 111.76 0)
+			(at 278.2728 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3792,7 +4278,7 @@
 	)
 	(global_label "5v 15w"
 		(shape output)
-		(at 55.88 44.45 0)
+		(at 53.34 74.93 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3802,7 +4288,7 @@
 		)
 		(uuid "4a5c9dff-43f3-44b3-8017-1244694d46d3")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 65.7594 44.45 0)
+			(at 63.2194 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3890,6 +4376,78 @@
 		(uuid "fe50f456-4e7c-4a55-a665-64b5f5550fdf")
 	)
 	(symbol
+		(lib_id "Treadmill_Comp:ERZ-V14D241")
+		(at 46.99 22.86 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "04f3a983-a195-4e52-9026-317869eb4d21")
+		(property "Reference" "R43"
+			(at 49.53 27.9399 90)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "ERZ-V14D241"
+			(at 49.53 30.4799 90)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Treadmill_Feet:RES_ERZ-V14D241_PAN"
+			(at 46.99 22.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "ERZ-V14D241"
+			(at 46.99 22.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 46.99 22.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a9b6b421-e320-44e4-a764-a21fb2a48168")
+		)
+		(pin "2"
+			(uuid "e46868fc-1bfc-4159-8308-31f8a24b1a11")
+		)
+		(instances
+			(project ""
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0"
+					(reference "R43")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Connector_Generic:Conn_01x03")
 		(at 67.31 181.61 0)
 		(mirror y)
@@ -3963,7 +4521,7 @@
 	)
 	(symbol
 		(lib_id "Treadmill_Comp:IRM-15-5")
-		(at 39.37 46.99 0)
+		(at 36.83 77.47 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3972,7 +4530,7 @@
 		(fields_autoplaced yes)
 		(uuid "1b7fe1eb-4a44-4a78-9be2-5f25eb36c7d6")
 		(property "Reference" "PS7"
-			(at 39.37 36.83 0)
+			(at 36.83 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3980,7 +4538,7 @@
 			)
 		)
 		(property "Value" "IRM-15-5"
-			(at 39.37 39.37 0)
+			(at 36.83 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3988,7 +4546,7 @@
 			)
 		)
 		(property "Footprint" "Treadmill_Feet:CONV_IRM-15-5"
-			(at 39.37 46.99 0)
+			(at 36.83 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3998,7 +4556,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 39.37 46.99 0)
+			(at 36.83 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4007,7 +4565,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 39.37 46.99 0)
+			(at 36.83 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4016,7 +4574,7 @@
 			)
 		)
 		(property "DigiKey_Part_Number" "1866-3037-ND"
-			(at 39.37 46.99 0)
+			(at 36.83 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4026,7 +4584,7 @@
 			)
 		)
 		(property "SnapEDA_Link" "https://www.snapeda.com/parts/IRM-15-5/Mean+Well/view-part/?ref=snap"
-			(at 39.37 46.99 0)
+			(at 36.83 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4036,7 +4594,7 @@
 			)
 		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" "24mm"
-			(at 39.37 46.99 0)
+			(at 36.83 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4046,7 +4604,7 @@
 			)
 		)
 		(property "Package" "None"
-			(at 39.37 46.99 0)
+			(at 36.83 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4056,7 +4614,7 @@
 			)
 		)
 		(property "Check_prices" "https://www.snapeda.com/parts/IRM-15-5/Mean+Well/view-part/?ref=eda"
-			(at 39.37 46.99 0)
+			(at 36.83 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4066,7 +4624,7 @@
 			)
 		)
 		(property "STANDARD" "IPC-7351B"
-			(at 39.37 46.99 0)
+			(at 36.83 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4076,7 +4634,7 @@
 			)
 		)
 		(property "MF" "MEAN WELL"
-			(at 39.37 46.99 0)
+			(at 36.83 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4086,7 +4644,7 @@
 			)
 		)
 		(property "MP" "IRM-15-5"
-			(at 39.37 46.99 0)
+			(at 36.83 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4096,7 +4654,7 @@
 			)
 		)
 		(property "Description_1" "Power Supply,AC-DC,5V,3A,115-264V In,Encapsulated,Thru-Hole,15W,IRM Series | MEAN WELL IRM-15-5"
-			(at 39.37 46.99 0)
+			(at 36.83 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4106,7 +4664,7 @@
 			)
 		)
 		(property "MANUFACTURER" "MEAN WELL"
-			(at 39.37 46.99 0)
+			(at 36.83 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4138,7 +4696,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 55.88 52.07 0)
+		(at 53.34 82.55 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4147,7 +4705,7 @@
 		(fields_autoplaced yes)
 		(uuid "209585b7-266f-4bc9-929b-37cd89f82327")
 		(property "Reference" "#PWR041"
-			(at 55.88 58.42 0)
+			(at 53.34 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4156,7 +4714,7 @@
 			)
 		)
 		(property "Value" "LV_GND"
-			(at 58.42 53.3399 0)
+			(at 55.88 83.8199 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4165,7 +4723,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 55.88 52.07 0)
+			(at 53.34 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4174,7 +4732,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 55.88 52.07 0)
+			(at 53.34 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4183,7 +4741,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 55.88 52.07 0)
+			(at 53.34 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4894,6 +5452,78 @@
 		)
 	)
 	(symbol
+		(lib_id "Treadmill_Comp:ERZ-V14D241")
+		(at 46.99 41.91 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5d810be6-4569-4e12-bc8d-2b232583734e")
+		(property "Reference" "R49"
+			(at 49.53 46.9899 90)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "ERZ-V14D241"
+			(at 49.53 49.5299 90)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Treadmill_Feet:RES_ERZ-V14D241_PAN"
+			(at 46.99 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "ERZ-V14D241"
+			(at 46.99 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 46.99 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "1f771184-4f51-4917-9ea6-ca92c3d6c7d1")
+		)
+		(pin "2"
+			(uuid "b00c9c38-ffa5-4e00-84c1-e21c2f747cbe")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0"
+					(reference "R49")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C_Polarized")
 		(at 232.41 118.11 0)
 		(unit 1)
@@ -5328,7 +5958,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x03")
-		(at 20.32 25.4 0)
+		(at 22.86 40.64 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5338,7 +5968,7 @@
 		(fields_autoplaced yes)
 		(uuid "99be9f91-f5aa-4334-aa18-0a8d76d3dbaa")
 		(property "Reference" "J1"
-			(at 20.32 16.51 0)
+			(at 22.86 31.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5346,7 +5976,7 @@
 			)
 		)
 		(property "Value" "TB005-762-03BE"
-			(at 20.32 19.05 0)
+			(at 22.86 34.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5354,7 +5984,7 @@
 			)
 		)
 		(property "Footprint" "Treadmill_Feet:CUI_TB005_-762-03BE"
-			(at 20.32 25.4 0)
+			(at 22.86 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5363,7 +5993,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 20.32 25.4 0)
+			(at 22.86 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5372,7 +6002,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 20.32 25.4 0)
+			(at 22.86 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5899,6 +6529,79 @@
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0"
 					(reference "#PWR018")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Treadmill_Comp:ERZ-V14D241")
+		(at 36.83 34.29 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c44ab73e-91d9-4b97-a948-d1387471d838")
+		(property "Reference" "R50"
+			(at 39.37 39.3699 90)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "ERZ-V14D241"
+			(at 39.37 41.9099 90)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Treadmill_Feet:RES_ERZ-V14D241_PAN"
+			(at 36.83 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "ERZ-V14D241"
+			(at 36.83 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 36.83 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "aea1e9e9-07ed-469c-8c39-1ab60056762b")
+		)
+		(pin "2"
+			(uuid "cb2e7ede-8031-48f6-95f3-9385f6857015")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0"
+					(reference "R50")
 					(unit 1)
 				)
 			)

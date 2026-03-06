@@ -2663,75 +2663,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 147.32 113.03 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "29a45f7b-631e-4b1a-a685-d3afdfa77e36")
-		(property "Reference" "R49"
-			(at 149.86 111.7599 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "15K"
-			(at 147.32 115.062 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
-			(at 145.542 113.03 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 147.32 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 147.32 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "cfdea02e-73c8-43d7-a830-7d0cbb72b7f6")
-		)
-		(pin "2"
-			(uuid "99fd5f3c-7bff-425b-963b-6e15bb7dd2b8")
-		)
-		(instances
-			(project "120VDC Treadmill Motor Controller"
-				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0/91d7d3c1-74bb-4c16-a061-6629b37677fd"
-					(reference "R49")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 53.34 120.65 0)
 		(unit 1)
@@ -2815,7 +2746,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "15K"
+		(property "Value" "30K"
 			(at 147.32 94.742 90)
 			(effects
 				(font
@@ -2824,7 +2755,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
+		(property "Footprint" "Treadmill_Feet:YAG_RSF100_YAG"
 			(at 145.542 92.71 90)
 			(effects
 				(font
@@ -2833,7 +2764,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://yageogroup.com/content/Resource%20Library/Datasheet/YAGEO-RSF_DATASHEET.pdf"
 			(at 147.32 92.71 0)
 			(effects
 				(font
@@ -2842,7 +2773,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Resistor"
+		(property "Description" "RSF100JB-73-30K"
 			(at 147.32 92.71 0)
 			(effects
 				(font
@@ -2960,6 +2891,75 @@
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0/91d7d3c1-74bb-4c16-a061-6629b37677fd"
 					(reference "Q7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 147.32 113.03 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "55c7e790-0f65-43ab-9530-7fe94ba7490e")
+		(property "Reference" "R33"
+			(at 149.86 111.7599 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "30K"
+			(at 147.32 115.062 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Treadmill_Feet:YAG_RSF100_YAG"
+			(at 145.542 113.03 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://yageogroup.com/content/Resource%20Library/Datasheet/YAGEO-RSF_DATASHEET.pdf"
+			(at 147.32 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "RSF100JB-73-30K"
+			(at 147.32 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "28889662-cd43-4a01-8761-757c72728528")
+		)
+		(pin "2"
+			(uuid "9294a98d-7ea9-4f63-8c43-823ddfe204fe")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0/91d7d3c1-74bb-4c16-a061-6629b37677fd"
+					(reference "R33")
 					(unit 1)
 				)
 			)
