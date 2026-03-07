@@ -2218,14 +2218,15 @@
 		)
 		(uuid "424efa1c-b860-4c5f-8dd7-7af1c9715bdd")
 	)
-	(text "RC Filter Smooth \n20KHz => 100Hz"
+	(text "RC lowpass Filter Smooth \n20KHz => 100Hz"
 		(exclude_from_sim no)
-		(at 117.602 29.21 0)
+		(at 108.966 29.464 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 				(color 255 0 30 1)
 			)
+			(justify left)
 		)
 		(uuid "aa8793e0-d965-49f5-b003-9f33e6ded1bd")
 	)

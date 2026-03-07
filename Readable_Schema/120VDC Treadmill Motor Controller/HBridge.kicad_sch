@@ -3005,12 +3005,6 @@
 		(uuid "645bcdde-5e80-4df3-88b2-1cf2f88b7d1d")
 	)
 	(junction
-		(at 144.78 110.49)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "659eb654-140a-4c2e-97c1-78aaac644805")
-	)
-	(junction
 		(at 161.29 49.53)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3171,6 +3165,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "bf02fb3e-50d2-4722-95e0-372b8b5c0804")
+	)
+	(junction
+		(at 140.97 110.49)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c2768e5b-75cb-47aa-bf87-a4d58e19a865")
 	)
 	(junction
 		(at 173.99 100.33)
@@ -4870,6 +4870,16 @@
 	)
 	(wire
 		(pts
+			(xy 140.97 110.49) (xy 146.05 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8364806b-6f83-4ee4-a809-5d4f06997c8d")
+	)
+	(wire
+		(pts
 			(xy 115.57 132.08) (xy 115.57 133.35)
 		)
 		(stroke
@@ -5030,7 +5040,7 @@
 	)
 	(wire
 		(pts
-			(xy 134.62 110.49) (xy 144.78 110.49)
+			(xy 134.62 110.49) (xy 140.97 110.49)
 		)
 		(stroke
 			(width 0)
@@ -5177,16 +5187,6 @@
 			(type default)
 		)
 		(uuid "9ddf2b75-509f-49f3-b291-6b64746af073")
-	)
-	(wire
-		(pts
-			(xy 144.78 110.49) (xy 146.05 110.49)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9e246a66-017c-45a0-906e-43fbef620472")
 	)
 	(wire
 		(pts
@@ -5340,7 +5340,7 @@
 	)
 	(wire
 		(pts
-			(xy 171.45 110.49) (xy 173.99 110.49)
+			(xy 172.72 110.49) (xy 173.99 110.49)
 		)
 		(stroke
 			(width 0)
@@ -5950,7 +5950,7 @@
 	)
 	(wire
 		(pts
-			(xy 121.92 110.49) (xy 124.46 110.49)
+			(xy 121.92 110.49) (xy 123.19 110.49)
 		)
 		(stroke
 			(width 0)
@@ -6229,7 +6229,7 @@
 		(uuid "fa474ac4-7d9a-44e5-ac77-ce613c6dc68b")
 	)
 	(label "hs_ps_2_-"
-		(at 171.45 110.49 180)
+		(at 172.72 110.49 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6289,7 +6289,7 @@
 		(uuid "41e3a30b-d291-4084-b212-c261448d6feb")
 	)
 	(label "hs_ps_1_-"
-		(at 124.46 110.49 0)
+		(at 123.19 110.49 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11806,7 +11806,7 @@
 	)
 	(symbol
 		(lib_id "Treadmill_Comp:RCWCTE")
-		(at 144.78 105.41 90)
+		(at 140.97 105.41 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11814,7 +11814,7 @@
 		(dnp no)
 		(uuid "94b32b99-2f33-4154-b423-eaaff82dede7")
 		(property "Reference" "TP1"
-			(at 143.256 102.87 90)
+			(at 139.446 102.87 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11823,7 +11823,7 @@
 			)
 		)
 		(property "Value" "RCWCTE"
-			(at 147.32 106.6799 90)
+			(at 143.51 106.6799 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11833,7 +11833,7 @@
 			)
 		)
 		(property "Footprint" "Treadmill_Feet:RCWCTE"
-			(at 144.78 105.41 0)
+			(at 140.97 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11843,7 +11843,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.koaspeer.com/pdfs/RC.pdf"
-			(at 144.78 105.41 0)
+			(at 140.97 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11852,7 +11852,7 @@
 			)
 		)
 		(property "Description" "https://www.digikey.com/en/products/detail/koa-speer-electronics-inc/RCWCTE/11476558"
-			(at 144.78 105.41 0)
+			(at 140.97 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11861,7 +11861,7 @@
 			)
 		)
 		(property "PARTREV" "1/06/14"
-			(at 144.78 105.41 0)
+			(at 140.97 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11871,7 +11871,7 @@
 			)
 		)
 		(property "SNAPEDA_PN" "RCWCTE"
-			(at 144.78 105.41 0)
+			(at 140.97 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11881,7 +11881,7 @@
 			)
 		)
 		(property "MANUFACTURER" "KOA Speer"
-			(at 144.78 105.41 0)
+			(at 140.97 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11891,7 +11891,7 @@
 			)
 		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" "2 mm"
-			(at 144.78 105.41 0)
+			(at 140.97 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11901,7 +11901,7 @@
 			)
 		)
 		(property "STANDARD" "Manufacturer Recommendations"
-			(at 144.78 105.41 0)
+			(at 140.97 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
