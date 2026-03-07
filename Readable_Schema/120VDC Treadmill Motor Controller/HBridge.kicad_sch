@@ -307,6 +307,132 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Device:NetTie_2"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom no)
+			(on_board yes)
+			(property "Reference" "NT"
+				(at 0 1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "NetTie_2"
+				(at 0 -1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Net tie, 2 pins"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "net tie short"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Net*Tie*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "NetTie_2_0_1"
+				(polyline
+					(pts
+						(xy -1.27 0) (xy 1.27 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "NetTie_2_1_1"
+				(pin passive line
+					(at -2.54 0 0)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 0 180)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:R"
 			(pin_numbers
 				(hide yes)
@@ -2801,6 +2927,12 @@
 		(uuid "46a10063-a331-4e55-9d38-a2d5d70f9348")
 	)
 	(junction
+		(at 134.62 100.33)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4800a314-e794-42d4-9bf1-6968a0b1f13c")
+	)
+	(junction
 		(at 127 88.9)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2811,12 +2943,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "49f42f0e-3ecc-4dec-a56a-109096b180d5")
-	)
-	(junction
-		(at 134.62 133.35)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "551230a7-4656-4bd1-8e33-8e9b1176636c")
 	)
 	(junction
 		(at 57.15 21.59)
@@ -2889,12 +3015,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "67559ba5-c47e-4bff-9bcf-7360f7ca2f84")
-	)
-	(junction
-		(at 134.62 100.33)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "6d0e00b2-3781-42b3-a1b3-67ca77e685d9")
 	)
 	(junction
 		(at 161.29 59.69)
@@ -3017,6 +3137,12 @@
 		(uuid "a3158968-d480-4af4-adf7-00cbd3ce3e62")
 	)
 	(junction
+		(at 161.29 133.35)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a612be93-ef79-48fb-9b3e-8d1838c783f2")
+	)
+	(junction
 		(at 55.88 99.06)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3057,12 +3183,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c349ef56-9944-492d-8d48-5c5753a31d31")
-	)
-	(junction
-		(at 161.29 133.35)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "c3ca0d38-c74e-4ddd-9c2f-d20ee0757979")
 	)
 	(junction
 		(at 173.99 110.49)
@@ -3123,6 +3243,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ec857b1d-0b77-4f0c-ab7e-3511b26ee3a7")
+	)
+	(junction
+		(at 134.62 133.35)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f1ff65c1-32b9-478e-bad3-2697f6178918")
 	)
 	(junction
 		(at 48.26 111.76)
@@ -3434,7 +3560,7 @@
 	)
 	(wire
 		(pts
-			(xy 161.29 133.35) (xy 161.29 140.97)
+			(xy 161.29 127) (xy 161.29 133.35)
 		)
 		(stroke
 			(width 0)
@@ -3794,7 +3920,7 @@
 	)
 	(wire
 		(pts
-			(xy 134.62 100.33) (xy 134.62 110.49)
+			(xy 134.62 93.98) (xy 134.62 100.33)
 		)
 		(stroke
 			(width 0)
@@ -3811,6 +3937,16 @@
 			(type default)
 		)
 		(uuid "344f59f7-99d1-4416-9700-fc98b12c6afe")
+	)
+	(wire
+		(pts
+			(xy 134.62 100.33) (xy 134.62 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3477e92b-07d2-44ad-996d-25b4c51d3ad6")
 	)
 	(wire
 		(pts
@@ -3881,6 +4017,16 @@
 			(type default)
 		)
 		(uuid "3ada05ef-9b48-41a0-912c-bc19f5bb0a2a")
+	)
+	(wire
+		(pts
+			(xy 134.62 133.35) (xy 134.62 140.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3b02f162-a254-4b1e-96af-237f84320032")
 	)
 	(wire
 		(pts
@@ -4011,16 +4157,6 @@
 			(type default)
 		)
 		(uuid "42e70c45-b5e7-4426-b970-5b641631b5e9")
-	)
-	(wire
-		(pts
-			(xy 161.29 127) (xy 161.29 133.35)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "435ca374-c6ee-4466-a873-e3d949d92773")
 	)
 	(wire
 		(pts
@@ -4554,16 +4690,6 @@
 	)
 	(wire
 		(pts
-			(xy 134.62 133.35) (xy 134.62 140.97)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6b8c6150-8d33-4f8a-bdca-621f9dcca956")
-	)
-	(wire
-		(pts
 			(xy 54.61 138.43) (xy 54.61 139.7)
 		)
 		(stroke
@@ -4704,7 +4830,7 @@
 	)
 	(wire
 		(pts
-			(xy 127 133.35) (xy 134.62 133.35)
+			(xy 127 133.35) (xy 129.54 133.35)
 		)
 		(stroke
 			(width 0)
@@ -5474,6 +5600,16 @@
 	)
 	(wire
 		(pts
+			(xy 161.29 133.35) (xy 161.29 140.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c389e262-2343-4881-9bc5-e5dd80796ec3")
+	)
+	(wire
+		(pts
 			(xy 177.8 82.55) (xy 181.61 82.55)
 		)
 		(stroke
@@ -5544,23 +5680,13 @@
 	)
 	(wire
 		(pts
-			(xy 121.92 100.33) (xy 134.62 100.33)
+			(xy 121.92 100.33) (xy 129.54 100.33)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "c91fa9bb-5525-4034-b7a0-4d09d710deb3")
-	)
-	(wire
-		(pts
-			(xy 134.62 93.98) (xy 134.62 100.33)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c9d16d62-a23c-425b-82dc-915887a108fc")
 	)
 	(wire
 		(pts
@@ -5834,7 +5960,7 @@
 	)
 	(wire
 		(pts
-			(xy 173.99 100.33) (xy 161.29 100.33)
+			(xy 173.99 100.33) (xy 166.37 100.33)
 		)
 		(stroke
 			(width 0)
@@ -5914,7 +6040,7 @@
 	)
 	(wire
 		(pts
-			(xy 168.91 133.35) (xy 161.29 133.35)
+			(xy 168.91 133.35) (xy 166.37 133.35)
 		)
 		(stroke
 			(width 0)
@@ -6470,6 +6596,669 @@
 			(justify right)
 		)
 		(uuid "d7720dc1-21b5-4233-9530-fb2156858c20")
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 161.29 130.81 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "086f6a5f-70a3-479a-a2d9-3a2fe9ccf1cd")
+		(property "Netclass" "HIGH CURRENT"
+			(at 158.75 130.1115 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Component Class" ""
+			(at 341.63 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 176.53 133.35 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "08bd33d9-873b-4d89-a5b9-1dc10889b9cb")
+		(property "Netclass" "Gate Sink"
+			(at 166.116 136.398 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Component Class" ""
+			(at -33.02 208.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 140.97 72.39 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "0b7face7-6f23-4568-b4e5-a797b978d02e")
+		(property "Netclass" "HIGH CURRENT"
+			(at 141.6685 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Component Class" ""
+			(at -39.37 -7.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 116.84 30.48 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "16c34e17-ffac-4f04-8f7e-3124b42d35e5")
+		(property "Netclass" "Gate VCC"
+			(at 121.412 34.544 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Component Class" ""
+			(at 326.39 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 185.42 100.33 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "1b1e9190-70d4-4f23-a447-63bfe556d2c9")
+		(property "Netclass" "Gate Sink"
+			(at 175.006 97.282 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Component Class" ""
+			(at -24.13 25.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 168.91 82.55 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "265934b8-d6f4-40b6-93e2-e110acc37e78")
+		(property "Netclass" "Gate drive"
+			(at 168.2115 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Component Class" ""
+			(at 374.65 -3.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 53.34 21.59 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "326e3a75-04ec-46eb-b3f1-4f1f4bb46a1f")
+		(property "Netclass" "Gate VCC"
+			(at 48.768 17.526 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Component Class" ""
+			(at -156.21 -53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 124.46 100.33 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "391c27c0-c10f-4439-b3fc-04eb5ca1d66e")
+		(property "Netclass" "Gate Sink"
+			(at 134.112 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Component Class" ""
+			(at 334.01 175.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 101.6 82.55 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "46647e83-e133-4be9-9879-3b380df2e21e")
+		(property "Netclass" "Gate drive"
+			(at 100.9015 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Component Class" ""
+			(at 307.34 -3.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 213.36 21.59 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "477e0bbf-19f1-4d9b-a6ca-2e9dc26d05bd")
+		(property "Netclass" "Gate VCC"
+			(at 208.788 17.526 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Component Class" ""
+			(at 3.81 -53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 116.84 21.59 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "4a0c6571-55dd-49e8-8f1e-bead1a0e883a")
+		(property "Netclass" "Gate VCC"
+			(at 112.268 17.526 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Component Class" ""
+			(at -92.71 -53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 191.77 121.92 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "4be49b99-3c93-49df-b267-8c0cce956bfe")
+		(property "Netclass" "Gate drive"
+			(at 191.0715 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Component Class" ""
+			(at 397.51 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 127 82.55 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "50bb09a4-991d-4fc4-9425-b703afb97fc5")
+		(property "Netclass" "Gate drive"
+			(at 127.6985 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Component Class" ""
+			(at -78.74 -3.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify right)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 116.84 82.55 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "549373f1-7819-4860-95d9-80cc41c6d9df")
+		(property "Netclass" "Gate drive"
+			(at 117.5385 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Component Class" ""
+			(at -88.9 -3.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify right)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 134.62 104.14 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "74f5d20d-1583-4639-99bd-7a8a5e83e692")
+		(property "Netclass" "HIGH CURRENT"
+			(at 137.16 103.4415 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Component Class" ""
+			(at -45.72 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 114.3 121.92 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "85cbaf1d-226f-4d10-a7ba-b83103959f66")
+		(property "Netclass" "Gate drive"
+			(at 113.6015 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Component Class" ""
+			(at 320.04 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 194.31 82.55 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "a962d212-0bc1-46fd-ab27-bd84e3bc04cf")
+		(property "Netclass" "Gate drive"
+			(at 195.0085 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Component Class" ""
+			(at -11.43 -3.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify right)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 134.62 130.81 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "a9f46b12-5aae-4cb5-8f1b-0a8c1ff39975")
+		(property "Netclass" "HIGH CURRENT"
+			(at 137.16 130.1115 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Component Class" ""
+			(at -45.72 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 213.36 30.48 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "cb750897-a306-4be2-9beb-0719c7513629")
+		(property "Netclass" "Gate VCC"
+			(at 217.932 34.544 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Component Class" ""
+			(at 422.91 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 119.38 133.35 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "df3b9129-fa63-4911-bc0d-1191e0028a3a")
+		(property "Netclass" "Gate Sink"
+			(at 108.966 135.636 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Component Class" ""
+			(at -90.17 208.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 161.29 104.14 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "e91f922b-9270-4dce-92cb-aec1a37627d9")
+		(property "Netclass" "HIGH CURRENT"
+			(at 158.75 103.4415 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Component Class" ""
+			(at 341.63 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
 	)
 	(symbol
 		(lib_id "Device:C")
@@ -7164,6 +7953,76 @@
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
 					(reference "R11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:NetTie_2")
+		(at 163.83 133.35 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "15a267b0-a932-4700-ae0f-8bf6c7361dbe")
+		(property "Reference" "NT3"
+			(at 163.83 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "NetTie_2"
+			(at 163.83 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "NetTie:NetTie-2_THT_Pad0.3mm"
+			(at 163.83 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 163.83 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Net tie, 2 pins"
+			(at 163.83 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "476c8b41-58c4-4850-962e-fdd1e093a457")
+		)
+		(pin "1"
+			(uuid "5b3cb138-d0f8-4915-8350-9d2250ec41b1")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
+					(reference "NT3")
 					(unit 1)
 				)
 			)
@@ -9032,6 +9891,76 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:NetTie_2")
+		(at 132.08 133.35 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "674e7888-d5d0-43b8-a914-3c13a4ae0af5")
+		(property "Reference" "NT4"
+			(at 132.08 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "NetTie_2"
+			(at 132.08 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "NetTie:NetTie-2_THT_Pad0.3mm"
+			(at 132.08 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 132.08 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Net tie, 2 pins"
+			(at 132.08 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "3df616d8-b43e-49f4-adf0-b84e06644836")
+		)
+		(pin "1"
+			(uuid "cdce17a5-a8a0-4007-8ab2-8effed365a28")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
+					(reference "NT4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Treadmill_Comp:UCC21530DWKR")
 		(at 66.04 104.14 0)
 		(unit 1)
@@ -9956,7 +10885,7 @@
 		(dnp no)
 		(uuid "76df9e1a-b4e7-4c0e-bbdb-744cab38fa52")
 		(property "Reference" "D3"
-			(at 175.006 77.724 0)
+			(at 175.006 79.756 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9964,11 +10893,12 @@
 			)
 		)
 		(property "Value" "MSS1P4-M3_89A"
-			(at 171.958 79.756 0)
+			(at 178.054 79.502 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "Treadmill_Feet:DIODE_MSS1P4-M3_89A"
@@ -10660,7 +11590,7 @@
 		(dnp no)
 		(uuid "8b6aaffc-b2e8-44ac-90c1-1878205ef91f")
 		(property "Reference" "D2"
-			(at 120.904 77.724 0)
+			(at 120.142 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10673,6 +11603,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "Treadmill_Feet:DIODE_MSS1P4-M3_89A"
@@ -11088,6 +12019,76 @@
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
 					(reference "Q4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:NetTie_2")
+		(at 132.08 100.33 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9cecdfcc-72f8-4491-9926-11d625fd957c")
+		(property "Reference" "NT1"
+			(at 132.08 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "NetTie_2"
+			(at 132.08 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "NetTie:NetTie-2_THT_Pad0.3mm"
+			(at 132.08 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 132.08 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Net tie, 2 pins"
+			(at 132.08 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "f77484bd-1617-4733-a5b5-a1f57d038a80")
+		)
+		(pin "1"
+			(uuid "2a92466a-2dde-4c32-9469-479dfa579c22")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
+					(reference "NT1")
 					(unit 1)
 				)
 			)
@@ -12692,6 +13693,76 @@
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
 					(reference "C2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:NetTie_2")
+		(at 163.83 100.33 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e377bcbe-83fb-4890-bc90-92cfd7cf1198")
+		(property "Reference" "NT2"
+			(at 163.83 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "NetTie_2"
+			(at 163.83 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "NetTie:NetTie-2_THT_Pad0.3mm"
+			(at 163.83 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 163.83 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Net tie, 2 pins"
+			(at 163.83 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "667ba140-0e2f-4d78-8540-4a34cbed6aaf")
+		)
+		(pin "1"
+			(uuid "e9dd31aa-01c9-48f7-943c-62fac16a0a29")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
+					(reference "NT2")
 					(unit 1)
 				)
 			)
