@@ -488,36 +488,30 @@
         "wire_width": 6
       },
       {
-        "clearance": 0.5,
+        "clearance": 0.2,
         "name": "Gate Sink",
-        "pcb_color": "rgb(255, 255, 0)",
-        "priority": 3,
+        "pcb_color": "rgb(0, 0, 255)",
+        "priority": 1,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.5
       },
       {
-        "clearance": 0.3,
-        "name": "Gate VCC",
-        "pcb_color": "rgb(255, 153, 0)",
-        "priority": 1,
+        "clearance": 0.2,
+        "name": "Gate drive",
+        "pcb_color": "rgb(0, 255, 0)",
+        "priority": 2,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.3
       },
       {
-        "clearance": 0.5,
-        "name": "Gate drive",
-        "pcb_color": "rgb(255, 0, 255)",
-        "priority": 2,
-        "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.5
-      },
-      {
-        "clearance": 0.0,
+        "clearance": 1.5,
         "name": "HIGH CURRENT",
-        "pcb_color": "rgb(255, 0, 0)",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
         "priority": 0,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.0
+        "track_width": 20.0,
+        "via_diameter": 1.2,
+        "via_drill": 0.6
       }
     ],
     "meta": {
