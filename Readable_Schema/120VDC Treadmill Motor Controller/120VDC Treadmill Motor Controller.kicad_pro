@@ -489,24 +489,16 @@
       },
       {
         "clearance": 0.2,
-        "name": "Gate Sink",
-        "pcb_color": "rgb(0, 0, 255)",
-        "priority": 1,
-        "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.5
-      },
-      {
-        "clearance": 0.2,
         "name": "Gate drive",
         "pcb_color": "rgb(0, 255, 0)",
-        "priority": 2,
+        "priority": 1,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.3
       },
       {
         "clearance": 1.5,
         "name": "HIGH CURRENT",
-        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "pcb_color": "rgb(255, 0, 0)",
         "priority": 0,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 20.0,
@@ -561,6 +553,9 @@
       "Net-(Q3-G)": [
         "Gate drive"
       ],
+      "Net-(Q5-G)": [
+        "Gate drive"
+      ],
       "Net-(U1-OUTA)": [
         "Gate drive"
       ],
@@ -578,6 +573,9 @@
       ],
       "Net-(U2-VSSB)": [
         "Gate Sink"
+      ],
+      "Net-(U5-VDRV)": [
+        "Gate drive"
       ]
     },
     "netclass_patterns": []

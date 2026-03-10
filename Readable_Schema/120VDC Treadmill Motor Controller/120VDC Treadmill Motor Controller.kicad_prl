@@ -1,15 +1,15 @@
 {
   "board": {
-    "active_layer": 6,
+    "active_layer": 0,
     "active_layer_preset": "",
     "auto_track_width": true,
     "hidden_netclasses": [
       "Default",
-      "Gate Sink",
       "Gate drive",
       "HIGH CURRENT"
     ],
     "hidden_nets": [
+      "",
       "Net-(A1-GPIO27_ADC1)",
       "Net-(A1-GPIO5)",
       "LV_GND",
@@ -70,10 +70,6 @@
       "unconnected-(U2-VCCI_2-Pad8)",
       "Net-(U1-INB)",
       "Net-(U1-DT)",
-      "unconnected-(PS3-+Vout-Pad10)",
-      "unconnected-(PS3-+Vin-Pad16)",
-      "unconnected-(PS3--Vout-Pad6)",
-      "unconnected-(PS3--Vin-Pad8)",
       "unconnected-(U3-NC-Pad8)",
       "Net-(U3-VOUT)",
       "unconnected-(K1-Pad5)",
@@ -105,15 +101,7 @@
       "/H_Bridge/dir_a",
       "unconnected-(A1-GPIO15-Pad20)_1",
       "unconnected-(A1-GPIO14-Pad19)_1",
-      "unconnected-(PS2-+Vin-Pad16)",
       "unconnected-(A1-GPIO3-Pad5)_1",
-      "unconnected-(PS1-+Vout-Pad10)",
-      "unconnected-(PS1--Vin-Pad8)",
-      "unconnected-(PS1--Vout-Pad6)",
-      "unconnected-(PS1-+Vin-Pad16)",
-      "unconnected-(PS2-+Vout-Pad10)",
-      "unconnected-(PS2--Vout-Pad6)",
-      "unconnected-(PS2--Vin-Pad8)",
       "unconnected-(PS4-NC-Pad8)",
       "Net-(U1-OUTA)",
       "Net-(U1-OUTB)",
@@ -136,10 +124,7 @@
       "unconnected-(U4-2Y-Pad6)",
       "unconnected-(U4-4Y-Pad11)",
       "Net-(J1-Pin_3)",
-      "Net-(U2-VSSB)",
-      "Net-(C15-Pad2)",
-      "Net-(C18-Pad1)",
-      "Net-(U1-VSSB)"
+      "Net-(C15-Pad2)"
     ],
     "high_contrast_mode": 0,
     "net_color_mode": 1,
@@ -186,7 +171,7 @@
       "conflict_shadows",
       "shapes"
     ],
-    "visible_layers": "ffffffff_ffffffff_ffffffff_ffffffff",
+    "visible_layers": "ffffffff_ffffffff_fffffff5_fff7ffff",
     "zone_display_mode": 0
   },
   "git": {
