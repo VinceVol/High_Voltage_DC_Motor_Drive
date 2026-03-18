@@ -1,15 +1,13 @@
 {
   "board": {
-    "active_layer": 6,
+    "active_layer": 2,
     "active_layer_preset": "",
     "auto_track_width": true,
     "hidden_netclasses": [
       "Gate drive",
       "HIGH CURRENT"
     ],
-    "hidden_nets": [
-      ""
-    ],
+    "hidden_nets": [],
     "high_contrast_mode": 0,
     "net_color_mode": 1,
     "opacity": {
@@ -108,7 +106,7 @@
       58,
       58,
       58,
-      58
+      884
     ],
     "custom_group_rules": [],
     "expanded_rows": [],
