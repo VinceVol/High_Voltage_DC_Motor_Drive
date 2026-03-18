@@ -496,7 +496,7 @@
         "track_width": 0.3
       },
       {
-        "clearance": 1.5,
+        "clearance": 0.3,
         "name": "HIGH CURRENT",
         "pcb_color": "rgb(255, 0, 0)",
         "priority": 0,
