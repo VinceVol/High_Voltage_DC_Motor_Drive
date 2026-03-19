@@ -4,7 +4,6 @@
     "active_layer_preset": "",
     "auto_track_width": true,
     "hidden_netclasses": [
-      "Gate drive",
       "HIGH CURRENT"
     ],
     "hidden_nets": [],

@@ -489,9 +489,33 @@
       },
       {
         "clearance": 0.2,
+        "name": "15W5V",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 1,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.9
+      },
+      {
+        "clearance": 0.2,
+        "name": "1W 15V",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 0,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.5
+      },
+      {
+        "clearance": 0.2,
+        "name": "Gate Vcc",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 2,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.3
+      },
+      {
+        "clearance": 0.2,
         "name": "Gate drive",
         "pcb_color": "rgb(0, 255, 0)",
-        "priority": 1,
+        "priority": 4,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.3
       },
@@ -499,9 +523,9 @@
         "clearance": 0.3,
         "name": "HIGH CURRENT",
         "pcb_color": "rgb(255, 0, 0)",
-        "priority": 0,
+        "priority": 3,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 7.5,
+        "track_width": 1.0,
         "via_diameter": 1.2,
         "via_drill": 0.6
       }
@@ -532,6 +556,12 @@
       "170V Rect": [
         "HIGH CURRENT"
       ],
+      "5v 15w": [
+        "15W5V"
+      ],
+      "LV_GND": [
+        "15W5V"
+      ],
       "Net-(C15-Pad2)": [
         "Gate Sink"
       ],
@@ -539,6 +569,9 @@
         "Gate Sink"
       ],
       "Net-(D2-Pad1)": [
+        "Gate drive"
+      ],
+      "Net-(D3-Pad1)": [
         "Gate drive"
       ],
       "Net-(J2-Pin_1)": [
