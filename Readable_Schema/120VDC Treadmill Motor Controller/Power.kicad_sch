@@ -1869,22 +1869,20 @@
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "PS"
-				(at -7.62 5.842 0)
+			(property "Reference" "PS7"
+				(at 0 10.16 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left bottom)
 				)
 			)
 			(property "Value" "IRM-15-5"
-				(at -7.62 -7.62 0)
+				(at 0 7.62 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left bottom)
 				)
 			)
 			(property "Footprint" "Treadmill_Feet:CONV_IRM-15-5"
@@ -2027,7 +2025,9 @@
 						(type background)
 					)
 				)
-				(pin input line
+			)
+			(symbol "IRM-15-5_1_0"
+				(pin power_in line
 					(at -12.7 2.54 0)
 					(length 5.08)
 					(name "AC/L"
@@ -2045,7 +2045,7 @@
 						)
 					)
 				)
-				(pin input line
+				(pin power_in line
 					(at -12.7 -2.54 0)
 					(length 5.08)
 					(name "AC/N"
@@ -2063,7 +2063,7 @@
 						)
 					)
 				)
-				(pin output line
+				(pin power_in line
 					(at 12.7 2.54 180)
 					(length 5.08)
 					(name "+V"
@@ -2081,7 +2081,7 @@
 						)
 					)
 				)
-				(pin output line
+				(pin power_in line
 					(at 12.7 -2.54 180)
 					(length 5.08)
 					(name "-V"
