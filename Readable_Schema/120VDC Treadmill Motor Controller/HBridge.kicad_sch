@@ -6944,6 +6944,39 @@
 	(netclass_flag ""
 		(length 2.54)
 		(shape round)
+		(at 127 121.92 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "2bbd31bb-d38e-4f22-b7d6-1d9c1d8f8e47")
+		(property "Netclass" "Gate drive"
+			(at 127.6985 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Component Class" ""
+			(at -78.74 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify right)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
 		(at 140.97 140.97 0)
 		(fields_autoplaced yes)
 		(effects
@@ -7039,6 +7072,39 @@
 	(netclass_flag ""
 		(length 2.54)
 		(shape round)
+		(at 168.91 121.92 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "47d8e58a-652f-4990-93e9-4094b1fc1c72")
+		(property "Netclass" "Gate drive"
+			(at 169.6085 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Component Class" ""
+			(at -36.83 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify right)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
 		(at 116.84 21.59 0)
 		(effects
 			(font
@@ -7122,6 +7188,39 @@
 		)
 		(property "Component Class" ""
 			(at -78.74 -3.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify right)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 111.76 110.49 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "52fd9dfb-5707-454a-b418-e187a33550ca")
+		(property "Netclass" "Gate drive"
+			(at 112.4585 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Component Class" ""
+			(at -93.98 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7416,6 +7515,39 @@
 					(italic yes)
 				)
 				(justify left)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 184.15 110.49 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "f3e58950-c3a4-4248-9bf8-3c80a5ac3b3c")
+		(property "Netclass" "Gate drive"
+			(at 184.8485 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Component Class" ""
+			(at -21.59 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify right)
 			)
 		)
 	)

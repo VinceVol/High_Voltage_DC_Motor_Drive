@@ -731,13 +731,15 @@
         "1W 15V"
       ],
       "/H_Bridge/hs_ps_1_-": [
-        "1W 15V"
+        "1W 15V",
+        "Gate drive"
       ],
       "/H_Bridge/hs_ps_2_+": [
         "1W 15V"
       ],
       "/H_Bridge/hs_ps_2_-": [
-        "1W 15V"
+        "1W 15V",
+        "Gate drive"
       ],
       "/H_Bridge/ls_ps_+": [
         "1W 15V"
@@ -769,10 +771,16 @@
       "Net-(J2-Pin_2)": [
         "HIGH CURRENT"
       ],
+      "Net-(Q1-G)": [
+        "Gate drive"
+      ],
       "Net-(Q2-G)": [
         "Gate drive"
       ],
       "Net-(Q3-G)": [
+        "Gate drive"
+      ],
+      "Net-(Q4-G)": [
         "Gate drive"
       ],
       "Net-(Q5-G)": [
