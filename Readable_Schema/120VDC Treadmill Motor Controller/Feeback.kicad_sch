@@ -4243,7 +4243,7 @@
 			(uuid "4c20c90b-fd90-4663-8fcf-f03c6e81f10e")
 		)
 		(instances
-			(project ""
+			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/23f081f2-fcb5-4e72-b320-a9766db11ad0"
 					(reference "R14")
 					(unit 1)
@@ -4428,7 +4428,7 @@
 			(uuid "ccddcc81-085e-4fbd-8d32-a8b0045d12ef")
 		)
 		(instances
-			(project ""
+			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/23f081f2-fcb5-4e72-b320-a9766db11ad0"
 					(reference "#PWR08")
 					(unit 1)
@@ -4893,7 +4893,7 @@
 			(uuid "0aae0c51-f5cc-4d4c-9cd9-771a3dfce537")
 		)
 		(instances
-			(project ""
+			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/23f081f2-fcb5-4e72-b320-a9766db11ad0"
 					(reference "U4")
 					(unit 1)
@@ -5439,7 +5439,7 @@
 			(uuid "6b75980d-8989-42cd-83c8-40fdbc2c8274")
 		)
 		(instances
-			(project ""
+			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/23f081f2-fcb5-4e72-b320-a9766db11ad0"
 					(reference "U3")
 					(unit 1)
@@ -5866,7 +5866,7 @@
 			(uuid "62c80bd8-42cd-43cb-86a8-033f051c535b")
 		)
 		(instances
-			(project ""
+			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/23f081f2-fcb5-4e72-b320-a9766db11ad0"
 					(reference "U6")
 					(unit 1)
@@ -6053,7 +6053,7 @@
 			(uuid "bbcdc8e5-4bb5-4dbf-b1d3-883c354c5491")
 		)
 		(instances
-			(project ""
+			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/23f081f2-fcb5-4e72-b320-a9766db11ad0"
 					(reference "PS4")
 					(unit 1)

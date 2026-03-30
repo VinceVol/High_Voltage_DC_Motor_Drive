@@ -2510,7 +2510,7 @@
 			(uuid "c7d20e8b-f8c0-4552-ab93-f2de83180056")
 		)
 		(instances
-			(project ""
+			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0/91d7d3c1-74bb-4c16-a061-6629b37677fd"
 					(reference "D4")
 					(unit 1)
@@ -2586,7 +2586,7 @@
 			(uuid "fcd3e2b9-15c5-4433-a2b4-5426c05334eb")
 		)
 		(instances
-			(project ""
+			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0/91d7d3c1-74bb-4c16-a061-6629b37677fd"
 					(reference "Q8")
 					(unit 1)

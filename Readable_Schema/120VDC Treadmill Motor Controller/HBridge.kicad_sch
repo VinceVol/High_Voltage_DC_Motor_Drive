@@ -8889,7 +8889,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "IPP60R060P7XKSA1"
+		(property "Value" "IPP200N25N3 G"
 			(at 157.48 90.1699 0)
 			(effects
 				(font
@@ -8908,7 +8908,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.infineon.com/dgdl/Infineon-IPP60R060P7-DS-v02_00-EN.pdf?fileId=5546d4625acbae4c015accdf20660227"
+		(property "Datasheet" "https://www.infineon.com/assets/row/public/documents/24/49/infineon-ipp-b-i-200n25n3-g-datasheet-en.pdf?folderId=db3a3043163797a6011637d4bae7003b&fileId=db3a3043243b5f17012496b87e9f1971"
 			(at 163.83 101.6 0)
 			(effects
 				(font
@@ -9654,7 +9654,7 @@
 			(uuid "da8d53bc-6896-4452-9ddb-457e6d43cf3b")
 		)
 		(instances
-			(project ""
+			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
 					(reference "CR1")
 					(unit 1)
@@ -9862,7 +9862,7 @@
 			(uuid "e206762a-4e48-4913-8f5c-8ff647ab87a0")
 		)
 		(instances
-			(project ""
+			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
 					(reference "C28")
 					(unit 1)
@@ -10176,7 +10176,7 @@
 			(uuid "b4c76f96-b765-4279-9b4e-29e355a4647c")
 		)
 		(instances
-			(project ""
+			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
 					(reference "U2")
 					(unit 1)
@@ -10202,7 +10202,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "IPP60R060P7XKSA1"
+		(property "Value" "IPP200N25N3 G"
 			(at 135.128 84.328 0)
 			(effects
 				(font
@@ -10220,7 +10220,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.infineon.com/dgdl/Infineon-IPP60R060P7-DS-v02_00-EN.pdf?fileId=5546d4625acbae4c015accdf20660227"
+		(property "Datasheet" "https://www.infineon.com/assets/row/public/documents/24/49/infineon-ipp-b-i-200n25n3-g-datasheet-en.pdf?folderId=db3a3043163797a6011637d4bae7003b&fileId=db3a3043243b5f17012496b87e9f1971"
 			(at 132.08 101.6 0)
 			(effects
 				(font
@@ -10275,7 +10275,7 @@
 			(uuid "1b2215c7-e451-4349-99aa-f4c8d30a635a")
 		)
 		(instances
-			(project ""
+			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
 					(reference "Q2")
 					(unit 1)
@@ -10409,7 +10409,7 @@
 			(uuid "bab22b12-af7d-48eb-bd89-128dd2547ba1")
 		)
 		(instances
-			(project ""
+			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
 					(reference "#PWR010")
 					(unit 1)
@@ -11775,7 +11775,7 @@
 			(uuid "c2f55a1e-e39e-4d1b-a134-c041c8ff1628")
 		)
 		(instances
-			(project ""
+			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
 					(reference "D2")
 					(unit 1)
@@ -11958,7 +11958,7 @@
 			(uuid "f871b3be-c91e-43ee-a90a-d7ea872b6ba4")
 		)
 		(instances
-			(project ""
+			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
 					(reference "TP1")
 					(unit 1)
@@ -11986,7 +11986,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "IPP60R060P7XKSA1"
+		(property "Value" "IPP200N25N3 G"
 			(at 157.48 123.1899 0)
 			(effects
 				(font
@@ -12005,7 +12005,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.infineon.com/dgdl/Infineon-IPP60R060P7-DS-v02_00-EN.pdf?fileId=5546d4625acbae4c015accdf20660227"
+		(property "Datasheet" "https://www.infineon.com/assets/row/public/documents/24/49/infineon-ipp-b-i-200n25n3-g-datasheet-en.pdf?folderId=db3a3043163797a6011637d4bae7003b&fileId=db3a3043243b5f17012496b87e9f1971"
 			(at 163.83 134.62 0)
 			(effects
 				(font
@@ -12087,7 +12087,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "IPP60R060P7XKSA1"
+		(property "Value" "IPP200N25N3 G"
 			(at 138.43 123.1899 0)
 			(effects
 				(font
@@ -12106,7 +12106,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.infineon.com/dgdl/Infineon-IPP60R060P7-DS-v02_00-EN.pdf?fileId=5546d4625acbae4c015accdf20660227"
+		(property "Datasheet" "https://www.infineon.com/assets/row/public/documents/24/49/infineon-ipp-b-i-200n25n3-g-datasheet-en.pdf?folderId=db3a3043163797a6011637d4bae7003b&fileId=db3a3043243b5f17012496b87e9f1971"
 			(at 132.08 134.62 0)
 			(effects
 				(font
@@ -12228,7 +12228,7 @@
 			(uuid "ec6cdd4b-7b99-4919-bad6-fe28631aee48")
 		)
 		(instances
-			(project ""
+			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/49a5a11b-8174-445d-b343-1fe5ec8c60de"
 					(reference "R2")
 					(unit 1)

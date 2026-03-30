@@ -4515,7 +4515,7 @@
 			(uuid "e46868fc-1bfc-4159-8308-31f8a24b1a11")
 		)
 		(instances
-			(project ""
+			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0"
 					(reference "R43")
 					(unit 1)
@@ -4587,7 +4587,7 @@
 			(uuid "9a03d14c-4d86-43e9-9b94-a7616c60a2f2")
 		)
 		(instances
-			(project ""
+			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0"
 					(reference "J6")
 					(unit 1)
@@ -4762,7 +4762,7 @@
 			(uuid "01f89f0e-65c2-410b-a5c4-e466e887fd78")
 		)
 		(instances
-			(project ""
+			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0"
 					(reference "PS7")
 					(unit 1)
@@ -4964,7 +4964,7 @@
 			(uuid "a62877f3-bc9e-4c75-887d-82e053451c79")
 		)
 		(instances
-			(project ""
+			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0"
 					(reference "R26")
 					(unit 1)
@@ -5167,7 +5167,7 @@
 			(uuid "373735bb-7bdf-4b3d-b120-138ce6b387da")
 		)
 		(instances
-			(project ""
+			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0"
 					(reference "JP1")
 					(unit 1)
@@ -5247,7 +5247,7 @@
 			(uuid "880cfcbd-64a8-4614-a602-f1202d04286c")
 		)
 		(instances
-			(project ""
+			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0"
 					(reference "K1")
 					(unit 1)
@@ -5801,7 +5801,7 @@
 			(uuid "94af21a1-d316-4494-8053-ecd3a3100b6c")
 		)
 		(instances
-			(project ""
+			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0"
 					(reference "J7")
 					(unit 1)
@@ -6096,7 +6096,7 @@
 			(uuid "dc678c82-333e-40fa-bafa-f8f0de0246f3")
 		)
 		(instances
-			(project ""
+			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0"
 					(reference "J1")
 					(unit 1)
@@ -6123,7 +6123,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "IPP60R060P7XKSA1"
+		(property "Value" "IPP200N25N3 G"
 			(at 137.1599 115.57 0)
 			(effects
 				(font
@@ -6142,7 +6142,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.infineon.com/dgdl/Infineon-IPP60R060P7-DS-v02_00-EN.pdf?fileId=5546d4625acbae4c015accdf20660227"
+		(property "Datasheet" "https://www.infineon.com/assets/row/public/documents/24/49/infineon-ipp-b-i-200n25n3-g-datasheet-en.pdf?folderId=db3a3043163797a6011637d4bae7003b&fileId=db3a3043243b5f17012496b87e9f1971"
 			(at 148.59 109.22 0)
 			(effects
 				(font
@@ -6466,7 +6466,7 @@
 			(uuid "1c7f6984-dcf0-4d43-838d-1aaa805d46b3")
 		)
 		(instances
-			(project ""
+			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0"
 					(reference "#PWR02")
 					(unit 1)
@@ -6536,7 +6536,7 @@
 			(uuid "ffcc6ba7-27ea-4d33-a429-db99acc0c7b1")
 		)
 		(instances
-			(project ""
+			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0"
 					(reference "C6")
 					(unit 1)
@@ -6818,7 +6818,7 @@
 			(uuid "5b0aca4a-fcce-4f96-97e9-1414a94c1258")
 		)
 		(instances
-			(project ""
+			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0"
 					(reference "D1")
 					(unit 1)

@@ -273,11 +273,11 @@
         ""
       ],
       [
-        "pin_not_connected|1143000|901700|d0ac00d5-4616-417b-9392-aa0b8f370cb8|00000000-0000-0000-0000-000000000000|/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0/91d7d3c1-74bb-4c16-a061-6629b37677fd|/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0/91d7d3c1-74bb-4c16-a061-6629b37677fd|",
+        "pin_not_connected|1143000|901700|d0ac00d5-4616-417b-9392-aa0b8f370cb8|00000000-0000-0000-0000-000000000000|||",
         "Just here to show the externally mounted resistor"
       ],
       [
-        "pin_not_connected|1143000|977900|bb05a73d-edb7-418e-8b3f-aeb63942b4c3|00000000-0000-0000-0000-000000000000|/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0/91d7d3c1-74bb-4c16-a061-6629b37677fd|/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0/91d7d3c1-74bb-4c16-a061-6629b37677fd|",
+        "pin_not_connected|1143000|977900|bb05a73d-edb7-418e-8b3f-aeb63942b4c3|00000000-0000-0000-0000-000000000000|||",
         "Just here to show externally mounted resistor"
       ],
       [
@@ -345,11 +345,11 @@
         ""
       ],
       [
-        "pin_to_pin|571500|1066800|1d1368c0-fe16-4d76-a044-d209c515706d|b9f1f17d-1464-4af8-8d37-c46a88aff1ea|/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0/91d7d3c1-74bb-4c16-a061-6629b37677fd|/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0/91d7d3c1-74bb-4c16-a061-6629b37677fd|/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0/91d7d3c1-74bb-4c16-a061-6629b37677fd",
+        "pin_to_pin|571500|1066800|1d1368c0-fe16-4d76-a044-d209c515706d|b9f1f17d-1464-4af8-8d37-c46a88aff1ea|||",
         ""
       ],
       [
-        "pin_to_pin|571500|1092200|fcd3e2b9-15c5-4433-a2b4-5426c05334eb|51b25cb4-60e7-4773-887a-6157c32ab3e5|/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0/91d7d3c1-74bb-4c16-a061-6629b37677fd|/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0/91d7d3c1-74bb-4c16-a061-6629b37677fd|/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0/91d7d3c1-74bb-4c16-a061-6629b37677fd",
+        "pin_to_pin|571500|1092200|fcd3e2b9-15c5-4433-a2b4-5426c05334eb|51b25cb4-60e7-4773-887a-6157c32ab3e5|||",
         ""
       ],
       [
@@ -369,11 +369,11 @@
         ""
       ],
       [
-        "pin_to_pin|977900|1066800|60fea152-b15d-41c0-8607-41f82e288a35|564cc9a9-c2bf-448a-9ce2-12a6b5278f62|/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0/91d7d3c1-74bb-4c16-a061-6629b37677fd|/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0/91d7d3c1-74bb-4c16-a061-6629b37677fd|/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0/91d7d3c1-74bb-4c16-a061-6629b37677fd",
+        "pin_to_pin|977900|1066800|60fea152-b15d-41c0-8607-41f82e288a35|564cc9a9-c2bf-448a-9ce2-12a6b5278f62|||",
         ""
       ],
       [
-        "pin_to_pin|977900|1092200|46db04ba-759d-4203-92f5-df9e89235dd3|0a7957bf-47e0-4648-ac8b-8254c6b95ff0|/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0/91d7d3c1-74bb-4c16-a061-6629b37677fd|/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0/91d7d3c1-74bb-4c16-a061-6629b37677fd|/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0/91d7d3c1-74bb-4c16-a061-6629b37677fd",
+        "pin_to_pin|977900|1092200|46db04ba-759d-4203-92f5-df9e89235dd3|0a7957bf-47e0-4648-ac8b-8254c6b95ff0|||",
         ""
       ],
       [
