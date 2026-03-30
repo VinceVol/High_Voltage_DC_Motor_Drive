@@ -11660,7 +11660,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.vishay.com/docs/89019/mss1p4.pdf"
 			(at 120.65 82.55 0)
 			(effects
 				(font

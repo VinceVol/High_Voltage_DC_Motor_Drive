@@ -6068,7 +6068,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.sameskydevices.com/product/resource/tb005-762.pdf"
 			(at 22.86 40.64 0)
 			(effects
 				(font
