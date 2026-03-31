@@ -2102,6 +2102,142 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Treadmill_Comp:RCWCTE"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "TP"
+				(at -2.5444 2.5415 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Value" "RCWCTE"
+				(at -2.55 -5.0866 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Footprint" "Treadmill_Feet:RCWCTE"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.koaspeer.com/pdfs/RC.pdf"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "https://www.digikey.com/en/products/detail/koa-speer-electronics-inc/RCWCTE/11476558"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "PARTREV" "1/06/14"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "SNAPEDA_PN" "RCWCTE"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "MANUFACTURER" "KOA Speer"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "MAXIMUM_PACKAGE_HEIGHT" "2 mm"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "STANDARD" "Manufacturer Recommendations"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(symbol "RCWCTE_0_0"
+				(circle
+					(center 0 0)
+					(radius 0.635)
+					(stroke
+						(width 1.27)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 5.08)
+					(name "~"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Treadmill_Comp:T9GV1L14-5"
 			(pin_names
 				(offset 0.254)
@@ -3173,6 +3309,12 @@
 		(uuid "0cf310bb-be72-43a0-918d-23ef6853d47b")
 	)
 	(junction
+		(at 135.89 82.55)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "24eb50cd-8f92-420d-92c3-c2c4eb624073")
+	)
+	(junction
 		(at 154.94 86.36)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3251,6 +3393,12 @@
 		(uuid "881572dd-2e5b-4b1b-ac7a-f5746d04d6e5")
 	)
 	(junction
+		(at 88.9 111.76)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "913ae09e-f326-4279-8f31-bfaa89cf02c5")
+	)
+	(junction
 		(at 193.04 111.76)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3261,6 +3409,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b32f01ad-1a36-49d8-9814-4289236cc646")
+	)
+	(junction
+		(at 52.07 80.01)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "bb8dcf3c-eb7a-4181-a727-402b60cd767e")
 	)
 	(junction
 		(at 135.89 101.6)
@@ -3566,6 +3720,16 @@
 	)
 	(wire
 		(pts
+			(xy 88.9 109.22) (xy 88.9 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "51837cf1-c4f5-4905-93d6-5e5034cd9ae0")
+	)
+	(wire
+		(pts
 			(xy 161.29 111.76) (xy 161.29 132.08)
 		)
 		(stroke
@@ -3593,6 +3757,16 @@
 			(type default)
 		)
 		(uuid "59b8e3dd-4edd-4923-a3dc-16b6b711573b")
+	)
+	(wire
+		(pts
+			(xy 135.89 82.55) (xy 135.89 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5b7da31e-e993-451e-ac12-b1f83a5967a2")
 	)
 	(wire
 		(pts
@@ -3646,7 +3820,7 @@
 	)
 	(wire
 		(pts
-			(xy 53.34 82.55) (xy 53.34 80.01)
+			(xy 57.15 87.63) (xy 57.15 80.01)
 		)
 		(stroke
 			(width 0)
@@ -3663,6 +3837,16 @@
 			(type default)
 		)
 		(uuid "6fc34758-bcc1-4756-9e6f-7474b342b557")
+	)
+	(wire
+		(pts
+			(xy 88.9 111.76) (xy 92.71 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "70c16f45-264a-450d-8eb3-c6e92564f9cd")
 	)
 	(wire
 		(pts
@@ -3696,6 +3880,16 @@
 	)
 	(wire
 		(pts
+			(xy 52.07 80.01) (xy 57.15 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7acc90f3-f2dc-4730-84b0-18faf8b7641e")
+	)
+	(wire
+		(pts
 			(xy 46.99 20.32) (xy 46.99 22.86)
 		)
 		(stroke
@@ -3726,7 +3920,7 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 104.14) (xy 85.09 118.11)
+			(xy 78.74 104.14) (xy 78.74 118.11)
 		)
 		(stroke
 			(width 0)
@@ -3766,6 +3960,16 @@
 	)
 	(wire
 		(pts
+			(xy 52.07 80.01) (xy 52.07 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8906f54a-676c-4f8c-a05f-4aa0c5cd3339")
+	)
+	(wire
+		(pts
 			(xy 100.33 120.65) (xy 100.33 119.38)
 		)
 		(stroke
@@ -3786,7 +3990,7 @@
 	)
 	(wire
 		(pts
-			(xy 135.89 68.58) (xy 135.89 92.71)
+			(xy 135.89 68.58) (xy 135.89 82.55)
 		)
 		(stroke
 			(width 0)
@@ -3866,7 +4070,7 @@
 	)
 	(wire
 		(pts
-			(xy 67.31 118.11) (xy 85.09 118.11)
+			(xy 67.31 118.11) (xy 78.74 118.11)
 		)
 		(stroke
 			(width 0)
@@ -3886,7 +4090,7 @@
 	)
 	(wire
 		(pts
-			(xy 49.53 80.01) (xy 53.34 80.01)
+			(xy 49.53 80.01) (xy 52.07 80.01)
 		)
 		(stroke
 			(width 0)
@@ -3966,7 +4170,7 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 104.14) (xy 100.33 104.14)
+			(xy 78.74 104.14) (xy 100.33 104.14)
 		)
 		(stroke
 			(width 0)
@@ -4086,6 +4290,16 @@
 	)
 	(wire
 		(pts
+			(xy 88.9 111.76) (xy 88.9 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ed222892-c8da-4149-ba97-28c453632492")
+	)
+	(wire
+		(pts
 			(xy 246.38 121.92) (xy 246.38 124.46)
 		)
 		(stroke
@@ -4186,7 +4400,7 @@
 	)
 	(wire
 		(pts
-			(xy 91.44 111.76) (xy 92.71 111.76)
+			(xy 87.63 109.22) (xy 88.9 109.22)
 		)
 		(stroke
 			(width 0)
@@ -4772,7 +4986,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 53.34 82.55 0)
+		(at 57.15 87.63 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4781,7 +4995,7 @@
 		(fields_autoplaced yes)
 		(uuid "209585b7-266f-4bc9-929b-37cd89f82327")
 		(property "Reference" "#PWR041"
-			(at 53.34 88.9 0)
+			(at 57.15 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4790,7 +5004,7 @@
 			)
 		)
 		(property "Value" "LV_GND"
-			(at 55.88 83.8199 0)
+			(at 59.69 88.8999 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4799,7 +5013,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 53.34 82.55 0)
+			(at 57.15 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4808,7 +5022,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 53.34 82.55 0)
+			(at 57.15 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4817,7 +5031,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 53.34 82.55 0)
+			(at 57.15 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5326,6 +5540,124 @@
 		)
 	)
 	(symbol
+		(lib_id "Treadmill_Comp:RCWCTE")
+		(at 52.07 87.63 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "43ec9874-a7d1-4973-ae88-132cda446520")
+		(property "Reference" "LV_GND1"
+			(at 53.594 90.17 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "RCWCTE"
+			(at 49.53 86.3601 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Treadmill_Feet:RCWCTE"
+			(at 52.07 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.koaspeer.com/pdfs/RC.pdf"
+			(at 52.07 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "https://www.digikey.com/en/products/detail/koa-speer-electronics-inc/RCWCTE/11476558"
+			(at 52.07 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PARTREV" "1/06/14"
+			(at 52.07 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "SNAPEDA_PN" "RCWCTE"
+			(at 52.07 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER" "KOA Speer"
+			(at 52.07 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" "2 mm"
+			(at 52.07 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" "Manufacturer Recommendations"
+			(at 52.07 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a05bd567-6efe-40c7-8e31-b5b9c0ea6d72")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0"
+					(reference "LV_GND1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND1")
 		(at 232.41 124.46 0)
 		(unit 1)
@@ -5386,6 +5718,124 @@
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0"
 					(reference "#PWR021")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Treadmill_Comp:RCWCTE")
+		(at 83.82 114.3 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4a66426d-2336-41f0-819f-2531406925d5")
+		(property "Reference" "HV_GND1"
+			(at 81.28 115.824 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "RCWCTE"
+			(at 85.0899 111.76 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Treadmill_Feet:RCWCTE"
+			(at 83.82 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.koaspeer.com/pdfs/RC.pdf"
+			(at 83.82 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "https://www.digikey.com/en/products/detail/koa-speer-electronics-inc/RCWCTE/11476558"
+			(at 83.82 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PARTREV" "1/06/14"
+			(at 83.82 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "SNAPEDA_PN" "RCWCTE"
+			(at 83.82 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER" "KOA Speer"
+			(at 83.82 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" "2 mm"
+			(at 83.82 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" "Manufacturer Recommendations"
+			(at 83.82 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "751a633d-6fc6-4559-b34f-5e6b79fecabb")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0"
+					(reference "HV_GND1")
 					(unit 1)
 				)
 			)
@@ -6410,7 +6860,7 @@
 	)
 	(symbol
 		(lib_id "power:GND1")
-		(at 91.44 111.76 270)
+		(at 87.63 109.22 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6418,7 +6868,7 @@
 		(dnp no)
 		(uuid "afa53166-1468-4432-a3a7-d477b9236e61")
 		(property "Reference" "#PWR02"
-			(at 85.09 111.76 0)
+			(at 81.28 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6427,7 +6877,7 @@
 			)
 		)
 		(property "Value" "HV_GND"
-			(at 93.472 109.22 90)
+			(at 89.662 106.68 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6436,7 +6886,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 91.44 111.76 0)
+			(at 87.63 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6445,7 +6895,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 91.44 111.76 0)
+			(at 87.63 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6454,7 +6904,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND1\" , ground"
-			(at 91.44 111.76 0)
+			(at 87.63 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6678,6 +7128,124 @@
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0"
 					(reference "R50")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Treadmill_Comp:RCWCTE")
+		(at 130.81 82.55 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e75b9b4c-c89f-46c3-9ebd-4f7c5b347795")
+		(property "Reference" "Precharge1"
+			(at 128.27 84.074 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "RCWCTE"
+			(at 132.0799 80.01 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Treadmill_Feet:RCWCTE"
+			(at 130.81 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.koaspeer.com/pdfs/RC.pdf"
+			(at 130.81 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "https://www.digikey.com/en/products/detail/koa-speer-electronics-inc/RCWCTE/11476558"
+			(at 130.81 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PARTREV" "1/06/14"
+			(at 130.81 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "SNAPEDA_PN" "RCWCTE"
+			(at 130.81 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER" "KOA Speer"
+			(at 130.81 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" "2 mm"
+			(at 130.81 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" "Manufacturer Recommendations"
+			(at 130.81 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3bdeab9e-7baa-431f-97b8-547a0fa57675")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0"
+					(reference "Precharge1")
 					(unit 1)
 				)
 			)

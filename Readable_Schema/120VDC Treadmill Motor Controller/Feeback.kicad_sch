@@ -2284,6 +2284,12 @@
 		(uuid "0bc5ed18-c616-4b3a-9b5b-6747fd582c4c")
 	)
 	(junction
+		(at 71.12 142.24)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "158fe259-20ce-45b2-ad9c-9ae025ada7b5")
+	)
+	(junction
 		(at 172.72 85.09)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2408,6 +2414,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c9e14fee-a574-47e2-bbd1-5d7a32c0bd98")
+	)
+	(junction
+		(at 248.92 74.93)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "cb5a537d-a4ca-4eba-9bde-65d3ee79b640")
 	)
 	(junction
 		(at 52.07 85.09)
@@ -2793,7 +2805,7 @@
 	)
 	(wire
 		(pts
-			(xy 66.04 142.24) (xy 69.85 142.24)
+			(xy 66.04 142.24) (xy 71.12 142.24)
 		)
 		(stroke
 			(width 0)
@@ -3020,6 +3032,16 @@
 			(type default)
 		)
 		(uuid "7e4efb43-5bf0-43c9-a62d-baadebe96053")
+	)
+	(wire
+		(pts
+			(xy 248.92 74.93) (xy 242.57 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7e5eb4ac-679f-4ebe-87a2-344efd2cea2a")
 	)
 	(wire
 		(pts
@@ -3333,7 +3355,7 @@
 	)
 	(wire
 		(pts
-			(xy 250.19 74.93) (xy 242.57 74.93)
+			(xy 250.19 74.93) (xy 248.92 74.93)
 		)
 		(stroke
 			(width 0)
@@ -3460,6 +3482,16 @@
 			(type default)
 		)
 		(uuid "ddf97896-79db-4445-9dd4-ae5ac205f416")
+	)
+	(wire
+		(pts
+			(xy 71.12 142.24) (xy 73.66 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "de3c7b2d-bcd2-4d96-af50-99633cffb231")
 	)
 	(wire
 		(pts
@@ -3779,7 +3811,7 @@
 	)
 	(hierarchical_label "EN_Drives"
 		(shape output)
-		(at 69.85 142.24 0)
+		(at 73.66 142.24 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4261,7 +4293,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "326fa05f-7105-41d6-a819-4e422a3bcd43")
-		(property "Reference" "TP8"
+		(property "Reference" "Isns_Vout1"
 			(at 130.302 43.18 90)
 			(effects
 				(font
@@ -4364,7 +4396,7 @@
 		(instances
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/23f081f2-fcb5-4e72-b320-a9766db11ad0"
-					(reference "TP8")
+					(reference "Isns_Vout1")
 					(unit 1)
 				)
 			)
@@ -5044,7 +5076,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "6450c9c6-e4ac-44df-9aba-fbe35c0f8bd0")
-		(property "Reference" "TP3"
+		(property "Reference" "OC_Out1"
 			(at 44.958 149.86 90)
 			(effects
 				(font
@@ -5147,7 +5179,7 @@
 		(instances
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/23f081f2-fcb5-4e72-b320-a9766db11ad0"
-					(reference "TP3")
+					(reference "OC_Out1")
 					(unit 1)
 				)
 			)
@@ -5875,6 +5907,124 @@
 		)
 	)
 	(symbol
+		(lib_id "Treadmill_Comp:RCWCTE")
+		(at 248.92 69.85 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b0623233-d484-4450-9541-f508fc66bead")
+		(property "Reference" "Cap_Vsense1"
+			(at 244.094 71.882 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "RCWCTE"
+			(at 251.46 71.1199 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Treadmill_Feet:RCWCTE"
+			(at 248.92 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.koaspeer.com/pdfs/RC.pdf"
+			(at 248.92 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "https://www.digikey.com/en/products/detail/koa-speer-electronics-inc/RCWCTE/11476558"
+			(at 248.92 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PARTREV" "1/06/14"
+			(at 248.92 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "SNAPEDA_PN" "RCWCTE"
+			(at 248.92 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER" "KOA Speer"
+			(at 248.92 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" "2 mm"
+			(at 248.92 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" "Manufacturer Recommendations"
+			(at 248.92 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4c5b4733-19f3-42c5-b7be-5a69d3b2a297")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/23f081f2-fcb5-4e72-b320-a9766db11ad0"
+					(reference "Cap_Vsense1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Treadmill_Comp:DHP1-5-S3-M")
 		(at 222.25 40.64 0)
 		(unit 1)
@@ -6190,6 +6340,124 @@
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/23f081f2-fcb5-4e72-b320-a9766db11ad0"
 					(reference "R38")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Treadmill_Comp:RCWCTE")
+		(at 71.12 147.32 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c47fb5ba-f3d4-43f8-ba3e-925dcf5dcb8a")
+		(property "Reference" "EN_Drives1"
+			(at 72.644 149.86 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "RCWCTE"
+			(at 68.58 146.0501 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Treadmill_Feet:RCWCTE"
+			(at 71.12 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.koaspeer.com/pdfs/RC.pdf"
+			(at 71.12 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "https://www.digikey.com/en/products/detail/koa-speer-electronics-inc/RCWCTE/11476558"
+			(at 71.12 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PARTREV" "1/06/14"
+			(at 71.12 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "SNAPEDA_PN" "RCWCTE"
+			(at 71.12 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER" "KOA Speer"
+			(at 71.12 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" "2 mm"
+			(at 71.12 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" "Manufacturer Recommendations"
+			(at 71.12 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "045fef11-7e8c-496a-86f1-fcb4fc748ba1")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/23f081f2-fcb5-4e72-b320-a9766db11ad0"
+					(reference "EN_Drives1")
 					(unit 1)
 				)
 			)
