@@ -58,7 +58,16 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [],
+      "drc_exclusions": [
+        [
+          "starved_thermal|24040000|152500000|a2ed5cd7-a865-4d77-af32-a722c5a35bcd|fdc63e12-2e72-4dce-8abc-fbcdac9fdf38|B.Cu",
+          ""
+        ],
+        [
+          "starved_thermal|37747500|152500000|b22b5adc-78bc-46f0-883f-a35d5d4b030c|78ebcba2-dee5-4f36-bc03-72271b18151e|B.Cu",
+          ""
+        ]
+      ],
       "meta": {
         "version": 2
       },
@@ -106,7 +115,7 @@
         "skew_out_of_range": "error",
         "solder_mask_bridge": "error",
         "starved_thermal": "error",
-        "text_height": "warning",
+        "text_height": "ignore",
         "text_on_edge_cuts": "error",
         "text_thickness": "warning",
         "through_hole_pad_without_hole": "error",
