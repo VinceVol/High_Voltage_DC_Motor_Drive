@@ -48,7 +48,7 @@
         "silk_text_thickness": 0.1,
         "silk_text_upright": false,
         "zones": {
-          "min_clearance": 0.5
+          "min_clearance": 0.0
         }
       },
       "diff_pair_dimensions": [
@@ -59,6 +59,10 @@
         }
       ],
       "drc_exclusions": [
+        [
+          "starved_thermal|105750000|169750000|f62c38e3-1afc-4e67-925f-6c8d395670cb|fd98de06-01bb-44fa-be4b-6c62cd6746d1|F.Cu",
+          ""
+        ],
         [
           "starved_thermal|24040000|152500000|a2ed5cd7-a865-4d77-af32-a722c5a35bcd|fdc63e12-2e72-4dce-8abc-fbcdac9fdf38|B.Cu",
           ""
@@ -284,8 +288,16 @@
         ""
       ],
       [
+        "pin_not_connected|1143000|901700|d0ac00d5-4616-417b-9392-aa0b8f370cb8|00000000-0000-0000-0000-000000000000|/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0/91d7d3c1-74bb-4c16-a061-6629b37677fd|/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0/91d7d3c1-74bb-4c16-a061-6629b37677fd|",
+        ""
+      ],
+      [
         "pin_not_connected|1143000|901700|d0ac00d5-4616-417b-9392-aa0b8f370cb8|00000000-0000-0000-0000-000000000000|||",
         "Just here to show the externally mounted resistor"
+      ],
+      [
+        "pin_not_connected|1143000|977900|bb05a73d-edb7-418e-8b3f-aeb63942b4c3|00000000-0000-0000-0000-000000000000|/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0/91d7d3c1-74bb-4c16-a061-6629b37677fd|/319bc5c0-2dd5-4df3-a34b-9170833ebccd/1fa0373b-ff98-4bf0-acad-d32450f2dcd0/91d7d3c1-74bb-4c16-a061-6629b37677fd|",
+        ""
       ],
       [
         "pin_not_connected|1143000|977900|bb05a73d-edb7-418e-8b3f-aeb63942b4c3|00000000-0000-0000-0000-000000000000|||",
@@ -899,12 +911,216 @@
           "label": "Datasheet",
           "name": "Datasheet",
           "show": true
+        },
+        {
+          "group_by": false,
+          "label": "Arrow Price/Stock",
+          "name": "Arrow Price/Stock",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Category",
+          "name": "Category",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Check_prices",
+          "name": "Check_prices",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "DESCRIPTION",
+          "name": "DESCRIPTION",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "DK_Datasheet_Link",
+          "name": "DK_Datasheet_Link",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "DK_Detail_Page",
+          "name": "DK_Detail_Page",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Description_1",
+          "name": "Description_1",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Digi-Key_PN",
+          "name": "Digi-Key_PN",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "DigiKey_Part_Number",
+          "name": "DigiKey_Part_Number",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Family",
+          "name": "Family",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Height",
+          "name": "Height",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "MANUFACTURER",
+          "name": "MANUFACTURER",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "MAXIMUM_PACKAGE_HEIGHT",
+          "name": "MAXIMUM_PACKAGE_HEIGHT",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "MF",
+          "name": "MF",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "MP",
+          "name": "MP",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "MPN",
+          "name": "MPN",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Manufacturer",
+          "name": "Manufacturer",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Manufacturer_Name",
+          "name": "Manufacturer_Name",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Manufacturer_Part_Number",
+          "name": "Manufacturer_Part_Number",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Mouser Part Number",
+          "name": "Mouser Part Number",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Mouser Price/Stock",
+          "name": "Mouser Price/Stock",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "PACKAGE",
+          "name": "PACKAGE",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "PARTREV",
+          "name": "PARTREV",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Package",
+          "name": "Package",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "SNAPEDA_PN",
+          "name": "SNAPEDA_PN",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "STANDARD",
+          "name": "STANDARD",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Sim.Device",
+          "name": "Sim.Device",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Sim.Pins",
+          "name": "Sim.Pins",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Sim.Type",
+          "name": "Sim.Type",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "SnapEDA_Link",
+          "name": "SnapEDA_Link",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Status",
+          "name": "Status",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Arrow Part Number",
+          "name": "Arrow Part Number",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Description",
+          "name": "Description",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "#",
+          "name": "${ITEM_NUMBER}",
+          "show": false
         }
       ],
       "filter_string": "",
       "group_symbols": true,
       "include_excluded_from_bom": true,
-      "name": "Default Editing",
+      "name": "",
       "sort_asc": true,
       "sort_field": "Reference"
     },
