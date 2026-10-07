@@ -1,16 +1,21 @@
-# Pico 2 Template
+# HIGH VOLTAGE DC Motor Controller Software
 
-A Rust project template for Raspberry Pi Pico 2 (RP2350) development.
+The goals for this project are somewhat simple:
+- Closed loop motor speed control, whilst monitoring other things
+    - Current Draw doesn't exceed certain amounts
+    - User Inputs
+    - E stop
+- Various methods of telling the mcu what speed to drive the motor at
+    - Voltage
+    - spi
+    - uarte
+    - i2c
 
-## Usage
+## Todos
 
-Generate a new project:
+These are rough todos still given none of this has been started
 
-```sh
-cargo generate --git https://github.com/ImplFerris/pico2-template.git
-```
+-[ ] Communicate with MCU
+-[ ] Turn on and off the mosfet gates through low voltage
+-[ ] Create a PID with Speed Sensor
 
-## Options
-
-- HAL: Choose between Embassy (async) or rp-hal
-- defmt logging: Optional debugging support
