@@ -1,0 +1,31 @@
+Reference,Qty,Value,Digikey Part Number,Exclude from BOM,Exclude from Board,Footprint,Datasheet
+A1,1,SC0889,2648-SC0889-ND,,,Module:RaspberryPi_Pico_Common_Unspecified,https://datasheets.raspberrypi.com/pico/pico-datasheet.pdf
+"C6,C7,C14,C17",4,ESMQ351VSN821MA45S,565-2767-ND,,,Treadmill_Feet:CHEMI-VSN_A45,https://www.chemi-con.co.jp/products/relatedfiles/capacitor/catalog/SMQN-e.PDF
+"C28,C32,C49,C50,C51,C52,C53,C54",8,C3216X7T2V104M160AA,445-14835-1-ND,,,Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder,https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_midvoltage_en.pdf
+"Cap_Vsense1,Discharge1,EN_Drives1,FET_HS1,FET_LS1,HV_GND1,Isns_Vout1,LV_GND1,MOT1,MOT2,OC_Out1,Precharge1",12,RCWCTE,2019-RCWCTECT-ND,,,Treadmill_Feet:RCWCTE,https://www.koaspeer.com/pdfs/RC.pdf
+"CR1,CR2",2,MMSZ5231B-7-F,MMSZ5231B-FDICT-ND,,,Treadmill_Feet:SOD123_DIO,MMSZ5231B-7-F
+D1,1,KBPC5010W,641-1687-ND,,,Diode_THT:Diode_Bridge_GeneSiC_KBPC_W,https://www.diodemodule.com/bridge-rectifier/kbpc/kbpc5010t.pdf
+"D2,D3",2,MSS1P4-M3_89A,MSS1P4-M3/89AGICT-ND,,,Treadmill_Feet:DIODE_MSS1P4-M3_89A,https://www.vishay.com/docs/89019/mss1p4.pdf
+D4,1,YY1206RE-RN2S0-T5AR4,160-1168-1-ND,,,LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder,~
+D5,1,SS12,SS12FSCT-ND,,,Diode_SMD:D_SMA,https://www.vishay.com/docs/88746/ss12.pdf
+J1,1,TB005-762-03BE,102-6190-ND,,,Treadmill_Feet:CUI_TB005_-762-03BE,https://www.sameskydevices.com/product/resource/tb005-762.pdf
+"J2,J7,J9",3,OSTT7020150,ED2675-ND,,,Treadmill_Feet:CONN2_OSTT7020150_OST,https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/388/OSTT7xx0150.pdf
+"J3,J4,J5",3,TB0011-350-08BE,2223-TB0011-350-08BE-ND,,,Treadmill_Feet:SAMESKY_TB0011-350-08BE,https://www.sameskydevices.com/product/resource/tb0011-350.pdf
+J6,1,TB0011-350-03BE,2223-TB0011-350-03BE-ND,,,Treadmill_Feet:SAMESKY_TB0011-350-03BE,~
+K1,1,T9GV1L14-24,PB2368-ND,,,Treadmill_Feet:T9GV1L14-5_TEC,https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1-1773924-8_PB_30A_PCB_RelayT9G&DocType=Data+Sheet&DocLang=English&PartCntxt=1558661-1&DocFormat=pdf
+"PS1,PS3",2,SRS-0515-2,4369-SRS-0515-2-ND,,,Footprints_TMC:SRS-0515 DIP-16_W7.62mm,https://www.meanwellusa.com/upload/pdf/SRS/SRS-spec.pdf
+PS2,1,SRS-0509-2,4369-SRS-0509-2-ND,,,Footprints_TMC:SRS-0515 DIP-16_W7.62mm,https://www.meanwellusa.com/upload/pdf/SRS/SRS-spec.pdf
+PS4,1,DHP1-5-S3-M,179-DHP1-5-S3-M-ND,,,Treadmill_Feet:CONV_DHP1-5-S3-M,https://belfuse.com/media/datasheets/products/power-supplies/DHP1-M.pdf
+PS7,1,IRM-15-5,1866-3037-ND,,,Treadmill_Feet:CONV_IRM-15-5,
+"Q1,Q2,Q3,Q4,Q5",5,IPP200N25N3 G,IPP200N25N3GXKSA1-ND,,,Package_TO_SOT_THT:TO-220-3_Vertical,https://www.infineon.com/assets/row/public/documents/24/49/infineon-ipp-b-i-200n25n3-g-datasheet-en.pdf?folderId=db3a3043163797a6011637d4bae7003b&fileId=db3a3043243b5f17012496b87e9f1971
+Q7,1,DN2450N8-G,DN2450N8-GCT-ND,,,Treadmill_Feet:TO-243AA_MCH,https://ww1.microchip.com/downloads/en/DeviceDoc/20005404A.pdf
+Q8,1,VOM1271T,VOM1271TCT-ND,,,Treadmill_Feet:SOP-4_VIS,https://www.vishay.com/doc?83469
+R26,1,HSA50330RJ,A102439-ND,,Excluded from board,,https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1773035&DocType=DS&DocLang=English
+"R33,R45",2,RSF100JB-73-30K,13-RSF100JB-73-30K-ND,,,Treadmill_Feet:YAG_RSF100_YAG,https://yageogroup.com/content/Resource%20Library/Datasheet/YAGEO-RSF_DATASHEET.pdf
+"R43,R49,R50",3,ERZ-V14D241,P7219-ND,,,Treadmill_Feet:RES_ERZ-V14D241_PAN,ERZ-V14D241
+R44,1,HVCB2512FKC100K,HVCB2512FKC100KCT-ND,,Excluded from board,,https://www.digikey.com/en/products/detail/yageo/SQP20AJB-3K3/9167228
+"U1,U2",2,UCC21530DWKR,296-UCC21530DWKRCT-ND,,,Treadmill_Feet:SOIC127P1030X265-16N,http://www.ti.com/lit/gpn/UCC21530
+U3,1,TMCS1126B42QDVGRQ1,296-TMCS1126B42QDVGRQ1CT-ND,,,Treadmill_Feet:SOIC10_DVG_TEX,https://www.ti.com/lit/ds/symlink/tmcs1126-q1.pdf?ts=1759135744569
+U4,1,SN74HCS08DYYR,296-SN74HCS08DYYRCT-ND,,,Treadmill_Feet:14-SOT-23-THIN,https://www.ti.com/lit/ds/symlink/sn74hcs08.pdf?ts=1647897887200&ref_url=https%253A%252F%252Fwww.ti.com%252Fstore%252Fti%252Fen%252Fp%252Fproduct%252F%253Fp%253DSN74HCS08DYYR%2526keyMatch%253DSN74HCS08DYYR%2526tisearch%253Dsearch-everything%2526usecase%25
+U5,1,TPSI3050QDWZRQ1,296-TPSI3050QDWZRQ1CT-ND,,,Treadmill_Feet:DWZ0008A-IPC_A,https://www.ti.com/lit/gpn/tpsi3050-q1
+U6,1,AMC1311BDWVR,296-49549-1-ND,,,Treadmill_Feet:DWV0008A,https://www.ti.com/lit/gpn/amc1311

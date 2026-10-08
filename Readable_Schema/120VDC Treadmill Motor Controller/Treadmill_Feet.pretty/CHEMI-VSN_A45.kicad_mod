@@ -1,0 +1,249 @@
+(footprint "CHEMI-VSN_A45"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(tags "ESMQ351VSN821MA45S ")
+	(property "Reference" "REF**"
+		(at 0 -5 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "8f8d1a3e-3332-4331-942e-290992b839b8")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "CHEMI-VSN_A45"
+		(at 0 -5 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "8ec8bd25-1142-4d5a-9f43-4e04bb5ff21b")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "67f8bb6e-c51c-4a2d-b9d5-450fa503cc78")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "9d9a81de-4217-4aad-b070-f55458b5f5f5")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(fp_line
+		(start 17.7546 0)
+		(end 19.0246 0)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "562f827e-7745-4fa9-819a-f157a55ffd7e")
+	)
+	(fp_line
+		(start 18.3896 -0.635)
+		(end 18.3896 0.635)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "4d79cb04-b36e-4ef3-889b-a9547d6e19c5")
+	)
+	(fp_circle
+		(center 0 -5)
+		(end 17.6276 -5)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "e5bbd3da-13dd-4360-85f7-98b5b540c306")
+	)
+	(fp_circle
+		(center 0 -5)
+		(end 5 -5)
+		(stroke
+			(width 0.0254)
+			(type solid)
+		)
+		(fill no)
+		(layer "Dwgs.User")
+		(uuid "b7dcd7c7-6d4d-41f9-ae8b-5df908f24b6a")
+	)
+	(fp_line
+		(start -17.7546 -12.310717)
+		(end -7.310717 -22.7546)
+		(stroke
+			(width 0.0254)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "cc2d761d-d6e7-4040-9d22-9a53c5f1b0af")
+	)
+	(fp_line
+		(start -17.7546 2.310716)
+		(end -17.7546 -12.310717)
+		(stroke
+			(width 0.0254)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "646168be-8936-4a16-8377-0a19794f6429")
+	)
+	(fp_line
+		(start -7.310717 -22.7546)
+		(end 7.310717 -22.7546)
+		(stroke
+			(width 0.0254)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "cd26e3b4-b0bf-4214-9984-93eb5ec3798c")
+	)
+	(fp_line
+		(start -7.310717 12.7546)
+		(end -17.7546 2.310716)
+		(stroke
+			(width 0.0254)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "945455c8-6b4a-456d-a22a-0b70e3c5e3e0")
+	)
+	(fp_line
+		(start 7.310717 -22.7546)
+		(end 17.7546 -12.310717)
+		(stroke
+			(width 0.0254)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "03a37705-bef0-4ae2-8a2c-c29c190b95b3")
+	)
+	(fp_line
+		(start 7.310717 12.7546)
+		(end -7.310717 12.7546)
+		(stroke
+			(width 0.0254)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "2c1d13af-5e48-49ce-803e-30d28e9f9d9f")
+	)
+	(fp_line
+		(start 17.7546 -12.310717)
+		(end 17.7546 2.310716)
+		(stroke
+			(width 0.0254)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "065e6b3e-db81-4621-87ba-bfbeecb1dd87")
+	)
+	(fp_line
+		(start 17.7546 2.310716)
+		(end 7.310717 12.7546)
+		(stroke
+			(width 0.0254)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "eefaf2c5-ed97-4606-9976-6e40ec508613")
+	)
+	(fp_line
+		(start 17.7546 0)
+		(end 19.0246 0)
+		(stroke
+			(width 0.0254)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "aa1dfc60-6ecc-40a1-a60b-d61b3e69006f")
+	)
+	(fp_line
+		(start 18.3896 -0.635)
+		(end 18.3896 0.635)
+		(stroke
+			(width 0.0254)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "4dae718c-b5a2-476f-96c3-5169e3508a55")
+	)
+	(fp_circle
+		(center 0 -5)
+		(end 17.5006 -5)
+		(stroke
+			(width 0.0254)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "2f900d16-4086-4151-a006-6374719c5028")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 -5 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "706c320e-0535-40d4-8092-2bc3a15e2823")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" thru_hole rect
+		(at 0 0)
+		(size 2.794 2.794)
+		(drill 2.286)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "f75b55b8-5c8d-47f6-bda0-55e4c57d43c2")
+	)
+	(pad "2" thru_hole circle
+		(at 0 -10)
+		(size 2.794 2.794)
+		(drill 2.286)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "466ea285-fb8a-48e9-a4b0-1b2c7fdf7fe6")
+	)
+	(embedded_fonts no)
+	(model "C:/Users/Vincent.Volpone/OneDrive - Gentex Corporation/Desktop/HOME/Electronics/High_Voltage_DC_Motor_Drive/Readable_Schema/Local_Components/ESMQ351VSN821MA45S/E-SNAP-IN_D35_L45__VSN_SLEEVE_STRUCTURE.stp"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)
