@@ -1,53 +1,69 @@
-# This file was automatically generated.
-
 [package]
-edition = "2024"
+edition = "2021"
 name = "hv-moto-coto"
 version = "0.1.0"
+license = "MIT OR Apache-2.0"
 
 [dependencies]
-cortex-m = { version = "0.7.9", features = ["inline-asm", "critical-section-single-core"] }
-cortex-m-rt = "0.7.7"
-defmt = { version = "1.1.1", optional = true }
-defmt-rtt = { version = "1.3.0", optional = true }
-embassy-futures = "0.1.2"
-embassy-nrf = { version = "0.11.0", features = ["nrf52840", "gpiote", "time-driver-rtc1"] }
-embassy-sync = "0.8.0"
-embassy-time = { version = "0.5.1", features = ["tick-hz-32_768"] }
-panic-halt = "1.0.0"
-panic-probe = { version = "1.0.0", features = ["print-defmt"], optional = true }
-embassy-executor = { version = "0.6", features = ["arch-cortex-m", "executor-thread"] } # Adjust features/version for your target MCU
+cortex-m = "0.7"
+cortex-m-rt = "0.7"
+embedded-hal = { version = "1.0.0" }
 
-[[bin]]
-name = "hv-moto-coto"
-test = false
-bench = false
+defmt = "0.3"
+defmt-rtt = "0.4"
+panic-probe = { version = "0.3", features = ["print-defmt"] }
+embassy-executor = { version = "0.10.0", features = ["executor-thread", "platform-cortex-m"] }
+embassy-rp = { version = "0.10.0", features = ["_rp235x", "critical-section-impl", "rp235xa", "time-driver"] }
+embassy-time = "0.5.1"
 
+# cargo build/run
 [profile.dev]
-debug = true
-lto = true
-opt-level = "z"
-incremental = true
+codegen-units = 1
+debug = 2
+debug-assertions = true
+incremental = false
+opt-level = 3
+overflow-checks = true
 
+# cargo build/run --release
 [profile.release]
-debug = false
-lto = true
-opt-level = "z"
-incremental = true
+codegen-units = 1
+debug = 2
+debug-assertions = false
+incremental = false
+lto = 'fat'
+opt-level = 3
+overflow-checks = false
 
-[features]
-defmt = ["dep:defmt"]
-defmt-rtt = ["dep:defmt-rtt"]
-panic-probe = ["dep:panic-probe"]
-default = ["debug"]
-debug = [
-    "defmt",
-    "defmt-rtt",
-    "panic-probe",
-    "embassy-executor/defmt",
-    "embassy-sync/defmt",
-    "embassy-futures/defmt",
-    "embassy-time/defmt",
-    "embassy-time/defmt-timestamp-uptime",
-    "embassy-nrf/defmt",
-]
+# do not optimize proc-macro crates = faster builds from scratch
+[profile.dev.build-override]
+codegen-units = 8
+debug = false
+debug-assertions = false
+opt-level = 0
+overflow-checks = false
+
+[profile.release.build-override]
+codegen-units = 8
+debug = false
+debug-assertions = false
+opt-level = 0
+overflow-checks = false
+
+# cargo test
+[profile.test]
+codegen-units = 1
+debug = 2
+debug-assertions = true
+incremental = false
+opt-level = 3
+overflow-checks = true
+
+# cargo test --release
+[profile.bench]
+codegen-units = 1
+debug = 2
+debug-assertions = false
+incremental = false
+lto = 'fat'
+opt-level = 3

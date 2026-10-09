@@ -1,28 +1,30 @@
 #![no_std]
 #![no_main]
 
-mod fmt;
-
-#[cfg(not(feature = "defmt"))]
-use panic_halt as _;
-#[cfg(feature = "defmt")]
-use {defmt_rtt as _, panic_probe as _};
+use defmt::info;
+use defmt_rtt as _;
+use panic_probe as _;
 
 use embassy_executor::Spawner;
-use embassy_nrf::gpio::{Level, Output, OutputDrive};
-use embassy_time::Timer;
-use fmt::info;
+use embassy_rp::gpio::{Level, Output};
+use embassy_time::{Duration, Timer};
 
 #[embassy_executor::main]
 async fn main(_spawner: Spawner) {
-    let p = embassy_nrf::init(Default::default());
-    let mut led = Output::new(p.P0_13, Level::Low, OutputDrive::Standard);
+    // Initialize RP2350 peripherals and clocks
+    let p = embassy_rp::init(Default::default());
+    info!("Embassy initialized on RP2350!");
+
+    // Configure GPIO 25 (onboard LED on Pico 2 W) as an output pin
+    let mut led = Output::new(p.PIN_25, Level::Low);
 
     loop {
-        info!("Hello, World!");
+        info!("LED ON");
         led.set_high();
-        Timer::after_millis(500).await;
+        Timer::after(Duration::from_millis(500)).await;
+
+        info!("LED OFF");
         led.set_low();
-        Timer::after_millis(500).await;
+        Timer::after(Duration::from_millis(500)).await;
     }
 }

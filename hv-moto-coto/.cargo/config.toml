@@ -1,14 +1,36 @@
-# This file was automatically generated.
 
-[target.thumbv7em-none-eabihf]
-runner = 'probe-rs run --chip nRF52840_xxAA'
+
 
 [build]
-target = "thumbv7em-none-eabihf"
+# Set the default target to match the Cortex-M33 in the RP2350
+target = "thumbv8m.main-none-eabihf"
+
+# This is the hard-float ABI for Arm mode.
+#
+# The FPU is enabled by default, and float function arguments use FPU
+# registers.
+[target.thumbv8m.main-none-eabihf]
+# Pass some extra options to rustc, some of which get passed on to the linker.
+#
+# * linker argument --nmagic turns off page alignment of sections (which saves
+#   flash space)
+# * linker argument -Tlink.x tells the linker to use link.x as a linker script.
+#   This is usually provided by the cortex-m-rt crate, and by default the
+#   version in that crate will include a file called `memory.x` which describes
+#   the particular memory layout for your specific chip. 
+# * linker argument -Tdefmt.x also tells the linker to use `defmt.x` as a
+#   secondary linker script. This is required to make defmt_rtt work.
+rustflags = [
+    "-C", "link-arg=--nmagic",
+    "-C", "link-arg=-Tlink.x",
+    "-C", "link-arg=-Tdefmt.x",
+    "-C", "target-cpu=cortex-m33",
+]
+
+# Use picotool for loading, as probe-rs doesn't support RP2350 yet:
+# Load an elf, skipping unchanged flash sectors, verify it, and execute it
+runner = "probe-rs run --chip RP2350 --protocol swd"
 
 [env]
-DEFMT_LOG = "trace"
+DEFMT_LOG = "debug" 
 
-[unstable]
-build-std = ["core"]
-build-std-features = ["panic_immediate_abort"]
