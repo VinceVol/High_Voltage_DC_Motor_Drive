@@ -15,6 +15,9 @@ panic-probe = { version = "0.3", features = ["print-defmt"] }
 embassy-executor = { version = "0.10.0", features = ["executor-thread", "platform-cortex-m"] }
 embassy-rp = { version = "0.10.0", features = ["_rp235x", "critical-section-impl", "rp235xa", "time-driver"] }
 embassy-time = "0.5.1"
+cyw43 = "0.7.0"
+static_cell = "2.1.1"
+embassy-sync = { version = "0.8.0", features = ["defmt"] }
 
 # cargo build/run
 [profile.dev]
