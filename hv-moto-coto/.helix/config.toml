@@ -1,0 +1,7 @@
+
+[keys.normal.space]
+# Make lowercase 'space + f' search only the current folder you launched Helix from
+ f = "file_picker_in_current_directory"
+#
+ # Move the workspace-wide git root search to uppercase 'space + F'
+ F = "file_picker"

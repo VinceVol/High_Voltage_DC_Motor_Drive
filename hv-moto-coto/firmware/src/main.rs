@@ -9,10 +9,7 @@ use embassy_executor::Spawner;
 use embassy_rp::gpio::{Level, Output};
 use embassy_time::{Duration, Timer};
 
-use crate::bus_init::{i2c_init, spi_init};
-
-mod bus_init;
-mod speed_sense;
+use hv_moto_coto::bus_init::{i2c_init, spi_init};
 
 #[embassy_executor::main]
 async fn main(_spawner: Spawner) {
