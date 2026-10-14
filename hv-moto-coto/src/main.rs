@@ -12,6 +12,7 @@ use embassy_time::{Duration, Timer};
 use crate::bus_init::{i2c_init, spi_init};
 
 mod bus_init;
+mod speed_sense;
 
 #[embassy_executor::main]
 async fn main(_spawner: Spawner) {
