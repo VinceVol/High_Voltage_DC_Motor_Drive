@@ -2300,6 +2300,17 @@
 		)
 		(uuid "f2c9b9b1-a711-444d-8ee7-e80e52e51cda")
 	)
+	(text "CHANGE TO 3v3"
+		(exclude_from_sim no)
+		(at 201.168 77.724 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 194 0 0 1)
+			)
+		)
+		(uuid "fb11530d-c74a-45d0-93fc-76978c0afabf")
+	)
 	(text "I2C1_sda"
 		(exclude_from_sim no)
 		(at 241.3 89.408 0)
