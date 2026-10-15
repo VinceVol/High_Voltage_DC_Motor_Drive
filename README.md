@@ -7,7 +7,7 @@ with simply a [fan speed controller](https://a.co/d/0fW0k3Kj) followed by a brid
 </div>
 
 <p align="center">
-  <b>Figure 1.</b> The setup I've been using for years.
+  <b>Figure 1:</b> <i>The setup I've been using for years</i>
 </p>
 
 Obviously this is a bit sketchy and it has two large ish downsides:
@@ -22,7 +22,7 @@ For these reasons and for the excuse to get better at embedded software and mech
 </div>
 
 <p align="center">
-  <b>Figure 1.</b> Motor Controller PCB Layout
+  <b>Figure 2:</b> <i>Motor Controller PCB Layout</i>
 </p>
 
 I've wrapped up v1 of this board and kept it as it was under the Board_V1 branch. There have already been some mistakes which I'll be updating in this main branch.
