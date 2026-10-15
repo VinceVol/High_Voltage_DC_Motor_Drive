@@ -1,6 +1,6 @@
-use core::fmt;
+use core::fmt::{self, Formatter};
 
-#[derive(Debug, Copy, Clone, PartialEq, Eq)]
+#[derive(Debug, Copy, Clone, PartialEq, Eq, defmt::Format)]
 pub enum HallError {
     /// Invalid configuration parameter (e.g., N = 0)
     InvalidConfig,
@@ -45,6 +45,9 @@ pub fn extract_rpm<const N: usize>(mut time_hall_low: [u64; N]) -> Result<u64, H
 
     //take the average time difference in ms from the valid values
     let avg_dif_ms = time_hall_low[0..valid_length].iter().sum::<u64>() / (valid_length as u64);
+    if avg_dif_ms == 0 {
+        return Err(HallError::ExcessiveNoise);
+    }
     let rpm = 60000 / (avg_dif_ms);
     return Ok(rpm);
 }

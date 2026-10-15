@@ -1,12 +1,13 @@
 //Interface asyc with the hall sensor (magnet passes in front and pulls GPIO6 low).
 
-use core_logic::hall_math::HallError;
+use core_logic::hall_math::{extract_rpm, HallError};
+use defmt::info;
 use embassy_rp::{
     gpio::{AnyPin, Input},
     Peri,
 };
 use embassy_sync::{blocking_mutex::raw::CriticalSectionRawMutex, channel::Channel};
-use embassy_time::Instant;
+use embassy_time::{Duration, Instant, Timer};
 
 pub static SPEED_CHANNEL: Channel<CriticalSectionRawMutex, u16, 100> = Channel::new();
 
@@ -15,9 +16,22 @@ struct HallSense {
 }
 
 #[embassy_executor::task]
-async fn run_hall(hall_pin: Peri<'static, AnyPin>) {
-    let hall_sensor = HallSense::init(hall_pin);
-    todo!();
+pub async fn run_hall(hall_pin: Peri<'static, AnyPin>) {
+    let mut hall_sensor = HallSense::init(hall_pin);
+    loop {
+        let data: Result<[u64; 15], HallError> = hall_sensor.populate().await;
+        info!("the data extracted: \n {}", data);
+        match data {
+            Ok(hall_data) => {
+                let rpm = extract_rpm(hall_data);
+                info!("Rpm: {}", rpm);
+            }
+            Err(hall_error) => {
+                info!("Error: {}", hall_error);
+                Timer::after(Duration::from_millis(500)).await;
+            }
+        }
+    }
 }
 
 impl HallSense {
