@@ -20,7 +20,7 @@ impl fmt::Display for HallError {
     }
 }
 
-pub fn extract_rpm<const N: usize>(mut time_hall_low: [u64; N]) -> Result<u64, HallError> {
+pub fn extract_rpm<const N: usize>(mut time_hall_low: [u64; N]) -> Result<u16, HallError> {
     if N <= 2 {
         return Err(HallError::InvalidConfig);
     }
@@ -43,13 +43,13 @@ pub fn extract_rpm<const N: usize>(mut time_hall_low: [u64; N]) -> Result<u64, H
         return Err(HallError::ExcessiveNoise);
     }
 
-    //take the average time difference in ms from the valid values
-    let avg_dif_ms = time_hall_low[0..valid_length].iter().sum::<u64>() / (valid_length as u64);
-    if avg_dif_ms == 0 {
+    //take the average time difference in us from the valid values
+    let avg_dif_us = time_hall_low[0..valid_length].iter().sum::<u64>() / (valid_length as u64);
+    if avg_dif_us == 0 {
         return Err(HallError::ExcessiveNoise);
     }
-    let rpm = 60000 / (avg_dif_ms);
-    return Ok(rpm);
+    let rpm = 60000000 / (avg_dif_us);
+    return Ok(rpm as u16);
 }
 
 #[cfg(test)]
