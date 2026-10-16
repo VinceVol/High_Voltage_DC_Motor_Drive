@@ -20,7 +20,7 @@ pub async fn run_hall(hall_pin: Peri<'static, AnyPin>) {
     let mut hall_sensor = HallSense::init(hall_pin);
     loop {
         let data: Result<[u64; 15], HallError> = hall_sensor.populate().await;
-        info!("the data extracted: \n {}", data);
+        // info!("Data: {}", data);
         match data {
             Ok(hall_data) => match extract_rpm(hall_data) {
                 Ok(rpm) => {
@@ -62,6 +62,10 @@ impl HallSense {
         let mut time_finish;
         let mut cntr = 0;
         while cntr < N {
+            //even with debounce still needed the next two lines to help with low speed noise
+            // maybe this noise is mostly gone when machine mounting the sensor rather than hand holding
+            self.pin.wait_for_low().await;
+            self.pin.wait_for_high().await;
             loop {
                 //The hall sensor fires on a falling edge
                 self.pin.wait_for_falling_edge().await;

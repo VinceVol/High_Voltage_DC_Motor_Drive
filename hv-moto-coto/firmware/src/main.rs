@@ -26,11 +26,11 @@ async fn main(spawner: Spawner) {
     let _ = spawner.spawn(run_hall(p.PIN_6.into()).unwrap());
 
     loop {
-        info!("LED ON");
+        // info!("LED ON");
         led.set_high();
         Timer::after(Duration::from_millis(3000)).await;
 
-        info!("LED OFF");
+        // info!("LED OFF");
         led.set_low();
         Timer::after(Duration::from_millis(3000)).await;
     }
