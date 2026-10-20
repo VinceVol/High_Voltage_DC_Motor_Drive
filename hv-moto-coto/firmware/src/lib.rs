@@ -6,6 +6,7 @@ use crate::{direction::Direction, safety::ControllerCond};
 
 pub mod bus_init;
 pub mod direction;
+pub mod motor;
 pub mod pwm;
 pub mod safety;
 pub mod speed_sense;

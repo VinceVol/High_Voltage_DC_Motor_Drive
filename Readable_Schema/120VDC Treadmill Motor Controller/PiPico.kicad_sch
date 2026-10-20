@@ -2093,7 +2093,7 @@
 	)
 	(rectangle
 		(start 223.52 96.52)
-		(end 251.46 104.14)
+		(end 251.46 109.22)
 		(stroke
 			(width 0)
 			(type dot)
@@ -2147,19 +2147,6 @@
 			)
 		)
 		(uuid "3ec44305-b0b8-4832-bfd5-86b608dbba34")
-	)
-	(text "Extra!"
-		(exclude_from_sim no)
-		(at 241.046 105.664 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(thickness 0.254)
-				(bold yes)
-				(color 255 0 0 1)
-			)
-		)
-		(uuid "40281296-1720-487a-86df-855c109f7e6b")
 	)
 	(text "UART1_rx"
 		(exclude_from_sim no)
@@ -2255,6 +2242,19 @@
 		)
 		(uuid "cefa8eb8-0e02-4424-b353-934b6c11dc15")
 	)
+	(text "3.3V"
+		(exclude_from_sim no)
+		(at 190.5 108.204 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
+				(color 255 0 0 1)
+			)
+		)
+		(uuid "d4753de4-dede-49eb-9842-0769fdb65a50")
+	)
 	(text "Extra!"
 		(exclude_from_sim no)
 		(at 43.942 110.744 0)
@@ -2278,6 +2278,19 @@
 			)
 		)
 		(uuid "e24237ee-68da-444d-97ef-2afb24caff6e")
+	)
+	(text "10V"
+		(exclude_from_sim no)
+		(at 219.456 99.568 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
+				(color 255 0 0 1)
+			)
+		)
+		(uuid "e676fdd3-e8d3-4fba-a3b0-95cb5b848856")
 	)
 	(text "I2C1_scl"
 		(exclude_from_sim no)
@@ -2309,6 +2322,12 @@
 			)
 		)
 		(uuid "fc91f4be-77b9-4026-81fa-c0249af86aa1")
+	)
+	(junction
+		(at 195.58 109.22)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1526cf2b-22b3-4a0f-8d0f-1ddf3378157b")
 	)
 	(junction
 		(at 41.91 92.71)
@@ -2514,6 +2533,16 @@
 	)
 	(wire
 		(pts
+			(xy 195.58 118.11) (xy 195.58 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1fc135ee-aa86-4f6c-80ae-17a4eebe2b07")
+	)
+	(wire
+		(pts
 			(xy 53.34 142.24) (xy 53.34 143.51)
 		)
 		(stroke
@@ -2551,6 +2580,16 @@
 			(type default)
 		)
 		(uuid "2954ad91-0460-4a5a-afdc-00e8e355f2f7")
+	)
+	(wire
+		(pts
+			(xy 189.23 115.57) (xy 189.23 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2b290704-38fe-4563-99ad-e40e1def6d2f")
 	)
 	(wire
 		(pts
@@ -2604,7 +2643,7 @@
 	)
 	(wire
 		(pts
-			(xy 163.83 115.57) (xy 185.42 115.57)
+			(xy 163.83 115.57) (xy 189.23 115.57)
 		)
 		(stroke
 			(width 0)
@@ -2724,16 +2763,6 @@
 	)
 	(wire
 		(pts
-			(xy 185.42 100.33) (xy 245.11 100.33)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "56990604-1e6f-4c39-bbad-462b71b108a0")
-	)
-	(wire
-		(pts
 			(xy 223.52 95.25) (xy 223.52 92.71)
 		)
 		(stroke
@@ -2764,6 +2793,16 @@
 	)
 	(wire
 		(pts
+			(xy 167.64 120.65) (xy 167.64 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5de5227e-aff9-4562-a084-b27db81a2252")
+	)
+	(wire
+		(pts
 			(xy 41.91 90.17) (xy 41.91 92.71)
 		)
 		(stroke
@@ -2774,7 +2813,7 @@
 	)
 	(wire
 		(pts
-			(xy 234.95 107.95) (xy 237.49 107.95)
+			(xy 236.22 107.95) (xy 237.49 107.95)
 		)
 		(stroke
 			(width 0)
@@ -2944,6 +2983,16 @@
 	)
 	(wire
 		(pts
+			(xy 189.23 109.22) (xy 195.58 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "96593341-561a-4e43-a06d-efdf075399b6")
+	)
+	(wire
+		(pts
 			(xy 58.42 110.49) (xy 58.42 107.95)
 		)
 		(stroke
@@ -2971,6 +3020,16 @@
 			(type default)
 		)
 		(uuid "9749383d-b8fc-49c7-aee0-4eb1b3dcf13d")
+	)
+	(wire
+		(pts
+			(xy 195.58 109.22) (xy 195.58 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "99679b14-6b9f-4e8b-b22f-c331b8867080")
 	)
 	(wire
 		(pts
@@ -3064,6 +3123,16 @@
 	)
 	(wire
 		(pts
+			(xy 195.58 120.65) (xy 167.64 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c0f25674-4389-4609-876b-0429a9b8b2d4")
+	)
+	(wire
+		(pts
 			(xy 140.97 135.89) (xy 140.97 138.43)
 		)
 		(stroke
@@ -3101,16 +3170,6 @@
 			(type default)
 		)
 		(uuid "ca120912-edd0-4634-a838-10cd35712402")
-	)
-	(wire
-		(pts
-			(xy 185.42 115.57) (xy 185.42 100.33)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "cad435cc-e2f7-4683-bc3c-88e0a41be399")
 	)
 	(wire
 		(pts
@@ -3334,6 +3393,16 @@
 	)
 	(wire
 		(pts
+			(xy 195.58 107.95) (xy 195.58 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f7bea4c5-450a-405f-8d95-7933b2c466c4")
+	)
+	(wire
+		(pts
 			(xy 220.98 90.17) (xy 245.11 90.17)
 		)
 		(stroke
@@ -3362,7 +3431,17 @@
 		)
 		(uuid "fe39d4e6-8677-4717-8b99-e68041a488c6")
 	)
-	(label "GP0"
+	(wire
+		(pts
+			(xy 195.58 100.33) (xy 245.11 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ffe1a5b7-62ad-4607-8d05-8eba9fbf1549")
+	)
+	(label "Mesa_Dir"
 		(at 115.57 85.09 180)
 		(effects
 			(font
@@ -3372,8 +3451,8 @@
 		)
 		(uuid "57d466c2-7ab7-4716-a253-6f78f080c139")
 	)
-	(label "GP0"
-		(at 234.95 107.95 180)
+	(label "Mesa_Dir"
+		(at 236.22 107.95 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3667,6 +3746,73 @@
 			(justify left)
 		)
 		(uuid "ce9f8c28-4009-4906-bd2f-a51959dbf40d")
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 195.58 104.14 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "0a536e54-31a2-4464-998a-75b1992185b7")
+		(property "Reference" "R51"
+			(at 193.294 104.394 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "20K"
+			(at 195.58 104.14 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 197.358 104.14 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDP0000/AOA0000C337.pdf"
+			(at 195.58 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "ERJ-UP3J100V"
+			(at 195.58 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "16808b1f-98aa-4fab-9c86-c7fca20a97a2")
+		)
+		(pin "2"
+			(uuid "f73c7371-fac4-417b-b899-c87ffc771aad")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/dc45a2ff-df18-49a4-81ff-80d10381c9e9"
+					(reference "R51")
+					(unit 1)
+				)
+			)
+		)
 	)
 	(symbol
 		(lib_id "Diode:SS12")
@@ -4627,6 +4773,73 @@
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/dc45a2ff-df18-49a4-81ff-80d10381c9e9"
 					(reference "R41")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 195.58 114.3 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "93037168-b92c-4a9d-b6ba-7e457548d2ef")
+		(property "Reference" "R52"
+			(at 193.294 114.554 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10K"
+			(at 195.58 114.3 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 197.358 114.3 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDP0000/AOA0000C337.pdf"
+			(at 195.58 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "ERJ-UP3J100V"
+			(at 195.58 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "93cd7fd0-2654-4e2d-9638-0deda29b16d2")
+		)
+		(pin "2"
+			(uuid "59463227-58be-4c67-bdf5-067a7e76a74d")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/dc45a2ff-df18-49a4-81ff-80d10381c9e9"
+					(reference "R52")
 					(unit 1)
 				)
 			)
