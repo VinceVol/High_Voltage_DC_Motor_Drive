@@ -1,16 +1,13 @@
 //Use this file to control the speed of the motor
 
 use embassy_rp::{
-    gpio::Output,
     peripherals::{PIN_17, PIN_22, PWM_SLICE0, PWM_SLICE3},
     pwm::{Config, Pwm},
     Peri,
 };
-use embassy_sync::{blocking_mutex::raw::CriticalSectionRawMutex, channel::Channel};
+use embassy_sync::{blocking_mutex::raw::CriticalSectionRawMutex, channel::Receiver};
 
-use crate::direction::DIR_CHANNEL;
-
-pub static PWM_CHANNEL: Channel<CriticalSectionRawMutex, u64, 100> = Channel::new();
+use crate::direction::Direction;
 
 //Not sure if I should really do anything more than this for the dir_pin
 #[embassy_executor::task]
@@ -19,22 +16,63 @@ pub async fn run_pwm(
     pwm_p_b: Peri<'static, PIN_17>,
     pwm_slice_3: Peri<'static, PWM_SLICE3>,
     pwm_slice_0: Peri<'static, PWM_SLICE0>,
+    dir_receiver: Receiver<'static, CriticalSectionRawMutex, Direction, 25>,
+    pwm_receiver: Receiver<'static, CriticalSectionRawMutex, u16, 25>,
 ) {
-    let mut config = Config::default();
-    config.top = 999;
-    config.compare_a = 500; // 50% duty cycle
+    //Bit of copy and paste code here to set up the a and b channels so one can be off whilst the other is on
+    let mut config_a = Config::default();
+    config_a.top = 999;
+    config_a.compare_a = 500; // 50% duty cycle
+    let mut config_b = Config::default();
+    config_b.top = 999;
+    config_b.compare_a = 500; // 50% duty cycle
 
-    let pwm_a = Pwm::new_output_a(pwm_slice_3, pwm_p_a, config);
-    let pwm_b = Pwm::new_output_b(pwm_slice_0, pwm_p_b, config);
+    let pwm_a = Pwm::new_output_a(pwm_slice_3, pwm_p_a, config_a.clone());
+    let pwm_b = Pwm::new_output_b(pwm_slice_0, pwm_p_b, config_b.clone());
+
+    let mut pwm_struct_a = MotorPwm {
+        pwm: pwm_a,
+        config: config_a,
+    };
+    let mut pwm_struct_b = MotorPwm {
+        pwm: pwm_b,
+        config: config_b,
+    };
+    //Make sure we have direction instruction to start
+    // TODO add a loop here to make sure we request and receive a direction
+    let mut dir = dir_receiver.receive().await;
     loop {
-        let dir = DIR_CHANNEL.receive().await;
-        //TODO CONFIRM RPMS ARE LOW BEFORE SWAP
-        if dir {
-            dir_pin_b.set_low();
-            dir_pin_a.set_high();
-        } else {
-            dir_pin_a.set_low();
-            dir_pin_b.set_high();
+        //only do something if a new pwm instruction is givin
+        let pwm = pwm_receiver.receive().await;
+        //check to make sure the direction hasn't changed but don't wait on it
+        match dir_receiver.try_receive() {
+            Ok(new_dir) => dir = new_dir,
+            Err(_) => (),
         }
+
+        //pwm the proper direction and turn off the pwm to the other direciton
+        match dir {
+            Direction::Forward => {
+                pwm_struct_b.set_duty(0);
+                pwm_struct_a.set_duty(pwm);
+            }
+            Direction::Reverse => {
+                pwm_struct_a.set_duty(0);
+                pwm_struct_b.set_duty(pwm);
+            }
+        }
+    }
+}
+
+//Using this MotorPwm struct to avoid constantly copying or cloning the config
+struct MotorPwm<'d> {
+    pwm: Pwm<'d>,
+    config: Config,
+}
+
+impl<'d> MotorPwm<'d> {
+    fn set_duty(&mut self, per_mille: u16) {
+        self.config.compare_a = (self.config.top + 1) * per_mille / 1000;
+        self.pwm.set_config(&self.config);
     }
 }

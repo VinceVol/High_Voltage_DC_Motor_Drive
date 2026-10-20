@@ -28,6 +28,6 @@ For these reasons and for the excuse to get better at embedded software and mech
 I've wrapped up v1 of this board and kept it as it was under the Board_V1 branch. There have already been some mistakes which I'll be updating in this main branch.
 
 # Active Todos!
-- [ ] Get reliable rpm readout from the hall sensor
-- [ ] Get a bench setup for a lower voltage motor
-- [ ] Implement direction switching capabilities
+- [x] Get reliable rpm readout from the hall sensor
+- [x] Get a bench setup for a lower voltage motor driven by power supply (mostly to check rpm readout)
+- [ ] Solder high voltage side components to start bench testing the low voltage motor 

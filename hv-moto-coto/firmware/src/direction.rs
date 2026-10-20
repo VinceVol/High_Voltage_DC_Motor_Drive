@@ -7,13 +7,11 @@ use embassy_rp::{
 };
 use embassy_sync::{
     blocking_mutex::raw::CriticalSectionRawMutex,
-    channel::{Channel, Receiver, Sender},
+    channel::{Receiver, Sender},
 };
 use embassy_time::{Duration, Timer};
 
 use crate::RPM_BFR_DIR_SWTCH;
-
-pub static DIR_CHANNEL: Channel<CriticalSectionRawMutex, Direction, 25> = Channel::new();
 
 pub enum Direction {
     Forward,
@@ -25,15 +23,16 @@ pub async fn run_dir(
     dir_a_pin_p: Peri<'static, PIN_21>,
     dir_b_pin_p: Peri<'static, PIN_16>,
     rpm_receiver: Receiver<'static, CriticalSectionRawMutex, u16, 100>,
-    rpm_sender: Sender<'static, CriticalSectionRawMutex, u16, 100>,
+    rpm_req_sender: Sender<'static, CriticalSectionRawMutex, u16, 100>,
+    dir_receiver: Receiver<'static, CriticalSectionRawMutex, Direction, 25>,
 ) {
     let mut dir_pin_a = Output::new(dir_a_pin_p, Level::Low);
     let mut dir_pin_b = Output::new(dir_b_pin_p, Level::Low);
     loop {
-        let dir = DIR_CHANNEL.receive().await;
+        let dir = dir_receiver.receive().await;
 
         //CONFIRM RPMS ARE LOW BEFORE SWAP
-        rpm_sender.send(RPM_BFR_DIR_SWTCH).await;
+        rpm_req_sender.send(RPM_BFR_DIR_SWTCH).await;
         while rpm_receiver.receive().await > RPM_BFR_DIR_SWTCH {
             Timer::after(Duration::from_millis(100)).await;
         }
