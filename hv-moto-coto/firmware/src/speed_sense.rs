@@ -9,7 +9,7 @@ use embassy_rp::{
 use embassy_sync::{blocking_mutex::raw::CriticalSectionRawMutex, channel::Channel};
 use embassy_time::{Duration, Instant, Timer};
 
-pub static SPEED_CHANNEL: Channel<CriticalSectionRawMutex, u16, 100> = Channel::new();
+use crate::RPM_WATCH;
 
 struct HallSense {
     pin: Input<'static>,
@@ -24,9 +24,11 @@ pub async fn run_hall(hall_pin: Peri<'static, AnyPin>) {
         match data {
             Ok(hall_data) => match extract_rpm(hall_data) {
                 Ok(rpm) => {
-                    SPEED_CHANNEL.send(rpm).await;
+                    RPM_WATCH.sender().send(rpm);
                     info!("rpm: {}", rpm);
-                    Timer::after(Duration::from_millis(50)).await;
+                    //I don't think we want to use a wait fn because the pid loop requires
+                    // some fast refresh rates
+                    // Timer::after(Duration::from_millis(50)).await;
                 }
                 Err(hall_error) => {
                     info!("RPM Hall Error: {}", hall_error);

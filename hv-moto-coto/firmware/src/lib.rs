@@ -18,7 +18,7 @@ pub mod speed_sense;
 pub static MAX_SPINDLE_SPEED: u16 = 5000; //This should match the linuxCNC config so they scale the same
 pub static RPM_BFR_DIR_SWTCH: u16 = 100;
 // pub static RPM_REQ_CHANNEL: Channel<CriticalSectionRawMutex, u16, 100> = Channel::new(); //The rpm we want drops into here
-pub static RPM_CHANNEL: Channel<CriticalSectionRawMutex, u16, 100> = Channel::new(); //The real rpm uploads here
+pub static RPM_WATCH: Watch<CriticalSectionRawMutex, u16, 100> = Watch::new(); //The real rpm uploads here
 
 //PWM coms to gate driver -- ie directly related to motor speed
 pub static PWM_SIG: Signal<CriticalSectionRawMutex, u16> = Signal::new();
