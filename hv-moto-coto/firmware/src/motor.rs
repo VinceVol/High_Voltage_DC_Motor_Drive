@@ -4,12 +4,21 @@
 use embassy_time::{Duration, Ticker};
 
 use crate::{
-    direction::Direction, DIR_WATCH, MAX_SPINDLE_SPEED, MESA_DIR_REQ_SIG, MESA_RPM_REQ_SIG,
-    PWM_SIG, RPM_BFR_DIR_SWTCH, RPM_WATCH,
+    cap_precharge::PrechargeState, direction::Direction, CAP_PRE_STATE_SIG, DIR_WATCH,
+    MAX_SPINDLE_SPEED, MESA_DIR_REQ_SIG, MESA_RPM_REQ_SIG, PWM_SIG, RPM_BFR_DIR_SWTCH, RPM_WATCH,
 };
 
 #[embassy_executor::task]
 pub async fn run_motor() {
+    //Do nothing until the caps have precharged
+    loop {
+        match CAP_PRE_STATE_SIG.wait().await {
+            PrechargeState::StartUp => continue,
+            PrechargeState::NormalOp => break,
+        }
+    }
+
+    //Setup PID components
     let mut rpm_stpt: u16 = 0; //Representing the rpm goal
     let mut rpm_watch = RPM_WATCH.receiver().unwrap(); //Direct feed from the hall sensor
     let dir_watch = DIR_WATCH.sender();

@@ -6,7 +6,6 @@ use embassy_rp::{
     gpio::{AnyPin, Input},
     Peri,
 };
-use embassy_sync::{blocking_mutex::raw::CriticalSectionRawMutex, channel::Channel};
 use embassy_time::{Duration, Instant, Timer};
 
 use crate::RPM_WATCH;

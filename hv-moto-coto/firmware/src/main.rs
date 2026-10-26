@@ -22,16 +22,16 @@ async fn main(spawner: Spawner) {
     info!("I2C initialized on RP2350!");
 
     // Configure GPIO 25 (onboard LED on Pico 2 W) as an output pin
-    let mut led = Output::new(p.PIN_20, Level::Low);
+    // let mut led = Output::new(p.PIN_20, Level::Low);
     let _ = spawner.spawn(run_hall(p.PIN_6.into()).unwrap());
 
     loop {
         // info!("LED ON");
-        led.set_high();
+        // led.set_high();
         Timer::after(Duration::from_millis(3000)).await;
 
         // info!("LED OFF");
-        led.set_low();
+        // led.set_low();
         Timer::after(Duration::from_millis(3000)).await;
     }
 }
