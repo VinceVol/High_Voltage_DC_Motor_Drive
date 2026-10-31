@@ -1,5 +1,6 @@
 //Direction control of the motor
 
+use defmt::info;
 use embassy_rp::{
     gpio::{Level, Output},
     peripherals::{PIN_16, PIN_21},
@@ -22,7 +23,8 @@ pub async fn run_dir(dir_a_pin_p: Peri<'static, PIN_21>, dir_b_pin_p: Peri<'stat
     let mut dir;
 
     loop {
-        dir = dir_watch.get().await;
+        dir = dir_watch.changed().await;
+        info!("got new direction!");
 
         match dir {
             Direction::Forward => {

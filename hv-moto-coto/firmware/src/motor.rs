@@ -1,6 +1,12 @@
 //Thinking this represents the motor struct and task runner overall. ~big brain ish portion of the firware that decides overall what the motor is doing
 // I think this should include the PID bits but I haven't fully decided on the best way to structure this
 
+use defmt::info;
+use embassy_rp::{
+    gpio::Output,
+    peripherals::{PIN_1, PIN_20},
+    Peri,
+};
 use embassy_time::{Duration, Ticker};
 
 use crate::{
@@ -9,23 +15,31 @@ use crate::{
 };
 
 #[embassy_executor::task]
-pub async fn run_motor() {
+pub async fn run_motor(q5_en: Peri<'static, PIN_20>, dig_drive_en: Peri<'static, PIN_1>) {
     //Do nothing until the caps have precharged
+    // q5 controls the precharge mosfet
+    let mut q5 = Output::new(q5_en, embassy_rp::gpio::Level::Low);
     loop {
         match CAP_PRE_STATE_SIG.wait().await {
             PrechargeState::StartUp => continue,
             PrechargeState::NormalOp => break,
         }
     }
+    q5.set_high();
+
+    //enable the drives
+    // TODO Move this to a safety circuit TODO
+    let dr_en = Output::new(dig_drive_en, embassy_rp::gpio::Level::High);
 
     //Setup PID components
     let mut rpm_stpt: u16 = 0; //Representing the rpm goal
     let mut rpm_watch = RPM_WATCH.receiver().unwrap(); //Direct feed from the hall sensor
     let dir_watch = DIR_WATCH.sender();
     let mut dir_stpt: Direction = Direction::Forward;
+    dir_watch.send(dir_stpt); //default to forward
     let mut motor_pid = Pid {
-        kp: 1.0,
-        ki: 0.5,
+        kp: 5.0,
+        ki: 0.1,
         kd: 0.0,
         integral: 0.0,
         prev_error: 0.0,
@@ -56,19 +70,26 @@ pub async fn run_motor() {
         // Wait for dt to hit hopefully a new rpm was sent out
         // ovtherwise use previous
         ticker.next().await;
-        if let Some(new_rpm) = rpm_watch.try_get() {
+        if let Some(new_rpm) = rpm_watch.try_changed() {
             rpm = new_rpm;
         }
 
         //update pwm based on rpm and setpnt
-        prev_pwm_out = motor_pid.update(
+        let pid_output = motor_pid.update(
             rpm_stpt as f32 / MAX_SPINDLE_SPEED as f32,
             rpm as f32 / MAX_SPINDLE_SPEED as f32,
             0.001,
             prev_pwm_out >= 1000,
-        ) as i32;
+        );
+
+        // Scale and clamp the normalized PID output to your 0-1000 PWM range
+        prev_pwm_out = (pid_output * 1000.0).clamp(0.0, 1000.0) as i32;
 
         //Send that pwm to the pin
+        // info!(
+        //     "sending pwm {} for rpm req {}, current rpm: {}",
+        //     prev_pwm_out, rpm_stpt, rpm
+        // );
         PWM_SIG.signal(prev_pwm_out as u16);
     }
 }

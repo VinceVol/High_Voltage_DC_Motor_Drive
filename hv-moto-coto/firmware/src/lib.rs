@@ -27,13 +27,18 @@ pub static DIR_WATCH: Watch<CriticalSectionRawMutex, Direction, 5> = Watch::new(
 pub mod safety;
 pub static SAFETY_WATCH: Watch<CriticalSectionRawMutex, ControllerCond, 5> = Watch::new();
 
-//Current & Voltage sense
-pub mod iv;
+//--------------------------------------------------------------------------
+//ADC Pins -- need to be checked together -- Current/Voltage/mesa stpt sense
+pub mod adc_runner;
+// Current sense
 pub static I_WATCH: Watch<CriticalSectionRawMutex, u16, 5> = Watch::new(); //Current Sense
-pub static I_CORR_NUM: u16 = 40; //Correction factor for the current sense/ tune on bench
+pub static I_CORR_NUM: u64 = 40; //Correction factor for the current sense/ tune on bench
 pub static I_DEL_MS: u64 = 500; //how often should we even check the current
+
+//Voltage sense
 pub static V_WATCH: Watch<CriticalSectionRawMutex, u16, 5> = Watch::new(); //Voltage Readout of caps
-pub static V_CORR_NUM: u16 = 400; //Correction factor for the voltage sense/ tune on bench
+pub static V_CORR_NUM: i64 = 683; //Correction factor for the voltage sense/ tune on bench
+pub static V_CORR_OFF: i64 = -300; //Votlage offset from zero in the current sense loop
 pub static V_DEL_MS: u64 = 500; //how often should we even check the voltage
 
 //Mesa coms
@@ -42,6 +47,7 @@ pub static CHANGE_THRESHOLD: i16 = 150; //Assuming the voltage output is imperfe
 pub static MESA_MON_DEL_MS: u64 = 500; //how often should we even check the mesa board outputs
 pub static MESA_RPM_REQ_SIG: Signal<CriticalSectionRawMutex, u16> = Signal::new(); //Voltage Readout of caps
 pub static MESA_DIR_REQ_SIG: Signal<CriticalSectionRawMutex, Direction> = Signal::new(); //Voltage Readout of caps
+                                                                                         //--------------------------------------------------------------------------
 
 //Cap precharge
 pub mod cap_precharge;
