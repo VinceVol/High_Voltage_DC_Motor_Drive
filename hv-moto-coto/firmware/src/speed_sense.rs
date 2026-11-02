@@ -8,7 +8,7 @@ use embassy_rp::{
 };
 use embassy_time::{Duration, Instant, Timer};
 
-use crate::{HALL_CNT, RPM_WATCH};
+use crate::{CURR_DRAW_THRESH_FOR_ZERO, HALL_CNT, I_WATCH, RPM_WATCH};
 
 struct HallSense {
     pin: Input<'static>,
@@ -55,6 +55,10 @@ impl HallSense {
             return Err(HallError::InvalidConfig);
         }
 
+        //Watch current draw in case the motor shuts off
+        // hall sensor stands no chance if the motor isn't spinning
+        let mut current_watch = I_WATCH.receiver().unwrap();
+
         //use debounce to avoid noise on trigger
         const DEBOUNCE_THRESHOLD_US: u64 = 1000;
 
@@ -65,6 +69,12 @@ impl HallSense {
         while cntr < N {
             //even with debounce still needed the next two lines to help with low speed noise
             // maybe this noise is mostly gone when machine mounting the sensor rather than hand holding
+            if current_watch
+                .try_get_and(|i: &f32| *i < CURR_DRAW_THRESH_FOR_ZERO)
+                .is_some()
+            {
+                return Ok([u64::MAX; N]);
+            }
             self.pin.wait_for_low().await;
             self.pin.wait_for_high().await;
             loop {

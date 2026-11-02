@@ -93,10 +93,10 @@ pub async fn run_motor(q5_en: Peri<'static, PIN_20>, dig_drive_en: Peri<'static,
             prev_pwm_out = 200;
         }
         //Send that pwm to the pin
-        info!(
-            "sending pwm {} for rpm req {}, current rpm: {}, direction: {:?}",
-            prev_pwm_out, rpm_stpt, rpm, dir_stpt
-        );
+        // info!(
+        //     "sending pwm {} for rpm req {}, current rpm: {}, direction: {:?}",
+        //     prev_pwm_out, rpm_stpt, rpm, dir_stpt
+        // );
         PWM_SIG.signal(prev_pwm_out as u16);
     }
 }

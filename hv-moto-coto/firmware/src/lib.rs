@@ -15,6 +15,7 @@ pub static MAX_SPINDLE_SPEED: u16 = 1000; //This should match the linuxCNC confi
 pub static RPM_BFR_DIR_SWTCH: u16 = 100;
 pub static RPM_WATCH: Watch<CriticalSectionRawMutex, u16, 100> = Watch::new(); //The real rpm uploads here
 pub static HALL_CNT: usize = 7; //how many samples needed for rpm feedback
+pub static CURR_DRAW_THRESH_FOR_ZERO: f32 = 0.1; //The current draw at which we say with some confidence motor is off
 
 //PWM coms to gate driver -- ie directly related to motor speed
 pub mod pwm;
@@ -32,8 +33,9 @@ pub static SAFETY_WATCH: Watch<CriticalSectionRawMutex, ControllerCond, 5> = Wat
 //ADC Pins -- need to be checked together -- Current/Voltage/mesa stpt sense
 pub mod adc_runner;
 // Current sense
-pub static I_WATCH: Watch<CriticalSectionRawMutex, u16, 5> = Watch::new(); //Current Sense
-pub static I_CORR_NUM: u64 = 40; //Correction factor for the current sense/ tune on bench
+pub static I_WATCH: Watch<CriticalSectionRawMutex, f32, 5> = Watch::new(); //Current Sense
+pub static I_CORR_NUM: f32 = 32.52; //Correction factor for the current sense/ tune on bench
+pub static I_CORR_OFF: f32 = -16.375; //Votlage offset from zero in the current sense loop
 pub static I_DEL_MS: u64 = 500; //how often should we even check the current
 
 //Voltage sense

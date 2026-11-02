@@ -12,8 +12,8 @@ use embassy_rp::{
 use embassy_time::{Duration, Ticker};
 
 use crate::{
-    CHANGE_THRESHOLD, I_CORR_NUM, I_DEL_MS, I_WATCH, MAX_SPINDLE_SPEED, MESA_MON_DEL_MS,
-    MESA_RPM_REQ_SIG, V_CORR_NUM, V_CORR_OFF, V_DEL_MS, V_WATCH,
+    CHANGE_THRESHOLD, I_CORR_NUM, I_CORR_OFF, I_DEL_MS, I_WATCH, MAX_SPINDLE_SPEED,
+    MESA_MON_DEL_MS, MESA_RPM_REQ_SIG, V_CORR_NUM, V_CORR_OFF, V_DEL_MS, V_WATCH,
 };
 
 #[embassy_executor::task]
@@ -49,13 +49,9 @@ pub async fn adc_runner(
                 match adc_v_in.read(&mut current_in).await {
                     Ok(good_v) => {
                         //sending the converted 4095 max to voltage max
-                        I_WATCH
-                            .sender()
-                            .send(((I_CORR_NUM * good_v as u64) / 4095u64) as u16);
-                        // info!(
-                        //     "Current sense = {}",
-                        //     ((I_CORR_NUM * good_v as u64) / 4095u64)
-                        // );
+                        let signed_current = (I_CORR_NUM * good_v as f32) / 4095f32 + I_CORR_OFF;
+                        I_WATCH.sender().send(signed_current);
+                        info!("Current sense = {}", signed_current);
                     }
                     Err(_adc_error) => {
                         info!("Error reading adc pin -- req current");
