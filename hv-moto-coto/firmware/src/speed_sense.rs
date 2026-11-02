@@ -1,14 +1,18 @@
 //Interface asyc with the hall sensor (magnet passes in front and pulls GPIO6 low).
 
+use core::future::Future;
+
 use core_logic::hall_math::{extract_rpm, HallError};
 use defmt::info;
+use embassy_futures::select::{Either, Select};
 use embassy_rp::{
     gpio::{AnyPin, Input},
     Peri,
 };
-use embassy_time::{Duration, Instant, Timer};
+use embassy_sync::{blocking_mutex::raw::CriticalSectionRawMutex, watch::Receiver};
+use embassy_time::{Duration, Instant, Ticker, Timer};
 
-use crate::{CURR_DRAW_THRESH_FOR_ZERO, HALL_CNT, I_WATCH, RPM_WATCH};
+use crate::{CURR_DRAW_THRESH_FOR_ZERO, HALL_CNT, I_WATCH, RPM_WATCH, STOPPED_THRESHOLD_MS};
 
 struct HallSense {
     pin: Input<'static>,
@@ -57,7 +61,8 @@ impl HallSense {
 
         //Watch current draw in case the motor shuts off
         // hall sensor stands no chance if the motor isn't spinning
-        let mut current_watch = I_WATCH.receiver().unwrap();
+        let mut cur_watch = I_WATCH.receiver().unwrap();
+        let mut ticker = Ticker::every(Duration::from_millis(STOPPED_THRESHOLD_MS));
 
         //use debounce to avoid noise on trigger
         const DEBOUNCE_THRESHOLD_US: u64 = 1000;
@@ -69,17 +74,29 @@ impl HallSense {
         while cntr < N {
             //even with debounce still needed the next two lines to help with low speed noise
             // maybe this noise is mostly gone when machine mounting the sensor rather than hand holding
-            if current_watch
-                .try_get_and(|i: &f32| *i < CURR_DRAW_THRESH_FOR_ZERO)
-                .is_some()
-            {
+            //
+            // we're also checking to make sure current draw isn't low at each step to try
+            // and avoid the scenario where rpm stops returning because motor stopped spinning
+            //
+            // Looking at current at the same time to avoid some kind of misread as a interpretation
+            // of zero rpm
+            if check_stop_and(self.pin.wait_for_low(), &mut ticker, cur_watch.get().await).await {
                 return Ok([u64::MAX; N]);
             }
-            self.pin.wait_for_low().await;
-            self.pin.wait_for_high().await;
+            if check_stop_and(self.pin.wait_for_high(), &mut ticker, cur_watch.get().await).await {
+                return Ok([u64::MAX; N]);
+            }
             loop {
                 //The hall sensor fires on a falling edge
-                self.pin.wait_for_falling_edge().await;
+                if check_stop_and(
+                    self.pin.wait_for_falling_edge(),
+                    &mut ticker,
+                    cur_watch.get().await,
+                )
+                .await
+                {
+                    return Ok([u64::MAX; N]);
+                }
                 time_finish = Instant::now();
                 let elapsed = (time_finish - time_start).as_micros();
                 if elapsed > DEBOUNCE_THRESHOLD_US {
@@ -93,4 +110,30 @@ impl HallSense {
 
         return Ok(time_hall_low);
     }
+}
+
+//should do &self .skip_if_stopped and send the future in
+async fn check_stop_and<F: Future>(
+    future: F,
+    ticker: &mut Ticker,
+    last_current_msrmnt: f32,
+) -> bool {
+    match embassy_futures::select::select(future, ticker.next()).await {
+        //If the future returns first then we didn't time out
+        Either::First(_) => {
+            return false;
+        }
+        //if the ticker returns first then we times out
+        Either::Second(_) => {
+            if last_current_msrmnt < CURR_DRAW_THRESH_FOR_ZERO {
+                return false;
+            } else {
+                return true;
+            }
+        }
+    }
+    // start_time.elapsed().as_millis() > STOPPED_THRESHOLD_MS
+    //     && i_watch
+    //         .try_get_and(|i: &f32| *i < CURR_DRAW_THRESH_FOR_ZERO)
+    //         .is_some()
 }
