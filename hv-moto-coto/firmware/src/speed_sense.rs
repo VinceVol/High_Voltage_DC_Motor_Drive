@@ -8,7 +8,7 @@ use embassy_rp::{
 };
 use embassy_time::{Duration, Instant, Timer};
 
-use crate::RPM_WATCH;
+use crate::{HALL_CNT, RPM_WATCH};
 
 struct HallSense {
     pin: Input<'static>,
@@ -18,7 +18,7 @@ struct HallSense {
 pub async fn run_hall(hall_pin: Peri<'static, AnyPin>) {
     let mut hall_sensor = HallSense::init(hall_pin);
     loop {
-        let data: Result<[u64; 15], HallError> = hall_sensor.populate().await;
+        let data: Result<[u64; HALL_CNT], HallError> = hall_sensor.populate().await;
         // info!("Data: {}", data);
         match data {
             Ok(hall_data) => match extract_rpm(hall_data) {

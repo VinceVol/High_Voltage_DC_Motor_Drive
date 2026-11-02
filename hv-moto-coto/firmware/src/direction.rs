@@ -1,6 +1,6 @@
 //Direction control of the motor
 
-use defmt::info;
+use defmt::{info, Format};
 use embassy_rp::{
     gpio::{Level, Output},
     peripherals::{PIN_16, PIN_21},
@@ -9,7 +9,7 @@ use embassy_rp::{
 
 use crate::DIR_WATCH;
 
-#[derive(Clone, Copy, PartialEq, Eq)]
+#[derive(Clone, Copy, PartialEq, Eq, Format)]
 pub enum Direction {
     Forward,
     Reverse,

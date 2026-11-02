@@ -7,7 +7,7 @@ use embassy_rp::{
     peripherals::{PIN_1, PIN_20},
     Peri,
 };
-use embassy_time::{Duration, Ticker};
+use embassy_time::{Duration, Ticker, Timer};
 
 use crate::{
     cap_precharge::PrechargeState, direction::Direction, CAP_PRE_STATE_SIG, DIR_WATCH,
@@ -38,8 +38,8 @@ pub async fn run_motor(q5_en: Peri<'static, PIN_20>, dig_drive_en: Peri<'static,
     let mut dir_stpt: Direction = Direction::Forward;
     dir_watch.send(dir_stpt); //default to forward
     let mut motor_pid = Pid {
-        kp: 5.0,
-        ki: 0.1,
+        kp: 0.35,
+        ki: 0.2,
         kd: 0.0,
         integral: 0.0,
         prev_error: 0.0,
@@ -61,6 +61,7 @@ pub async fn run_motor(q5_en: Peri<'static, PIN_20>, dig_drive_en: Peri<'static,
             while rpm > RPM_BFR_DIR_SWTCH {
                 //Tell pwm to shut things down
                 PWM_SIG.signal(0);
+                Timer::after(Duration::from_millis(300)).await;
             }
 
             dir_watch.send(new_dir_set);
@@ -85,11 +86,17 @@ pub async fn run_motor(q5_en: Peri<'static, PIN_20>, dig_drive_en: Peri<'static,
         // Scale and clamp the normalized PID output to your 0-1000 PWM range
         prev_pwm_out = (pid_output * 1000.0).clamp(0.0, 1000.0) as i32;
 
+        if rpm_stpt == 0 {
+            prev_pwm_out = 0;
+        } else if prev_pwm_out == 0 {
+            // Clamp between a safe minimum running floor (e.g., 50) and max 1000
+            prev_pwm_out = 200;
+        }
         //Send that pwm to the pin
-        // info!(
-        //     "sending pwm {} for rpm req {}, current rpm: {}",
-        //     prev_pwm_out, rpm_stpt, rpm
-        // );
+        info!(
+            "sending pwm {} for rpm req {}, current rpm: {}, direction: {:?}",
+            prev_pwm_out, rpm_stpt, rpm, dir_stpt
+        );
         PWM_SIG.signal(prev_pwm_out as u16);
     }
 }

@@ -67,7 +67,7 @@ pub async fn adc_runner(
                     Ok(good_v) => {
                         //sending the converted 4095 max to voltage max
                         let signed_voltage = ((V_CORR_NUM * good_v as i64) / 4095i64) + V_CORR_OFF;
-                        V_WATCH.sender().send(signed_voltage.abs() as u16);
+                        V_WATCH.sender().send(signed_voltage);
                         // info!("voltage sense = {}", (signed_voltage));
                     }
                     Err(_adc_error) => {

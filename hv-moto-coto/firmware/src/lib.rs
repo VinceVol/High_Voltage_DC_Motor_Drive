@@ -11,9 +11,10 @@ pub mod motor;
 
 //Rpms coms
 pub mod speed_sense;
-pub static MAX_SPINDLE_SPEED: u16 = 5000; //This should match the linuxCNC config so they scale the same
+pub static MAX_SPINDLE_SPEED: u16 = 1000; //This should match the linuxCNC config so they scale the same
 pub static RPM_BFR_DIR_SWTCH: u16 = 100;
 pub static RPM_WATCH: Watch<CriticalSectionRawMutex, u16, 100> = Watch::new(); //The real rpm uploads here
+pub static HALL_CNT: usize = 7; //how many samples needed for rpm feedback
 
 //PWM coms to gate driver -- ie directly related to motor speed
 pub mod pwm;
@@ -36,7 +37,7 @@ pub static I_CORR_NUM: u64 = 40; //Correction factor for the current sense/ tune
 pub static I_DEL_MS: u64 = 500; //how often should we even check the current
 
 //Voltage sense
-pub static V_WATCH: Watch<CriticalSectionRawMutex, u16, 5> = Watch::new(); //Voltage Readout of caps
+pub static V_WATCH: Watch<CriticalSectionRawMutex, i64, 5> = Watch::new(); //Voltage Readout of caps
 pub static V_CORR_NUM: i64 = 683; //Correction factor for the voltage sense/ tune on bench
 pub static V_CORR_OFF: i64 = -300; //Votlage offset from zero in the current sense loop
 pub static V_DEL_MS: u64 = 500; //how often should we even check the voltage
@@ -51,5 +52,5 @@ pub static MESA_DIR_REQ_SIG: Signal<CriticalSectionRawMutex, Direction> = Signal
 
 //Cap precharge
 pub mod cap_precharge;
-pub static V_PRECH_THRESH: u16 = 5; //TODO Testing things at a low voltage for now so 5 will need to be changed TODO
+pub static V_PRECH_THRESH: i64 = 5; //TODO Testing things at a low voltage for now so 5 will need to be changed TODO
 pub static CAP_PRE_STATE_SIG: Signal<CriticalSectionRawMutex, PrechargeState> = Signal::new();
