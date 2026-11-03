@@ -1,5 +1,6 @@
 //Use this file to control the speed of the motor
 
+use defmt::info;
 use embassy_rp::{
     peripherals::{PIN_17, PIN_22, PWM_SLICE0, PWM_SLICE3},
     pwm::{Config, Pwm},
@@ -26,7 +27,7 @@ pub async fn run_pwm(
     config_a.compare_a = 500; // 50% duty cycle
     let mut config_b = Config::default();
     config_b.top = 999;
-    config_b.compare_a = 500; // 50% duty cycle
+    config_b.compare_b = 500; // 50% duty cycle
 
     let pwm_a = Pwm::new_output_a(pwm_slice_3, pwm_p_a, config_a.clone());
     let pwm_b = Pwm::new_output_b(pwm_slice_0, pwm_p_b, config_b.clone());
@@ -34,10 +35,12 @@ pub async fn run_pwm(
     let mut pwm_struct_a = MotorPwm {
         pwm: pwm_a,
         config: config_a,
+        channel: PwmChannel::ChannelA,
     };
     let mut pwm_struct_b = MotorPwm {
         pwm: pwm_b,
         config: config_b,
+        channel: PwmChannel::ChannelB,
     };
     //Make sure we have direction instruction to start
     // TODO add a loop here to make sure we request and receive a direction
@@ -65,10 +68,15 @@ pub async fn run_pwm(
     }
 }
 
+enum PwmChannel {
+    ChannelA,
+    ChannelB,
+}
 //Using this MotorPwm struct to avoid constantly copying or cloning the config
 struct MotorPwm<'d> {
     pwm: Pwm<'d>,
     config: Config,
+    channel: PwmChannel,
 }
 
 impl<'d> MotorPwm<'d> {
@@ -76,7 +84,16 @@ impl<'d> MotorPwm<'d> {
         if per_mille > 1000 {
             per_mille = 1000;
         }
-        self.config.compare_a = ((self.config.top as u32 + 1) * per_mille as u32 / 1000) as u16;
+        match self.channel {
+            PwmChannel::ChannelA => {
+                self.config.compare_a =
+                    ((self.config.top as u32 + 1) * per_mille as u32 / 1000) as u16;
+            }
+            PwmChannel::ChannelB => {
+                self.config.compare_b =
+                    ((self.config.top as u32 + 1) * per_mille as u32 / 1000) as u16;
+            }
+        }
         self.pwm.set_config(&self.config);
     }
 }

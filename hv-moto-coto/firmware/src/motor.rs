@@ -58,14 +58,19 @@ pub async fn run_motor(q5_en: Peri<'static, PIN_20>, dig_drive_en: Peri<'static,
                 continue;
             }
             //Turn motor off before switching
-            while rpm > RPM_BFR_DIR_SWTCH {
+            while rpm_watch
+                .try_get()
+                .is_some_and(|rpm| rpm > RPM_BFR_DIR_SWTCH)
+            {
                 //Tell pwm to shut things down
                 PWM_SIG.signal(0);
-                Timer::after(Duration::from_millis(300)).await;
+                Timer::after(Duration::from_millis(20)).await;
             }
 
+            rpm = 0;
             dir_watch.send(new_dir_set);
             dir_stpt = new_dir_set;
+            Timer::after(Duration::from_millis(20)).await; //short pause to swap direction
         }
 
         // Wait for dt to hit hopefully a new rpm was sent out
@@ -93,10 +98,10 @@ pub async fn run_motor(q5_en: Peri<'static, PIN_20>, dig_drive_en: Peri<'static,
             prev_pwm_out = 200;
         }
         //Send that pwm to the pin
-        // info!(
-        //     "sending pwm {} for rpm req {}, current rpm: {}, direction: {:?}",
-        //     prev_pwm_out, rpm_stpt, rpm, dir_stpt
-        // );
+        info!(
+            "sending pwm {} for rpm req {}, current rpm: {}, direction: {:?}",
+            prev_pwm_out, rpm_stpt, rpm, dir_stpt
+        );
         PWM_SIG.signal(prev_pwm_out as u16);
     }
 }

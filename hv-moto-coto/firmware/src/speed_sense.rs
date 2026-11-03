@@ -4,12 +4,11 @@ use core::future::Future;
 
 use core_logic::hall_math::{extract_rpm, HallError};
 use defmt::info;
-use embassy_futures::select::{Either, Select};
+use embassy_futures::select::Either;
 use embassy_rp::{
     gpio::{AnyPin, Input},
     Peri,
 };
-use embassy_sync::{blocking_mutex::raw::CriticalSectionRawMutex, watch::Receiver};
 use embassy_time::{Duration, Instant, Ticker, Timer};
 
 use crate::{CURR_DRAW_THRESH_FOR_ZERO, HALL_CNT, I_WATCH, RPM_WATCH, STOPPED_THRESHOLD_MS};
@@ -35,12 +34,12 @@ pub async fn run_hall(hall_pin: Peri<'static, AnyPin>) {
                 }
                 Err(hall_error) => {
                     info!("RPM Hall Error: {}", hall_error);
-                    Timer::after(Duration::from_millis(500)).await;
+                    Timer::after(Duration::from_millis(50)).await;
                 }
             },
             Err(hall_error) => {
                 info!("Populate Hall List Error: {}", hall_error);
-                Timer::after(Duration::from_millis(500)).await;
+                Timer::after(Duration::from_millis(50)).await;
             }
         }
     }
@@ -62,7 +61,9 @@ impl HallSense {
         //Watch current draw in case the motor shuts off
         // hall sensor stands no chance if the motor isn't spinning
         let mut cur_watch = I_WATCH.receiver().unwrap();
+        let mut last_cur = 0f32;
         let mut ticker = Ticker::every(Duration::from_millis(STOPPED_THRESHOLD_MS));
+        let slow_response: [u64; N] = [6000000u64; N];
 
         //use debounce to avoid noise on trigger
         const DEBOUNCE_THRESHOLD_US: u64 = 1000;
@@ -80,22 +81,19 @@ impl HallSense {
             //
             // Looking at current at the same time to avoid some kind of misread as a interpretation
             // of zero rpm
-            if check_stop_and(self.pin.wait_for_low(), &mut ticker, cur_watch.get().await).await {
-                return Ok([u64::MAX; N]);
+            if let Some(new_cur) = cur_watch.try_get() {
+                last_cur = new_cur;
             }
-            if check_stop_and(self.pin.wait_for_high(), &mut ticker, cur_watch.get().await).await {
-                return Ok([u64::MAX; N]);
+            if check_stop_and(self.pin.wait_for_low(), &mut ticker, last_cur).await {
+                return Ok(slow_response);
+            }
+            if check_stop_and(self.pin.wait_for_high(), &mut ticker, last_cur).await {
+                return Ok(slow_response);
             }
             loop {
                 //The hall sensor fires on a falling edge
-                if check_stop_and(
-                    self.pin.wait_for_falling_edge(),
-                    &mut ticker,
-                    cur_watch.get().await,
-                )
-                .await
-                {
-                    return Ok([u64::MAX; N]);
+                if check_stop_and(self.pin.wait_for_falling_edge(), &mut ticker, last_cur).await {
+                    return Ok(slow_response);
                 }
                 time_finish = Instant::now();
                 let elapsed = (time_finish - time_start).as_micros();
@@ -121,19 +119,24 @@ async fn check_stop_and<F: Future>(
     match embassy_futures::select::select(future, ticker.next()).await {
         //If the future returns first then we didn't time out
         Either::First(_) => {
+            info!("Future returned first");
             return false;
         }
         //if the ticker returns first then we times out
         Either::Second(_) => {
-            if last_current_msrmnt < CURR_DRAW_THRESH_FOR_ZERO {
+            if last_current_msrmnt > CURR_DRAW_THRESH_FOR_ZERO {
+                info!(
+                    "Ticker returned first cur HIGH {} > {}",
+                    last_current_msrmnt, CURR_DRAW_THRESH_FOR_ZERO
+                );
                 return false;
             } else {
+                info!(
+                    "Ticker returned first cur LOW {} > {}",
+                    last_current_msrmnt, CURR_DRAW_THRESH_FOR_ZERO
+                );
                 return true;
             }
         }
     }
-    // start_time.elapsed().as_millis() > STOPPED_THRESHOLD_MS
-    //     && i_watch
-    //         .try_get_and(|i: &f32| *i < CURR_DRAW_THRESH_FOR_ZERO)
-    //         .is_some()
 }
