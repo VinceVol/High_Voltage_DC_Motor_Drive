@@ -30,4 +30,6 @@ I've wrapped up v1 of this board and kept it as it was under the Board_V1 branch
 # Active Todos!
 - [x] Get reliable rpm readout from the hall sensor
 - [x] Get a bench setup for a lower voltage motor driven by power supply (mostly to check rpm readout)
-- [ ] Solder high voltage side components to start bench testing the low voltage motor 
+- [x] Solder high voltage side components to start bench testing the low voltage motor 
+- [ ] Update schematics to use 15v isolated power supply on the low side (since 9v isn't enough for the dig gate drivers I bought)
+

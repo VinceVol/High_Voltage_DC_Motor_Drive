@@ -6,6 +6,8 @@ This folder contains all the rust code driving the rpi pico 2 w. A few things to
 
 # Active Todos!
 - [x] Create a PID loop that takes the requested rpm and outputs a pwm
-- [ ] Create tasks that read the current and voltage and do something with it
+- [x] Create tasks that read the current and voltage and do something with it
 - [x] Implement direction switching capabilities
-- [ ] Create a precharge setup for the main caps
+- [x] Create a precharge setup for the main caps
+- [ ] Figure out what's blocking pwm signal on direction changes
+- [ ] Develope autotune script that saves settings to flash

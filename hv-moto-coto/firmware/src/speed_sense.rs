@@ -132,7 +132,7 @@ async fn check_stop_and<F: Future>(
                 return false;
             } else {
                 info!(
-                    "Ticker returned first cur LOW {} > {}",
+                    "Ticker returned first cur LOW {} < {}",
                     last_current_msrmnt, CURR_DRAW_THRESH_FOR_ZERO
                 );
                 return true;

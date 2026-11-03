@@ -11,7 +11,8 @@ use embassy_time::{Duration, Ticker, Timer};
 
 use crate::{
     cap_precharge::PrechargeState, direction::Direction, CAP_PRE_STATE_SIG, DIR_WATCH,
-    MAX_SPINDLE_SPEED, MESA_DIR_REQ_SIG, MESA_RPM_REQ_SIG, PWM_SIG, RPM_BFR_DIR_SWTCH, RPM_WATCH,
+    MAX_SPINDLE_SPEED, MESA_DIR_REQ_SIG, MESA_RPM_REQ_SIG, PWM_FLOOR, PWM_SIG, RPM_BFR_DIR_SWTCH,
+    RPM_WATCH,
 };
 
 #[embassy_executor::task]
@@ -46,7 +47,7 @@ pub async fn run_motor(q5_en: Peri<'static, PIN_20>, dig_drive_en: Peri<'static,
     };
 
     let mut rpm = 0;
-    let mut ticker = Ticker::every(Duration::from_millis(1));
+    let mut ticker = Ticker::every(Duration::from_millis(1)); //PID Refresh Rate
     let mut prev_pwm_out = 0;
     loop {
         //if mesa has changed the rpm or dir then update our setpoints
@@ -94,8 +95,8 @@ pub async fn run_motor(q5_en: Peri<'static, PIN_20>, dig_drive_en: Peri<'static,
         if rpm_stpt == 0 {
             prev_pwm_out = 0;
         } else if prev_pwm_out == 0 {
-            // Clamp between a safe minimum running floor (e.g., 50) and max 1000
-            prev_pwm_out = 200;
+            //pwm 200 if anywhere between 1-200 a
+            prev_pwm_out = PWM_FLOOR.load(core::sync::atomic::Ordering::Relaxed);
         }
         //Send that pwm to the pin
         info!(

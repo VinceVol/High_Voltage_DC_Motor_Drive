@@ -49,7 +49,8 @@ pub async fn adc_runner(
                 match adc_v_in.read(&mut current_in).await {
                     Ok(good_v) => {
                         //sending the converted 4095 max to voltage max
-                        let signed_current = (I_CORR_NUM * good_v as f32) / 4095f32 + I_CORR_OFF;
+                        let signed_current =
+                            (I_CORR_NUM * good_v as f32) / 4095f32 + *I_CORR_OFF.lock().await;
                         I_WATCH.sender().send(signed_current);
                         info!("Current sense = {}", signed_current);
                     }

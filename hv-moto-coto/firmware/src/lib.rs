@@ -1,10 +1,21 @@
 #![no_std]
 
-use embassy_sync::{
-    blocking_mutex::raw::CriticalSectionRawMutex, channel::Channel, signal::Signal, watch::Watch,
-};
+use core::sync::atomic::{AtomicI32, AtomicU16};
 
-use crate::{cap_precharge::PrechargeState, direction::Direction, safety::ControllerCond};
+use embassy_rp::{
+    flash::{Async, Flash},
+    peripherals::FLASH,
+};
+use embassy_sync::{
+    blocking_mutex::raw::CriticalSectionRawMutex, channel::Channel, mutex::Mutex, signal::Signal,
+    watch::Watch,
+};
+use static_cell::StaticCell;
+
+use crate::{
+    autotune::PidConfig, cap_precharge::PrechargeState, direction::Direction,
+    safety::ControllerCond,
+};
 
 pub mod bus_init;
 pub mod motor;
@@ -21,6 +32,7 @@ pub static STOPPED_THRESHOLD_MS: u64 = 2000; //The time between hall falling edg
 //PWM coms to gate driver -- ie directly related to motor speed
 pub mod pwm;
 pub static PWM_SIG: Signal<CriticalSectionRawMutex, u16> = Signal::new();
+pub static PWM_FLOOR: AtomicI32 = AtomicI32::new(200); //pwm to avoid stall without load
 
 //Direction coms
 pub mod direction;
@@ -36,8 +48,8 @@ pub mod adc_runner;
 // Current sense
 pub static I_WATCH: Watch<CriticalSectionRawMutex, f32, 5> = Watch::new(); //Current Sense
 pub static I_CORR_NUM: f32 = 32.52; //Correction factor for the current sense/ tune on bench
-pub static I_CORR_OFF: f32 = -16.375; //Votlage offset from zero in the current sense loop
-pub static I_DEL_MS: u64 = 500; //how often should we even check the current
+pub static I_CORR_OFF: Mutex<CriticalSectionRawMutex, f32> = Mutex::new(-16.375); //Current offset from zero in the current sense loop. Calibrate when motor off
+pub static I_DEL_MS: u64 = 50; //how often should we even check the current
 
 //Voltage sense
 pub static V_WATCH: Watch<CriticalSectionRawMutex, i64, 5> = Watch::new(); //Voltage Readout of caps
@@ -45,15 +57,27 @@ pub static V_CORR_NUM: i64 = 683; //Correction factor for the voltage sense/ tun
 pub static V_CORR_OFF: i64 = -300; //Votlage offset from zero in the current sense loop
 pub static V_DEL_MS: u64 = 500; //how often should we even check the voltage
 
-//Mesa coms
+//Mesa coms -- communications from either a mesa board or user buttons (CNC or manual machine)
 pub mod mesa;
 pub static CHANGE_THRESHOLD: i16 = 150; //Assuming the voltage output is imperfect out of the mesa, what's the threshold
 pub static MESA_MON_DEL_MS: u64 = 500; //how often should we even check the mesa board outputs
 pub static MESA_RPM_REQ_SIG: Signal<CriticalSectionRawMutex, u16> = Signal::new(); //Voltage Readout of caps
 pub static MESA_DIR_REQ_SIG: Signal<CriticalSectionRawMutex, Direction> = Signal::new(); //Voltage Readout of caps
-                                                                                         //--------------------------------------------------------------------------
 
-//Cap precharge
+//--------------------------------------------------------------------------
+//Cap precharge -- dont want the traces to see infinite current when the caps are initially charged so we watch the voltage rise
 pub mod cap_precharge;
 pub static V_PRECH_THRESH: i64 = 5; //TODO Testing things at a low voltage for now so 5 will need to be changed TODO
 pub static CAP_PRE_STATE_SIG: Signal<CriticalSectionRawMutex, PrechargeState> = Signal::new();
+
+//Autotune -- Want to use a lookup table to get close to the requested speed and obviously tune the PID perameters to prevent oscillations but promote fast response
+pub mod autotune;
+//We created the variable CONFIG_START in the memory.x file to call out the memory location of the PID config
+// its unsafe as we're telling rust to trust that CONFIG_START exists
+unsafe extern "C" {
+    static CONFIG_START: u8;
+}
+static FLASH: StaticCell<
+    Mutex<CriticalSectionRawMutex, Flash<'static, FLASH, Async, { 2 * 1024 * 1024 }>>,
+> = StaticCell::new();
+// static PID_CONFIG: Mutex<CriticalSectionRawMutex, PidConfig> = Mutex::new(PidConf);
