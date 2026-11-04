@@ -11,11 +11,13 @@ use embassy_rp::{
 };
 use embassy_time::{Duration, Instant, Ticker, Timer};
 
-use crate::{CURR_DRAW_THRESH_FOR_ZERO, HALL_CNT, I_WATCH, RPM_WATCH, STOPPED_THRESHOLD_MS};
+use crate::{CURR_DRAW_THRESH_FOR_ZERO, HALL_CNT, I_WATCH, RPM_WATCH, SPEED_FLOOR_RPM};
 
 struct HallSense {
     pin: Input<'static>,
 }
+
+const STOPPED_THRESHOLD_US: u64 = 60000000 / SPEED_FLOOR_RPM;
 
 #[embassy_executor::task]
 pub async fn run_hall(hall_pin: Peri<'static, AnyPin>) {
@@ -62,7 +64,7 @@ impl HallSense {
         // hall sensor stands no chance if the motor isn't spinning
         let mut cur_watch = I_WATCH.receiver().unwrap();
         let mut last_cur = 0f32;
-        let mut ticker = Ticker::every(Duration::from_millis(STOPPED_THRESHOLD_MS));
+        let mut ticker = Ticker::every(Duration::from_micros(STOPPED_THRESHOLD_US));
         let slow_response: [u64; N] = [6000000u64; N];
 
         //use debounce to avoid noise on trigger
@@ -119,22 +121,13 @@ async fn check_stop_and<F: Future>(
     match embassy_futures::select::select(future, ticker.next()).await {
         //If the future returns first then we didn't time out
         Either::First(_) => {
-            info!("Future returned first");
             return false;
         }
         //if the ticker returns first then we times out
         Either::Second(_) => {
             if last_current_msrmnt > CURR_DRAW_THRESH_FOR_ZERO {
-                info!(
-                    "Ticker returned first cur HIGH {} > {}",
-                    last_current_msrmnt, CURR_DRAW_THRESH_FOR_ZERO
-                );
                 return false;
             } else {
-                info!(
-                    "Ticker returned first cur LOW {} < {}",
-                    last_current_msrmnt, CURR_DRAW_THRESH_FOR_ZERO
-                );
                 return true;
             }
         }

@@ -58,10 +58,12 @@ pub async fn run_pwm(
         match dir {
             Direction::Forward => {
                 pwm_struct_b.set_duty(0);
+                // info!("setting pwm_a to {}", pwm);
                 pwm_struct_a.set_duty(pwm);
             }
             Direction::Reverse => {
                 pwm_struct_a.set_duty(0);
+                // info!("setting pwm_b to {}", pwm);
                 pwm_struct_b.set_duty(pwm);
             }
         }

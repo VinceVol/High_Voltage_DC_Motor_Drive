@@ -58,20 +58,28 @@ pub async fn run_motor(q5_en: Peri<'static, PIN_20>, dig_drive_en: Peri<'static,
             if new_dir_set == dir_stpt {
                 continue;
             }
+            info!("in the new signal loop!");
             //Turn motor off before switching
-            while rpm_watch
-                .try_get()
-                .is_some_and(|rpm| rpm > RPM_BFR_DIR_SWTCH)
-            {
-                //Tell pwm to shut things down
-                PWM_SIG.signal(0);
+            PWM_SIG.signal(0);
+            while rpm > RPM_BFR_DIR_SWTCH {
                 Timer::after(Duration::from_millis(20)).await;
+
+                // Update rpm from the watch channel without blocking
+                if let Some(new_rpm) = rpm_watch.try_changed() {
+                    rpm = new_rpm;
+                } else {
+                    Timer::after(Duration::from_millis(1)).await;
+                }
             }
 
             rpm = 0;
             dir_watch.send(new_dir_set);
             dir_stpt = new_dir_set;
-            Timer::after(Duration::from_millis(20)).await; //short pause to swap direction
+            Timer::after(Duration::from_millis(1)).await; //short pause to swap direction
+
+            //IMPORTANT -- without resetting the ticker it loops at full speed blocking all other tasks until it gets back to the current ticker
+            // without this you get ~1s delay between the low rpm + current draw + direction pin switch and the pwm pin firing
+            ticker.reset();
         }
 
         // Wait for dt to hit hopefully a new rpm was sent out
