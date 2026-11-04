@@ -20,6 +20,7 @@ cyw43 = "0.7.0"
 static_cell = "2.1.1"
 embassy-sync = { version = "0.8.0", features = ["defmt"] }
 embassy-futures = { version = "0.1.2", features = ["defmt"] }
+bytemuck = { version = "1.25.2", features = ["derive"] }
 
 # cargo build/run
 [profile.dev]

@@ -72,12 +72,17 @@ pub static CAP_PRE_STATE_SIG: Signal<CriticalSectionRawMutex, PrechargeState> = 
 
 //Autotune -- Want to use a lookup table to get close to the requested speed and obviously tune the PID perameters to prevent oscillations but promote fast response
 pub mod autotune;
+
+//FLASH --------------------------------------------------------------------
 //We created the variable CONFIG_START in the memory.x file to call out the memory location of the PID config
 // its unsafe as we're telling rust to trust that CONFIG_START exists
 unsafe extern "C" {
-    static CONFIG_START: u8;
+    static CONFIG_START: u32;
 }
+static FLASH_MUT_SIZE: usize = 8 * 1024; //The allocated space for all saved variables
+
+//The flash peripheral initialized at runtime and shared as a mutex
 static FLASH_MUT: StaticCell<
-    Mutex<CriticalSectionRawMutex, Flash<'static, FLASH, Async, { 2 * 1024 * 1024 }>>,
+    Mutex<CriticalSectionRawMutex, Flash<'static, FLASH, Async, { FLASH_MUT_SIZE }>>,
 > = StaticCell::new();
 // static PID_CONFIG: Mutex<CriticalSectionRawMutex, PidConfig> = Mutex::new(PidConf);
