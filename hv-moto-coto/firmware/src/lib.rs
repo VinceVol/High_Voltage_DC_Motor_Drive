@@ -35,7 +35,7 @@ pub static SPEED_FLOOR_RPM: u64 = 200; //stall speed, TODO have the autotune set
 
 //PWM coms to gate driver -- ie directly related to motor speed
 pub mod pwm;
-pub static PWM_SIG: Signal<CriticalSectionRawMutex, u16> = Signal::new();
+pub static PWM_WATCH: Watch<CriticalSectionRawMutex, u16, 5> = Watch::new();
 pub static PWM_FLOOR: AtomicI32 = AtomicI32::new(200); //pwm to avoid stall without load
 
 //Direction coms

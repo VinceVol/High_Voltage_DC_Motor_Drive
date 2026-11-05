@@ -8,7 +8,7 @@ use embassy_rp::{
 };
 use embassy_sync::{blocking_mutex::raw::CriticalSectionRawMutex, channel::Receiver};
 
-use crate::{direction::Direction, DIR_WATCH, PWM_SIG};
+use crate::{direction::Direction, DIR_WATCH, PWM_WATCH};
 
 //Not sure if I should really do anything more than this for the dir_pin
 #[embassy_executor::task]
@@ -18,8 +18,9 @@ pub async fn run_pwm(
     pwm_slice_3: Peri<'static, PWM_SLICE3>,
     pwm_slice_0: Peri<'static, PWM_SLICE0>,
 ) {
-    //watch direction
+    //watch direction and pwm
     let mut dir_watch = DIR_WATCH.receiver().unwrap();
+    let mut pwm_watch = PWM_WATCH.receiver().unwrap();
 
     //Bit of copy and paste code here to set up the a and b channels so one can be off whilst the other is on
     let mut config_a = Config::default();
@@ -47,7 +48,7 @@ pub async fn run_pwm(
     let mut dir = dir_watch.get().await;
     loop {
         //only do something if a new pwm instruction is givin
-        let pwm = PWM_SIG.wait().await;
+        let pwm = pwm_watch.changed().await;
         //check to make sure the direction hasn't changed but don't wait on it
         match dir_watch.try_changed() {
             Some(new_dir) => dir = new_dir,

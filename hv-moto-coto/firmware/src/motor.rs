@@ -11,7 +11,7 @@ use embassy_time::{Duration, Ticker, Timer};
 
 use crate::{
     cap_precharge::PrechargeState, direction::Direction, CAP_PRE_STATE_SIG, DIR_REQ_SIG, DIR_WATCH,
-    MAX_SPINDLE_SPEED, PWM_FLOOR, PWM_SIG, RPM_BFR_DIR_SWTCH, RPM_REQ_SIG, RPM_WATCH,
+    MAX_SPINDLE_SPEED, PWM_FLOOR, PWM_WATCH, RPM_BFR_DIR_SWTCH, RPM_REQ_SIG, RPM_WATCH,
 };
 
 #[embassy_executor::task]
@@ -34,6 +34,7 @@ pub async fn run_motor(q5_en: Peri<'static, PIN_20>, dig_drive_en: Peri<'static,
     //Setup PID components
     let mut rpm_stpt: u16 = 0; //Representing the rpm goal
     let mut rpm_watch = RPM_WATCH.receiver().unwrap(); //Direct feed from the hall sensor
+    let mut pwm_watch = PWM_WATCH.sender();
     let dir_watch = DIR_WATCH.sender();
     let mut dir_stpt: Direction = Direction::Forward;
     dir_watch.send(dir_stpt); //default to forward
@@ -59,7 +60,7 @@ pub async fn run_motor(q5_en: Peri<'static, PIN_20>, dig_drive_en: Peri<'static,
             }
             info!("in the new signal loop!");
             //Turn motor off before switching
-            PWM_SIG.signal(0);
+            pwm_watch.send(0);
             while rpm > RPM_BFR_DIR_SWTCH {
                 Timer::after(Duration::from_millis(20)).await;
 
@@ -110,7 +111,7 @@ pub async fn run_motor(q5_en: Peri<'static, PIN_20>, dig_drive_en: Peri<'static,
             "sending pwm {} for rpm req {}, current rpm: {}, direction: {:?}",
             prev_pwm_out, rpm_stpt, rpm, dir_stpt
         );
-        PWM_SIG.signal(prev_pwm_out as u16);
+        pwm_watch.send(prev_pwm_out as u16);
     }
 }
 
