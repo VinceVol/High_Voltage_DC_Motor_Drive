@@ -2255,7 +2255,7 @@
 		)
 		(uuid "d4753de4-dede-49eb-9842-0769fdb65a50")
 	)
-	(text "Extra!"
+	(text "Autotune Btn"
 		(exclude_from_sim no)
 		(at 43.942 110.744 0)
 		(effects

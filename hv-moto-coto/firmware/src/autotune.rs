@@ -1,7 +1,8 @@
 use bytemuck::{Pod, Zeroable};
 use embassy_rp::{
     flash::{Async, Flash},
-    peripherals::FLASH,
+    peripherals::{FLASH, PIN_7},
+    Peri,
 };
 use embassy_sync::{blocking_mutex::raw::CriticalSectionRawMutex, mutex::Mutex};
 
@@ -101,4 +102,10 @@ impl PidConfig {
 
         Ok(())
     }
+}
+
+//task reacting to whether the button for enabling autotune is depressed or not
+#[embassy_executor::task]
+pub async fn atune_btn_run(autotune_button_p: Peri<'static, PIN_7>) {
+    todo!();
 }

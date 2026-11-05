@@ -10,9 +10,8 @@ use embassy_rp::{
 use embassy_time::{Duration, Ticker, Timer};
 
 use crate::{
-    cap_precharge::PrechargeState, direction::Direction, CAP_PRE_STATE_SIG, DIR_WATCH,
-    MAX_SPINDLE_SPEED, MESA_DIR_REQ_SIG, MESA_RPM_REQ_SIG, PWM_FLOOR, PWM_SIG, RPM_BFR_DIR_SWTCH,
-    RPM_WATCH,
+    cap_precharge::PrechargeState, direction::Direction, CAP_PRE_STATE_SIG, DIR_REQ_SIG, DIR_WATCH,
+    MAX_SPINDLE_SPEED, PWM_FLOOR, PWM_SIG, RPM_BFR_DIR_SWTCH, RPM_REQ_SIG, RPM_WATCH,
 };
 
 #[embassy_executor::task]
@@ -51,10 +50,10 @@ pub async fn run_motor(q5_en: Peri<'static, PIN_20>, dig_drive_en: Peri<'static,
     let mut prev_pwm_out = 0;
     loop {
         //if mesa has changed the rpm or dir then update our setpoints
-        if let Some(new_rpm_set) = MESA_RPM_REQ_SIG.try_take() {
+        if let Some(new_rpm_set) = RPM_REQ_SIG.try_take() {
             rpm_stpt = new_rpm_set;
         }
-        if let Some(new_dir_set) = MESA_DIR_REQ_SIG.try_take() {
+        if let Some(new_dir_set) = DIR_REQ_SIG.try_take() {
             if new_dir_set == dir_stpt {
                 continue;
             }

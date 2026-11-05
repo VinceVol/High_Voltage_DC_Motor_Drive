@@ -18,7 +18,11 @@ use crate::{
 };
 
 pub mod bus_init;
+
+//motor loop driven by req signals
 pub mod motor;
+pub static RPM_REQ_SIG: Signal<CriticalSectionRawMutex, u16> = Signal::new(); //Voltage Readout of caps
+pub static DIR_REQ_SIG: Signal<CriticalSectionRawMutex, Direction> = Signal::new(); //Voltage Readout of caps
 
 //Rpms coms
 pub mod speed_sense;
@@ -61,17 +65,16 @@ pub static V_DEL_MS: u64 = 500; //how often should we even check the voltage
 pub mod mesa;
 pub static CHANGE_THRESHOLD: i16 = 150; //Assuming the voltage output is imperfect out of the mesa, what's the threshold
 pub static MESA_MON_DEL_MS: u64 = 500; //how often should we even check the mesa board outputs
-pub static MESA_RPM_REQ_SIG: Signal<CriticalSectionRawMutex, u16> = Signal::new(); //Voltage Readout of caps
-pub static MESA_DIR_REQ_SIG: Signal<CriticalSectionRawMutex, Direction> = Signal::new(); //Voltage Readout of caps
 
 //--------------------------------------------------------------------------
-//Cap precharge -- dont want the traces to see infinite current when the caps are initially charged so we watch the voltage rise
+//Cap precharge -- dont want to damage internals when caps are initially charged so we watch the voltage rise
 pub mod cap_precharge;
 pub static V_PRECH_THRESH: i64 = 5; //TODO Testing things at a low voltage for now so 5 will need to be changed TODO
 pub static CAP_PRE_STATE_SIG: Signal<CriticalSectionRawMutex, PrechargeState> = Signal::new();
 
 //Autotune -- Want to use a lookup table to get close to the requested speed and obviously tune the PID perameters to prevent oscillations but promote fast response
 pub mod autotune;
+pub static AUTOTUNE_OVERRIDE: Watch<CriticalSectionRawMutex, bool, 5> = Watch::new(); //tells mesa loop to stop requesting direction and rpm
 
 //FLASH --------------------------------------------------------------------
 //We created the variable CONFIG_START in the memory.x file to call out the memory location of the PID config

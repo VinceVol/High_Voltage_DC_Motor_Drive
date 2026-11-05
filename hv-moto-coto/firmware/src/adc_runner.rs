@@ -12,8 +12,8 @@ use embassy_rp::{
 use embassy_time::{Duration, Ticker};
 
 use crate::{
-    CHANGE_THRESHOLD, I_CORR_NUM, I_CORR_OFF, I_DEL_MS, I_WATCH, MAX_SPINDLE_SPEED,
-    MESA_MON_DEL_MS, MESA_RPM_REQ_SIG, V_CORR_NUM, V_CORR_OFF, V_DEL_MS, V_WATCH,
+    AUTOTUNE_OVERRIDE, CHANGE_THRESHOLD, I_CORR_NUM, I_CORR_OFF, I_DEL_MS, I_WATCH,
+    MAX_SPINDLE_SPEED, MESA_MON_DEL_MS, RPM_REQ_SIG, V_CORR_NUM, V_CORR_OFF, V_DEL_MS, V_WATCH,
 };
 
 #[embassy_executor::task]
@@ -39,6 +39,11 @@ pub async fn adc_runner(
     let mut cur_ticker = Ticker::every(Duration::from_millis(I_DEL_MS));
     let mut vol_ticker = Ticker::every(Duration::from_millis(V_DEL_MS));
     let mut mesa_ticker = Ticker::every(Duration::from_millis(MESA_MON_DEL_MS));
+
+    //need to keep track of autotune to ignore the mesa inputs
+    let mut autotune_enabled: bool = false;
+    let mut autotune_watch = AUTOTUNE_OVERRIDE.receiver().unwrap();
+
     //Check the adc at MESA_MON_DEL_MS frequency and if the voltage has changed past a given
     // threshold then send a updated speed to the REQ signal line
     let mut last_set_pnt = 0;
@@ -73,12 +78,20 @@ pub async fn adc_runner(
                 }
             }
             Either3::Third(_) => {
+                //check if autotune has been updated
+                if let Some(new_tune) = autotune_watch.try_changed() {
+                    autotune_enabled = new_tune;
+                }
+                //skip RPM_REQ piece if the autotune is running
+                if autotune_enabled {
+                    continue;
+                }
                 match adc_v_in.read(&mut spindle_cmd).await {
                     Ok(good_v) => {
                         if (good_v as i16 - last_set_pnt as i16).abs() > CHANGE_THRESHOLD {
                             last_set_pnt = good_v;
                             //sending the converted 4095 max to rpm max
-                            MESA_RPM_REQ_SIG.signal(
+                            RPM_REQ_SIG.signal(
                                 ((MAX_SPINDLE_SPEED as u64 * good_v as u64) / 4095u64) as u16,
                             );
                         }
