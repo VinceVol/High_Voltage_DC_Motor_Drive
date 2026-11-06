@@ -57,7 +57,8 @@ impl PidConfig {
             Flash<'static, FLASH, Async, { FLASH_MUT_SIZE }>,
         >,
         rpm_watch: &mut Receiver<'a, CriticalSectionRawMutex, u16, 100>,
-        pwm_watch: &mut Receiver<'a, CriticalSectionRawMutex, u16, 5>,
+        pwm_watch_r: &mut Receiver<'a, CriticalSectionRawMutex, u16, 5>,
+        pwm_watch_s: &mut Sender<'a, CriticalSectionRawMutex, u16, 5>,
     ) -> Self {
         //Tell the motor req signals to ignore mesa inputs
         let tune_sender = AUTOTUNE_OVERRIDE.sender();
@@ -67,7 +68,10 @@ impl PidConfig {
         let mut the_tune = PidConfig::load(flash_mut).await.unwrap();
 
         //Figure out the stall pwm -- pwm_floor
-        the_tune.find_floor(rpm_watch, pwm_watch).await;
+        the_tune.find_floor(rpm_watch, pwm_watch_r).await;
+
+        //Generate the lookup tables by slowly incrementing pwm
+        the_tune.gen_lookup_tbl(rpm_watch, pwm_watch_s).await;
 
         //Save the tune TODO manage the unwrap TODO
         // the_tune.save(flash_mut).await.unwrap();
@@ -113,12 +117,12 @@ impl PidConfig {
 
         //going to be checking new vs old rpm to know when the motor has settled
         let mut new_rpm;
-        let mut old_rpm;
+        let mut old_rpm = 0;
 
         //rip through divisions of 24 pwm signals
-        for pwm in (0..24)
-            .rev()
+        for (i, pwm) in (0..24)
             .map(|i| (1000 as f64 * i as f64 / 99.0) as u16)
+            .enumerate()
         {
             pwm_watch.send(pwm);
             Timer::after(Duration::from_millis(50)).await; //short pause to allow controller to react
@@ -126,13 +130,13 @@ impl PidConfig {
             loop {
                 new_rpm = rpm_watch.changed().await;
 
-                //if the read RPM is within 10 of the stpnt then set the pwm accordingly
-                if new_rpm + 10 > rpm && new_rpm - 10 < rpm {
-                    last_working_pwm = pwm_watch.changed().await;
-                } else if new_rpm <= 20 {
-                    self.pwm_floor = last_working_pwm as i32;
-                    return;
+                //Essentially fire when the rpm starts to be constant I prefer checking two in a row over a delay
+                if (new_rpm as i32 - old_rpm as i32).abs() < 10 {
+                    self.lookup_table_x[i] = new_rpm;
+                    self.lookup_table_y[i] = pwm;
                 }
+
+                old_rpm = new_rpm;
             }
         }
     }
@@ -183,21 +187,18 @@ impl PidConfig {
         // Convert struct reference to a &[u8] safely using bytemuck
         let bytes = bytemuck::bytes_of(self);
 
-        // Unsafe as CONFIG START is in a unsafe block
-        unsafe {
-            // 1. Flash memory must be erased before writing.
-            // Erase a full 2KB sector containing our STORAGE_OFFSET.
-            flash.blocking_erase(
-                (ptr::addr_of!(CONFIG_START) as u32) - 0x10000000 + STORAGE_OFFSET,
-                (ptr::addr_of!(CONFIG_START) as u32) - 0x10000000 + STORAGE_OFFSET + SECTOR_SIZE,
-            )?;
+        // 1. Flash memory must be erased before writing.
+        // Erase a full 2KB sector containing our STORAGE_OFFSET.
+        flash.blocking_erase(
+            (ptr::addr_of!(CONFIG_START) as u32) - 0x10000000 + STORAGE_OFFSET,
+            (ptr::addr_of!(CONFIG_START) as u32) - 0x10000000 + STORAGE_OFFSET + SECTOR_SIZE,
+        )?;
 
-            // 2. Write the bytes to the flash offset
-            flash.blocking_write(
-                (ptr::addr_of!(CONFIG_START) as u32) - 0x10000000 + STORAGE_OFFSET,
-                bytes,
-            )?;
-        }
+        // 2. Write the bytes to the flash offset
+        flash.blocking_write(
+            (ptr::addr_of!(CONFIG_START) as u32) - 0x10000000 + STORAGE_OFFSET,
+            bytes,
+        )?;
 
         Ok(())
     }
@@ -216,12 +217,19 @@ pub async fn atune_btn_run(
 ) {
     let mut atune_btn = Input::new(autotune_button_p, embassy_rp::gpio::Pull::Down);
     let mut rpm_watch = RPM_WATCH.receiver().unwrap(); //Direct feed from the hall sensor
-    let mut pwm_watch = PWM_WATCH.receiver().unwrap(); //PWM feed
+    let mut pwm_watch_r = PWM_WATCH.receiver().unwrap(); //PWM feed
+    let mut pwm_watch_s = PWM_WATCH.sender(); //PWM feed
 
     //watch for a button press and then fire off the autotune fn
     loop {
         atune_btn.wait_for_rising_edge().await;
         Timer::after_micros(DEBOUNCE_THRESHOLD_US).await;
-        PidConfig::run_thy_tune(flash_mut, &mut rpm_watch, &mut pwm_watch).await;
+        PidConfig::run_thy_tune(
+            flash_mut,
+            &mut rpm_watch,
+            &mut pwm_watch_r,
+            &mut pwm_watch_s,
+        )
+        .await;
     }
 }
