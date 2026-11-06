@@ -5,8 +5,10 @@ MEMORY {
      * 2 MiB is a safe default here, although a Pico 2 has 4 MiB.
 	 * Config is used to store PID settings from previous autotunes 
      */
-    FLASH : ORIGIN = 0x10000000, LENGTH = 2044K
-    CONFIG : ORIGIN = 0x101FF000, LENGTH = 4K
+    FLASH : ORIGIN = 0x10000000, LENGTH = 2048K
+    
+    /* Carve out the last 8K for your config region */
+    CONFIG : ORIGIN = 0x101FE000, LENGTH = 8K
     /*
      * RAM consists of 8 banks, SRAM0-SRAM7, with a striped mapping.
      * This is usually good for performance, as it distributes load on

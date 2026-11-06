@@ -1,6 +1,9 @@
 #![no_std]
 
-use core::sync::atomic::{AtomicI32, AtomicU16};
+use core::{
+    ptr,
+    sync::atomic::{AtomicI32, AtomicU16},
+};
 
 use embassy_rp::{
     flash::{Async, Flash},
@@ -23,20 +26,21 @@ pub mod bus_init;
 pub mod motor;
 pub static RPM_REQ_SIG: Signal<CriticalSectionRawMutex, u16> = Signal::new(); //Voltage Readout of caps
 pub static DIR_REQ_SIG: Signal<CriticalSectionRawMutex, Direction> = Signal::new(); //Voltage Readout of caps
+pub static MOT_LOOP_EN: Signal<CriticalSectionRawMutex, bool> = Signal::new(); //during autotune we dont want motor to own the pwm
 
 //Rpms coms
 pub mod speed_sense;
 pub static MAX_SPINDLE_SPEED: u16 = 1000; //This should match the linuxCNC config so they scale the same
 pub static RPM_BFR_DIR_SWTCH: u16 = 100;
 pub static RPM_WATCH: Watch<CriticalSectionRawMutex, u16, 100> = Watch::new(); //The real rpm uploads here
-pub static HALL_CNT: usize = 7; //how many samples needed for rpm feedback
+pub static HALL_CNT: usize = 5; //how many samples needed for rpm feedback
 pub static CURR_DRAW_THRESH_FOR_ZERO: f32 = 0.02; //The current draw at which we say with some confidence motor is off
 pub static SPEED_FLOOR_RPM: u64 = 200; //stall speed, TODO have the autotune set this TODO
 
 //PWM coms to gate driver -- ie directly related to motor speed
 pub mod pwm;
 pub static PWM_WATCH: Watch<CriticalSectionRawMutex, u16, 5> = Watch::new();
-pub static PWM_FLOOR: AtomicI32 = AtomicI32::new(200); //pwm to avoid stall without load
+// pub static PWM_FLOOR: AtomicI32 = AtomicI32::new(200); //pwm to avoid stall without load
 
 //Direction coms
 pub mod direction;
@@ -82,10 +86,10 @@ pub static AUTOTUNE_OVERRIDE: Watch<CriticalSectionRawMutex, bool, 5> = Watch::n
 unsafe extern "C" {
     static CONFIG_START: u32;
 }
-static FLASH_MUT_SIZE: usize = 8 * 1024; //The allocated space for all saved variables
+pub static FLASH_MUT_SIZE: usize = 2048 * 1024; //The allocated space for all saved variables
 
 //The flash peripheral initialized at runtime and shared as a mutex
-static FLASH_MUT: StaticCell<
-    Mutex<CriticalSectionRawMutex, Flash<'static, FLASH, Async, { FLASH_MUT_SIZE }>>,
-> = StaticCell::new();
+// pub static FLASH_MUT: StaticCell<
+//     Mutex<CriticalSectionRawMutex, Flash<'static, FLASH, Async, { FLASH_MUT_SIZE }>>,
+// > = StaticCell::new();
 // static PID_CONFIG: Mutex<CriticalSectionRawMutex, PidConfig> = Mutex::new(PidConf);

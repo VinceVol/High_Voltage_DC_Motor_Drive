@@ -5,16 +5,25 @@ use core::cell::RefCell;
 
 use embassy_rp::{
     bind_interrupts,
+    flash::Flash,
     gpio::AnyPin,
     i2c::{self, I2c, SclPin, SdaPin},
     interrupt::typelevel::I2C0_IRQ,
-    peripherals::{DMA_CH0, DMA_CH1, I2C1, SPI1},
+    peripherals::{DMA_CH0, DMA_CH1, DMA_CH2, FLASH, I2C1, SPI1},
     spi::{self, Async, ClkPin, Instance, MisoPin, Mode, MosiPin, Spi},
     Peri,
 };
 use static_cell::StaticCell;
 
-use embassy_sync::blocking_mutex::raw::CriticalSectionRawMutex;
+use embassy_sync::{blocking_mutex::raw::CriticalSectionRawMutex, mutex::Mutex};
+
+use crate::FLASH_MUT_SIZE;
+
+// Define all interrupts once at the module level
+bind_interrupts!(pub struct Irqs {
+    I2C1_IRQ => i2c::InterruptHandler<I2C1>;
+    DMA_IRQ_0 => embassy_rp::dma::InterruptHandler<DMA_CH1>,embassy_rp::dma::InterruptHandler<DMA_CH0>,embassy_rp::dma::InterruptHandler<DMA_CH2>;
+});
 
 //As soon as more spi devices are in use, this needs to change to async spibus
 type SpiBus = embassy_sync::mutex::Mutex<CriticalSectionRawMutex, Spi<'static, SPI1, Async>>;
@@ -32,10 +41,6 @@ where
     Miso: MisoPin<SPI1>,
     Clk: ClkPin<SPI1>,
 {
-    bind_interrupts!(struct Irqs {
-        DMA_IRQ_0 => embassy_rp::dma::InterruptHandler<DMA_CH1>,embassy_rp::dma::InterruptHandler<DMA_CH0>;
-    });
-
     let config = spi::Config::default();
 
     let spi_bus_raw = Spi::new(spi_p, clk, mosi, miso, dma_tx, dma_rx, Irqs, config);
@@ -57,10 +62,6 @@ where
     Sda: SdaPin<I2C1>,
     Scl: SclPin<I2C1>,
 {
-    bind_interrupts!(struct Irqs {
-        I2C1_IRQ => i2c::InterruptHandler<I2C1>;
-    });
-
     //Configure the i2c bus
     let config = i2c::Config::default();
 
@@ -70,4 +71,17 @@ where
     //Wrap the i2c bus in mutex stuff so that the bus can be shared + return
     static TWI_BUS0: StaticCell<TwiBus> = StaticCell::new();
     TWI_BUS0.init(embassy_sync::mutex::Mutex::new(twi_bus))
+}
+
+type FlashT = Mutex<
+    CriticalSectionRawMutex,
+    Flash<'static, FLASH, embassy_rp::flash::Async, { FLASH_MUT_SIZE }>,
+>;
+pub fn flash_init(flash_p: Peri<'static, FLASH>, dma2: Peri<'static, DMA_CH2>) -> &'static FlashT {
+    //init the flash
+    let flash = embassy_rp::flash::Flash::new(flash_p, dma2, Irqs);
+
+    //store the flash in a static
+    static FLASH_MUT: StaticCell<FlashT> = StaticCell::new();
+    FLASH_MUT.init(embassy_sync::mutex::Mutex::new(flash))
 }

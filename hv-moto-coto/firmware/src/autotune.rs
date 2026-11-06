@@ -1,3 +1,5 @@
+use core::ptr;
+
 use bytemuck::{Pod, Zeroable};
 use embassy_rp::{
     flash::{Async, Flash},
@@ -5,12 +7,16 @@ use embassy_rp::{
     peripherals::{FLASH, PIN_7},
     Peri,
 };
-use embassy_sync::{blocking_mutex::raw::CriticalSectionRawMutex, mutex::Mutex, watch::Receiver};
+use embassy_sync::{
+    blocking_mutex::raw::CriticalSectionRawMutex,
+    mutex::Mutex,
+    watch::{Receiver, Sender},
+};
 use embassy_time::{Duration, Timer};
 
 use crate::{
-    AUTOTUNE_OVERRIDE, CONFIG_START, FLASH_MUT_SIZE, MAX_SPINDLE_SPEED, PWM_WATCH, RPM_REQ_SIG,
-    RPM_WATCH,
+    AUTOTUNE_OVERRIDE, CONFIG_START, FLASH_MUT_SIZE, MAX_SPINDLE_SPEED, MOT_LOOP_EN, PWM_WATCH,
+    RPM_REQ_SIG, RPM_WATCH,
 };
 
 //as described in lib.rs, basically this is here to generate a lookup table and optimize the pid parameters
@@ -34,13 +40,13 @@ impl Default for PidConfig {
             kd: 0.0,
             lookup_table_x: [0; 24],
             lookup_table_y: [0; 24],
-            pwm_floor: 200,
+            pwm_floor: 0,
             flash_check: FLASH_CHECK,
         }
     }
 }
 
-const SECTOR_SIZE: u32 = 2 * 1024 * 1024; //Size allocated for this struct
+const SECTOR_SIZE: u32 = 4 * 1024; //Size allocated for this struct
 const STORAGE_OFFSET: u32 = 0; //offset from the CONFIG_START
 const FLASH_CHECK: [u8; 8] = *b"PidConfi";
 
@@ -64,9 +70,9 @@ impl PidConfig {
         the_tune.find_floor(rpm_watch, pwm_watch).await;
 
         //Save the tune TODO manage the unwrap TODO
-        the_tune.save(flash_mut).await.unwrap();
+        // the_tune.save(flash_mut).await.unwrap();
         tune_sender.send(false);
-        todo!();
+        the_tune
     }
 
     //Cycle through the bottom quarter of available RPMS to find when the motor stalls
@@ -75,14 +81,47 @@ impl PidConfig {
         rpm_watch: &mut Receiver<'a, CriticalSectionRawMutex, u16, 100>,
         pwm_watch: &mut Receiver<'a, CriticalSectionRawMutex, u16, 5>,
     ) {
-        let mut last_working_pwm = 999; //Max pwm
+        let mut last_working_pwm = 250; //Max pwm
         let mut new_rpm;
         for rpm in (0..100)
             .rev()
             .map(|i| (MAX_SPINDLE_SPEED as f64 / 4.0 * i as f64 / 99.0) as u16)
         {
             RPM_REQ_SIG.signal(rpm);
-            Timer::after(Duration::from_millis(300)).await; //short pause to allow controller to react
+            Timer::after(Duration::from_millis(3000)).await; //short pause to allow controller to react
+
+            loop {
+                new_rpm = rpm_watch.changed().await;
+
+                //if the read RPM is within 10 of the stpnt then set the pwm accordingly
+                if new_rpm + 10 > rpm && new_rpm - 10 < rpm {
+                    last_working_pwm = pwm_watch.changed().await;
+                } else if new_rpm <= 20 {
+                    self.pwm_floor = last_working_pwm as i32;
+                    return;
+                }
+            }
+        }
+    }
+    async fn gen_lookup_tbl<'a>(
+        &mut self,
+        rpm_watch: &mut Receiver<'a, CriticalSectionRawMutex, u16, 100>,
+        pwm_watch: &mut Sender<'a, CriticalSectionRawMutex, u16, 5>,
+    ) {
+        //disable pid controlled motor loop
+        MOT_LOOP_EN.signal(false);
+
+        //going to be checking new vs old rpm to know when the motor has settled
+        let mut new_rpm;
+        let mut old_rpm;
+
+        //rip through divisions of 24 pwm signals
+        for pwm in (0..24)
+            .rev()
+            .map(|i| (1000 as f64 * i as f64 / 99.0) as u16)
+        {
+            pwm_watch.send(pwm);
+            Timer::after(Duration::from_millis(50)).await; //short pause to allow controller to react
 
             loop {
                 new_rpm = rpm_watch.changed().await;
@@ -110,13 +149,13 @@ impl PidConfig {
         // Allocate a temporary byte buffer matching the size of our struct
         let mut buffer = [0u8; core::mem::size_of::<PidConfig>()];
 
-        //CONFIG_START is unsafe
-        unsafe {
-            // Read directly from flash into our byte buffer
-            flash
-                .read(CONFIG_START + STORAGE_OFFSET, &mut buffer)
-                .await?;
-        }
+        // Read directly from flash into our byte buffer
+        flash
+            .read(
+                (ptr::addr_of!(CONFIG_START) as u32) - 0x10000000 + STORAGE_OFFSET,
+                &mut buffer,
+            )
+            .await?;
 
         //Check if the sector is completely uninitialized (erased flash is all 0xFF)
         if buffer.iter().all(|&b| b == 0xFF) {
@@ -149,12 +188,15 @@ impl PidConfig {
             // 1. Flash memory must be erased before writing.
             // Erase a full 2KB sector containing our STORAGE_OFFSET.
             flash.blocking_erase(
-                CONFIG_START + STORAGE_OFFSET,
-                CONFIG_START + STORAGE_OFFSET + SECTOR_SIZE,
+                (ptr::addr_of!(CONFIG_START) as u32) - 0x10000000 + STORAGE_OFFSET,
+                (ptr::addr_of!(CONFIG_START) as u32) - 0x10000000 + STORAGE_OFFSET + SECTOR_SIZE,
             )?;
 
             // 2. Write the bytes to the flash offset
-            flash.blocking_write(CONFIG_START + STORAGE_OFFSET, bytes)?;
+            flash.blocking_write(
+                (ptr::addr_of!(CONFIG_START) as u32) - 0x10000000 + STORAGE_OFFSET,
+                bytes,
+            )?;
         }
 
         Ok(())

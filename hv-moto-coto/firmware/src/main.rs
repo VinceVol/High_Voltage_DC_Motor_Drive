@@ -3,6 +3,9 @@
 
 use defmt::info;
 use defmt_rtt as _;
+use embassy_rp::flash::{Async, Flash};
+use embassy_sync::mutex::Mutex;
+use hv_moto_coto::autotune::atune_btn_run;
 use hv_moto_coto::motor::run_motor;
 use hv_moto_coto::{adc_runner, cap_precharge, direction, mesa};
 use panic_probe as _;
@@ -10,7 +13,7 @@ use panic_probe as _;
 use embassy_executor::Spawner;
 use embassy_time::{Duration, Timer};
 
-use hv_moto_coto::bus_init::{i2c_init, spi_init};
+use hv_moto_coto::bus_init::{flash_init, i2c_init, spi_init};
 use hv_moto_coto::speed_sense::run_hall;
 
 #[embassy_executor::main]
@@ -21,6 +24,7 @@ async fn main(spawner: Spawner) {
     info!("SPI initialized on RP2350!");
     let _i2c_bus = i2c_init(p.I2C1, p.PIN_18, p.PIN_19);
     info!("I2C initialized on RP2350!");
+    let flash_p = flash_init(p.FLASH, p.DMA_CH2);
 
     // Configure GPIO 25 (onboard LED on Pico 2 W) as an output pin
     // let mut led = Output::new(p.PIN_20, Level::Low);
@@ -36,7 +40,8 @@ async fn main(spawner: Spawner) {
     info!("mesa read direction pin initiated");
     let _ = spawner
         .spawn(hv_moto_coto::pwm::run_pwm(p.PIN_22, p.PIN_17, p.PWM_SLICE3, p.PWM_SLICE0).unwrap());
-    let _ = spawner.spawn(run_motor(p.PIN_20, p.PIN_1).unwrap());
+    let _ = spawner.spawn(run_motor(p.PIN_20, p.PIN_1, flash_p).unwrap());
+    let _ = spawner.spawn(atune_btn_run(p.PIN_7, flash_p).unwrap());
 
     loop {
         // info!("LED ON");

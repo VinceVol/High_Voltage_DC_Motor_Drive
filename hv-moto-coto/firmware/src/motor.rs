@@ -3,19 +3,29 @@
 
 use defmt::info;
 use embassy_rp::{
+    flash::{Async, Flash},
     gpio::Output,
-    peripherals::{PIN_1, PIN_20},
+    peripherals::{FLASH, PIN_1, PIN_20},
     Peri,
 };
+use embassy_sync::{blocking_mutex::raw::CriticalSectionRawMutex, mutex::Mutex, watch::Receiver};
 use embassy_time::{Duration, Ticker, Timer};
 
 use crate::{
-    cap_precharge::PrechargeState, direction::Direction, CAP_PRE_STATE_SIG, DIR_REQ_SIG, DIR_WATCH,
-    MAX_SPINDLE_SPEED, PWM_FLOOR, PWM_WATCH, RPM_BFR_DIR_SWTCH, RPM_REQ_SIG, RPM_WATCH,
+    autotune::PidConfig, cap_precharge::PrechargeState, direction::Direction, CAP_PRE_STATE_SIG,
+    DIR_REQ_SIG, DIR_WATCH, FLASH_MUT_SIZE, MAX_SPINDLE_SPEED, MOT_LOOP_EN, PWM_WATCH,
+    RPM_BFR_DIR_SWTCH, RPM_REQ_SIG, RPM_WATCH,
 };
 
 #[embassy_executor::task]
-pub async fn run_motor(q5_en: Peri<'static, PIN_20>, dig_drive_en: Peri<'static, PIN_1>) {
+pub async fn run_motor(
+    q5_en: Peri<'static, PIN_20>,
+    dig_drive_en: Peri<'static, PIN_1>,
+    flash_mut: &'static Mutex<
+        CriticalSectionRawMutex,
+        Flash<'static, FLASH, Async, { FLASH_MUT_SIZE }>,
+    >,
+) {
     //Do nothing until the caps have precharged
     // q5 controls the precharge mosfet
     let mut q5 = Output::new(q5_en, embassy_rp::gpio::Level::Low);
@@ -34,10 +44,16 @@ pub async fn run_motor(q5_en: Peri<'static, PIN_20>, dig_drive_en: Peri<'static,
     //Setup PID components
     let mut rpm_stpt: u16 = 0; //Representing the rpm goal
     let mut rpm_watch = RPM_WATCH.receiver().unwrap(); //Direct feed from the hall sensor
-    let mut pwm_watch = PWM_WATCH.sender();
+    let pwm_watch = PWM_WATCH.sender();
     let dir_watch = DIR_WATCH.sender();
     let mut dir_stpt: Direction = Direction::Forward;
     dir_watch.send(dir_stpt); //default to forward
+
+    //load up the flash saved autotune parameters
+    let pid_conf = PidConfig::load(flash_mut).await.unwrap();
+    let mut mot_en = true; //Watch the motor enabled signal as autotune may need to own the pwm
+
+    //Load the parameters into the pid helper struct
     let mut motor_pid = Pid {
         kp: 0.35,
         ki: 0.2,
@@ -50,6 +66,15 @@ pub async fn run_motor(q5_en: Peri<'static, PIN_20>, dig_drive_en: Peri<'static,
     let mut ticker = Ticker::every(Duration::from_millis(1)); //PID Refresh Rate
     let mut prev_pwm_out = 0;
     loop {
+        //check to make sure the autotune doesn't need the pwm signal
+        if let Some(sig) = MOT_LOOP_EN.try_take() {
+            mot_en = sig;
+            ticker.reset(); //reset the ticker to avoid weird delay buildups from missed ticks
+        }
+
+        if !mot_en {
+            Timer::after_secs(1).await; //yield for a while
+        }
         //if mesa has changed the rpm or dir then update our setpoints
         if let Some(new_rpm_set) = RPM_REQ_SIG.try_take() {
             rpm_stpt = new_rpm_set;
@@ -104,7 +129,7 @@ pub async fn run_motor(q5_en: Peri<'static, PIN_20>, dig_drive_en: Peri<'static,
             prev_pwm_out = 0;
         } else if prev_pwm_out == 0 {
             //pwm 200 if anywhere between 1-200 a
-            prev_pwm_out = PWM_FLOOR.load(core::sync::atomic::Ordering::Relaxed);
+            prev_pwm_out = pid_conf.pwm_floor;
         }
         //Send that pwm to the pin
         info!(
