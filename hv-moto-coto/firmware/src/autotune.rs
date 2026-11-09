@@ -1,6 +1,7 @@
 use core::ptr;
 
 use bytemuck::{Pod, Zeroable};
+use defmt::info;
 use embassy_rp::{
     flash::{Async, Flash},
     gpio::Input,
@@ -68,13 +69,13 @@ impl PidConfig {
         let mut the_tune = PidConfig::load(flash_mut).await.unwrap();
 
         //Figure out the stall pwm -- pwm_floor
-        the_tune.find_floor(rpm_watch, pwm_watch_r).await;
+        // the_tune.find_floor(rpm_watch, pwm_watch_r).await;
 
         //Generate the lookup tables by slowly incrementing pwm
         the_tune.gen_lookup_tbl(rpm_watch, pwm_watch_s).await;
 
         //Save the tune TODO manage the unwrap TODO
-        // the_tune.save(flash_mut).await.unwrap();
+        the_tune.save(flash_mut).await.unwrap();
         tune_sender.send(false);
         the_tune
     }
@@ -114,6 +115,7 @@ impl PidConfig {
     ) {
         //disable pid controlled motor loop
         MOT_LOOP_EN.signal(false);
+        Timer::after_secs(1).await; // give the motor loop time to fully shut down
 
         //going to be checking new vs old rpm to know when the motor has settled
         let mut new_rpm;
@@ -121,24 +123,29 @@ impl PidConfig {
 
         //rip through divisions of 24 pwm signals
         for (i, pwm) in (0..24)
-            .map(|i| (1000 as f64 * i as f64 / 99.0) as u16)
+            .map(|i| (1000 as f64 * i as f64 / 23.0) as u16)
             .enumerate()
         {
+            info!("A: Sending autotune pwm: {} in loop {}", pwm, i);
             pwm_watch.send(pwm);
             Timer::after(Duration::from_millis(50)).await; //short pause to allow controller to react
 
             loop {
                 new_rpm = rpm_watch.changed().await;
+                info!("B: RPM in autotune changing rpm: {}", new_rpm);
 
                 //Essentially fire when the rpm starts to be constant I prefer checking two in a row over a delay
+                info!("Comp is {}", (new_rpm as i32 - old_rpm as i32).abs());
                 if (new_rpm as i32 - old_rpm as i32).abs() < 10 {
                     self.lookup_table_x[i] = new_rpm;
                     self.lookup_table_y[i] = pwm;
+                    break;
                 }
 
                 old_rpm = new_rpm;
             }
         }
+        MOT_LOOP_EN.signal(true);
     }
 
     //Load up the config perameters from flash

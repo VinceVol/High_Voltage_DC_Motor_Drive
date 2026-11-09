@@ -1,6 +1,7 @@
 //Thinking this represents the motor struct and task runner overall. ~big brain ish portion of the firware that decides overall what the motor is doing
 // I think this should include the PID bits but I haven't fully decided on the best way to structure this
 
+use core_logic::interpolation::interpolate;
 use defmt::info;
 use embassy_rp::{
     flash::{Async, Flash},
@@ -51,7 +52,12 @@ pub async fn run_motor(
 
     //load up the flash saved autotune parameters
     let pid_conf = PidConfig::load(flash_mut).await.unwrap();
+    info!(
+        "pid x {} and \n y {}",
+        pid_conf.lookup_table_x, pid_conf.lookup_table_y
+    );
     let mut mot_en = true; //Watch the motor enabled signal as autotune may need to own the pwm
+    let mut pwm_floor = 0; //The lowest rpm we should output, based on the lookup table
 
     //Load the parameters into the pid helper struct
     let mut motor_pid = Pid {
@@ -74,10 +80,17 @@ pub async fn run_motor(
 
         if !mot_en {
             Timer::after_secs(1).await; //yield for a while
+            continue;
         }
         //if mesa has changed the rpm or dir then update our setpoints
         if let Some(new_rpm_set) = RPM_REQ_SIG.try_take() {
             rpm_stpt = new_rpm_set;
+            pwm_floor = interpolate::<u16, i32, 24>(
+                &pid_conf.lookup_table_x,
+                &pid_conf.lookup_table_y,
+                new_rpm_set,
+            );
+            pwm_watch.send(pwm_floor); //start off using the lookup table speed
         }
         if let Some(new_dir_set) = DIR_REQ_SIG.try_take() {
             if new_dir_set == dir_stpt {
@@ -127,15 +140,15 @@ pub async fn run_motor(
 
         if rpm_stpt == 0 {
             prev_pwm_out = 0;
-        } else if prev_pwm_out == 0 {
+        } else if prev_pwm_out < pwm_floor as i32 {
             //pwm 200 if anywhere between 1-200 a
-            prev_pwm_out = pid_conf.pwm_floor;
+            prev_pwm_out = pwm_floor as i32;
         }
         //Send that pwm to the pin
-        info!(
-            "sending pwm {} for rpm req {}, current rpm: {}, direction: {:?}",
-            prev_pwm_out, rpm_stpt, rpm, dir_stpt
-        );
+        // info!(
+        //     "sending pwm {} for rpm req {}, current rpm: {}, direction: {:?}",
+        //     prev_pwm_out, rpm_stpt, rpm, dir_stpt
+        // );
         pwm_watch.send(prev_pwm_out as u16);
     }
 }

@@ -35,7 +35,7 @@ pub async fn run_hall(hall_pin: Peri<'static, AnyPin>) {
                     // Timer::after(Duration::from_millis(50)).await;
                 }
                 Err(hall_error) => {
-                    info!("RPM Hall Error: {}", hall_error);
+                    info!("RPM Hall Error: {}, from data: {}", hall_error, data);
                     Timer::after(Duration::from_millis(50)).await;
                 }
             },
@@ -71,8 +71,7 @@ impl HallSense {
         const DEBOUNCE_THRESHOLD_US: u64 = 1000;
 
         //Create a list of time differences for N number
-        let mut time_start = Instant::now();
-        let mut time_finish;
+        let mut timer = Instant::now();
         let mut cntr = 0;
         while cntr < N {
             //even with debounce still needed the next two lines to help with low speed noise
@@ -86,9 +85,6 @@ impl HallSense {
             if let Some(new_cur) = cur_watch.try_get() {
                 last_cur = new_cur;
             }
-            if check_stop_and(self.pin.wait_for_low(), &mut ticker, last_cur).await {
-                return Ok(slow_response);
-            }
             if check_stop_and(self.pin.wait_for_high(), &mut ticker, last_cur).await {
                 return Ok(slow_response);
             }
@@ -97,11 +93,13 @@ impl HallSense {
                 if check_stop_and(self.pin.wait_for_falling_edge(), &mut ticker, last_cur).await {
                     return Ok(slow_response);
                 }
-                time_finish = Instant::now();
-                let elapsed = (time_finish - time_start).as_micros();
+                if check_stop_and(self.pin.wait_for_low(), &mut ticker, last_cur).await {
+                    return Ok(slow_response);
+                }
+                let elapsed = timer.elapsed().as_micros();
                 if elapsed > DEBOUNCE_THRESHOLD_US {
                     time_hall_low[cntr] = elapsed;
-                    time_start = time_finish;
+                    timer = Instant::now();
                     cntr += 1;
                     break;
                 }

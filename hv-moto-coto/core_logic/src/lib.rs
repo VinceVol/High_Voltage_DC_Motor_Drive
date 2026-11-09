@@ -4,3 +4,4 @@
 extern crate std;
 
 pub mod hall_math;
+pub mod interpolation;
