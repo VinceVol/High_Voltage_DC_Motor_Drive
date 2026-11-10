@@ -89,7 +89,9 @@ impl HallSense {
                 return Ok(slow_response);
             }
             loop {
+                info!("A");
                 loop {
+                    info!("B");
                     //The hall sensor fires on a falling edge
                     // check to make sure the motor isn't stopped at each step
                     if check_stop_and(self.pin.wait_for_falling_edge(), &mut ticker, last_cur).await
@@ -112,11 +114,13 @@ impl HallSense {
                         return Ok(slow_response);
                     }
 
+                    info!("C");
                     //If the pin is still low after the DEBOUNCE THRESH then we should be good
                     if self.pin.is_low() {
                         break;
                     }
                 }
+                info!("D");
                 time_hall_low[cntr] = timer.elapsed().as_micros();
                 timer = Instant::now();
                 cntr += 1;
