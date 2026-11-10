@@ -89,20 +89,38 @@ impl HallSense {
                 return Ok(slow_response);
             }
             loop {
-                //The hall sensor fires on a falling edge
-                if check_stop_and(self.pin.wait_for_falling_edge(), &mut ticker, last_cur).await {
-                    return Ok(slow_response);
+                loop {
+                    //The hall sensor fires on a falling edge
+                    // check to make sure the motor isn't stopped at each step
+                    if check_stop_and(self.pin.wait_for_falling_edge(), &mut ticker, last_cur).await
+                    {
+                        return Ok(slow_response);
+                    }
+                    if check_stop_and(self.pin.wait_for_low(), &mut ticker, last_cur).await {
+                        return Ok(slow_response);
+                    }
+
+                    //Force a short wait and check the pin is still low
+                    // This helps a ton with low speed noise
+                    if check_stop_and(
+                        Timer::after_micros(DEBOUNCE_THRESHOLD_US),
+                        &mut ticker,
+                        last_cur,
+                    )
+                    .await
+                    {
+                        return Ok(slow_response);
+                    }
+
+                    //If the pin is still low after the DEBOUNCE THRESH then we should be good
+                    if self.pin.is_low() {
+                        break;
+                    }
                 }
-                if check_stop_and(self.pin.wait_for_low(), &mut ticker, last_cur).await {
-                    return Ok(slow_response);
-                }
-                let elapsed = timer.elapsed().as_micros();
-                if elapsed > DEBOUNCE_THRESHOLD_US {
-                    time_hall_low[cntr] = elapsed;
-                    timer = Instant::now();
-                    cntr += 1;
-                    break;
-                }
+                time_hall_low[cntr] = timer.elapsed().as_micros();
+                timer = Instant::now();
+                cntr += 1;
+                break;
             }
         }
 
