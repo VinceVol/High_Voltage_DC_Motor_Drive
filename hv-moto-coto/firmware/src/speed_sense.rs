@@ -1,5 +1,5 @@
 //Interface asyc with the hall sensor (magnet passes in front and pulls GPIO6 low).
-
+// times.rotate_left(mid);1o
 use core::future::Future;
 
 use core_logic::hall_math::{extract_rpm, HallError};

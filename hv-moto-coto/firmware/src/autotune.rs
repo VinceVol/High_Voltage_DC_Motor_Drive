@@ -13,35 +13,33 @@ use embassy_sync::{
     mutex::Mutex,
     watch::{Receiver, Sender},
 };
-use embassy_time::{Duration, Timer};
+use embassy_time::{Duration, Instant, Timer};
 
 use crate::{
-    AUTOTUNE_OVERRIDE, CONFIG_START, FLASH_MUT_SIZE, MAX_SPINDLE_SPEED, MOT_LOOP_EN, PWM_WATCH,
-    RPM_REQ_SIG, RPM_WATCH,
+    AUTOTUNE_OVERRIDE, CONFIG_START, FLASH_MUT_SIZE, FLOOR_TBL_CNT, MOT_LOOP_EN, PI_TBL_CNT,
+    PWM_WATCH, RPM_WATCH,
 };
 
 //as described in lib.rs, basically this is here to generate a lookup table and optimize the pid parameters
 #[repr(C)]
 #[derive(Clone, Copy, Pod, Zeroable)]
 pub struct PidConfig {
-    pub kp: f32,
-    pub ki: f32,
-    pub kd: f32,
-    pub lookup_table_x: [u16; 24],
-    pub lookup_table_y: [u16; 24],
-    pub pwm_floor: i32,
+    pub floor_table_rpm: [u16; FLOOR_TBL_CNT],
+    pub floor_table_pwm: [u16; FLOOR_TBL_CNT],
+    pub pi_table_rpm: [u16; PI_TBL_CNT], //rpm setpoint
+    pub pi_table_p: [f32; PI_TBL_CNT],   //p components of PID
+    pub pi_table_i: [f32; PI_TBL_CNT],   //i components of PID
     flash_check: [u8; 8],
 }
 
 impl Default for PidConfig {
     fn default() -> Self {
         Self {
-            kp: 0.35,
-            ki: 0.2,
-            kd: 0.0,
-            lookup_table_x: [0; 24],
-            lookup_table_y: [0; 24],
-            pwm_floor: 0,
+            floor_table_rpm: [0; FLOOR_TBL_CNT],
+            floor_table_pwm: [0; FLOOR_TBL_CNT],
+            pi_table_rpm: [0; PI_TBL_CNT],
+            pi_table_p: [0.35; PI_TBL_CNT],
+            pi_table_i: [0.2; PI_TBL_CNT],
             flash_check: FLASH_CHECK,
         }
     }
@@ -69,7 +67,7 @@ impl PidConfig {
         let mut the_tune = PidConfig::load(flash_mut).await.unwrap();
 
         //Generate the lookup tables by slowly incrementing pwm
-        the_tune.gen_lookup_tbl(rpm_watch, pwm_watch_s).await;
+        the_tune.gen_floor_tbl(rpm_watch, pwm_watch_s).await;
 
         //Save the tune TODO manage the unwrap TODO
         the_tune.save(flash_mut).await.unwrap();
@@ -77,7 +75,7 @@ impl PidConfig {
         the_tune
     }
 
-    async fn gen_lookup_tbl<'a>(
+    async fn gen_floor_tbl<'a>(
         &mut self,
         rpm_watch: &mut Receiver<'a, CriticalSectionRawMutex, u16, 100>,
         pwm_watch: &mut Sender<'a, CriticalSectionRawMutex, u16, 5>,
@@ -90,9 +88,9 @@ impl PidConfig {
         let mut new_rpm;
         let mut old_rpm = 0;
 
-        //rip through divisions of 24 pwm signals
-        for (i, pwm) in (0..24)
-            .map(|i| (1000 as f64 * i as f64 / 23.0) as u16)
+        //rip through divisions of FLOOR_TBL_CNT pwm signals
+        for (i, pwm) in (0..FLOOR_TBL_CNT)
+            .map(|i| (1000 as f64 * i as f64 / (FLOOR_TBL_CNT as f64 - 1.0)) as u16)
             .enumerate()
         {
             info!("A: Sending autotune pwm: {} in loop {}", pwm, i);
@@ -106,13 +104,54 @@ impl PidConfig {
                 //Essentially fire when the rpm starts to be constant I prefer checking two in a row over a delay
                 info!("Comp is {}", (new_rpm as i32 - old_rpm as i32).abs());
                 if (new_rpm as i32 - old_rpm as i32).abs() < 10 {
-                    self.lookup_table_x[i] = new_rpm;
-                    self.lookup_table_y[i] = pwm;
+                    self.floor_table_rpm[i] = new_rpm;
+                    self.floor_table_pwm[i] = pwm;
                     break;
                 }
 
                 old_rpm = new_rpm;
             }
+        }
+        MOT_LOOP_EN.signal(true);
+    }
+
+    async fn gen_pid_tbl<'a>(
+        &mut self,
+        rpm_watch: &mut Receiver<'a, CriticalSectionRawMutex, u16, 100>,
+        pwm_watch: &mut Sender<'a, CriticalSectionRawMutex, u16, 5>,
+    ) {
+        //disable pid controlled motor loop
+        MOT_LOOP_EN.signal(false);
+        Timer::after_secs(1).await; // give the motor loop time to fully shut down
+
+        //going to be checking new vs old rpm to know when the motor has settled
+        let mut new_rpm: i32;
+        let mut old_rpm: i32 = 0;
+
+        //Starting a timer to look at the time to reach various rpms
+        let timer = Instant::now();
+
+        //Save the times, pwms and rpms into arrays to feed to a core logic fn that
+        // will calculate the P & I terms
+        let mut times: [u16; 2] = [0, 0]; //times surrounding the 0.6321K time constant
+        let mut rpms: [u16; 2] = [0, 0]; //rpms surrounding that same item -- interpolation needed
+        let mut pwm_start_finish: [u16; 2] = [0, 0]; //the setpoint start finish
+        let mut rpm_start_finish: [u16; 2] = [0, 0]; //resulting steady state rpms
+
+        //rip through divisions of PI_TBL_CNT pwm signals
+        for (i, pwm) in (0..PI_TBL_CNT)
+            .map(|i| (1000 as f64 * i as f64 / (PI_TBL_CNT as f64 - 1.0)) as u16)
+            .enumerate()
+        {
+            //Set the pwm range
+            pwm_start_finish.rotate_left(1);
+            pwm_start_finish[1] = pwm;
+
+            //rotating the times and rpms as we only want surrounding data of the 0.6321 RPM stpnt
+            times.rotate_left(1);
+            rpms.rotate_left(1);
+            todo!();
+            rpm_watch.changed().await;
         }
         MOT_LOOP_EN.signal(true);
     }

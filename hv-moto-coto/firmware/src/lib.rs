@@ -78,6 +78,8 @@ pub static CAP_PRE_STATE_SIG: Signal<CriticalSectionRawMutex, PrechargeState> = 
 //Autotune -- Want to use a lookup table to get close to the requested speed and obviously tune the PID perameters to prevent oscillations but promote fast response
 pub mod autotune;
 pub static AUTOTUNE_OVERRIDE: Watch<CriticalSectionRawMutex, bool, 5> = Watch::new(); //tells mesa loop to stop requesting direction and rpm
+pub static FLOOR_TBL_CNT: usize = 24; //Number of items in the floor lookup table for pwm to rpm
+pub static PI_TBL_CNT: usize = 6; //Number of items in the PID lookup table
 
 //FLASH --------------------------------------------------------------------
 //We created the variable CONFIG_START in the memory.x file to call out the memory location of the PID config
