@@ -68,9 +68,6 @@ impl PidConfig {
         //Start with the current parameters TODO manage to unwrap TODO
         let mut the_tune = PidConfig::load(flash_mut).await.unwrap();
 
-        //Figure out the stall pwm -- pwm_floor
-        // the_tune.find_floor(rpm_watch, pwm_watch_r).await;
-
         //Generate the lookup tables by slowly incrementing pwm
         the_tune.gen_lookup_tbl(rpm_watch, pwm_watch_s).await;
 
@@ -80,34 +77,6 @@ impl PidConfig {
         the_tune
     }
 
-    //Cycle through the bottom quarter of available RPMS to find when the motor stalls
-    async fn find_floor<'a>(
-        &mut self,
-        rpm_watch: &mut Receiver<'a, CriticalSectionRawMutex, u16, 100>,
-        pwm_watch: &mut Receiver<'a, CriticalSectionRawMutex, u16, 5>,
-    ) {
-        let mut last_working_pwm = 250; //Max pwm
-        let mut new_rpm;
-        for rpm in (0..100)
-            .rev()
-            .map(|i| (MAX_SPINDLE_SPEED as f64 / 4.0 * i as f64 / 99.0) as u16)
-        {
-            RPM_REQ_SIG.signal(rpm);
-            Timer::after(Duration::from_millis(3000)).await; //short pause to allow controller to react
-
-            loop {
-                new_rpm = rpm_watch.changed().await;
-
-                //if the read RPM is within 10 of the stpnt then set the pwm accordingly
-                if new_rpm + 10 > rpm && new_rpm - 10 < rpm {
-                    last_working_pwm = pwm_watch.changed().await;
-                } else if new_rpm <= 20 {
-                    self.pwm_floor = last_working_pwm as i32;
-                    return;
-                }
-            }
-        }
-    }
     async fn gen_lookup_tbl<'a>(
         &mut self,
         rpm_watch: &mut Receiver<'a, CriticalSectionRawMutex, u16, 100>,
@@ -156,17 +125,13 @@ impl PidConfig {
         >,
     ) -> Result<Self, embassy_rp::flash::Error> {
         let mut flash = flash_mut.lock().await;
+        let storage_location = (ptr::addr_of!(CONFIG_START) as u32) - 0x10000000 + STORAGE_OFFSET;
 
         // Allocate a temporary byte buffer matching the size of our struct
         let mut buffer = [0u8; core::mem::size_of::<PidConfig>()];
 
         // Read directly from flash into our byte buffer
-        flash
-            .read(
-                (ptr::addr_of!(CONFIG_START) as u32) - 0x10000000 + STORAGE_OFFSET,
-                &mut buffer,
-            )
-            .await?;
+        flash.read(storage_location, &mut buffer).await?;
 
         //Check if the sector is completely uninitialized (erased flash is all 0xFF)
         if buffer.iter().all(|&b| b == 0xFF) {
@@ -190,22 +155,17 @@ impl PidConfig {
         >,
     ) -> Result<(), embassy_rp::flash::Error> {
         let mut flash = flash_mut.lock().await;
+        let storage_location = (ptr::addr_of!(CONFIG_START) as u32) - 0x10000000 + STORAGE_OFFSET;
 
         // Convert struct reference to a &[u8] safely using bytemuck
         let bytes = bytemuck::bytes_of(self);
 
         // 1. Flash memory must be erased before writing.
         // Erase a full 2KB sector containing our STORAGE_OFFSET.
-        flash.blocking_erase(
-            (ptr::addr_of!(CONFIG_START) as u32) - 0x10000000 + STORAGE_OFFSET,
-            (ptr::addr_of!(CONFIG_START) as u32) - 0x10000000 + STORAGE_OFFSET + SECTOR_SIZE,
-        )?;
+        flash.blocking_erase(storage_location, storage_location + SECTOR_SIZE)?;
 
         // 2. Write the bytes to the flash offset
-        flash.blocking_write(
-            (ptr::addr_of!(CONFIG_START) as u32) - 0x10000000 + STORAGE_OFFSET,
-            bytes,
-        )?;
+        flash.blocking_write(storage_location, bytes)?;
 
         Ok(())
     }
