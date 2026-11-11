@@ -35,7 +35,6 @@ pub static RPM_BFR_DIR_SWTCH: u16 = 100;
 pub static RPM_WATCH: Watch<CriticalSectionRawMutex, u16, 100> = Watch::new(); //The real rpm uploads here
 pub static HALL_CNT: usize = 4; //how many samples needed for rpm feedback
 pub static CURR_DRAW_THRESH_FOR_ZERO: f32 = 0.02; //The current draw at which we say with some confidence motor is off
-pub static SPEED_FLOOR_RPM: u64 = 200; //stall speed, TODO have the autotune set this TODO
 
 //PWM coms to gate driver -- ie directly related to motor speed
 pub mod pwm;
