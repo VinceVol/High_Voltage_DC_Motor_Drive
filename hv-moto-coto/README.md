@@ -29,7 +29,7 @@ The plan is to take the pwm from *pwma = xxx* and drive it to *pwmab == yyy*. Th
 interpolate the rpm readout of *t = rpma + 0.632(rpmb-rpma)*. The *0.632* represents 1 time constant in the equations below.
 
 <div align="center">
-  <img src="../images/Time Constant Equtions.png" alt="Time Constant Eq" width="100">
+  <img src="../images/Time Constant Equtions.png" alt="Time Constant Eq" width="300">
 </div>
 
 <p align="center">
