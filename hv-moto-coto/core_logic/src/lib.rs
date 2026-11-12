@@ -5,3 +5,4 @@ extern crate std;
 
 pub mod hall_math;
 pub mod interpolation;
+pub mod lambda_tune;

@@ -17,7 +17,7 @@ use embassy_time::{Duration, Instant, Timer};
 
 use crate::{
     AUTOTUNE_OVERRIDE, CONFIG_START, FLASH_MUT_SIZE, FLOOR_TBL_CNT, MOT_LOOP_EN, PI_TBL_CNT,
-    PWM_WATCH, RPM_WATCH,
+    PWM_WATCH, RPM_FILT_WATCH, RPM_RAW_WATCH,
 };
 
 //as described in lib.rs, basically this is here to generate a lookup table and optimize the pid parameters
@@ -55,9 +55,8 @@ impl PidConfig {
             CriticalSectionRawMutex,
             Flash<'static, FLASH, Async, { FLASH_MUT_SIZE }>,
         >,
-        rpm_watch: &mut Receiver<'a, CriticalSectionRawMutex, u16, 100>,
-        pwm_watch_r: &mut Receiver<'a, CriticalSectionRawMutex, u16, 5>,
-        pwm_watch_s: &mut Sender<'a, CriticalSectionRawMutex, u16, 5>,
+        rpm_filt_watch: &mut Receiver<'a, CriticalSectionRawMutex, u16, 100>,
+        rpm_raw_watch: &mut Receiver<'a, CriticalSectionRawMutex, u16, 100>,
     ) -> Self {
         //Tell the motor req signals to ignore mesa inputs
         let tune_sender = AUTOTUNE_OVERRIDE.sender();
@@ -67,7 +66,10 @@ impl PidConfig {
         let mut the_tune = PidConfig::load(flash_mut).await.unwrap();
 
         //Generate the lookup tables by slowly incrementing pwm
-        the_tune.gen_floor_tbl(rpm_watch, pwm_watch_s).await;
+        the_tune.gen_floor_tbl(rpm_filt_watch).await;
+
+        //Generate PID lookup tbl
+        the_tune.gen_pid_tbl(rpm_raw_watch).await;
 
         //Save the tune TODO manage the unwrap TODO
         the_tune.save(flash_mut).await.unwrap();
@@ -78,7 +80,6 @@ impl PidConfig {
     async fn gen_floor_tbl<'a>(
         &mut self,
         rpm_watch: &mut Receiver<'a, CriticalSectionRawMutex, u16, 100>,
-        pwm_watch: &mut Sender<'a, CriticalSectionRawMutex, u16, 5>,
     ) {
         //disable pid controlled motor loop
         MOT_LOOP_EN.signal(false);
@@ -93,16 +94,13 @@ impl PidConfig {
             .map(|i| (1000 as f64 * i as f64 / (FLOOR_TBL_CNT as f64 - 1.0)) as u16)
             .enumerate()
         {
-            info!("A: Sending autotune pwm: {} in loop {}", pwm, i);
-            pwm_watch.send(pwm);
+            PWM_WATCH.sender().send(pwm);
             Timer::after(Duration::from_millis(50)).await; //short pause to allow controller to react
 
             loop {
                 new_rpm = rpm_watch.changed().await;
-                info!("B: RPM in autotune changing rpm: {}", new_rpm);
 
                 //Essentially fire when the rpm starts to be constant I prefer checking two in a row over a delay
-                info!("Comp is {}", (new_rpm as i32 - old_rpm as i32).abs());
                 if (new_rpm as i32 - old_rpm as i32).abs() < 10 {
                     self.floor_table_rpm[i] = new_rpm;
                     self.floor_table_pwm[i] = pwm;
@@ -117,8 +115,7 @@ impl PidConfig {
 
     async fn gen_pid_tbl<'a>(
         &mut self,
-        rpm_watch: &mut Receiver<'a, CriticalSectionRawMutex, u16, 100>,
-        pwm_watch: &mut Sender<'a, CriticalSectionRawMutex, u16, 5>,
+        rpm_raw_watch: &mut Receiver<'a, CriticalSectionRawMutex, u16, 100>,
     ) {
         //disable pid controlled motor loop
         MOT_LOOP_EN.signal(false);
@@ -128,21 +125,38 @@ impl PidConfig {
         let mut new_rpm: i32;
         let mut old_rpm: i32 = 0;
 
-        //Starting a timer to look at the time to reach various rpms
-        let timer = Instant::now();
-
         //Save the times, pwms and rpms into arrays to feed to a core logic fn that
         // will calculate the P & I terms
-        let mut times: [u16; 2] = [0, 0]; //times surrounding the 0.6321K time constant
-        let mut rpms: [u16; 2] = [0, 0]; //rpms surrounding that same item -- interpolation needed
+        let mut times: [u64; 2] = [0, 0]; //times surrounding the 0.6321K time constant
+        let mut rpms: [u64; 2] = [0, 0]; //rpms surrounding that same item -- interpolation needed
         let mut pwm_start_finish: [u16; 2] = [0, 0]; //the setpoint start finish
-        let mut rpm_start_finish: [u16; 2] = [0, 0]; //resulting steady state rpms
+        let mut rpm_start_finish: [u64; 2] = [0, 0]; //resulting steady state rpms
+
+        //start pwm at zero and give the motor sufficient time to settle down
+        PWM_WATCH.sender().send(0);
+        Timer::after_secs(3).await;
 
         //rip through divisions of PI_TBL_CNT pwm signals
         for (i, pwm) in (0..PI_TBL_CNT)
             .map(|i| (1000 as f64 * i as f64 / (PI_TBL_CNT as f64 - 1.0)) as u16)
             .enumerate()
         {
+            //move over rpm to make room for the finish (the last one's finish is the new ones start)
+            rpm_start_finish.rotate_left(1);
+
+            //find the other end of the rpm range
+            loop {
+                new_rpm = rpm_raw_watch.changed().await as i32;
+
+                //Essentially fire when the rpm starts to be constant I prefer checking two in a row over a delay
+                if (new_rpm as i32 - old_rpm as i32).abs() < 10 {
+                    rpm_start_finish[1] = new_rpm as u64;
+                    break;
+                }
+
+                old_rpm = new_rpm;
+            }
+
             //Set the pwm range
             pwm_start_finish.rotate_left(1);
             pwm_start_finish[1] = pwm;
@@ -150,8 +164,27 @@ impl PidConfig {
             //rotating the times and rpms as we only want surrounding data of the 0.6321 RPM stpnt
             times.rotate_left(1);
             rpms.rotate_left(1);
-            todo!();
-            rpm_watch.changed().await;
+
+            //Set the rpm goal
+            let rpm_goal =
+                (6321 * (rpm_start_finish[1] - rpm_start_finish[0])) / 10000 + rpm_start_finish[0];
+
+            //Tell mcu to pwm to the finish line and start the timer
+            let timer = Instant::now();
+            PWM_WATCH.sender().send(pwm);
+            loop {
+                rpms.rotate_left(1); //move old rpm to first slot
+                times.rotate_left(1); //move old time to first slot
+
+                //Once rpm updates update the right slot with the new values
+                rpms[1] = rpm_raw_watch.changed().await as u64;
+                times[1] = timer.elapsed().as_micros();
+
+                if rpms[0] <= rpm_goal && rpms[1] >= rpm_goal {
+                    //TODO Core logic goes here TODO
+                    break;
+                }
+            }
         }
         MOT_LOOP_EN.signal(true);
     }
@@ -222,20 +255,13 @@ pub async fn atune_btn_run(
     >,
 ) {
     let mut atune_btn = Input::new(autotune_button_p, embassy_rp::gpio::Pull::Down);
-    let mut rpm_watch = RPM_WATCH.receiver().unwrap(); //Direct feed from the hall sensor
-    let mut pwm_watch_r = PWM_WATCH.receiver().unwrap(); //PWM feed
-    let mut pwm_watch_s = PWM_WATCH.sender(); //PWM feed
+    let mut rpm_filt_watch = RPM_FILT_WATCH.receiver().unwrap(); //Direct feed from the hall sensor
+    let mut rpm_raw_watch = RPM_RAW_WATCH.receiver().unwrap(); //Direct feed from the hall sensor
 
     //watch for a button press and then fire off the autotune fn
     loop {
         atune_btn.wait_for_rising_edge().await;
         Timer::after_micros(DEBOUNCE_THRESHOLD_US).await;
-        PidConfig::run_thy_tune(
-            flash_mut,
-            &mut rpm_watch,
-            &mut pwm_watch_r,
-            &mut pwm_watch_s,
-        )
-        .await;
+        PidConfig::run_thy_tune(flash_mut, &mut rpm_filt_watch, &mut rpm_raw_watch).await;
     }
 }

@@ -11,7 +11,7 @@ use embassy_rp::{
 };
 use embassy_time::{Duration, Instant, Ticker, Timer};
 
-use crate::{CURR_DRAW_THRESH_FOR_ZERO, HALL_CNT, I_WATCH, RPM_WATCH};
+use crate::{CURR_DRAW_THRESH_FOR_ZERO, HALL_CNT, I_WATCH, RPM_FILT_WATCH, RPM_RAW_WATCH};
 
 struct HallSense {
     pin: Input<'static>,
@@ -26,15 +26,19 @@ pub async fn run_hall(hall_pin: Peri<'static, AnyPin>) {
     let mut hall_sensor = HallSense::init(hall_pin);
     loop {
         let data_pull_res: Result<(), HallError> = hall_sensor.populate(&mut fn_timer).await;
+
+        //send raw result to the raw watch -- mostly autotune functionality
+        RPM_RAW_WATCH
+            .sender()
+            .send((60000000 / hall_sensor.speed_list[HALL_CNT - 1]) as u16);
+
+        //For regular operation filter the data to make sure its clean
         // info!("Data: {}", data);
         match data_pull_res {
             Ok(_data) => match extract_rpm(hall_sensor.speed_list) {
                 Ok(rpm) => {
-                    RPM_WATCH.sender().send(rpm);
+                    RPM_FILT_WATCH.sender().send(rpm);
                     info!("rpm: {}", rpm);
-                    //I don't think we want to use a wait fn because the pid loop requires
-                    // some fast refresh rates
-                    // Timer::after(Duration::from_millis(50)).await;
                 }
                 Err(hall_error) => {
                     info!(
