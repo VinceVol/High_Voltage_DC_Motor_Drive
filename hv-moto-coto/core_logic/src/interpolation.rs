@@ -1,4 +1,4 @@
-use num_traits::{AsPrimitive, PrimInt};
+use num_traits::{AsPrimitive, Num, PrimInt};
 
 pub fn interpolate<T, W, const N: usize>(x_arr: &[T; N], y_arr: &[T; N], x_val: T) -> T
 where
@@ -33,6 +33,35 @@ where
     let result = y0 + ((x_w - x0) * dy) / dx;
 
     result.as_()
+}
+
+pub fn interpolate_flt<T, const N: usize>(x_arr: &[T; N], y_arr: &[T; N], x_val: T) -> T
+where
+    T: Num + PartialOrd + Copy,
+{
+    if x_val <= x_arr[0] {
+        return y_arr[0];
+    }
+    if x_val >= x_arr[N - 1] {
+        return y_arr[N - 1];
+    }
+
+    let idx = x_arr.partition_point(|&x| x <= x_val);
+    let i = if idx == 0 { 0 } else { idx - 1 };
+    let i = if i >= N - 1 { N - 2 } else { i };
+
+    let x0 = x_arr[i];
+    let x1 = x_arr[i + 1];
+    let y0 = y_arr[i];
+    let y1 = y_arr[i + 1];
+
+    let dx = x1 - x0;
+    if dx == T::zero() {
+        return y0;
+    }
+
+    let dy = y1 - y0;
+    y0 + ((x_val - x0) * dy) / dx
 }
 
 #[cfg(test)]

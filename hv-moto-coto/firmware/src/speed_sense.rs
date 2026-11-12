@@ -9,6 +9,7 @@ use embassy_rp::{
     gpio::{AnyPin, Input},
     Peri,
 };
+use embassy_sync::{blocking_mutex::raw::CriticalSectionRawMutex, watch::Receiver};
 use embassy_time::{Duration, Instant, Ticker, Timer};
 
 use crate::{CURR_DRAW_THRESH_FOR_ZERO, HALL_CNT, I_WATCH, RPM_FILT_WATCH, RPM_RAW_WATCH};
@@ -53,6 +54,26 @@ pub async fn run_hall(hall_pin: Peri<'static, AnyPin>) {
                 Timer::after(Duration::from_millis(50)).await;
             }
         }
+    }
+}
+
+//dumb name for a fn that returns when the rpm is ~ the same twice in a row
+pub async fn double_tap<'a>(
+    rpm_watch: &mut Receiver<'a, CriticalSectionRawMutex, u16, 100>,
+) -> u16 {
+    //going to be checking new vs old rpm to know when the motor has settled
+    let mut new_rpm: i32;
+    let mut old_rpm: i32 = 0;
+
+    loop {
+        new_rpm = rpm_watch.changed().await as i32;
+
+        //Essentially fire when the rpm starts to be constant I prefer checking two in a row over a delay
+        if (new_rpm as i32 - old_rpm as i32).abs() < 10 {
+            return new_rpm as u16;
+        }
+
+        old_rpm = new_rpm;
     }
 }
 

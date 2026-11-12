@@ -9,16 +9,12 @@ use embassy_rp::{
     peripherals::{FLASH, PIN_7},
     Peri,
 };
-use embassy_sync::{
-    blocking_mutex::raw::CriticalSectionRawMutex,
-    mutex::Mutex,
-    watch::{Receiver, Sender},
-};
+use embassy_sync::{blocking_mutex::raw::CriticalSectionRawMutex, mutex::Mutex, watch::Receiver};
 use embassy_time::{Duration, Instant, Timer};
 
 use crate::{
-    AUTOTUNE_OVERRIDE, CONFIG_START, FLASH_MUT_SIZE, FLOOR_TBL_CNT, MOT_LOOP_EN, PI_TBL_CNT,
-    PWM_WATCH, RPM_FILT_WATCH, RPM_RAW_WATCH,
+    speed_sense::double_tap, AUTOTUNE_OVERRIDE, CONFIG_START, FLASH_MUT_SIZE, FLOOR_TBL_CNT,
+    MOT_LOOP_EN, PI_TBL_CNT, PWM_WATCH, RPM_FILT_WATCH, RPM_RAW_WATCH,
 };
 
 //as described in lib.rs, basically this is here to generate a lookup table and optimize the pid parameters
@@ -27,7 +23,7 @@ use crate::{
 pub struct PidConfig {
     pub floor_table_rpm: [u16; FLOOR_TBL_CNT],
     pub floor_table_pwm: [u16; FLOOR_TBL_CNT],
-    pub pi_table_rpm: [u16; PI_TBL_CNT], //rpm setpoint
+    pub pi_table_rpm: [f32; PI_TBL_CNT], //rpm setpoint
     pub pi_table_p: [f32; PI_TBL_CNT],   //p components of PID
     pub pi_table_i: [f32; PI_TBL_CNT],   //i components of PID
     flash_check: [u8; 8],
@@ -38,7 +34,7 @@ impl Default for PidConfig {
         Self {
             floor_table_rpm: [0; FLOOR_TBL_CNT],
             floor_table_pwm: [0; FLOOR_TBL_CNT],
-            pi_table_rpm: [0; PI_TBL_CNT],
+            pi_table_rpm: [0.0; PI_TBL_CNT],
             pi_table_p: [0.35; PI_TBL_CNT],
             pi_table_i: [0.2; PI_TBL_CNT],
             flash_check: FLASH_CHECK,
@@ -80,15 +76,11 @@ impl PidConfig {
 
     async fn gen_floor_tbl<'a>(
         &mut self,
-        rpm_watch: &mut Receiver<'a, CriticalSectionRawMutex, u16, 100>,
+        rpm_filt_watch: &mut Receiver<'a, CriticalSectionRawMutex, u16, 100>,
     ) {
         //disable pid controlled motor loop
         MOT_LOOP_EN.signal(false);
         Timer::after_secs(1).await; // give the motor loop time to fully shut down
-
-        //going to be checking new vs old rpm to know when the motor has settled
-        let mut new_rpm;
-        let mut old_rpm = 0;
 
         //rip through divisions of FLOOR_TBL_CNT pwm signals
         for (i, pwm) in (0..FLOOR_TBL_CNT)
@@ -98,18 +90,8 @@ impl PidConfig {
             PWM_WATCH.sender().send(pwm);
             Timer::after(Duration::from_millis(50)).await; //short pause to allow controller to react
 
-            loop {
-                new_rpm = rpm_watch.changed().await;
-
-                //Essentially fire when the rpm starts to be constant I prefer checking two in a row over a delay
-                if (new_rpm as i32 - old_rpm as i32).abs() < 10 {
-                    self.floor_table_rpm[i] = new_rpm;
-                    self.floor_table_pwm[i] = pwm;
-                    break;
-                }
-
-                old_rpm = new_rpm;
-            }
+            self.floor_table_rpm[i] = double_tap(rpm_filt_watch).await;
+            self.floor_table_pwm[i] = pwm;
         }
         MOT_LOOP_EN.signal(true);
     }
@@ -121,10 +103,6 @@ impl PidConfig {
         //disable pid controlled motor loop
         MOT_LOOP_EN.signal(false);
         Timer::after_secs(1).await; // give the motor loop time to fully shut down
-
-        //going to be checking new vs old rpm to know when the motor has settled
-        let mut new_rpm: i32;
-        let mut old_rpm: i32 = 0;
 
         //Save the times, pwms and rpms into arrays to feed to a core logic fn that
         // will calculate the P & I terms
@@ -151,22 +129,10 @@ impl PidConfig {
 
             //find the other end of the rpm range
             PWM_WATCH.sender().send(pwm_range[1]);
-            loop {
-                new_rpm = rpm_raw_watch.changed().await as i32;
+            rpm_range[1] = double_tap(rpm_raw_watch).await as u64;
 
-                //Essentially fire when the rpm starts to be constant I prefer checking two in a row over a delay
-                if (new_rpm as i32 - old_rpm as i32).abs() < 10 {
-                    rpm_range[1] = new_rpm as u64;
-                    break;
-                }
-
-                old_rpm = new_rpm;
-            }
-            PWM_WATCH.sender().send(pwm_range[0]); //go back to start line
-
-            //rotating the times and rpms as we only want surrounding data of the 0.6321 RPM stpnt
-            times.rotate_left(1);
-            rpms.rotate_left(1);
+            //Go back to the starting line
+            PWM_WATCH.sender().send(pwm_range[0]);
 
             //Set the rpm goal
             let rpm_goal = (6321 * (rpm_range[1] - rpm_range[0])) / 10000 + rpm_range[0];
@@ -182,19 +148,34 @@ impl PidConfig {
                 rpms[1] = rpm_raw_watch.changed().await as u64;
                 times[1] = timer.elapsed().as_micros();
 
+                //Once in the right rpm range surrounding 1 time const
                 if rpms[0] <= rpm_goal && rpms[1] >= rpm_goal {
+                    // calculate k = dRPM/dPWM
                     let k = (rpm_range[1] - rpm_range[0]) as f32
                         / ((pwm_range[1] - pwm_range[0]) as f32);
+
+                    //determine P and I components
                     let (kp, ki) = find_pi(1.0, k, times, rpms, rpm_goal);
+
+                    //Terminal info ------------------
                     info!(
-                        "rpm_range: {:?}\npwm_range: {:?}\nk = {}, rpms = {:?}, times = {:?}",
+                        "rpm_range: {:?}\npwm_range: {:?}\nk = {}\nrpms = {:?}\ntimes = {:?}",
                         rpm_range, pwm_range, k, rpms, times
                     );
                     info!(
                         "For {} -> {}:\nkp = {} \nki = {}",
                         rpm_range[0], rpm_range[1], kp, ki
                     );
-                    //TODO Core logic goes here TODO
+                    //Terminal info ------------------
+
+                    //save the info into self
+                    self.pi_table_rpm[i] = rpm_range[1] as f32;
+                    self.pi_table_p[i] = kp;
+                    self.pi_table_i[i] = ki;
+
+                    //reset the rpms and times for the next rpm range
+                    rpms = [0; 2];
+                    times = [0; 2];
                     break;
                 }
             }

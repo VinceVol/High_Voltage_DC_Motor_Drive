@@ -1,7 +1,7 @@
 //Thinking this represents the motor struct and task runner overall. ~big brain ish portion of the firware that decides overall what the motor is doing
 // I think this should include the PID bits but I haven't fully decided on the best way to structure this
 
-use core_logic::interpolation::interpolate;
+use core_logic::interpolation::{interpolate, interpolate_flt};
 use defmt::info;
 use embassy_rp::{
     flash::{Async, Flash},
@@ -74,26 +74,44 @@ pub async fn run_motor(
             ticker.reset(); //reset the ticker to avoid weird delay buildups from missed ticks
         }
 
+        //Don't let motor_en block the rest of the firmware
         if !mot_en {
             Timer::after_secs(1).await; //yield for a while
             continue;
         }
+
         //if mesa has changed the rpm or dir then update our setpoints
         if let Some(new_rpm_set) = RPM_REQ_SIG.try_take() {
             rpm_stpt = new_rpm_set;
-            // pwm_floor = interpolate::<u16, i32, 24>(
-            //     &pid_conf.lookup_table_x,
-            //     &pid_conf.lookup_table_y,
-            //     new_rpm_set,
-            // );
+
+            //Update the pwm floor based on autotune interpolation
+            pwm_floor = interpolate::<u16, i32, 24>(
+                &pid_conf.floor_table_rpm,
+                &pid_conf.floor_table_pwm,
+                new_rpm_set,
+            );
+
+            //Update P and I components of motor_pid based on autotune interpolation
+            motor_pid.kp = interpolate_flt::<f32, 6>(
+                &pid_conf.pi_table_rpm,
+                &pid_conf.pi_table_p,
+                new_rpm_set as f32,
+            );
+            motor_pid.ki = interpolate_flt::<f32, 6>(
+                &pid_conf.pi_table_rpm,
+                &pid_conf.pi_table_i,
+                new_rpm_set as f32,
+            );
 
             pwm_watch.send(pwm_floor); //start off using the lookup table speed
         }
+
+        //Direction change reaction
         if let Some(new_dir_set) = DIR_REQ_SIG.try_take() {
             if new_dir_set == dir_stpt {
                 continue;
             }
-            info!("in the new signal loop!");
+
             //Turn motor off before switching
             pwm_watch.send(0);
             while rpm > RPM_BFR_DIR_SWTCH {
@@ -150,24 +168,6 @@ pub async fn run_motor(
     }
 }
 
-//TODO add autotune funcionality:
-// Command 1000 RPM.
-// Slowly increase kp until the motor responds quickly.
-// Stop increasing when RPM begins oscillating.
-// Cut kp approximately in half.
-// Add a small ki.
-//
-// Example:
-//
-// kp = 0.08
-// ki = 0.1
-// kd = 0.0
-//
-// If RPM is still 50-100 RPM below target under load:
-//
-// ki += 0.1
-//
-// until the steady-state error disappears.
 pub struct Pid {
     kp: f32,
     ki: f32,
