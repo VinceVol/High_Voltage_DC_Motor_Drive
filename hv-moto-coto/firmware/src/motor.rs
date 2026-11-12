@@ -13,9 +13,9 @@ use embassy_sync::{blocking_mutex::raw::CriticalSectionRawMutex, mutex::Mutex, w
 use embassy_time::{Duration, Ticker, Timer};
 
 use crate::{
-    autotune::PidConfig, cap_precharge::PrechargeState, direction::Direction, CAP_PRE_STATE_SIG,
-    DIR_REQ_SIG, DIR_WATCH, FLASH_MUT_SIZE, MAX_SPINDLE_SPEED, MOT_LOOP_EN, PWM_WATCH,
-    RPM_BFR_DIR_SWTCH, RPM_FILT_WATCH, RPM_REQ_SIG,
+    autotune::PidConfig, cap_precharge::PrechargeState, direction::Direction, speed_sense::HallRpm,
+    CAP_PRE_STATE_SIG, DIR_REQ_SIG, DIR_WATCH, FLASH_MUT_SIZE, MAX_SPINDLE_SPEED, MOT_LOOP_EN,
+    PWM_WATCH, RPM_BFR_DIR_SWTCH, RPM_FILT_WATCH, RPM_REQ_SIG,
 };
 
 #[embassy_executor::task]
@@ -118,7 +118,7 @@ pub async fn run_motor(
                 Timer::after(Duration::from_millis(20)).await;
 
                 // Update rpm from the watch channel without blocking
-                if let Some(new_rpm) = rpm_watch.try_changed() {
+                if let Some(HallRpm::Good(new_rpm)) = rpm_watch.try_changed() {
                     rpm = new_rpm;
                 } else {
                     Timer::after(Duration::from_millis(1)).await;
@@ -138,7 +138,7 @@ pub async fn run_motor(
         // Wait for dt to hit hopefully a new rpm was sent out
         // ovtherwise use previous
         ticker.next().await;
-        if let Some(new_rpm) = rpm_watch.try_changed() {
+        if let Some(HallRpm::Good(new_rpm)) = rpm_watch.try_changed() {
             rpm = new_rpm;
         }
 

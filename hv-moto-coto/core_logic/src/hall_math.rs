@@ -48,7 +48,10 @@ pub fn extract_rpm<const N: usize>(mut time_hall_low: [u64; N]) -> Result<u16, H
     if avg_dif_us == 0 {
         return Err(HallError::ExcessiveNoise);
     }
-    let rpm = 60000000 / (avg_dif_us);
+    let mut rpm = 60000000 / (avg_dif_us);
+
+    //Set the rpm to zero at anything under threshold
+    rpm = if rpm < 40 { 0 } else { rpm };
     return Ok(rpm as u16);
 }
 

@@ -19,6 +19,14 @@ struct HallSense {
     speed_list: [u64; HALL_CNT],
 }
 
+#[derive(Clone, Copy)]
+pub enum HallRpm {
+    Good(u16),
+    Bad(HallError),
+    Stall,
+}
+
+const SLOW_RESP: u64 = 6000000; // equates to 10 rpm with 1 magnet
 const STOPPED_THRESHOLD_US: u64 = 600000;
 
 #[embassy_executor::task]
@@ -26,8 +34,6 @@ pub async fn run_hall(hall_pin: Peri<'static, AnyPin>) {
     let mut fn_timer = Instant::now();
     let mut hall_sensor = HallSense::init(hall_pin);
     loop {
-        let data_pull_res: Result<(), HallError> = hall_sensor.populate(&mut fn_timer).await;
-
         //send raw result to the raw watch -- mostly autotune functionality
         RPM_RAW_WATCH
             .sender()
@@ -35,25 +41,9 @@ pub async fn run_hall(hall_pin: Peri<'static, AnyPin>) {
 
         //For regular operation filter the data to make sure its clean
         // info!("Data: {}", data);
-        match data_pull_res {
-            Ok(_data) => match extract_rpm(hall_sensor.speed_list) {
-                Ok(rpm) => {
-                    RPM_FILT_WATCH.sender().send(rpm);
-                    info!("rpm: {}", rpm);
-                }
-                Err(hall_error) => {
-                    info!(
-                        "RPM Hall Error: {}, from data: {}",
-                        hall_error, hall_sensor.speed_list
-                    );
-                    Timer::after(Duration::from_millis(50)).await;
-                }
-            },
-            Err(hall_error) => {
-                info!("Populate Hall List Error: {}", hall_error);
-                Timer::after(Duration::from_millis(50)).await;
-            }
-        }
+        RPM_FILT_WATCH
+            .sender()
+            .send(hall_sensor.populate(&mut fn_timer).await);
     }
 }
 
@@ -77,8 +67,6 @@ pub async fn double_tap<'a>(
     }
 }
 
-const SLOW_RESP: u64 = 6000000; // equates to 10 rpm with 1 magnet
-
 impl HallSense {
     fn init(pin_any: Peri<'static, AnyPin>) -> Self {
         let pin = Input::new(pin_any, embassy_rp::gpio::Pull::Up);
@@ -88,7 +76,7 @@ impl HallSense {
         }
     }
 
-    async fn populate(&mut self, timer: &mut Instant) -> Result<(), HallError> {
+    async fn populate(&mut self, timer: &mut Instant) -> HallRpm {
         self.speed_list.rotate_left(1); //make room for the new value
                                         //Watch current draw in case the motor shuts off
                                         // hall sensor stands no chance if the motor isn't spinning
@@ -110,13 +98,20 @@ impl HallSense {
         loop {
             //The hall sensor fires on a falling edge
             // check to make sure the motor isn't stopped at each step
-            if check_stop_and(self.pin.wait_for_falling_edge(), &mut ticker, last_cur).await {
-                self.speed_list[HALL_CNT - 1] = SLOW_RESP;
-                return Ok(());
+            if check_stop_and(self.pin.wait_for_falling_edge(), &mut ticker).await {
+                self.speed_list = [SLOW_RESP; HALL_CNT];
+                if last_cur < CURR_DRAW_THRESH_FOR_ZERO {
+                    return HallRpm::Good(0);
+                }
+                return HallRpm::Stall;
             }
-            if check_stop_and(self.pin.wait_for_low(), &mut ticker, last_cur).await {
-                self.speed_list[HALL_CNT - 1] = SLOW_RESP;
-                return Ok(());
+
+            if check_stop_and(self.pin.wait_for_low(), &mut ticker).await {
+                self.speed_list = [SLOW_RESP; HALL_CNT];
+                if last_cur < CURR_DRAW_THRESH_FOR_ZERO {
+                    return HallRpm::Good(0);
+                }
+                return HallRpm::Stall;
             }
 
             //If the pin is still low after the DEBOUNCE THRESH then we should be good
@@ -129,18 +124,17 @@ impl HallSense {
             if !is_it_rlly_low.contains(&false) {
                 self.speed_list[HALL_CNT - 1] = timer.elapsed().as_micros();
                 *timer = Instant::now();
-                return Ok(());
+                match extract_rpm(self.speed_list) {
+                    Ok(rpm) => return HallRpm::Good(rpm),
+                    Err(e) => return HallRpm::Bad(e),
+                }
             }
         }
     }
 }
 
 //should do &self .skip_if_stopped and send the future in
-async fn check_stop_and<F: Future>(
-    future: F,
-    ticker: &mut Ticker,
-    last_current_msrmnt: f32,
-) -> bool {
+async fn check_stop_and<F: Future>(future: F, ticker: &mut Ticker) -> bool {
     match embassy_futures::select::select(future, ticker.next()).await {
         //If the future returns first then we didn't time out
         Either::First(_) => {
@@ -148,11 +142,7 @@ async fn check_stop_and<F: Future>(
         }
         //if the ticker returns first then we times out
         Either::Second(_) => {
-            if last_current_msrmnt > CURR_DRAW_THRESH_FOR_ZERO {
-                return false;
-            } else {
-                return true;
-            }
+            return true;
         }
     }
 }

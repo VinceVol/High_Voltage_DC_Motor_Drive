@@ -5,6 +5,7 @@ use core::{
     sync::atomic::{AtomicI32, AtomicU16},
 };
 
+use core_logic::hall_math::HallError;
 use embassy_rp::{
     flash::{Async, Flash},
     peripherals::FLASH,
@@ -17,7 +18,7 @@ use static_cell::StaticCell;
 
 use crate::{
     autotune::PidConfig, cap_precharge::PrechargeState, direction::Direction,
-    safety::ControllerCond,
+    safety::ControllerCond, speed_sense::HallRpm,
 };
 
 pub mod bus_init;
@@ -32,7 +33,7 @@ pub static MOT_LOOP_EN: Signal<CriticalSectionRawMutex, bool> = Signal::new(); /
 pub mod speed_sense;
 pub static MAX_SPINDLE_SPEED: u16 = 1000; //This should match the linuxCNC config so they scale the same
 pub static RPM_BFR_DIR_SWTCH: u16 = 100;
-pub static RPM_FILT_WATCH: Watch<CriticalSectionRawMutex, u16, 100> = Watch::new(); //The real rpm uploads here
+pub static RPM_FILT_WATCH: Watch<CriticalSectionRawMutex, HallRpm, 100> = Watch::new(); //The real rpm uploads here
 pub static HALL_CNT: usize = 4; //how many samples needed for rpm feedback
 pub static CURR_DRAW_THRESH_FOR_ZERO: f32 = 0.02; //The current draw at which we say with some confidence motor is off
 pub static RPM_RAW_WATCH: Watch<CriticalSectionRawMutex, u16, 100> = Watch::new(); //The real rpm uploads here
@@ -89,9 +90,3 @@ unsafe extern "C" {
     static CONFIG_START: u32;
 }
 pub static FLASH_MUT_SIZE: usize = 2048 * 1024; //The allocated space for all saved variables
-
-//The flash peripheral initialized at runtime and shared as a mutex
-// pub static FLASH_MUT: StaticCell<
-//     Mutex<CriticalSectionRawMutex, Flash<'static, FLASH, Async, { FLASH_MUT_SIZE }>>,
-// > = StaticCell::new();
-// static PID_CONFIG: Mutex<CriticalSectionRawMutex, PidConfig> = Mutex::new(PidConf);
