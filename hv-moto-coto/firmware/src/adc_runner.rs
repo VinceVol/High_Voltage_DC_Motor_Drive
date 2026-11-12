@@ -57,7 +57,7 @@ pub async fn adc_runner(
                         let signed_current =
                             (I_CORR_NUM * good_v as f32) / 4095f32 + *I_CORR_OFF.lock().await;
                         I_WATCH.sender().send(signed_current);
-                        info!("Current sense = {}", signed_current);
+                        // info!("Current sense = {}", signed_current);
                     }
                     Err(_adc_error) => {
                         info!("Error reading adc pin -- req current");

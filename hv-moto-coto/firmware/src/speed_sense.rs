@@ -18,7 +18,7 @@ struct HallSense {
     speed_list: [u64; HALL_CNT],
 }
 
-const STOPPED_THRESHOLD_US: u64 = 6000000;
+const STOPPED_THRESHOLD_US: u64 = 600000;
 
 #[embassy_executor::task]
 pub async fn run_hall(hall_pin: Peri<'static, AnyPin>) {

@@ -1,6 +1,7 @@
 use core::ptr;
 
 use bytemuck::{Pod, Zeroable};
+use core_logic::lambda_tune::find_pi;
 use defmt::info;
 use embassy_rp::{
     flash::{Async, Flash},
@@ -129,8 +130,8 @@ impl PidConfig {
         // will calculate the P & I terms
         let mut times: [u64; 2] = [0, 0]; //times surrounding the 0.6321K time constant
         let mut rpms: [u64; 2] = [0, 0]; //rpms surrounding that same item -- interpolation needed
-        let mut pwm_start_finish: [u16; 2] = [0, 0]; //the setpoint start finish
-        let mut rpm_start_finish: [u64; 2] = [0, 0]; //resulting steady state rpms
+        let mut pwm_range: [u16; 2] = [0, 0]; //the setpoint start finish
+        let mut rpm_range: [u64; 2] = [0, 0]; //resulting steady state rpms
 
         //start pwm at zero and give the motor sufficient time to settle down
         PWM_WATCH.sender().send(0);
@@ -141,33 +142,34 @@ impl PidConfig {
             .map(|i| (1000 as f64 * i as f64 / (PI_TBL_CNT as f64 - 1.0)) as u16)
             .enumerate()
         {
+            //Set the pwm range
+            pwm_range.rotate_left(1);
+            pwm_range[1] = pwm;
+
             //move over rpm to make room for the finish (the last one's finish is the new ones start)
-            rpm_start_finish.rotate_left(1);
+            rpm_range.rotate_left(1);
 
             //find the other end of the rpm range
+            PWM_WATCH.sender().send(pwm_range[1]);
             loop {
                 new_rpm = rpm_raw_watch.changed().await as i32;
 
                 //Essentially fire when the rpm starts to be constant I prefer checking two in a row over a delay
                 if (new_rpm as i32 - old_rpm as i32).abs() < 10 {
-                    rpm_start_finish[1] = new_rpm as u64;
+                    rpm_range[1] = new_rpm as u64;
                     break;
                 }
 
                 old_rpm = new_rpm;
             }
-
-            //Set the pwm range
-            pwm_start_finish.rotate_left(1);
-            pwm_start_finish[1] = pwm;
+            PWM_WATCH.sender().send(pwm_range[0]); //go back to start line
 
             //rotating the times and rpms as we only want surrounding data of the 0.6321 RPM stpnt
             times.rotate_left(1);
             rpms.rotate_left(1);
 
             //Set the rpm goal
-            let rpm_goal =
-                (6321 * (rpm_start_finish[1] - rpm_start_finish[0])) / 10000 + rpm_start_finish[0];
+            let rpm_goal = (6321 * (rpm_range[1] - rpm_range[0])) / 10000 + rpm_range[0];
 
             //Tell mcu to pwm to the finish line and start the timer
             let timer = Instant::now();
@@ -181,6 +183,17 @@ impl PidConfig {
                 times[1] = timer.elapsed().as_micros();
 
                 if rpms[0] <= rpm_goal && rpms[1] >= rpm_goal {
+                    let k = (rpm_range[1] - rpm_range[0]) as f32
+                        / ((pwm_range[1] - pwm_range[0]) as f32);
+                    let (kp, ki) = find_pi(1.0, k, times, rpms, rpm_goal);
+                    info!(
+                        "rpm_range: {:?}\npwm_range: {:?}\nk = {}, rpms = {:?}, times = {:?}",
+                        rpm_range, pwm_range, k, rpms, times
+                    );
+                    info!(
+                        "For {} -> {}:\nkp = {} \nki = {}",
+                        rpm_range[0], rpm_range[1], kp, ki
+                    );
                     //TODO Core logic goes here TODO
                     break;
                 }

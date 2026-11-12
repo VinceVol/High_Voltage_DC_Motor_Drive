@@ -15,7 +15,7 @@ use embassy_time::{Duration, Ticker, Timer};
 use crate::{
     autotune::PidConfig, cap_precharge::PrechargeState, direction::Direction, CAP_PRE_STATE_SIG,
     DIR_REQ_SIG, DIR_WATCH, FLASH_MUT_SIZE, MAX_SPINDLE_SPEED, MOT_LOOP_EN, PWM_WATCH,
-    RPM_BFR_DIR_SWTCH, RPM_REQ_SIG, RPM_WATCH,
+    RPM_BFR_DIR_SWTCH, RPM_FILT_WATCH, RPM_REQ_SIG,
 };
 
 #[embassy_executor::task]
@@ -44,7 +44,7 @@ pub async fn run_motor(
 
     //Setup PID components
     let mut rpm_stpt: u16 = 0; //Representing the rpm goal
-    let mut rpm_watch = RPM_WATCH.receiver().unwrap(); //Direct feed from the hall sensor
+    let mut rpm_watch = RPM_FILT_WATCH.receiver().unwrap(); //Direct feed from the hall sensor
     let pwm_watch = PWM_WATCH.sender();
     let dir_watch = DIR_WATCH.sender();
     let mut dir_stpt: Direction = Direction::Forward;
@@ -52,10 +52,6 @@ pub async fn run_motor(
 
     //load up the flash saved autotune parameters
     let pid_conf = PidConfig::load(flash_mut).await.unwrap();
-    info!(
-        "pid x {} and \n y {}",
-        pid_conf.lookup_table_x, pid_conf.lookup_table_y
-    );
     let mut mot_en = true; //Watch the motor enabled signal as autotune may need to own the pwm
     let mut pwm_floor = 0; //The lowest rpm we should output, based on the lookup table
 
@@ -85,11 +81,12 @@ pub async fn run_motor(
         //if mesa has changed the rpm or dir then update our setpoints
         if let Some(new_rpm_set) = RPM_REQ_SIG.try_take() {
             rpm_stpt = new_rpm_set;
-            pwm_floor = interpolate::<u16, i32, 24>(
-                &pid_conf.lookup_table_x,
-                &pid_conf.lookup_table_y,
-                new_rpm_set,
-            );
+            // pwm_floor = interpolate::<u16, i32, 24>(
+            //     &pid_conf.lookup_table_x,
+            //     &pid_conf.lookup_table_y,
+            //     new_rpm_set,
+            // );
+
             pwm_watch.send(pwm_floor); //start off using the lookup table speed
         }
         if let Some(new_dir_set) = DIR_REQ_SIG.try_take() {
