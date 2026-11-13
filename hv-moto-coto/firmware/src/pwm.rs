@@ -2,7 +2,7 @@
 
 use defmt::info;
 use embassy_rp::{
-    peripherals::{PIN_17, PIN_22, PWM_SLICE0, PWM_SLICE3},
+    peripherals::{PIN_16, PIN_17, PIN_21, PIN_22, PWM_SLICE0, PWM_SLICE2, PWM_SLICE3},
     pwm::{Config, Pwm},
     Peri,
 };
@@ -13,10 +13,13 @@ use crate::{direction::Direction, DIR_WATCH, PWM_WATCH};
 //Not sure if I should really do anything more than this for the dir_pin
 #[embassy_executor::task]
 pub async fn run_pwm(
-    pwm_p_a: Peri<'static, PIN_22>,
-    pwm_p_b: Peri<'static, PIN_17>,
+    pwm_p_a_h: Peri<'static, PIN_22>,
+    pwm_p_a_l: Peri<'static, PIN_21>,
+    pwm_p_b_h: Peri<'static, PIN_17>,
+    pwm_p_b_l: Peri<'static, PIN_16>,
     pwm_slice_3: Peri<'static, PWM_SLICE3>,
     pwm_slice_0: Peri<'static, PWM_SLICE0>,
+    pwm_slice_2: Peri<'static, PWM_SLICE2>,
 ) {
     //watch direction and pwm
     let mut dir_watch = DIR_WATCH.receiver().unwrap();
@@ -30,8 +33,12 @@ pub async fn run_pwm(
     config_b.top = 999;
     config_b.compare_b = 500; // 50% duty cycle
 
-    let pwm_a = Pwm::new_output_a(pwm_slice_3, pwm_p_a, config_a.clone());
-    let pwm_b = Pwm::new_output_b(pwm_slice_0, pwm_p_b, config_b.clone());
+    let pwm_a_h = Pwm::new_output_a(pwm_slice_3, pwm_p_a_h, config_a.clone()); //pwm a high side
+    let pwm_a_l = Pwm::new_output_b(pwm_slice_2, pwm_p_a_l, config_a.clone()); //pwm a low side
+    let pwm_b_h = Pwm::new_output_b(pwm_slice_0, pwm_p_b_h, config_b.clone());
+    // let pwm_b_l = Pwm::new_output_b(pwm_slice_2, pwm_p_b_l, config_b.clone());
+
+    let pwm_a = Pwm::new_output_ab(pwm_slice_3, pwm_p_a_l, pwm_p_a_h, config_a.clone());
 
     let mut pwm_struct_a = MotorPwm {
         pwm: pwm_a,

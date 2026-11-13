@@ -2220,7 +2220,7 @@
 		)
 		(uuid "424efa1c-b860-4c5f-8dd7-7af1c9715bdd")
 	)
-	(text "RC lowpass Filter Smooth \n20KHz => 100Hz"
+	(text "RC lowpass Filter Smooth \n150KHz / 1MHz Cutoff"
 		(exclude_from_sim no)
 		(at 108.966 29.464 0)
 		(effects
@@ -4233,7 +4233,7 @@
 				)
 			)
 		)
-		(property "Value" "16K"
+		(property "Value" "100"
 			(at 115.57 37.846 90)
 			(effects
 				(font
@@ -6757,7 +6757,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "0.1u"
+		(property "Value" "1.5nF"
 			(at 125.73 41.91 0)
 			(effects
 				(font

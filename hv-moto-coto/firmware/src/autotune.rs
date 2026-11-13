@@ -13,8 +13,9 @@ use embassy_sync::{blocking_mutex::raw::CriticalSectionRawMutex, mutex::Mutex, w
 use embassy_time::{Duration, Instant, Timer};
 
 use crate::{
-    speed_sense::double_tap, AUTOTUNE_OVERRIDE, CONFIG_START, FLASH_MUT_SIZE, FLOOR_TBL_CNT,
-    MOT_LOOP_EN, PI_TBL_CNT, PWM_WATCH, RPM_FILT_WATCH, RPM_RAW_WATCH,
+    speed_sense::{double_tap, HallRpm},
+    AUTOTUNE_OVERRIDE, CONFIG_START, FLASH_MUT_SIZE, FLOOR_TBL_CNT, MOT_LOOP_EN, PI_TBL_CNT,
+    PWM_WATCH, RPM_FILT_WATCH, RPM_RAW_WATCH,
 };
 
 //as described in lib.rs, basically this is here to generate a lookup table and optimize the pid parameters
@@ -52,7 +53,6 @@ impl PidConfig {
             CriticalSectionRawMutex,
             Flash<'static, FLASH, Async, { FLASH_MUT_SIZE }>,
         >,
-        rpm_filt_watch: &mut Receiver<'a, CriticalSectionRawMutex, u16, 100>,
         rpm_raw_watch: &mut Receiver<'a, CriticalSectionRawMutex, u16, 100>,
     ) -> Self {
         //Tell the motor req signals to ignore mesa inputs
@@ -63,7 +63,7 @@ impl PidConfig {
         let mut the_tune = PidConfig::load(flash_mut).await.unwrap();
 
         //Generate the lookup tables by slowly incrementing pwm
-        the_tune.gen_floor_tbl(rpm_filt_watch).await;
+        the_tune.gen_floor_tbl(rpm_raw_watch).await;
 
         //Generate PID lookup tbl
         the_tune.gen_pid_tbl(rpm_raw_watch).await;
@@ -148,6 +148,8 @@ impl PidConfig {
                 rpms[1] = rpm_raw_watch.changed().await as u64;
                 times[1] = timer.elapsed().as_micros();
 
+                info!("new rpms {}", rpms);
+                info!("new times {}", times);
                 //Once in the right rpm range surrounding 1 time const
                 if rpms[0] <= rpm_goal && rpms[1] >= rpm_goal {
                     // calculate k = dRPM/dPWM
@@ -249,13 +251,12 @@ pub async fn atune_btn_run(
     >,
 ) {
     let mut atune_btn = Input::new(autotune_button_p, embassy_rp::gpio::Pull::Down);
-    let mut rpm_filt_watch = RPM_FILT_WATCH.receiver().unwrap(); //Direct feed from the hall sensor
     let mut rpm_raw_watch = RPM_RAW_WATCH.receiver().unwrap(); //Direct feed from the hall sensor
 
     //watch for a button press and then fire off the autotune fn
     loop {
         atune_btn.wait_for_rising_edge().await;
         Timer::after_micros(DEBOUNCE_THRESHOLD_US).await;
-        PidConfig::run_thy_tune(flash_mut, &mut rpm_filt_watch, &mut rpm_raw_watch).await;
+        PidConfig::run_thy_tune(flash_mut, &mut rpm_raw_watch).await;
     }
 }
