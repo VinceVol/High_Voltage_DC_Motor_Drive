@@ -4,6 +4,7 @@
 use defmt::info;
 use defmt_rtt as _;
 use embassy_rp::flash::{Async, Flash};
+use embassy_rp::gpio::Input;
 use embassy_sync::mutex::Mutex;
 use hv_moto_coto::autotune::atune_btn_run;
 use hv_moto_coto::motor::run_motor;
@@ -26,6 +27,13 @@ async fn main(spawner: Spawner) {
     info!("I2C initialized on RP2350!");
     let flash_p = flash_init(p.FLASH, p.DMA_CH2);
 
+    //IMPORTANT -- Layout screwup means all these pins need to be useless inputs --IMPORTANT
+    let _gp16 = Input::new(p.PIN_16, embassy_rp::gpio::Pull::None);
+    let _gp17 = Input::new(p.PIN_17, embassy_rp::gpio::Pull::None);
+    let _gp21 = Input::new(p.PIN_21, embassy_rp::gpio::Pull::None);
+    let _gp22 = Input::new(p.PIN_22, embassy_rp::gpio::Pull::None);
+    //IMPORTANT
+
     // Configure GPIO 25 (onboard LED on Pico 2 W) as an output pin
     // let mut led = Output::new(p.PIN_20, Level::Low);
     let _ = spawner.spawn(run_hall(p.PIN_6.into()).unwrap());
@@ -34,12 +42,21 @@ async fn main(spawner: Spawner) {
     info!("adc runner initiated");
     let _ = spawner.spawn(cap_precharge::run_precharge().unwrap());
     info!("cap precharge initiated");
-    let _ = spawner.spawn(direction::run_dir(p.PIN_21, p.PIN_16).unwrap());
-    info!("direction pin control initiated");
+    // let _ = spawner.spawn(direction::run_dir(p.PIN_21, p.PIN_16).unwrap());
+    // info!("direction pin control initiated");
     let _ = spawner.spawn(mesa::read_mesa_dir(p.PIN_0).unwrap());
     info!("mesa read direction pin initiated");
-    let _ = spawner
-        .spawn(hv_moto_coto::pwm::run_pwm(p.PIN_22, p.PIN_17, p.PWM_SLICE3, p.PWM_SLICE0).unwrap());
+    let _ = spawner.spawn(
+        hv_moto_coto::pwm::run_pwm(
+            p.PIN_2,
+            p.PIN_3,
+            p.PIN_14,
+            p.PIN_15,
+            p.PWM_SLICE1,
+            p.PWM_SLICE7,
+        )
+        .unwrap(),
+    );
     let _ = spawner.spawn(run_motor(p.PIN_20, p.PIN_1, flash_p).unwrap());
     let _ = spawner.spawn(atune_btn_run(p.PIN_7, flash_p).unwrap());
 

@@ -2,8 +2,11 @@
 
 use defmt::info;
 use embassy_rp::{
-    peripherals::{PIN_16, PIN_17, PIN_21, PIN_22, PWM_SLICE0, PWM_SLICE2, PWM_SLICE3},
-    pwm::{Config, Pwm},
+    peripherals::{
+        PIN_14, PIN_15, PIN_16, PIN_17, PIN_2, PIN_21, PIN_22, PIN_3, PWM_SLICE0, PWM_SLICE1,
+        PWM_SLICE2, PWM_SLICE3, PWM_SLICE7,
+    },
+    pwm::{Config, Pwm, SetDutyCycle},
     Peri,
 };
 use embassy_sync::{blocking_mutex::raw::CriticalSectionRawMutex, channel::Receiver};
@@ -13,49 +16,39 @@ use crate::{direction::Direction, DIR_WATCH, PWM_WATCH};
 //Not sure if I should really do anything more than this for the dir_pin
 #[embassy_executor::task]
 pub async fn run_pwm(
-    pwm_p_a_h: Peri<'static, PIN_22>,
-    pwm_p_a_l: Peri<'static, PIN_21>,
-    pwm_p_b_h: Peri<'static, PIN_17>,
-    pwm_p_b_l: Peri<'static, PIN_16>,
-    pwm_slice_3: Peri<'static, PWM_SLICE3>,
-    pwm_slice_0: Peri<'static, PWM_SLICE0>,
-    pwm_slice_2: Peri<'static, PWM_SLICE2>,
+    pwm_p_a: Peri<'static, PIN_2>,
+    dir_p_b: Peri<'static, PIN_3>,
+    pwm_p_b: Peri<'static, PIN_14>,
+    dir_p_a: Peri<'static, PIN_15>,
+    pwm_slice_1: Peri<'static, PWM_SLICE1>,
+    pwm_slice_7: Peri<'static, PWM_SLICE7>,
 ) {
     //watch direction and pwm
     let mut dir_watch = DIR_WATCH.receiver().unwrap();
     let mut pwm_watch = PWM_WATCH.receiver().unwrap();
 
     //Bit of copy and paste code here to set up the a and b channels so one can be off whilst the other is on
-    let mut config_a = Config::default();
-    config_a.top = 999;
-    config_a.compare_a = 500; // 50% duty cycle
-    let mut config_b = Config::default();
-    config_b.top = 999;
-    config_b.compare_b = 500; // 50% duty cycle
+    // Invert b to help prevent heat buildup through motor inductance induced current pushing through lower
+    // leg fet. The gate drivers have built in dead time to help us out
+    // Left Leg
+    let mut config = Config::default();
+    config.top = 7499;
+    config.compare_a = 0; // 50% duty cycle
+    config.compare_b = 0;
+    config.invert_b = true;
 
-    let pwm_a_h = Pwm::new_output_a(pwm_slice_3, pwm_p_a_h, config_a.clone()); //pwm a high side
-    let pwm_a_l = Pwm::new_output_b(pwm_slice_2, pwm_p_a_l, config_a.clone()); //pwm a low side
-    let pwm_b_h = Pwm::new_output_b(pwm_slice_0, pwm_p_b_h, config_b.clone());
-    // let pwm_b_l = Pwm::new_output_b(pwm_slice_2, pwm_p_b_l, config_b.clone());
+    let mut left_leg = Pwm::new_output_ab(pwm_slice_1, pwm_p_a, dir_p_b, config.clone());
+    let mut right_leg = Pwm::new_output_ab(pwm_slice_7, pwm_p_b, dir_p_a, config.clone());
 
-    let pwm_a = Pwm::new_output_ab(pwm_slice_3, pwm_p_a_l, pwm_p_a_h, config_a.clone());
-
-    let mut pwm_struct_a = MotorPwm {
-        pwm: pwm_a,
-        config: config_a,
-        channel: PwmChannel::ChannelA,
-    };
-    let mut pwm_struct_b = MotorPwm {
-        pwm: pwm_b,
-        config: config_b,
-        channel: PwmChannel::ChannelB,
-    };
     //Make sure we have direction instruction to start
     // TODO add a loop here to make sure we request and receive a direction
     let mut dir = dir_watch.get().await;
+    let mut pwm = 0;
     loop {
         //only do something if a new pwm instruction is givin
-        let pwm = pwm_watch.changed().await;
+        let new_pwm = pwm_watch.changed().await;
+        pwm = if new_pwm != pwm { new_pwm } else { continue };
+
         //check to make sure the direction hasn't changed but don't wait on it
         match dir_watch.try_changed() {
             Some(new_dir) => dir = new_dir,
@@ -63,47 +56,18 @@ pub async fn run_pwm(
         }
 
         //pwm the proper direction and turn off the pwm to the other direciton
+        pwm = if pwm > 1000 { 1000 } else { pwm };
         match dir {
             Direction::Forward => {
-                pwm_struct_b.set_duty(0);
-                // info!("setting pwm_a to {}", pwm);
-                pwm_struct_a.set_duty(pwm);
+                right_leg.set_duty_cycle_fully_off().unwrap();
+                info!("setting pwm_a to {}", pwm);
+                left_leg.set_duty_cycle_fraction(pwm, 1000).unwrap();
             }
             Direction::Reverse => {
-                pwm_struct_a.set_duty(0);
-                // info!("setting pwm_b to {}", pwm);
-                pwm_struct_b.set_duty(pwm);
+                left_leg.set_duty_cycle_fully_off().unwrap();
+                info!("setting pwm_a to {}", pwm);
+                right_leg.set_duty_cycle_fraction(pwm, 1000).unwrap();
             }
         }
-    }
-}
-
-enum PwmChannel {
-    ChannelA,
-    ChannelB,
-}
-//Using this MotorPwm struct to avoid constantly copying or cloning the config
-struct MotorPwm<'d> {
-    pwm: Pwm<'d>,
-    config: Config,
-    channel: PwmChannel,
-}
-
-impl<'d> MotorPwm<'d> {
-    fn set_duty(&mut self, mut per_mille: u16) {
-        if per_mille > 1000 {
-            per_mille = 1000;
-        }
-        match self.channel {
-            PwmChannel::ChannelA => {
-                self.config.compare_a =
-                    ((self.config.top as u32 + 1) * per_mille as u32 / 1000) as u16;
-            }
-            PwmChannel::ChannelB => {
-                self.config.compare_b =
-                    ((self.config.top as u32 + 1) * per_mille as u32 / 1000) as u16;
-            }
-        }
-        self.pwm.set_config(&self.config);
     }
 }
