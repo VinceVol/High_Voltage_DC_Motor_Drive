@@ -1,18 +1,9 @@
 #![no_std]
 
-use core::{
-    ptr,
-    sync::atomic::{AtomicI32, AtomicU16},
-};
+use core::sync::atomic::AtomicU16;
 
-use core_logic::hall_math::HallError;
-use embassy_rp::{
-    flash::{Async, Flash},
-    peripherals::FLASH,
-};
 use embassy_sync::{
-    blocking_mutex::raw::CriticalSectionRawMutex, channel::Channel, mutex::Mutex, signal::Signal,
-    watch::Watch,
+    blocking_mutex::raw::CriticalSectionRawMutex, mutex::Mutex, signal::Signal, watch::Watch,
 };
 use static_cell::StaticCell;
 
@@ -59,6 +50,8 @@ pub static I_WATCH: Watch<CriticalSectionRawMutex, f32, 5> = Watch::new(); //Cur
 pub static I_CORR_NUM: f32 = 32.52; //Correction factor for the current sense/ tune on bench
 pub static I_CORR_OFF: Mutex<CriticalSectionRawMutex, f32> = Mutex::new(-16.375); //Current offset from zero in the current sense loop. Calibrate when motor off
 pub static I_DEL_MS: u64 = 50; //how often should we even check the current
+pub static PWM_INT_CNT: AtomicU16 = AtomicU16::new(0);
+pub static I_INTR: Signal<CriticalSectionRawMutex, u16> = Signal::new();
 
 //Voltage sense
 pub static V_WATCH: Watch<CriticalSectionRawMutex, i64, 5> = Watch::new(); //Voltage Readout of caps

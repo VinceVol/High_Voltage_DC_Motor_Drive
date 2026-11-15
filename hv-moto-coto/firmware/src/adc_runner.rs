@@ -12,7 +12,7 @@ use embassy_rp::{
 use embassy_time::{Duration, Ticker};
 
 use crate::{
-    AUTOTUNE_OVERRIDE, CHANGE_THRESHOLD, I_CORR_NUM, I_CORR_OFF, I_DEL_MS, I_WATCH,
+    AUTOTUNE_OVERRIDE, CHANGE_THRESHOLD, I_CORR_NUM, I_CORR_OFF, I_DEL_MS, I_INTR, I_WATCH,
     MAX_SPINDLE_SPEED, MESA_MON_DEL_MS, RPM_REQ_SIG, V_CORR_NUM, V_CORR_OFF, V_DEL_MS, V_WATCH,
 };
 
@@ -36,7 +36,6 @@ pub async fn adc_runner(
     let mut spindle_cmd = Channel::new_pin(mesa_com_pin, embassy_rp::gpio::Pull::None);
 
     //set up tickers for each based on chosen delays
-    let mut cur_ticker = Ticker::every(Duration::from_millis(I_DEL_MS));
     let mut vol_ticker = Ticker::every(Duration::from_millis(V_DEL_MS));
     let mut mesa_ticker = Ticker::every(Duration::from_millis(MESA_MON_DEL_MS));
 
@@ -49,20 +48,13 @@ pub async fn adc_runner(
     let mut last_set_pnt = 0;
     loop {
         //poll the tickers to act on the next one
-        match select3(cur_ticker.next(), vol_ticker.next(), mesa_ticker.next()).await {
-            Either3::First(_) => {
-                match adc_v_in.read(&mut current_in).await {
-                    Ok(good_v) => {
-                        //sending the converted 4095 max to voltage max
-                        let signed_current =
-                            (I_CORR_NUM * good_v as f32) / 4095f32 + *I_CORR_OFF.lock().await;
-                        I_WATCH.sender().send(signed_current);
-                        // info!("Current sense = {}", signed_current);
-                    }
-                    Err(_adc_error) => {
-                        info!("Error reading adc pin -- req current");
-                    }
-                }
+        match select3(I_INTR.wait(), vol_ticker.next(), mesa_ticker.next()).await {
+            Either3::First(good_v) => {
+                //sending the converted 4095 max to voltage max
+                let signed_current =
+                    (I_CORR_NUM * good_v as f32) / 4095f32 + *I_CORR_OFF.lock().await;
+                I_WATCH.sender().send(signed_current);
+                info!("Current sense = {}", signed_current);
             }
             Either3::Second(_) => {
                 match adc_v_in.read(&mut voltage_in).await {

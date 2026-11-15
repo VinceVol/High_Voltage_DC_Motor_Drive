@@ -4,7 +4,8 @@
 use defmt::info;
 use defmt_rtt as _;
 use embassy_rp::flash::{Async, Flash};
-use embassy_rp::gpio::Input;
+use embassy_rp::gpio::Level::Low;
+use embassy_rp::gpio::{Input, Output};
 use embassy_sync::mutex::Mutex;
 use hv_moto_coto::autotune::atune_btn_run;
 use hv_moto_coto::motor::run_motor;
@@ -16,6 +17,7 @@ use embassy_time::{Duration, Timer};
 
 use hv_moto_coto::bus_init::{flash_init, i2c_init, spi_init};
 use hv_moto_coto::speed_sense::run_hall;
+use rp_pac::io::vals::Gpio8ctrlFuncsel::{self, SIOB_PROC_8};
 
 #[embassy_executor::main]
 async fn main(spawner: Spawner) {
@@ -33,6 +35,9 @@ async fn main(spawner: Spawner) {
     let _gp21 = Input::new(p.PIN_21, embassy_rp::gpio::Pull::None);
     let _gp22 = Input::new(p.PIN_22, embassy_rp::gpio::Pull::None);
     //IMPORTANT
+
+    let debug_pin = Output::new(p.PIN_8, embassy_rp::gpio::Level::Low);
+    core::mem::forget(debug_pin); // Keeps pin configured, avoids ownership headaches
 
     // Configure GPIO 25 (onboard LED on Pico 2 W) as an output pin
     // let mut led = Output::new(p.PIN_20, Level::Low);
