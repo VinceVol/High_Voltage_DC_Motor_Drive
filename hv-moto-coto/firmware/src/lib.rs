@@ -1,15 +1,13 @@
 #![no_std]
 
-use core::sync::atomic::AtomicU16;
+use core::sync::atomic::{AtomicU16, AtomicU32};
 
 use embassy_sync::{
     blocking_mutex::raw::CriticalSectionRawMutex, mutex::Mutex, signal::Signal, watch::Watch,
 };
-use static_cell::StaticCell;
 
 use crate::{
-    autotune::PidConfig, cap_precharge::PrechargeState, direction::Direction,
-    safety::ControllerCond, speed_sense::HallRpm,
+    cap_precharge::PrechargeState, pwm::Direction, safety::ControllerCond, speed_sense::HallRpm,
 };
 
 pub mod bus_init;
@@ -32,10 +30,11 @@ pub static RPM_RAW_WATCH: Watch<CriticalSectionRawMutex, u16, 100> = Watch::new(
 //PWM coms to gate driver -- ie directly related to motor speed
 pub mod pwm;
 pub static PWM_WATCH: Watch<CriticalSectionRawMutex, u16, 5> = Watch::new();
+pub static PWM_INT_CNT: AtomicU16 = AtomicU16::new(0);
+pub static PWM_PERC: AtomicU32 = AtomicU32::new(0);
 // pub static PWM_FLOOR: AtomicI32 = AtomicI32::new(200); //pwm to avoid stall without load
 
 //Direction coms
-pub mod direction;
 pub static DIR_WATCH: Watch<CriticalSectionRawMutex, Direction, 5> = Watch::new(); //The direction set by the motor loop for others to act on
 
 //Safety Coms
@@ -50,7 +49,6 @@ pub static I_WATCH: Watch<CriticalSectionRawMutex, f32, 5> = Watch::new(); //Cur
 pub static I_CORR_NUM: f32 = 32.52; //Correction factor for the current sense/ tune on bench
 pub static I_CORR_OFF: Mutex<CriticalSectionRawMutex, f32> = Mutex::new(-16.375); //Current offset from zero in the current sense loop. Calibrate when motor off
 pub static I_DEL_MS: u64 = 50; //how often should we even check the current
-pub static PWM_INT_CNT: AtomicU16 = AtomicU16::new(0);
 pub static I_INTR: Signal<CriticalSectionRawMutex, u16> = Signal::new();
 
 //Voltage sense

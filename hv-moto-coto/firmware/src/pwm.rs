@@ -2,21 +2,17 @@
 
 use core::sync::atomic::Ordering::Relaxed;
 
-use defmt::info;
+use defmt::{info, Format};
 use embassy_rp::{
-    bind_interrupts,
     interrupt::InterruptExt,
-    peripherals::{
-        PIN_14, PIN_15, PIN_16, PIN_17, PIN_2, PIN_21, PIN_22, PIN_3, PWM_SLICE0, PWM_SLICE1,
-        PWM_SLICE2, PWM_SLICE3, PWM_SLICE7,
-    },
+    peripherals::{PIN_14, PIN_15, PIN_2, PIN_3, PWM_SLICE1, PWM_SLICE7},
     pwm::{Config, Pwm, SetDutyCycle},
     Peri,
 };
-use embassy_time::Timer;
-use rp_pac::{interrupt, io::regs::GpioCtrl};
+use embassy_time::{block_for, Duration};
+use rp_pac::interrupt;
 
-use crate::{direction::Direction, DIR_WATCH, I_INTR, PWM_INT_CNT, PWM_WATCH};
+use crate::{DIR_WATCH, I_INTR, PWM_INT_CNT, PWM_PERC, PWM_WATCH};
 
 //Not sure if I should really do anything more than this for the dir_pin
 #[embassy_executor::task]
@@ -32,19 +28,15 @@ pub async fn run_pwm(
     let mut dir_watch = DIR_WATCH.receiver().unwrap();
     let mut pwm_watch = PWM_WATCH.receiver().unwrap();
 
-    // 1. Enable IRQ for slices 1 and 7 in the PWM peripheral
-    rp_pac::PWM.irq0_inte().modify(|w| {
-        w.set_ch1(true);
-        w.set_ch7(true);
-    });
-
-    // 2. Unmask the PWM wrap interrupt in the NVIC
+    //INTERRUPT SETUP --------
+    //Unmask the PWM wrap interrupt in the NVIC
     unsafe {
-        cortex_m::peripheral::NVIC::unmask(rp_pac::Interrupt::PWM_IRQ_WRAP_0); // or PWM_IRQ_WRAP depending on your PAC version
+        cortex_m::peripheral::NVIC::unmask(rp_pac::Interrupt::PWM_IRQ_WRAP_0);
     }
 
-    // 3. set the pwm wrap interrupt to the highest priority
+    //set the pwm wrap interrupt to the highest priority
     rp_pac::interrupt::PWM_IRQ_WRAP_0.set_priority(embassy_rp::interrupt::Priority::P3);
+    //INTERRUPT SETUP --------
 
     //Bit of copy and paste code here to set up the a and b channels so one can be off whilst the other is on
     // Invert b to help prevent heat buildup through motor inductance induced current pushing through lower
@@ -66,7 +58,12 @@ pub async fn run_pwm(
     loop {
         //only do something if a new pwm instruction is givin
         let new_pwm = pwm_watch.changed().await;
-        pwm = if new_pwm != pwm { new_pwm } else { continue };
+        if new_pwm != pwm {
+            pwm = new_pwm;
+            PWM_PERC.store(new_pwm as u32, Relaxed);
+        } else {
+            continue;
+        }
 
         //check to make sure the direction hasn't changed but don't wait on it
         match dir_watch.try_changed() {
@@ -78,11 +75,27 @@ pub async fn run_pwm(
         pwm = if pwm > 1000 { 1000 } else { pwm };
         match dir {
             Direction::Forward => {
+                //INTERRUPT SETUP --------
+                // Enable IRQ slice 1 in foward
+                rp_pac::PWM.irq0_inte().modify(|w| {
+                    w.set_ch1(true);
+                    w.set_ch7(false);
+                });
+                //INTERRUPT SETUP --------
+
                 right_leg.set_duty_cycle_fully_off().unwrap();
                 info!("setting pwm_a to {}", pwm);
                 left_leg.set_duty_cycle_fraction(pwm, 1000).unwrap();
             }
             Direction::Reverse => {
+                //INTERRUPT SETUP --------
+                // Enable IRQ for slice 7 in reverse
+                rp_pac::PWM.irq0_inte().modify(|w| {
+                    w.set_ch1(false);
+                    w.set_ch7(true);
+                });
+                //INTERRUPT SETUP --------
+
                 left_leg.set_duty_cycle_fully_off().unwrap();
                 info!("setting pwm_a to {}", pwm);
                 right_leg.set_duty_cycle_fraction(pwm, 1000).unwrap();
@@ -90,6 +103,15 @@ pub async fn run_pwm(
         }
     }
 }
+
+#[derive(Clone, Copy, PartialEq, Eq, Format)]
+pub enum Direction {
+    Forward,
+    Reverse,
+}
+
+//takes time to read adc and fire the interrupt so subtracting that const based on logic analyzer readings
+const ADC_LAG: u64 = 210 + 2500; //ns
 
 //Current pwm frequency should be ~ 20khz, we want the adc read for current sense
 // to be aligned on the center of the pwm with a 1ms refresh rate which should
@@ -100,13 +122,22 @@ fn PWM_IRQ_WRAP_0() {
     let cur_cnt = PWM_INT_CNT.load(Relaxed);
 
     if cur_cnt >= 81 {
+        //reset the count
+        PWM_INT_CNT.store(0, Relaxed);
+
+        //wait for halfway through the cycle
+        let delay = (PWM_PERC.load(Relaxed) * 25) as u64;
+        block_for(Duration::from_nanos(if delay <= ADC_LAG {
+            ADC_LAG
+        } else {
+            delay - ADC_LAG
+        }));
+
         // --- 1. SET DEBUG PIN HIGH (GPIO 8) ---
         debug_high(8);
 
-        PWM_INT_CNT.store(0, Relaxed);
         // --- INSTANT ADC READ (PAC LEVEL) ---
         // 1. Select ADC input channel for PIN_26 (which is ADC channel 0)
-        // (GPIO 26 = ADC0, GPIO 27 = ADC1, GPIO 28 = ADC2)
         rp_pac::ADC.cs().modify(|w| {
             // w.set_en(true); // Select channel 0 for pin 26
             w.set_ainsel(0);
@@ -117,13 +148,13 @@ fn PWM_IRQ_WRAP_0() {
         while !rp_pac::ADC.cs().read().ready() {
             // Spin-wait briefly for hardware flag
         }
+        debug_low(8);
 
         // 3. Read the 12-bit result register
         let good_v = rp_pac::ADC.result().read().result();
         I_INTR.signal(good_v);
 
         // --- 3. SET DEBUG PIN LOW (GPIO 8) ---
-        debug_low(8);
     } else {
         PWM_INT_CNT.fetch_add(1, Relaxed);
     }

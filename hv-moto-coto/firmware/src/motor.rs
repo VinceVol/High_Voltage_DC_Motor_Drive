@@ -13,7 +13,7 @@ use embassy_sync::{blocking_mutex::raw::CriticalSectionRawMutex, mutex::Mutex, w
 use embassy_time::{Duration, Ticker, Timer};
 
 use crate::{
-    autotune::PidConfig, cap_precharge::PrechargeState, direction::Direction, speed_sense::HallRpm,
+    autotune::PidConfig, cap_precharge::PrechargeState, pwm::Direction, speed_sense::HallRpm,
     CAP_PRE_STATE_SIG, DIR_REQ_SIG, DIR_WATCH, FLASH_MUT_SIZE, MAX_SPINDLE_SPEED, MOT_LOOP_EN,
     PWM_WATCH, RPM_BFR_DIR_SWTCH, RPM_FILT_WATCH, RPM_REQ_SIG,
 };

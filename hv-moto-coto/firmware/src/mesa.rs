@@ -22,10 +22,10 @@ pub async fn read_mesa_dir(dir_set: Peri<'static, PIN_0>) {
                 };
                 match dir_in.get_level() {
                     embassy_rp::gpio::Level::High => {
-                        DIR_REQ_SIG.signal(crate::direction::Direction::Forward)
+                        DIR_REQ_SIG.signal(crate::pwm::Direction::Forward)
                     }
                     embassy_rp::gpio::Level::Low => {
-                        DIR_REQ_SIG.signal(crate::direction::Direction::Reverse)
+                        DIR_REQ_SIG.signal(crate::pwm::Direction::Reverse)
                     }
                 }
             }

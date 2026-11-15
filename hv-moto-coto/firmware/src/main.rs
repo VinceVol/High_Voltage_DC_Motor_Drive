@@ -3,13 +3,10 @@
 
 use defmt::info;
 use defmt_rtt as _;
-use embassy_rp::flash::{Async, Flash};
-use embassy_rp::gpio::Level::Low;
 use embassy_rp::gpio::{Input, Output};
-use embassy_sync::mutex::Mutex;
 use hv_moto_coto::autotune::atune_btn_run;
 use hv_moto_coto::motor::run_motor;
-use hv_moto_coto::{adc_runner, cap_precharge, direction, mesa};
+use hv_moto_coto::{adc_runner, cap_precharge, mesa};
 use panic_probe as _;
 
 use embassy_executor::Spawner;
@@ -17,7 +14,6 @@ use embassy_time::{Duration, Timer};
 
 use hv_moto_coto::bus_init::{flash_init, i2c_init, spi_init};
 use hv_moto_coto::speed_sense::run_hall;
-use rp_pac::io::vals::Gpio8ctrlFuncsel::{self, SIOB_PROC_8};
 
 #[embassy_executor::main]
 async fn main(spawner: Spawner) {
