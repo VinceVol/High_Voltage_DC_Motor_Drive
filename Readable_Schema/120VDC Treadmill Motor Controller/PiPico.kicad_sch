@@ -2237,6 +2237,19 @@
 		)
 		(uuid "8ccd853b-3539-4cc4-92d2-e327f2d82e5b")
 	)
+	(text "Voltage and Current sense are\ngrounded to lv_gnd so this should\ntoo or it acts weird"
+		(exclude_from_sim no)
+		(at 184.404 127.762 0)
+		(effects
+			(font
+				(size 0.762 0.762)
+				(thickness 0.254)
+				(bold yes)
+				(color 255 0 0 1)
+			)
+		)
+		(uuid "8d32a068-c9d2-43b2-a16e-ec8fa6799094")
+	)
 	(text "Trigger Low"
 		(exclude_from_sim no)
 		(at 50.292 104.394 0)
