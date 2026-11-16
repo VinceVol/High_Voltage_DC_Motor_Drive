@@ -3,7 +3,6 @@
 use core::future::Future;
 
 use core_logic::hall_math::{extract_rpm, HallError};
-use defmt::info;
 use embassy_futures::select::Either;
 use embassy_rp::{
     gpio::{AnyPin, Input},

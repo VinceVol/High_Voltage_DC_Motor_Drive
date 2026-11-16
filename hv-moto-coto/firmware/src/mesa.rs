@@ -1,6 +1,5 @@
 // Here to send communications from mesa over channels for the main loop to react to
 
-use defmt::info;
 use embassy_futures::select::{select, Either};
 use embassy_rp::{gpio::Input, peripherals::PIN_0, Peri};
 

@@ -6,14 +6,14 @@ use embassy_futures::select::{select3, Either3};
 use embassy_rp::{
     adc::{Adc, Channel, Config},
     bind_interrupts,
-    peripherals::{ADC, PIN_26, PIN_27, PIN_28},
+    peripherals::{ADC, PIN_27, PIN_28},
     Peri,
 };
 use embassy_time::{Duration, Ticker};
-use signal_filters::{MedianFilter5, Pt1Filter, Pt1Filterf32, Pt2Filterf32, SignalFilter};
+use signal_filters::{MedianFilter5, Pt2Filterf32, SignalFilter};
 
 use crate::{
-    AUTOTUNE_OVERRIDE, CHANGE_THRESHOLD, I_CORR_NUM, I_CORR_OFF, I_DEL_MS, I_INTR, I_WATCH,
+    AUTOTUNE_OVERRIDE, CHANGE_THRESHOLD, I_CORR_NUM, I_CORR_OFF, I_INTR, I_WATCH,
     MAX_SPINDLE_SPEED, MESA_MON_DEL_MS, RPM_REQ_SIG, V_CORR_NUM, V_CORR_OFF, V_DEL_MS, V_WATCH,
 };
 

@@ -1,16 +1,12 @@
 //Looking for this to be a relatively portable piece of code that allows for easy
 // spi bus generation and defines some types for spi device calls
 
-use core::cell::RefCell;
-
 use embassy_rp::{
     bind_interrupts,
     flash::Flash,
-    gpio::AnyPin,
     i2c::{self, I2c, SclPin, SdaPin},
-    interrupt::typelevel::I2C0_IRQ,
     peripherals::{DMA_CH0, DMA_CH1, DMA_CH2, FLASH, I2C1, SPI1},
-    spi::{self, Async, ClkPin, Instance, MisoPin, Mode, MosiPin, Spi},
+    spi::{self, Async, ClkPin, MisoPin, MosiPin, Spi},
     Peri,
 };
 use static_cell::StaticCell;

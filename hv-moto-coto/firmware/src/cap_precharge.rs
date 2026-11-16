@@ -2,7 +2,6 @@
 // watch the cap at the voltage and wait till they reach some threshold before closing Q5
 
 use defmt::info;
-use embassy_rp::{gpio::Output, peripherals::PIN_20, Peri};
 
 use crate::{CAP_PRE_STATE_SIG, V_PRECH_THRESH, V_WATCH};
 

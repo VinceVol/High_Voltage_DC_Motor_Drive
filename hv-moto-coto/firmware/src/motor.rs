@@ -2,14 +2,13 @@
 // I think this should include the PID bits but I haven't fully decided on the best way to structure this
 
 use core_logic::interpolation::{interpolate, interpolate_flt};
-use defmt::info;
 use embassy_rp::{
     flash::{Async, Flash},
     gpio::Output,
     peripherals::{FLASH, PIN_1, PIN_20},
     Peri,
 };
-use embassy_sync::{blocking_mutex::raw::CriticalSectionRawMutex, mutex::Mutex, watch::Receiver};
+use embassy_sync::{blocking_mutex::raw::CriticalSectionRawMutex, mutex::Mutex};
 use embassy_time::{Duration, Ticker, Timer};
 
 use crate::{
@@ -40,7 +39,7 @@ pub async fn run_motor(
 
     //enable the drives
     // TODO Move this to a safety circuit TODO
-    let dr_en = Output::new(dig_drive_en, embassy_rp::gpio::Level::High);
+    let _dr_en = Output::new(dig_drive_en, embassy_rp::gpio::Level::High);
 
     //Setup PID components
     let mut rpm_stpt: u16 = 0; //Representing the rpm goal

@@ -50,6 +50,7 @@ pub static I_CORR_NUM: f32 = 23.777; //Correction factor for the current sense/ 
 pub static I_CORR_OFF: Mutex<CriticalSectionRawMutex, f32> = Mutex::new(-12.0); //Current offset from zero in the current sense loop. Calibrate when motor off
 pub static I_DEL_MS: u64 = 50; //how often should we even check the current
 pub static I_INTR: Signal<CriticalSectionRawMutex, u16> = Signal::new();
+pub mod roll_current;
 
 //Voltage sense
 pub static V_WATCH: Watch<CriticalSectionRawMutex, i64, 5> = Watch::new(); //Voltage Readout of caps
