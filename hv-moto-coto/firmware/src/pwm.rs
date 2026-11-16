@@ -121,7 +121,7 @@ fn PWM_IRQ_WRAP_0() {
     //If its one of the H bridge slices then check whether we've hit the 1ms count
     let cur_cnt = PWM_INT_CNT.load(Relaxed);
 
-    if cur_cnt >= 81 {
+    if cur_cnt >= 5 {
         //reset the count
         PWM_INT_CNT.store(0, Relaxed);
 

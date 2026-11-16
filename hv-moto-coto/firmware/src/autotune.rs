@@ -11,6 +11,8 @@ use embassy_rp::{
 };
 use embassy_sync::{blocking_mutex::raw::CriticalSectionRawMutex, mutex::Mutex, watch::Receiver};
 use embassy_time::{Duration, Instant, Timer};
+use num_traits::float::Float;
+use rp_pac::i2c::vals::Speed::STANDARD;
 
 use crate::{
     speed_sense::{double_tap, HallRpm},
@@ -46,6 +48,7 @@ impl Default for PidConfig {
 const SECTOR_SIZE: u32 = 4 * 1024; //Size allocated for this struct
 const STORAGE_OFFSET: u32 = 0; //offset from the CONFIG_START
 const FLASH_CHECK: [u8; 8] = *b"PidConfi";
+const STND_DEV_LNGTH: usize = 50;
 
 impl PidConfig {
     pub async fn run_thy_tune<'a>(
@@ -99,6 +102,7 @@ impl PidConfig {
     async fn gen_pid_tbl<'a>(
         &mut self,
         rpm_raw_watch: &mut Receiver<'a, CriticalSectionRawMutex, u16, 100>,
+        i_watch: &mut Receiver<'a, CriticalSectionRawMutex, f32, 5>,
     ) {
         //disable pid controlled motor loop
         MOT_LOOP_EN.signal(false);
@@ -107,9 +111,15 @@ impl PidConfig {
         //Save the times, pwms and rpms into arrays to feed to a core logic fn that
         // will calculate the P & I terms
         let mut times: [u64; 2] = [0, 0]; //times surrounding the 0.6321K time constant
-        let mut rpms: [u64; 2] = [0, 0]; //rpms surrounding that same item -- interpolation needed
+                                          // let mut rpms: [u64; 2] = [0, 0]; //rpms surrounding that same item -- interpolation needed
+
+        //CURRENT -- use current to detect 1 time constant
+        let mut rolling_current: [f32; STND_DEV_LNGTH] = [0.0; STND_DEV_LNGTH]; //50 samples should suffice for standard dev calc
+        let mut i_range: [f32; 2] = [0.0, 0.0]; //resulting steady state current
+
+        //Save pwm amount for lambda tuning
         let mut pwm_range: [u16; 2] = [0, 0]; //the setpoint start finish
-        let mut rpm_range: [u64; 2] = [0, 0]; //resulting steady state rpms
+                                              // let mut rpm_range: [u64; 2] = [0, 0]; //resulting steady state rpms
 
         //start pwm at zero and give the motor sufficient time to settle down
         PWM_WATCH.sender().send(0);
@@ -124,11 +134,27 @@ impl PidConfig {
             pwm_range.rotate_left(1);
             pwm_range[1] = pwm;
 
-            //move over rpm to make room for the finish (the last one's finish is the new ones start)
-            rpm_range.rotate_left(1);
+            //move over current to make room for the finish (the last one's finish is the new ones start)
+            i_range.rotate_left(1);
 
             //find the other end of the rpm range
             PWM_WATCH.sender().send(pwm_range[1]);
+            let mut ii = 0;
+            loop {
+                rolling_current.rotate_left(1);
+                *rolling_current.last().unwrap() = i_watch.changed().await;
+                if ii < STND_DEV_LNGTH {
+                    continue;
+                }
+                let mean = rolling_current.iter().sum::<f32>() / STND_DEV_LNGTH as f32;
+                let xi_u = rolling_current
+                    .iter()
+                    .map(|xi| (*xi - mean).powf(2.0))
+                    .sum::<f32>();
+
+                break;
+                ii += 1;
+            }
             rpm_range[1] = double_tap(rpm_raw_watch).await as u64;
 
             //Go back to the starting line

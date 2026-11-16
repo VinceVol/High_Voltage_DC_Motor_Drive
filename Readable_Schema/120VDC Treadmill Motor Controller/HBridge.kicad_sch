@@ -2868,7 +2868,7 @@
 		)
 		(uuid "74548294-f1a3-429c-8aad-f646d6e294f9")
 	)
-	(text "100ns Delay"
+	(text "470ns Delay"
 		(exclude_from_sim no)
 		(at 56.134 127.254 0)
 		(effects
@@ -2878,7 +2878,7 @@
 		)
 		(uuid "b3f7f0ee-3ea5-4052-b3e0-1f7d4f3c0407")
 	)
-	(text "100ns Delay"
+	(text "470ns Delay"
 		(exclude_from_sim no)
 		(at 239.776 127.254 0)
 		(effects
@@ -9189,7 +9189,7 @@
 				)
 			)
 		)
-		(property "Value" "10K"
+		(property "Value" "47K"
 			(at 236.22 134.62 90)
 			(effects
 				(font
@@ -13781,7 +13781,7 @@
 				)
 			)
 		)
-		(property "Value" "10K"
+		(property "Value" "47K"
 			(at 59.69 134.62 90)
 			(effects
 				(font

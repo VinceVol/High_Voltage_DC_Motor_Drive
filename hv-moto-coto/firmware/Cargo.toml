@@ -22,6 +22,8 @@ embassy-sync = { version = "0.8.0", features = ["defmt"] }
 embassy-futures = { version = "0.1.2", features = ["defmt"] }
 bytemuck = { version = "1.25.2", features = ["derive"] }
 rp-pac = { version = "7.0.0", features = ["rp235x", "defmt"] }
+signal-filters = "0.1.17"
+libm = "0.2.16"
 
 # cargo build/run
 [profile.dev]

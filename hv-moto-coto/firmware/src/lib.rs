@@ -46,8 +46,8 @@ pub static SAFETY_WATCH: Watch<CriticalSectionRawMutex, ControllerCond, 5> = Wat
 pub mod adc_runner;
 // Current sense
 pub static I_WATCH: Watch<CriticalSectionRawMutex, f32, 5> = Watch::new(); //Current Sense
-pub static I_CORR_NUM: f32 = 32.52; //Correction factor for the current sense/ tune on bench
-pub static I_CORR_OFF: Mutex<CriticalSectionRawMutex, f32> = Mutex::new(-16.375); //Current offset from zero in the current sense loop. Calibrate when motor off
+pub static I_CORR_NUM: f32 = 23.777; //Correction factor for the current sense/ tune on bench
+pub static I_CORR_OFF: Mutex<CriticalSectionRawMutex, f32> = Mutex::new(-12.0); //Current offset from zero in the current sense loop. Calibrate when motor off
 pub static I_DEL_MS: u64 = 50; //how often should we even check the current
 pub static I_INTR: Signal<CriticalSectionRawMutex, u16> = Signal::new();
 

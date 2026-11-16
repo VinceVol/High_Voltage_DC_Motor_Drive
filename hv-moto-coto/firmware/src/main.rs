@@ -39,7 +39,7 @@ async fn main(spawner: Spawner) {
     // let mut led = Output::new(p.PIN_20, Level::Low);
     let _ = spawner.spawn(run_hall(p.PIN_6.into()).unwrap());
     info!("Hall sense initiated");
-    let _ = spawner.spawn(adc_runner::adc_runner(p.PIN_26, p.PIN_28, p.PIN_27, p.ADC).unwrap());
+    let _ = spawner.spawn(adc_runner::adc_runner(p.PIN_28, p.PIN_27, p.ADC).unwrap());
     info!("adc runner initiated");
     let _ = spawner.spawn(cap_precharge::run_precharge().unwrap());
     info!("cap precharge initiated");
