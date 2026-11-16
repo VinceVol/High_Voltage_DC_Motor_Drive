@@ -1,4 +1,4 @@
-use core::fmt::{self, Formatter};
+use core::fmt::{self};
 
 #[derive(Debug, Copy, Clone, PartialEq, Eq, defmt::Format)]
 pub enum HallError {
