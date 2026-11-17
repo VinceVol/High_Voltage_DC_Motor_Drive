@@ -53,8 +53,10 @@ async fn main(spawner: Spawner) {
             p.PIN_3,
             p.PIN_14,
             p.PIN_15,
+            p.PIN_9,
             p.PWM_SLICE1,
             p.PWM_SLICE7,
+            p.PWM_SLICE4,
         )
         .unwrap(),
     );

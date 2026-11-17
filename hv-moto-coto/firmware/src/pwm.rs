@@ -5,14 +5,14 @@ use core::sync::atomic::Ordering::Relaxed;
 use defmt::{info, Format};
 use embassy_rp::{
     interrupt::InterruptExt,
-    peripherals::{PIN_14, PIN_15, PIN_2, PIN_3, PWM_SLICE1, PWM_SLICE7},
+    peripherals::{PIN_14, PIN_15, PIN_2, PIN_3, PIN_9, PWM_SLICE1, PWM_SLICE4, PWM_SLICE7},
     pwm::{Config, Pwm, SetDutyCycle},
     Peri,
 };
 use embassy_time::{block_for, Duration};
 use rp_pac::interrupt;
 
-use crate::{DIR_WATCH, I_INTR, I_REF_RATE_US, PWM_FREQ, PWM_INT_CNT, PWM_PERC, PWM_WATCH};
+use crate::{DIR_WATCH, I_INTR, I_REF_RATE_US, PWM_FREQ, PWM_INT_CNT, PWM_WATCH};
 
 //Not sure if I should really do anything more than this for the dir_pin
 #[embassy_executor::task]
@@ -21,8 +21,10 @@ pub async fn run_pwm(
     dir_p_b: Peri<'static, PIN_3>,
     pwm_p_b: Peri<'static, PIN_14>,
     dir_p_a: Peri<'static, PIN_15>,
+    cntr_p: Peri<'static, PIN_9>,
     pwm_slice_1: Peri<'static, PWM_SLICE1>,
     pwm_slice_7: Peri<'static, PWM_SLICE7>,
+    pwm_slice_4: Peri<'static, PWM_SLICE4>,
 ) {
     //watch direction and pwm
     let mut dir_watch = DIR_WATCH.receiver().unwrap();
@@ -48,19 +50,30 @@ pub async fn run_pwm(
     config.compare_b = 0;
     config.invert_b = true;
 
+    rp_pac::PWM.en().write(|w| {
+        w.set_ch7(true);
+        w.set_ch1(true);
+        w.set_ch4(true);
+    });
+
     let mut left_leg = Pwm::new_output_ab(pwm_slice_1, pwm_p_a, dir_p_b, config.clone());
     let mut right_leg = Pwm::new_output_ab(pwm_slice_7, pwm_p_b, dir_p_a, config.clone());
 
+    //CENTER ALIGNED INTERRUPT FOR ADC ---------------------------------------
+    let mut cent_align = Pwm::new_output_b(pwm_slice_4, cntr_p, config.clone());
+    rp_pac::PWM.irq0_inte().modify(|w| {
+        w.set_ch4(true);
+    });
+    //CENTER ALIGNED INTERRUPT FOR ADC ---------------------------------------
+
     //Make sure we have direction instruction to start
-    // TODO add a loop here to make sure we request and receive a direction
     let mut dir = dir_watch.get().await;
     let mut pwm = 0;
     loop {
         //only do something if a new pwm instruction is givin
         let new_pwm = pwm_watch.changed().await;
         if new_pwm != pwm {
-            pwm = new_pwm;
-            PWM_PERC.store(new_pwm as u32, Relaxed);
+            pwm = new_pwm.clamp(0, 1000);
         } else {
             continue;
         }
@@ -71,31 +84,19 @@ pub async fn run_pwm(
             None => (),
         }
 
-        //pwm the proper direction and turn off the pwm to the other direciton
-        pwm = if pwm > 1000 { 1000 } else { pwm };
+        //Update center aligned pwm "-100" there to make up for some of the lag when reading the adc
+        cent_align
+            .set_duty_cycle_fraction((pwm - 100).clamp(0, 1000), 2000)
+            .unwrap();
+
+        //Adjust H bridge PWM signals
         match dir {
             Direction::Forward => {
-                //INTERRUPT SETUP --------
-                // Enable IRQ slice 1 in foward
-                rp_pac::PWM.irq0_inte().modify(|w| {
-                    w.set_ch1(true);
-                    w.set_ch7(false);
-                });
-                //INTERRUPT SETUP --------
-
                 right_leg.set_duty_cycle_fully_off().unwrap();
                 // defmt::info!("setting pwm_a to {}", pwm);
                 left_leg.set_duty_cycle_fraction(pwm, 1000).unwrap();
             }
             Direction::Reverse => {
-                //INTERRUPT SETUP --------
-                // Enable IRQ for slice 7 in reverse
-                rp_pac::PWM.irq0_inte().modify(|w| {
-                    w.set_ch1(false);
-                    w.set_ch7(true);
-                });
-                //INTERRUPT SETUP --------
-
                 left_leg.set_duty_cycle_fully_off().unwrap();
                 // defmt::info!("setting pwm_a to {}", pwm);
                 right_leg.set_duty_cycle_fraction(pwm, 1000).unwrap();
@@ -110,9 +111,6 @@ pub enum Direction {
     Reverse,
 }
 
-//takes time to read adc and fire the interrupt so subtracting that const based on logic analyzer readings
-const ADC_LAG: u64 = 210 + 2500; //ns
-
 //Current pwm frequency should be ~ 20khz, we want the adc read for current sense
 // to be aligned on the center of the pwm with a 1ms refresh rate which should
 // equate to every 80 cycles
@@ -124,16 +122,6 @@ fn PWM_IRQ_WRAP_0() {
     if cur_cnt >= ((I_REF_RATE_US * PWM_FREQ) / 1000000) as u16 {
         //reset the count
         PWM_INT_CNT.store(0, Relaxed);
-
-        //wait for halfway through the cycle
-        let delay = (PWM_PERC.load(Relaxed) * 25) as u64;
-        // FIX -- need to setup another interuupt so delay isn't blocking--------
-        block_for(Duration::from_nanos(if delay <= ADC_LAG {
-            ADC_LAG
-        } else {
-            delay - ADC_LAG
-        }));
-        // FIX -- need to setup another interuupt so delay isn't blocking--------
 
         // --- 1. SET DEBUG PIN HIGH (GPIO 8) ---
         debug_high(8);

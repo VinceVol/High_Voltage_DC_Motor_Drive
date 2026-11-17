@@ -34,8 +34,6 @@ pub mod pwm;
 pub static PWM_FREQ: u64 = 20000; //20KHZ
 pub static PWM_WATCH: Watch<CriticalSectionRawMutex, u16, 5> = Watch::new();
 pub static PWM_INT_CNT: AtomicU16 = AtomicU16::new(0);
-pub static PWM_PERC: AtomicU32 = AtomicU32::new(0);
-// pub static PWM_FLOOR: AtomicI32 = AtomicI32::new(200); //pwm to avoid stall without load
 
 //Direction coms
 pub static DIR_WATCH: Watch<CriticalSectionRawMutex, Direction, 5> = Watch::new(); //The direction set by the motor loop for others to act on
