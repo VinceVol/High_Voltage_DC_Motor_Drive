@@ -12,7 +12,7 @@ use embassy_rp::{
 use embassy_time::{block_for, Duration};
 use rp_pac::interrupt;
 
-use crate::{DIR_WATCH, I_INTR, PWM_INT_CNT, PWM_PERC, PWM_WATCH};
+use crate::{DIR_WATCH, I_INTR, I_REF_RATE_US, PWM_FREQ, PWM_INT_CNT, PWM_PERC, PWM_WATCH};
 
 //Not sure if I should really do anything more than this for the dir_pin
 #[embassy_executor::task]
@@ -43,8 +43,8 @@ pub async fn run_pwm(
     // leg fet. The gate drivers have built in dead time to help us out
     // Left Leg
     let mut config = Config::default();
-    config.top = 7499;
-    config.compare_a = 0; // 50% duty cycle
+    config.top = ((PWM_FREQ * 3) / 8 - 1) as u16;
+    config.compare_a = 0;
     config.compare_b = 0;
     config.invert_b = true;
 
@@ -121,17 +121,19 @@ fn PWM_IRQ_WRAP_0() {
     //If its one of the H bridge slices then check whether we've hit the 1ms count
     let cur_cnt = PWM_INT_CNT.load(Relaxed);
 
-    if cur_cnt >= 5 {
+    if cur_cnt >= ((I_REF_RATE_US * PWM_FREQ) / 1000000) as u16 {
         //reset the count
         PWM_INT_CNT.store(0, Relaxed);
 
         //wait for halfway through the cycle
         let delay = (PWM_PERC.load(Relaxed) * 25) as u64;
+        // FIX -- need to setup another interuupt so delay isn't blocking--------
         block_for(Duration::from_nanos(if delay <= ADC_LAG {
             ADC_LAG
         } else {
             delay - ADC_LAG
         }));
+        // FIX -- need to setup another interuupt so delay isn't blocking--------
 
         // --- 1. SET DEBUG PIN HIGH (GPIO 8) ---
         debug_high(8);

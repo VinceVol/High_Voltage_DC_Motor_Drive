@@ -17,6 +17,8 @@ pub mod motor;
 pub static RPM_REQ_SIG: Signal<CriticalSectionRawMutex, u16> = Signal::new(); //Voltage Readout of caps
 pub static DIR_REQ_SIG: Signal<CriticalSectionRawMutex, Direction> = Signal::new(); //Voltage Readout of caps
 pub static MOT_LOOP_EN: Signal<CriticalSectionRawMutex, bool> = Signal::new(); //during autotune we dont want motor to own the pwm
+pub static I_REF_RATE_US: u64 = (5 * 1000000) / PWM_FREQ; //denom is 20KHZ 5 is measureing i every 5 pwm
+pub static RPM_REF_RATE_MS: u64 = 20;
 
 //Rpms coms
 pub mod speed_sense;
@@ -29,6 +31,7 @@ pub static RPM_RAW_WATCH: Watch<CriticalSectionRawMutex, u16, 100> = Watch::new(
 
 //PWM coms to gate driver -- ie directly related to motor speed
 pub mod pwm;
+pub static PWM_FREQ: u64 = 20000; //20KHZ
 pub static PWM_WATCH: Watch<CriticalSectionRawMutex, u16, 5> = Watch::new();
 pub static PWM_INT_CNT: AtomicU16 = AtomicU16::new(0);
 pub static PWM_PERC: AtomicU32 = AtomicU32::new(0);
