@@ -20,7 +20,7 @@ pub static MOT_LOOP_EN: Signal<CriticalSectionRawMutex, bool> = Signal::new(); /
 
 //Rpms coms
 pub mod speed_sense;
-pub static MAX_SPINDLE_SPEED: u16 = 1000; //This should match the linuxCNC config so they scale the same
+pub static MAX_SPINDLE_SPEED: u16 = 1800; //This should match the linuxCNC config so they scale the same
 pub static RPM_BFR_DIR_SWTCH: u16 = 100;
 pub static RPM_FILT_WATCH: Watch<CriticalSectionRawMutex, HallRpm, 100> = Watch::new(); //The real rpm uploads here
 pub static HALL_CNT: usize = 4; //how many samples needed for rpm feedback
@@ -73,7 +73,7 @@ pub static CAP_PRE_STATE_SIG: Signal<CriticalSectionRawMutex, PrechargeState> = 
 pub mod autotune;
 pub static AUTOTUNE_OVERRIDE: Watch<CriticalSectionRawMutex, bool, 5> = Watch::new(); //tells mesa loop to stop requesting direction and rpm
 pub static FLOOR_TBL_CNT: usize = 24; //Number of items in the floor lookup table for pwm to rpm
-pub static PI_TBL_CNT: usize = 6; //Number of items in the PID lookup table
+pub static PI_TBL_CNT: usize = 3; //Number of items in the PID lookup table
 
 //FLASH --------------------------------------------------------------------
 //We created the variable CONFIG_START in the memory.x file to call out the memory location of the PID config

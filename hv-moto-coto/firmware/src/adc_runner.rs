@@ -65,7 +65,7 @@ pub async fn adc_runner(
                 let filtered_current = i_lowpass_filter.update(despooled);
 
                 I_WATCH.sender().send(filtered_current);
-                info!(",Current Sense,  {},{},", filtered_current, raw_current);
+                // info!(",Current Sense,  {},{},", filtered_current, raw_current);
             }
             Either3::Second(_) => {
                 match adc_v_in.read(&mut voltage_in).await {

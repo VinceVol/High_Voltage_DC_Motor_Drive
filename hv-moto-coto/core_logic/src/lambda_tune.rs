@@ -11,14 +11,14 @@ pub fn find_pi(
     time_const_cur: f32,
 ) -> (f32, f32) {
     //interpolate the time it took to get to 0.6321 the RPM we wanted to get thou
-    let thou = interpolate_flt::<f32, 2>(&currents, &times, time_const_cur);
+    let thou = interpolate_flt::<f32, 2>(&currents, &times, time_const_cur) / 1000000.0; //devision to convert us back to seconds
 
     //Lambda is our one custom parameter that sets the general response speed
     let lambda = multiplier * thou;
 
     //With the two above we can get our PI parameters
     let kp = thou / (k * lambda);
-    let ki = kp / thou;
+    let ki = kp / (thou * 10.0);
 
     return (kp, ki);
 }

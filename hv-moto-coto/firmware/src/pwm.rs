@@ -84,7 +84,7 @@ pub async fn run_pwm(
                 //INTERRUPT SETUP --------
 
                 right_leg.set_duty_cycle_fully_off().unwrap();
-                info!("setting pwm_a to {}", pwm);
+                // defmt::info!("setting pwm_a to {}", pwm);
                 left_leg.set_duty_cycle_fraction(pwm, 1000).unwrap();
             }
             Direction::Reverse => {
@@ -97,7 +97,7 @@ pub async fn run_pwm(
                 //INTERRUPT SETUP --------
 
                 left_leg.set_duty_cycle_fully_off().unwrap();
-                info!("setting pwm_a to {}", pwm);
+                // defmt::info!("setting pwm_a to {}", pwm);
                 right_leg.set_duty_cycle_fraction(pwm, 1000).unwrap();
             }
         }

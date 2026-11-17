@@ -45,8 +45,7 @@ impl Default for PidConfig {
 const SECTOR_SIZE: u32 = 4 * 1024; //Size allocated for this struct
 const STORAGE_OFFSET: u32 = 0; //offset from the CONFIG_START
 const FLASH_CHECK: [u8; 8] = *b"PidConfi";
-const STDY_STTE_CRRNT: f32 = 0.025; // 25 mA marks the steady state current during autotune
-const ROLL_BUF_LNG: usize = 40;
+const ROLL_BUF_LNG: usize = 400;
 
 impl PidConfig {
     pub async fn run_thy_tune<'a>(
@@ -121,13 +120,15 @@ impl PidConfig {
 
         //start pwm at zero and give the motor sufficient time to settle down
         PWM_WATCH.sender().send(0);
-        Timer::after_secs(3).await;
 
         //rip through divisions of PI_TBL_CNT pwm signals
         for (i, pwm) in (0..PI_TBL_CNT)
             .map(|i| (1000 as f64 * i as f64 / (PI_TBL_CNT as f64 - 1.0)) as u16)
             .enumerate()
         {
+            rolling_current.wait_ms(1000, i_watch).await;
+            info!("A");
+            rolling_current.wait_till_steady(0.05, i_watch).await;
             //Set the pwm range
             pwm_range.rotate_left(1);
             pwm_range[1] = pwm;
@@ -137,11 +138,9 @@ impl PidConfig {
 
             //find the other end of the current range
             PWM_WATCH.sender().send(pwm_range[1]);
-
-            //Wait till the current is steady
-            rolling_current
-                .wait_till_steady(STDY_STTE_CRRNT, i_watch)
-                .await;
+            rolling_current.wait_ms(1000, i_watch).await;
+            info!("B");
+            rolling_current.wait_till_steady(0.05, i_watch).await;
             i_range[1] = rolling_current.mean();
 
             //set the rpm range for lookup table
@@ -150,9 +149,8 @@ impl PidConfig {
 
             //Go back to the starting line
             PWM_WATCH.sender().send(pwm_range[0]);
-            rolling_current
-                .wait_till_steady(STDY_STTE_CRRNT, i_watch)
-                .await; //pause for steady state before firing things off
+            rolling_current.wait_ms(3000, i_watch).await;
+            info!("C");
 
             //Set the current goal for 1 time constant
             let i_goal = (0.6321 * (i_range[1] - i_range[0])) + i_range[0];
@@ -167,25 +165,33 @@ impl PidConfig {
                 //Once rpm updates update the right slot with the new values
                 times[1] = timer.elapsed().as_micros() as f32;
 
-                info!("new currents {:?}", rolling_current);
-                info!("new times {}", times);
+                // info!("new currents {:?}", rolling_current.last_two());
+                // info!("new times {}", times);
+                // info!(
+                //     "goal: {} current crossed: {}, i_range:{}",
+                //     i_goal,
+                //     rolling_current.crossed(i_goal),
+                //     i_range
+                // );
                 //Once in the right rpm range surrounding 1 time const
                 if rolling_current.crossed(i_goal) && rolling_current.slope() <= 0.0 {
                     // calculate k = dRPM/dPWM
-                    let k = (i_range[1] - i_range[0]) / (pwm_range[1] - pwm_range[0]) as f32;
+                    let k = (i_range[1] - i_range[0])
+                        / ((pwm_range[1] - pwm_range[0]) as f32 / 1000f32);
 
+                    info!("k = {}, i_range: {}, pwm_range: {}", k, i_range, pwm_range);
                     //determine P and I components
-                    let (kp, ki) = find_pi(1.0, k, times, rolling_current.last_two(), i_goal);
+                    let (kp, ki) = find_pi(15.0, k, times, rolling_current.last_two(), i_goal);
 
                     //Terminal info ------------------
-                    info!(
-                        "rpm_range: {:?}\npwm_range: {:?}\nk = {}\ncurrents = {:?}\ntimes = {:?}",
-                        rpm_range,
-                        pwm_range,
-                        k,
-                        rolling_current.last_two(),
-                        times
-                    );
+                    // info!(
+                    //     "rpm_range: {:?}\npwm_range: {:?}\nk = {}\ncurrents = {:?}\ntimes = {:?}",
+                    //     rpm_range,
+                    //     pwm_range,
+                    //     k,
+                    //     rolling_current.last_two(),
+                    //     times
+                    // );
                     info!(
                         "For {} -> {}:\nkp = {} \nki = {}",
                         rpm_range[0], rpm_range[1], kp, ki
@@ -203,6 +209,11 @@ impl PidConfig {
                 }
             }
         }
+
+        //first and second kp ki should match
+        self.pi_table_rpm[0] = 0.0;
+        self.pi_table_p[0] = self.pi_table_p[1];
+        self.pi_table_i[0] = self.pi_table_i[1];
         MOT_LOOP_EN.signal(true);
     }
 

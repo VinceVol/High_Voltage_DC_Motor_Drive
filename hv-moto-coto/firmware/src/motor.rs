@@ -14,7 +14,7 @@ use embassy_time::{Duration, Ticker, Timer};
 use crate::{
     autotune::PidConfig, cap_precharge::PrechargeState, pwm::Direction, speed_sense::HallRpm,
     CAP_PRE_STATE_SIG, DIR_REQ_SIG, DIR_WATCH, FLASH_MUT_SIZE, MAX_SPINDLE_SPEED, MOT_LOOP_EN,
-    PWM_WATCH, RPM_BFR_DIR_SWTCH, RPM_FILT_WATCH, RPM_REQ_SIG,
+    PI_TBL_CNT, PWM_WATCH, RPM_BFR_DIR_SWTCH, RPM_FILT_WATCH, RPM_REQ_SIG,
 };
 
 #[embassy_executor::task]
@@ -64,7 +64,7 @@ pub async fn run_motor(
     };
 
     let mut rpm = 0;
-    let mut ticker = Ticker::every(Duration::from_millis(1)); //PID Refresh Rate
+    let mut ticker = Ticker::every(Duration::from_millis(50)); //PID Refresh Rate
     let mut prev_pwm_out = 0;
     loop {
         //check to make sure the autotune doesn't need the pwm signal
@@ -91,12 +91,12 @@ pub async fn run_motor(
             );
 
             //Update P and I components of motor_pid based on autotune interpolation
-            motor_pid.kp = interpolate_flt::<f32, 6>(
+            motor_pid.kp = interpolate_flt::<f32, PI_TBL_CNT>(
                 &pid_conf.pi_table_rpm,
                 &pid_conf.pi_table_p,
                 new_rpm_set as f32,
             );
-            motor_pid.ki = interpolate_flt::<f32, 6>(
+            motor_pid.ki = interpolate_flt::<f32, PI_TBL_CNT>(
                 &pid_conf.pi_table_rpm,
                 &pid_conf.pi_table_i,
                 new_rpm_set as f32,

@@ -1,4 +1,5 @@
 use embassy_sync::{blocking_mutex::raw::CriticalSectionRawMutex, watch::Receiver};
+use embassy_time::Instant;
 use libm::{powf, sqrtf};
 
 pub struct RollingCurrent<const N: usize> {
@@ -63,6 +64,17 @@ impl<'a, const N: usize> RollingCurrent<N> {
         }
     }
 
+    pub async fn wait_ms(
+        &mut self,
+        milli: u64,
+        i_watch: &mut Receiver<'a, CriticalSectionRawMutex, f32, 5>,
+    ) {
+        let timer = Instant::now();
+        while timer.elapsed().as_millis() < milli {
+            self.update(i_watch).await;
+            //if the standard deviation is less than steady state current const
+        }
+    }
     //Need to make sure the current reading isn't the peak inrush
     pub fn slope(&self) -> f32 {
         let a = (0..self.buffer.len()).map(|x| x as f32);
