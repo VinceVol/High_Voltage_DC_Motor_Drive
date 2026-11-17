@@ -51,6 +51,7 @@ pub static I_CORR_OFF: Mutex<CriticalSectionRawMutex, f32> = Mutex::new(-12.0); 
 pub static I_DEL_MS: u64 = 50; //how often should we even check the current
 pub static I_INTR: Signal<CriticalSectionRawMutex, u16> = Signal::new();
 pub mod roll_current;
+pub static MAX_CURRENT_AMPS: f32 = 2.0;
 
 //Voltage sense
 pub static V_WATCH: Watch<CriticalSectionRawMutex, i64, 5> = Watch::new(); //Voltage Readout of caps

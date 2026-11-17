@@ -2,6 +2,7 @@
 // I think this should include the PID bits but I haven't fully decided on the best way to structure this
 
 use core_logic::interpolation::{interpolate, interpolate_flt};
+use embassy_futures::select;
 use embassy_rp::{
     flash::{Async, Flash},
     gpio::Output,
@@ -13,10 +14,12 @@ use embassy_time::{Duration, Ticker, Timer};
 
 use crate::{
     autotune::PidConfig, cap_precharge::PrechargeState, pwm::Direction, speed_sense::HallRpm,
-    CAP_PRE_STATE_SIG, DIR_REQ_SIG, DIR_WATCH, FLASH_MUT_SIZE, MAX_SPINDLE_SPEED, MOT_LOOP_EN,
-    PI_TBL_CNT, PWM_WATCH, RPM_BFR_DIR_SWTCH, RPM_FILT_WATCH, RPM_REQ_SIG,
+    CAP_PRE_STATE_SIG, DIR_REQ_SIG, DIR_WATCH, FLASH_MUT_SIZE, I_WATCH, MAX_CURRENT_AMPS,
+    MAX_SPINDLE_SPEED, MOT_LOOP_EN, PI_TBL_CNT, PWM_WATCH, RPM_BFR_DIR_SWTCH, RPM_FILT_WATCH,
+    RPM_REQ_SIG,
 };
 
+const K_EMF_SCALE: f32 = 0.0;
 #[embassy_executor::task]
 pub async fn run_motor(
     q5_en: Peri<'static, PIN_20>,
@@ -42,20 +45,43 @@ pub async fn run_motor(
     let _dr_en = Output::new(dig_drive_en, embassy_rp::gpio::Level::High);
 
     //Setup PID components
-    let mut rpm_stpt: u16 = 0; //Representing the rpm goal
-    let mut rpm_watch = RPM_FILT_WATCH.receiver().unwrap(); //Direct feed from the hall sensor
-    let pwm_watch = PWM_WATCH.sender();
+    // direction
     let dir_watch = DIR_WATCH.sender();
     let mut dir_stpt: Direction = Direction::Forward;
     dir_watch.send(dir_stpt); //default to forward
 
+    //current
+    let mut i_watch = I_WATCH.receiver().unwrap();
+    let mut current = 0.0; //Tracking current measurement pulling from I_WATCH
+    let mut current_ticker = Ticker::every(Duration::from_millis(1)); //PID Refresh Rate current loop
+    let mut target_current_norm = 0.0;
+    let mut current_pid_output = 0.0;
+
+    //rpm/speed
+    let mut rpm_stpt: u16 = 0; //Representing the rpm goal
+    let mut rpm_watch = RPM_FILT_WATCH.receiver().unwrap(); //Direct feed from the hall sensor
+    let mut rpm = 0; //Tacking speed measurement pulling from RPM_FILT_WATCH
+    let mut speed_ticker = Ticker::every(Duration::from_millis(50)); //PID Refresh Rate speed loop
+
+    //pwm output
+    let pwm_watch = PWM_WATCH.sender();
+    let mut prev_pwm_out = 0; //PID Loop output each cycle
+
+    //AUTOTUNE
     //load up the flash saved autotune parameters
     let pid_conf = PidConfig::load(flash_mut).await.unwrap();
     let mut mot_en = true; //Watch the motor enabled signal as autotune may need to own the pwm
     let mut pwm_floor = 0; //The lowest rpm we should output, based on the lookup table
 
-    //Load the parameters into the pid helper struct
-    let mut motor_pid = Pid {
+    //Load the parameters into the current/speed pid helper struct
+    let mut current_pid = Pid {
+        kp: 0.35,
+        ki: 0.2,
+        kd: 0.0,
+        integral: 0.0,
+        prev_error: 0.0,
+    };
+    let mut speed_pid = Pid {
         kp: 0.35,
         ki: 0.2,
         kd: 0.0,
@@ -63,14 +89,14 @@ pub async fn run_motor(
         prev_error: 0.0,
     };
 
-    let mut rpm = 0;
-    let mut ticker = Ticker::every(Duration::from_millis(50)); //PID Refresh Rate
-    let mut prev_pwm_out = 0;
     loop {
         //check to make sure the autotune doesn't need the pwm signal
         if let Some(sig) = MOT_LOOP_EN.try_take() {
             mot_en = sig;
-            ticker.reset(); //reset the ticker to avoid weird delay buildups from missed ticks
+
+            //reset the tickers to avoid weird delay buildups from missed ticks
+            current_ticker.reset();
+            speed_ticker.reset();
         }
 
         //Don't let motor_en block the rest of the firmware
@@ -91,18 +117,20 @@ pub async fn run_motor(
             );
 
             //Update P and I components of motor_pid based on autotune interpolation
-            motor_pid.kp = interpolate_flt::<f32, PI_TBL_CNT>(
-                &pid_conf.pi_table_rpm,
-                &pid_conf.pi_table_p,
-                new_rpm_set as f32,
-            );
-            motor_pid.ki = interpolate_flt::<f32, PI_TBL_CNT>(
-                &pid_conf.pi_table_rpm,
-                &pid_conf.pi_table_i,
-                new_rpm_set as f32,
-            );
+            // TODO -- FIX AUTOTUNE-----------------------------------------------
+            // motor_pid.kp = interpolate_flt::<f32, PI_TBL_CNT>(
+            //     &pid_conf.pi_table_rpm,
+            //     &pid_conf.pi_table_p,
+            //     new_rpm_set as f32,
+            // );
+            // motor_pid.ki = interpolate_flt::<f32, PI_TBL_CNT>(
+            //     &pid_conf.pi_table_rpm,
+            //     &pid_conf.pi_table_i,
+            //     new_rpm_set as f32,
+            // );
 
-            pwm_watch.send(pwm_floor); //start off using the lookup table speed
+            // pwm_watch.send(pwm_floor); //start off using the lookup table speed
+            // TODO -- FIX AUTOTUNE-----------------------------------------------
         }
 
         //Direction change reaction
@@ -131,26 +159,52 @@ pub async fn run_motor(
 
             //IMPORTANT -- without resetting the ticker it loops at full speed blocking all other tasks until it gets back to the current ticker
             // without this you get ~1s delay between the low rpm + current draw + direction pin switch and the pwm pin firing
-            ticker.reset();
+            current_ticker.reset();
+            speed_ticker.reset();
         }
 
         // Wait for dt to hit hopefully a new rpm was sent out
         // ovtherwise use previous
-        ticker.next().await;
-        if let Some(HallRpm::Good(new_rpm)) = rpm_watch.try_changed() {
-            rpm = new_rpm;
+        match select::select(speed_ticker.next(), current_ticker.next()).await {
+            select::Either::First(_) => {
+                //RPM LOOP
+                if let Some(HallRpm::Good(new_rpm)) = rpm_watch.try_changed() {
+                    rpm = new_rpm;
+                }
+
+                //update pwm based on rpm and setpnt /normalize at the same time
+                target_current_norm = speed_pid
+                    .update(
+                        rpm_stpt as f32 / MAX_SPINDLE_SPEED as f32,
+                        rpm as f32 / MAX_SPINDLE_SPEED as f32,
+                        0.02, //20ms refresh rate
+                        target_current_norm >= 1.0 || target_current_norm <= 0.0,
+                    )
+                    .clamp(0.0, 1.0);
+            }
+            select::Either::Second(_) => {
+                //CURRENT LOOP
+                if let Some(new_current) = i_watch.try_changed() {
+                    current = new_current;
+                }
+                let current_measured_norm = current / MAX_CURRENT_AMPS;
+
+                current_pid_output = current_pid.update(
+                    target_current_norm,
+                    current_measured_norm,
+                    0.001, // Constant 1ms dt
+                    prev_pwm_out >= 1000 || prev_pwm_out <= 0,
+                );
+            }
         }
 
-        //update pwm based on rpm and setpnt
-        let pid_output = motor_pid.update(
-            rpm_stpt as f32 / MAX_SPINDLE_SPEED as f32,
-            rpm as f32 / MAX_SPINDLE_SPEED as f32,
-            0.001,
-            prev_pwm_out >= 1000,
-        );
+        // Back-EMF Feed-Forward
+        let back_emf_ff = (rpm as f32 / MAX_SPINDLE_SPEED as f32) * K_EMF_SCALE;
+        let total_command = current_pid_output + back_emf_ff;
 
-        // Scale and clamp the normalized PID output to your 0-1000 PWM range
-        prev_pwm_out = (pid_output * 1000.0).clamp(0.0, 1000.0) as i32;
+        // Hardware PWM output scaling (0-1000)
+        let pwm_float = total_command * 1000.0;
+        prev_pwm_out = pwm_float.clamp(0.0, 1000.0) as i32;
 
         if rpm_stpt == 0 {
             prev_pwm_out = 0;
