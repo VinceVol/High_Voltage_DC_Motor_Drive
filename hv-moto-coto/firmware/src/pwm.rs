@@ -57,10 +57,13 @@ pub async fn run_pwm(
     });
 
     let mut left_leg = Pwm::new_output_ab(pwm_slice_1, pwm_p_a, dir_p_b, config.clone());
-    let mut right_leg = Pwm::new_output_ab(pwm_slice_7, pwm_p_b, dir_p_a, config.clone());
+    let mut right_leg = Pwm::new_output_ab(pwm_slice_7, pwm_p_b, dir_p_a, config);
 
     //CENTER ALIGNED INTERRUPT FOR ADC ---------------------------------------
-    let mut cent_align = Pwm::new_output_b(pwm_slice_4, cntr_p, config.clone());
+    let mut config_b = Config::default();
+    config_b.top = ((PWM_FREQ * 3) / 8 - 1) as u16;
+    config_b.compare_b = 0;
+    let mut cent_align = Pwm::new_output_b(pwm_slice_4, cntr_p, config_b);
     rp_pac::PWM.irq0_inte().modify(|w| {
         w.set_ch4(true);
     });
@@ -86,7 +89,7 @@ pub async fn run_pwm(
 
         //Update center aligned pwm "-100" there to make up for some of the lag when reading the adc
         cent_align
-            .set_duty_cycle_fraction((pwm - 100).clamp(0, 1000), 2000)
+            .set_duty_cycle_fraction((pwm as i32 - 100).clamp(0, 1000) as u16, 2000)
             .unwrap();
 
         //Adjust H bridge PWM signals
@@ -129,7 +132,7 @@ fn PWM_IRQ_WRAP_0() {
         // --- INSTANT ADC READ (PAC LEVEL) ---
         // 1. Select ADC input channel for PIN_26 (which is ADC channel 0)
         rp_pac::ADC.cs().modify(|w| {
-            // w.set_en(true); // Select channel 0 for pin 26
+            w.set_en(true); // Select channel 0 for pin 26
             w.set_ainsel(0);
             w.set_start_once(true); // Trigger a single conversion
         });
@@ -148,16 +151,9 @@ fn PWM_IRQ_WRAP_0() {
     } else {
         PWM_INT_CNT.fetch_add(1, Relaxed);
     }
-    // Check which slice triggered the wrap and clear its interrupt flag
-    let ints = rp_pac::PWM.irq0_ints().read();
 
-    if ints.ch1() {
-        rp_pac::PWM.intr().write(|w| w.set_ch1(true));
-    }
-
-    if ints.ch7() {
-        rp_pac::PWM.intr().write(|w| w.set_ch7(true));
-    }
+    //IMPORTANT RESET THE INTERRUPT
+    rp_pac::PWM.intr().write(|w| w.set_ch4(true));
 }
 
 // Define the SIO register base addresses as constants

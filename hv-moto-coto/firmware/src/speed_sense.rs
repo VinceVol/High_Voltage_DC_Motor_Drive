@@ -18,7 +18,7 @@ struct HallSense {
     speed_list: [u64; HALL_CNT],
 }
 
-#[derive(Clone, Copy)]
+#[derive(Clone, Copy, defmt::Format)]
 pub enum HallRpm {
     Good(u16),
     Bad(HallError),
@@ -39,10 +39,10 @@ pub async fn run_hall(hall_pin: Peri<'static, AnyPin>) {
             .send((60000000 / hall_sensor.speed_list[HALL_CNT - 1]) as u16);
 
         //For regular operation filter the data to make sure its clean
-        defmt::info!("rpm: {}", (60000000 / hall_sensor.speed_list[HALL_CNT - 1]));
-        RPM_FILT_WATCH
-            .sender()
-            .send(hall_sensor.populate(&mut fn_timer).await);
+        // defmt::info!("rpm: {}", (60000000 / hall_sensor.speed_list[HALL_CNT - 1]));
+        let filt_res = hall_sensor.populate(&mut fn_timer).await;
+        // defmt::info!("Filtered speed sense: {}", filt_res);
+        RPM_FILT_WATCH.sender().send(filt_res);
     }
 }
 
@@ -102,6 +102,7 @@ impl HallSense {
                 if last_cur < CURR_DRAW_THRESH_FOR_ZERO {
                     return HallRpm::Good(0);
                 }
+                defmt::info!("RPM STALLED: {}", self.speed_list);
                 return HallRpm::Stall;
             }
 
@@ -110,6 +111,7 @@ impl HallSense {
                 if last_cur < CURR_DRAW_THRESH_FOR_ZERO {
                     return HallRpm::Good(0);
                 }
+                defmt::info!("RPM STALLED: {}", self.speed_list);
                 return HallRpm::Stall;
             }
 
@@ -125,7 +127,10 @@ impl HallSense {
                 *timer = Instant::now();
                 match extract_rpm(self.speed_list) {
                     Ok(rpm) => return HallRpm::Good(rpm),
-                    Err(e) => return HallRpm::Bad(e),
+                    Err(e) => {
+                        defmt::info!("RPM RETURNED BAD {}", e);
+                        return HallRpm::Bad(e);
+                    }
                 }
             }
         }

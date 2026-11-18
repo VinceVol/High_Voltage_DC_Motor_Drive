@@ -43,8 +43,6 @@ async fn main(spawner: Spawner) {
     info!("adc runner initiated");
     let _ = spawner.spawn(cap_precharge::run_precharge().unwrap());
     info!("cap precharge initiated");
-    // let _ = spawner.spawn(direction::run_dir(p.PIN_21, p.PIN_16).unwrap());
-    // info!("direction pin control initiated");
     let _ = spawner.spawn(mesa::read_mesa_dir(p.PIN_0).unwrap());
     info!("mesa read direction pin initiated");
     let _ = spawner.spawn(

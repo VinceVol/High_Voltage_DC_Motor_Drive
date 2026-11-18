@@ -73,15 +73,15 @@ pub async fn run_motor(
 
     //Load the parameters into the current/speed pid helper struct
     let mut current_pid = Pid {
-        kp: 0.35,
-        ki: 0.2,
+        kp: 1.5,
+        ki: 75.0,
         kd: 0.0,
         integral: 0.0,
         prev_error: 0.0,
     };
     let mut speed_pid = Pid {
-        kp: 0.35,
-        ki: 0.2,
+        kp: 2.0,
+        ki: 1.0,
         kd: 0.0,
         integral: 0.0,
         prev_error: 0.0,
@@ -154,10 +154,9 @@ pub async fn run_motor(
         match select::select(speed_ticker.next(), current_ticker.next()).await {
             select::Either::First(_) => {
                 //RPM LOOP
-                if let Some(HallRpm::Good(new_rpm)) = rpm_watch.try_changed() {
+                if let Some(HallRpm::Good(new_rpm)) = rpm_watch.try_get() {
                     rpm = new_rpm;
                 }
-
                 let norm_rpm_stpnt = rpm_stpt as f32 / MAX_SPINDLE_SPEED as f32;
                 let norm_rpm = rpm as f32 / MAX_SPINDLE_SPEED as f32;
 
@@ -166,10 +165,26 @@ pub async fn run_motor(
                     .update(
                         norm_rpm_stpnt,
                         norm_rpm,
-                        10e3f32 / (RPM_REF_RATE_MS as f32), //refresh in seconds
-                        target_current_norm >= 1.0 || target_current_norm <= 0.0,
+                        (RPM_REF_RATE_MS as f32) / 10e3f32, //refresh in seconds
+                        false,
                     )
                     .clamp(0.0, 1.0);
+
+                // INFO ------------------------------------------------------------------
+                defmt::info!(
+                    "sending pwm {} for rpm req {}, current rpm: {}, direction: {:?}",
+                    prev_pwm_out,
+                    rpm_stpt,
+                    rpm,
+                    dir_stpt
+                );
+                // INFO ------------------------------------------------------------------
+                // defmt::info!(
+                //     "SPEED PID:\nnorm stpnt: {}\nnorm rpm: {}\nTarget norm curr: {}",
+                //     norm_rpm_stpnt,
+                //     norm_rpm,
+                //     target_current_norm
+                // );
             }
             select::Either::Second(_) => {
                 //CURRENT LOOP
@@ -181,14 +196,20 @@ pub async fn run_motor(
                 current_pid_output = current_pid.update(
                     target_current_norm,
                     current_measured_norm,
-                    10e6f32 / (I_REF_RATE_US as f32), //refresh in seconds
-                    prev_pwm_out >= 1000 || prev_pwm_out <= 0,
+                    (I_REF_RATE_US as f32) / 10e6f32, //refresh in seconds
+                    prev_pwm_out == 0 || prev_pwm_out >= 1000,
                 );
+                // defmt::info!(
+                //     "CURRENT PID:\nnorm stpnt: {}\nnorm current: {}\noutput: {}",
+                //     target_current_norm,
+                //     current_measured_norm,
+                //     current_pid_output
+                // );
             }
         }
 
         // Back-EMF Feed-Forward
-        let total_command = current_pid_output + (feed_forward as f32);
+        let total_command = current_pid_output + (feed_forward as f32) / 1000f32;
 
         // Hardware PWM output scaling (0-1000)
         let pwm_float = total_command * 1000.0;
@@ -200,13 +221,6 @@ pub async fn run_motor(
 
         //Send that pwm to the pin
         PWM_WATCH.sender().send(prev_pwm_out as u16);
-
-        //INFO ------------------------------------------------------------------
-        // info!(
-        //     "sending pwm {} for rpm req {}, current rpm: {}, direction: {:?}",
-        //     prev_pwm_out, rpm_stpt, rpm, dir_stpt
-        // );
-        //INFO ------------------------------------------------------------------
     }
 }
 
