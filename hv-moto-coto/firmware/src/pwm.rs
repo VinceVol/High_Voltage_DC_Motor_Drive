@@ -31,13 +31,15 @@ pub async fn run_pwm(
     let mut pwm_watch = PWM_WATCH.receiver().unwrap();
 
     //INTERRUPT SETUP --------
-    //Unmask the PWM wrap interrupt in the NVIC
+    //Unmask the PWM wrap and timer interrupt in the NVIC
     unsafe {
         cortex_m::peripheral::NVIC::unmask(rp_pac::Interrupt::PWM_IRQ_WRAP_0);
+        cortex_m::peripheral::NVIC::unmask(rp_pac::Interrupt::TIMER1_IRQ_0);
     }
 
-    //set the pwm wrap interrupt to the highest priority
+    //set the pwm wrap and the center aligned adc timer interrupt to the highest priority
     rp_pac::interrupt::PWM_IRQ_WRAP_0.set_priority(embassy_rp::interrupt::Priority::P3);
+    rp_pac::interrupt::TIMER1_IRQ_0.set_priority(embassy_rp::interrupt::Priority::P3);
     //INTERRUPT SETUP --------
 
     //Bit of copy and paste code here to set up the a and b channels so one can be off whilst the other is on
@@ -50,12 +52,6 @@ pub async fn run_pwm(
     config.compare_b = 0;
     config.invert_b = true;
 
-    rp_pac::PWM.en().write(|w| {
-        w.set_ch7(true);
-        w.set_ch1(true);
-        w.set_ch4(true);
-    });
-
     let mut left_leg = Pwm::new_output_ab(pwm_slice_1, pwm_p_a, dir_p_b, config.clone());
     let mut right_leg = Pwm::new_output_ab(pwm_slice_7, pwm_p_b, dir_p_a, config);
 
@@ -63,11 +59,35 @@ pub async fn run_pwm(
     let mut config_b = Config::default();
     config_b.top = ((PWM_FREQ * 3) / 8 - 1) as u16;
     config_b.compare_b = 0;
+    config_b.phase_correct = true;
+
     let mut cent_align = Pwm::new_output_b(pwm_slice_4, cntr_p, config_b);
     rp_pac::PWM.irq0_inte().modify(|w| {
         w.set_ch4(true);
     });
     //CENTER ALIGNED INTERRUPT FOR ADC ---------------------------------------
+
+    //ALIGN PWM SLICES-------------------------------------------------------
+    // slices 1, 4, and 7 are disabled while resetting counters
+    rp_pac::PWM.en().modify(|w| {
+        w.set_ch1(false);
+        w.set_ch4(false);
+        w.set_ch7(false);
+    });
+
+    // Zero each slice's counter register (CTR) -- need to zero em out because the embassy pwm outputs start the
+    // pwm and rp::pac::PWM.en() on it's own wont reset the counter
+    for slice in [1usize, 4, 7] {
+        rp_pac::PWM.ch(slice).ctr().write(|w| w.set_ctr(0));
+    }
+
+    // secret sauce -- the pico can enable slices all at the same time with this call
+    rp_pac::PWM.en().write(|w| {
+        w.set_ch7(true);
+        w.set_ch1(true);
+        w.set_ch4(true);
+    });
+    //ALIGN PWM SLICES-------------------------------------------------------
 
     //Make sure we have direction instruction to start
     let mut dir = dir_watch.get().await;
@@ -126,34 +146,44 @@ fn PWM_IRQ_WRAP_0() {
         //reset the count
         PWM_INT_CNT.store(0, Relaxed);
 
-        // --- 1. SET DEBUG PIN HIGH (GPIO 8) ---
-        debug_high(8);
-
-        // --- INSTANT ADC READ (PAC LEVEL) ---
-        // 1. Select ADC input channel for PIN_26 (which is ADC channel 0)
-        rp_pac::ADC.cs().modify(|w| {
-            w.set_en(true); // Select channel 0 for pin 26
-            w.set_ainsel(0);
-            w.set_start_once(true); // Trigger a single conversion
-        });
-
-        // 2. Poll until conversion is complete (takes ~2us, safe inside an ISR)
-        while !rp_pac::ADC.cs().read().ready() {
-            // Spin-wait briefly for hardware flag
-        }
-        debug_low(8);
-
-        // 3. Read the 12-bit result register
-        let good_v = rp_pac::ADC.result().read().result();
-        I_INTR.signal(good_v);
-
-        // --- 3. SET DEBUG PIN LOW (GPIO 8) ---
+        //trigger the non blocking timer interrupt
+        let delay = 5; //FIX add half pwm bit again
+        let now = rp_pac::TIMER1.timelr().read();
+        rp_pac::TIMER1
+            .alarm(0)
+            .write(|w| *w = now.wrapping_add(delay));
     } else {
         PWM_INT_CNT.fetch_add(1, Relaxed);
     }
 
     //IMPORTANT RESET THE INTERRUPT
     rp_pac::PWM.intr().write(|w| w.set_ch4(true));
+}
+
+#[interrupt]
+fn TIMER1_IRQ_0() {
+    // --- 1. SET DEBUG PIN HIGH (GPIO 8) ---
+    debug_high(8);
+    // --- INSTANT ADC READ (PAC LEVEL) ---
+    // 1. Select ADC input channel for PIN_26 (which is ADC channel 0)
+    rp_pac::ADC.cs().modify(|w| {
+        w.set_en(true); // Select channel 0 for pin 26
+        w.set_ainsel(0);
+        w.set_start_once(true); // Trigger a single conversion
+    });
+
+    // 2. Poll until conversion is complete (takes ~2us, safe inside an ISR)
+    while !rp_pac::ADC.cs().read().ready() {
+        // Spin-wait briefly for hardware flag
+    }
+
+    // 3. Read the 12-bit result register
+    let good_v = rp_pac::ADC.result().read().result();
+    I_INTR.signal(good_v);
+    //IMPORTANT RESET THE INTERRUPT
+    rp_pac::TIMER1.intr().write(|w| w.set_alarm(0, true));
+    // --- 3. SET DEBUG PIN LOW (GPIO 8) ---
+    debug_low(8);
 }
 
 // Define the SIO register base addresses as constants
