@@ -2260,7 +2260,7 @@
 		)
 		(uuid "92624743-26be-422f-ab04-a27f8ed2f0ae")
 	)
-	(text "DEBUG PIN"
+	(text "UNUSED"
 		(exclude_from_sim no)
 		(at 81.788 119.634 0)
 		(effects

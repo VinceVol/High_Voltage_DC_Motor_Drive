@@ -2,17 +2,18 @@
 
 use core::sync::atomic::Ordering::Relaxed;
 
-use defmt::{info, Format};
+use defmt::Format;
 use embassy_rp::{
     interrupt::InterruptExt,
-    peripherals::{PIN_14, PIN_15, PIN_2, PIN_3, PIN_9, PWM_SLICE1, PWM_SLICE4, PWM_SLICE7},
+    peripherals::{PIN_14, PIN_15, PIN_2, PIN_3, PWM_SLICE1, PWM_SLICE7},
     pwm::{Config, Pwm, SetDutyCycle},
     Peri,
 };
-use embassy_time::{block_for, Duration};
 use rp_pac::interrupt;
 
-use crate::{DIR_WATCH, I_INTR, I_REF_RATE_US, PWM_FREQ, PWM_INT_CNT, PWM_WATCH};
+use crate::{DIR_WATCH, I_INTR, I_REF_RATE_US, PWM_FREQ, PWM_HALF_TIME_US, PWM_INT_CNT, PWM_WATCH};
+
+const PWM_DELAY_US: f32 = 1000000f32 / PWM_FREQ as f32;
 
 //Not sure if I should really do anything more than this for the dir_pin
 #[embassy_executor::task]
@@ -21,10 +22,8 @@ pub async fn run_pwm(
     dir_p_b: Peri<'static, PIN_3>,
     pwm_p_b: Peri<'static, PIN_14>,
     dir_p_a: Peri<'static, PIN_15>,
-    cntr_p: Peri<'static, PIN_9>,
     pwm_slice_1: Peri<'static, PWM_SLICE1>,
     pwm_slice_7: Peri<'static, PWM_SLICE7>,
-    pwm_slice_4: Peri<'static, PWM_SLICE4>,
 ) {
     //watch direction and pwm
     let mut dir_watch = DIR_WATCH.receiver().unwrap();
@@ -40,9 +39,14 @@ pub async fn run_pwm(
     //set the pwm wrap and the center aligned adc timer interrupt to the highest priority
     rp_pac::interrupt::PWM_IRQ_WRAP_0.set_priority(embassy_rp::interrupt::Priority::P3);
     rp_pac::interrupt::TIMER1_IRQ_0.set_priority(embassy_rp::interrupt::Priority::P3);
+
+    //Enable the interrupts -- e in int'e'
+    rp_pac::PWM.irq0_inte().modify(|w| {
+        w.set_ch1(true);
+    });
+    rp_pac::TIMER1.inte().write(|w| w.set_alarm(0, true));
     //INTERRUPT SETUP --------
 
-    //Bit of copy and paste code here to set up the a and b channels so one can be off whilst the other is on
     // Invert b to help prevent heat buildup through motor inductance induced current pushing through lower
     // leg fet. The gate drivers have built in dead time to help us out
     // Left Leg
@@ -55,29 +59,16 @@ pub async fn run_pwm(
     let mut left_leg = Pwm::new_output_ab(pwm_slice_1, pwm_p_a, dir_p_b, config.clone());
     let mut right_leg = Pwm::new_output_ab(pwm_slice_7, pwm_p_b, dir_p_a, config);
 
-    //CENTER ALIGNED INTERRUPT FOR ADC ---------------------------------------
-    let mut config_b = Config::default();
-    config_b.top = ((PWM_FREQ * 3) / 8 - 1) as u16;
-    config_b.compare_b = 0;
-    config_b.phase_correct = true;
-
-    let mut cent_align = Pwm::new_output_b(pwm_slice_4, cntr_p, config_b);
-    rp_pac::PWM.irq0_inte().modify(|w| {
-        w.set_ch4(true);
-    });
-    //CENTER ALIGNED INTERRUPT FOR ADC ---------------------------------------
-
     //ALIGN PWM SLICES-------------------------------------------------------
-    // slices 1, 4, and 7 are disabled while resetting counters
+    // slices 1 and 7 are disabled while resetting counters
     rp_pac::PWM.en().modify(|w| {
         w.set_ch1(false);
-        w.set_ch4(false);
         w.set_ch7(false);
     });
 
     // Zero each slice's counter register (CTR) -- need to zero em out because the embassy pwm outputs start the
     // pwm and rp::pac::PWM.en() on it's own wont reset the counter
-    for slice in [1usize, 4, 7] {
+    for slice in [1usize, 7] {
         rp_pac::PWM.ch(slice).ctr().write(|w| w.set_ctr(0));
     }
 
@@ -85,7 +76,6 @@ pub async fn run_pwm(
     rp_pac::PWM.en().write(|w| {
         w.set_ch7(true);
         w.set_ch1(true);
-        w.set_ch4(true);
     });
     //ALIGN PWM SLICES-------------------------------------------------------
 
@@ -97,6 +87,9 @@ pub async fn run_pwm(
         let new_pwm = pwm_watch.changed().await;
         if new_pwm != pwm {
             pwm = new_pwm.clamp(0, 1000);
+            let half_time =
+                (PWM_DELAY_US * ((pwm as f32 - 100f32) / 2000f32)).clamp(0f32, PWM_DELAY_US) as u32;
+            PWM_HALF_TIME_US.store(half_time, Relaxed);
         } else {
             continue;
         }
@@ -106,11 +99,6 @@ pub async fn run_pwm(
             Some(new_dir) => dir = new_dir,
             None => (),
         }
-
-        //Update center aligned pwm "-100" there to make up for some of the lag when reading the adc
-        cent_align
-            .set_duty_cycle_fraction((pwm as i32 - 100).clamp(0, 1000) as u16, 2000)
-            .unwrap();
 
         //Adjust H bridge PWM signals
         match dir {
@@ -147,7 +135,7 @@ fn PWM_IRQ_WRAP_0() {
         PWM_INT_CNT.store(0, Relaxed);
 
         //trigger the non blocking timer interrupt
-        let delay = 5; //FIX add half pwm bit again
+        let delay = PWM_HALF_TIME_US.load(Relaxed);
         let now = rp_pac::TIMER1.timelr().read();
         rp_pac::TIMER1
             .alarm(0)
@@ -156,31 +144,31 @@ fn PWM_IRQ_WRAP_0() {
         PWM_INT_CNT.fetch_add(1, Relaxed);
     }
 
-    //IMPORTANT RESET THE INTERRUPT
-    rp_pac::PWM.intr().write(|w| w.set_ch4(true));
+    //Reset the interrupt -- r in int'r'
+    rp_pac::PWM.intr().write(|w| w.set_ch1(true));
 }
 
 #[interrupt]
 fn TIMER1_IRQ_0() {
     // --- 1. SET DEBUG PIN HIGH (GPIO 8) ---
     debug_high(8);
-    // --- INSTANT ADC READ (PAC LEVEL) ---
-    // 1. Select ADC input channel for PIN_26 (which is ADC channel 0)
+    // Select ADC input channel for PIN_26 (which is ADC channel 0)
     rp_pac::ADC.cs().modify(|w| {
         w.set_en(true); // Select channel 0 for pin 26
         w.set_ainsel(0);
         w.set_start_once(true); // Trigger a single conversion
     });
 
-    // 2. Poll until conversion is complete (takes ~2us, safe inside an ISR)
+    // Poll until conversion is complete (takes ~2us, safe inside an ISR)
     while !rp_pac::ADC.cs().read().ready() {
         // Spin-wait briefly for hardware flag
     }
 
-    // 3. Read the 12-bit result register
+    // Read the 12-bit result register
     let good_v = rp_pac::ADC.result().read().result();
     I_INTR.signal(good_v);
-    //IMPORTANT RESET THE INTERRUPT
+
+    //Reset the interrupt -- r in int'r'
     rp_pac::TIMER1.intr().write(|w| w.set_alarm(0, true));
     // --- 3. SET DEBUG PIN LOW (GPIO 8) ---
     debug_low(8);
