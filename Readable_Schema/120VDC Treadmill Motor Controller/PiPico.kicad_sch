@@ -5,6 +5,462 @@
 	(uuid "89d57df0-0fc1-4c0f-91ff-d7b2ad62daf8")
 	(paper "A4")
 	(lib_symbols
+		(symbol "Connector_Generic:Conn_01x04"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J10"
+				(at 0 -11.43 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "ABX00107"
+				(at 0 -8.89 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://docs.arduino.cc/resources/datasheets/ABX00107-datasheet.pdf"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "PEC11J-9215F-S0015, STM32C011F4 Rotary Encoder Sensor Modulino® Platform Evaluation Expansion Board"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_1x??_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Conn_01x04_1_1"
+				(rectangle
+					(start -1.27 3.81)
+					(end 1.27 -6.35)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(rectangle
+					(start -1.27 2.667)
+					(end 0 2.413)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -2.413)
+					(end 0 -2.667)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -4.953)
+					(end 0 -5.207)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 2.54 0)
+					(length 3.81)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "3v3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -2.54 0)
+					(length 3.81)
+					(name "SDA"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -5.08 0)
+					(length 3.81)
+					(name "SCL"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Connector_Generic:Conn_01x06"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J8"
+				(at 0 -13.97 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "SSD1306"
+				(at 0 -11.43 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://learn.adafruit.com/monochrome-oled-breakouts/downloads"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "SSD1306 OLED 0.91\" Display Qwiic, STEMMA QT Platform Evaluation Expansion Board"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_1x??_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Conn_01x06_1_1"
+				(rectangle
+					(start -1.27 6.35)
+					(end 1.27 -8.89)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(rectangle
+					(start -1.27 5.207)
+					(end 0 4.953)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 2.667)
+					(end 0 2.413)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -2.413)
+					(end 0 -2.667)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -4.953)
+					(end 0 -5.207)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -7.493)
+					(end 0 -7.747)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 5.08 0)
+					(length 3.81)
+					(name "SDA"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 2.54 0)
+					(length 3.81)
+					(name "SCL"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "RESET"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -2.54 0)
+					(length 3.81)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -5.08 0)
+					(length 3.81)
+					(name "3v3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -7.62 0)
+					(length 3.81)
+					(name "Vin"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Connector_Generic:Conn_01x08"
 			(pin_names
 				(offset 1.016)
@@ -2053,8 +2509,8 @@
 		(uuid 0ff6dc55-29f8-4c33-99e2-16017ab2f250)
 	)
 	(rectangle
-		(start 223.52 85.09)
-		(end 251.46 96.52)
+		(start 210.82 85.09)
+		(end 238.76 96.52)
 		(stroke
 			(width 0)
 			(type dot)
@@ -2076,6 +2532,19 @@
 			(type none)
 		)
 		(uuid 7c377994-8552-47ab-bdc0-408fb899b645)
+	)
+	(rectangle
+		(start 260.35 85.09)
+		(end 271.78 97.79)
+		(stroke
+			(width 0)
+			(type dot)
+			(color 0 255 0 1)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 8098dac4-1119-432b-adde-8defb47cb8b6)
 	)
 	(rectangle
 		(start 30.48 101.6)
@@ -2104,8 +2573,21 @@
 		(uuid d4ee81da-be1c-4d00-837c-d8e5b6db8368)
 	)
 	(rectangle
-		(start 223.52 96.52)
-		(end 251.46 109.22)
+		(start 243.84 85.09)
+		(end 257.81 102.87)
+		(stroke
+			(width 0)
+			(type dot)
+			(color 0 255 0 1)
+		)
+		(fill
+			(type none)
+		)
+		(uuid e3bc7ba2-15e7-4ee7-b888-40ff720b2df5)
+	)
+	(rectangle
+		(start 210.82 96.52)
+		(end 238.76 109.22)
 		(stroke
 			(width 0)
 			(type dot)
@@ -2184,6 +2666,17 @@
 		)
 		(uuid "3ec44305-b0b8-4832-bfd5-86b608dbba34")
 	)
+	(text "OLED Display"
+		(exclude_from_sim no)
+		(at 251.206 104.394 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 0 255 0 1)
+			)
+		)
+		(uuid "423df527-5a43-484b-a048-6f569017f167")
+	)
 	(text "UART1_rx"
 		(exclude_from_sim no)
 		(at 48.768 97.028 0)
@@ -2206,7 +2699,7 @@
 	)
 	(text "CNC_s_out"
 		(exclude_from_sim no)
-		(at 239.776 99.568 0)
+		(at 227.076 99.568 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2307,6 +2800,17 @@
 		)
 		(uuid "b06dc0f5-c249-4f5d-9caa-e56aaceeed6d")
 	)
+	(text "Knob/Switch"
+		(exclude_from_sim no)
+		(at 265.938 99.568 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 0 255 0 1)
+			)
+		)
+		(uuid "c7a7ab2d-2bda-4d5a-b3fd-0b9e002eca8e")
+	)
 	(text "SPI1_sck"
 		(exclude_from_sim no)
 		(at 80.264 126.238 0)
@@ -2358,7 +2862,7 @@
 	)
 	(text "LinuxCNC Spindle Output"
 		(exclude_from_sim no)
-		(at 263.906 100.838 0)
+		(at 225.806 110.998 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2369,7 +2873,7 @@
 	)
 	(text "10V"
 		(exclude_from_sim no)
-		(at 219.456 99.568 0)
+		(at 206.756 99.568 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2382,7 +2886,7 @@
 	)
 	(text "I2C1_scl"
 		(exclude_from_sim no)
-		(at 241.3 91.948 0)
+		(at 228.6 91.948 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2392,7 +2896,7 @@
 	)
 	(text "I2C1"
 		(exclude_from_sim no)
-		(at 254 91.44 0)
+		(at 241.3 83.82 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2403,7 +2907,7 @@
 	)
 	(text "I2C1_sda"
 		(exclude_from_sim no)
-		(at 241.3 89.408 0)
+		(at 228.6 89.408 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2424,13 +2928,13 @@
 		(uuid "272190d1-1fa5-43b6-8b67-1604ae407af5")
 	)
 	(junction
-		(at 208.28 92.71)
+		(at 195.58 92.71)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "33c2f5e6-ae08-408f-bcb7-d472618df3e0")
 	)
 	(junction
-		(at 213.36 95.25)
+		(at 200.66 95.25)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "3c88b0c4-0de0-49a7-9328-b6b0b20e05a1")
@@ -2466,7 +2970,7 @@
 		(uuid "d8073517-97eb-45a7-ac5f-c03f4ad46bd7")
 	)
 	(junction
-		(at 208.28 80.01)
+		(at 195.58 80.01)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ee883c9a-435d-4a31-925d-0dd0a675bf43")
@@ -2490,12 +2994,28 @@
 		(uuid "244edea1-4681-4b3e-b96d-61d22a375a61")
 	)
 	(no_connect
+		(at 255.27 95.25)
+		(uuid "280a2432-0691-4d6d-a8f6-4f5a34cdb9e9")
+	)
+	(no_connect
 		(at 163.83 102.87)
 		(uuid "2aeddac9-de9a-4351-a709-c75007a4c508")
 	)
 	(no_connect
+		(at 255.27 92.71)
+		(uuid "6a88d279-2494-4657-8287-e3645cebdeea")
+	)
+	(no_connect
+		(at 255.27 100.33)
+		(uuid "72ebe550-a05b-410f-90fc-5cffc6a63190")
+	)
+	(no_connect
 		(at 118.11 77.47)
 		(uuid "80e1acdf-7971-42f5-b40d-3f9ffebe8297")
+	)
+	(no_connect
+		(at 255.27 90.17)
+		(uuid "97560a8c-1268-4b73-9ffc-7898e63c6eaa")
 	)
 	(no_connect
 		(at 163.83 107.95)
@@ -2504,6 +3024,14 @@
 	(no_connect
 		(at 140.97 62.23)
 		(uuid "b0b5ef1a-41a5-4222-96f7-2aae4cda2f31")
+	)
+	(no_connect
+		(at 255.27 97.79)
+		(uuid "c86b1609-b89c-42a8-bd17-c8b469f6d904")
+	)
+	(no_connect
+		(at 255.27 87.63)
+		(uuid "cf2bfdc7-2b3f-439e-b7a8-f2deec7bc46a")
 	)
 	(no_connect
 		(at 163.83 100.33)
@@ -2541,7 +3069,7 @@
 	)
 	(wire
 		(pts
-			(xy 237.49 107.95) (xy 237.49 105.41)
+			(xy 224.79 107.95) (xy 224.79 105.41)
 		)
 		(stroke
 			(width 0)
@@ -2571,7 +3099,7 @@
 	)
 	(wire
 		(pts
-			(xy 242.57 95.25) (xy 245.11 95.25)
+			(xy 229.87 95.25) (xy 232.41 95.25)
 		)
 		(stroke
 			(width 0)
@@ -2611,7 +3139,7 @@
 	)
 	(wire
 		(pts
-			(xy 223.52 92.71) (xy 245.11 92.71)
+			(xy 210.82 92.71) (xy 232.41 92.71)
 		)
 		(stroke
 			(width 0)
@@ -2641,7 +3169,7 @@
 	)
 	(wire
 		(pts
-			(xy 234.95 87.63) (xy 245.11 87.63)
+			(xy 222.25 87.63) (xy 232.41 87.63)
 		)
 		(stroke
 			(width 0)
@@ -2691,7 +3219,7 @@
 	)
 	(wire
 		(pts
-			(xy 220.98 92.71) (xy 220.98 90.17)
+			(xy 208.28 92.71) (xy 208.28 90.17)
 		)
 		(stroke
 			(width 0)
@@ -2751,7 +3279,7 @@
 	)
 	(wire
 		(pts
-			(xy 208.28 90.17) (xy 208.28 92.71)
+			(xy 195.58 90.17) (xy 195.58 92.71)
 		)
 		(stroke
 			(width 0)
@@ -2871,7 +3399,7 @@
 	)
 	(wire
 		(pts
-			(xy 223.52 95.25) (xy 223.52 92.71)
+			(xy 210.82 95.25) (xy 210.82 92.71)
 		)
 		(stroke
 			(width 0)
@@ -2911,7 +3439,7 @@
 	)
 	(wire
 		(pts
-			(xy 236.22 107.95) (xy 237.49 107.95)
+			(xy 223.52 107.95) (xy 224.79 107.95)
 		)
 		(stroke
 			(width 0)
@@ -2921,7 +3449,7 @@
 	)
 	(wire
 		(pts
-			(xy 204.47 80.01) (xy 208.28 80.01)
+			(xy 191.77 80.01) (xy 195.58 80.01)
 		)
 		(stroke
 			(width 0)
@@ -2931,7 +3459,7 @@
 	)
 	(wire
 		(pts
-			(xy 208.28 80.01) (xy 208.28 82.55)
+			(xy 195.58 80.01) (xy 195.58 82.55)
 		)
 		(stroke
 			(width 0)
@@ -2951,7 +3479,7 @@
 	)
 	(wire
 		(pts
-			(xy 242.57 102.87) (xy 245.11 102.87)
+			(xy 229.87 102.87) (xy 232.41 102.87)
 		)
 		(stroke
 			(width 0)
@@ -3011,7 +3539,7 @@
 	)
 	(wire
 		(pts
-			(xy 208.28 92.71) (xy 220.98 92.71)
+			(xy 195.58 92.71) (xy 208.28 92.71)
 		)
 		(stroke
 			(width 0)
@@ -3021,7 +3549,7 @@
 	)
 	(wire
 		(pts
-			(xy 213.36 80.01) (xy 208.28 80.01)
+			(xy 200.66 80.01) (xy 195.58 80.01)
 		)
 		(stroke
 			(width 0)
@@ -3041,7 +3569,7 @@
 	)
 	(wire
 		(pts
-			(xy 163.83 95.25) (xy 213.36 95.25)
+			(xy 163.83 95.25) (xy 200.66 95.25)
 		)
 		(stroke
 			(width 0)
@@ -3151,7 +3679,7 @@
 	)
 	(wire
 		(pts
-			(xy 213.36 95.25) (xy 223.52 95.25)
+			(xy 200.66 95.25) (xy 210.82 95.25)
 		)
 		(stroke
 			(width 0)
@@ -3171,7 +3699,7 @@
 	)
 	(wire
 		(pts
-			(xy 234.95 97.79) (xy 245.11 97.79)
+			(xy 222.25 97.79) (xy 232.41 97.79)
 		)
 		(stroke
 			(width 0)
@@ -3181,7 +3709,7 @@
 	)
 	(wire
 		(pts
-			(xy 213.36 90.17) (xy 213.36 95.25)
+			(xy 200.66 90.17) (xy 200.66 95.25)
 		)
 		(stroke
 			(width 0)
@@ -3241,7 +3769,7 @@
 	)
 	(wire
 		(pts
-			(xy 213.36 82.55) (xy 213.36 80.01)
+			(xy 200.66 82.55) (xy 200.66 80.01)
 		)
 		(stroke
 			(width 0)
@@ -3461,7 +3989,7 @@
 	)
 	(wire
 		(pts
-			(xy 237.49 105.41) (xy 245.11 105.41)
+			(xy 224.79 105.41) (xy 232.41 105.41)
 		)
 		(stroke
 			(width 0)
@@ -3491,7 +4019,7 @@
 	)
 	(wire
 		(pts
-			(xy 220.98 90.17) (xy 245.11 90.17)
+			(xy 208.28 90.17) (xy 232.41 90.17)
 		)
 		(stroke
 			(width 0)
@@ -3501,7 +4029,7 @@
 	)
 	(wire
 		(pts
-			(xy 163.83 92.71) (xy 208.28 92.71)
+			(xy 163.83 92.71) (xy 195.58 92.71)
 		)
 		(stroke
 			(width 0)
@@ -3521,7 +4049,7 @@
 	)
 	(wire
 		(pts
-			(xy 195.58 100.33) (xy 245.11 100.33)
+			(xy 195.58 100.33) (xy 232.41 100.33)
 		)
 		(stroke
 			(width 0)
@@ -3540,7 +4068,7 @@
 		(uuid "57d466c2-7ab7-4716-a253-6f78f080c139")
 	)
 	(label "Mesa_Dir"
-		(at 236.22 107.95 180)
+		(at 223.52 107.95 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3639,7 +4167,7 @@
 	)
 	(global_label "3v3 MCU"
 		(shape input)
-		(at 204.47 80.01 180)
+		(at 191.77 80.01 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3649,7 +4177,7 @@
 		)
 		(uuid "5c92242f-532b-410a-a24c-a5d865227730")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 193.0787 80.01 0)
+			(at 180.3787 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3661,7 +4189,7 @@
 	)
 	(global_label "3v3 MCU"
 		(shape input)
-		(at 234.95 97.79 180)
+		(at 222.25 97.79 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3671,7 +4199,7 @@
 		)
 		(uuid "69ff8f7f-993b-4860-a48e-700bb7c5a839")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 223.5587 97.79 0)
+			(at 210.8587 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3683,7 +4211,7 @@
 	)
 	(global_label "3v3 MCU"
 		(shape input)
-		(at 234.95 87.63 180)
+		(at 222.25 87.63 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3693,7 +4221,7 @@
 		)
 		(uuid "82a65830-0c47-4bfa-8672-5cdc465bf312")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 223.5587 87.63 0)
+			(at 210.8587 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3771,7 +4299,7 @@
 	)
 	(hierarchical_label "ADC_GND"
 		(shape output)
-		(at 242.57 102.87 180)
+		(at 229.87 102.87 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3973,8 +4501,82 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector_Generic:Conn_01x04")
+		(at 265.43 92.71 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board no)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0fbf45f6-1b06-474c-bc06-6d80206ba48b")
+		(property "Reference" "J10"
+			(at 265.43 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "ABX00107"
+			(at 265.43 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 265.43 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://docs.arduino.cc/resources/datasheets/ABX00107-datasheet.pdf"
+			(at 265.43 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "PEC11J-9215F-S0015, STM32C011F4 Rotary Encoder Sensor Modulino® Platform Evaluation Expansion Board"
+			(at 265.43 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "46924ddc-c885-4c74-9cc8-fc3666d52662")
+		)
+		(pin "2"
+			(uuid "e141691e-7378-48cf-b44c-6d08cb2a1207")
+		)
+		(pin "1"
+			(uuid "ed35328f-71d3-40ad-a05e-250c8b93ca5e")
+		)
+		(pin "3"
+			(uuid "a20802e3-65c3-44b6-b352-2ea45899eeb2")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/dc45a2ff-df18-49a4-81ff-80d10381c9e9"
+					(reference "J10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
-		(at 213.36 86.36 180)
+		(at 200.66 86.36 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3982,7 +4584,7 @@
 		(dnp no)
 		(uuid "158577f8-e0ba-436d-92fd-79d297fe4800")
 		(property "Reference" "R42"
-			(at 211.074 86.614 90)
+			(at 198.374 86.614 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3990,7 +4592,7 @@
 			)
 		)
 		(property "Value" "3.3K"
-			(at 213.36 86.36 90)
+			(at 200.66 86.36 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3998,7 +4600,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
-			(at 215.138 86.36 90)
+			(at 202.438 86.36 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4007,7 +4609,7 @@
 			)
 		)
 		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDP0000/AOA0000C337.pdf"
-			(at 213.36 86.36 0)
+			(at 200.66 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4016,7 +4618,7 @@
 			)
 		)
 		(property "Description" "ERJ-UP3J100V"
-			(at 213.36 86.36 0)
+			(at 200.66 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4293,7 +4895,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x08")
-		(at 250.19 95.25 0)
+		(at 237.49 95.25 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4301,7 +4903,7 @@
 		(dnp no)
 		(uuid "412d0083-b9f9-4f99-b759-e3bd89219c6a")
 		(property "Reference" "J5"
-			(at 256.032 84.328 0)
+			(at 217.932 81.026 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4309,7 +4911,7 @@
 			)
 		)
 		(property "Value" "TB0011-350-08BE"
-			(at 264.16 86.614 0)
+			(at 226.06 83.312 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4317,7 +4919,7 @@
 			)
 		)
 		(property "Footprint" "Treadmill_Feet:SAMESKY_TB0011-350-08BE"
-			(at 250.19 95.25 0)
+			(at 237.49 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4326,7 +4928,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.sameskydevices.com/product/resource/tb0011-350.pdf"
-			(at 250.19 95.25 0)
+			(at 237.49 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4335,7 +4937,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x08, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 250.19 95.25 0)
+			(at 237.49 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4801,7 +5403,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 208.28 86.36 180)
+		(at 195.58 86.36 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4809,7 +5411,7 @@
 		(dnp no)
 		(uuid "7a2aad12-7991-4435-ba5b-049676225d65")
 		(property "Reference" "R41"
-			(at 205.994 86.614 90)
+			(at 193.294 86.614 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4817,7 +5419,7 @@
 			)
 		)
 		(property "Value" "3.3K"
-			(at 208.28 86.36 90)
+			(at 195.58 86.36 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4825,7 +5427,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
-			(at 210.058 86.36 90)
+			(at 197.358 86.36 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4834,7 +5436,7 @@
 			)
 		)
 		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDP0000/AOA0000C337.pdf"
-			(at 208.28 86.36 0)
+			(at 195.58 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4843,7 +5445,7 @@
 			)
 		)
 		(property "Description" "ERJ-UP3J100V"
-			(at 208.28 86.36 0)
+			(at 195.58 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4861,6 +5463,86 @@
 			(project "120VDC Treadmill Motor Controller"
 				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/dc45a2ff-df18-49a4-81ff-80d10381c9e9"
 					(reference "R41")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x06")
+		(at 250.19 95.25 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8feb6aa4-6828-446c-b90f-ae3ad337314f")
+		(property "Reference" "J8"
+			(at 250.19 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SSD1306"
+			(at 250.19 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 250.19 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://learn.adafruit.com/monochrome-oled-breakouts/downloads"
+			(at 250.19 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "SSD1306 OLED 0.91\" Display Qwiic, STEMMA QT Platform Evaluation Expansion Board"
+			(at 250.19 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "f3373146-4f97-4101-8741-385f90586f94")
+		)
+		(pin "4"
+			(uuid "a54211df-953b-46b8-bf55-ac9aeef55a38")
+		)
+		(pin "2"
+			(uuid "d979dc70-4057-4f4e-a6e6-65767e515a1e")
+		)
+		(pin "1"
+			(uuid "92f2e68f-8705-4745-b48c-e71b6b4fcee6")
+		)
+		(pin "6"
+			(uuid "888289ae-0d7e-4d6f-8876-c27b482e33b1")
+		)
+		(pin "5"
+			(uuid "55c8ebea-0ddc-46b4-9845-ce3e2d529196")
+		)
+		(instances
+			(project "120VDC Treadmill Motor Controller"
+				(path "/319bc5c0-2dd5-4df3-a34b-9170833ebccd/dc45a2ff-df18-49a4-81ff-80d10381c9e9"
+					(reference "J8")
 					(unit 1)
 				)
 			)
@@ -4935,7 +5617,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 242.57 95.25 270)
+		(at 229.87 95.25 270)
 		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4944,7 +5626,7 @@
 		(dnp no)
 		(uuid "aa6f882b-8a42-47cb-9ad3-ca7e6c884f3d")
 		(property "Reference" "#PWR05"
-			(at 236.22 95.25 0)
+			(at 223.52 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4953,7 +5635,7 @@
 			)
 		)
 		(property "Value" "LV_GND"
-			(at 238.76 95.2499 90)
+			(at 226.06 95.2499 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4962,7 +5644,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 242.57 95.25 0)
+			(at 229.87 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4971,7 +5653,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 242.57 95.25 0)
+			(at 229.87 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4980,7 +5662,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 242.57 95.25 0)
+			(at 229.87 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
