@@ -40,11 +40,27 @@ pub async fn run_pwm(
     rp_pac::interrupt::PWM_IRQ_WRAP_0.set_priority(embassy_rp::interrupt::Priority::P3);
     rp_pac::interrupt::TIMER1_IRQ_0.set_priority(embassy_rp::interrupt::Priority::P3);
 
+    //UNIQUE TO TIMER--------------------------------------------------------------------------------------
+    //Configure TIMER1's tick generator in TICKS for a 1 MHz tick (assuming 12 MHz tick input -> 12 cycles/tick)
+    rp_pac::TICKS
+        .timer1_cycles()
+        .write(|w| w.set_timer1_cycles(12));
+    rp_pac::TICKS.timer1_ctrl().modify(|w| {
+        w.set_enable(true);
+    });
+
+    // 2. Ensure TIMER1 uses the tick generator (default is tick input; set_clk_sys(false) if needed)
+    rp_pac::TIMER1.source().write(|w| {
+        w.set_clk_sys(rp_pac::timer::vals::ClkSys::TICK);
+    });
+
+    rp_pac::TIMER1.inte().write(|w| w.set_alarm(0, true));
+    //UNIQUE TO TIMER--------------------------------------------------------------------------------------
+
     //Enable the interrupts -- e in int'e'
     rp_pac::PWM.irq0_inte().modify(|w| {
         w.set_ch1(true);
     });
-    rp_pac::TIMER1.inte().write(|w| w.set_alarm(0, true));
     //INTERRUPT SETUP --------
 
     // Invert b to help prevent heat buildup through motor inductance induced current pushing through lower
