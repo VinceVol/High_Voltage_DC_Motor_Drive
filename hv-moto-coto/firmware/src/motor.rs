@@ -21,28 +21,11 @@ use crate::{
 
 #[embassy_executor::task]
 pub async fn run_motor(
-    q5_en: Peri<'static, PIN_20>,
-    dig_drive_en: Peri<'static, PIN_1>,
     flash_mut: &'static Mutex<
         CriticalSectionRawMutex,
         Flash<'static, FLASH, Async, { FLASH_MUT_SIZE }>,
     >,
 ) {
-    //Do nothing until the caps have precharged
-    // q5 controls the precharge mosfet
-    let mut q5 = Output::new(q5_en, embassy_rp::gpio::Level::Low);
-    loop {
-        match CAP_PRE_STATE_SIG.wait().await {
-            PrechargeState::StartUp => continue,
-            PrechargeState::NormalOp => break,
-        }
-    }
-    q5.set_high();
-
-    //enable the drives
-    // TODO Move this to a safety circuit TODO
-    let _dr_en = Output::new(dig_drive_en, embassy_rp::gpio::Level::High);
-
     //Setup PID components
     // direction
     let dir_watch = DIR_WATCH.sender();
