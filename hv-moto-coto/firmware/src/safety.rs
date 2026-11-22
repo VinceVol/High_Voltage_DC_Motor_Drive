@@ -67,7 +67,7 @@ pub async fn be_safe(e_stop_out_p: Peri<'static, PIN_9>, dig_drive_en_p: Peri<'s
 const TIME_PRE_CHG_PANIC_MS: u64 = 100; //if caps take longer than 300 ms to start up throw flag
 const V_PRECH_THRESH: i64 = 5; //FIX Testing things at a low voltage for now so 5 will need to be changed TODO
 const OVER_CURR_THRESH: f32 = 19f32; //19 amps is too close I think to the limit - we'll see how this plays out
-const UNDER_VOLT: i64 = 5; //FIX LATER and update to ~105
+const UNDER_VOLT: i64 = 3; //FIX LATER and update to ~105
 const OVER_VOLT: i64 = 125;
 const STALL_RPM: u16 = 20;
 const STALL_PWM: u16 = 100;
@@ -84,7 +84,7 @@ pub async fn are_we_safe(q5_en: Peri<'static, PIN_20>) {
     //ZERO CURRENT SENSE
     let mut curr_roll: RollingCurrent<20> = RollingCurrent::fill(&mut i_watch).await;
     curr_roll.wait_till_steady(0.01, &mut i_watch).await;
-    *I_CORR_OFF.lock().await = curr_roll.mean();
+    *I_CORR_OFF.lock().await -= curr_roll.mean();
     //ZERO CURRENT SENSE
 
     //CAP PRE CHARGE -------------------------------------------------------------
@@ -139,33 +139,32 @@ pub async fn are_we_safe(q5_en: Peri<'static, PIN_20>) {
                 }
             }
             embassy_futures::select::Either4::Second(new_volt) => {
-                if new_volt >= OVER_VOLT || new_volt <= UNDER_VOLT {
+                if new_volt >= OVER_VOLT {
+                    defmt::info!(
+                        "Read a voltage = {} which is over {} or under {}",
+                        new_volt,
+                        OVER_VOLT,
+                        UNDER_VOLT
+                    );
                     SAFETY_WATCH
                         .sender()
                         .send(ControllerCond::NG(ControllerError::VoltageOOR));
                     error_state = true;
                 }
             }
-            embassy_futures::select::Either4::Third(new_rpm) => {
-                match new_rpm {
-                    crate::speed_sense::HallRpm::Good(rpm) => {
-                        cur_rpm = rpm;
-                        hall_error_cnt = 0;
-                    }
-                    _ => hall_error_cnt += 1,
+            embassy_futures::select::Either4::Third(new_rpm) => match new_rpm {
+                crate::speed_sense::HallRpm::Good(rpm) => {
+                    cur_rpm = rpm;
+                    hall_error_cnt = 0;
                 }
-                if cur_rpm < STALL_RPM && cur_pwm > STALL_PWM {
+                crate::speed_sense::HallRpm::Stall => {
                     SAFETY_WATCH
                         .sender()
                         .send(ControllerCond::NG(ControllerError::Stall));
                     error_state = true;
-                } else if hall_error_cnt > HALL_ERR_CNT_THRESH {
-                    SAFETY_WATCH
-                        .sender()
-                        .send(ControllerCond::NG(ControllerError::HallError));
-                    error_state = true;
                 }
-            }
+                _ => hall_error_cnt += 1,
+            },
             embassy_futures::select::Either4::Fourth(new_pwm) => {
                 cur_pwm = new_pwm;
             }

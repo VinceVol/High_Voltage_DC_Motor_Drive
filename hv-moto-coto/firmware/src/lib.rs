@@ -52,12 +52,12 @@ pub static I_DEL_MS: u64 = 50; //how often should we even check the current
 pub static I_INTR: Signal<CriticalSectionRawMutex, u16> = Signal::new();
 pub mod roll_current;
 pub static MAX_CURRENT_AMPS: f32 = 2.0;
+pub static V_REF_RATE_US: u64 = (200 * 1000000) / PWM_FREQ;
 
 //Voltage sense
 pub static V_WATCH: Watch<CriticalSectionRawMutex, i64, 5> = Watch::new(); //Voltage Readout of caps
-pub static V_CORR_NUM: i64 = 683; //Correction factor for the voltage sense/ tune on bench
-pub static V_CORR_OFF: i64 = -300; //Votlage offset from zero in the current sense loop
-pub static V_DEL_MS: u64 = 500; //how often should we even check the voltage
+pub static V_CORR_NUM: f32 = 683f32; //Correction factor for the voltage sense/ tune on bench
+pub static V_CORR_OFF: f32 = -300f32; //Votlage offset from zero in the current sense loop
 
 //Mesa coms -- communications from either a mesa board or user buttons (CNC or manual machine)
 pub mod mesa;

@@ -13,8 +13,9 @@ use embassy_time::{Duration, Ticker};
 use signal_filters::{MedianFilter5, Pt2Filterf32, SignalFilter};
 
 use crate::{
-    AUTOTUNE_OVERRIDE, CHANGE_THRESHOLD, I_CORR_NUM, I_CORR_OFF, I_INTR, I_WATCH,
-    MAX_SPINDLE_SPEED, MESA_MON_DEL_MS, RPM_REQ_SIG, V_CORR_NUM, V_CORR_OFF, V_DEL_MS, V_WATCH,
+    AUTOTUNE_OVERRIDE, CHANGE_THRESHOLD, I_CORR_NUM, I_CORR_OFF, I_INTR, I_REF_RATE_US, I_WATCH,
+    MAX_SPINDLE_SPEED, MESA_MON_DEL_MS, RPM_REQ_SIG, V_CORR_NUM, V_CORR_OFF, V_REF_RATE_US,
+    V_WATCH,
 };
 
 #[embassy_executor::task]
@@ -35,7 +36,7 @@ pub async fn adc_runner(
     let mut spindle_cmd = Channel::new_pin(mesa_com_pin, embassy_rp::gpio::Pull::None);
 
     //set up tickers for each based on chosen delays
-    let mut vol_ticker = Ticker::every(Duration::from_millis(V_DEL_MS));
+    let mut vol_ticker = Ticker::every(Duration::from_micros(V_REF_RATE_US));
     let mut mesa_ticker = Ticker::every(Duration::from_millis(MESA_MON_DEL_MS));
 
     //need to keep track of autotune to ignore the mesa inputs
@@ -45,7 +46,12 @@ pub async fn adc_runner(
     //Current sense requires filtering
     let mut i_spike_filter = MedianFilter5::<f32>::new();
     let mut i_lowpass_filter = Pt2Filterf32::new();
-    i_lowpass_filter.set_cutoff_frequency(70.0, 0.00025);
+    i_lowpass_filter.set_cutoff_frequency(70.0, (I_REF_RATE_US as f32) / 1000000f32);
+
+    //voltage sense requires filtering
+    let mut v_spike_filter = MedianFilter5::<f32>::new();
+    let mut v_lowpass_filter = Pt2Filterf32::new();
+    v_lowpass_filter.set_cutoff_frequency(70.0, (V_REF_RATE_US as f32) / 1000000f32);
 
     //Check the adc at MESA_MON_DEL_MS frequency and if the voltage has changed past a given
     // threshold then send a updated speed to the REQ signal line
@@ -65,15 +71,20 @@ pub async fn adc_runner(
                 let filtered_current = i_lowpass_filter.update(despooled);
 
                 I_WATCH.sender().send(filtered_current);
-                // info!(",Current Sense,  {},{},", filtered_current, raw_current);
+                // info!(",Current Sense,  {}", filtered_current);
             }
             Either3::Second(_) => {
                 match adc_v_in.read(&mut voltage_in).await {
                     Ok(good_v) => {
-                        //sending the converted 4095 max to voltage max
-                        let signed_voltage = ((V_CORR_NUM * good_v as i64) / 4095i64) + V_CORR_OFF;
-                        V_WATCH.sender().send(signed_voltage);
-                        // info!("voltage sense = {}", (signed_voltage));
+                        let raw_voltage = ((V_CORR_NUM * good_v as f32) / 4095f32) + V_CORR_OFF;
+
+                        //remove spikes and outliers
+                        let despooled = v_spike_filter.update(raw_voltage);
+
+                        //go through lowpass for additional filtering
+                        let filtered_voltage = v_lowpass_filter.update(despooled);
+                        V_WATCH.sender().send(filtered_voltage as i64);
+                        // info!("voltage sense = {}", (&filtered_voltage));
                     }
                     Err(_adc_error) => {
                         info!("Error reading adc pin -- req voltage");

@@ -154,13 +154,13 @@ pub async fn run_motor(
                     .clamp(0.0, 1.0);
 
                 // INFO ------------------------------------------------------------------
-                defmt::info!(
-                    "sending pwm {} for rpm req {}, current rpm: {}, direction: {:?}",
-                    prev_pwm_out,
-                    rpm_stpt,
-                    rpm,
-                    dir_stpt
-                );
+                // defmt::info!(
+                //     "sending pwm {} for rpm req {}, current rpm: {}, direction: {:?}",
+                //     prev_pwm_out,
+                //     rpm_stpt,
+                //     rpm,
+                //     dir_stpt
+                // );
                 // INFO ------------------------------------------------------------------
                 // defmt::info!(
                 //     "SPEED PID:\nnorm stpnt: {}\nnorm rpm: {}\nTarget norm curr: {}",
@@ -204,6 +204,7 @@ pub async fn run_motor(
 
         //Send that pwm to the pin
         PWM_WATCH.sender().send(prev_pwm_out as u16);
+        // PWM_WATCH.sender().send(300u16);
     }
 }
 

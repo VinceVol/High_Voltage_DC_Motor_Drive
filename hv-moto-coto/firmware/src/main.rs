@@ -6,6 +6,7 @@ use defmt_rtt as _;
 use embassy_rp::gpio::{Input, Output};
 use hv_moto_coto::autotune::atune_btn_run;
 use hv_moto_coto::motor::run_motor;
+use hv_moto_coto::safety::{are_we_safe, be_safe};
 use hv_moto_coto::{adc_runner, mesa};
 use panic_probe as _;
 
@@ -41,6 +42,8 @@ async fn main(spawner: Spawner) {
     info!("Hall sense initiated");
     let _ = spawner.spawn(adc_runner::adc_runner(p.PIN_28, p.PIN_27, p.ADC).unwrap());
     info!("adc runner initiated");
+    let _ = spawner.spawn(be_safe(p.PIN_9, p.PIN_1).unwrap());
+    let _ = spawner.spawn(are_we_safe(p.PIN_20).unwrap());
     let _ = spawner.spawn(mesa::read_mesa_dir(p.PIN_0).unwrap());
     info!("mesa read direction pin initiated");
     let _ = spawner.spawn(
