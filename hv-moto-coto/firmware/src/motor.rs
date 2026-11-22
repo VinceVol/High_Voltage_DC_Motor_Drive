@@ -6,17 +6,17 @@ use embassy_futures::select;
 use embassy_rp::{
     flash::{Async, Flash},
     gpio::Output,
-    peripherals::{FLASH, PIN_1, PIN_20},
+    peripherals::FLASH,
     Peri,
 };
 use embassy_sync::{blocking_mutex::raw::CriticalSectionRawMutex, mutex::Mutex, watch::Receiver};
 use embassy_time::{Duration, Ticker, Timer};
 
 use crate::{
-    autotune::PidConfig, cap_precharge::PrechargeState, pwm::Direction, speed_sense::HallRpm,
-    CAP_PRE_STATE_SIG, DIR_REQ_SIG, DIR_WATCH, FLASH_MUT_SIZE, I_REF_RATE_US, I_WATCH,
-    MAX_CURRENT_AMPS, MAX_SPINDLE_SPEED, MOT_LOOP_EN, PI_TBL_CNT, PWM_FREQ, PWM_WATCH,
-    RPM_BFR_DIR_SWTCH, RPM_FILT_WATCH, RPM_REF_RATE_MS, RPM_REQ_SIG,
+    autotune::PidConfig, pwm::Direction, speed_sense::HallRpm, DIR_REQ_SIG, DIR_WATCH,
+    FLASH_MUT_SIZE, I_REF_RATE_US, I_WATCH, MAX_CURRENT_AMPS, MAX_SPINDLE_SPEED, MOT_LOOP_EN,
+    PI_TBL_CNT, PWM_FREQ, PWM_WATCH, RPM_BFR_DIR_SWTCH, RPM_FILT_WATCH, RPM_REF_RATE_MS,
+    RPM_REQ_SIG,
 };
 
 #[embassy_executor::task]

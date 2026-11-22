@@ -6,7 +6,7 @@ use defmt_rtt as _;
 use embassy_rp::gpio::{Input, Output};
 use hv_moto_coto::autotune::atune_btn_run;
 use hv_moto_coto::motor::run_motor;
-use hv_moto_coto::{adc_runner, cap_precharge, mesa};
+use hv_moto_coto::{adc_runner, mesa};
 use panic_probe as _;
 
 use embassy_executor::Spawner;
@@ -41,8 +41,6 @@ async fn main(spawner: Spawner) {
     info!("Hall sense initiated");
     let _ = spawner.spawn(adc_runner::adc_runner(p.PIN_28, p.PIN_27, p.ADC).unwrap());
     info!("adc runner initiated");
-    let _ = spawner.spawn(cap_precharge::run_precharge().unwrap());
-    info!("cap precharge initiated");
     let _ = spawner.spawn(mesa::read_mesa_dir(p.PIN_0).unwrap());
     info!("mesa read direction pin initiated");
     let _ = spawner.spawn(
@@ -56,7 +54,7 @@ async fn main(spawner: Spawner) {
         )
         .unwrap(),
     );
-    let _ = spawner.spawn(run_motor(p.PIN_20, p.PIN_1, flash_p).unwrap());
+    let _ = spawner.spawn(run_motor(flash_p).unwrap());
     let _ = spawner.spawn(atune_btn_run(p.PIN_7, flash_p).unwrap());
 
     loop {

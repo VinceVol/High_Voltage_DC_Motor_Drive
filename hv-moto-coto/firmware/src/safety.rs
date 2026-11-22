@@ -2,6 +2,7 @@
 // gate driver should be enabled and whether current/voltage is too high
 
 use defmt::Format;
+use embassy_futures::select::select4;
 use embassy_rp::{
     gpio::Output,
     peripherals::{PIN_1, PIN_20, PIN_9},
@@ -9,7 +10,10 @@ use embassy_rp::{
 };
 use embassy_time::Instant;
 
-use crate::{I_CORR_OFF, I_WATCH, PWM_WATCH, RPM_FILT_WATCH, SAFETY_WATCH, V_WATCH};
+use crate::{
+    roll_current::RollingCurrent, I_CORR_OFF, I_WATCH, PWM_WATCH, RPM_FILT_WATCH, SAFETY_WATCH,
+    V_WATCH,
+};
 
 #[derive(Clone, Copy)]
 pub enum ControllerCond {
@@ -61,7 +65,13 @@ pub async fn be_safe(e_stop_out_p: Peri<'static, PIN_9>, dig_drive_en_p: Peri<'s
 }
 
 const TIME_PRE_CHG_PANIC_MS: u64 = 100; //if caps take longer than 300 ms to start up throw flag
-const V_PRECH_THRESH: i64 = 5; //TODO Testing things at a low voltage for now so 5 will need to be changed TODO
+const V_PRECH_THRESH: i64 = 5; //FIX Testing things at a low voltage for now so 5 will need to be changed TODO
+const OVER_CURR_THRESH: f32 = 19f32; //19 amps is too close I think to the limit - we'll see how this plays out
+const UNDER_VOLT: i64 = 5; //FIX LATER and update to ~105
+const OVER_VOLT: i64 = 125;
+const STALL_RPM: u16 = 20;
+const STALL_PWM: u16 = 100;
+const HALL_ERR_CNT_THRESH: u8 = 4; //how many filtered rpm reads can return an error before we throw flag
 #[embassy_executor::task]
 pub async fn are_we_safe(q5_en: Peri<'static, PIN_20>) {
     let mut i_watch = I_WATCH.receiver().unwrap();
@@ -72,8 +82,9 @@ pub async fn are_we_safe(q5_en: Peri<'static, PIN_20>) {
     let mut error_state = false; //Keep track of whether we're in a emergency state
 
     //ZERO CURRENT SENSE
-    todo!(); //FIX the code below to properly add offset
-    *I_CORR_OFF.lock().await = i_watch.changed().await;
+    let mut curr_roll: RollingCurrent<20> = RollingCurrent::fill(&mut i_watch).await;
+    curr_roll.wait_till_steady(0.01, &mut i_watch).await;
+    *I_CORR_OFF.lock().await = curr_roll.mean();
     //ZERO CURRENT SENSE
 
     //CAP PRE CHARGE -------------------------------------------------------------
@@ -105,6 +116,59 @@ pub async fn are_we_safe(q5_en: Peri<'static, PIN_20>) {
     }
     //CAP PRE CHARGE -------------------------------------------------------------
 
+    let mut cur_pwm = pwm_watch.get().await;
+    let mut cur_rpm = STALL_RPM + 1;
+    let mut hall_error_cnt = 0;
+
     //Monitor other systems
-    while !error_state {}
+    while !error_state {
+        match select4(
+            curr_roll.update(&mut i_watch),
+            v_watch.changed(),
+            rpm_watch.changed(),
+            pwm_watch.changed(),
+        )
+        .await
+        {
+            embassy_futures::select::Either4::First(_) => {
+                if curr_roll.mean() > OVER_CURR_THRESH {
+                    SAFETY_WATCH
+                        .sender()
+                        .send(ControllerCond::NG(ControllerError::CurrentOOR));
+                    error_state = true;
+                }
+            }
+            embassy_futures::select::Either4::Second(new_volt) => {
+                if new_volt >= OVER_VOLT || new_volt <= UNDER_VOLT {
+                    SAFETY_WATCH
+                        .sender()
+                        .send(ControllerCond::NG(ControllerError::VoltageOOR));
+                    error_state = true;
+                }
+            }
+            embassy_futures::select::Either4::Third(new_rpm) => {
+                match new_rpm {
+                    crate::speed_sense::HallRpm::Good(rpm) => {
+                        cur_rpm = rpm;
+                        hall_error_cnt = 0;
+                    }
+                    _ => hall_error_cnt += 1,
+                }
+                if cur_rpm < STALL_RPM && cur_pwm > STALL_PWM {
+                    SAFETY_WATCH
+                        .sender()
+                        .send(ControllerCond::NG(ControllerError::Stall));
+                    error_state = true;
+                } else if hall_error_cnt > HALL_ERR_CNT_THRESH {
+                    SAFETY_WATCH
+                        .sender()
+                        .send(ControllerCond::NG(ControllerError::HallError));
+                    error_state = true;
+                }
+            }
+            embassy_futures::select::Either4::Fourth(new_pwm) => {
+                cur_pwm = new_pwm;
+            }
+        }
+    }
 }

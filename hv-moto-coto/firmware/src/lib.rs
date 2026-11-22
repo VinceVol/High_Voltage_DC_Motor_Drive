@@ -6,9 +6,7 @@ use embassy_sync::{
     blocking_mutex::raw::CriticalSectionRawMutex, mutex::Mutex, signal::Signal, watch::Watch,
 };
 
-use crate::{
-    cap_precharge::PrechargeState, pwm::Direction, safety::ControllerCond, speed_sense::HallRpm,
-};
+use crate::{pwm::Direction, safety::ControllerCond, speed_sense::HallRpm};
 
 pub mod bus_init;
 
