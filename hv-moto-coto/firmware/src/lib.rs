@@ -77,3 +77,6 @@ unsafe extern "C" {
     static CONFIG_START: u32;
 }
 pub static FLASH_MUT_SIZE: usize = 2048 * 1024; //The allocated space for all saved variables
+
+//DISPLAY -- Self explanatory, want to know the rpm readout and be able to change settings on the fly
+pub mod display;

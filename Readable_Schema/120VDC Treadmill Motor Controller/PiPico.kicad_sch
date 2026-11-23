@@ -2632,9 +2632,9 @@
 		)
 		(uuid "1ef7adc4-25b4-42c7-bf8f-8625d758f34d")
 	)
-	(text "ADC_CENTER_PWM"
+	(text "E_STOP_OUT"
 		(exclude_from_sim no)
-		(at 85.09 122.174 0)
+		(at 83.312 122.174 0)
 		(effects
 			(font
 				(size 1.27 1.27)
