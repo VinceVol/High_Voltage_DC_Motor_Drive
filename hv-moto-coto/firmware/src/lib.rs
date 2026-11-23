@@ -80,3 +80,7 @@ pub static FLASH_MUT_SIZE: usize = 2048 * 1024; //The allocated space for all sa
 
 //DISPLAY -- Self explanatory, want to know the rpm readout and be able to change settings on the fly
 pub mod display;
+
+//button -- reading the rotary encoder and sending that information to the rest of the program
+// the rotary encoder also includes a clickable button, hence the name
+pub mod button;

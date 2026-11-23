@@ -1,11 +1,5 @@
 //This project is using the SSD1306 oled and this section is dedicated to running that screen
 
-use embassy_embedded_hal::shared_bus::asynch::i2c::I2cDevice;
-use embassy_rp::{
-    i2c::{Async, I2c},
-    peripherals::I2C1,
-};
-use embassy_sync::blocking_mutex::raw::CriticalSectionRawMutex;
 use embedded_graphics::{
     geometry::Point,
     mono_font::{ascii::FONT_6X10, MonoTextStyleBuilder},
@@ -18,7 +12,7 @@ use ssd1306::{
     I2CDisplayInterface, Ssd1306Async,
 };
 
-type TwiDevice = I2cDevice<'static, CriticalSectionRawMutex, I2c<'static, I2C1, Async>>;
+use crate::bus_init::TwiDevice;
 
 #[embassy_executor::task]
 pub async fn display_runner(i2c_p: TwiDevice) {

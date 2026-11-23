@@ -1,12 +1,13 @@
 //Looking for this to be a relatively portable piece of code that allows for easy
 // spi bus generation and defines some types for spi device calls
 
+use embassy_embedded_hal::shared_bus::asynch::i2c::I2cDevice;
 use embassy_rp::{
     bind_interrupts,
     flash::Flash,
     i2c::{self, I2c, SclPin, SdaPin},
     peripherals::{DMA_CH0, DMA_CH1, DMA_CH2, FLASH, I2C1, SPI1},
-    spi::{self, Async, ClkPin, MisoPin, MosiPin, Spi},
+    spi::{self, ClkPin, MisoPin, MosiPin, Spi},
     Peri,
 };
 use static_cell::StaticCell;
@@ -22,7 +23,8 @@ bind_interrupts!(pub struct Irqs {
 });
 
 //As soon as more spi devices are in use, this needs to change to async spibus
-type SpiBus = embassy_sync::mutex::Mutex<CriticalSectionRawMutex, Spi<'static, SPI1, Async>>;
+type SpiBus =
+    embassy_sync::mutex::Mutex<CriticalSectionRawMutex, Spi<'static, SPI1, embassy_rp::spi::Async>>;
 
 pub fn spi_init<Mosi, Miso, Clk>(
     spi_p: Peri<'static, SPI1>,
@@ -48,6 +50,8 @@ where
 
 type TwiBus =
     embassy_sync::mutex::Mutex<CriticalSectionRawMutex, I2c<'static, I2C1, embassy_rp::i2c::Async>>;
+pub type TwiDevice =
+    I2cDevice<'static, CriticalSectionRawMutex, I2c<'static, I2C1, embassy_rp::i2c::Async>>;
 
 pub fn i2c_init<Sda, Scl>(
     i2c: Peri<'static, I2C1>,
