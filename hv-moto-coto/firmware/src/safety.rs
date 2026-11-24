@@ -31,6 +31,18 @@ pub enum ControllerError {
     PreChargeError, //if the caps take too long to precharge
 }
 
+impl ControllerError {
+    pub const fn as_msg(self) -> &'static str {
+        match self {
+            ControllerError::CurrentOOR => "CURR OOR",
+            ControllerError::VoltageOOR => "VOLT OOR",
+            ControllerError::Stall => "MOTOR STALL",
+            ControllerError::HallError => "HALL FAULT",
+            ControllerError::PreChargeError => "PRECHARGE ERR",
+        }
+    }
+}
+
 //The e stop out pin "GPIO 9" is used to tell the mesa controller to stop
 // operations if there's some kind of motor fault. obviously if this thing
 // is stalled out we don't want linux cnc to keep cookin

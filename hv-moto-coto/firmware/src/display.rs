@@ -1,23 +1,37 @@
 //This project is using the SSD1306 oled and this section is dedicated to running that screen
 
+use defmt::Format;
 use embassy_embedded_hal::shared_bus::asynch::i2c::I2cDevice;
-use embassy_futures::select::{Either3, select3};
+use embassy_futures::select::{select3, Either3};
 use embassy_time::{Duration, Timer};
 use embedded_graphics::{
     geometry::Point,
-    mono_font::{ascii::FONT_6X10, MonoTextStyleBuilder},
+    mono_font::{
+        ascii::{FONT_10X20, FONT_6X10},
+        MonoTextStyleBuilder,
+    },
     pixelcolor::BinaryColor,
     text::{Baseline, Text},
     Drawable,
 };
-use embedded_menu::{Menu, SelectValue, interaction::{Action, Interaction, Navigation}};
+use embedded_menu::{
+    interaction::{Action, Interaction, Navigation},
+    Menu, SelectValue,
+};
+use heapless::String;
 use ssd1306::{
-    I2CDisplayInterface, Ssd1306Async, mode::{BufferedGraphicsModeAsync, DisplayConfigAsync}, rotation::DisplayRotation, size::DisplaySize128x32,
+    mode::{BufferedGraphicsModeAsync, DisplayConfigAsync},
+    rotation::DisplayRotation,
+    size::DisplaySize128x32,
+    I2CDisplayInterface, Ssd1306Async,
 };
 
-use crate::{BUTTON_SIGNAL, I_WATCH, RPM_FILT_WATCH, SAFETY_WATCH, bus_init::TwiDevice, button::ButtonSignal};
+use crate::{
+    bus_init::TwiDevice, button::ButtonSignal, safety::ControllerCond, BUTTON_SIGNAL, I_WATCH,
+    RPM_FILT_WATCH, RPM_RAW_WATCH, SAFETY_WATCH,
+};
 
-#[derive(Copy,Clone,PartialEq,Eq)]
+#[derive(Copy, Clone, PartialEq, Eq)]
 enum ScreenOptions {
     RpmWCurrent,
     Menu,
@@ -30,6 +44,13 @@ enum MenuOptions {
     Autotune,
     SetRpmRange,
 }
+
+#[derive(Copy, Clone, Debug, Default)]
+pub struct Telemetry {
+    pub rpm: u16,
+    pub current_a: f32,
+}
+
 #[embassy_executor::task]
 pub async fn display_runner(i2c_p: TwiDevice) {
     let interface = I2CDisplayInterface::new(i2c_p);
@@ -47,15 +68,55 @@ pub async fn display_runner(i2c_p: TwiDevice) {
     //keep track on incoming information
     let mut safety_watch = SAFETY_WATCH.receiver().unwrap();
     let mut i_watch = I_WATCH.receiver().unwrap();
-    let mut rpm_watch = RPM_FILT_WATCH.receiver().unwrap();
+    let mut rpm_watch = RPM_RAW_WATCH.receiver().unwrap();
 
+    //Build the menu
     let mut menu = Menu::build("Mode")
         .add_item("Manual Tune", MenuOptions::ManualTune, |val| val)
         .add_item("Autotune", MenuOptions::Autotune, |val| val)
         .add_item("Set RPM Range", MenuOptions::SetRpmRange, |val| val)
         .build();
 
+    //Button handler -- easier to do this as a closure with access to the menu directly rather than creating another fn
+    // that passes the menu -- unfortunate
     let mut last_selected = menu.selected_value();
+    let mut handle_button = |btn: ButtonSignal| match screen {
+        ScreenOptions::Error => match btn {
+            ButtonSignal::SingleClick | ButtonSignal::LongPress => {
+                active_error = None;
+                screen = previous_screen;
+            }
+            _ => {}
+        },
+
+        ScreenOptions::RpmWCurrent => match btn {
+            ButtonSignal::LongPress => {
+                previous_screen = ScreenOptions::RpmWCurrent;
+                screen = ScreenOptions::Menu;
+            }
+            _ => {}
+        },
+
+        ScreenOptions::Menu => match btn {
+            ButtonSignal::GoRight => {
+                let _ = menu.interact(Interaction::Navigation(Navigation::Next));
+            }
+            ButtonSignal::GoLeft => {
+                let _ = menu.interact(Interaction::Navigation(Navigation::Previous));
+            }
+            ButtonSignal::SingleClick => {
+                let _ = menu.interact(Interaction::Action(Action::Select));
+                let selected = menu.selected_value();
+                if selected != last_selected {
+                    last_selected = selected;
+                }
+                apply_menu_selection(selected, &mut screen);
+            }
+            ButtonSignal::DoubleClick | ButtonSignal::LongPress => {
+                screen = ScreenOptions::RpmWCurrent;
+            }
+        },
+    };
 
     draw_screen(
         &mut display,
@@ -79,44 +140,31 @@ pub async fn display_runner(i2c_p: TwiDevice) {
             BUTTON_SIGNAL.wait(),
             rpm_watch.changed(),
             safety_watch.changed(),
-            )
+        )
         .await
         {
             Either3::First(btn) => {
-                handle_button(
-                    btn,
-                    &mut screen,
-                    &mut previous_screen,
-                    &mut active_error,
-                    &mut menu,
-                    &mut last_selected,
-                );
+                handle_button(btn);
                 flash_visible = true;
             }
-            Either3::Second(new_telemetry) => {
-                telemetry = new_telemetry;
+            Either3::Second(new_rpm) => {
+                //the rpm/current display refreshes based on new rpm information
+                // The current should refresh way faster than rpm but just in case take the old
+                telemetry = Telemetry {
+                    rpm: new_rpm,
+                    current_a: i_watch.try_get().unwrap_or(telemetry.current_a),
+                };
             }
-            Either3::Third(ErrorEvent::Signal(err_msg)) => {
-                if let Some(msg) = err_msg {
-                    if screen != ScreenOptions::Error {
-                        previous_screen = screen;
-                    }
-                    active_error = Some(msg);
+            Either3::Third(controller_cond) => match controller_cond {
+                ControllerCond::Ok | ControllerCond::Wait => {
+                    previous_screen = screen;
+                }
+                ControllerCond::NG(controller_error) => {
+                    active_error = Some(controller_error.as_msg());
                     screen = ScreenOptions::Error;
                     flash_visible = true;
-                } else {
-                    // `Some(err)` sets an error; `None` clears it
-                    active_error = None;
-                    if screen == ScreenOptions::Error {
-                        screen = previous_screen;
-                    }
                 }
-            }
-            Either3::Third(ErrorEvent::FlashTick) => {
-                if screen == ScreenOptions::Error {
-                    flash_visible = !flash_visible;
-                }
-            }
+            },
         }
 
         draw_screen(
@@ -134,55 +182,6 @@ pub async fn display_runner(i2c_p: TwiDevice) {
 enum ErrorEvent {
     Signal(Option<&'static str>),
     FlashTick,
-}
-
-fn handle_button(
-    btn: ButtonSignal,
-    screen: &mut ScreenOptions,
-    previous_screen: &mut ScreenOptions,
-    active_error: &mut Option<&'static str>,
-    menu: &mut Menu<&str, ...>, // Replace with your concrete `embedded_menu::Menu` type or infer via `let _`
-    last_selected: &mut MenuOptions,
-) {
-    match *screen {
-        ScreenOptions::Error => match btn {
-            // Allow single click or long press to dismiss/acknowledge the error display
-            ButtonSignal::SingleClick | ButtonSignal::LongPress => {
-                *active_error = None;
-                *screen = *previous_screen;
-            }
-            _ => {}
-        },
-
-        ScreenOptions::RpmWCurrent => match btn {
-            ButtonSignal::LongPress => {
-                *previous_screen = ScreenOptions::RpmWCurrent;
-                *screen = ScreenOptions::Menu;
-            }
-            _ => {}
-        },
-
-        ScreenOptions::Menu => match btn {
-            ButtonSignal::GoRight => {
-                let _ = menu.interact(Interaction::Navigation(Navigation::Next));
-            }
-            ButtonSignal::GoLeft => {
-                let _ = menu.interact(Interaction::Navigation(Navigation::Previous));
-            }
-            ButtonSignal::SingleClick => {
-                let _ = menu.interact(Interaction::Action(Action::Select));
-                let selected = menu.selected_value();
-                if selected != *last_selected {
-                    *last_selected = selected;
-                }
-                apply_menu_selection(selected, screen);
-            }
-            ButtonSignal::DoubleClick | ButtonSignal::LongPress => {
-                // Exit menu back to main RPM/Current screen
-                *screen = ScreenOptions::RpmWCurrent;
-            }
-        },
-    }
 }
 
 fn apply_menu_selection(selected: MenuOptions, screen: &mut ScreenOptions) {
@@ -210,6 +209,7 @@ async fn draw_screen<DI, M>(
     menu: &mut M,
 ) where
     M: embedded_graphics::Drawable<Color = BinaryColor>,
+    DI: display_interface::AsyncWriteOnlyDataCommand,
 {
     display.clear_buffer();
 
@@ -229,7 +229,7 @@ async fn draw_screen<DI, M>(
             let _ = write!(rpm_buf, "{} RPM", telemetry.rpm);
 
             let mut curr_buf: String<24> = String::new();
-            let _ = write!(curr_buf, "I: {} mA", telemetry.current_ma);
+            let _ = write!(curr_buf, "I: {} A", telemetry.current_a);
 
             Text::with_baseline(&rpm_buf, Point::new(0, 0), rpm_style, Baseline::Top)
                 .draw(display)
@@ -243,7 +243,7 @@ async fn draw_screen<DI, M>(
         ScreenOptions::Menu => {
             // Note: depending on your `embedded-menu` version, call `menu.update(display)`
             // before `menu.draw(display)` if available.
-            let _ = menu.draw(display);
+            menu.draw(display);
         }
 
         ScreenOptions::Error => {
@@ -272,4 +272,3 @@ async fn draw_screen<DI, M>(
 
     display.flush().await.expect("SSD1306 flush failed");
 }
-
