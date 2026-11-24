@@ -70,8 +70,8 @@ const OVER_CURR_THRESH: f32 = 19f32; //19 amps is too close I think to the limit
 const UNDER_VOLT: i64 = 3; //FIX LATER and update to ~105
 const OVER_VOLT: i64 = 125;
 const STALL_RPM: u16 = 20;
-const STALL_PWM: u16 = 100;
-const HALL_ERR_CNT_THRESH: u8 = 4; //how many filtered rpm reads can return an error before we throw flag
+// const STALL_PWM: u16 = 100;
+// const HALL_ERR_CNT_THRESH: u8 = 4; //how many filtered rpm reads can return an error before we throw flag
 #[embassy_executor::task]
 pub async fn are_we_safe(q5_en: Peri<'static, PIN_20>) {
     let mut i_watch = I_WATCH.receiver().unwrap();
@@ -116,9 +116,9 @@ pub async fn are_we_safe(q5_en: Peri<'static, PIN_20>) {
     }
     //CAP PRE CHARGE -------------------------------------------------------------
 
-    let mut cur_pwm = pwm_watch.get().await;
-    let mut cur_rpm = STALL_RPM + 1;
-    let mut hall_error_cnt = 0;
+    let mut _cur_pwm = pwm_watch.get().await;
+    let mut _cur_rpm = STALL_RPM + 1;
+    let mut _hall_error_cnt = 0;
 
     //Monitor other systems
     while !error_state {
@@ -154,8 +154,8 @@ pub async fn are_we_safe(q5_en: Peri<'static, PIN_20>) {
             }
             embassy_futures::select::Either4::Third(new_rpm) => match new_rpm {
                 crate::speed_sense::HallRpm::Good(rpm) => {
-                    cur_rpm = rpm;
-                    hall_error_cnt = 0;
+                    _cur_rpm = rpm;
+                    _hall_error_cnt = 0;
                 }
                 crate::speed_sense::HallRpm::Stall => {
                     SAFETY_WATCH
@@ -163,10 +163,10 @@ pub async fn are_we_safe(q5_en: Peri<'static, PIN_20>) {
                         .send(ControllerCond::NG(ControllerError::Stall));
                     error_state = true;
                 }
-                _ => hall_error_cnt += 1,
+                _ => _hall_error_cnt += 1,
             },
             embassy_futures::select::Either4::Fourth(new_pwm) => {
-                cur_pwm = new_pwm;
+                _cur_pwm = new_pwm;
             }
         }
     }

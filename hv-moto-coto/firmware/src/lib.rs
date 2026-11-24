@@ -6,7 +6,7 @@ use embassy_sync::{
     blocking_mutex::raw::CriticalSectionRawMutex, mutex::Mutex, signal::Signal, watch::Watch,
 };
 
-use crate::{pwm::Direction, safety::ControllerCond, speed_sense::HallRpm};
+use crate::{button::ButtonSignal, pwm::Direction, safety::ControllerCond, speed_sense::HallRpm};
 
 pub mod bus_init;
 
@@ -84,3 +84,4 @@ pub mod display;
 //button -- reading the rotary encoder and sending that information to the rest of the program
 // the rotary encoder also includes a clickable button, hence the name
 pub mod button;
+pub static BUTTON_SIGNAL: Signal<CriticalSectionRawMutex, ButtonSignal> = Signal::new();

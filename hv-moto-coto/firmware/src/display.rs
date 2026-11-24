@@ -14,6 +14,18 @@ use ssd1306::{
 
 use crate::bus_init::TwiDevice;
 
+enum ScreenOptions {
+    RpmWCurrent,
+    Menu,
+    Error,
+}
+
+enum MenuOptions {
+    ManualTune,
+    Autotune,
+    SetRpmRange,
+}
+
 #[embassy_executor::task]
 pub async fn display_runner(i2c_p: TwiDevice) {
     let interface = I2CDisplayInterface::new(i2c_p);
