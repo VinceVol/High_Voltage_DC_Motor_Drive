@@ -14,8 +14,8 @@ use signal_filters::{MedianFilter5, Pt2Filterf32, SignalFilter};
 
 use crate::{
     AUTOTUNE_OVERRIDE, CHANGE_THRESHOLD, I_CORR_NUM, I_CORR_OFF, I_INTR, I_REF_RATE_US, I_WATCH,
-    MAX_SPINDLE_SPEED, MESA_MON_DEL_MS, RPM_REQ_SIG, V_CORR_NUM, V_CORR_OFF, V_REF_RATE_US,
-    V_WATCH,
+    MAX_SPINDLE_SPEED, MESA_MON_DEL_MS, MOTOR_MODE, RPM_REQ_WATCH, V_CORR_NUM, V_CORR_OFF,
+    V_REF_RATE_US, V_WATCH,
 };
 
 #[embassy_executor::task]
@@ -97,6 +97,10 @@ pub async fn adc_runner(
                 }
             }
             Either3::Third(_) => {
+                //If you;re in manual mode then skip reading/ sending this adc info
+                if !MOTOR_MODE.load(core::sync::atomic::Ordering::Relaxed) {
+                    continue;
+                }
                 //check if autotune has been updated
                 if let Some(new_tune) = autotune_watch.try_changed() {
                     autotune_enabled = new_tune;
@@ -115,7 +119,7 @@ pub async fn adc_runner(
                         //sending the converted 4095 max to rpm max
                         if (good_v as i16 - last_set_pnt as i16).abs() > CHANGE_THRESHOLD {
                             last_set_pnt = good_v;
-                            RPM_REQ_SIG.signal(
+                            RPM_REQ_WATCH.sender().send(
                                 ((MAX_SPINDLE_SPEED as u64 * filtered_voltage as u64) / 4095u64)
                                     as u16,
                             );

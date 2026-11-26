@@ -1,6 +1,6 @@
 #![no_std]
 
-use core::sync::atomic::{AtomicU16, AtomicU32};
+use core::sync::atomic::{AtomicBool, AtomicU16, AtomicU32};
 
 use embassy_sync::{
     blocking_mutex::raw::CriticalSectionRawMutex, mutex::Mutex, signal::Signal, watch::Watch,
@@ -12,7 +12,13 @@ pub mod bus_init;
 
 //motor loop driven by req signals
 pub mod motor;
-pub static RPM_REQ_SIG: Signal<CriticalSectionRawMutex, u16> = Signal::new(); //Voltage Readout of caps
+//AUTO MODE -- TRUE
+// Read the voltage readout from the mesa pin
+//
+// MAN MODE -- FALSE
+// Use the knob to change setpoints
+pub static MOTOR_MODE: AtomicBool = AtomicBool::new(false);
+pub static RPM_REQ_WATCH: Watch<CriticalSectionRawMutex, u16, 5> = Watch::new(); //Voltage Readout of caps
 pub static DIR_REQ_SIG: Signal<CriticalSectionRawMutex, Direction> = Signal::new(); //Voltage Readout of caps
 pub static MOT_LOOP_EN: Signal<CriticalSectionRawMutex, bool> = Signal::new(); //during autotune we dont want motor to own the pwm
 pub static I_REF_RATE_US: u64 = (5 * 1000000) / PWM_FREQ; //denom is 20KHZ 5 is measureing i every 5 pwm

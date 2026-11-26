@@ -20,7 +20,6 @@ pub enum ButtonSignal {
 
 #[embassy_executor::task]
 pub async fn button_runner(i2c_p: TwiDevice) {
-    defmt::info!("A");
     let mut knob = Knob::new(i2c_p).await.expect("Unable to talk to knob");
 
     // Set a range for the encoder value
@@ -29,8 +28,6 @@ pub async fn button_runner(i2c_p: TwiDevice) {
     //Set up ticker for button refresh rate
     let mut button_ticker = Ticker::every(Duration::from_millis(BUT_REF_MS));
     let mut encoder_timer = Instant::now();
-    let mut last_click_timer = Instant::now();
-    defmt::info!("B");
 
     loop {
         button_ticker.next().await;
@@ -56,19 +53,14 @@ pub async fn button_runner(i2c_p: TwiDevice) {
 
                 //Check if the button on the knob was clicked next
                 if knob.pressed() {
-                    // --- 1. SET DEBUG PIN HIGH (GPIO 8) ---
-                    debug_high(8);
                     Timer::after_millis(BUT_DBNC_MS).await;
                     let _ = knob.update().await;
-                    // --- 3. SET DEBUG PIN LOW (GPIO 8) ---
-                    debug_low(8);
                     if knob.pressed() {
                         BUTTON_SIGNAL.signal(ButtonSignal::LongPress);
                     } else {
                         BUTTON_SIGNAL.signal(ButtonSignal::SingleClick);
                     }
                 }
-                last_click_timer = Instant::now();
             }
             Err(_e) => defmt::info!("Error reading knob!"),
         }
@@ -77,6 +69,10 @@ pub async fn button_runner(i2c_p: TwiDevice) {
         }
     }
 }
+// --- 1. SET DEBUG PIN HIGH (GPIO 8) ---
+// debug_high(8);
+// --- 3. SET DEBUG PIN LOW (GPIO 8) ---
+// debug_low(8);
 // Define the SIO register base addresses as constants
 const SIO_BASE: usize = 0xD000_0000;
 const GPIO_OUT_SET: usize = SIO_BASE + 0x018;

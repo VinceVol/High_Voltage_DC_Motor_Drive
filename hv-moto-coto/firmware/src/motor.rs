@@ -13,7 +13,7 @@ use embassy_time::{Duration, Ticker, Timer};
 use crate::{
     autotune::PidConfig, pwm::Direction, speed_sense::HallRpm, DIR_REQ_SIG, DIR_WATCH,
     FLASH_MUT_SIZE, I_REF_RATE_US, I_WATCH, MAX_CURRENT_AMPS, MAX_SPINDLE_SPEED, MOT_LOOP_EN,
-    PWM_WATCH, RPM_BFR_DIR_SWTCH, RPM_FILT_WATCH, RPM_REF_RATE_MS, RPM_REQ_SIG,
+    PWM_WATCH, RPM_BFR_DIR_SWTCH, RPM_FILT_WATCH, RPM_REF_RATE_MS, RPM_REQ_WATCH,
 };
 
 #[embassy_executor::task]
@@ -41,6 +41,7 @@ pub async fn run_motor(
     let mut rpm_watch = RPM_FILT_WATCH.receiver().unwrap(); //Direct feed from the hall sensor
     let mut rpm = 0; //Tacking speed measurement pulling from RPM_FILT_WATCH
     let mut speed_ticker = Ticker::every(Duration::from_millis(RPM_REF_RATE_MS)); //PID Refresh Rate speed loop
+    let mut rpm_stpnt_watch = RPM_REQ_WATCH.receiver().unwrap();
 
     //pwm output
     let mut prev_pwm_out = 0; //PID Loop output each cycle
@@ -83,12 +84,10 @@ pub async fn run_motor(
             continue;
         }
 
-        //NEW INPUT FOR RPM
-        //if mesa has changed the rpm or dir then update our setpoints
-        if let Some(new_rpm_set) = RPM_REQ_SIG.try_take() {
-            //FIX back to mesa input
-            // rpm_stpt = new_rpm_set;
-            rpm_stpt = 500;
+        //RPM Input
+        //incoming data depends on auto or manual mode
+        if let Some(new_rpm_set) = rpm_stpnt_watch.try_get() {
+            rpm_stpt = new_rpm_set;
 
             //Feed Forward update based on autotune interpolation
             feed_forward = interpolate::<u16, i32, 24>(
