@@ -62,7 +62,7 @@ pub static V_CORR_OFF: f32 = -300f32; //Votlage offset from zero in the current 
 //Mesa coms -- communications from either a mesa board or user buttons (CNC or manual machine)
 pub mod mesa;
 pub static CHANGE_THRESHOLD: i16 = 150; //Assuming the voltage output is imperfect out of the mesa, what's the threshold
-pub static MESA_MON_DEL_MS: u64 = 500; //how often should we even check the mesa board outputs
+pub static MESA_MON_DEL_MS: u64 = 50; //how often should we even check the mesa board outputs
 
 //Autotune -- Want to use a lookup table to get close to the requested speed and obviously tune the PID perameters to prevent oscillations but promote fast response
 pub mod autotune;
@@ -77,6 +77,7 @@ unsafe extern "C" {
     static CONFIG_START: u32;
 }
 pub static FLASH_MUT_SIZE: usize = 2048 * 1024; //The allocated space for all saved variables
+pub mod saved_param; //module to save all the configuration information for the controller
 
 //DISPLAY -- Self explanatory, want to know the rpm readout and be able to change settings on the fly
 pub mod display;

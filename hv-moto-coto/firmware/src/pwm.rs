@@ -166,8 +166,6 @@ fn PWM_IRQ_WRAP_0() {
 
 #[interrupt]
 fn TIMER1_IRQ_0() {
-    // --- 1. SET DEBUG PIN HIGH (GPIO 8) ---
-    debug_high(8);
     // Select ADC input channel for PIN_26 (which is ADC channel 0)
     rp_pac::ADC.cs().modify(|w| {
         w.set_en(true); // Select channel 0 for pin 26
@@ -186,27 +184,4 @@ fn TIMER1_IRQ_0() {
 
     //Reset the interrupt -- r in int'r'
     rp_pac::TIMER1.intr().write(|w| w.set_alarm(0, true));
-    // --- 3. SET DEBUG PIN LOW (GPIO 8) ---
-    debug_low(8);
-}
-
-// Define the SIO register base addresses as constants
-const SIO_BASE: usize = 0xD000_0000;
-const GPIO_OUT_SET: usize = SIO_BASE + 0x018;
-const GPIO_OUT_CLR: usize = SIO_BASE + 0x020;
-
-#[inline(always)]
-fn debug_high(pin: u32) {
-    unsafe {
-        // Writing a 1 to a bit in GPIO_OUT_SET forces that pin high instantly
-        core::ptr::write_volatile(GPIO_OUT_SET as *mut u32, 1 << pin);
-    }
-}
-
-#[inline(always)]
-fn debug_low(pin: u32) {
-    unsafe {
-        // Writing a 1 to a bit in GPIO_OUT_CLR forces that pin low instantly
-        core::ptr::write_volatile(GPIO_OUT_CLR as *mut u32, 1 << pin);
-    }
 }

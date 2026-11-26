@@ -53,6 +53,11 @@ pub async fn adc_runner(
     let mut v_lowpass_filter = Pt2Filterf32::new();
     v_lowpass_filter.set_cutoff_frequency(70.0, (V_REF_RATE_US as f32) / 1000000f32);
 
+    //mesa input requires filtering
+    let mut m_spike_filter = MedianFilter5::<f32>::new();
+    let mut m_lowpass_filter = Pt2Filterf32::new();
+    m_lowpass_filter.set_cutoff_frequency(70.0, (MESA_MON_DEL_MS as f32) / 1000000f32);
+
     //Check the adc at MESA_MON_DEL_MS frequency and if the voltage has changed past a given
     // threshold then send a updated speed to the REQ signal line
     let mut last_set_pnt = 0;
@@ -102,14 +107,20 @@ pub async fn adc_runner(
                 }
                 match adc_v_in.read(&mut spindle_cmd).await {
                     Ok(good_v) => {
+                        //remove spikes and outliers
+                        let despooled = m_spike_filter.update(good_v.into());
+
+                        //go through lowpass for additional filtering
+                        let filtered_voltage = m_lowpass_filter.update(despooled);
+                        //sending the converted 4095 max to rpm max
                         if (good_v as i16 - last_set_pnt as i16).abs() > CHANGE_THRESHOLD {
                             last_set_pnt = good_v;
-                            //sending the converted 4095 max to rpm max
                             RPM_REQ_SIG.signal(
-                                ((MAX_SPINDLE_SPEED as u64 * good_v as u64) / 4095u64) as u16,
+                                ((MAX_SPINDLE_SPEED as u64 * filtered_voltage as u64) / 4095u64)
+                                    as u16,
                             );
-                            info!("rpm req v: {}", good_v);
                         }
+                        // info!("raw_req_v: {}, filt v: {}", good_v, filtered_voltage);
                     }
                     Err(_adc_error) => {
                         info!("Error reading adc pin -- req rpm");

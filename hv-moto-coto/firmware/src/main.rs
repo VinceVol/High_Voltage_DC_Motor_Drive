@@ -3,8 +3,11 @@
 
 use defmt::info;
 use defmt_rtt as _;
+use embassy_embedded_hal::shared_bus::asynch::i2c::I2cDevice;
 use embassy_rp::gpio::{Input, Output};
 use hv_moto_coto::autotune::atune_btn_run;
+use hv_moto_coto::button::button_runner;
+use hv_moto_coto::display::display_runner;
 use hv_moto_coto::motor::run_motor;
 use hv_moto_coto::safety::{are_we_safe, be_safe};
 use hv_moto_coto::{adc_runner, mesa};
@@ -22,7 +25,9 @@ async fn main(spawner: Spawner) {
     let p = embassy_rp::init(Default::default());
     let _spi_bus = spi_init(p.SPI1, p.PIN_11, p.PIN_12, p.PIN_10, p.DMA_CH1, p.DMA_CH0);
     info!("SPI initialized on RP2350!");
-    let _i2c_bus = i2c_init(p.I2C1, p.PIN_18, p.PIN_19);
+    let i2c_bus = i2c_init(p.I2C1, p.PIN_18, p.PIN_19);
+    let knob_i2c = I2cDevice::new(i2c_bus);
+    let disp_i2c = I2cDevice::new(i2c_bus);
     info!("I2C initialized on RP2350!");
     let flash_p = flash_init(p.FLASH, p.DMA_CH2);
 
@@ -59,6 +64,9 @@ async fn main(spawner: Spawner) {
     );
     let _ = spawner.spawn(run_motor(flash_p).unwrap());
     let _ = spawner.spawn(atune_btn_run(p.PIN_7, flash_p).unwrap());
+
+    let _ = spawner.spawn(button_runner(knob_i2c).unwrap());
+    let _ = spawner.spawn(display_runner(disp_i2c).unwrap());
 
     loop {
         // info!("LED ON");

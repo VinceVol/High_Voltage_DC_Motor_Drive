@@ -86,7 +86,9 @@ pub async fn run_motor(
         //NEW INPUT FOR RPM
         //if mesa has changed the rpm or dir then update our setpoints
         if let Some(new_rpm_set) = RPM_REQ_SIG.try_take() {
-            rpm_stpt = new_rpm_set;
+            //FIX back to mesa input
+            // rpm_stpt = new_rpm_set;
+            rpm_stpt = 500;
 
             //Feed Forward update based on autotune interpolation
             feed_forward = interpolate::<u16, i32, 24>(

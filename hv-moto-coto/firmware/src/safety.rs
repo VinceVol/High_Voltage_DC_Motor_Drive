@@ -64,12 +64,14 @@ pub async fn be_safe(e_stop_out_p: Peri<'static, PIN_9>, dig_drive_en_p: Peri<'s
                 defmt::info!("Enabling the drives!");
             }
             ControllerCond::Wait => {
-                dr_en.set_low();
+                //FIX re-enable these later
+                // dr_en.set_low();
                 defmt::info!("Waiting to re-enable the drives!");
             }
             ControllerCond::NG(contr_err) => {
                 defmt::info!("Controller Error: {:?}", contr_err);
-                dr_en.set_low();
+                //FIX re-enable these later
+                // dr_en.set_low();
                 e_stop_out.set_high();
             }
         }
