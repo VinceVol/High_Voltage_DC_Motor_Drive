@@ -12,7 +12,7 @@ use embassy_time::{Duration, Ticker, Timer};
 
 use crate::{
     autotune::PidConfig, pwm::Direction, speed_sense::HallRpm, DIR_REQ_SIG, DIR_WATCH,
-    FLASH_MUT_SIZE, I_REF_RATE_US, I_WATCH, MAX_CURRENT_AMPS, MAX_SPINDLE_SPEED, MOT_LOOP_EN,
+    FLASH_MUT_SIZE, I_REF_RATE_US, I_WATCH, MAX_CURRENT_MA, MAX_SPINDLE_SPEED, MOT_LOOP_EN,
     PWM_WATCH, RPM_BFR_DIR_SWTCH, RPM_FILT_WATCH, RPM_REF_RATE_MS, RPM_REQ_WATCH,
 };
 
@@ -138,8 +138,10 @@ pub async fn run_motor(
                 if let Some(HallRpm::Good(new_rpm)) = rpm_watch.try_get() {
                     rpm = new_rpm;
                 }
-                let norm_rpm_stpnt = rpm_stpt as f32 / MAX_SPINDLE_SPEED as f32;
-                let norm_rpm = rpm as f32 / MAX_SPINDLE_SPEED as f32;
+                let norm_rpm_stpnt = rpm_stpt as f32
+                    / MAX_SPINDLE_SPEED.load(core::sync::atomic::Ordering::Relaxed) as f32;
+                let norm_rpm = rpm as f32
+                    / MAX_SPINDLE_SPEED.load(core::sync::atomic::Ordering::Relaxed) as f32;
 
                 //update pwm based on rpm and setpnt /normalize at the same time
                 target_current_norm = speed_pid
@@ -172,7 +174,8 @@ pub async fn run_motor(
                 if let Some(new_current) = i_watch.try_changed() {
                     current = new_current;
                 }
-                let current_measured_norm = current / MAX_CURRENT_AMPS;
+                let current_measured_norm = current
+                    / (MAX_CURRENT_MA.load(core::sync::atomic::Ordering::Relaxed) as f32 / 1000f32);
 
                 current_pid_output = current_pid.update(
                     target_current_norm,
@@ -210,7 +213,7 @@ async fn change_directions<'a>(
     new_direction: Direction,
     rpm_watch: &mut Receiver<'a, CriticalSectionRawMutex, HallRpm, 100>,
 ) {
-    let mut rpm = MAX_SPINDLE_SPEED;
+    let mut rpm = MAX_SPINDLE_SPEED.load(core::sync::atomic::Ordering::Relaxed);
     //Turn motor off before switching
     PWM_WATCH.sender().send(0);
     while rpm > RPM_BFR_DIR_SWTCH {

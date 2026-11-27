@@ -120,8 +120,10 @@ pub async fn adc_runner(
                         if (good_v as i16 - last_set_pnt as i16).abs() > CHANGE_THRESHOLD {
                             last_set_pnt = good_v;
                             RPM_REQ_WATCH.sender().send(
-                                ((MAX_SPINDLE_SPEED as u64 * filtered_voltage as u64) / 4095u64)
-                                    as u16,
+                                ((MAX_SPINDLE_SPEED.load(core::sync::atomic::Ordering::Relaxed)
+                                    as u64
+                                    * filtered_voltage as u64)
+                                    / 4095u64) as u16,
                             );
                         }
                         // info!("raw_req_v: {}, filt v: {}", good_v, filtered_voltage);

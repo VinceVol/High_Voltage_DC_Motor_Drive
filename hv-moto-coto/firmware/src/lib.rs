@@ -17,7 +17,6 @@ pub mod motor;
 //
 // MAN MODE -- FALSE
 // Use the knob to change setpoints
-pub static MOTOR_MODE: AtomicBool = AtomicBool::new(false);
 pub static RPM_REQ_WATCH: Watch<CriticalSectionRawMutex, u16, 5> = Watch::new(); //Voltage Readout of caps
 pub static DIR_REQ_SIG: Signal<CriticalSectionRawMutex, Direction> = Signal::new(); //Voltage Readout of caps
 pub static MOT_LOOP_EN: Signal<CriticalSectionRawMutex, bool> = Signal::new(); //during autotune we dont want motor to own the pwm
@@ -26,7 +25,6 @@ pub static RPM_REF_RATE_MS: u64 = 20;
 
 //Rpms coms
 pub mod speed_sense;
-pub static MAX_SPINDLE_SPEED: u16 = 1800; //This should match the linuxCNC config so they scale the same
 pub static RPM_BFR_DIR_SWTCH: u16 = 100;
 pub static RPM_FILT_WATCH: Watch<CriticalSectionRawMutex, HallRpm, 100> = Watch::new(); //The real rpm uploads here
 pub static HALL_CNT: usize = 4; //how many samples needed for rpm feedback
@@ -57,7 +55,6 @@ pub static I_CORR_OFF: Mutex<CriticalSectionRawMutex, f32> = Mutex::new(-12.0); 
 pub static I_DEL_MS: u64 = 50; //how often should we even check the current
 pub static I_INTR: Signal<CriticalSectionRawMutex, u16> = Signal::new();
 pub mod roll_current;
-pub static MAX_CURRENT_AMPS: f32 = 2.0;
 pub static V_REF_RATE_US: u64 = (200 * 1000000) / PWM_FREQ;
 
 //Voltage sense
@@ -84,6 +81,9 @@ unsafe extern "C" {
 }
 pub static FLASH_MUT_SIZE: usize = 2048 * 1024; //The allocated space for all saved variables
 pub mod saved_param; //module to save all the configuration information for the controller
+pub static MAX_SPINDLE_SPEED: AtomicU16 = AtomicU16::new(0); //ControllerConfig Max RPM
+pub static MAX_CURRENT_MA: AtomicU16 = AtomicU16::new(0);
+pub static MOTOR_MODE: AtomicBool = AtomicBool::new(false);
 
 //DISPLAY -- Self explanatory, want to know the rpm readout and be able to change settings on the fly
 pub mod display;

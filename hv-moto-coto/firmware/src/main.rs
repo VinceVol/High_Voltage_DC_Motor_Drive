@@ -10,6 +10,7 @@ use hv_moto_coto::button::button_runner;
 use hv_moto_coto::display::display_runner;
 use hv_moto_coto::motor::run_motor;
 use hv_moto_coto::safety::{are_we_safe, be_safe};
+use hv_moto_coto::saved_param::ControllerConfig;
 use hv_moto_coto::{adc_runner, mesa};
 use panic_probe as _;
 
@@ -30,6 +31,9 @@ async fn main(spawner: Spawner) {
     let disp_i2c = I2cDevice::new(i2c_bus);
     info!("I2C initialized on RP2350!");
     let flash_p = flash_init(p.FLASH, p.DMA_CH2);
+
+    //Initialize all the relavent atomics based on flash mem
+    ControllerConfig::init_atomics(flash_p).await;
 
     //IMPORTANT -- Layout screwup means all these pins need to be useless inputs --IMPORTANT
     let _gp16 = Input::new(p.PIN_16, embassy_rp::gpio::Pull::None);
@@ -66,7 +70,7 @@ async fn main(spawner: Spawner) {
     let _ = spawner.spawn(atune_btn_run(p.PIN_7, flash_p).unwrap());
 
     let _ = spawner.spawn(button_runner(knob_i2c).unwrap());
-    let _ = spawner.spawn(display_runner(disp_i2c).unwrap());
+    let _ = spawner.spawn(display_runner(disp_i2c, flash_p).unwrap());
 
     loop {
         // info!("LED ON");

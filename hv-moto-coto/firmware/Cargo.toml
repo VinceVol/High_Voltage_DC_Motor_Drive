@@ -28,6 +28,7 @@ embedded-graphics = { version = "0.8.2", features = ["defmt"] }
 ssd1306 = { version = "0.10.0", features = ["async"] }
 embassy-embedded-hal = { version = "0.6.0", features = ["defmt", "time"] }
 modulino = { path = "../../../modulino-rs", features = ["async"] }
+emb_txt_hndlr = { path = "../../../emb_txt_hndlr"}
 embedded-menu = "0.7.0"
 heapless = "0.9.4"
 display-interface = "0.5.0"

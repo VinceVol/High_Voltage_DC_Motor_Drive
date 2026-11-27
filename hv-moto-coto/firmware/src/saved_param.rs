@@ -52,6 +52,14 @@ impl Default for ControllerConfig {
 }
 
 impl ControllerConfig {
+    pub async fn init_atomics(
+        flash_mut: &Mutex<
+            CriticalSectionRawMutex,
+            Flash<'static, FLASH, Async, { FLASH_MUT_SIZE }>,
+        >,
+    ) {
+        todo!();
+    }
     //Load up the config perameters from flash
     pub async fn load(
         flash_mut: &Mutex<
@@ -82,7 +90,7 @@ impl ControllerConfig {
         //if it wasn't all zeros and the flash check is valid then open the config
         return Ok(pid_config);
     }
-    async fn save(
+    pub async fn save(
         &self,
         flash_mut: &Mutex<
             CriticalSectionRawMutex,
