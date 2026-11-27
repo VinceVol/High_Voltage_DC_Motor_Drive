@@ -30,6 +30,7 @@ pub async fn adc_runner(
     });
     let config = Config::default();
     let mut adc_v_in = Adc::new(adc_p, Irqs, config);
+    let adc_to_mv = 1000f32 * 3.3f32 / 4095f32; //4095 discrete steps in the adc read on the pico for a max of 3.3v
 
     //Seperate pins setup
     let mut voltage_in = Channel::new_pin(vol_sens_pin, embassy_rp::gpio::Pull::None);
@@ -67,7 +68,14 @@ pub async fn adc_runner(
             Either3::First(good_v) => {
                 //sending the converted 4095 max to voltage max
                 // grab raw data
-                let raw_current = (I_CORR_NUM * good_v as f32) / 4095f32 + *I_CORR_OFF.lock().await;
+                // 3300mV/2 comes from TMCS chip reading 0Amps on center we use I_CORR_OFF as we
+                // zero things out on boot but it should be pretty close to 1.65v
+                // (mv-3300mV/2)*(A/mv)*(1000 mA/A) = mA
+                let raw_current = ((adc_to_mv * (good_v as f32) - *I_CORR_OFF.lock().await)
+                    / I_CORR_NUM)
+                    * 1000f32; //mA
+
+                //TODO --remove later let raw_current = (I_CORR_NUM * good_v as f32) / 4095f32 + *I_CORR_OFF.lock().await;
 
                 //remove spikes and outliers
                 let despooled = i_spike_filter.update(raw_current);

@@ -2,33 +2,30 @@
 
 use core::fmt::write;
 
-use defmt::{info, Format};
-use embassy_embedded_hal::shared_bus::asynch::i2c::I2cDevice;
+use defmt::Format;
 use embassy_futures::select::{select3, Either3};
-use embassy_rp::pio::program::RP2040_MAX_PROGRAM_SIZE;
 use embassy_rp::rom_data::reboot;
 use embassy_rp::{
     flash::{Async, Flash},
     peripherals::FLASH,
 };
 use embassy_sync::{blocking_mutex::raw::CriticalSectionRawMutex, mutex::Mutex, watch::Receiver};
-use embassy_time::{Duration, Timer};
 use embedded_graphics::{
     geometry::Point,
     mono_font::{
-        ascii::{FONT_10X20, FONT_6X10, FONT_8X13_BOLD, FONT_8X13_ITALIC},
+        ascii::{FONT_10X20, FONT_8X13_ITALIC},
         iso_8859_1::{FONT_4X6, FONT_6X12},
-        MonoTextStyle, MonoTextStyleBuilder,
+        MonoTextStyleBuilder,
     },
     pixelcolor::BinaryColor,
-    text::{Baseline, Text, TextStyle},
+    text::{Baseline, Text},
     Drawable,
 };
 use embedded_menu::{
     interaction::{Action, Interaction, Navigation},
-    theme, Menu, MenuStyle, SelectValue,
+    Menu, MenuStyle, SelectValue,
 };
-use heapless::{format, String};
+use heapless::String;
 use ssd1306::{
     mode::{BufferedGraphicsModeAsync, DisplayConfigAsync},
     rotation::DisplayRotation,
@@ -40,7 +37,7 @@ use crate::MAX_CURRENT_MA;
 use crate::{
     bus_init::TwiDevice, button::ButtonSignal, safety::ControllerCond,
     saved_param::ControllerConfig, BUTTON_SIGNAL, FLASH_MUT_SIZE, I_WATCH, MAX_SPINDLE_SPEED,
-    MOTOR_MODE, RPM_FILT_WATCH, RPM_RAW_WATCH, RPM_REQ_WATCH, SAFETY_WATCH,
+    MOTOR_MODE, RPM_RAW_WATCH, RPM_REQ_WATCH, SAFETY_WATCH,
 };
 
 #[derive(Copy, Clone, PartialEq, Eq)]
@@ -225,7 +222,10 @@ pub async fn enter_main_screen<'a, DI>(
             ScreenOptions::Current => {
                 main_buf.clear();
                 mini_buf.clear();
-                let _ = write(&mut main_buf, format_args!("AMPS:{:.3}", last_current));
+                let _ = write(
+                    &mut main_buf,
+                    format_args!("AMPS:{:.3}", last_current / 1000f32),
+                );
                 let _ = write(
                     &mut mini_buf,
                     format_args!(
@@ -246,9 +246,9 @@ pub async fn enter_main_screen<'a, DI>(
 }
 
 pub async fn enter_menu<'a, DI>(
-    rpm_raw_watch: &mut Receiver<'a, CriticalSectionRawMutex, u16, 100>,
-    i_watch: &mut Receiver<'a, CriticalSectionRawMutex, f32, 5>,
-    safety_watch: &mut Receiver<'a, CriticalSectionRawMutex, ControllerCond, 5>,
+    _rpm_raw_watch: &mut Receiver<'a, CriticalSectionRawMutex, u16, 100>,
+    _i_watch: &mut Receiver<'a, CriticalSectionRawMutex, f32, 5>,
+    _safety_watch: &mut Receiver<'a, CriticalSectionRawMutex, ControllerCond, 5>,
     display: &mut Ssd1306Async<DI, DisplaySize128x32, BufferedGraphicsModeAsync<DisplaySize128x32>>,
     flash_mut: &'static Mutex<
         CriticalSectionRawMutex,

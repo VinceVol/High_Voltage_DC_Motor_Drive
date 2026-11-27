@@ -1,12 +1,14 @@
 use bytemuck::{Pod, Zeroable};
-use core::ptr;
+use core::{ptr, sync::atomic::Ordering::Relaxed};
 use embassy_rp::{
     flash::{Async, Flash},
     peripherals::FLASH,
 };
 use embassy_sync::{blocking_mutex::raw::CriticalSectionRawMutex, mutex::Mutex};
 
-use crate::{CONFIG_START, FLASH_MUT_SIZE, FLOOR_TBL_CNT};
+use crate::{
+    CONFIG_START, FLASH_MUT_SIZE, FLOOR_TBL_CNT, MAX_CURRENT_MA, MAX_SPINDLE_SPEED, MOTOR_MODE,
+};
 
 //The number of things needed to save on the flash are growing so this is here to give a way to access and
 // save new information
@@ -58,7 +60,17 @@ impl ControllerConfig {
             Flash<'static, FLASH, Async, { FLASH_MUT_SIZE }>,
         >,
     ) {
-        todo!();
+        let current_config = Self::load(flash_mut).await.unwrap();
+        MAX_SPINDLE_SPEED.store(current_config.max_rpm, Relaxed);
+        MAX_CURRENT_MA.store(current_config.max_current_ma, Relaxed);
+        MOTOR_MODE.store(
+            if current_config.man_mod == 1 {
+                true
+            } else {
+                false
+            },
+            Relaxed,
+        );
     }
     //Load up the config perameters from flash
     pub async fn load(

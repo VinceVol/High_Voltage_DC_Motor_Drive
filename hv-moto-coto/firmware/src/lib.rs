@@ -48,16 +48,16 @@ pub static SAFETY_WATCH: Watch<CriticalSectionRawMutex, ControllerCond, 5> = Wat
 //--------------------------------------------------------------------------
 //ADC Pins -- need to be checked together -- Current/Voltage/mesa stpt sense
 pub mod adc_runner;
-// Current sense
+// Current sense TMCS1126B4
 pub static I_WATCH: Watch<CriticalSectionRawMutex, f32, 5> = Watch::new(); //Current Sense
-pub static I_CORR_NUM: f32 = 23.777; //Correction factor for the current sense/ tune on bench
-pub static I_CORR_OFF: Mutex<CriticalSectionRawMutex, f32> = Mutex::new(-12.0); //Current offset from zero in the current sense loop. Calibrate when motor off
+pub static I_CORR_NUM: f32 = 100.0; //Correction factor for the current sense 100mv/A
+pub static I_CORR_OFF: Mutex<CriticalSectionRawMutex, f32> = Mutex::new(1650f32); //Current offset from zero in the current sense loop. Calibrate when motor off
 pub static I_DEL_MS: u64 = 50; //how often should we even check the current
 pub static I_INTR: Signal<CriticalSectionRawMutex, u16> = Signal::new();
 pub mod roll_current;
 pub static V_REF_RATE_US: u64 = (200 * 1000000) / PWM_FREQ;
 
-//Voltage sense
+//Voltage sense -- AMC1311BDWVR
 pub static V_WATCH: Watch<CriticalSectionRawMutex, i64, 5> = Watch::new(); //Voltage Readout of caps
 pub static V_CORR_NUM: f32 = 683f32; //Correction factor for the voltage sense/ tune on bench
 pub static V_CORR_OFF: f32 = -300f32; //Votlage offset from zero in the current sense loop

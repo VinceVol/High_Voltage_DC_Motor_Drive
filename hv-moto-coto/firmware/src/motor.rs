@@ -1,5 +1,4 @@
-//Thinking this represents the motor struct and task runner overall. ~big brain ish portion of the firware that decides overall what the motor is doing
-// I think this should include the PID bits but I haven't fully decided on the best way to structure this
+//Thinking this represents the motor struct and task runner overall. ~big brain ish portion of the firware that decides overall what the motor is doing// I think this should include the PID bits but I haven't fully decided on the best way to structure this
 
 use core_logic::interpolation::interpolate;
 use embassy_futures::select;
@@ -174,8 +173,8 @@ pub async fn run_motor(
                 if let Some(new_current) = i_watch.try_changed() {
                     current = new_current;
                 }
-                let current_measured_norm = current
-                    / (MAX_CURRENT_MA.load(core::sync::atomic::Ordering::Relaxed) as f32 / 1000f32);
+                let current_measured_norm =
+                    current / (MAX_CURRENT_MA.load(core::sync::atomic::Ordering::Relaxed) as f32);
 
                 current_pid_output = current_pid.update(
                     target_current_norm,

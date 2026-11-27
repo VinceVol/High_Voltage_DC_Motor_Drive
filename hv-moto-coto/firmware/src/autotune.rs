@@ -127,8 +127,7 @@ impl PidConfig {
             .enumerate()
         {
             rolling_current.wait_ms(1000, i_watch).await;
-            info!("A");
-            rolling_current.wait_till_steady(0.05, i_watch).await;
+            rolling_current.wait_till_steady(50.0, i_watch).await;
             //Set the pwm range
             pwm_range.rotate_left(1);
             pwm_range[1] = pwm;
@@ -139,7 +138,6 @@ impl PidConfig {
             //find the other end of the current range
             PWM_WATCH.sender().send(pwm_range[1]);
             rolling_current.wait_ms(1000, i_watch).await;
-            info!("B");
             rolling_current.wait_till_steady(0.05, i_watch).await;
             i_range[1] = rolling_current.mean();
 

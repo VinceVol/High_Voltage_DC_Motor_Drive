@@ -11,8 +11,8 @@ use embassy_rp::{
 use embassy_time::Instant;
 
 use crate::{
-    roll_current::RollingCurrent, I_CORR_OFF, I_WATCH, PWM_WATCH, RPM_FILT_WATCH, SAFETY_WATCH,
-    V_WATCH,
+    roll_current::RollingCurrent, I_CORR_OFF, I_WATCH, MAX_CURRENT_MA, PWM_WATCH, RPM_FILT_WATCH,
+    SAFETY_WATCH, V_WATCH,
 };
 
 #[derive(Clone, Copy)]
@@ -80,7 +80,6 @@ pub async fn be_safe(e_stop_out_p: Peri<'static, PIN_9>, dig_drive_en_p: Peri<'s
 
 const TIME_PRE_CHG_PANIC_MS: u64 = 100; //if caps take longer than 300 ms to start up throw flag
 const V_PRECH_THRESH: i64 = 5; //FIX Testing things at a low voltage for now so 5 will need to be changed TODO
-const OVER_CURR_THRESH: f32 = 19f32; //19 amps is too close I think to the limit - we'll see how this plays out
 const UNDER_VOLT: i64 = 3; //FIX LATER and update to ~105
 const OVER_VOLT: i64 = 125;
 const STALL_RPM: u16 = 20;
@@ -145,7 +144,9 @@ pub async fn are_we_safe(q5_en: Peri<'static, PIN_20>) {
         .await
         {
             embassy_futures::select::Either4::First(_) => {
-                if curr_roll.mean() > OVER_CURR_THRESH {
+                if curr_roll.mean()
+                    > MAX_CURRENT_MA.load(core::sync::atomic::Ordering::Relaxed) as f32
+                {
                     SAFETY_WATCH
                         .sender()
                         .send(ControllerCond::NG(ControllerError::CurrentOOR));
