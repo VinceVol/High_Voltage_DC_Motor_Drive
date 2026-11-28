@@ -33,11 +33,11 @@ use ssd1306::{
     I2CDisplayInterface, Ssd1306Async,
 };
 
-use crate::MAX_CURRENT_MA;
+use crate::saved_param::MotorMode;
 use crate::{
     bus_init::TwiDevice, button::ButtonSignal, safety::ControllerCond,
-    saved_param::ControllerConfig, BUTTON_SIGNAL, FLASH_MUT_SIZE, I_WATCH, MAX_SPINDLE_SPEED,
-    MOTOR_MODE, RPM_RAW_WATCH, RPM_REQ_WATCH, SAFETY_WATCH,
+    saved_param::ControllerConfig, BUTTON_SIGNAL, FLASH_MUT_SIZE, I_WATCH, RPM_RAW_WATCH,
+    RPM_REQ_WATCH, SAFETY_WATCH,
 };
 
 #[derive(Copy, Clone, PartialEq, Eq)]
@@ -123,6 +123,12 @@ pub async fn enter_main_screen<'a, DI>(
     let mut last_current = 0f32;
     let mut last_cond = ControllerCond::Ok;
 
+    //Preload flash variables so we dont need to access them every time we're interpreting a
+    // button press
+    let current_max_rpm = ControllerConfig::load_max_rpm(flash_mut).await;
+    let current_max_i = ControllerConfig::load_max_i(flash_mut).await;
+    let current_mode = ControllerConfig::load_mode(flash_mut).await;
+
     loop {
         //Refresh display ---------------------------
         display.clear_buffer();
@@ -180,26 +186,22 @@ pub async fn enter_main_screen<'a, DI>(
                         }
                     }
                     //IF the motor is in manual mode the setpoing is set within this loop
-                    ButtonSignal::GoRight => {
-                        if !MOTOR_MODE.load(core::sync::atomic::Ordering::Relaxed) {
+                    ButtonSignal::GoRight => match current_mode {
+                        MotorMode::Manual => {
                             last_rpm_stpt += 20;
-                            last_rpm_stpt = last_rpm_stpt.clamp(
-                                0,
-                                MAX_SPINDLE_SPEED.load(core::sync::atomic::Ordering::Relaxed),
-                            );
+                            last_rpm_stpt = last_rpm_stpt.clamp(0, current_max_rpm);
                             RPM_REQ_WATCH.sender().send(last_rpm_stpt);
                         }
-                    }
-                    ButtonSignal::GoLeft => {
-                        if !MOTOR_MODE.load(core::sync::atomic::Ordering::Relaxed) {
+                        _ => (),
+                    },
+                    ButtonSignal::GoLeft => match current_mode {
+                        MotorMode::Manual => {
                             last_rpm_stpt -= 20;
-                            last_rpm_stpt = last_rpm_stpt.clamp(
-                                0,
-                                MAX_SPINDLE_SPEED.load(core::sync::atomic::Ordering::Relaxed),
-                            );
+                            last_rpm_stpt = last_rpm_stpt.clamp(0, current_max_rpm);
                             RPM_REQ_WATCH.sender().send(last_rpm_stpt);
                         }
-                    }
+                        _ => (),
+                    },
                     _ => (),
                 }
             }
@@ -228,10 +230,7 @@ pub async fn enter_main_screen<'a, DI>(
                 );
                 let _ = write(
                     &mut mini_buf,
-                    format_args!(
-                        "Max Current:{} Amps",
-                        MAX_SPINDLE_SPEED.load(core::sync::atomic::Ordering::Relaxed)
-                    ),
+                    format_args!("Max Current:{} Amps", current_max_i,),
                 );
             }
             ScreenOptions::Error => {
@@ -270,16 +269,7 @@ pub async fn enter_menu<'a, DI>(
         .add_item("Autotune", "", |_| MenuOptions::Autotune)
         .add_item("Set Max Rpm", "", |_| MenuOptions::SetRpmRange)
         .add_item("Set Max Current", "", |_| MenuOptions::SetIRange)
-        .add_item("Set Mode", "", |_| {
-            //Swap the motor mode within the menu
-            let current_mode = MOTOR_MODE.load(core::sync::atomic::Ordering::Relaxed);
-            if current_mode == true {
-                MOTOR_MODE.store(false, core::sync::atomic::Ordering::Relaxed);
-            } else {
-                MOTOR_MODE.store(true, core::sync::atomic::Ordering::Relaxed);
-            }
-            MenuOptions::SetManualAuto
-        })
+        .add_item("Set Mode", "", |_| MenuOptions::SetManualAuto)
         .add_item("Exit", "", |_| MenuOptions::GoBack)
         .build();
 
@@ -315,16 +305,19 @@ pub async fn enter_menu<'a, DI>(
         if selected != selected_value {
             selected_value = selected;
             match selected_value {
+                MenuOptions::SetManualAuto => {
+                    todo!();
+                }
                 //if the set rpm range menu is selected the n pull up the adjstment screen and store
                 // its returned vale into the MAX_SPINDLE_SPEED mutex
-                MenuOptions::SetRpmRange => MAX_SPINDLE_SPEED.store(
+                MenuOptions::SetRpmRange => ControllerConfig::store_max_rpm(
                     adjust_screen(
                         "--Max RPM Set--",
-                        MAX_SPINDLE_SPEED.load(core::sync::atomic::Ordering::Relaxed) as f32,
+                        ControllerConfig::load_max_rpm(flash_mut).await as f32,
                         display,
                     )
                     .await as u16,
-                    core::sync::atomic::Ordering::Relaxed,
+                    flash_mut,
                 ),
                 MenuOptions::SetIRange => MAX_CURRENT_MA.store(
                     adjust_screen(

@@ -53,7 +53,14 @@ impl Default for ControllerConfig {
     }
 }
 
+pub enum MotorMode {
+    Auto,
+    Manual,
+}
+
 impl ControllerConfig {
+    //TODO swap this for just straight up loading parameters
+    // unecessary to save things as atomics when we have the flash
     pub async fn init_atomics(
         flash_mut: &Mutex<
             CriticalSectionRawMutex,
@@ -123,5 +130,97 @@ impl ControllerConfig {
         flash.blocking_write(storage_location, bytes)?;
 
         Ok(())
+    }
+
+    //Max Rpm store/ load
+    pub async fn store_max_rpm(
+        new_max: u16,
+        flash_mut: &Mutex<
+            CriticalSectionRawMutex,
+            Flash<'static, FLASH, Async, { FLASH_MUT_SIZE }>,
+        >,
+    ) {
+        let mut current_config = Self::load(flash_mut).await.unwrap();
+        current_config.max_rpm = new_max;
+        current_config.save(flash_mut).await.unwrap();
+    }
+    pub async fn load_max_rpm(
+        flash_mut: &Mutex<
+            CriticalSectionRawMutex,
+            Flash<'static, FLASH, Async, { FLASH_MUT_SIZE }>,
+        >,
+    ) -> u16 {
+        let current_config = Self::load(flash_mut).await.unwrap();
+        current_config.max_rpm
+    }
+
+    //Max Current store/ load
+    pub async fn store_max_i(
+        new_max: u16,
+        flash_mut: &Mutex<
+            CriticalSectionRawMutex,
+            Flash<'static, FLASH, Async, { FLASH_MUT_SIZE }>,
+        >,
+    ) {
+        let mut current_config = Self::load(flash_mut).await.unwrap();
+        current_config.max_current_ma = new_max;
+        current_config.save(flash_mut).await.unwrap();
+    }
+    pub async fn load_max_i(
+        flash_mut: &Mutex<
+            CriticalSectionRawMutex,
+            Flash<'static, FLASH, Async, { FLASH_MUT_SIZE }>,
+        >,
+    ) -> u16 {
+        let current_config = Self::load(flash_mut).await.unwrap();
+        current_config.max_current_ma
+    }
+
+    //Motor Mode Auto/Man store/ load
+    pub async fn store_mode(
+        new_mode: MotorMode,
+        flash_mut: &Mutex<
+            CriticalSectionRawMutex,
+            Flash<'static, FLASH, Async, { FLASH_MUT_SIZE }>,
+        >,
+    ) {
+        let mut current_config = Self::load(flash_mut).await.unwrap();
+        current_config.man_mod = match new_mode {
+            MotorMode::Manual => 0u8,
+            MotorMode::Auto => 1u8,
+        };
+        current_config.save(flash_mut).await.unwrap();
+    }
+
+    //AUTO MODE -- 1
+    // Read the voltage readout from the mesa pin
+    //
+    // MAN MODE -- 0
+    // Use the knob to change setpoints
+    pub async fn load_mode(
+        flash_mut: &Mutex<
+            CriticalSectionRawMutex,
+            Flash<'static, FLASH, Async, { FLASH_MUT_SIZE }>,
+        >,
+    ) -> MotorMode {
+        let current_config = Self::load(flash_mut).await.unwrap();
+        match current_config.man_mod {
+            0 => MotorMode::Manual,
+            _ => MotorMode::Auto,
+        }
+    }
+    //Motor Mode Auto/Man store/ load
+    pub async fn swap_mode(
+        flash_mut: &Mutex<
+            CriticalSectionRawMutex,
+            Flash<'static, FLASH, Async, { FLASH_MUT_SIZE }>,
+        >,
+    ) {
+        let mut current_config = Self::load(flash_mut).await.unwrap();
+        current_config.man_mod = match current_config.man_mod {
+            0u8 => 1u8,
+            _ => 0u8,
+        };
+        current_config.save(flash_mut).await.unwrap();
     }
 }

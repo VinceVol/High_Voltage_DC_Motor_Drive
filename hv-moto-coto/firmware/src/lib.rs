@@ -81,9 +81,6 @@ unsafe extern "C" {
 }
 pub static FLASH_MUT_SIZE: usize = 2048 * 1024; //The allocated space for all saved variables
 pub mod saved_param; //module to save all the configuration information for the controller
-pub static MAX_SPINDLE_SPEED: AtomicU16 = AtomicU16::new(0); //ControllerConfig Max RPM
-pub static MAX_CURRENT_MA: AtomicU16 = AtomicU16::new(0);
-pub static MOTOR_MODE: AtomicBool = AtomicBool::new(false);
 
 //DISPLAY -- Self explanatory, want to know the rpm readout and be able to change settings on the fly
 pub mod display;
